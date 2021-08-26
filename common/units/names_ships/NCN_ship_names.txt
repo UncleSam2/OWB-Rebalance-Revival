@@ -1,0 +1,43 @@
+﻿NCN_LIGHT = {
+	name = NAME_THEME_SHIPS_NCN_LIGHT
+	for_countries = { NCN }
+	type = ship
+	ship_types = { light_ship_unit }
+	fallback_name = "Service Boat %d"
+	unique = {
+		""
+	}
+}
+
+NCN_MEDIUM = {
+	name = NAME_THEME_SHIPS_NCN_MEDIUM
+	for_countries = { NCN }
+	type = ship
+	ship_types = { medium_ship_screen_unit }
+	fallback_name = "Gaurdian %d"
+	unique = {
+		"Commandment I" "Commandment II" "Commandment III" "Commandment IV" "Commandment IX" "Commandment V" "Commandment VI" "Commandment VII" "Commandment VIII" "Commandment X"
+	}
+}
+
+NCN_HEAVY = {
+	name = NAME_THEME_SHIPS_NCN_HEAVY
+	for_countries = { NCN }
+	type = ship
+	ship_types = { heavy_ship_unit }
+	fallback_name = "Bishop %d"
+	unique = {
+		"Angela" "Daniel" "Gabriel" "Jude" "Mathew" "Michael" "Mordecai" "Patrick" "William"
+	}
+}
+
+NCN_SUPER_HEAVY = {
+	name = NAME_THEME_SHIPS_NCN_SUPER_HEAVY
+	for_countries = { NCN }
+	type = ship
+	ship_types = { super_heavy_ship_unit }
+	fallback_name = "Defender of The Faith %d"
+	unique = {
+		"'Revelation' John" "Joshua Graham" "Marshall" "Mike O' Conner"
+	}
+}

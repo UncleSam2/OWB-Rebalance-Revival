@@ -1,0 +1,120 @@
+spriteTypes = {
+	#Enclave
+		spriteType = {
+			name = "GFX_autonomy_enclave_a3_pm_icon"
+			textureFile = "gfx/interface/autonomy/autonomy_enclave_a3_pm_icon.dds"
+		}
+		spriteType = {
+			name = "GFX_autonomy_enclave_a2_mg_icon"
+			textureFile = "gfx/interface/autonomy/autonomy_enclave_a2_mg_icon.dds"
+		}
+		spriteType = {
+			name = "GFX_autonomy_enclave_a1_fa_icon"
+			textureFile = "gfx/interface/autonomy/autonomy_enclave_a1_fa_icon.dds"
+		}
+	
+		spriteType = {
+			name = "GFX_autonomy_enclave_r3_md_icon"
+			textureFile = "gfx/interface/autonomy/autonomy_enclave_r3_md_icon.dds"
+		}
+		spriteType = {
+			name = "GFX_autonomy_enclave_r2_ra_icon"
+			textureFile = "gfx/interface/autonomy/autonomy_enclave_r2_ra_icon.dds"
+		}
+		spriteType = {
+			name = "GFX_autonomy_enclave_r1_pr_icon"
+			textureFile = "gfx/interface/autonomy/autonomy_enclave_r1_pr_icon.dds"
+		}
+	
+		spriteType = {
+			name = "GFX_autonomy_enclave_t3_rt_icon"
+			textureFile = "gfx/interface/autonomy/autonomy_enclave_t3_rt_icon.dds"
+		}
+		spriteType = {
+			name = "GFX_autonomy_enclave_t2_fr_icon"
+			textureFile = "gfx/interface/autonomy/autonomy_enclave_t2_fr_icon.dds"
+		}
+		spriteType = {
+			name = "GFX_autonomy_enclave_t1_ip_icon"
+			textureFile = "gfx/interface/autonomy/autonomy_enclave_t1_ip_icon.dds"
+		}
+	
+		spriteType = {
+			name = "GFX_autonomy_enclave_s3_as_icon"
+			textureFile = "gfx/interface/autonomy/autonomy_enclave_s3_as_icon.dds"
+		}
+		spriteType = {
+			name = "GFX_autonomy_enclave_s2_cw_icon"
+			textureFile = "gfx/interface/autonomy/autonomy_enclave_s2_cw_icon.dds"
+		}
+		spriteType = {
+			name = "GFX_autonomy_enclave_s1_ft_icon"
+			textureFile = "gfx/interface/autonomy/autonomy_enclave_s1_ft_icon.dds"
+		}
+	
+		spriteType = {
+			name = "GFX_autonomy_enclave_u1_TLA_icon"
+			textureFile = "gfx/interface/autonomy/autonomy_enclave_u1_TLA_icon.dds"
+		}
+		spriteType = {
+			name = "GFX_autonomy_enclave_u2_DAM_icon"
+			textureFile = "gfx/interface/autonomy/autonomy_enclave_u2_DAM_icon.dds"
+		}
+	#NCR
+		spriteType = {
+			name = "GFX_autonomy_ncr_v1_rt_icon"
+			textureFile = "gfx/interface/autonomy/autonomy_ncr_v1_rt_icon.dds"
+		}
+		spriteType = {
+			name = "GFX_autonomy_ncr_v2_ps_icon"
+			textureFile = "gfx/interface/autonomy/autonomy_ncr_v2_ps_icon.dds"
+		}
+		spriteType = {
+			name = "GFX_autonomy_ncr_r3_ip_icon"
+			textureFile = "gfx/interface/autonomy/autonomy_ncr_r3_ip_icon.dds"
+		}
+		spriteType = {
+			name = "GFX_autonomy_ncr_s3_ez_icon"
+			textureFile = "gfx/interface/autonomy/autonomy_ncr_s3_ez_icon.dds"
+		}
+		spriteType = {
+			name = "GFX_autonomy_ncr_t3_tr_icon"
+			textureFile = "gfx/interface/autonomy/autonomy_ncr_t3_tr_icon.dds"
+		}
+		spriteType = {
+			name = "GFX_autonomy_ncr_o1_ob_icon"
+			textureFile = "gfx/interface/autonomy/autonomy_ncr_o1_ob_icon.dds"
+		}
+		spriteType = {
+			name = "GFX_autonomy_ncr_o2_ob_icon"
+			textureFile = "gfx/interface/autonomy/autonomy_ncr_o2_ob_icon.dds"
+		}
+		spriteType = {
+			name = "GFX_autonomy_ncr_o3_ob_icon"
+			textureFile = "gfx/interface/autonomy/autonomy_ncr_o3_ob_icon.dds"
+		}
+		spriteType = {
+			name = "GFX_autonomy_ncr_j1_cc_icon"
+			textureFile = "gfx/interface/autonomy/autonomy_ncr_j1_cc_icon.dds"
+		}
+		spriteType = {
+			name = "GFX_autonomy_ncr_j2_cc_icon"
+			textureFile = "gfx/interface/autonomy/autonomy_ncr_j2_cc_icon.dds"
+		}
+		spriteType = {
+			name = "GFX_autonomy_ncr_j3_cc_icon"
+			textureFile = "gfx/interface/autonomy/autonomy_ncr_j3_cc_icon.dds"
+		}
+		spriteType = {
+			name = "GFX_autonomy_ncr_m1_md_icon"
+			textureFile = "gfx/interface/autonomy/autonomy_ncr_m1_md_icon.dds"
+		}
+		spriteType = {
+			name = "GFX_autonomy_ncr_m2_md_icon"
+			textureFile = "gfx/interface/autonomy/autonomy_ncr_m2_md_icon.dds"
+		}
+		spriteType = {
+			name = "GFX_autonomy_ncr_m3_md_icon"
+			textureFile = "gfx/interface/autonomy/autonomy_ncr_m3_md_icon.dds"
+		}
+}

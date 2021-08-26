@@ -1,0 +1,127 @@
+﻿capital = 880
+
+oob = "HRO_2275"
+
+set_technology = {
+	tribal_civilization = 1
+	settled_civilization = 1
+	tool_engineering = 1
+	standard_weaponry_tech = 1
+	melee_weaponry_tech_1 = 1
+	pre_construction_industry_tech = 1
+	pre_agriculture_industry_tech = 1
+	pre_recycling_industry_tech = 1
+	basic_industry_tech = 1
+	support_weaponry = 1
+	nautics_tech_1 = 1
+	light_navy_hull_tech_1 = 1
+	naval_invasion_tech_1 = 1
+
+	infantry_tech_level_tribal = 1
+	infantry_tech_level_settler = 1
+	special_forces_tech_level_tribal = 1
+	special_forces_tech_level_settler = 1
+	power_armour_tech_level_tribal = 1
+	power_armour_tech_level_settler = 1
+	support_tech_level_tribal = 1
+	support_tech_level_settler = 1
+	vehicles_tech_level_tribal = 1
+	vehicles_tech_level_settler = 1
+	robotics_tech_level_tribal = 1
+	robotics_tech_level_settler = 1
+	robotics_tech_level_scientific = 1
+	air_tech_level_tribal = 1
+	air_tech_level_settler = 1
+	air_tech_level_scientific = 1
+	naval_tech_level_tribal = 1
+	naval_tech_level_settler = 1
+	tools_tech_level_tribal = 1
+	tools_tech_level_settler = 1
+	tools_tech_level_scientific = 1
+	habitation_tech_level_tribal = 1
+	habitation_tech_level_settler = 1
+	habitation_tech_level_scientific = 1
+	exploitation_tech_level_tribal = 1
+	exploitation_tech_level_settler = 1
+	exploitation_tech_level_scientific = 1
+	electronics_tech_level_tribal = 1
+	electronics_tech_level_settler = 1
+	electronics_tech_level_scientific = 1
+}
+
+load_focus_tree = settler_generic
+set_country_flag = dont_give_settler_generic_political_advisors
+set_country_flag = dont_give_settler_generic_high_command
+set_country_flag = dont_give_settler_generic_theorists
+set_country_flag = dont_give_settler_generic_chiefs
+set_country_flag = no_generic_advisor
+set_country_flag = no_generic_chief
+set_country_flag = no_generic_political_advisors
+set_country_flag = no_generic_high_command
+set_country_flag = no_generic_theorists
+
+
+set_stability = 0.4
+set_war_support = 0.4
+set_research_slots = 3
+
+set_politics = {
+	ruling_party = people
+	elections_allowed = no
+}
+
+set_popularities = {
+	people = 5
+	elites = 0
+	intellectuals = 45
+	ruler = 50
+}
+
+add_ideas = {
+	HRO_ussa_headquarters
+}
+
+
+create_country_leader = {
+	name = "Houston Governing Body"
+	desc = "HRO_Parliament_DESC"
+	expire = "3000.1.1"
+	picture = "gfx/leaders/HRO/portrait_HRO_parliament.dds"
+	ideology = constitutional_republic
+	traits = {
+		ineffective
+	}
+}
+
+create_country_leader = {
+	name = "Mia Sanchez"
+	desc = "Sanchez_DESC"
+	expire = "3000.1.1"
+	picture = gfx/leaders/settler/portrait_settler_generic_16
+	ideology = technocracy
+	traits = {
+		expert_negotiator
+	}
+}
+
+create_country_leader = {
+	name = "Abel Baptiste"
+	desc = "Sanchez_DESC"
+	expire = "3000.1.1"
+	picture = gfx/leaders/settler_mexico/portrait_mex_settler_generic_1
+	ideology = benevolent_dictatorship
+	traits = {
+		cruel_tyrant
+	}
+}
+
+create_corps_commander = {
+	name = "General Puff II"
+	portrait_path = "gfx/leaders/settler/portrait_settler_generic_13.dds"
+	skill = 3
+	traits = { charismatic_trait sniper_trait enduring_trait local_leader_trait }
+	attack_skill = 1
+	defense_skill = 4
+	planning_skill = 3
+	logistics_skill = 2
+}

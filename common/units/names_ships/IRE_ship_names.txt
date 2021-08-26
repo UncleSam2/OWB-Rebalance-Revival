@@ -1,0 +1,43 @@
+﻿IRE_LIGHT = {
+	name = NAME_THEME_SHIPS_IRE_LIGHT
+	for_countries = { IRE }
+	type = ship
+	ship_types = { light_ship_unit }
+	fallback_name = "Dingy %d"
+	unique = {
+		"A Hole in Deck" "A Year For This" "Better Than Nothing" "Die Happy" "Durability Debated" "Equal To Nothing" "Feeling Cocky" "Float Like A Brick" "Floating Scrap" "Health to You" "Hold no Sorrow" "Ignore Us" "Ires Angel" "Joys of Today" "Nuts N' Bolts" "Oldie But A Goodie" "Puddle Worthy" "Restored Crap" "Rusted Through" "Sailing Smooth" "The Leftover" "Three-Eyed Fish" "Unrivaled Might" "Up A Creek" "Will Have to Do"
+	}
+}
+
+IRE_MEDIUM = {
+	name = NAME_THEME_SHIPS_IRE_MEDIUM
+	for_countries = { IRE }
+	type = ship
+	ship_types = { medium_ship_screen_unit }
+	fallback_name = "Rust Bucket %d"
+	unique = {
+		"Carry On" "Could've Built A House" "Distraction" "Face it Squarely" "Free To Choose" "If We Must" "Lackies Luck" "Look Forward to The Trip" "No Other Worthy" "One For You" "Scrap King" "Seen Better Days" "Should've Built That House" "Sick of Water" "Smart Planning" "Smells Like Victory" "Sucker Punch" "The Test" "Toast to Health" "Unsinkable V"
+	}
+}
+
+IRE_HEAVY = {
+	name = NAME_THEME_SHIPS_IRE_HEAVY
+	for_countries = { IRE }
+	type = ship
+	ship_types = { heavy_ship_unit }
+	fallback_name = "Cutter %d"
+	unique = {
+		"A Gentleman" "All in How You Make it!" "Blessing Needed Most" "Cannot Share This Sorrow" "Cap For Your Thoughts" "Cash In" "Chasing Radstorms" "Diplomacy" "Give This Very Day" "No More" "Now Come" "Now We Fight" "One of a Kind" "Pope Molerat XVI" "Ready or What?" "Runs Like The Wind" "Sarsaparilla Sunrise" "Through Strong" "Up and Up" "We found This One"
+	}
+}
+
+IRE_SUPER_HEAVY = {
+	name = NAME_THEME_SHIPS_IRE_SUPER_HEAVY
+	for_countries = { IRE }
+	type = ship
+	ship_types = { super_heavy_ship_unit }
+	fallback_name = "Battle Boat %d"
+	unique = {
+		"All Fire Front" "And Never Want as Long as you Live" "Broadsider" "Completely Scrap" "Expensive As Hell" "Full Frontal" "Hammer Down!" "May God Turn Their Hearts" "May Her Lakes and Rivers Bless You" "May the Enemies of Ires Never Meet a Friend" "May you Live as Long as you Want" "Our Height" "Sister of War" "Steel Brunt" "Wall of the People"
+	}
+}

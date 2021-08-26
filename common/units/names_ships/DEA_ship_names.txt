@@ -1,0 +1,43 @@
+﻿DEA_LIGHT = {
+	name = NAME_THEME_SHIPS_DEA_LIGHT
+	for_countries = { DEA }
+	type = ship
+	ship_types = { light_ship_unit }
+	fallback_name = "Tribal Canoe %d"
+	unique = {
+		"Bahm Buh" "Confidence Sure" "Core-Cut Log" "Dahs Wur Bahd" "Geh Bits Ah" "Goot Keel, Ahk Iss" "Goot" "Guaranteed Catch" "Hah Go" "Hard Driftwood" "Hoi!" "Knowing" "Lah" "Naymst Dees!" "No Trouble" "Quality Unrivaled" "River Dancer" "Serpet" "Shoah" "Silver Fish" "Steady Undouted" "Sturdy-Float" "Swift Rower" "Upstreamer" "Water Dog" "Well Crafted"
+	}
+}
+
+DEA_MEDIUM = {
+	name = NAME_THEME_SHIPS_DEA_MEDIUM
+	for_countries = { DEA }
+	type = ship
+	ship_types = { medium_ship_screen_unit }
+	fallback_name = "Tribal Boat %d"
+	unique = {
+		"Cutter" "Ease of Ride" "Fair Flick" "First Pioneer" "Forager" "Gatherings" "Gey Gonen" "Good-Haul" "Greatly Assured" "If Needed" "Know This River" "Koh Bahm Buh" "Ni Ar Toht" "Ready On" "Roo Too Nait, Ahk Iss" "Seeing-Far" "Shih Zhah Neh Hoyta!" "Shih Zookuh Ta Tee..." "Shtairb!" "Stahp Dahs Pleez" "Star-Chasing" "Wake Splitter" "Waters Calm" "Wind Catch" "Yah ah tahg"
+	}
+}
+
+DEA_HEAVY = {
+	name = NAME_THEME_SHIPS_DEA_HEAVY
+	for_countries = { DEA }
+	type = ship
+	ship_types = { heavy_ship_unit }
+	fallback_name = "Tribal Cruising Vessel %d"
+	unique = {
+		"Bighorner Strong" "Blade Revealed" "Chin Dee" "Dah Ah Hi Meer!" "Deep Water Crossing" "Hard To Track" "Nah Ash Ne Wit Deer!" "Natural Leader" "No Tsaig Tuh Beh Dah a Hih Jih Gahni a Meer" "No! Shtay Len Tahbah Mah Ee" "Notched Arrow" "Sharpened Tip" "Shih Ahm Fair Tig Es Zookuh" "Superior" "Tomahawk" "Trailblazer" "Warrior Bred"
+	}
+}
+
+DEA_SUPER_HEAVY = {
+	name = NAME_THEME_SHIPS_DEA_SUPER_HEAVY
+	for_countries = { DEA }
+	type = ship
+	ship_types = { super_heavy_ship_unit }
+	fallback_name = "Tribal Battleship %d"
+	unique = {
+		"A Bil He Neh Fuhr Jahd Thli Gai!" "Ahl Tah Jeh Jey" "Cazador Sting" "Cornered Coyote" "Death Claw" "Feral Yao Guai" "Geacko Fang" "Glahb Ni Kahn Meer Dah Ah?!" "No, Ni Kahn Neekt Ruhn!" "Yee Nad Loo Shee"
+	}
+}

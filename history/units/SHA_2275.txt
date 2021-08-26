@@ -1,0 +1,225 @@
+﻿division_template = {
+	name = "Human Slaves"
+	regiments = {
+		militia = { x = 0 y = 0 }
+		militia = { x = 0 y = 1 }
+		militia = { x = 1 y = 0 }
+		militia = { x = 1 y = 1 }
+	}
+}
+
+division_template = {
+	name = "Attis Army Remnants"
+	regiments = {
+		super_mutant_infantry = { x = 0 y = 0 }
+		super_mutant_infantry = { x = 0 y = 1 }
+		super_mutant_infantry = { x = 0 y = 2 }
+		super_mutant_infantry = { x = 2 y = 0 }
+		super_mutant_infantry = { x = 1 y = 0 }
+	}
+}
+
+#division_template = {
+#	name = "FEV Mutants"
+#	template_counter= 35
+#	regiments = {
+#		behemoth = { x = 0 y = 0 }
+#		behemoth = { x = 0 y = 1 }
+#		behemoth = { x = 1 y = 0 }
+#		behemoth = { x = 1 y = 1 }
+#	}
+#}
+
+units = {
+	division = {
+		name = "Crushers"
+		location = 11634
+		division_template = "Attis Army Remnants"
+		start_experience_factor = 0.4
+		start_equipment_factor = 1.0
+	}
+	division = {
+		name = "Breeding Stock"
+		location = 11634
+		division_template = "Human Slaves"
+		start_experience_factor = 0.05
+		start_equipment_factor = 1.0
+	}
+	division = {
+		name = "Bashers"
+		location = 11634
+		division_template = "Attis Army Remnants"
+		start_experience_factor = 0.4
+		start_equipment_factor = 1.0
+	}
+	division = {
+		name = "Smashers"
+		location = 11634
+		division_template = "Attis Army Remnants"
+		start_experience_factor = 0.4
+		start_equipment_factor = 1.0
+	}
+	division = {
+		name = "Slammers"
+		location = 11738
+		division_template = "Attis Army Remnants"
+		start_experience_factor = 0.4
+		start_equipment_factor = 1.0
+	}
+	division = {
+		name = "Eating Stock"
+		location = 11738
+		division_template = "Human Slaves"
+		start_experience_factor = 0.05
+		start_equipment_factor = 1.0
+	}
+	division = {
+		name = "Crashers"
+		location = 11738
+		division_template = "Attis Army Remnants"
+		start_experience_factor = 0.4
+		start_equipment_factor = 1.0
+	}
+	division = {
+		name = "Creamers"
+		location = 11738
+		division_template = "Attis Army Remnants"
+		start_experience_factor = 0.4
+		start_equipment_factor = 1.0
+	}
+	division = {
+		name = "Stompers"
+		location = 11549
+		division_template = "Attis Army Remnants"
+		start_experience_factor = 0.4
+		start_equipment_factor = 1.0
+	}
+	division = {
+		name = "Shooting Stock"
+		location = 11549
+		division_template = "Human Slaves"
+		start_experience_factor = 0.05
+		start_equipment_factor = 1.0
+	}
+	division = {
+		name = "Stunners"
+		location = 11549
+		division_template = "Attis Army Remnants"
+		start_experience_factor = 0.4
+		start_equipment_factor = 1.0
+	}
+	division = {
+		name = "The Warband"
+		location = 2989
+		division_template = "Attis Army Remnants"
+		start_experience_factor = 0.8
+		start_equipment_factor = 1.0
+	}
+	division = {
+		name = "The Goreband"
+		location = 2989
+		division_template = "Attis Army Remnants"
+		start_experience_factor = 0.8
+		start_equipment_factor = 1.0
+	}
+	division = {
+		name = "The Roarband"
+		location = 2989
+		division_template = "Attis Army Remnants"
+		start_experience_factor = 0.8
+		start_equipment_factor = 1.0
+	}
+	division = {
+		name = "Human Shields"
+		location = 2989
+		division_template = "Human Slaves"
+		start_experience_factor = 0.05
+		start_equipment_factor = 1.0
+	}
+	division = {
+		name = "Attis's Finest"
+		location = 11531
+		division_template = "Attis Army Remnants"
+		start_experience_factor = 1.0
+		start_equipment_factor = 1.0
+	}
+	division = {
+		name = "Target Practice"
+		location = 11531
+		division_template = "Human Slaves"
+		start_experience_factor = 0.05
+		start_equipment_factor = 1.0
+	}
+	division = {
+		name = "Shale's Finest"
+		location = 11531
+		division_template = "Attis Army Remnants"
+		start_experience_factor = 1.0
+		start_equipment_factor = 1.0
+	}
+	division = {
+		name = "Calix Worshippers"
+		location = 11531
+		division_template = "Attis Army Remnants"
+		start_experience_factor = 1.0
+		start_equipment_factor = 1.0
+	}
+	division = {
+		name = "Boomers"
+		location = 2281
+		division_template = "Attis Army Remnants"
+		start_experience_factor = 1.0
+		start_equipment_factor = 1.0
+	}
+	division = {
+		name = "Cannibal Band"
+		location = 2281
+		division_template = "Attis Army Remnants"
+		start_experience_factor = 0.5
+		start_equipment_factor = 1.0
+	}
+	division = {
+		name = "Screamers"
+		location = 2281
+		division_template = "Attis Army Remnants"
+		start_experience_factor = 0.5
+		start_equipment_factor = 1.0
+	}
+	division = {
+		name = "Teamers"
+		location = 2991
+		division_template = "Attis Army Remnants"
+		start_experience_factor = 0.5
+		start_equipment_factor = 1.0
+	}
+	division = {
+		name = "Kidnappers"
+		location = 2281
+		division_template = "Attis Army Remnants"
+		start_experience_factor = 0.5
+		start_equipment_factor = 1.0
+	}
+}
+
+##### Starting Production #####
+instant_effect = {
+	add_equipment_production = {
+		equipment = {
+			type = melee_equipment_1
+			creator = "SHA"
+		}
+		requested_factories = 3
+		progress = 0.75
+		efficiency = 100
+	}
+	
+	add_equipment_production = {
+		equipment = {
+			type = support_equipment_1
+			creator = "SHA"
+		}
+		requested_factories = 1
+		progress = 0.75
+		efficiency = 100
+	}
+}

@@ -1,0 +1,43 @@
+﻿BRK_LIGHT = {
+	name = NAME_THEME_SHIPS_BRK_LIGHT
+	for_countries = { BRK }
+	type = ship
+	ship_types = { light_ship_unit }
+	fallback_name = "Sloop %d"
+	unique = {
+		"A Hole in Deck" "Bizarre Victory" "Blood Bird" "Blood Parched North" "Brigade" "Dirty 'Lurk" "Feeling Cocky" "Festering Scab" "Floating Scrap" "Jade Luck" "Lust of The Rose" "Mangy Hangman" "Mister Brighteyes" "Mut-Minnow" "Oldie But A Goodie" "Pickens Be Here" "Plunder!" "Puddle Worthy" "Rancid Captain" "Red Raider" "Restored Crap" "Rising Grail" "Rusted Through" "Sailing Smooth" "Scurvy Prone" "The Nuka White" "The Storm" "Three-Eyed Fish" "Whirly Windy"
+	}
+}
+
+BRK_MEDIUM = {
+	name = NAME_THEME_SHIPS_BRK_MEDIUM
+	for_countries = { BRK }
+	type = ship
+	ship_types = { medium_ship_screen_unit }
+	fallback_name = "Clipper %d"
+	unique = {
+		"A Howling Return" "Alluring Molerat" "Black Squid" "Bloody Damnation" "Buccaneer" "Carry On" "Crow-Hawk" "Free To Choose" "Ghostly Howl" "Green Roger" "Grief of The Plague" "Lacky's Luck" "Madness Sets In" "Millin' About" "Plank Lewis" "Sadness of The Fleet" "Sanguine Deadman" "Seen Better Days" "Short Amber" "Slow Moe" "Smells Like Victory" "Sucker Punch" "The New Eel" "The Price" "Unsinkable V" "Well-Made Clipper" "Wild Dreg"
+	}
+}
+
+BRK_HEAVY = {
+	name = NAME_THEME_SHIPS_BRK_HEAVY
+	for_countries = { BRK }
+	type = ship
+	ship_types = { heavy_ship_unit }
+	fallback_name = "Brig %d"
+	unique = {
+		"Cannon Walled" "Cap For Your Thoughts" "Cash In" "Chasing Radstorms" "Delightfully Lucky" "Dirty Russo's Bluff" "Exotic Renaissance" "Fluttering Rage" "Fresh Demon" "Gold North" "Hellish Corsair" "Lil' Galley" "Maddened Intrepid" "Magical Dabloon" "Night Lightning" "Now Come" "Now We Fight" "Ready or What?" "Rude Tortuga" "Runs Like The Wind" "Sarsaparilla Princess" "Sarsaparilla Sunrise" "Sea Rovers" "Serenity Prince" "Silent Celebration" "Sir Captain Molerat XVI" "The Deep Below" "The Presumed Thunder" "The Terror of Death" "Up and Up" "Victory Raider"
+	}
+}
+
+BRK_SUPER_HEAVY = {
+	name = NAME_THEME_SHIPS_BRK_SUPER_HEAVY
+	for_countries = { BRK }
+	type = ship
+	ship_types = { super_heavy_ship_unit }
+	fallback_name = "Galleon %d"
+	unique = {
+		"Adventure Galley" "All Fire Front" "Broadsider" "Fancy" "Full Frontal" "Golden Hide" "Hammer Down!" "Happy Delivery" "Jolley Roger" "Queen Victoria's Revenge" "Rising Sun" "Sister of War" "Speaker" "The Revenge" "The Rose Pink"
+	}
+}

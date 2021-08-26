@@ -1,0 +1,83 @@
+change_preperation = {
+	if = {
+		limit = { NOT = { has_global_flag = moj_mot_operation_sunburst } } # Stop the tooltip showing if Op: Sun has started
+		set_temp_variable = { temp_preperation_display = change_preperation }
+		if = {
+			limit = {
+				check_variable = {
+					var = temp_preperation_display
+					value = 0
+					compare = less_than
+				}
+			}
+			multiply_temp_variable = { temp_preperation_display = -1 }
+		}
+		custom_effect_tooltip = change_preperation_tt
+		add_to_variable = { MOJ.preperation = change_preperation }
+		calculate_preparation = yes
+		MOJ = { force_update_dynamic_modifier = yes }
+		MOT = { force_update_dynamic_modifier = yes }
+	}
+}
+
+calculate_preparation = {
+	MOJ = {
+		clamp_variable = {
+			var = preperation
+			min = -30
+			max = 30
+		}
+		#Temp Prep = shorthand for prep
+		set_temp_variable = { temp_preperation = preperation }
+		#Do different code depending on if positive or negative, hand out MOJ buffs if positive, MOT buffs if negative
+		if = {
+			limit = {
+				check_variable = {
+					var = temp_preperation
+					value = 0
+					compare = greater_than
+				}
+			}
+			#Sets MOJ's mod to a positive value if prep is better then 0
+			set_variable = { preperation_mod = temp_preperation }
+			#Sets it to a smaller scale, so it fits in with what the modifier expects
+			multiply_variable = { preperation_mod = 0.01 }
+
+			#This is used in the scripted gui, needs to be positive
+			set_variable = { preperation_absolute_value = temp_preperation }
+
+			#Sets MOT to use negative variables in this case?
+			MOT = { set_variable = { preperation_mod = MOJ.temp_preperation } }
+			MOT = { multiply_variable = { preperation_mod = -0.01 } }
+		}
+		else = {
+			#Should be positive for MOT in this case
+			MOT = { set_variable = { preperation_mod = MOJ.temp_preperation } }
+			#Shrink the var so it fits in the modifier
+			MOT = { multiply_variable = { preperation_mod = -0.01 } }
+
+			#Inverts this so that it never displays as negative in the gui
+			multiply_temp_variable = { temp_preperation = -1 }
+			set_variable = { preperation_absolute_value = temp_preperation }
+
+			set_variable = { preperation_mod = temp_preperation }
+			multiply_variable = { preperation_mod = -0.01 }
+		}
+	}
+}
+
+change_op_sun_countdown = {
+	custom_effect_tooltip = change_op_sun_countdown_tt
+	hidden_effect = {
+		set_variable = { global.op_sun_countdown = days_mission_timeout@operation_sunburst_countdown }
+		subtract_from_variable = { var = global.op_sun_countdown value = gloabl.op_sun_countdown_temp }
+		clamp_variable = { var = global.op_sun_countdown min = 1 }
+		every_country = {
+			limit = {
+				has_active_mission = operation_sunburst_countdown
+			}
+			remove_mission = operation_sunburst_countdown
+			activate_mission = operation_sunburst_countdown
+		}
+	}
+}

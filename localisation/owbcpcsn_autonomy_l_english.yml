@@ -1,0 +1,44 @@
+﻿l_english:
+
+#Enclave
+  ##Raiders
+      autonomy_enclave_r3_md:0"Military Sector"
+      autonomy_enclave_r2_ra:0"Reconstruction Authority"
+      autonomy_enclave_r1_pr:0"Pacified Region"
+  ##Tribals
+      autonomy_enclave_t3_rt:0"Regulated Tribe"
+      autonomy_enclave_t2_fr:0"Federal Reservation"
+      autonomy_enclave_t1_ip:0"Integrated Protectorate"
+  ##Settlers
+      autonomy_enclave_s3_as:0"Associated State"
+      autonomy_enclave_s2_cw:0"Commonwealth"
+      autonomy_enclave_s1_ft:0"Federal Territory"
+  ##Army
+      autonomy_enclave_a3_pm:0"Private Military"
+      autonomy_enclave_a2_mg:0"Militia Group"
+      autonomy_enclave_a1_fa:0"Federal Army"
+  ##Unique
+      autonomy_enclave_u1_TLA:0"Mexican Provisional Government"
+      autonomy_enclave_u2_DAM:0"Hoover Dam"
+#NCR
+  ##Science
+      autonomy_ncr_o3_ob:0"OSI Branch"
+      autonomy_ncr_o2_ob:0"OSI Branch"
+      autonomy_ncr_o1_ob:0"OSI Branch"
+  ##Military
+      autonomy_ncr_m3_md:0"Military District"
+      autonomy_ncr_m2_md:0"Military District"
+      autonomy_ncr_m1_md:0"Military District"
+  ##Jail
+      autonomy_ncr_j3_cc:0"Correction Center"
+      autonomy_ncr_j2_cc:0"Correction Center"
+      autonomy_ncr_j1_cc:0"Correction Center"
+  ##Raider
+      autonomy_ncr_r3_ip:0"Insurgent Protectorate"
+  ##Tribal
+      autonomy_ncr_t3_tr:0"Tribal Reservation"
+  ##Setler
+      autonomy_ncr_s3_ez:0"Economic Zone"
+  ##The Rest
+      autonomy_ncr_v2_ps:0"Protected State"
+      autonomy_ncr_v1_rt:0"Republic's Territory"  

@@ -1,0 +1,43 @@
+﻿NAV_LIGHT = {
+	name = NAME_THEME_SHIPS_NAV_LIGHT
+	for_countries = { NAV }
+	type = ship
+	ship_types = { light_ship_unit }
+	fallback_name = "Tribal Canoe %d"
+	unique = {
+		"Athabaskan" "Confidence Sure" "Core-Cut Log" "Diné" "Guaranteed Catch" "Hard Driftwood" "Knowing" "No Trouble" "Nomad" "Quality Unrivaled" "River Dancer" "Serpet" "Silver Fish" "Sister Tribe" "Steady Undouted" "Sturdy-Float" "Swift Rower" "Upstreamer" "Utah Hunter" "Water Dog" "Well Crafted"
+	}
+}
+
+NAV_MEDIUM = {
+	name = NAME_THEME_SHIPS_NAV_MEDIUM
+	for_countries = { NAV }
+	type = ship
+	ship_types = { medium_ship_screen_unit }
+	fallback_name = "Tribal Boat %d"
+	unique = {
+		"Clan Leader" "Cutter" "Ease of Ride" "First Pioneer" "Float Hogan" "Forager" "Gatherings" "Good-Haul" "Greatly Assured" "If Needed" "Know This River" "Ready On" "Seeing-Far" "Star-Chasing" "Survivors" "Swallow Chief" "Traditions" "Wake Splitter" "Waters Calm" "Wind Catch"
+	}
+}
+
+NAV_HEAVY = {
+	name = NAME_THEME_SHIPS_NAV_HEAVY
+	for_countries = { NAV }
+	type = ship
+	ship_types = { heavy_ship_unit }
+	fallback_name = "Tribal Cruising Vessel %d"
+	unique = {
+		"Balance Maintenance" "Battle Mount" "Bighorner Strong" "Blade Revealed" "Deep Water Crossing" "Four Sacred Mountains" "Hard To Track" "Natural Leader" "Notched Arrow" "Scalper" "Sharpened Tip" "Superior" "Tomahawk" "Trailblazer" "Warchief" "Warrior Bred"
+	}
+}
+
+NAV_SUPER_HEAVY = {
+	name = NAME_THEME_SHIPS_NAV_SUPER_HEAVY
+	for_countries = { NAV }
+	type = ship
+	ship_types = { super_heavy_ship_unit }
+	fallback_name = "Tribal Battleship %d"
+	unique = {
+		"A Second Grand Journey" "Cazador Sting" "Cornered Coyote" "Death Claw" "Dream of the Prosperous Tomorrow" "Feral Yao Guai" "Geacko Fang" "Long and Proud History" "Memory of the Great Fires" "Memory of the Long Walk"
+	}
+}

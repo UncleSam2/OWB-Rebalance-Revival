@@ -1,0 +1,43 @@
+﻿TOC_LIGHT = {
+	name = NAME_THEME_SHIPS_TOC_LIGHT
+	for_countries = { TOC }
+	type = ship
+	ship_types = { light_ship_unit }
+	fallback_name = "Dingy %d"
+	unique = {
+		"A Hole in Deck" "A Year For This" "Authority" "Better Than Nothing" "Durability Debated" "Early Crow" "Equal To Nothing" "Feeling Cocky" "First Responder" "Float Like A Brick" "Floating Scrap" "Ignore Us" "Nuts N' Bolts" "Oldie But A Goodie" "Puddle Worthy" "Ready Always" "Restored Crap" "Rusted Through" "Sailing Smooth" "Service" "The Leftover" "Three-Eyed Fish" "Unrivaled Might" "Up A Creek" "Will Have to Do"
+	}
+}
+
+TOC_MEDIUM = {
+	name = NAME_THEME_SHIPS_TOC_MEDIUM
+	for_countries = { TOC }
+	type = ship
+	ship_types = { medium_ship_screen_unit }
+	fallback_name = "Rust Bucket %d"
+	unique = {
+		"Away, Away, Away!" "Banded Block" "Carry On" "Could've Built A House" "Distraction" "Free To Choose" "If We Must" "Lackies Luck" "Old Country Minuteman" "One For You" "Scrap King" "Seen Better Days" "Should've Built That House" "Shouldn't Try That" "Sick of Water" "Size 'em Up" "Smart Planning" "Smells Like Victory" "Sucker Punch" "Unsinkable V"
+	}
+}
+
+TOC_HEAVY = {
+	name = NAME_THEME_SHIPS_TOC_HEAVY
+	for_countries = { TOC }
+	type = ship
+	ship_types = { heavy_ship_unit }
+	fallback_name = "Cutter %d"
+	unique = {
+		"Away to Old Country" "Cap For Your Thoughts" "Cash In" "Chasing Radstorms" "Diplomacy" "King Molerat XVI" "No More" "Now Come" "Now We Fight" "Old Country Liner" "One of a Kind" "Ready or What?" "Runs Like The Wind" "Sarsaparilla Sunrise" "Serve And Die" "Through Strong" "Up and Up" "Wanna Go, Or What?" "We found This One" "What Else to Life"
+	}
+}
+
+TOC_SUPER_HEAVY = {
+	name = NAME_THEME_SHIPS_TOC_SUPER_HEAVY
+	for_countries = { TOC }
+	type = ship
+	ship_types = { super_heavy_ship_unit }
+	fallback_name = "Battle Boat %d"
+	unique = {
+		"All Fire Front" "Bringing Up The Big Guns" "Broadsider" "Built on the Elite" "Completely Scrap" "Expensive As Hell" "Full Frontal" "Hammer Down!" "No Country For Old Men" "Our Height" "Serve Dogs, What Else is For You?" "Sister of War" "Steel Brunt" "Wall of the People" "Without Elite, There is Nothing"
+	}
+}

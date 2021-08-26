@@ -1,0 +1,63 @@
+﻿l_english:
+#Bel
+  BEL_ballistic_equipment_1: "N99 Service Pistol"
+  BEL_ballistic_equipment_1_short: "10mm Pistol"
+  BEL_ballistic_equipment_1_desc: "The standard issue, large-caliber sidearm of the United States Army before the apocalypse, this large-frame 10mm pistol was made first and foremost for stopping power, as well as mechanical reliability. The simple construction allowing for even the dumbest of grunts to clear jams or misfires is certainly appreciated, while the reinforced body can withstand the harshest of conditions. All those combined make it perfect for wasteland warfare."
+
+  BEL_ballistic_equipment_2: "M16A1 Assault Rifle"
+  BEL_ballistic_equipment_2_short: "M16A1"
+  BEL_ballistic_equipment_2_desc: "The result of scavenging and study of mothballed army equipment depots, the M16A1 is able to be manufactured easily and simply. An improved variant of the base M16 benefiting from a forward assist and improved internal components, it still features a 5.56mm assault rifle platform in a stable, accurate, and now highly reliable package. Perfectly suited for medium range, its full auto feature still lets it be devastating in room clearing."
+
+  BEL_ballistic_equipment_3: "R91 Assault Rifle"
+  BEL_ballistic_equipment_3_short: "Assault Rifle"
+  BEL_ballistic_equipment_3_desc: "A common weapon among the US Army and Commonwealth Guard, the R91 was the standard-issue rifle before the Great War."
+
+  BEL_energy_equipment_1: "Laser Pistol"
+  BEL_energy_equipment_1_short: "Laser Pistol"
+  BEL_energy_equipment_1_desc: "The AER9 was actually not the top laser rifle in service at the time of the Great War. The model line went up to the state-of-the-art AER12, which saw service in a handful of speciality units. The reason that the AER9 is much more commonly found is that it was much sturdier and more reliable than the models that followed."
+
+  BEL_energy_equipment_3:0 "Plasma Defender"
+  BEL_energy_equipment_3_short:0 "P-Defender"
+  BEL_energy_equipment_3_desc:0 "The Plasma Defender was a weapon designed for weapons crew as an alternative to the 10mm pistol when normal pistol's weren't enough to defend themselves."
+
+#EDA
+  EDA_ballistic_equipment_1: "N99 Service Pistol"
+  EDA_ballistic_equipment_1_short: "10mm Pistol"
+  EDA_ballistic_equipment_1_desc: "The standard issue, large-caliber sidearm of the United States Army before the apocalypse, this large-frame 10mm pistol was made first and foremost for stopping power, as well as mechanical reliability. The simple construction allowing for even the dumbest of grunts to clear jams or misfires is certainly appreciated, while the reinforced body can withstand the harshest of conditions. All those combined make it perfect for wasteland warfare."
+
+  EDA_ballistic_equipment_2:0 "Hunting Shotgun"
+  EDA_ballistic_equipment_2_short:0 "Pump-Action"
+  EDA_ballistic_equipment_2_desc:0 "Locked and loaded to take out anything the wasteland can throw, the Hunting Shotgun is a 12 gauge classic intended for more stopping power and better buckshot pattern at medium range over other common scattergun found throughout the waste. With its pump operation able to fire special loads, it is suited to any purpose ranging from hunting to hurling someone across the room with a slug."
+
+  EDA_ballistic_equipment_3: "MP5K"
+  EDA_ballistic_equipment_3_short: "MP5K"
+  EDA_ballistic_equipment_3_desc: "A shortened machine pistol version of an MP5 was introduced; the MP5K (K from the German word Kurz = "short") was designed for close quarters battle use by clandestine operations and special services."
+
+  EDA_energy_equipment_1: "Laser Pistol"
+  EDA_energy_equipment_1_short: "Laser Pistol"
+  EDA_energy_equipment_1_desc: "The AER9 was actually not the top laser rifle in service at the time of the Great War. The model line went up to the state-of-the-art AER12, which saw service in a handful of speciality units. The reason that the AER9 is much more commonly found is that it was much sturdier and more reliable than the models that followed."
+
+  EDA_energy_equipment_2:0 "Zetan Atomizer"
+  EDA_energy_equipment_2_short:0 "Zetan Atomizer"
+  EDA_energy_equipment_2_desc:0 "The standard Zetan sidearm, owing to it's more advanced containment field capabilities, the Atomizer owe it's name to the many weapon tests carried out on foolish earthling captives to see exactly how much atomization the weapon is truly capable off. The tests were obviously very lengthy just to make sure, and the answer was, obviously, a hell of a lot."
+
+  EDA_energy_equipment_3:0 "Zetan Disintegrator"
+  EDA_energy_equipment_3_short:0 "Zetan Disintegrator"
+  EDA_energy_equipment_3_desc:0 "An absolute classic when it comes to foolish earthling extermination, the Disintegrator is the perfect long rifles to snipe at fleeing inferior beings or outright incinerate them into a pile of ash in open combat. Many earthlings think themselves safe inside their power armor, and combat suits. Let's see how safe they feel when said power armor shatters and disembowel them!"
+  EDA_energy_equipment_4: "M-191 Experimental Laser Weapon"
+  EDA_energy_equipment_4_short: "M-191"
+  EDA_energy_equipment_4_desc: "The M-191 was an experimental laser weapon that was tested shortly before the war, with it's intended to be used for both dipolmatic security as well as in space combat by the Spaceforce. Reportedly it saw action at the Sea of Tranquility and proved decisive in the victory."
+
+#New Victoria
+
+  VIC_infantry_equipment_1:0 "Black Powder Pistol"
+  VIC_infantry_equipment_1_short:0 "Flintlock Pistol"
+  VIC_infantry_equipment_1_desc:0 "Flintlocks are weapons from far before the Great War, and while inefficient they are easy to produce, along with their ammunition, making them a common sight within the New Victorian army."
+
+  VIC_ballistic_equipment_1:0 "Black Powder Rifle"
+  VIC_ballistic_equipment_1_short:0 "Flintlock Musket"
+  VIC_ballistic_equipment_1_desc:0 "Flintlock Muskets are far more accurate then their pistol counterparts, and have a longer range but at the cost of a longer reload time and production. They are the mainline weapon of any soldier and militiaman of New victoria."
+
+  VIC_ballistic_equipment_2: "Lever-Action Rifle"
+  VIC_ballistic_equipment_2_short: "Brush Carbine"
+  VIC_ballistic_equipment_2_desc: "Bringing a touch of old-world western action to post-war firefights, the updated 1886 Winchester is a classical weapon of the Victorian-era within the United States, mainly used by Cowboys and Cavalry units. While complex to produce, it's stopping power and accuracy can take down any opponent within reason."

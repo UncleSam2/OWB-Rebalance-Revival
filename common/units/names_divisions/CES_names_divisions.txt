@@ -1,0 +1,167 @@
+﻿# Division template historical names system. Is a new method of naming the divisions based on the names-group assigned to it's template.
+# If we run out of all historical names, the names will be assigned in the old way.
+#
+# Each group has a made up tag. Use it if you want to append more, or replace existing names with the extra txt files (modding).
+#
+# for_countries - lists all countries that can use it. If empty, or entire tag is missing, all countries in the world can use it.
+#
+# can_use - is a trigger that locks/unlocks the group under specific circumstances. The trigger is in a country scope.
+#
+# division_types - is a list of tokens to corresponding unit types. A player can in fact use any group of names for a div.template
+#                  however this tag is a helper for an automated choice (for AI, or if the group must switch on it's own, because
+#                  for example the current one is no longer available due to the can_use trigger saying so).
+#                  In automated choice, the division template must have at least 1 of the following types for it to be chosen.
+#
+# fallback_name - Is going to be used if we run out of the scripted historical names. If you want to use the old division naming
+#                 mechanics to be used for fallbacks, then just skip this option.
+#
+# unordered - It's a list of historical division names that did not have a number. Regardless if such names happened in history or not
+#             this option is available here mainly for a mods.
+#
+# ordered - Is a list of all historical names.
+#           Numbers must start from 1 and up.
+#           Numbers can't repeat in one scope.
+#           If you script the name for this group, at the same number (for example in a mod in another file), the name will be override.
+#           All arguments between the brackets must be separated by spaces. Each argument is wrapped in "quotas".
+#           1st argument = The name. It must contain either:
+#                          %d (for decimal number placement)
+#                          %s (for string number placement - ROMAN numbers like XIV).
+#           2nd argument is optional = A localizable text describing this historical division. The text will be visible in the tooltip
+#                                      where you choose the historical division name.
+#           3rd argument is optional = An URL preferably pointing to the WIKI. It's a future feature that is not currently working in
+#                                      the current game version.
+
+_CES_INF_01 = {
+	name = "Legion Infantry"
+
+	for_countries = { CES LAC }
+
+	can_use = { always = yes }
+
+	division_types = { "infantry" }
+
+	# Number reservation system will tie to another group.
+	# link_numbering_with = { VLT_INF_02 }
+
+	fallback_name = "Legio %s"
+
+	# Names with numbers (only one number per entry).
+	# It's okay to have gaps in numbering.
+	ordered = {
+		1 = { "Legio %s Vexillum Virgam" }
+		2 = { "Legio %s Caeruleum Pater" }
+		3 = { "Legio %s Fur Calceus" }
+		4 = { "Legio %s Coconino" }
+		5 = { "Legio %s Tonto" }
+		6 = { "Legio %s Campis Cursores" }
+		7 = { "Legio %s Janus" }
+		8 = { "Legio %s Phoenix Septentrionalis" }
+		9 = { "Legio %s Saturn" }
+		10 = { "Legio %s Sol Canis" }
+		11 = { "Legio %s Aureus Vallis" }
+		12 = { "Legio %s Rubrum Mensa" }
+		13 = { "Legio %s Signa Sexaginta" }
+		14 = { "Legio %s Wupatki" }
+		15 = { "Legio %s Kaibabs" }
+		16 = { "Legio %s Tres Viae" }
+		17 = { "Legio %s Grahamus Mons" }
+		18 = { "Legio %s Ferrata" }
+		19 = { "Legio %s Victrix" }
+		20 = { "Legio %s Phrey Suum Apex" }
+		21 = { "Legio %s Cortex Corium" }
+		22 = { "Legio %s Orcus" }
+		23 = { "Legio %s Nigrum Pes" }
+		24 = { "Legio %s Castrum Clovis" }
+		25 = { "Legio %s Penna Filii" }
+		26 = { "Legio %s Vetus Vegas" }
+		27 = { "Legio %s Oro Vallis" }
+		28 = { "Legio %s Pellis Cursores" }
+		29 = { "Legio %s Insidiis" }
+		30 = { "Legio %s Castrum Summers" }
+		31 = { "Legio %s Acies Lignum" }
+		32 = { "Legio %s Suspensus Canes" }
+		33 = { "Legio %s Liber" }
+		34 = { "Legio %s Cornu Apex" }
+		35 = { "Legio %s Pingitur Deserto Iudaeae" }
+		36 = { "Legio %s Hachita Locus" }
+		37 = { "Legio %s Phoenix Meridionalis" }
+		38 = { "Legio %s Signa Decem" }
+		39 = { "Legio %s Rubrum Petram" }
+		40 = { "Legio %s Mercury" }
+		41 = { "Legio %s Pingitur Apex" }
+		42 = { "Legio %s Retorta Capilli" }
+		43 = { "Legio %s Alaudae" }
+		44 = { "Legio %s Novem Digitos" }
+		45 = { "Legio %s Valeria Victrix" }
+		46 = { "Legio %s Lignum Cedri" }
+		47 = { "Legio %s Argentum Civitas" }
+		48 = { "Legio %s Petram Vadum" }
+		49 = { "Legio %s Pingitur Petram" }
+		50 = { "Legio %s Bell Suum Villa" }
+		51 = { "Legio %s Quernado" }
+		52 = { "Legio %s Pagus" }
+		53 = { "Legio %s Occupandum Saltum" }
+		54 = { "Legio %s Gallup" }
+		55 = { "Legio %s Logan Suum Cataracta" }
+		56 = { "Legio %s Holloman" }
+		57 = { "Legio %s Rana Hominum" }
+		58 = { "Legio %s Geminae Matres" }
+		59 = { "Legio %s Prescott" }
+		60 = { "Legio %s Chinili" }
+		61 = { "Legio %s Mars" }
+		62 = { "Legio %s Viridi Villam" }
+		63 = { "Legio %s Gallo Montes" }
+		64 = { "Legio %s Sol" }
+		65 = { "Legio %s Ursus Campestris" }
+		66 = { "Legio %s Adiutrix" }
+		67 = { "Legio %s Postone" }
+		68 = { "Legio %s Gaudalupe Apex" }
+		69 = { "Legio %s Dickus Percussor" }
+		70 = { "Legio %s Nigrum Canyon" }
+		71 = { "Legio %s Occidentis Mons" }
+		72 = { "Legio %s Gemina" }
+		73 = { "Legio %s Cinereus Mont" }
+		74 = { "Legio %s Nigrum Spatium" }
+		75 = { "Legio %s Armentum" }
+		76 = { "Legio %s Monahamsis" }
+		77 = { "Legio %s Jupiter" }
+		78 = { "Legio %s Roswell Ruinas" }
+		79 = { "Legio %s Neptune" }
+		80 = { "Legio %s Tusayana" }
+		81 = { "Legio %s Longus Cultro" }
+		82 = { "Legio %s Arena Locus" }
+		83 = { "Legio %s Caddoa" }
+		84 = { "Legio %s Celeri Pede" }
+		85 = { "Legio %s Walsh" }
+		86 = { "Legio %s Vulcan" }
+		87 = { "Legio %s Zunica" }
+		88 = { "Legio %s Mora" }
+		89 = { "Legio %s Dorsa" }
+		90 = { "Legio %s Fulminata" }
+		91 = { "Legio %s Nasum Ruptor" }
+		92 = { "Legio %s Gilatia" }
+		93 = { "Legio %s Sol Rubrum Civitas" }
+		94 = { "Legio %s Apachu" }
+		95 = { "Legio %s Apicem Calvitium" }
+		96 = { "Legio %s Marmor Canyon" }
+		97 = { "Legio %s Flavia Felix" }
+		98 = { "Legio %s Vexillifer Sal" }
+		99 = { "Legio %s Macriana" }
+		100 = { "Legio %s Nigrum Sol" }
+		101 = { "Legio %s El Malpais" }
+		102 = { "Legio %s Fredonia" }
+		103 = { "Legio %s Sonora" }
+		104 = { "Legio %s Bacchus" }
+		105 = { "Legio %s Bastion" }
+		106 = { "Legio %s Apollo" }
+		107 = { "Legio %s Bernalillinaris" }
+		108 = { "Legio %s Arena Alba" }
+		109 = { "Legio %s Fontes Persici" }
+		110 = { "Legio %s Wikieup" }
+		111 = { "Legio %s Olim Sol" }
+		112 = { "Legio %s Flavia Firma" }
+		113 = { "Legio %s Rapax" }
+		114 = { "Legio %s Cibecue" }
+		115 = { "Legio %s Claunch" }
+	}
+}

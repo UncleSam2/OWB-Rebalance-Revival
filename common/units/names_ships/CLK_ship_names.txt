@@ -1,0 +1,43 @@
+﻿CLK_LIGHT = {
+	name = NAME_THEME_SHIPS_CLK_LIGHT
+	for_countries = { CLK }
+	type = ship
+	ship_types = { light_ship_unit }
+	fallback_name = "Delta Slave Chaser %d"
+	unique = {
+		"Blood Hound" "Chase On!" "Guaranteed Catch" "Hard Driftwood" "Never Eluded" "No Better" "No Trouble" "Overtime" "Quicker Than Them" "Serpet" "Sturdy-Float" "The Hunt" "The Run-Down" "Tracker Jack" "Upstreamer" "Water Dog" "Working Hard"
+	}
+}
+
+CLK_MEDIUM = {
+	name = NAME_THEME_SHIPS_CLK_MEDIUM
+	for_countries = { CLK }
+	type = ship
+	ship_types = { medium_ship_screen_unit }
+	fallback_name = "Delta Slaver Boat %d"
+	unique = {
+		"2000 For The Lot" "Broken" "Cutter" "Deep Hull" "Forager" "Fresh Caught" "Gagged" "Gatherings" "Good-Haul" "If Needed" "Know This River" "Let's Make A Deal" "Packed In" "Reconditioning" "Speack Not" "Unworthy Aboard" "Wake Splitter"
+	}
+}
+
+CLK_HEAVY = {
+	name = NAME_THEME_SHIPS_CLK_HEAVY
+	for_countries = { CLK }
+	type = ship
+	ship_types = { heavy_ship_unit }
+	fallback_name = "Delta Slave Barge %d"
+	unique = {
+		"200 This Month" "A Tribe of Strength" "Beneath Us" "Blade Revealed" "Bring The Chains" "Fight On Or Begone!" "Hard To Track" "Only The Deserving Live" "Raise Arms, Cowards!" "Sharpened Tip" "Superior" "Survival of the Fittest" "Tomahawk" "Warrior Bred" "We Adapt" "We Purge Weakness"
+	}
+}
+
+CLK_SUPER_HEAVY = {
+	name = NAME_THEME_SHIPS_CLK_SUPER_HEAVY
+	for_countries = { CLK }
+	type = ship
+	ship_types = { super_heavy_ship_unit }
+	fallback_name = "Delta Tradeship %d"
+	unique = {
+		"Death Claw" "Feral Yao Guai" "Geacko Fang" "Run Fast And Die Tired" "Submit, or Perish" "Such Is Life" "They Were Weak, We Are Strong" "Those Taken Are Lucky, They Live"
+	}
+}

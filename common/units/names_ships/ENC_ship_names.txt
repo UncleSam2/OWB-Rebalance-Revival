@@ -1,0 +1,43 @@
+﻿ENC_LIGHT = {
+	name = NAME_THEME_SHIPS_ENC_LIGHT
+	for_countries = { ENC }
+	type = ship
+	ship_types = { light_ship_unit }
+	fallback_name = "Destroyer %d"
+	unique = {
+		"Aaron Ward" "Abbot" "Abner Read" "Adams" "Agerholm" "Albert W Grant" "Alfred A Cunningham" "Allen M Sumner" "Ammen" "Anderson" "Anthony" "Arnold J Isbell" "Aulick" "Ault" "Aylwin" "Bache" "Bagley" "Bailey" "Balch" "Baldwin" "Bancroft" "Barney" "Barry" "Barton" "Basilone" "Bausell" "Beale" "Bearss" "Beatty" "Bell" "Benham" "Benner" "Bennett" "Bennion" "Benson" "Biddle" "Bigelow" "Black" "Blandy" "Blue" "Bordelon" "Borie" "Boyd" "Boyle" "Bradford" "Braine" "Brinkley Bass" "Bristol" "Brown" "Brownson" "Brush" "Bryant" "Buchanan" "Buck" "Bullard" "Burns" "Bush" "Butler" "Caldwell" "Callaghan" "Caperton" "Capps" "Carmick" "Carpenter" "Case" "Cassin Young" "Cassin" "Champlin" "Charles Ausburne" "Charles F Adams" "Charles F Hughes" "Charles H Roan" "Charles J Badger" "Charles P Cecil" "Charles R Ware" "Charles S Sperry" "Charrette" "Chauncey" "Chevalier" "Clarence K Bronson" "Clark" "Claxton" "Coghlan" "Cogswell" "Colahan" "Colhoun" "Collett" "Compton" "Cone" "Conner" "Converse" "Conway" "Cony" "Conyngham" "Cooper" "Corry" "Cotten" "Cowell" "Cowie" "Craven" "Cummings" "Cushing" "Dale" "Daly" "Damato" "Dashiell" "David W Taylor" "Davis" "Davison" "De Haven" "Decatur" "Dennis J Buckley" "Dewey" "Doran" "Dortch" "Douglas H Fox" "Downes" "Doyle" "Drayton" "Drexler" "Du Pont" "Duncan" "Dunlap" "Dyess" "Dyson" "Earle" "Eaton" "Eberle" "Edison" "Edson" "Ellet" "Ellyson" "Emmons" "Endicott" "English" "Epperson" "Erben" "Ericsson" "Ernest G Small" "Eugene A Greene" "Evans" "Everett F Larson" "Eversole" "Fanning" "Farenholt" "Farragut" "Fechteler" "Fiske" "Fitch" "Fletcher" "Floyd B Parks" "Flusser" "Foote" "Forrest Royal" "Forrest Sherman" "Forrest" "Frank E Evans" "Frank Knox" "Frankford" "Franks" "Frazier" "Fred T Berry" "Fullam" "Furse" "Gainard" "Gansevoort" "Gatling" "Gearing" "George K MacKenzie" "Gherardi" "Gillespie" "Gleaves" "Glennon" "Goodrich" "Grayson" "Gregory" "Gridley" "Guest" "Gurke" "Gwin" "Gyatt" "Haggard" "Hailey" "Hale" "Halford" "Hall" "Halligan" "Halsey Powell" "Hambleton" "Hammann" "Hamner" "Hank" "Hanson" "Haraden" "Harding" "Harlan R Dickson" "Harold J Ellison" "Harrison" "Harry E Hubbard" "Harry F Bauer" "Hart" "Harwood" "Hawkins" "Haynsworth" "Hazelwood" "Healy" "Heermann" "Helm" "Henderson" "Henley" "Henry A Wiley" "Henry B Wilson " "Henry W Tucker" "Herbert J Thomas" "Herndon" "Heywood L Edwards" "Hickox" "Higbee" "Hilary P Jones" "Hobby" "Hobson" "Hoel" "Holder" "Hollister" "Hopewell" "Howorth" "Hudson" "Hugh Purvis" "Hugh W Hadley" "Hughes" "Hull" "Hunt" "Hutchins" "Hyman" "Ingersoll" "Ingraham" "Ingraham" "Irwin" "Isherwood" "Izard" "J William Ditter" "James C Owens" "James E Kyes" "Jarvis" "Jeffers" "Jenkins" "John A Bole" "John D Henley" "John Hood" "John King" "John Paul Jones" "John R Craig" "John R Pierce" "John Rodgers" "John S McCain" "John W Thomason" "John W Weeks" "Johnston" "Jonas Ingram" "Joseph P Kennedy Jr" "Jouett" "Kalk" "Kearny" "Kendrick" "Kenneth D Bailey" "Keppler" "Kidd" "Killen" "Kimberly" "Knapp" "Knight" "Laffey" "Lamson" "Lang" "Lansdale" "Lansdowne" "Lardner" "Laub" "Lawrence" "Laws" "Leary" "Leonard F Mason" "Leutze" "Lewis Hancock" "Lindsey" "Little" "Livermore" "Lloyd Thomas" "Lofberg" "Longshaw" "Lowry" "Luce" "Ludlow" "Lyman K Swenson" "Lynde McCormick" "MacKenzie" "Macdonough" "Macomb" "Maddox" "Madison" "Mahan" "Manley" "Mannert L Abele" "Mansfield" "Marshall" "Massey" "Maury" "Mayo" "Mayrant" "McCaffery" "McCall" "McCalla" "McCook" "McCord" "McDermut" "McDougal" "McGowan" "McKean" "McKee" "McLanahan" "McNair" "Meade" "Melvin" "Meredith" "Mertz" "Mervine" "Metcalf" "Miller" "Mitscher" "Moale" "Moffett" "Monaghan" "Monssen" "Morris" "Morrison" "Morton" "Mugford" "Mullinnix" "Murphy" "Murray" "Mustin" "Myles C Fox" "Nelson" "New" "Newcomb" "Newman K Perry" "Niblack" "Nicholson" "Nields" "Norman Scott" "Norris" "O Bannon" "O Brien" "O'Hare" "Ordronaux" "Orleck" "Owen" "Ozbourn" "Parker" "Parsons" "Patterson" "Paul Hamilton" "Perkins" "Phelps" "Philip" "Picking" "Plunkett" "Porter" "Porterfield" "Power" "Preston" "Prichett" "Pringle" "Purdy" "Putnam" "Quick" "Radford" "Ralph Talbot" "Reid" "Remey" "Renshaw" "Rhind" "Rich" "Richard B Anderson" "Richard E Kraus" "Richard P Leary" "Richard S Edwards" "Ringgold" "Robert A Owens" "Robert H McCard" "Robert H Smith" "Robert K Huntington" "Robert L Wilson" "Robinson" "Rodman" "Roe" "Rogers" "Rooks" "Ross" "Rowan" "Rowe" "Rupertus" "Russell" "Sampson" "Samuel B Roberts" "Samuel N Moore" "Sarsfield" "Satterlee" "Saufley" "Schroeder" "Seaman" "Selfridge" "Seymour D Owens" "Shannon" "Shaw" "Shea" "Shelton" "Shields" "Shubrick" "Sigourney" "Sigsbee" "Sims" "Smalley" "Smith" "Soley" "Somers" "Southerland" "Spence" "Sproston" "Stack" "Stanly" "Steinaker" "Stembel" "Stephen Potter" "Sterett" "Stevens" "Stevenson" "Stickell" "Stockham" "Stockton" "Stoddard" "Stormes" "Stribling" "Strong" "Swanson" "Taussig" "Taylor" "Terry" "Thatcher" "The Sullivans" "Theodore E Chandler" "Thomas E Fraser" "Thompson" "Thorn" "Tillman" "Timmerman" "Tingey" "Tolman" "Towers" "Trathen" "Trippe" "Tucker" "Turner Joy" "Turner" "Twiggs" "Twining" "Uhlmann" "Van Valkenburgh" "Vesole" "Vogelgesang" "Wadleigh" "Wadsworth" "Wainwright" "Waldron" "Walke" "Walker" "Wallace L Lind" "Waller" "Warrington" "Watts" "Wedderburn" "Welles" "Wickes" "Wiley" "Wilkes" "Wilkinson" "Willard Keith" "William C Lawe" "William D Porter" "William M Wood" "William R Rush" "Willis A Lee" "Wilson" "Wiltsie" "Winslow" "Witek" "Woodworth" "Woolsey" "Worden" "Wren" "Yarnall" "Young" "Zellars"
+	}
+}
+
+ENC_MEDIUM = {
+	name = NAME_THEME_SHIPS_ENC_MEDIUM
+	for_countries = { ENC }
+	type = ship
+	ship_types = { medium_ship_screen_unit }
+	fallback_name = "Light Cruiser %d"
+	unique = {
+		"Amsterdam" "Astoria" "Atlanta" "Biloxi" "Birmingham" "Boise" "Brooklyn" "Buffalo" "Chattanooga" "Cheyenne" "Cincinnati" "Cleveland" "Columbia" "Concord" "Dayton" "Denver" "Detroit" "Duluth" "Fargo" "Flint" "Fresno" "Galveston" "Gary" "Helena" "Honolulu" "Houston" "Huntington" "Juneau" "Little Rock" "Manchester" "Marblehead" "Memphis" "Miami" "Milwaukee" "Mobile" "Montpelier" "Nashville" "New Haven" "Newark" "Oakland" "Oklahoma City" "Omaha" "Pasadena" "Philadelphia" "Phoenix" "Portsmouth" "Portsmouth" "Providence" "Providence" "Raleigh" "Reno" "Richmond" "Roanoke" "San Diego" "San Juan" "Santa Fe" "Savannah" "Spokane" "Springfield" "St. Louis" "Tallahassee" "Topeka" "Trenton" "Tucson" "Vallejo" "Vicksburg" "Vincennes" "Wilkes-Barre" "Wilmington" "Worcester"
+	}
+}
+
+ENC_HEAVY = {
+	name = NAME_THEME_SHIPS_ENC_HEAVY
+	for_countries = { ENC }
+	type = ship
+	ship_types = { heavy_ship_unit }
+	fallback_name = "Heavy Cruiser %d"
+	unique = {
+		"Albany" "Astoria" "Augusta" "Baltimore" "Boston" "Bremerton" "Bridgeport" "Cambridge" "Canberra" "Chester" "Chicago" "Columbus" "Dallas" "Des Moines" "Fall River" "Gary" "Helena" "Houston" "Indianapolis" "Kansas City" "Los Angeles" "Louisville" "Macon" "Minneapolis" "New Orleans" "Newport News" "Norfolk" "Northampton" "Oregon City" "Pensacola" "Pittsburgh" "Portland" "Quincy" "Roanoke" "Rochester" "Salem" "Salt Lake City" "San Francisco" "Scranton" "St. Paul" "Toledo" "Tulsa" "Tuscaloosa" "Vallejo" "Vincennes" "Wichita" "Worcester"
+	}
+}
+
+ENC_SUPER_HEAVY = {
+	name = NAME_THEME_SHIPS_ENC_SUPER_HEAVY
+	for_countries = { ENC }
+	type = ship
+	ship_types = { super_heavy_ship_unit }
+	fallback_name = "Battleship %d"
+	unique = {
+		"Alabama" "Arizona" "Arkansas" "California" "Colorado" "Connecticut" "Delaware" "Florida" "Idaho" "Illinois" "Indiana" "Iowa" "Kansas" "Kentucky" "Louisiana" "Maine" "Maryland" "Massachusetts" "Michigan" "Minnesota" "Mississippi" "Missouri" "Montana" "Nebraska" "Nevada" "New Hampshire" "New Hampshire" "New Jersey" "New Mexico" "New York" "North Carolina" "North Dakota" "Ohio" "Oklahoma" "Oregon" "Pennsylvania" "Rhode Island" "South Carolina" "South Dakota" "Tennessee" "Texas" "Utah" "Vermont" "Virginia" "Washington" "West Virginia" "Wisconsin" "Wyoming"
+	}
+}

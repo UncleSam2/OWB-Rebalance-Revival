@@ -1,0 +1,69 @@
+equipments = {
+  skate_equipment = {
+    is_archetype = yes
+    picture = archetype_motorized_equipment
+    is_buildable = no
+    type = motorized
+    group_by = archetype
+
+    interface_category = interface_category_land
+
+    upgrades = {
+    }
+
+    #Space taken in convoy
+    lend_lease_cost = 5
+    reliability = 0.65
+    build_cost_ic = 1
+    resources = {
+    }
+  }
+
+  skate_equipment_1 = {
+    archetype = skate_equipment
+    priority = 10
+    maximum_speed = 6
+    reliability = 0.7
+    visual_level = 0
+
+    soft_attack = 1
+    hard_attack = 1
+    ap_attack = 3
+    breakthrough = 2
+
+    #Space taken in convoy
+    lend_lease_cost = 5
+
+    build_cost_ic = 1.5
+    resources = {
+      metal = 1
+    }
+  }
+
+  skate_equipment_2 = {
+    archetype = skate_equipment
+		parent = skate_equipment_1
+    priority = 20
+    maximum_speed = 10
+    reliability = 0.6
+    visual_level = 1
+
+    soft_attack = 2
+    hard_attack = 2
+    ap_attack = 10
+    breakthrough = 4
+
+    supply_consumption = 0.01
+    fuel_consumption = 0.1
+
+    #Space taken in convoy
+    lend_lease_cost = 5
+
+    build_cost_ic = 3
+    resources = {
+      metal = 1
+      water = 1
+    }
+  }
+}
+# vim: set ft=pdx ts=2 sw=2 tw=79 :

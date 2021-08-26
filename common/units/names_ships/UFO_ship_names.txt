@@ -1,0 +1,43 @@
+﻿UFO_LIGHT = {
+	name = NAME_THEME_SHIPS_UFO_LIGHT
+	for_countries = { UFO }
+	type = ship
+	ship_types = { light_ship_unit }
+	fallback_name = "Epsilon %d"
+	unique = {
+		"16-LVW" "18O9-QY" "222-P" "34VSFR" "420-B" "52-BIGA" "69D-XYI" "7J-GRH" "81-BBRG" "83-A-4" "8BECB-Z" "9-Q6-E" "ASMT-R5" "B-OIS" "B2-YVB" "C-3PO" "CPO-9" "E-40-D" "EU-QA" "F77U-ZF" "G9-QV-2" "GDC-Q" "GV-5OZ4" "H38-DW" "HBO-HD" "I-PL1G-F" "I8-Z-FTW" "IS-19" "K-Q-5ND" "KE-P-EV" "KK-W29-H" "KP-6OG-M" "LMA-0" "MGW-5-J" "NAZI-6" "NX-GES" "QIK-76-G" "QQ-M40-F" "R2-D2" "R6-L-HRP" "RLT-GSJ" "S7-3Z7T" "SC-OLK" "VM-188" "VW-IG" "W-2-YM61" "WZ-64O" "X-BTU-YD" "Y-3JK" "Z-HY7S"
+	}
+}
+
+UFO_MEDIUM = {
+	name = NAME_THEME_SHIPS_UFO_MEDIUM
+	for_countries = { UFO }
+	type = ship
+	ship_types = { medium_ship_screen_unit }
+	fallback_name = "Delta %d"
+	unique = {
+		"Bybhi" "Choez" "Cir" "Frispy" "Gneblu" "Grex" "Groz" "Guaz" "Hidhihl" "Humm" "Im'elneo" "Iss" "Ith" "John" "Knucrux" "Koelapt" "Mygrunn" "Oxywth" "Phobby" "Puyq'elt" "Qrot'iehsho" "Qryyr" "Quapt" "Qyz'ex" "Stitrars" "Traalz" "Traudik" "Ualp" "Uddehn" "Um'ua" "Vluystyw" "Vynnahn" "Wogred" "Xagork" "Xaht" "Xibriq" "Xreiv'akx" "Xrord" "Zregahn" "Zryq'ehq"
+	}
+}
+
+UFO_HEAVY = {
+	name = NAME_THEME_SHIPS_UFO_HEAVY
+	for_countries = { UFO }
+	type = ship
+	ship_types = { heavy_ship_unit }
+	fallback_name = "Gamma %d"
+	unique = {
+		"E.T." "Eaflop" "Fas'i" "Freapylfie" "Galaga" "Gedhups" "Genesis" "Giz'or" "Gizmo" "Gnus" "Hyksi" "Invader" "Klullelph" "Oujuz" "Pew Pew Pew" "Proq'thae" "Retro" "Sluognupo" "Stolmohn" "Uel" "Uesh" "Urruq" "Vlaecuhm" "Vuen'ie" "Vumowth" "Wroev'ylp" "Xroekholfau" "Xruk'uhx" "Yprex" "Zap!"
+	}
+}
+
+UFO_SUPER_HEAVY = {
+	name = NAME_THEME_SHIPS_UFO_SUPER_HEAVY
+	for_countries = { UFO }
+	type = ship
+	ship_types = { super_heavy_ship_unit }
+	fallback_name = "Beta %d"
+	unique = {
+		"Cieclite Minor" "Drorix" "E1T-WJK" "Enus YS" "Glagua Z" "Glaobos" "Gluket" "Gubrillion" "Jaiter 8" "MOCE Blyria" "OX2" "Ocrunia" "Supleotune" "Swaanus" "Thadus 3T7" "Thides 0PQ" "Tronatis" "Utreron" "Uvis" "Xuantox" "Zeta 1E" "Zeta 5" "Zeta Prime" "Zoi Prime" "Zuytan"
+	}
+}

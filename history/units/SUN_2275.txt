@@ -1,0 +1,231 @@
+﻿division_template = {
+	name = "Sun Dog Tribesmen"
+	regiments = {
+		militia = { x = 0 y = 0 }
+		militia = { x = 0 y = 1 }
+		militia = { x = 0 y = 2 }
+		militia = { x = 1 y = 0 }
+	}
+}
+
+division_template = {
+	name = "Sun Dog Warriors"
+	regiments = {
+		infantry = { x = 0 y = 0 }
+		infantry = { x = 0 y = 1 }
+		infantry = { x = 0 y = 2 }
+		infantry = { x = 1 y = 0 }
+	}
+	support = {
+		dog_company = { x = 0 y = 0 }
+		recon_company = { x = 1 y = 0 }
+		fireteam_support = { x = 2 y = 0 }
+	}
+}
+
+division_template = {
+	name = "Stolen Legion Chariots"
+
+	regiments = {
+		chariot_unit = { x = 0 y = 0 }
+		chariot_unit = { x = 0 y = 1 }
+		chariot_unit = { x = 1 y = 0 }
+		chariot_unit = { x = 1 y = 1 }
+	}
+}
+	division_template = {
+	name = "Sun Dog Elites"
+
+	regiments = {
+		spec_ops = { x = 0 y = 0 }
+		spec_ops = { x = 0 y = 1 }
+		spec_ops = { x = 1 y = 0 }
+		spec_ops = { x = 0 y = 2 }
+		spec_ops = { x = 1 y = 1 }
+		spec_ops = { x = 1 y = 2 }
+		spec_ops = { x = 2 y = 0 }
+		spec_ops = { x = 2 y = 1 }
+	}
+	support = {
+		dog_company = { x = 0 y = 0 }
+		recon_company = { x = 1 y = 0 }
+		fireteam_support = { x = 2 y = 0 }
+	}
+}
+
+units = {
+	division = {
+		name = "Golden Dogs"
+		location = 8986
+		division_template = "Sun Dog Warriors"
+		start_experience_factor = 1.0
+		start_equipment_factor = 1.0
+	}
+	division = {
+		name = "Platinum Dogs"
+		location = 8986
+		division_template = "Sun Dog Elites"
+		start_experience_factor = 1.0
+		start_equipment_factor = 1.0
+	}
+	division = {
+		name = "Retrievers"
+		location = 2972
+		division_template = "Sun Dog Warriors"
+		start_experience_factor = 0.75
+		start_equipment_factor = 1.0
+	}
+	division = {
+		name = "Skinwalkers Tribesmen"
+		location = 7035
+		division_template = "Sun Dog Tribesmen"
+		start_experience_factor = 0.05
+		start_equipment_factor = 1.0
+	}
+	division = {
+		name = "Ninefingers Tribesmen"
+		location = 8986
+		division_template = "Sun Dog Tribesmen"
+		start_experience_factor = 0.05
+		start_equipment_factor = 1.0
+	}
+	division = {
+		name = "Sulphur Springs Tribesmen"
+		location = 2972
+		division_template = "Sun Dog Tribesmen"
+		start_experience_factor = 0.05
+		start_equipment_factor = 1.0
+	}
+	division = {
+		name = "Bells Ranch Tribesmen"
+		location = 5593
+		division_template = "Sun Dog Tribesmen"
+		start_experience_factor = 0.05
+		start_equipment_factor = 1.0
+	}
+	division = {
+		name = "Logans-Fall Tribesmen"
+		location = 7021
+		division_template = "Sun Dog Tribesmen"
+		start_experience_factor = 0.05
+		start_equipment_factor = 1.0
+	}
+	division = {
+		name = "Blacksun Tribesmen"
+		location = 5664
+		division_template = "Sun Dog Tribesmen"
+		start_experience_factor = 0.05
+		start_equipment_factor = 1.0
+	}
+	division = {
+		name = "Wound-Lickers"
+		location = 7035
+		division_template = "Sun Dog Warriors"
+		start_experience_factor = 0.62
+		start_equipment_factor = 1.0
+	}
+	division = {
+		name = "Broken Fangs"
+		location = 7044
+		division_template = "Sun Dog Warriors"
+		start_experience_factor = 0.62
+		start_equipment_factor = 1.0
+	}
+	division = {
+		name = "Feral Hounds"
+		location = 6769
+		division_template = "Sun Dog Warriors"
+		start_experience_factor = 0.72
+		start_equipment_factor = 1.0
+	}
+	division = {
+		name = "Golden Chariots"
+		location = 5276
+		division_template = "Stolen Legion Chariots"
+		start_experience_factor = 0.72
+		start_equipment_factor = 1.0
+	}
+	division = {
+		name = "Stardust Chariots"
+		location = 5276
+		division_template = "Stolen Legion Chariots"
+		start_experience_factor = 0.72
+		start_equipment_factor = 1.0
+	}
+	division = {
+		name = "Emerald Chariots"
+		location = 7019
+		division_template = "Stolen Legion Chariots"
+		start_experience_factor = 0.72
+		start_equipment_factor = 1.0
+	}
+	division = {
+		name = "Platinum Chariots"
+		location = 7019
+		division_template = "Stolen Legion Chariots"
+		start_experience_factor = 0.72
+		start_equipment_factor = 1.0
+	}
+	division = {
+		name = "Scarlet Chariots"
+		location = 8192
+		division_template = "Stolen Legion Chariots"
+		start_experience_factor = 0.72
+		start_equipment_factor = 1.0
+	}
+	division = {
+		name = "Silver Chariots"
+		location = 8192
+		division_template = "Stolen Legion Chariots"
+		start_experience_factor = 0.72
+		start_equipment_factor = 1.0
+	}
+}
+##### Starting Production #####
+instant_effect = {
+	add_equipment_production = {
+		equipment = {
+			type = infantry_equipment_1
+			creator = "SUN"
+		}
+		requested_factories = 2
+		progress = 0.75
+		efficiency = 100
+	}
+	add_equipment_production = {
+		equipment = {
+			type = dogs_equipment_1
+			creator = "SUN"
+		}
+		requested_factories = 1
+		progress = 0.75
+		efficiency = 100
+	}
+	add_equipment_production = {
+		equipment = {
+			type = fireteam_equipment_1
+			creator = "SUN"
+		}
+		requested_factories = 1
+		progress = 0.75
+		efficiency = 100
+	}
+	add_equipment_production = {
+		equipment = {
+			type = chariot_equipment_1
+			creator = "SUN"
+		}
+		requested_factories = 1
+		progress = 0.75
+		efficiency = 100
+	}
+	add_equipment_production = {
+		equipment = {
+			type = support_equipment_1
+			creator = "SUN"
+		}
+		requested_factories = 1
+		progress = 0.75
+		efficiency = 100
+	}
+}

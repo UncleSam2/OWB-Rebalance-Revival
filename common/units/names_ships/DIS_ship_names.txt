@@ -1,0 +1,43 @@
+﻿DIS_LIGHT = {
+	name = NAME_THEME_SHIPS_DIS_LIGHT
+	for_countries = { DIS }
+	type = ship
+	ship_types = { light_ship_unit }
+	fallback_name = "Skirmisher %d"
+	unique = {
+		"Anything To Get By" "Buzzard" "Every Last Crumb" "Grub Rig" "Husk" "Imp" "Leech" "Lil' Gremlin" "Made To Survive" "Maggot Sac" "Mutt" "Naw On Nothing" "Nothing Wasted" "Patched Daydream" "Scabber" "Scavver" "Skitters" "Strip It All" "Thorn" "Triclops" "Wants Not" "Worm Food"
+	}
+}
+
+DIS_MEDIUM = {
+	name = NAME_THEME_SHIPS_DIS_MEDIUM
+	for_countries = { DIS }
+	type = ship
+	ship_types = { medium_ship_screen_unit }
+	fallback_name = "Striker %d"
+	unique = {
+		"Down To The Bone" "Flesh Gnasher" "Grated Ribcage" "Grub is Grub" "Mangler" "Mangy Scavvie" "Not Picky" "Outlast Them" "Picked Clean" "Remarkable Efficiency" "Scabrous" "Skin N' Bone" "To Waste Is to Sin"
+	}
+}
+
+DIS_HEAVY = {
+	name = NAME_THEME_SHIPS_DIS_HEAVY
+	for_countries = { DIS }
+	type = ship
+	ship_types = { heavy_ship_unit }
+	fallback_name = "Bruiser %d"
+	unique = {
+		"Better Me Than You" "Endurance Sure" "Gore S'More" "Husk of Life" "If It's Edible" "Life Is Pain" "No Hope Left" "Pleasure is False" "Push Of Scab" "Rot Means Nothing" "Stripped Clean" "That Tenderizer" "The Dirt Take You" "The Meatgrinder" "Two Pints Left" "What Is Mourning" "Witness Me!"
+	}
+}
+
+DIS_SUPER_HEAVY = {
+	name = NAME_THEME_SHIPS_DIS_SUPER_HEAVY
+	for_countries = { DIS }
+	type = ship
+	ship_types = { super_heavy_ship_unit }
+	fallback_name = "Warcraft %d"
+	unique = {
+		"Black Out The Sun" "Desperation: A Fact Of Life" "Every Part A Purpose" "Get! Skull! Fucked!" "Lucifer's Bastard" "Mobile Hell" "No Forgiveness" "No Past, No Future, Just Now." "No Sympathy" "Old World? It's A Dead Dream" "Prosperity is an Illusion" "Raider Paradise" "Skullbasher's Fortress" "We Will Wake You Up"
+	}
+}

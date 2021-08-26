@@ -1,0 +1,167 @@
+ideas = {
+	country = {
+   
+   #Vault Tec Buff
+    VaultTec_i_am_vault_tec = {
+	picture = generic_vault_door
+	removal_cost = -1
+	allowed = {
+		always = no
+	}
+	allowed_civil_war = {
+		always = yes
+	}
+	modifier = {
+		research_speed_factor = 0.15
+		production_factory_max_efficiency_factor = 0.10
+		industrial_capacity_factory = 0.15
+		industry_free_repair_factor = 0.10
+	    }
+    }
+
+    #Boomerclave Buff
+	Boomerclave_enclave_reborn = {
+		picture = generic_enclave_reborn
+		removal_cost = -1
+		allowed = {
+			always = no
+		}
+		allowed_civil_war = {
+			always = yes
+		}
+		research_bonus = {
+			support_tech_category = 0.05
+			industry = 0.05
+			energy_weaponry_tech_category = 0.25
+		}
+		modifier = {
+			army_core_defence_factor = 0.15
+			army_core_attack_factor = 0.15
+		}
+	}
+
+	#Liberty's Slave Empire
+	IRN_Libertys_Empire = {
+		picture = brk_slavery_4
+		removal_cost = -1
+		allowed = {
+			always = no
+		}
+		allowed_civil_war = {
+			always = yes
+		}
+		modifier = {
+			caps_raider_self_bonus = 0.20
+			consumer_goods_factor = -0.10
+			local_resources_factor = 0.10
+			army_attack_factor = 0.15
+			army_leader_start_attack_level = 3
+			caps_income_modifier = 0.15
+			conscription_factor = -0.10
+		}
+	}
+	#Patriarchs Control
+	MXC_the_patriarchs_rule = {
+		picture = MOJ_idea_holograms
+		removal_cost = -1
+		allowed = {
+			always = no
+		}
+		allowed_civil_war = {
+			always = yes
+		}
+		modifier = {
+		army_core_attack_factor = 0.05
+		army_core_defence_factor = 0.05
+		conscription_factor = 0.10
+		consumer_goods_factor = -0.05
+		political_power_factor = 0.15
+		stability_factor = 0.15
+		}
+	}
+
+	#Baggers
+	
+	BAG_North_Colorado_Guard = {
+		picture = unique_NCR_oliver_hat
+		removal_cost = -1
+		allowed = {
+			always = no
+		}
+		allowed_civil_war = {
+			always = yes
+		}
+		equipment_bonus = {
+			infantry_equipment = {
+				build_cost_ic = -0.05
+				reliability = 0.10
+			}
+		}
+		modifier = {
+		army_core_attack_factor = 0.05
+		army_core_defence_factor = 0.05
+		conscription_factor = 0.15
+		army_leader_start_defense_level = 2
+		training_time_army_factor = -0.10
+		}
+	}
+
+	#Vipers
+	
+	VIP_revitalized_tribe = {
+		picture = savage_idea
+		removal_cost = -1
+		allowed = {
+			always = no
+		}
+		allowed_civil_war = {
+			always = yes
+		}
+		modifier = {
+		stability_factor = 0.10
+		political_power_factor = 0.10
+		war_support_factor = 0.30
+		}
+	}
+
+	#Olympus Tribe
+
+	OLY_thrones_of_olympus = {
+		picture = generic_religion
+		removal_cost = -1
+		allowed = {
+			always = no
+		}
+		allowed_civil_war = {
+			always = yes
+		}
+		modifier = {
+		stability_factor = 0.10
+		political_power_factor = 0.15
+		army_core_attack_factor = 0.10
+		army_core_defence_factor = 0.10
+		}
+	}
+
+	OLY_settling_down = {
+		picture = VEG_Sanitary_City 
+		removal_cost = -1
+		allowed = {
+			always = no
+		}
+		allowed_civil_war = {
+			always = yes
+		}
+		modifier = {
+			exodus_nomadicity = -0.25
+			production_speed_arms_factory_factor = 0.15
+			production_factory_efficiency_gain_factor = 0.05
+			production_factory_max_efficiency_factor = 0.10
+			production_speed_industrial_complex_factor = 0.10
+			production_speed_bunker_factor = 0.25
+		}
+	}
+
+        ##End
+    }
+}

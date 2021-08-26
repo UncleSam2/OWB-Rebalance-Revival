@@ -1,0 +1,165 @@
+﻿capital = 211
+oob = "VEG_2275"
+
+set_technology = {
+	infantry_tech_level_tribal = 1
+	infantry_tech_level_settler = 1
+	#infantry_tech_level_scientific = 1
+	support_tech_level_tribal = 1
+	support_tech_level_settler = 1
+	#support_tech_level_scientific = 1
+	special_forces_tech_level_tribal = 1
+	special_forces_tech_level_settler = 1
+	#special_forces_tech_level_scientific = 1
+	#power_armour_tech_level_settler = 1
+	#power_armour_tech_level_scientific = 1
+	vehicles_tech_level_tribal = 1
+	vehicles_tech_level_settler = 1
+	#vehicles_tech_level_scientific = 1
+	robotics_tech_level_tribal = 1
+	robotics_tech_level_settler = 1
+	robotics_tech_level_scientific = 1
+	air_tech_level_tribal = 1
+	air_tech_level_settler = 1
+	#air_tech_level_scientific = 1
+	naval_tech_level_tribal = 1
+	#naval_tech_level_settler = 1
+	#naval_tech_level_scientific = 1
+	tools_tech_level_tribal = 1
+	tools_tech_level_settler = 1
+	#tools_tech_level_scientific = 1
+	habitation_tech_level_tribal = 1
+	habitation_tech_level_settler = 1
+	#habitation_tech_level_scientific = 1
+	exploitation_tech_level_tribal = 1
+	exploitation_tech_level_settler = 1
+	#exploitation_tech_level_scientific = 1
+	electronics_tech_level_tribal = 1
+	electronics_tech_level_settler = 1
+	#electronics_tech_level_scientific = 1
+	standard_weaponry_tech = 1
+	ballistic_weaponry_tech_1 = 1
+	robot_automation_tech = 1
+	robot_makeshift_automatons_tech = 1
+	robot_protectron_tech_1 = 1
+	tribal_civilization = 1
+	settled_civilization = 1
+	scientific_civilization = 1
+	basic_industry_tech = 1
+	tool_engineering = 1
+	maketool_engineering_1 = 1
+	pre_construction_industry_tech = 1
+	construction_industry_tech_1 = 1
+	construction_industry_tech_2 = 1
+	extraction_industry_tech_1 = 1
+	habitation_industry_tech_1 = 1
+	extraction_industry_tech_2 = 1
+	habitation_industry_tech_2 = 1
+	resource_generator_tech = 1
+	resource_generator_water_tech_1 = 1
+	resource_generator_power_tech_1 = 1
+	resource_generator_metal_tech_1 = 1
+	automated_warfare = 1
+	robot_protectron_tech_1 = 1
+	robot_thrusters_tech = 1
+	robot_handy_tech = 1
+	robot_gutsy_tech = 1
+	robot_securitron_tech_1 = 1
+	support_weaponry = 1
+	logistics_company_tech_1 = 1
+	robco_unlock_tech = 1
+}
+
+set_stability = 0.45
+set_war_support = 0.25
+set_research_slots = 5 #Can get up to 6 in the House path
+set_country_flag = is_robotic_nation
+set_country_flag = has_robot_generals
+
+set_politics = {
+	ruling_party = ruler
+	elections_allowed = no
+}
+
+set_popularities = {
+	people = 0
+	elites = 0
+	intellectuals = 0
+	ruler = 100
+}
+
+add_ideas = {
+	veg_jewel_of_the_mojave
+	robotics_genius
+	ncr_veg_treaty_of_new_vegas
+}
+
+give_military_access = MOT
+
+create_country_leader = {
+	name = "Mr House"
+	desc = "MR_HOUSE_DESC"
+	picture = "GFX_Portrait_House_animated"
+	id = 10021
+	expire = "3000.1.1"
+	ideology = indifferent_despotism
+	traits = {
+		captain_of_industry
+		isolationist
+	}
+}
+
+create_country_leader = {
+	name = "Benny"
+	desc = "BENNY_DESC"
+	id = 10022
+	picture = "portrait_benny.dds"
+	expire = "3000.1.1"
+	ideology = conspiratory_oligarchy
+	traits = {
+		veg_rigged_from_the_start
+		expert_negotiator
+	}
+}
+
+create_country_leader = {
+	name = "The King"
+	desc = "THE_KING_DESC"
+	id = 10023
+	picture = "portrait_king.dds"
+	expire = "3000.1.1"
+	ideology = peoples_militia
+	traits = {
+		popular_figurehead
+		smooth_talking_charmer
+	}
+}
+
+if = {
+	limit = {
+		has_dlc = "La Resistance"
+	}
+	create_operative_leader = {
+		name = "Courier Six"
+		picture = "portrait_courier.dds"
+		skill = 50
+		traits = { operative_smooth_talker operative_heavyweight operative_speech }
+		bypass_recruitment = no
+		available_to_spy_master = no
+		nationalities = { VEG }
+	}
+}
+
+create_corps_commander = {
+	name = "Securitron AI"
+	picture = "portrait_veg_securitron_1.dds"
+	skill = 3
+	traits = {
+		strong_trait
+		intelligent_trait
+	}
+	attack_skill = 1
+	defense_skill = 3
+	planning_skill = 3
+	logistics_skill = 1
+}

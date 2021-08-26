@@ -1,0 +1,43 @@
+﻿BJS_LIGHT = {
+	name = NAME_THEME_SHIPS_BJS_LIGHT
+	for_countries = { BJS }
+	type = ship
+	ship_types = { light_ship_unit }
+	fallback_name = "Destroyer %d"
+	unique = {
+		"Abbot" "Adair" "Addie" "Allsop" "Althouse" "Bai" "Becenti" "Bedi" "Bernat" "Biscardi" "Borges" "Boulanger" "Bunt" "Burton" "Carwell" "Chan" "Chang" "Chen" "Christensen" "Christianson" "Clark" "Coderre" "Cutchin" "Daluz" "Davies" "Debord" "Decola" "Delongis" "Dhatri" "Dumont" "Embrey" "Esperanza" "Espey" "Essa" "Falk" "Farnsworth" "Fiorentino" "Foor" "Friemen" "Funston" "Glasper" "Gochenour" "Godfrey" "Gorobets" "Guidotti" "Han" "Hannaford" "Hayes" "Hernandez, Jr." "Hincks" "Hocutt" "Hoey" "Houtchens" "Hui" "Jacobs" "Jameson" "Kang" "Kowalski" "Kreger" "Kronmueller" "Leppert" "Lesser" "Li" "Lipsett" "Lopez" "Lutz" "McElderry" "Mery" "Metzer" "Meyers" "Montalvo, Sr." "Montero" "Morningstar" "Nassar" "Ngo" "Nguyen" "Norred" "Park" "Quinn" "Quon" "Raleigh" "Raynor" "Renolds" "Robards" "Samaha" "Seth" "St. James" "Storey, Jr." "Thompson" "Townson" "Tran" "Vermeulen" "Volkmann" "Wang" "Wardlaw" "Waters" "Westin III" "Wilcox" "Wilson" "Winborne" "Wolf" "Zheng" "Zhong"
+	}
+}
+
+BJS_MEDIUM = {
+	name = NAME_THEME_SHIPS_BJS_MEDIUM
+	for_countries = { BJS }
+	type = ship
+	ship_types = { medium_ship_screen_unit }
+	fallback_name = "Light Cruiser %d"
+	unique = {
+		"Copperopolis" "Death Valley" "Etna" "Fillmore" "Flynn" "Gator" "Guderson" "Hayfield" "Marysville" "Ocotillo" "Old Chico" "Palm Springs" "Paymaster Landing" "Point Green" "Quartz Hill" "Randsburg" "San Gabriel" "Santa Rosa" "Scalder" "Scartop" "Stockton" "Tehama" "Thousand Oaks" "Tulare" "Tumbledown" "Valley of the Names" "Visalia" "Welding" "Woodlake"
+	}
+}
+
+BJS_HEAVY = {
+	name = NAME_THEME_SHIPS_BJS_HEAVY
+	for_countries = { BJS }
+	type = ship
+	ship_types = { heavy_ship_unit }
+	fallback_name = "Heavy Cruiser %d"
+	unique = {
+		"15" "Dana Point" "Forlorn Hope" "Golf" "Greater Dayglow" "Guardian" "Junktown" "Los Algodones" "McCarran" "Redding" "Sac-City" "Searchlight" "Shady Sands" "The Boneyard" "The Hub"
+	}
+}
+
+BJS_SUPER_HEAVY = {
+	name = NAME_THEME_SHIPS_BJS_SUPER_HEAVY
+	for_countries = { BJS }
+	type = ship
+	ship_types = { super_heavy_ship_unit }
+	fallback_name = "Battleship %d"
+	unique = {
+		"Dayglow" "Hub" "Los Angeles" "Maxson" "Mojave" "Shady"
+	}
+}

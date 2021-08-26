@@ -1,0 +1,249 @@
+﻿# Division template historical names system. Is a new method of naming the divisions based on the names-group assigned to it's template.
+# If we run out of all historical names, the names will be assigned in the old way.
+#
+# Each group has a made up tag. Use it if you want to append more, or replace existing names with the extra txt files (modding).
+#
+# for_countries - lists all countries that can use it. If empty, or entire tag is missing, all countries in the world can use it.
+#
+# can_use - is a trigger that locks/unlocks the group under specific circumstances. The trigger is in a country scope.
+#
+# division_types - is a list of tokens to corresponding unit types. A player can in fact use any group of names for a div.template
+#                  however this tag is a helper for an automated choice (for AI, or if the group must switch on it's own, because
+#                  for example the current one is no longer available due to the can_use trigger saying so).
+#                  In automated choice, the division template must have at least 1 of the following types for it to be chosen.
+#
+# fallback_name - Is going to be used if we run out of the scripted historical names. If you want to use the old division naming
+#                 mechanics to be used for fallbacks, then just skip this option.
+#
+# unordered - It's a list of historical division names that did not have a number. Regardless if such names happened in history or not
+#             this option is available here mainly for a mods.
+#
+# ordered - Is a list of all historical names.
+#           Numbers must start from 1 and up.
+#           Numbers can't repeat in one scope.
+#           If you script the name for this group, at the same number (for example in a mod in another file), the name will be override.
+#           All arguments between the brackets must be separated by spaces. Each argument is wrapped in "quotas".
+#           1st argument = The name. It must contain either:
+#                          %d (for decimal number placement)
+#                          %s (for string number placement - ROMAN numbers like XIV).
+#           2nd argument is optional = A localizable text describing this historical division. The text will be visible in the tooltip
+#                                      where you choose the historical division name.
+#           3rd argument is optional = An URL preferably pointing to the WIKI. It's a future feature that is not currently working in
+#                                      the current game version.
+
+_NCR_INF_01 = {
+	name = "NCR Company"
+
+	for_countries = { NCR }
+
+	can_use = { always = yes }
+
+	division_types = { "infantry" }
+
+	# Number reservation system will tie to another group.
+	# link_numbering_with = { VLT_INF_02 }
+
+	fallback_name = "%d. Company"
+
+	# Names with numbers (only one number per entry).
+	# It's okay to have gaps in numbering.
+	ordered = {
+		1 = { "%d. 'Lady Liberty' Company" }
+		2 = { "%d. 'Brocos' Company" }
+		3 = { "%d. 'Black Ravens' Company" }
+		4 = { "%d. 'Fighting Lumberjacks' Company" }
+		5 = { "%d. 'Black Knights' Company" }
+		6 = { "%d. 'Ozarks' Company" }
+		7 = { "%d. 'Mastadons' Company" }
+		8 = { "%d. 'Dixie' Company" }
+		9 = { "%d. 'Jayhawkers' Company" }
+		10 = { "%d. 'Viking' Company" }
+		11 = { "%d. 'Black Tigers' Company" }
+		12 = { "%d. 'Giants' Company" }
+		13 = { "%d. 'Hercules' Company" }
+		14 = { "%d. 'Cavaliers' Company" }
+		15 = { "%d. 'Seminole' Company" }
+		16 = { "%d. 'Bloodhounds' Company" }
+		17 = { "%d. 'Rattlesnake' Company" }
+		18 = { "%d. 'Yellow Jackets' Company" }
+		19 = { "%d. 'Boston' Company" }
+		20 = { "%d. 'Winged Victory' Company" }
+		21 = { "%d. 'Yankee' Company" }
+		22 = { "%d. 'Washington' Company" }
+		23 = { "%d. 'Rock of the Marne' Company" }
+		24 = { "%d. 'Lakers' Company" }
+		25 = { "%d. 'Deadeye' Company" }
+		26 = { "%d. 'Cowboys' Company" }
+		27 = { "%d. 'Blackhawk' Company" }
+		28 = { "%d. 'Red Bull' Company" }
+		29 = { "%d. 'Detroit' Company" }
+		30 = { "%d. 'Black Panthers' Company" }
+		31 = { "%d. 'Patriot' Company" }
+		32 = { "%d. 'Minuteman' Company" }
+		33 = { "%d. 'Ogre' Company" }
+		34 = { "%d. 'Battle Axe' Company" }
+		35 = { "%d. 'Blue Devils' Company" }
+		36 = { "%d. 'Centaur' Company" }
+		37 = { "%d. 'Maccabees' Company" }
+		38 = { "%d. 'Liberty' Company" }
+		39 = { "%d. 'Longhorn' Company" }
+		40 = { "%d. 'Corsairs' Company" }
+		41 = { "%d. 'Misfits' Company" }
+		42 = { "%d. 'Flying Dutchmen' Company" }
+		43 = { "%d. 'Celtic' Company" }
+		44 = { "%d. 'Daniel Boone' Company" }
+		45 = { "%d. 'San Francisco' Company" }
+		46 = { "%d. 'Volunteers' Company" }
+		47 = { "%d. 'Headhunters' Company" }
+		48 = { "%d. 'Golden Griffons' Company" }
+		49 = { "%d. 'Buccaneers' Company" }
+		50 = { "%d. 'Metropolitan' Company" }
+		51 = { "%d. 'Lafayette' Company" }
+		52 = { "%d. 'Dust Devils' Company" }
+		53 = { "%d. 'Thunderbolts' Company" }
+		54 = { "%d. 'Ironfist' Company" }
+		55 = { "%d. 'Cactus' Company" }
+		56 = { "%d. 'Blue and Gray' Company" }
+		57 = { "%d. 'Armadillos' Company" }
+		58 = { "%d. 'Onaway' Company" }
+		59 = { "%d. 'Fighting 193rd' Company" }
+		60 = { "%d. 'Red Hawks' Company" }
+		61 = { "%d. 'Texas' Company" }
+		62 = { "%d. 'Wildcat' Company" }
+		63 = { "%d. 'Phoenix' Company" }
+		64 = { "%d. 'Lightning' Company" }
+		65 = { "%d. 'Comet' Company" }
+		66 = { "%d. 'Golden Cross' Company" }
+		67 = { "%d. 'Sam Houston' Company" }
+		68 = { "%d. 'Gamecocks' Company" }
+		69 = { "%d. 'Buckeye' Company" }
+		70 = { "%d. 'Hilltoppers' Company" }
+		71 = { "%d. 'Iron Men' Company" }
+		72 = { "%d. 'Lucky Lindy' Company" }
+		73 = { "%d. 'Franklin' Company" }
+		74 = { "%d. 'Big Green' Company" }
+		75 = { "%d. 'Alamo' Company" }
+		76 = { "%d. 'Santa Fe' Company" }
+		77 = { "%d. 'Falcons' Company" }
+		78 = { "%d. 'Jaguars' Company" }
+		79 = { "%d. 'Highlanders' Company" }
+		80 = { "%d. 'Enthusiasts' Company" }
+		81 = { "%d. 'Blue Dragons' Company" }
+		82 = { "%d. 'Mean Green' Company" }
+		83 = { "%d. 'Gettysburg' Company" }
+		84 = { "%d. 'Columbus' Company" }
+		85 = { "%d. 'U.S. Grant' Company" }
+		86 = { "%d. 'Banditos' Company" }
+		87 = { "%d. 'Lincoln' Company" }
+		88 = { "%d. 'Pioneer' Company" }
+		89 = { "%d. 'Black Widows' Company" }
+		90 = { "%d. 'Adams' Company" }
+		91 = { "%d. 'Iroquois' Company" }
+		92 = { "%d. 'Blue Helmets' Company" }
+		93 = { "%d. 'Moccasins' Company" }
+		94 = { "%d. 'Americal' Company" }
+		95 = { "%d. 'Bloody Saber' Company" }
+		96 = { "%d. 'Golden Gophers' Company" }
+		97 = { "%d. 'Blue Streaks' Company" }
+		98 = { "%d. 'Mountain Lions' Company" }
+		99 = { "%d. 'Hoosiers' Company" }
+		100 = { "%d. 'Amerigo Vespucci' Company" }
+		101 = { "%d. 'Madison' Company" }
+		102 = { "%d. 'Chrimson' Company" }
+		103 = { "%d. 'Big Red One' Company" }
+		104 = { "%d. 'Indianhead' Company" }
+		105 = { "%d. 'Black Diamonds' Company" }
+		106 = { "%d. 'Roadrunner' Company" }
+		107 = { "%d. 'Old Hickory' Company" }
+		108 = { "%d. 'Pine Tree' Company" }
+		109 = { "%d. 'Seattle' Company" }
+		110 = { "%d. 'Golden Acorns' Company" }
+		111 = { "%d. 'Rainbow' Company" }
+		112 = { "%d. 'Trojans' Company" }
+		113 = { "%d. 'Jefferson' Company" }
+		114 = { "%d. 'Dirty Bastards' Company" }
+		115 = { "%d. 'Storm' Company" }
+		116 = { "%d. 'Howling Coyotes' Company" }
+		117 = { "%d. 'White Knights' Company" }
+		118 = { "%d. 'Checkerboard' Company" }
+		119 = { "%d. 'Explorers' Company" }
+		120 = { "%d. 'Archers' Company" }
+		121 = { "%d. 'Neuf Quatres' Company" }
+		122 = { "%d. 'Cajuns' Company" }
+		123 = { "%d. 'Gorillas' Company" }
+		124 = { "%d. 'Pathfinder' Company" }
+		125 = { "%d. 'Buffalo Soldiers' Company" }
+		126 = { "%d. 'Red Circle' Company" }
+		127 = { "%d. 'Widowmakers' Company" }
+		128 = { "%d. 'Bearcats' Company" }
+		129 = { "%d. 'Centurion' Company" }
+		130 = { "%d. 'Titans' Company" }
+		131 = { "%d. 'Green Demons' Company" }
+		132 = { "%d. 'Victory' Company" }
+		133 = { "%d. 'Swamp Fox' Company" }
+		134 = { "%d. 'Fighting 69th' Company" }
+		135 = { "%d. 'Polar Bears' Company" }
+		136 = { "%d. 'Trailblazers' Company" }
+		137 = { "%d. 'Wasps' Company" }
+		138 = { "%d. 'Delta' Company" }
+		139 = { "%d. 'Trident' Company" }
+		140 = { "%d. 'Keystone' Company" }
+		141 = { "%d. 'Davy Crockett' Company" }
+		142 = { "%d. 'Desert Scorpion' Company" }
+		143 = { "%d. 'Robert E. Lee' Company" }
+		144 = { "%d. 'Crusader' Company" }
+		145 = { "%d. 'Billy  Johnny' Company" }
+		146 = { "%d. 'Blood Fire' Company" }
+		147 = { "%d. 'Chicago' Company" }
+		148 = { "%d. 'Revenge!' Company" }
+		149 = { "%d. 'Mustangs' Company" }
+		150 = { "%d. 'Vicksburg' Company" }
+		151 = { "%d. 'Sightseeing Sixth' Company" }
+		152 = { "%d. 'Tough Ombres' Company" }
+		153 = { "%d. 'Infamous 268th' Company" }
+		154 = { "%d. 'Century' Company" }
+		155 = { "%d. 'Argonauts' Company" }
+		156 = { "%d. 'Cyclone' Company" }
+		157 = { "%d. 'Chocktaw' Company" }
+		158 = { "%d. 'Custer' Company" }
+		159 = { "%d. 'Tropic Lightning' Company" }
+		160 = { "%d. 'Grey Owls' Company" }
+		161 = { "%d. 'Red Devils' Company" }
+		162 = { "%d. 'Railsplitters' Company" }
+		163 = { "%d. 'Bulldog' Company" }
+		164 = { "%d. 'Brooklyn' Company" }
+		165 = { "%d. 'Green Gators' Company" }
+		166 = { "%d. 'Old Muddy' Company" }
+		167 = { "%d. 'Green Clovers' Company" }
+		168 = { "%d. 'Cardinals' Company" }
+		169 = { "%d. 'Spartans' Company" }
+		170 = { "%d. 'New York' Company" }
+		171 = { "%d. 'Ivy' Company" }
+		172 = { "%d. 'Timberwolves' Company" }
+		173 = { "%d. 'Thunderbird' Company" }
+		174 = { "%d. 'Philadelphia' Company" }
+		175 = { "%d. 'Apache' Company" }
+		176 = { "%d. 'Braves' Company" }
+		177 = { "%d. 'Hurricane' Company" }
+		178 = { "%d. 'Fighting Irish' Company" }
+		179 = { "%d. 'Golden Lions' Company" }
+		180 = { "%d. 'Sunshine' Company" }
+		181 = { "%d. 'Rolling W' Company" }
+		182 = { "%d. 'Freedom!' Company" }
+		183 = { "%d. 'Jackrabbits' Company" }
+		184 = { "%d. 'Warhawks' Company" }
+		185 = { "%d. 'Rebel Yell' Company" }
+		186 = { "%d. 'Red Arrow' Company" }
+		187 = { "%d. 'Old Reliables' Company" }
+		188 = { "%d. 'Saints' Company" }
+		189 = { "%d. 'Mavericks' Company" }
+		190 = { "%d. 'Lions' Company" }
+		191 = { "%d. 'Blue Ridge' Company" }
+		192 = { "%d. 'Beavers' Company" }
+		193 = { "%d. 'Sunset' Company" }
+		194 = { "%d. 'Bayonet' Company" }
+		195 = { "%d. 'Vanguard' Company" }
+		196 = { "%d. 'Harlem' Company" }
+		197 = { "%d. 'Forrester' Company" }
+	}
+}

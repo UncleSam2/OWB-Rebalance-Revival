@@ -1,0 +1,1871 @@
+focus_tree = {
+	id = heavens_gate_nf
+	country = {
+		factor = 0
+		modifier = {
+			add = 200
+			tag = HEA
+		}
+	}
+
+	default = no
+
+	focus = {
+		id = hea_nf_precursers
+		icon = GFX_goal_HEA_focus_precursers
+		cost = 7
+		x = 14
+		y = 0
+
+		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] hea_nf_precursers entered"
+			}
+			country_event = { id = nf_event_hea.1 }
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] hea_nf_precursers exited"
+			}
+		}
+	}
+
+	focus = {
+		id = hea_nf_pilgrims
+		icon = GFX_goal_HEA_focus_pilgrims
+		cost = 7
+		x = 14
+		y = 1
+
+		prerequisite = {
+			focus = hea_nf_precursers
+		}
+
+		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] hea_nf_pilgrims entered"
+			}
+			country_event = { id = nf_event_hea.2 }
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] hea_nf_pilgrims exited"
+			}
+		}
+	}
+
+	focus = {
+		id = hea_nf_tribals
+		icon = GFX_goal_HEA_focus_tribals
+		cost = 7
+		x = 14
+		y = 2
+
+		prerequisite = {
+			focus = hea_nf_pilgrims
+		}
+
+		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] hea_nf_tribals entered"
+			}
+			country_event = { id = nf_event_hea.3 }
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] hea_nf_tribals exited"
+			}
+		}
+	}
+
+	focus = {
+		id = hea_nf_innocence_lost
+		icon = GFX_goal_HEA_focus_innocence_lost
+		cost = 7
+		x = 14
+		y = 3
+
+		prerequisite = {
+			focus = hea_nf_tribals
+		}
+
+		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] hea_nf_innocence_lost entered"
+			}
+			country_event = { id = nf_event_hea.4 }
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] hea_nf_innocence_lost exited"
+			}
+		}
+	}
+
+	focus = {
+		id = hea_nf_pol_action
+		icon = GFX_goal_HEA_focus_the_great_debate
+		cost = 60
+		x = 19
+		y = 4
+
+		prerequisite = {
+			focus = hea_nf_innocence_lost
+		}
+
+		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] hea_nf_pol_action entered"
+			}
+			add_political_power = 75
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] hea_nf_pol_action exited"
+			}
+		}
+	}
+
+	focus = {
+		id = hea_nf_embrace_elite
+		icon = GFX_goal_HEA_focus_victory_to_the_clergy
+		cost = 60
+		x = 18
+		y = 5
+
+		prerequisite = {
+			focus = hea_nf_pol_action
+		}
+
+		available = {
+			OR = {
+				has_idea = hea_innocence_lost_idea_lessend
+				has_completed_focus = hea_nf_fog_of_mercy
+				has_completed_focus = hea_nf_boilers_of_justice
+			}
+		}
+
+		mutually_exclusive = {
+			focus = hea_nf_reject_elite
+		}
+
+		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] hea_nf_embrace_elite entered"
+			}
+			swap_ideas = {
+				add_idea = hea_theocratic_elite_good
+				remove_idea = hea_theocratic_elite
+			}
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] hea_nf_embrace_elite exited"
+			}
+		}
+	}
+
+	focus = {
+		id = hea_nf_embrace_elite_1
+		icon = GFX_goal_HEA_focus_council_of_christ
+		cost = 60
+		x = 18
+		y = 6
+
+		prerequisite = {
+			focus = hea_nf_embrace_elite
+		}
+
+		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] hea_nf_embrace_elite_1 entered"
+			}
+			swap_ideas = {
+				add_idea = hea_theocratic_elite_good_1
+				remove_idea = hea_theocratic_elite_good
+			}
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] hea_nf_embrace_elite_1 exited"
+			}
+		}
+	}
+
+	focus = {
+		id = hea_nf_reject_elite
+		icon = GFX_goal_HEA_focus_the_prophet_prevails
+		cost = 60
+		x = 20
+		y = 5
+
+		available = {
+			OR = {
+				has_idea = hea_innocence_lost_idea_lessend
+				has_completed_focus = hea_nf_fog_of_mercy
+				has_completed_focus = hea_nf_boilers_of_justice
+			}
+		}
+
+		prerequisite = {
+			focus = hea_nf_pol_action
+		}
+
+		mutually_exclusive = {
+			focus = hea_nf_embrace_elite
+		}
+
+		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] hea_nf_reject_elite entered"
+			}
+			swap_ideas = {
+				add_idea = hea_theocratic_elite_contested
+				remove_idea = hea_theocratic_elite
+			}
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] hea_nf_reject_elite exited"
+			}
+		}
+	}
+
+	focus = {
+		id = hea_nf_reject_elite_1
+		icon = GFX_goal_HEA_focus_archangel_rises
+		cost = 60
+		x = 20
+		y = 6
+
+		prerequisite = {
+			focus = hea_nf_reject_elite
+		}
+
+		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] hea_nf_reject_elite_1 entered"
+			}
+			add_ideas = hea_one_prophet
+			swap_ideas = {
+				add_idea = hea_theocratic_elite_marginalized
+				remove_idea = hea_theocratic_elite_contested
+			}
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] hea_nf_reject_elite_1 exited"
+			}
+		}
+	}
+
+	focus = {
+		id = hea_nf_consolidate_pol
+		icon = GFX_goal_HEA_focus_political_action
+		cost = 60
+		x = 19
+		y = 7
+
+		prerequisite = {
+			focus = hea_nf_reject_elite_1
+			focus = hea_nf_embrace_elite_1
+		}
+
+		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] hea_nf_consolidate_pol entered"
+			}
+			remove_ideas = hea_divided_leadership
+			add_political_power = 50
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] hea_nf_consolidate_pol exited"
+			}
+		}
+	}
+
+	focus = {
+		id = hea_nf_grand_cathedral
+		icon = GFX_goal_HEA_focus_billowing_cathedral
+		cost = 60
+		x = 19
+		y = 8
+
+		prerequisite = {
+			focus = hea_nf_consolidate_pol
+		}
+
+		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] hea_nf_grand_cathedral entered"
+			}
+			add_ideas = hea_grand_cathedral
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] hea_nf_grand_cathedral exited"
+			}
+		}
+	}
+
+	focus = {
+		id = hea_nf_innocence_lost_deal
+		icon = GFX_goal_HEA_focus_memories_of_innocence
+		cost = 60
+		x = 19
+		y = 10
+
+		available = {
+			has_idea = hea_innocence_lost_idea
+		}
+
+		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] hea_nf_innocence_lost_deal entered"
+			}
+			add_political_power = 75
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] hea_nf_innocence_lost_deal exited"
+			}
+		}
+	}
+
+	focus = {
+		id = hea_nf_forgive_sins
+		icon = GFX_goal_HEA_focus_learning_to_forgive
+		cost = 60
+		x = 18
+		y = 11
+
+		prerequisite = {
+			focus = hea_nf_innocence_lost_deal
+		}
+
+		mutually_exclusive = {
+			focus = hea_nf_vengance
+		}
+
+		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] hea_nf_forgive_sins entered"
+			}
+			add_manpower = 500
+			custom_effect_tooltip = unlock_hea_conversion
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] hea_nf_forgive_sins exited"
+			}
+		}
+	}
+
+	focus = {
+		id = hea_nf_fog_of_mercy
+		icon = GFX_goal_HEA_focus_mercy_for_the_wicked
+		cost = 60
+		x = 18
+		y = 12
+
+		prerequisite = {
+			focus = hea_nf_forgive_sins
+		}
+
+		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] hea_nf_fog_of_mercy entered"
+			}
+			swap_ideas = {
+				add_idea = hea_innocence_lost_idea_lessend
+				remove_idea = hea_innocence_lost_idea
+			}
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] hea_nf_fog_of_mercy exited"
+			}
+		}
+	}
+
+	focus = {
+		id = hea_nf_vengance
+		icon = GFX_goal_HEA_focus_an_eye_for_an_eye
+		cost = 60
+		x = 20
+		y = 11
+
+		prerequisite = {
+			focus = hea_nf_innocence_lost_deal
+		}
+
+		mutually_exclusive = {
+			focus = hea_nf_forgive_sins
+		}
+
+		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] hea_nf_vengance entered"
+			}
+			swap_ideas = {
+				add_idea = hea_rampant_militarism
+				remove_idea = hea_innocence_lost_idea
+			}
+			custom_effect_tooltip = unlock_hea_conversion
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] hea_nf_vengance exited"
+			}
+		}
+	}
+
+	focus = {
+		id = hea_nf_boilers_of_justice
+		icon = GFX_goal_HEA_focus_boilers_of_justice
+		cost = 60
+		x = 20
+		y = 12
+
+		prerequisite = {
+			focus = hea_nf_vengance
+		}
+
+		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] hea_nf_boilers_of_justice entered"
+			}
+			add_ideas = hea_boilers_of_justice
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] hea_nf_boilers_of_justice exited"
+			}
+		}
+	}
+
+	# militarism fix
+	focus = {
+		id = hea_nf_addres_militarism
+		icon = GFX_goal_HEA_focus_addres_militarism
+		cost = 60
+		x = 24
+		y = 10
+
+		available = {
+			has_completed_focus = hea_nf_consolidate_pol
+			has_idea = hea_rampant_militarism
+		}
+
+		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] hea_nf_addres_militarism entered"
+			}
+			add_political_power = 75
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] hea_nf_addres_militarism exited"
+			}
+		}
+	}
+
+	focus = {
+		id = hea_nf_embrace_militarism
+		icon = GFX_goal_HEA_focus_embracing_violence
+		cost = 60
+		x = 23
+		y = 11
+
+		prerequisite = {
+			focus = hea_nf_addres_militarism
+		}
+
+		mutually_exclusive = {
+			focus = hea_nf_fight_militarism
+		}
+
+		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] hea_nf_embrace_militarism entered"
+			}
+			swap_ideas = {
+				add_idea = hea_rampant_militarism_1
+				remove_idea = hea_rampant_militarism
+			}
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] hea_nf_embrace_militarism exited"
+			}
+		}
+	}
+
+	focus = {
+		id = hea_nf_embrace_militarism_1
+		icon = GFX_goal_HEA_focus_declaration_of_crusade
+		cost = 60
+		x = 23
+		y = 12
+
+		prerequisite = {
+			focus = hea_nf_embrace_militarism
+		}
+
+		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] hea_nf_embrace_militarism_1 entered"
+			}
+			swap_ideas = {
+				add_idea = hea_rampant_militarism_2
+				remove_idea = hea_rampant_militarism_1
+			}
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] hea_nf_embrace_militarism_1 exited"
+			}
+		}
+	}
+
+	focus = {
+		id = hea_nf_fight_militarism
+		icon = GFX_goal_HEA_focus_the_rise_of_mercy
+		cost = 60
+		x = 25
+		y = 11
+
+		prerequisite = {
+			focus = hea_nf_addres_militarism
+		}
+
+		mutually_exclusive = {
+			focus = hea_nf_embrace_militarism
+		}
+
+		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] hea_nf_fight_militarism entered"
+			}
+			swap_ideas = {
+				add_idea = hea_reconcilliation
+				remove_idea = hea_rampant_militarism
+			}
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] hea_nf_fight_militarism exited"
+			}
+		}
+	}
+
+	focus = {
+		id = hea_nf_fight_militarism_1
+		icon = GFX_goal_HEA_focus_declaration_of_sanctuary
+		cost = 60
+		x = 25
+		y = 12
+
+		prerequisite = {
+			focus = hea_nf_fight_militarism
+		}
+
+		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] hea_nf_fight_militarism_1 entered"
+			}
+			swap_ideas = {
+				add_idea = hea_reconcilliation_1
+				remove_idea = hea_reconcilliation
+			}
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] hea_nf_fight_militarism_1 exited"
+			}
+		}
+	}
+
+	focus = {
+		id = hea_nf_army
+		icon = GFX_goal_HEA_focus_evolution_of_the_guard
+		cost = 60
+		x = 3
+		y = 4
+
+		prerequisite = {
+			focus = hea_nf_innocence_lost
+		}
+
+		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] hea_nf_army entered"
+			}
+			add_tech_bonus = {
+				name = land_doc_bonus
+				bonus = 0.5
+				uses = 1
+				category = cat_land_doctrine
+			}
+			add_tech_bonus = {
+				name = air_bonus
+				bonus = 0.5
+				uses = 1
+				category = cat_air_doctrine
+			}
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] hea_nf_army exited"
+			}
+		}
+	}
+
+	focus = {
+		id = hea_nf_army_1
+		icon = GFX_goal_HEA_focus_arming_the_clergy
+		cost = 60
+		x = 5
+		y = 5
+
+		prerequisite = {
+			focus = hea_nf_army
+		}
+
+		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] hea_nf_army_1 entered"
+			}
+			army_experience = 20
+			add_tech_bonus = {
+				name = land_doc_bonus
+				bonus = 0.5
+				uses = 1
+				category = cat_land_doctrine
+			}
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] hea_nf_army_1 exited"
+			}
+		}
+	}
+
+	focus = {
+		id = hea_nf_conscription
+		icon = GFX_goal_HEA_focus_mandatory_service
+		cost = 60
+		x = 4
+		y = 6
+
+		prerequisite = {
+			focus = hea_nf_army_1
+		}
+		mutually_exclusive = {
+			focus = hea_nf_crusaders
+		}
+
+		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] hea_nf_conscription entered"
+			}
+			add_ideas = hea_conscription
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] hea_nf_conscription exited"
+			}
+		}
+	}
+
+	focus = {
+		id = hea_nf_crusaders
+		icon = GFX_goal_HEA_focus_crusader_armies
+		cost = 60
+		x = 6
+		y = 6
+
+		prerequisite = {
+			focus = hea_nf_army_1
+		}
+		mutually_exclusive = {
+			focus = hea_nf_conscription
+		}
+
+		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] hea_nf_crusaders entered"
+			}
+			add_ideas = hea_crusaders
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] hea_nf_crusaders exited"
+			}
+		}
+	}
+
+	focus = {
+		id = hea_nf_army_2
+		icon = GFX_goal_HEA_focus_military_ordos
+		cost = 60
+		x = 5
+		y = 7
+
+		prerequisite = {
+			focus = hea_nf_conscription
+			focus = hea_nf_crusaders
+		}
+
+		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] hea_nf_army_2 entered"
+			}
+			add_tech_bonus = {
+				name = land_doc_bonus
+				bonus = 0.5
+				uses = 2
+				category = cat_land_doctrine
+			}
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] hea_nf_army_2 exited"
+			}
+		}
+	}
+
+	focus = {
+		id = hea_nf_air
+		icon = GFX_goal_HEA_focus_race_to_heaven
+		cost = 60
+		x = 1
+		y = 5
+
+		prerequisite = {
+			focus = hea_nf_army
+		}
+
+		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] hea_nf_air entered"
+			}
+			air_experience = 20
+			add_tech_bonus = {
+				name = air_bonus
+				bonus = 0.5
+				uses = 1
+				category = air_equipment_tech_category
+			}
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] hea_nf_air exited"
+			}
+		}
+	}
+
+	focus = {
+		id = hea_nf_air_knight
+		icon = GFX_goal_HEA_focus_blessing_of_the_angels
+		cost = 60
+		x = 0
+		y = 6
+
+		prerequisite = {
+			focus = hea_nf_air
+		}
+
+		available = {
+			has_tech = glider_tech
+		}
+
+		mutually_exclusive = {
+			focus = hea_nf_air_peasant
+		}
+
+		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] hea_nf_air_knight entered"
+			}
+			add_ideas = hea_air_knight
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] hea_nf_air_knight exited"
+			}
+		}
+	}
+
+	focus = {
+		id = hea_nf_air_peasant
+		icon = GFX_goal_HEA_focus_wings_of_the_angels
+		cost = 60
+		x = 2
+		y = 6
+
+		prerequisite = {
+			focus = hea_nf_air
+		}
+
+		available = {
+			has_tech = glider_tech
+		}
+
+		mutually_exclusive = {
+			focus = hea_nf_air_knight
+		}
+
+		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] hea_nf_air_peasant entered"
+			}
+			custom_effect_tooltip = hea_add_30_fighters_tt
+			hidden_effect = { add_equipment_to_stockpile = { type = fighter_equipment_1 amount = 30 producer = HEA } }
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] hea_nf_air_peasant exited"
+			}
+		}
+	}
+
+	focus = {
+		id = hea_nf_air_1
+		icon = GFX_goal_HEA_focus_ascension_achieved
+		cost = 60
+		x = 1
+		y = 7
+
+		prerequisite = {
+			focus = hea_nf_air_peasant
+			focus = hea_nf_air_knight
+		}
+
+		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] hea_nf_air_1 entered"
+			}
+			add_tech_bonus = {
+				name = air_bonus
+				bonus = 0.5
+				uses = 1
+				category = cat_air_doctrine
+			}
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] hea_nf_air_1 exited"
+			}
+		}
+	}
+
+	focus = {
+		id = hea_nf_missionary_warriors
+		icon = GFX_goal_HEA_focus_armed_pilgrims
+		cost = 60
+		x = 3
+		y = 8
+
+		prerequisite = {
+			focus = hea_nf_army_2
+			focus = hea_nf_air_1
+		}
+
+		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] hea_nf_missionary_warriors entered"
+			}
+			add_ideas = hea_general_staff
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] hea_nf_missionary_warriors exited"
+			}
+		}
+	}
+
+	focus = {
+		id = hea_nf_officer_priests
+		icon = GFX_goal_HEA_focus_cleric_generals
+		cost = 60
+		x = 3
+		y = 10
+
+		prerequisite = {
+			focus = hea_nf_missionary_warriors
+		}
+
+		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] hea_nf_officer_priests entered"
+			}
+			add_ideas = hea_mobility
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] hea_nf_officer_priests exited"
+			}
+		}
+	}
+
+	focus = {
+		id = hea_nf_community_service
+		icon = GFX_goal_CES_workshop
+		cost = 60
+		x = 9
+		y = 5
+
+		prerequisite = {
+			focus = hea_nf_innocence_lost
+		}
+
+		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] hea_nf_community_service entered"
+			}
+			every_owned_state = {
+				limit = {
+					is_core_of = HEA
+				}
+				add_extra_state_shared_building_slots = 3
+			}
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] hea_nf_community_service exited"
+			}
+		}
+	}
+
+	focus = {
+		id = hea_nf_path_of_steam
+		icon = GFX_goal_generic_construction2
+		cost = 60
+		x = 9
+		y = 6
+
+		prerequisite = {
+			focus = hea_nf_community_service
+		}
+
+		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] hea_nf_path_of_steam entered"
+			}
+			every_owned_state = {
+				limit = {
+					is_core_of = HEA
+				}
+				add_building_construction = {
+					type = infrastructure
+					level = 2
+					instant_build = yes
+				}
+			}
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] hea_nf_path_of_steam exited"
+			}
+		}
+	}
+
+	focus = {
+		id = hea_nf_school_of_steam
+		icon = GFX_goal_tfv_generic_tech_sharing
+		cost = 60
+		x = 9
+		y = 7
+
+		prerequisite = {
+			focus = hea_nf_path_of_steam
+		}
+
+		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] hea_nf_school_of_steam entered"
+			}
+			add_research_slot = 1
+			add_ideas = hea_school_of_steam
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] hea_nf_school_of_steam exited"
+			}
+		}
+	}
+
+	focus = {
+		id = hea_nf_school_of_steam_industry
+		icon = GFX_goal_generic_cities_focus
+		cost = 60
+		x = 9
+		y = 8
+
+		prerequisite = {
+			focus = hea_nf_school_of_steam
+		}
+
+		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] hea_nf_school_of_steam_industry entered"
+			}
+			278 = {
+				add_extra_state_shared_building_slots = 3
+				add_building_construction = {
+					type = industrial_complex
+					level = 3
+					instant_build = yes
+				}
+			}
+			add_tech_bonus = {
+				name = industrial_bonus
+				bonus = 0.15
+				uses = 3
+				category = industry
+			}
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] hea_nf_school_of_steam_industry exited"
+			}
+		}
+	}
+
+	focus = {
+	    id = hea_nf_school_of_steam_industry_2
+		icon = GFX_goal_generic_tools
+		cost = 60
+		x = 9
+		y = 9
+
+		prerequisite = {
+			focus = hea_nf_school_of_steam_industry
+		}
+        
+		completion_reward = {
+			400 = {
+			    add_extra_state_shared_building_slots = 3
+			    add_building_construction = {
+				    type = industrial_complex
+				    level = 3
+				    instant_build = yes
+			    }
+			}
+			add_tech_bonus = {
+				name = industrial_bonus
+				bonus = 0.15
+				uses = 3
+                category = industry
+			}
+		}
+    } 
+
+	focus = {
+		id = hea_nf_school_of_steam_motorisation
+		icon = GFX_goal_generic_fuel_focus
+		cost = 60
+		x = 11
+		y = 8
+
+		prerequisite = {
+			focus = hea_nf_school_of_steam
+		}
+
+		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] hea_nf_school_of_steam_motorisation entered"
+			}
+			278 = {
+				add_extra_state_shared_building_slots = 3
+				add_building_construction = {
+					type = arms_factory
+					level = 3
+					instant_build = yes
+				}
+			}
+			add_tech_bonus = {
+				name = motorized_bonus
+				bonus = 0.15
+				uses = 3
+				category = vehicle_tech_category
+			}
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] hea_nf_school_of_steam_motorisation exited"
+			}
+		}
+	}
+
+	focus = {
+	    id = hea_nf_school_of_steam_armaments
+		icon = GFX_goal_generic_laser_gat
+		cost = 60
+		x = 11
+		y = 9
+
+		prerequisite = {
+			focus = hea_nf_school_of_steam_motorisation
+		}
+        
+		completion_reward = {
+			400 = {
+			    add_extra_state_shared_building_slots = 3
+			    add_building_construction = {
+				    type = arms_factory
+				    level = 3
+				    instant_build = yes
+			    }
+			}
+			add_tech_bonus = {
+				name = infantry_bonus
+				bonus = 0.15
+				uses = 3
+                category = infantry_tech_category
+			}
+		}
+    } 
+
+	focus = {
+		id = hea_nf_school_of_steam_aviation
+		icon = GFX_goal_generic_airbases_focus
+		cost = 60
+		x = 7
+		y = 8
+
+		prerequisite = {
+			focus = hea_nf_school_of_steam
+		}
+
+		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] hea_nf_school_of_steam_aviation entered"
+			}
+			capital_scope = {
+				add_building_construction = {
+					type = air_base
+					level = 2
+					instant_build = yes
+				}
+			}
+			add_tech_bonus = {
+				name = air_bonus
+				bonus = 0.15
+				uses = 3
+				category = air_tech_category
+			}
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] hea_nf_school_of_steam_aviation exited"
+			}
+		}
+	}
+
+	focus = {
+	    id = hea_nf_school_of_steam_navigation
+		icon = GFX_goal_generic_boat_boat
+		cost = 60
+		x = 7
+		y = 9
+
+		prerequisite = {
+			focus = hea_nf_school_of_steam_aviation
+		}
+        
+		completion_reward = {
+			52 = {
+			    add_extra_state_shared_building_slots = 2
+			    add_building_construction = {
+				    type = dockyard
+				    level = 2
+				    instant_build = yes
+			    }
+            add_building_construction = {
+                type = naval_base
+                level = 2
+                instant_build = yes
+                province = 7166
+			}
+		}
+			add_tech_bonus = {
+				name = naval_bonus
+				bonus = 0.15
+				uses = 3
+                category = naval_tech_category
+			}
+		}
+    } 
+
+	focus = {
+		id = hea_nf_machines_of_steam
+		icon = GFX_goal_HEA_focus_steampowered_dreadnaughts
+		cost = 60
+		x = 8
+		y = 11
+
+		prerequisite = {
+			focus = hea_nf_officer_priests
+		}
+		prerequisite = {
+			focus = hea_nf_industry_5
+		}
+		mutually_exclusive = {
+			focus = hea_nf_men_of_steam
+		}
+
+		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] hea_nf_machines_of_steam entered"
+			}
+			add_tech_bonus = {
+				name = industrial_bonus
+				bonus = 0.5
+				ahead_reduction = 2
+				uses = 2
+				category = tank_tech_category
+			}
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] hea_nf_machines_of_steam exited"
+			}
+		}
+	}
+
+	focus = {
+		id = hea_nf_men_of_steam
+		icon = GFX_goal_HEA_focus_steam_power_armor
+		cost = 60
+		x = 10
+		y = 11
+
+		prerequisite = {
+			focus = hea_nf_officer_priests
+		}
+		prerequisite = {
+			focus = hea_nf_industry_5
+		}
+		mutually_exclusive = {
+			focus = hea_nf_machines_of_steam
+		}
+
+		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] hea_nf_men_of_steam entered"
+			}
+			add_tech_bonus = {
+				name = industrial_bonus
+				bonus = 0.5
+				ahead_reduction = 2
+				uses = 2
+				category = power_armor_tech_category
+			}
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] hea_nf_men_of_steam exited"
+			}
+		}
+	}
+
+	focus = {
+		id = hea_nf_age_of_steam
+		icon = GFX_goal_HEA_focus_a_new_age
+		cost = 90
+		x = 9
+		y = 12
+
+		prerequisite = {
+			focus = hea_nf_men_of_steam
+			focus = hea_nf_machines_of_steam
+		}
+
+		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] hea_nf_age_of_steam entered"
+			}
+			swap_ideas = {
+				add_idea = hea_age_of_steam_idea
+				remove_idea = hea_steam_power
+			}
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] hea_nf_age_of_steam exited"
+			}
+		}
+	}
+
+	focus = {
+		id = hea_nf_industry
+		icon = GFX_goal_HEA_focus_developing_the_gate
+		cost = 45
+		x = 14
+		y = 4
+
+		prerequisite = {
+			focus = hea_nf_innocence_lost
+		}
+		available = {
+			116 = { is_owned_and_controlled_by = ROOT }
+		}
+
+		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] hea_nf_industry entered"
+			}
+			116 = {
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = industrial_complex
+					level = 2
+					instant_build = yes
+				}
+			}
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] hea_nf_industry exited"
+			}
+		}
+	}
+
+	focus = {
+		id = hea_nf_industry_1
+		icon = GFX_goal_generic_supplies_focus
+		cost = 45
+		x = 13
+		y = 5
+
+		prerequisite = {
+			focus = hea_nf_industry
+		}
+		mutually_exclusive = {
+			focus = hea_nf_industry_mil_1
+		}
+		available = {
+			52 = { is_owned_and_controlled_by = ROOT }
+		}
+
+		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] hea_nf_industry_1 entered"
+			}
+			52 = {
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = industrial_complex
+					level = 2
+					instant_build = yes
+				}
+			}
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] hea_nf_industry_1 exited"
+			}
+		}
+	}
+
+	focus = {
+		id = hea_nf_industry_2
+		icon = GFX_goal_generic_large_scale_normal_industry_focus
+		cost = 45
+		x = 13
+		y = 6
+
+		prerequisite = {
+			focus = hea_nf_industry_mil_1
+			focus = hea_nf_industry_1
+		}
+		mutually_exclusive = {
+			focus = hea_nf_industry_mil_2
+		}
+		available = {
+			278 = { is_owned_and_controlled_by = ROOT }
+		}
+
+		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] hea_nf_industry_2 entered"
+			}
+			278 = {
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = industrial_complex
+					level = 2
+					instant_build = yes
+				}
+			}
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] hea_nf_industry_2 exited"
+			}
+		}
+	}
+
+	focus = {
+		id = hea_nf_industry_3
+		icon = GFX_goal_generic_supplies_focus
+		cost = 45
+		x = 13
+		y = 7
+
+		prerequisite = {
+			focus = hea_nf_industry_mil_2
+			focus = hea_nf_industry_2
+		}
+		mutually_exclusive = {
+			focus = hea_nf_industry_mil_3
+		}
+		available = {
+			18 = { is_owned_and_controlled_by =  HEA }
+		}
+
+		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] hea_nf_industry_3 entered"
+			}
+			18 = {
+				add_extra_state_shared_building_slots = 3
+				add_building_construction = {
+					type = industrial_complex
+					level = 3
+					instant_build = yes
+				}
+			}
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] hea_nf_industry_3 exited"
+			}
+		}
+	}
+
+	focus = {
+		id = hea_nf_industry_4
+		icon = GFX_goal_generic_large_scale_normal_industry_focus
+		cost = 45
+		x = 13
+		y = 8
+
+		prerequisite = {
+			focus = hea_nf_industry_mil_3
+			focus = hea_nf_industry_3
+		}
+		mutually_exclusive = {
+			focus = hea_nf_industry_mil_4
+		}
+		available = {
+			379 = { is_owned_and_controlled_by = ROOT }
+		}
+
+		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] hea_nf_industry_4 entered"
+			}
+			379 = {
+				add_extra_state_shared_building_slots = 3
+				add_building_construction = {
+					type = industrial_complex
+					level = 3
+					instant_build = yes
+				}
+			}
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] hea_nf_industry_4 exited"
+			}
+		}
+	}
+
+	focus = {
+		id = hea_nf_industry_mil_1
+		icon = GFX_goal_generic_ammo_boxes_focus
+		cost = 45
+		x = 15
+		y = 5
+
+		prerequisite = {
+			focus = hea_nf_industry
+		}
+		mutually_exclusive = {
+			focus = hea_nf_industry_1
+		}
+		available = {
+			52 = { is_owned_and_controlled_by = ROOT }
+		}
+
+		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] hea_nf_industry_mil_1 entered"
+			}
+			52 = {
+				add_extra_state_shared_building_slots = 3
+				add_building_construction = {
+					type = arms_factory
+					level = 3
+					instant_build = yes
+				}
+			}
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] hea_nf_industry_mil_1 exited"
+			}
+		}
+	}
+
+	focus = {
+		id = hea_nf_industry_mil_2
+		icon = GFX_goal_generic_military_industry_focus
+		cost = 45
+		x = 15
+		y = 6
+
+		prerequisite = {
+			focus = hea_nf_industry_mil_1
+			focus = hea_nf_industry_1
+		}
+		mutually_exclusive = {
+			focus = hea_nf_industry_2
+		}
+		available = {
+			278 = { is_owned_and_controlled_by = ROOT }
+		}
+
+		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] hea_nf_industry_mil_2 entered"
+			}
+			278 = {
+				add_extra_state_shared_building_slots = 3
+				add_building_construction = {
+					type = arms_factory
+					level = 3
+					instant_build = yes
+				}
+			}
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] hea_nf_industry_mil_2 exited"
+			}
+		}
+	}
+
+	focus = {
+		id = hea_nf_industry_mil_3
+		icon = GFX_goal_generic_ammo_boxes_focus
+		cost = 45
+		x = 15
+		y = 7
+
+		prerequisite = {
+			focus = hea_nf_industry_mil_2
+			focus = hea_nf_industry_2
+		}
+		mutually_exclusive = {
+			focus = hea_nf_industry_3
+		}
+		available = {
+			18 = { is_owned_and_controlled_by = ROOT }
+		}
+
+		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] hea_nf_industry_mil_3 entered"
+			}
+			18 = {
+				add_extra_state_shared_building_slots = 4
+				add_building_construction = {
+					type = arms_factory
+					level = 4
+					instant_build = yes
+				}
+			}
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] hea_nf_industry_mil_3 exited"
+			}
+		}
+	}
+
+	focus = {
+		id = hea_nf_industry_mil_4
+		icon = GFX_goal_generic_military_industry_focus
+		cost = 45
+		x = 15
+		y = 8
+
+		prerequisite = {
+			focus = hea_nf_industry_mil_3
+			focus = hea_nf_industry_3
+		}
+		mutually_exclusive = {
+			focus = hea_nf_industry_4
+		}
+		available = {
+			379 = { is_owned_and_controlled_by = ROOT }
+		}
+
+		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] hea_nf_industry_mil_4 entered"
+			}
+			379 = {
+				add_extra_state_shared_building_slots = 4
+				add_building_construction = {
+					type = arms_factory
+					level = 4
+					instant_build = yes
+				}
+			}
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] hea_nf_industry_mil_4 exited"
+			}
+		}
+	}
+
+	focus = {
+		id = hea_nf_industry_5
+		icon = GFX_goal_HEA_focus_rebirth_of_the_gate
+		cost = 60
+		x = 14
+		y = 10
+
+		prerequisite = {
+			focus = hea_nf_industry_mil_4
+			focus = hea_nf_industry_4
+		}
+		available = {
+			116 = { is_owned_and_controlled_by = ROOT }
+		}
+
+		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] hea_nf_industry_5 entered"
+			}
+			116 = {
+				add_extra_state_shared_building_slots = 6
+				add_building_construction = {
+					type = arms_factory
+					level = 3
+					instant_build = yes
+				}
+				add_building_construction = {
+					type = industrial_complex
+					level = 3
+					instant_build = yes
+				}
+			}
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] hea_nf_industry_5 exited"
+			}
+		}
+	}
+
+	focus = {
+		id = hea_nf_attack_hgh
+		icon = GFX_goal_hgh_flag
+		cost = 60
+		x = 24
+		y = 4
+
+		prerequisite = {
+			focus = hea_nf_innocence_lost
+		}
+
+		available = {
+			has_completed_focus = hea_nf_consolidate_pol
+			date > 2277.01.01
+			ai_has_no_other_wars_or_wargoals = yes
+		}
+		cancel_if_invalid = yes
+		will_lead_to_war_with = HGH
+		bypass = {
+			HGH = {
+				all_core_land_owned_by_prev_sphere = yes
+			}
+		}
+		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] hea_nf_attack_hgh entered"
+			}
+			add_war_support = 0.1
+			HGH = {
+				ROOT = {
+					grant_wargoals_on_core_states_of_prev = yes
+				}
+			}
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] hea_nf_attack_hgh exited"
+			}
+		}
+	}
+
+	focus = {
+	    id = hea_nf_core_hgh
+		icon = GFX_goal_HEA_focus_precursers
+		cost = 60
+		x = 24
+		y = 5
+
+		prerequisite = {
+			focus = hea_nf_attack_hgh
+		}
+
+		available = {
+			HGH = {
+				all_core_land_owned_by_prev_sphere = yes
+			}
+		}
+		cancel_if_invalid = yes
+		
+		completion_reward = {
+			HGH = {
+				ROOT = {
+					core_owned_states_of_prev = yes
+				}
+			}
+		}
+	}
+
+	focus = {
+		id = hea_nf_attack_mur
+		icon = GFX_goal_mur_flag
+		cost = 60
+		x = 23
+		y = 6
+
+		prerequisite = {
+			focus = hea_nf_core_hgh
+		}
+
+		available = {
+			ai_has_no_other_wars_or_wargoals = yes
+		}
+		cancel_if_invalid = yes
+		will_lead_to_war_with = MUR
+		bypass = {
+			MUR = {
+				all_core_land_owned_by_prev_sphere = yes
+			}
+		}
+		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] hea_nf_attack_mur entered"
+			}
+			MUR = {
+				ROOT = {
+					grant_wargoals_on_core_states_of_prev = yes
+				}
+			}
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] hea_nf_attack_mur exited"
+			}
+		}
+	}
+
+	focus = {
+		id = hea_nf_attack_ano
+		icon = GFX_goal_ano_flag
+		cost = 60
+		x = 25
+		y = 6
+
+		prerequisite = {
+			focus = hea_nf_core_hgh
+		}
+
+		available = {
+			ai_has_no_other_wars_or_wargoals = yes
+		}
+		cancel_if_invalid = yes
+		will_lead_to_war_with = ANO
+		bypass = {
+			ANO = {
+				all_core_land_owned_by_prev_sphere = yes
+			}
+		}
+		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] hea_nf_attack_ano entered"
+			}
+			ANO = {
+				ROOT = {
+					grant_wargoals_on_core_states_of_prev = yes
+				}
+			}
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] hea_nf_attack_ano exited"
+			}
+		}
+	}
+
+	focus = {
+		id = hea_nf_foreign_ministry
+		icon = GFX_goal_HEA_focus_embassy_of_christ
+		cost = 60
+		x = 24
+		y = 7
+
+		prerequisite = {
+			focus = hea_nf_attack_ano
+		}
+		prerequisite = {
+			focus = hea_nf_attack_mur
+		}
+
+		available = {
+			HGH = {
+				all_core_land_owned_by_prev_sphere = yes
+			}
+			ANO = {
+				all_core_land_owned_by_prev_sphere = yes
+			}
+			MUR = {
+				all_core_land_owned_by_prev_sphere = yes
+			}
+		}
+		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] hea_nf_embassy_of_christ entered"
+			}
+			MUR = {
+				ROOT = {
+					core_owned_states_of_prev = yes
+				}
+			}
+			ANO = {
+				ROOT = {
+					core_owned_states_of_prev = yes
+				}
+			}			
+			set_variable = { coring_cost_country_factor = -0.25 }
+			custom_effect_tooltip = bdt_25_percent_core_cost_reduction_tt
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] hea_nf_embassy_of_christ exited"
+			}
+		}
+	}
+}

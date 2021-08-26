@@ -1,0 +1,1700 @@
+formable_nations = {
+
+form_patriarch_colorado = {
+		allowed = {
+			OR = {
+				original_tag = MXC
+			}
+		}
+		visible = {
+			has_idea = MXC_aid_of_the_patriarch
+		}
+		available = {
+			IRN = {
+				all_core_land_owned_by_prev_sphere = yes
+			}
+            HAN = {
+				all_core_land_owned_by_prev_sphere = yes
+			}
+		}
+
+		fire_only_once = yes
+
+		ai_will_do = {
+			base = 100
+		}
+
+		complete_effect = {
+			set_cosmetic_tag = Patriarch_Colorado
+			add_stability = 0.35
+            kill_ideology_leader = intellectuals
+            set_politics = {
+                ruling_party = elites
+            }
+           add_popularity = {
+				ideology = elites
+				popularity = 0.75
+			}
+			swap_ideas = {
+				remove_idea = MXC_aid_of_the_patriarch
+				add_idea = MXC_the_patriarchs_rule
+			}
+			set_capital = 460
+            custom_effect_tooltip = colorado_claims_tt
+			hidden_effect = {
+				remove_idea = MXC_the_battered_chapter
+				every_state = {
+					limit = {
+						OR = {
+							region = 42
+							region = 43
+							region = 44
+						}
+						NOT = { is_owned_by = MXC }
+					}
+					add_claim_by = MXC
+				}
+				525 = {
+					set_state_name = "Denver"
+				}
+				create_country_leader = {
+					name = "The Patriarch"
+					desc = "SAUL_BUCHANAN_DESC"
+					picture = "gfx/leaders/MXC/portrait_saul_buchanan.dds"
+					expire = "3000.1.1"
+					ideology = militarist_technocracy
+					traits = {
+						popular_figurehead
+						stout_defender
+						war_hero
+					}
+				}
+                every_state = {
+                     limit = {
+                        OR = {
+                           is_core_of = IRN
+                           is_core_of = HAN
+						   is_core_of = ROB
+                     }
+                   }
+                 add_core_of = MXC
+                }
+			}
+		}
+	}
+
+    form_libertys_colorado = {
+		allowed = {
+			OR = {
+				original_tag = IRN
+			}
+		}
+		visible = {
+			has_idea = IRN_libertys_rage
+		}
+		available = {
+			MXC = {
+				all_core_land_owned_by_prev_sphere = yes
+			}
+            HAN = {
+				all_core_land_owned_by_prev_sphere = yes
+			}
+		}
+
+		fire_only_once = yes
+
+		ai_will_do = {
+			base = 100
+		}
+
+		complete_effect = {
+			set_cosmetic_tag = Libertys_Colorado
+			add_stability = 0.05
+			custom_effect_tooltip = colorado_claims_tt
+            kill_ideology_leader = ruler
+            create_country_leader = {
+	            name = "Liberty Buchanan"
+            	desc = "LIBERTY_BUCHANAN_DESC"
+	            picture = "gfx/leaders/IRN/portrait_liberty_buchanan.dds"
+	            expire = "3000.1.1"
+	            ideology = indifferent_despotism
+	            traits = {
+	            	cruel_tyrant
+                    lac_no_mercy
+            	}
+            }
+			swap_ideas = {
+				remove_idea = IRN_libertys_rage
+				add_idea = IRN_Libertys_Empire
+			}
+			hidden_effect = {
+				525 = {
+					set_state_name = "Denver"
+				}
+				every_state = {
+					limit = {
+						OR = {
+							region = 42
+							region = 43
+							region = 44
+						}
+						NOT = { is_owned_by = IRN }
+					}
+					add_claim_by = IRN
+				}
+                 every_state = {
+                     limit = {
+                        OR = {
+                           is_core_of = MXC
+                           is_core_of = HAN
+						   is_core_of = ROB
+                     }
+                   }
+                 add_core_of = IRN
+                }
+			}
+		}
+	}
+
+    form_vault_tec = {
+		allowed = {
+			OR = {
+				original_tag = VLT
+                original_tag = EXE
+			}
+		}
+		visible = {
+			has_country_flag = is_vault_tec_nation
+		}
+		available = {
+			OR = {
+				BOO = { exists = no }
+				BOO = { is_subject_of = ROOT }
+			}
+            OR = {
+				TTM = { exists = no }
+				TTM = { is_subject_of = ROOT }
+			}
+            OR = {
+				VLT = { exists = no }
+				VLT = { is_subject_of = ROOT }
+                VLT = {is_ai = no}
+			}
+            OR = {
+				EXE = { exists = no }
+				EXE = { is_subject_of = ROOT }
+                EXE = {is_ai = no}
+			}
+            owns_state = 351
+            owns_state = 313
+            owns_state = 344
+            owns_state = 496
+            owns_state = 253
+            owns_state = 151
+            owns_state = 551
+            owns_state = 677
+            owns_state = 211
+		}
+
+		fire_only_once = yes
+
+		ai_will_do = {
+			base = 100
+		}
+
+		complete_effect = {
+			set_cosmetic_tag = Vault_Tech_Industries
+			add_stability = 0.15
+            ROOT = {
+                add_ideas = VaultTec_i_am_vault_tec 
+		    }
+	    }
+    }
+
+    form_boomer_enclave = {
+		allowed = {
+				original_tag = BOO
+                wild_wasteland = yes
+		}
+		visible = {
+			original_tag = BOO
+            wild_wasteland = yes
+		}
+		available = {
+			KHA = {
+				all_core_land_owned_by_prev_sphere = yes
+			}
+            SKY = {
+				all_core_land_owned_by_prev_sphere = yes
+			}
+		}
+
+		fire_only_once = yes
+
+		ai_will_do = {
+			base = 100
+		}
+
+		complete_effect = {
+			set_cosmetic_tag = Boomer_Enclave
+			set_capital = 389
+			add_stability = 0.35
+              kill_ideology_leader = elites
+               create_country_leader = {
+	            name = "Commander Boomer"
+            	desc = "COMMANDER_BOOMER_DESC"
+	            picture = "gfx/leaders/BOO/portrait_commander_boomer.dds"
+	            expire = "3000.1.1"
+	            ideology = militarist_technocracy
+	            traits = {
+	            	cruel_tyrant
+                    military_background
+            	}
+            }
+			ROOT = { 
+				add_ideas = Boomerclave_enclave_reborn
+			}
+			hidden_effect ={
+				 every_state = {
+                     limit = {
+                        OR = {
+                           is_core_of = KHA
+                           is_core_of = SKY
+                     }
+                   }
+                 add_core_of = BOO
+            }
+            	if = {
+					limit = {
+						NOT = {
+							has_tech = stripped_pa_tech
+						}
+					}
+					set_technology = {
+						stripped_pa_tech = 1
+					}
+				}
+				if = {
+					limit = {
+						NOT = {
+							has_tech = weight_support_frame_pa_tech_1
+						}
+					}
+					set_technology = {
+						weight_support_frame_pa_tech_1 = 1
+					}
+				}
+				if = {
+					limit = {
+						NOT = {
+							has_tech = weight_support_frame_pa_tech_2
+						}
+					}
+					set_technology = {
+						weight_support_frame_pa_tech_2 = 1
+					}
+				}
+				if = {
+					limit = {
+						NOT = {
+							has_tech = wasteland_pa_tech
+						}
+					}
+					set_technology = {
+						wasteland_pa_tech = 1
+					}
+				}
+				set_technology = {
+					power_armour_enclave_1 = 1
+				    }
+				}
+			}
+		}
+
+    form_league_of_yucca = {
+		allowed = {
+				original_tag = SUF
+		}
+		visible = {
+			has_completed_focus = suf_the_federations_big_win
+		}
+		available = {
+			LAC = {
+				all_core_land_owned_by_prev_sphere = yes
+			}
+            ASF = {
+				all_core_land_owned_by_prev_sphere = yes
+			}
+            EXE = {
+				all_core_land_owned_by_prev_sphere = yes
+			}
+            EDA = {
+				all_core_land_owned_by_prev_sphere = yes
+			}
+            MES = {
+				all_core_land_owned_by_prev_sphere = yes
+			}
+		}
+
+		fire_only_once = yes
+
+		ai_will_do = {
+			base = 100
+		}
+
+		complete_effect = {
+			set_cosmetic_tag = Yucca_League
+			add_stability = 0.10
+			custom_effect_tooltip = summers_claims_tt
+			hidden_effect ={
+				every_state = {
+                     limit = {
+                        OR = {
+                           is_core_of = EDA
+                           is_core_of = ASF
+                           is_core_of = MES
+                     }
+                   }
+                 add_core_of = SUF
+                 }
+				5 = {
+					set_state_name = "Pentstemon"
+				}
+				189 = {
+					set_state_name = "Lyreleaf Jewel"
+				}
+				25 = {
+					set_state_name = "Yarrow"
+				}
+				410 = {
+					set_state_name = "Globemallow"
+				}
+				152 = {
+					set_state_name = "Tackstem"
+				}
+			}
+		}
+	}
+
+	form_north_colorado_republic = {
+		allowed = {
+			OR = {
+				original_tag = BAG
+			}
+		}
+		visible = {
+			original_tag = BAG
+		}
+		available = {
+			IRN = {
+				all_core_land_owned_by_prev_sphere = yes
+			}
+            GLW = {
+				all_core_land_owned_by_prev_sphere = yes
+			}
+			LUM = {
+				all_core_land_owned_by_prev_sphere = yes
+			}
+			DSL = {
+				all_core_land_owned_by_prev_sphere = yes
+			}
+			HXL = {
+				all_core_land_owned_by_prev_sphere = yes
+			}
+			WHD = {
+				all_core_land_owned_by_prev_sphere = yes
+			}
+			owns_state = 401
+			owns_state = 560
+			owns_state = 494
+			owns_state = 191
+			owns_state = 646
+		}
+
+		fire_only_once = yes
+
+		ai_will_do = {
+			base = 100
+		}
+
+		complete_effect = {
+			set_cosmetic_tag = North_Colorado_Republic
+			set_capital = 568
+			add_stability = 0.35
+			swap_ideas = {
+				remove_idea = BAG_an_ncr_detatchment
+				add_idea = BAG_North_Colorado_Guard
+			}
+                every_state = {
+                     limit = {
+                        OR = {
+                           is_core_of = IRN
+                           is_core_of = GLW
+						   is_core_of = LUM
+						   is_core_of = WHD
+						   is_core_of = DSL
+						   is_core_of = HXL
+                     }
+                   }
+                 add_core_of = BAG
+                }
+				 
+				add_state_core = 401
+				add_state_core = 560
+				add_state_core = 494
+				add_state_core = 191
+				add_state_core = 646
+			}
+		}
+
+		form_prespers_legacy = {
+			allowed = {
+				OR = {
+					original_tag = SLE
+				}
+			}
+			visible = {
+				original_tag = SLE
+			}
+			available = {
+				VEG = {
+					all_core_land_owned_by_prev_sphere = yes
+				}
+				KHA = {
+					all_core_land_owned_by_prev_sphere = yes
+				}
+				SOR = {
+					all_core_land_owned_by_prev_sphere = yes
+				}
+				DEA = {
+					all_core_land_owned_by_prev_sphere = yes
+				}
+			}
+	
+			fire_only_once = yes
+	
+			ai_will_do = {
+				base = 100
+			}
+	
+			complete_effect = {
+				set_cosmetic_tag = Prespers_Legacy
+				set_capital = 211
+				add_stability = 0.15
+				add_state_core = 211
+				211 = {
+					set_state_name = "Presperton"
+					}
+				if = {
+					limit = {
+						NOT = {
+							has_tech = mininuke_unlock_tech
+						}
+					}
+					set_technology = {
+						mininuke_unlock_tech = 1
+					}
+				}
+			}
+		}
+
+		form_revitalized_vipers = {
+			allowed = {
+				OR = {
+					original_tag = VIP
+				}
+			}
+			visible = {
+				original_tag = VIP
+			}
+			available = {
+				JAC = {
+					all_core_land_owned_by_prev_sphere = yes
+				}
+				DES = {
+					all_core_land_owned_by_prev_sphere = yes
+				}
+			}
+	
+			fire_only_once = yes
+	
+			ai_will_do = {
+				base = 100
+			}
+	
+			complete_effect = {
+				set_cosmetic_tag = Vipers_Sept
+				set_capital = 210
+				add_stability = 0.15
+				210 = {
+					set_state_name = "Temple of the Serpent"
+					}
+					swap_ideas = {
+						remove_idea = vip_a_broken_tribe 
+						add_idea = VIP_revitalized_tribe
+					}
+				every_state = {
+					limit = {
+					  OR = {
+						  is_core_of = DES
+						  is_core_of = JAC
+					}
+				  }
+				add_core_of = VIP
+			   }
+			   every_state = {
+				limit = {
+				   OR = {
+					  is_core_of = GRA
+					  is_core_of = SKY
+					  is_core_of = YKZ
+					  is_core_of = NEW
+					  is_core_of = VLT
+					  is_core_of = ANT
+				}
+			  }
+			add_claim_by = VIP
+		   }
+		}
+	}
+
+	form_new_mexico = {
+		allowed = {
+			OR = {
+				original_tag = EDA
+			}
+		}
+		visible = {
+			original_tag = EDA
+		}
+		available = {
+			SUF = {
+				all_core_land_owned_by_prev_sphere = yes
+			}
+			LAC = {
+				all_core_land_owned_by_prev_sphere = yes
+			}
+			ASF = {
+				all_core_land_owned_by_prev_sphere = yes
+			}
+			MES = {
+				all_core_land_owned_by_prev_sphere = yes
+			}
+			EXE = {
+				all_core_land_owned_by_prev_sphere = yes
+			}
+		}
+
+		fire_only_once = yes
+
+		ai_will_do = {
+			base = 100
+		}
+
+		complete_effect = {
+			set_cosmetic_tag = New_Mexico_State
+			add_stability = 0.15
+			set_capital = 5
+			every_state = {
+				limit = {
+				  OR = {
+					  is_core_of = ASF
+					  is_core_of = MES
+					  is_core_of = SUF
+				}
+			  }
+			add_core_of = EDA
+		   }
+		   5 = {
+			set_state_name = "New Santa-Fe"
+			}
+			189 = {
+			set_state_name = "Bardon"
+			}
+			25 = {
+			set_state_name = "Vestian"
+			}
+			152 = {
+			set_state_name = "Glanston"
+			}
+			every_state = {
+				limit = {
+					OR = {
+						region = 45
+						region = 46
+					}
+					NOT = { is_owned_by = EDA }
+				}
+				add_claim_by = EDA
+			}
+		}
+	}
+
+	form_native_confederation = {
+		allowed = {
+			OR = {
+				original_tag = HUA
+				original_tag = WAP
+			}
+		}
+		visible = {
+			OR = {
+				original_tag = HUA
+				original_tag = WAP
+			}
+		}
+		available = {
+			WAP = {
+				all_core_land_owned_by_prev_sphere = yes
+			}
+			BLK = {
+				all_core_land_owned_by_prev_sphere = yes
+			}
+			HUA = {
+				all_core_land_owned_by_prev_sphere = yes
+			}
+		}
+
+		fire_only_once = yes
+
+		ai_will_do = {
+			base = 100
+		}
+
+		complete_effect = {
+			set_cosmetic_tag = Arizona_Tribal_Confederation
+			add_stability = 0.15
+			add_state_core = 211
+			every_state = {
+				limit = {
+				  OR = {
+					  is_core_of = HUA
+					  is_core_of = BLK
+					  is_core_of = WAP
+				}
+			  }
+			add_core_of = ROOT
+		  		}
+			}
+		}
+
+	form_texlahoma = {
+		allowed = {
+			OR = {
+				original_tag = SCA
+			}
+		}
+		visible = {
+			OR = {
+				original_tag = SCA	
+			}
+		}
+		available = {
+			CHC = {
+				all_core_land_owned_by_prev_sphere = yes
+			}
+			PAR = {
+				all_core_land_owned_by_prev_sphere = yes
+			}
+			owns_state = 937
+		}
+
+		fire_only_once = yes
+
+		ai_will_do = {
+			base = 100
+		}
+	
+		complete_effect = {
+			set_cosmetic_tag = Texlahoma
+			add_stability = 0.15
+			add_state_core = 937
+			set_capital = 937
+			set_technology = {
+				infantry_tech_level_settler = 1
+				support_tech_level_settler = 1
+				special_forces_tech_level_settler = 1
+				power_armour_tech_level_tribal = 1
+				robotics_tech_level_tribal = 1
+				tools_tech_level_settler = 1
+				habitation_tech_level_settler = 1
+				exploitation_tech_level_settler = 1
+				electronics_tech_level_settler = 1
+		}
+			every_state = {
+				limit = {
+				  OR = {
+					  is_core_of = CHC
+					  is_core_of = PAR
+				}
+			  }
+			add_core_of = SCA
+				  }
+			}
+		}
+
+		form_hectaes_realm = {
+			allowed = {
+					original_tag = ORO
+					has_government = intellectuals
+			}
+			visible = {
+					original_tag = ORO
+					has_government = intellectuals	
+			}
+			available = {
+				TOB = {
+					all_core_land_owned_by_prev_sphere = yes
+				}
+				DRY = {
+					all_core_land_owned_by_prev_sphere = yes
+				}
+				BLK = {
+					all_core_land_owned_by_prev_sphere = yes
+				}
+				HUA = {
+					all_core_land_owned_by_prev_sphere = yes
+				}
+				TWI = {
+					all_core_land_owned_by_prev_sphere = yes
+				}
+				owns_state = 520
+			}
+		
+			fire_only_once = yes
+		
+			ai_will_do = {
+				base = 100
+			}
+		
+			complete_effect = {
+				set_cosmetic_tag = Hecates_Realm
+				set_capital = 359
+				add_stability = 0.35
+				add_state_core = 520
+				every_state = {
+					limit = {
+					  OR = {
+						  is_core_of = TWI
+						  is_core_of = FLA
+					}
+				  }
+				add_core_of = ORO
+					  }
+				}
+			}
+
+		form_columbia = {
+				allowed = {
+					OR = {
+						original_tag = DRE
+					}
+				}
+				visible = {
+					OR = {
+						original_tag = DRE	
+					}
+				}
+				available = {
+					BRK = {
+						all_core_land_owned_by_prev_sphere = yes
+					}
+					WHI = {
+						all_core_land_owned_by_prev_sphere = yes
+					}
+					KAM = {
+						all_core_land_owned_by_prev_sphere = yes
+					}
+					owns_state = 238
+					owns_state = 20
+				}
+			
+				fire_only_once = yes
+			
+				ai_will_do = {
+					base = 300
+				}
+			
+				complete_effect = {
+					set_cosmetic_tag = Columbia
+					add_stability = 0.15
+					add_state_core = 238
+					add_state_core = 20
+					every_state = {
+						limit = {
+						  OR = {
+							  is_core_of = WHI
+							  is_core_of = KAM
+							  is_core_of = BRK
+						}
+					  }
+					add_core_of = DRE
+				  }
+					every_owned_state = {
+					add_manpower = 350
+					add_building_construction = {
+						type = infrastructure
+						level = 3
+						instant_build = yes
+						}
+					}
+					every_state = {
+						limit = {
+							   OR = {
+								  is_core_of = VIC
+								  is_core_of = HAI
+								}
+							  }
+						add_claim_by = DRE
+					   }
+					}
+				}
+
+		form_pharizona = {
+				allowed = {
+					tag = PHR
+				}
+				visible = {
+					original_tag = PHR	
+				}
+				available = {
+					CES = {
+						exists = no
+					}
+					controls_state = 519
+					controls_state = 518
+					controls_state = 289
+					controls_state = 520
+				}
+
+				fire_only_once = yes
+				
+				ai_will_do = {
+					base = 200
+				}
+				
+				complete_effect = {
+					set_cosmetic_tag = Pharizona
+					hidden_effect = {
+						every_state = {
+							limit = { is_arizona_state = yes }
+							add_claim_by = PHR
+						}
+					}
+					add_state_core = 520
+				}
+			}
+
+		form_los_alamos = {
+				allowed = {
+						original_tag = PNT
+						}
+				visible = {
+					original_tag = PNT
+					}
+				available = {
+					NAV = {
+						all_core_land_owned_by_prev_sphere = yes
+					}
+					RES = {
+						all_core_land_owned_by_prev_sphere = yes
+					}
+				}
+				
+				fire_only_once = yes
+				
+				ai_will_do = {
+					base = 100
+				}
+				
+				complete_effect = {
+					set_cosmetic_tag = Los_Alamos
+					set_capital = 634
+					add_stability = 0.15
+					every_state = {
+					limit = {
+						   OR = {
+							  is_core_of = NAV
+							  is_core_of = RES
+						}
+					  }
+					add_core_of = PNT
+				   }
+						set_technology = {
+							infantry_tech_level_settler = 1
+							support_tech_level_settler = 1
+							special_forces_tech_level_settler = 1
+							power_armour_tech_level_tribal = 1
+							robotics_tech_level_tribal = 1
+							tools_tech_level_settler = 1
+							habitation_tech_level_settler = 1
+							habitation_tech_level_scientific = 1
+							exploitation_tech_level_settler = 1
+							exploitation_tech_level_scientific = 1
+							electronics_tech_level_settler = 1
+							electronics_tech_level_scientific = 1
+					}
+				}
+			}
+		
+	form_blackfoot_legion = {
+		allowed = {
+			original_tag = BLK
+		}
+		visible = {
+			original_tag = BLK
+		}
+		available = {
+			HUA = {
+				all_core_land_owned_by_prev_sphere = yes
+			}
+			TWI = {
+				all_core_land_owned_by_prev_sphere = yes
+			}
+			FLA = {
+				all_core_land_owned_by_prev_sphere = yes
+			}
+		}
+		
+		fire_only_once = yes
+		
+		ai_will_do = {
+			base = 100
+		}
+		
+		complete_effect = {
+			set_cosmetic_tag = Blackfoot_Legion
+			set_capital = 520
+			add_stability = 0.15
+			every_state = {
+				limit = {
+				   OR = {
+					  is_core_of = HUA
+					  is_core_of = TWI
+					  is_core_of = FLA
+				}
+			}
+			add_core_of = BLK
+		}
+
+		every_state = {
+			limit = {
+			   OR = {
+				  is_core_of = PHR
+				  is_core_of = WAP
+				  is_core_of = TSI
+				  is_core_of = RSR
+			}
+		}
+		add_claim_by = BLK
+		}
+	}
+}
+
+
+form_el_dorado = {
+	allowed = {
+		original_tag = TVR
+	}
+	visible = {
+		original_tag = TVR
+	}
+	available = {
+		BLO = {
+			all_core_land_owned_by_prev_sphere = yes
+		}
+	}
+
+	fire_only_once = yes
+
+	ai_will_do = {
+		base = 100
+	}
+
+	complete_effect = {
+		set_cosmetic_tag = El_Dorado
+		set_capital = 781
+		781 = {
+			set_state_name = "El Dorado"
+			}
+		add_stability = 0.15
+		every_state = {
+			limit = {
+			   OR = {
+				  is_core_of = BLO
+			}
+		}
+		add_core_of = TVR
+		}
+	}
+}
+
+form_reform_NCR = {
+	allowed = {
+		original_tag = NCR
+		NCR = {
+				has_global_flag = NCR_status_broken_global_flag
+			}
+		}
+	visible = {
+		original_tag = NCR
+		has_cosmetic_tag = NCR_shady_sands
+	}
+	available = {
+		BAR = {
+			all_core_land_owned_by_prev_sphere = yes
+		}
+		BON = {
+			all_core_land_owned_by_prev_sphere = yes
+		}
+		DAY = {
+			all_core_land_owned_by_prev_sphere = yes
+		}
+	}
+
+	fire_only_once = yes
+
+	ai_will_do = {
+		base = 100
+	}
+
+	complete_effect = {
+		set_cosmetic_tag = Reform_NCR
+		add_stability = 0.15
+		every_state = {
+			limit = {
+			   OR = {
+				  is_core_of = DAY
+				  is_core_of = BON
+				  is_core_of = BAR
+			}
+		}
+		add_core_of = NCR
+		}
+	}
+}
+
+form_ranger_nevada = {
+	allowed = {
+		original_tag = DES
+	}
+	visible = {
+		original_tag = DES
+	}
+	available = {
+		VIP = {
+			all_core_land_owned_by_prev_sphere = yes
+		}
+		JAC = {
+			all_core_land_owned_by_prev_sphere = yes
+		}
+		GRA = {
+			all_core_land_owned_by_prev_sphere = yes
+		}
+		SKY = {
+			all_core_land_owned_by_prev_sphere = yes
+		}
+	}
+
+	fire_only_once = yes
+
+	ai_will_do = {
+		base = 100
+	}
+
+	complete_effect = {
+		set_cosmetic_tag = Nevada_Rangers
+		add_stability = 0.15
+		every_state = {
+			limit = {
+			   OR = {
+				  is_core_of = SKY
+				  is_core_of = GRA
+			}
+		}
+		add_core_of = DES
+		}
+	}
+}
+
+form_gold_defense_zone = {
+	allowed = {
+		original_tag = PSH
+	}
+	visible = {
+		original_tag = PSH
+	}
+	available = {
+		NOE = {
+			all_core_land_owned_by_prev_sphere = yes
+		}
+		RUB = {
+			all_core_land_owned_by_prev_sphere = yes
+		}
+		WEN = {
+			all_core_land_owned_by_prev_sphere = yes
+		}
+		RIP = {
+			all_core_land_owned_by_prev_sphere = yes
+		}
+	}
+
+	fire_only_once = yes
+
+	ai_will_do = {
+		base = 100
+	}
+
+	complete_effect = {
+		set_cosmetic_tag = Gold_Defense_Zone
+		add_stability = 0.15
+		every_state = {
+			limit = {
+			   OR = {
+				  is_core_of = RIP
+				  is_core_of = RUB
+				  is_core_of = WEN
+				  is_core_of = NOE
+			}
+		}
+		add_core_of = PSH
+		}
+	}
+}
+
+form_baja_cartel = {
+	allowed = {
+		OR = {
+			original_tag = BVC
+			original_tag = BLP
+		}
+	}
+	visible = {
+		OR = {
+			original_tag = BVC
+			original_tag = BLP
+		}
+	}
+	available = {
+		DAY = {
+			all_core_land_owned_by_prev_sphere = yes
+		}
+		BVC = {
+			all_core_land_owned_by_prev_sphere = yes
+		}
+		BLP = {
+			all_core_land_owned_by_prev_sphere = yes
+		}
+	}
+
+	fire_only_once = yes
+
+	ai_will_do = {
+		base = 100
+	}
+
+	complete_effect = {
+		set_cosmetic_tag = Baja_Cartel
+		set_capital = 781
+		add_stability = 0.15
+		every_state = {
+			limit = {
+			   OR = {
+				  is_core_of = BVC
+				  is_core_of = BLP
+				  is_core_of = DAY
+			}
+		}
+		add_core_of = ROOT
+		}
+	}
+}
+
+form_louisiana = {
+	allowed = {
+		original_tag = TPM
+	}
+	visible = {
+		original_tag = TPM
+	}
+	available = {
+		BAM = {
+			all_core_land_owned_by_prev_sphere = yes
+		}
+		GAM = {
+			all_core_land_owned_by_prev_sphere = yes
+		}
+		DSP = {
+			all_core_land_owned_by_prev_sphere = yes
+		}
+	}
+
+	fire_only_once = yes
+
+	ai_will_do = {
+		base = 100
+	}
+
+	complete_effect = {
+		set_cosmetic_tag = Louisiana
+		add_stability = 0.15
+		every_state = {
+			limit = {
+			   OR = {
+				  is_core_of = BAM
+				  is_core_of = GAM
+				  is_core_of = DSP
+			}
+		}
+		add_core_of = TPM
+		}
+	}
+}
+
+form_mojave = {
+	allowed = {
+		OR = {
+			original_tag = MOS
+			original_tag = VEG
+			original_tag = BOO
+			original_tag = JCT
+			original_tag = MOT
+		}
+	}
+	visible = {
+		OR = {
+			original_tag = MOS
+			original_tag = VEG
+			original_tag = BOO
+			original_tag = JCT
+			original_tag = MOT
+		}
+	}
+	available = {
+		MRA = {
+			all_core_land_owned_by_prev_sphere = yes
+		}
+		MOS = {
+			all_core_land_owned_by_prev_sphere = yes
+		}
+		VEG = {
+			all_core_land_owned_by_prev_sphere = yes
+		}
+		MOJ = {
+			all_core_land_owned_by_prev_sphere = yes
+		}
+		KHA = {
+			all_core_land_owned_by_prev_sphere = yes
+		}
+		MOT = {
+			all_core_land_owned_by_prev_sphere = yes
+		}
+		FIE = {
+			all_core_land_owned_by_prev_sphere = yes
+		}
+		if = {
+			limit = {
+				OR = {
+				UTO = exists
+				JCT = exists
+				BOO = exists
+				}
+			}
+			UTO = {
+				all_core_land_owned_by_prev_sphere = yes
+			}
+			JCT = {
+				all_core_land_owned_by_prev_sphere = yes
+			}
+			BOO = {
+				all_core_land_owned_by_prev_sphere = yes
+			}
+		}
+	}
+
+	fire_only_once = yes
+
+	ai_will_do = {
+		base = 100
+	}
+
+	complete_effect = {
+		set_cosmetic_tag = Mojave
+		add_stability = 0.15
+		every_state = {
+			limit = {
+				OR = {
+					region = 3
+					region = 32
+					is_core_of = MRA
+				}
+			}
+			add_core_of = ROOT
+		}
+	}
+}
+
+form_cult_of_lupa = {
+	allowed = {
+		original_tag = ORO
+	}
+	visible = {
+		original_tag = ORO
+		has_government = ruler
+	}
+	available = {
+		TOB = {
+			all_core_land_owned_by_prev_sphere = yes
+		}
+		DRY = {
+			all_core_land_owned_by_prev_sphere = yes
+		}
+		WHD = {
+			all_core_land_owned_by_prev_sphere = yes
+		}
+		GLW = {
+			all_core_land_owned_by_prev_sphere = yes
+		}
+		HAN = {
+			all_core_land_owned_by_prev_sphere = yes
+		}
+	}
+
+	fire_only_once = yes
+
+	ai_will_do = {
+		base = 100
+	}
+
+	complete_effect = {
+		set_cosmetic_tag = Cult_of_Lupa
+		add_stability = 0.15
+		525 = {
+			set_state_name = "City of the Wolf"
+			}
+		set_captal = 525
+		create_country_leader = {
+			name = "Lupa's Messenger"
+			desc = ""
+			picture = "gfx/leaders/ORO/portrait_lupa_cultist.dds"
+			expire = "3000.1.1"
+			ideology = indifferent_despotism
+			traits = {
+			}
+		}
+		every_state = {
+				limit = {
+			 		  OR = {
+				  is_core_of = GLW
+				  is_core_of = WHD
+				  is_core_of = HAN
+				  is_core_of = TOB
+				  is_core_of = DRY
+			}
+		}
+		add_core_of = ORO
+		}
+	}
+}
+
+form_oregon = {
+	allowed = {
+		original_tag = TIM
+	}
+	visible = {
+		original_tag = TIM
+	}
+	available = {
+		TCA = {
+			all_core_land_owned_by_prev_sphere = yes
+		}
+		RBT = {
+			all_core_land_owned_by_prev_sphere = yes
+		}
+		BDT = {
+			all_core_land_owned_by_prev_sphere = yes
+		}
+		MDT = {
+			all_core_land_owned_by_prev_sphere = yes
+		}
+	}
+
+	fire_only_once = yes
+
+	ai_will_do = {
+		base = 100
+	}
+
+	complete_effect = {
+		set_cosmetic_tag = Oregon
+		add_stability = 0.15
+		274 = {
+			set_state_name = "New Oregon City"
+			}
+		set_capital = 274
+		every_state = {
+			limit = {
+			   OR = {
+				region = 11
+				region = 59
+				region = 58
+			}
+		}
+		add_core_of = TIM
+		}
+	}
+}
+
+form_commierado = {
+	allowed = {
+		OR = {
+			original_tag = HXL
+			original_tag = DSL
+		}
+	}
+	visible = {
+		OR = {
+			original_tag = HXL
+			original_tag = DSL
+		}
+	}
+	available = {
+			num_of_controlled_states > 20
+	}
+
+	fire_only_once = yes
+
+	ai_will_do = {
+		base = 100
+	}
+
+	complete_effect = {
+		set_cosmetic_tag = Commie_Colorado
+		set_capital = 568
+		add_stability = 0.35
+		every_state = {
+			limit = {
+				OR = {
+					region = 42
+					region = 43
+					region = 44
+				}
+				NOT = { is_owned_by = ROOT }
+			}
+			add_claim_by = ROOT
+			}
+			every_state = {
+				limit = {
+			 		  OR = {
+				  is_core_of = HXL
+				  is_core_of = DSL
+				  is_core_of = IRN
+				  is_core_of = BAG
+				  is_core_of = LUM
+			}
+		}
+		add_core_of = ROOT
+			}
+		}
+	}
+
+	form_cult_of_sol = {
+		allowed = {
+			OR = {
+				original_tag = SUN	
+			}
+		}
+		visible = {
+			OR = {
+				original_tag = SUN
+			}
+		}
+			available = {
+				HAN = {
+					all_core_land_owned_by_prev_sphere = yes
+				}
+				SCO = {
+					all_core_land_owned_by_prev_sphere = yes
+				}
+				MXC = {
+					all_core_land_owned_by_prev_sphere = yes
+				}
+				ASF = {
+					all_core_land_owned_by_prev_sphere = yes
+				}
+				LAC = {
+					all_core_land_owned_by_prev_sphere = yes
+				}
+				SUF = {
+					all_core_land_owned_by_prev_sphere = yes
+				}
+			}
+	
+		fire_only_once = yes
+	
+		ai_will_do = {
+			base = 100
+		}
+
+	complete_effect = {
+		set_cosmetic_tag = Cult_of_Sol
+		5 = {
+			set_state_name = "Ad Templum Solis"
+			}
+		set_capital = 5
+		add_stability = 0.35
+			every_state = {
+				limit = {
+			 		  OR = {
+				  is_core_of = LAC
+				  is_core_of = ASF
+				  is_core_of = MXC
+				  is_core_of = SUF
+				  is_core_of = SCO
+				  is_core_of = HAN
+			}
+		}
+		add_core_of = SUN
+			}
+		}
+	}
+
+	form_olympian_worshipers = {
+		allowed = {
+			OR = {
+				original_tag = OLY	
+			}
+		}
+		visible = {
+			OR = {
+				original_tag = OLY
+			}
+		}
+			available = {
+			owns_state = 61
+            owns_state = 84
+			owns_state = 42
+			}
+	
+		fire_only_once = yes
+	
+		ai_will_do = {
+			base = 100
+		}
+
+	complete_effect = {
+		set_cosmetic_tag = Olympian_Worshipers
+		84 = {
+			set_state_name = "New Olympia"
+			}
+		set_capital = 84
+		add_stability = 0.35
+		add_state_core = 61
+		add_state_core = 84
+		add_state_core = 42
+		create_country_leader = {
+			name = "Athena"
+			desc = "ATHENA_DESC"
+			picture = "gfx/leaders/OLY/portrait_athena.dds"
+			expire = "3000.1.1"
+			ideology = constitutional_republic
+			traits = {
+				popular_figurehead
+				cartel_sharp_mind
+			}
+		}
+		if = {
+			limit = {
+				NOT = {
+					has_tech = stripped_pa_tech
+				}
+			}
+			set_technology = {
+				stripped_pa_tech = 1
+			}
+		}
+		if = {
+			limit = {
+				NOT = {
+					has_tech = weight_support_frame_pa_tech_1
+				}
+			}
+			set_technology = {
+				weight_support_frame_pa_tech_1 = 1
+			}
+		}
+		if = {
+			limit = {
+				NOT = {
+					has_tech = weight_support_frame_pa_tech_2
+				}
+			}
+			set_technology = {
+				weight_support_frame_pa_tech_2 = 1
+			}
+		}
+
+		set_technology = {
+			infantry_tech_level_settler = 1
+			support_tech_level_settler = 1
+			power_armour_tech_level_tribal = 1
+			power_armour_tech_level_settler = 1
+		}
+		
+		swap_ideas = {
+			remove_idea = oly_park_legacy 
+			add_idea = OLY_thrones_of_olympus
+		}
+
+		swap_ideas = {
+			remove_idea = oly_nomadic_traditions  
+			add_idea = OLY_settling_down
+		}
+
+		}
+	}
+
+	form_crag_warband = {
+		allowed = {
+			original_tag = PAR
+		}
+		visible = {
+			original_tag = PAR
+		}
+		available = {
+			CHC = {
+				all_core_land_owned_by_prev_sphere = yes
+			}
+			CWB = {
+				all_core_land_owned_by_prev_sphere = yes
+			}
+			SUN = {
+				all_core_land_owned_by_prev_sphere = yes
+			}
+		}
+	
+		fire_only_once = yes
+	
+		ai_will_do = {
+			base = 100
+		}
+	
+		complete_effect = {
+			set_cosmetic_tag = Crag_Warband
+			add_stability = 0.15
+			every_state = {
+				limit = {
+				   OR = {
+					  is_core_of = CHC
+					  is_core_of = CWB
+					  is_core_of = SUN
+				}
+			}
+			add_core_of = PAR
+			}
+		}
+	}
+
+
+    #End
+}

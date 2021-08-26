@@ -1,0 +1,43 @@
+﻿SOR_LIGHT = {
+	name = NAME_THEME_SHIPS_SOR_LIGHT
+	for_countries = { SOR }
+	type = ship
+	ship_types = { light_ship_unit }
+	fallback_name = "Sorrow Canoe %d"
+	unique = {
+		"Baje ka Armoo" "Confidence Sure" "Core-Cut Log" "Guaranteed Catch" "Hard Driftwood" "Knowing" "Me no Heranu a Katu" "No Discarge Armoos!" "No Trouble" "Paz Patasooba" "Powee Desafortuba..." "Quality Unrivaled" "River Dancer" "Serpet" "Silver Fish" "Steady Undouted" "Sturdy-Float" "Swift Rower" "Upstreamer" "Water Dog" "Well Crafted"
+	}
+}
+
+SOR_MEDIUM = {
+	name = NAME_THEME_SHIPS_SOR_MEDIUM
+	for_countries = { SOR }
+	type = ship
+	ship_types = { medium_ship_screen_unit }
+	fallback_name = "Sorrow Boat %d"
+	unique = {
+		"Cutter" "Deha Ruido!" "Ease of Ride" "First Pioneer" "Forager" "Gatherings" "Good-Haul" "Greatly Assured" "Holadu, Tsagasee" "If Needed" "Know This River" "Mueba, Tsagasee" "Ready On" "Seeing-Far" "Si, me Meja ke Katu" "Star-Chasing" "Wa Atendu?" "Wake Splitter" "Waters Calm" "Wind Catch"
+	}
+}
+
+SOR_HEAVY = {
+	name = NAME_THEME_SHIPS_SOR_HEAVY
+	for_countries = { SOR }
+	type = ship
+	ship_types = { heavy_ship_unit }
+	fallback_name = "Sorrow Vessel %d"
+	unique = {
+		"Bighorner Strong" "Blade Revealed" "Cobar'e! Deha Coriendoo!" "Deep Water Crossing" "Estee val a Duela a Katu!" "Hard To Track" "Katu no Kaade Akee" "Natural Leader" "Nona! Asekenoo-na!" "Notched Arrow" "Sharpened Tip" "Superior" "Tomahawk" "Trailblazer" "Tunno Granahoo!" "Warrior Bred"
+	}
+}
+
+SOR_SUPER_HEAVY = {
+	name = NAME_THEME_SHIPS_SOR_SUPER_HEAVY
+	for_countries = { SOR }
+	type = ship
+	ship_types = { super_heavy_ship_unit }
+	fallback_name = "Sorrow Warship %d"
+	unique = {
+		"Cazador Sting" "Cornered Coyote" "Death Claw" "Feral Yao Guai" "Geacko Fang" "Me ka Asekene!" "Momewi de Luchoo! Mes Luchoo Ahorla!" "Muerna Yegwi a Katu!" "The Father Protects Us" "Wa Muerna Yegwi Cuado wa Kaade"
+	}
+}

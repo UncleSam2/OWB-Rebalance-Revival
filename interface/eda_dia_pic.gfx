@@ -1,0 +1,7 @@
+spriteTypes = {
+## EDA ##
+spriteType = {
+	name = "GFX_ideology_EDA_people_group"
+	texturefile = "gfx/interface/ideologies/unique/EDA/eda_people.dds"
+	}
+}

@@ -1,0 +1,43 @@
+﻿TLO_LIGHT = {
+	name = NAME_THEME_SHIPS_TLO_LIGHT
+	for_countries = { TLO }
+	type = ship
+	ship_types = { light_ship_unit }
+	fallback_name = "Destroyer %d"
+	unique = {
+		"Aeternit Imperi" "Amicus" "Auribus Teneo Lupum" "Ave, Amicus" "Ave, Caesar" "Bellum Mores Corrigit" "California Delenda Est" "Damnatio Memoraie" "Daq Mihi Causa, Profligate" "Decimatio" "Divide et Impera" "Et Cetera" "Ex Nihilo Nihil Fit" "Honestas" "In Hoc Signo Taurus Vinces" "Industria" "Panem et Circenses" "Pax Per Bellum" "Prudentia" "Retribution!" "Salve" "True to Caesar" "Vale" "Velocius Quam Brahmin Conquantur" "Vox Caesar" "Vox Lanius"
+	}
+}
+
+TLO_MEDIUM = {
+	name = NAME_THEME_SHIPS_TLO_MEDIUM
+	for_countries = { TLO }
+	type = ship
+	ship_types = { medium_ship_screen_unit }
+	fallback_name = "Light Cruiser %d"
+	unique = {
+		"Bastion" "Blacksun" "Clovis" "Coconino" "Flagstaff" "Fredonian" "Gallup" "Ganado" "Gila" "Malpais" "Mora" "Oro Valley" "Phoenix" "Phrey" "Poston" "Red Sun City" "Salt-Bearer" "Sandpoint" "Sonoran" "Taos"
+	}
+}
+
+TLO_HEAVY = {
+	name = NAME_THEME_SHIPS_TLO_HEAVY
+	for_countries = { TLO }
+	type = ship
+	ship_types = { heavy_ship_unit }
+	fallback_name = "Heavy Cruiser %d"
+	unique = {
+		"Alexus" "Atticus" "Augustus" "Aurelius of Phoenix" "Caesar" "Cato" "Cicero" "Constantine" "Dead Sea" "Gaius Magnus" "Lanius" "Lucius" "Nero" "Otho" "Picus" "Severus" "Silus" "Spartacus" "Tiberius" "Titus" "Vulpes Inculta"
+	}
+}
+
+TLO_SUPER_HEAVY = {
+	name = NAME_THEME_SHIPS_TLO_SUPER_HEAVY
+	for_countries = { TLO }
+	type = ship
+	ship_types = { super_heavy_ship_unit }
+	fallback_name = "Battleship %d"
+	unique = {
+		"Apollo" "Caesar filio Martis" "Hermes" "Jupiter" "Mars in Carne" "Mercury" "Neptune" "Sol" "Vulcan"
+	}
+}

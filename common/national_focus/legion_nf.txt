@@ -1,0 +1,7771 @@
+focus_tree = {
+	id = legion_focus_tree
+	country = {
+		factor = 0
+		modifier = {
+			add = 20
+			original_tag = CES
+		}
+	}
+	default = no
+	focus = {
+		id = ces_expedition_to_blackfoot
+		icon = GFX_goal_CES_generic_focus
+		cost = 7
+		x = 18
+		y = 0
+		completion_reward = {
+			hidden_effect = {
+				news_event = {
+					id = nf_legion.26
+					days = 2
+				}
+			}
+			country_event = {
+				id = nf_legion.3
+			}			# Expedition To Blackfoot
+		}
+	}
+	focus = {
+		id = ces_death_in_the_canyons
+		icon = GFX_goal_CES_generic_focus
+		cost = 7
+		prerequisite = {
+			focus = ces_expedition_to_blackfoot
+		}
+		x = 18
+		y = 1
+		completion_reward = {
+			country_event = {
+				id = nf_legion.4
+			}			# Death In The Canyons
+		}
+	}
+	focus = {
+		id = ces_the_malpais_legate
+		icon = GFX_goal_CES_generic_focus
+		cost = 7
+		prerequisite = {
+			focus = ces_death_in_the_canyons
+		}
+		x = 18
+		y = 2
+		completion_reward = {
+			country_event = {
+				id = nf_legion.5
+			}			# The Malpais Legate
+		}
+	}
+	focus = {
+		id = ces_caesar_son_of_mars
+		icon = GFX_goal_CES_generic_focus
+		cost = 30
+		prerequisite = {
+			focus = ces_the_malpais_legate
+		}
+		x = 0
+		y = 1
+		relative_position_id = ces_the_malpais_legate
+		completion_reward = {
+			country_event = {
+				id = nf_legion.6
+			}			# Caesar, Son Of Mars
+			hidden_effect = {
+				news_event = {
+					id = nf_legion.7
+					days = 3
+				}
+			}
+			#Kaiserreich game rule handling
+			hidden_effect = {
+				if = {
+					limit = {
+						has_global_flag = KSR_kaisers_return_enabled_global_flag
+					}
+					country_event = {
+						id = nf_kaiser.1
+						days = 12
+					}
+				}
+			}
+		}
+	}
+	#---------------------------
+	# Tribals sub-tree
+	#---------------------------
+	focus = {
+		id = ces_new_judea
+		icon = GFX_goal_WHT_ulysses
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		cost = 30
+		x = -20
+		y = 1
+		relative_position_id = ces_caesar_son_of_mars
+		prerequisite = {
+			focus = ces_caesar_son_of_mars
+		}
+		completion_reward = {
+			add_political_power = 160
+			army_experience = 25
+		}
+	}
+	focus = {
+		id = ces_white_legs_accept
+		icon = GFX_goal_WHT_salt_upon
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		cost = 30
+		prerequisite = {
+			focus = ces_new_judea
+		}
+		relative_position_id = ces_new_judea
+		available = {
+			country_exists = WHT
+			EHT = {
+				NOT = {
+					has_country_flag = accepted_petition
+				}
+			}
+		}
+		bypass = {
+			AND = {
+				NOT = {
+					country_exists = WHT
+				}
+				NOT = {
+					country_exists = EHT
+				}
+			}
+		}
+		mutually_exclusive = {
+			focus = ces_white_legs_refuse
+		}
+		x = 1
+		y = 1
+		completion_reward = {
+			WHT = {
+				country_event = {
+					id = nf_legion.1
+				}				# Petition To White Legs
+			}
+			set_rule = {
+				can_send_volunteers = yes
+			}
+			add_ideas = frumentarii_advisors
+			custom_effect_tooltip = ces_whitelegs_accept_tt
+		}
+	}
+	focus = {
+		id = ces_white_legs_guns
+		icon = GFX_goal_CES_heavy_gun
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		cost = 30
+		prerequisite = {
+			focus = ces_white_legs_accept
+		}
+		relative_position_id = ces_white_legs_accept
+		available = {
+			country_exists = WHT
+			WHT = {
+				has_country_flag = accepted_petition
+			}
+		}
+		x = 1
+		y = 1
+		completion_reward = {
+			WHT = {
+				country_event = {
+					id = nf_legion.83
+				}				# Ulysses
+			}
+			custom_effect_tooltip = ces_white_legs_guns_tt
+			add_tech_bonus = {
+				bonus = 0.3
+				uses = 1
+				category = spec_force_doctrine_category
+			}
+		}
+	}
+	focus = {
+		id = ces_white_legs_refuse
+		icon = GFX_goal_80
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		cost = 30
+		prerequisite = {
+			focus = ces_new_judea
+		}
+		relative_position_id = ces_new_judea
+		available = {
+			AND = {
+				country_exists = EHT
+				WHT = {
+					NOT = {
+						has_country_flag = accepted_petition
+					}
+				}
+			}
+		}
+		bypass = {
+			AND = {
+				NOT = {
+					country_exists = EHT
+				}
+				NOT = {
+					country_exists = WHT
+				}
+			}
+		}
+		mutually_exclusive = {
+			focus = ces_white_legs_accept
+		}
+		x = -1
+		y = 1
+		completion_reward = {
+			add_ideas = frumentarii_advisors
+			custom_effect_tooltip = ces_white_legs_refuse_tt
+			EHT = {
+				country_event = {
+					id = nf_legion.2
+				}
+			}
+		}
+	}
+	focus = {
+		id = ces_eighties
+		icon = GFX_goal_CES_legion_kart
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		cost = 30
+		prerequisite = {
+			focus = ces_white_legs_refuse
+		}
+		relative_position_id = ces_white_legs_refuse
+		available = {
+			country_exists = EHT
+		}
+		bypass = {
+			NOT = {
+				country_exists = EHT
+			}
+		}
+		x = -1
+		y = 1
+		completion_reward = {
+			EHT = {
+				add_tech_bonus = {
+					bonus = 1
+					uses = 1
+					category = vehicle_tech_category
+				}
+			}
+		}
+	}
+	focus = {
+		id = ces_weapons_of_war
+		icon = GFX_goal_generic_supplies_focus
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		cost = 30
+		prerequisite = {
+			focus = ces_white_legs_refuse
+			focus = ces_white_legs_accept
+		}
+		relative_position_id = ces_white_legs_accept
+		bypass = {
+			OR = {
+				AND = {
+					EHT = {
+						has_opinion_modifier = disloyal_tribe
+					}
+					WHT = {
+						has_opinion_modifier = disloyal_tribe
+					}
+				}
+				AND = {
+					NOT = {
+						country_exists = WHT
+					}
+					NOT = {
+						country_exists = EHT
+					}
+				}
+				AND = {
+					NOT = {
+						country_exists = WHT
+					}
+					EHT = {
+						has_opinion_modifier = disloyal_tribe
+					}
+				}
+				AND = {
+					NOT = {
+						country_exists = EHT
+					}
+					WHT = {
+						has_opinion_modifier = disloyal_tribe
+					}
+				}
+			}
+		}
+		available = {
+			OR = {
+				EHT = {
+					has_opinion_modifier = loyal_tribe
+				}
+				WHT = {
+					has_opinion_modifier = loyal_tribe
+				}
+			}
+		}
+		x = -1
+		y = 1
+		completion_reward = {
+			if = {
+				limit = {
+					has_global_flag = debug_logs
+				}
+				log = "[GetDateText]: [Root.GetName] ces_weapons_of_war entered"
+			}
+			if = {
+				limit = {
+					WHT = {
+						has_opinion_modifier = loyal_tribe
+					}
+				}
+				WHT = {
+					random_owned_controlled_state = {
+						limit = {
+							is_valid_state_for_2_arms_factories = yes
+						}
+						add_extra_state_shared_building_slots = 2
+						add_building_construction = {
+							type = arms_factory
+							level = 2
+							instant_build = yes
+						}
+					}
+				}
+			}
+			if = {
+				limit = {
+					EHT = {
+						has_opinion_modifier = loyal_tribe
+					}
+				}
+				EHT = {
+					random_owned_controlled_state = {
+						limit = {
+							is_valid_state_for_2_arms_factories = yes
+						}
+						add_extra_state_shared_building_slots = 2
+						add_building_construction = {
+							type = arms_factory
+							level = 2
+							instant_build = yes
+						}
+					}
+				}
+			}
+			army_experience = 10
+			random_owned_controlled_state = {
+				limit = {
+					is_valid_state_for_arms_factory = yes
+				}
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = arms_factory
+					level = 1
+					instant_build = yes
+				}
+			}
+			if = {
+				limit = {
+					has_global_flag = debug_logs
+				}
+				log = "[GetDateText]: [Root.GetName] ces_weapons_of_war exited"
+			}
+		}
+	}
+	focus = {
+		id = ces_graham_execution
+		icon = GFX_goal_wht_burn_salt_lake_city
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		cost = 30
+		prerequisite = {
+			focus = ces_weapons_of_war
+		}
+		available = {
+			551 = {
+				controller = {
+					is_in_faction_with = CES
+				}
+			}
+		}
+		relative_position_id = ces_weapons_of_war
+		x = 0
+		y = 1
+		completion_reward = {
+			if = {
+				limit = {
+					has_idea = legion_nf_burned_man_rumours
+				}
+				remove_ideas = legion_nf_burned_man_rumours
+			}
+			add_political_power = 250
+		}
+	}
+	focus = {
+		id = ces_new_auxilliary
+		icon = GFX_goal_original_highwayman
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		cost = 30
+		prerequisite = {
+			focus = ces_graham_execution
+		}
+		relative_position_id = ces_graham_execution
+		mutually_exclusive = {
+			focus = ces_new_cohort
+		}
+		available = {
+			EHT = {
+				has_opinion_modifier = loyal_tribe
+				owns_state = 551
+				has_war = no
+			}
+		}
+		x = 1
+		y = 1
+		completion_reward = {
+			EHT = {
+				country_event = nf_legion.84
+			}
+		}
+	}
+	focus = {
+		id = ces_new_cohort
+		icon = GFX_goal_wht_totem
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		cost = 30
+		prerequisite = {
+			focus = ces_graham_execution
+		}
+		relative_position_id = ces_graham_execution
+		mutually_exclusive = {
+			focus = ces_new_auxilliary
+		}
+		available = {
+			WHT = {
+				has_completed_focus = WHT_our_new_master
+				owns_state = 551
+				has_war = no
+			}
+		}
+		x = -1
+		y = 1
+		completion_reward = {
+			WHT = {
+				country_event = nf_legion.1002
+			}
+			custom_effect_tooltip = ces_new_cohort_tt
+		}
+	}
+	focus = {
+		id = ces_legionary_utah
+		icon = GFX_goal_CES_generic_focus
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		cost = 30
+		prerequisite = {
+			focus = ces_graham_execution
+		}
+		available = {
+			266 = {
+				controller = {
+					is_subject_of = CES
+				}
+			}
+		}
+		x = 0
+		y = 2
+		relative_position_id = ces_graham_execution
+		completion_reward = {
+			266 = {
+				add_resource = {
+					type = water
+					amount = 40
+				}
+			}
+			266 = {
+				add_resource = {
+					type = metal
+					amount = 30
+				}
+			}
+			266 = {
+				add_resource = {
+					type = energy
+					amount = 20
+				}
+			}
+			266 = {
+				add_resource = {
+					type = circuitry
+					amount = 10
+				}
+			}
+		}
+	}
+	#
+	### Flagstaff Line
+	focus = {
+		id = ces_flagstaff_line
+		icon = GFX_goal_CES_friends_legion
+		search_filters = {FOCUS_FILTER_INDUSTRY}
+		cost = 30
+		x = 0
+		y = 1
+		prerequisite = {
+			focus = ces_caesar_son_of_mars
+		}
+		relative_position_id = ces_caesar_son_of_mars
+		completion_reward = {
+			520 = {
+				add_building_construction = {
+					type = infrastructure
+					level = 2
+					instant_build = yes
+				}
+			}
+			349 = {
+				add_building_construction = {
+					type = infrastructure
+					level = 2
+					instant_build = yes
+				}
+			}
+			518 = {
+				add_building_construction = {
+					type = infrastructure
+					level = 2
+					instant_build = yes
+				}
+			}
+			519 = {
+				add_building_construction = {
+					type = infrastructure
+					level = 2
+					instant_build = yes
+				}
+			}
+			if = {
+				limit = {
+					has_global_flag = debug_logs
+				}
+				log = "[GetDateText]: [Root.GetName] ces_flagstaff_line exited"
+			}
+		}
+	}
+	focus = {
+		id = ces_navajo_rail
+		icon = GFX_goal_generic_train
+		search_filters = {FOCUS_FILTER_INDUSTRY FOCUS_FILTER_NAVAJO}
+		cost = 30
+		prerequisite = {
+			focus = ces_flagstaff_line
+		}
+		x = -2
+		y = 1
+		relative_position_id = ces_flagstaff_line
+		completion_reward = {
+
+			388 = {
+				add_building_construction = {
+					type = infrastructure
+					level = 2
+					instant_build = yes
+				}
+			}
+			532 = {
+				add_building_construction = {
+					type = infrastructure
+					level = 2
+					instant_build = yes
+				}
+			}
+			175 = {
+				add_building_construction = {
+					type = infrastructure
+					level = 2
+					instant_build = yes
+				}
+			}
+			479 = {
+				add_building_construction = {
+					type = infrastructure
+					level = 2
+					instant_build = yes
+				}
+			}
+			482 = {
+				add_building_construction = {
+					type = infrastructure
+					level = 2
+					instant_build = yes
+				}
+			}
+			91 = {
+				add_building_construction = {
+					type = infrastructure
+					level = 2
+					instant_build = yes
+				}
+			}
+			203 = {
+				add_building_construction = {
+					type = infrastructure
+					level = 2
+					instant_build = yes
+				}
+			}
+
+			add_to_variable = { NAV.NAV_loyalty = 1 }
+			custom_effect_tooltip = NAV_good_friends_tt
+		}
+	}
+	focus = {
+		id = ces_regional_rail
+		icon = GFX_goal_CAF_stocks
+		search_filters = {FOCUS_FILTER_INDUSTRY}
+		cost = 30
+		prerequisite = {
+			focus = ces_flagstaff_line
+		}
+		x = 0
+		y = 1
+		relative_position_id = ces_flagstaff_line
+		completion_reward = {
+			if = {
+				limit = {
+					has_global_flag = debug_logs
+				}
+				log = "[GetDateText]: [Root.GetName] ces_regional_rail entered"
+			}
+			random_owned_state = {
+				add_resource = {
+					type = water
+					amount = 6
+				}
+			}
+			random_owned_state = {
+				add_resource = {
+					type = metal
+					amount = 6
+				}
+			}
+			if = {
+				limit = {
+					has_global_flag = debug_logs
+				}
+				log = "[GetDateText]: [Root.GetName] ces_regional_rail exited"
+			}
+		}
+	}
+	focus = {
+		id = ces_economic_specialization
+		icon = GFX_goal_TTM_Fruit
+		search_filters = {FOCUS_FILTER_INDUSTRY}
+		cost = 30
+		prerequisite = {
+			focus = ces_regional_rail
+		}
+		x = 0
+		y = 1
+		relative_position_id = ces_regional_rail
+		completion_reward = {
+			if = {
+				limit = {
+					has_global_flag = debug_logs
+				}
+				log = "[GetDateText]: [Root.GetName] ces_economic_specialization entered"
+			}
+			set_temp_variable = {
+				caps_to_add = 50
+			}
+			add_caps = yes
+			add_political_power = 200
+			if = {
+				limit = {
+					has_global_flag = debug_logs
+				}
+				log = "[GetDateText]: [Root.GetName] ces_economic_specialization exited"
+			}
+		}
+	}
+	focus = {
+		id = ces_veterans_revolt
+		icon = GFX_goal_CES_rome_ascendant
+		search_filters = {FOCUS_FILTER_INDUSTRY FOCUS_FILTER_GLORY_VULPES FOCUS_FILTER_GLORY_AURELIUS}
+		cost = 30
+		prerequisite = {
+			focus = ces_economic_specialization
+		}
+		available = {
+			has_country_flag = phx_doused
+		}
+		x = 0
+		y = 1
+		relative_position_id = ces_economic_specialization
+		completion_reward = {
+			if = {
+				limit = {
+					has_global_flag = debug_logs
+				}
+				log = "[GetDateText]: [Root.GetName] ces_veterans_revolt entered"
+			}
+			country_event = nf_legion.29
+			518 = {
+				add_resource = {
+					type = advanced
+					amount = 6
+				}
+			}
+			custom_effect_tooltip = ces_veterans_revolt_tt
+			if = {
+				limit = {
+					has_global_flag = debug_logs
+				}
+				log = "[GetDateText]: [Root.GetName] ces_veterans_revolt exited"
+			}
+		}
+	}
+	focus = {
+		id = ces_navajo_markets
+		icon = GFX_goal_generic_creature_brahmin
+		search_filters = {FOCUS_FILTER_INDUSTRY}
+		cost = 30
+		prerequisite = {
+			focus = ces_navajo_rail
+		}
+		available = {
+			OR = {
+				NAV = { is_in_faction_with = ROOT }
+				NAV = { all_core_land_owned_by_prev_sphere = yes }
+			}
+		}
+		x = -2
+		y = 1
+		relative_position_id = ces_navajo_rail
+		completion_reward = {
+			if = {
+				limit = {
+					has_global_flag = debug_logs
+				}
+				log = "[GetDateText]: [Root.GetName] ces_navajo_markets entered"
+			}
+			203 = {
+				add_extra_state_shared_building_slots = 2
+			}
+			91 = {
+				add_extra_state_shared_building_slots = 1
+			}
+			392 = {
+				add_extra_state_shared_building_slots = 1
+			}
+			269 = {
+				add_extra_state_shared_building_slots = 1
+			}
+			if = {
+				limit = {
+					has_global_flag = debug_logs
+				}
+				log = "[GetDateText]: [Root.GetName] ces_navajo_markets exited"
+			}
+		}
+	}
+	focus = {
+		id = ces_navajo_exemptions
+		icon = GFX_goal_generic_Legion_diplomatic_focus
+		search_filters = { FOCUS_FILTER_NAVAJO }
+		cost = 30
+		prerequisite = {
+			focus = ces_navajo_markets
+		}
+		available = {
+			OR = {
+				NAV = { is_in_faction_with = ROOT }
+				NAV = { all_core_land_owned_by_prev_sphere = yes }
+			}
+		}
+		x = 0
+		y = 1
+		relative_position_id = ces_navajo_markets
+		completion_reward = {
+			NAV = { add_political_power = 300 }
+			add_to_variable = { NAV.NAV_loyalty = 1 }
+			custom_effect_tooltip = NAV_good_friends_tt
+		}
+	}
+	focus = {
+		id = ces_navajo_industrial_integration
+		icon = GFX_goal_generic_tools
+		search_filters = { FOCUS_FILTER_INDUSTRY }
+		cost = 30
+		prerequisite = {
+			focus = ces_navajo_markets
+		}
+		available = {
+			OR = {
+				NAV = { is_in_faction_with = ROOT }
+				NAV = { all_core_land_owned_by_prev_sphere = yes }
+			}
+		}
+		x = -2
+		y = 1
+		relative_position_id = ces_navajo_markets
+		completion_reward = {
+			reduce_legionary_state = yes
+		}
+	}
+	focus = {
+		id = ces_navajo_scheme
+		icon = GFX_goal_TTM_NAV_Flag
+		search_filters = { FOCUS_FILTER_INDUSTRY }
+		cost = 30
+		prerequisite = {
+			focus = ces_navajo_industrial_integration
+		}
+		available = {
+			OR = {
+				NAV = { is_in_faction_with = ROOT }
+				NAV = { all_core_land_owned_by_prev_sphere = yes }
+			}
+		}
+		x = 0
+		y = 1
+		relative_position_id = ces_navajo_industrial_integration
+		completion_reward = {
+			country_event = nf_legion.33
+		}
+	}
+	focus = {
+		id = ces_way_of_the_land
+		icon = GFX_goal_generic_blueprint
+		search_filters = { FOCUS_FILTER_NAVAJO FOCUS_FILTER_GLORY_MALPAIS FOCUS_FILTER_GLORY_LUCIUS }
+		cost = 30
+		prerequisite = {
+			focus = ces_navajo_scheme
+		}
+		available = {
+			OR = {
+				NAV = { is_in_faction_with = ROOT }
+				NAV = { all_core_land_owned_by_prev_sphere = yes }
+			}
+		}
+		x = 0
+		y = 1
+		relative_position_id = ces_navajo_scheme
+		completion_reward = {
+			country_event = nf_legion.30
+		}
+	}
+	focus = {
+		id = ces_hopi_housing_expansions
+		icon = GFX_goal_generic_slums_focus
+		search_filters = { FOCUS_FILTER_INDUSTRY }
+		cost = 30
+		prerequisite = {
+			focus = ces_navajo_industrial_integration
+		}
+		available = {
+			OR = {
+				NAV = { is_in_faction_with = ROOT }
+				NAV = { all_core_land_owned_by_prev_sphere = yes }
+			}
+		}
+		x = -2
+		y = 1
+		relative_position_id = ces_navajo_industrial_integration
+		completion_reward = {
+			if = {
+				limit = {
+					has_global_flag = debug_logs
+				}
+				log = "[GetDateText]: [Root.GetName] ces_hopi_housing_expansions entered"
+			}
+			203 = {
+				if = {
+					limit = {
+						is_valid_state_for_2_civilian_factories = yes
+					}
+					add_extra_state_shared_building_slots = 2
+					add_building_construction = {
+						type = industrial_complex
+						level = 2
+						instant_build = yes
+					}
+				}
+			}
+			if = {
+				limit = {
+					has_global_flag = debug_logs
+				}
+				log = "[GetDateText]: [Root.GetName] ces_hopi_housing_expansions exited"
+			}
+		}
+	}
+	focus = {
+		id = ces_masaaw_construction
+		icon = GFX_KHA_focus_farm_agriculture
+		search_filters = { FOCUS_FILTER_INDUSTRY }
+		cost = 30
+		prerequisite = {
+			focus = ces_hopi_housing_expansions
+		}
+		available = {
+			OR = {
+				NAV = { is_in_faction_with = ROOT }
+				NAV = { all_core_land_owned_by_prev_sphere = yes }
+			}
+		}
+		x = 0
+		y = 1
+		relative_position_id = ces_hopi_housing_expansions
+		completion_reward = {
+			if = {
+				limit = {
+					has_global_flag = debug_logs
+				}
+				log = "[GetDateText]: [Root.GetName] ces_hopi_housing_expansions entered"
+			}
+			203 = {
+				if = {
+					limit = {
+						is_valid_state_for_2_civilian_factories = yes
+					}
+					add_extra_state_shared_building_slots = 2
+					add_building_construction = {
+						type = industrial_complex
+						level = 2
+						instant_build = yes
+					}
+				}
+			}
+			if = {
+				limit = {
+					has_global_flag = debug_logs
+				}
+				log = "[GetDateText]: [Root.GetName] ces_hopi_housing_expansions exited"
+			}
+		}
+	}
+	focus = {
+		id = ces_hopi_tithe
+		icon = GFX_goal_generic_handy_fuel
+		search_filters = { FOCUS_FILTER_INDUSTRY }
+		cost = 30
+		prerequisite = {
+			focus = ces_masaaw_construction
+		}
+		available = {
+			OR = {
+				NAV = { is_in_faction_with = ROOT }
+				NAV = { all_core_land_owned_by_prev_sphere = yes }
+			}
+			NAV = {
+				is_subject_of = CES
+			}
+		}
+		x = 1
+		y = 1
+		relative_position_id = ces_masaaw_construction
+		completion_reward = {
+			if = {
+				limit = {
+					has_global_flag = debug_logs
+				}
+				log = "[GetDateText]: [Root.GetName] ces_hopi_tithe entered"
+			}
+			NAV = {
+				add_ideas = legion_tribute_idea_hopi
+			}
+			if = {
+				limit = {
+					has_global_flag = debug_logs
+				}
+				log = "[GetDateText]: [Root.GetName] ces_hopi_tithe exited"
+			}
+		}
+	}
+	focus = {
+		id = ces_nnp_restoration
+		icon = GFX_goal_generic_rifle_2
+		search_filters = { FOCUS_FILTER_INDUSTRY }
+		cost = 30
+		prerequisite = {
+			focus = ces_navajo_industrial_integration
+		}
+		available = {
+			OR = {
+				NAV = { is_in_faction_with = ROOT }
+				NAV = { all_core_land_owned_by_prev_sphere = yes }
+			}
+		}
+		x = 2
+		y = 1
+		relative_position_id = ces_navajo_industrial_integration
+		completion_reward = {
+			203 = {
+				if = {
+					limit = {
+						is_valid_state_for_2_civilian_factories = yes
+					}
+					add_extra_state_shared_building_slots = 2
+					add_building_construction = {
+						type = industrial_complex
+						level = 2
+						instant_build = yes
+					}
+				}
+			}
+		}
+	}
+	focus = {
+		id = ces_widow_rock_restoration
+		icon = GFX_goal_fallout_tool
+		search_filters = { FOCUS_FILTER_INDUSTRY FOCUS_FILTER_NAVAJO }
+		cost = 30
+		prerequisite = {
+			focus = ces_nnp_restoration
+		}
+		available = {
+			OR = {
+				NAV = { is_in_faction_with = ROOT }
+				NAV = { all_core_land_owned_by_prev_sphere = yes }
+			}
+		}
+		x = 0
+		y = 1
+		relative_position_id = ces_nnp_restoration
+		completion_reward = {
+			203 = {
+				if = {
+					limit = {
+						is_valid_state_for_2_arms_factories = yes
+					}
+					add_extra_state_shared_building_slots = 2
+					add_building_construction = {
+						type = arms_factory
+						level = 2
+						instant_build = yes
+					}
+				}
+			}
+			add_to_variable = { NAV.NAV_loyalty = 1 }
+		custom_effect_tooltip = NAV_good_friends_tt
+		}
+	}
+	focus = {
+		id = ces_navajo_tithe
+		icon = GFX_goal_bottlecap
+		search_filters = { FOCUS_FILTER_INDUSTRY }
+		cost = 30
+		prerequisite = {
+			focus = ces_widow_rock_restoration
+		}
+		available = {
+			OR = {
+				NAV = { is_in_faction_with = ROOT }
+				NAV = { all_core_land_owned_by_prev_sphere = yes }
+			}
+			NAV = {
+				is_subject_of = CES
+			}
+		}
+		x = -1
+		y = 1
+		relative_position_id = ces_widow_rock_restoration
+		completion_reward = {
+			if = {
+				limit = {
+					has_global_flag = debug_logs
+				}
+				log = "[GetDateText]: [Root.GetName] ces_navajo_tithe entered"
+			}
+			NAV = {
+				add_ideas = legion_tribute_idea_navajo
+			}
+			if = {
+				limit = {
+					has_global_flag = debug_logs
+				}
+				log = "[GetDateText]: [Root.GetName] ces_navajo_tithe exited"
+			}
+		}
+	}
+	focus = {
+		id = ces_north_phoenix_development
+		icon = GFX_goal_generic_workshop
+		search_filters = {FOCUS_FILTER_INDUSTRY}
+		cost = 30
+		prerequisite = {
+			focus = ces_navajo_rail
+		}
+		x = 0
+		y = 1
+		relative_position_id = ces_navajo_rail
+		completion_reward = {
+			if = {
+				limit = {
+					has_global_flag = debug_logs
+				}
+				log = "[GetDateText]: [Root.GetName] ces_north_phoenix_development entered"
+			}
+			518 = {
+				if = {
+					limit = {
+						is_valid_state_for_4_arms_factories = yes
+					}
+					add_extra_state_shared_building_slots = 4
+					add_building_construction = {
+						type = industrial_complex
+						level = 4
+						instant_build = yes
+					}
+				}
+			}
+			if = {
+				limit = {
+					has_global_flag = debug_logs
+				}
+				log = "[GetDateText]: [Root.GetName] ces_north_phoenix_development exited"
+			}
+		}
+	}
+	focus = {
+		id = ces_dock_development
+		icon = GFX_goal_generic_boat
+		search_filters = {FOCUS_FILTER_INDUSTRY}
+		cost = 30
+		prerequisite = {
+			focus = ces_north_phoenix_development
+		}
+		x = 0
+		y = 1
+		relative_position_id = ces_north_phoenix_development
+		completion_reward = {
+			if = {
+				limit = {
+					has_global_flag = debug_logs
+				}
+				log = "[GetDateText]: [Root.GetName] ces_dock_development entered"
+			}
+			custom_effect_tooltip = ces_dock_development_tt
+			if = {
+				limit = {
+					has_global_flag = debug_logs
+				}
+				log = "[GetDateText]: [Root.GetName] ces_dock_development exited"
+			}
+		}
+	}
+	focus = {
+		id = ces_phoenix_reborn
+		icon = GFX_goal_CES_phoenix
+		search_filters = { FOCUS_FILTER_INDUSTRY }
+		cost = 30
+		prerequisite = {
+			focus = ces_dock_development
+		}
+		prerequisite = {
+			focus = ces_legionary_naval_academy
+		}
+		x = 2
+		y = 1
+		relative_position_id = ces_dock_development
+		completion_reward = {
+			if = {
+				limit = {
+					has_global_flag = debug_logs
+				}
+				log = "[GetDateText]: [Root.GetName] ces_phoenix_reborn entered"
+			}
+			reduce_legionary_state = yes
+			if = {
+				limit = {
+					has_global_flag = debug_logs
+				}
+				log = "[GetDateText]: [Root.GetName] ces_phoenix_reborn exited"
+			}
+		}
+	}
+	focus = {
+		id = ces_flagstaff_development_scheme
+		icon = GFX_goal_CES_roman_eagle
+		cost = 30
+		prerequisite = {
+			focus = ces_phoenix_reborn
+		}
+		x = 0
+		y = 1
+		relative_position_id = ces_phoenix_reborn
+		completion_reward = {
+			if = {
+				limit = {
+					has_global_flag = debug_logs
+				}
+				log = "[GetDateText]: [Root.GetName] ces_phoenix_reborn entered"
+			}
+			country_event = nf_legion.36
+			if = {
+				limit = {
+					has_global_flag = debug_logs
+				}
+				log = "[GetDateText]: [Root.GetName] ces_phoenix_reborn exited"
+			}
+		}
+	}
+	focus = {
+		id = ces_true_capital
+		icon = GFX_goal_roman_senate_focus
+		search_filters = { FOCUS_FILTER_INDUSTRY FOCUS_FILTER_GLORY_LUCIUS FOCUS_FILTER_GLORY_AURELIUS }
+		cost = 30
+		prerequisite = {
+			focus = ces_flagstaff_development_scheme
+		}
+		x = 0
+		y = 1
+		relative_position_id = ces_flagstaff_development_scheme
+		completion_reward = {
+			if = {
+				limit = {
+					has_global_flag = debug_logs
+				}
+				log = "[GetDateText]: [Root.GetName] ces_phoenix_reborn entered"
+			}
+			country_event = nf_legion.31
+			if = {
+				limit = {
+					has_global_flag = debug_logs
+				}
+				log = "[GetDateText]: [Root.GetName] ces_phoenix_reborn exited"
+			}
+		}
+	}
+	focus = {
+		id = ces_legionary_corps
+		icon = GFX_goal_CES_slaves
+		search_filters = { FOCUS_FILTER_INDUSTRY }
+		cost = 30
+		prerequisite = {
+			focus = ces_phoenix_reborn
+		}
+		x = -2
+		y = 1
+		relative_position_id = ces_phoenix_reborn
+		completion_reward = {
+			if = {
+				limit = {
+					has_global_flag = debug_logs
+				}
+				log = "[GetDateText]: [Root.GetName] ces_legionary_corps entered"
+			}
+			custom_effect_tooltip = ces_legionary_corps_tt
+			if = {
+				limit = {
+					has_global_flag = debug_logs
+				}
+				log = "[GetDateText]: [Root.GetName] ces_legionary_corps exited"
+			}
+		}
+	}
+	focus = {
+		id = ces_hire_dale_barton
+		icon = GFX_goal_CES_denarius
+		search_filters = { FOCUS_FILTER_INDUSTRY }
+		cost = 30
+		prerequisite = {
+			focus = ces_legionary_corps
+		}
+		x = 0
+		y = 1
+		relative_position_id = ces_legionary_corps
+		completion_reward = {
+			if = {
+				limit = {
+					has_global_flag = debug_logs
+				}
+				log = "[GetDateText]: [Root.GetName] ces_hire_dale_barton entered"
+			}
+			custom_effect_tooltip = ces_hire_dale_barton_tt
+			if = {
+				limit = {
+					has_global_flag = debug_logs
+				}
+				log = "[GetDateText]: [Root.GetName] ces_hire_dale_barton exited"
+			}
+		}
+	}
+	focus = {
+		id = ces_scavenger_tithe
+		icon = GFX_goal_generic_thing
+		search_filters = { FOCUS_FILTER_INDUSTRY }
+		cost = 30
+		prerequisite = {
+			focus = ces_phoenix_reborn
+		}
+		x = 2
+		y = 1
+		relative_position_id = ces_phoenix_reborn
+		completion_reward = {
+			if = {
+				limit = {
+					has_global_flag = debug_logs
+				}
+				log = "[GetDateText]: [Root.GetName] ces_legionary_corps entered"
+			}
+			518 = {
+				if = {
+					limit = {
+						is_valid_state_for_2_arms_factories = yes
+					}
+					add_extra_state_shared_building_slots = 2
+					add_building_construction = {
+						type = arms_factory
+						level = 2
+						instant_build = yes
+					}
+				}
+			}
+			if = {
+				limit = {
+					has_global_flag = debug_logs
+				}
+				log = "[GetDateText]: [Root.GetName] ces_legionary_corps exited"
+			}
+		}
+	}
+	focus = {
+		id = ces_guillermo_rossi
+		icon = GFX_goal_CES_workshop
+		search_filters = { FOCUS_FILTER_INDUSTRY }
+		cost = 30
+		prerequisite = {
+			focus = ces_scavenger_tithe
+		}
+		x = 0
+		y = 1
+		relative_position_id = ces_scavenger_tithe
+		completion_reward = {
+			if = {
+				limit = {
+					has_global_flag = debug_logs
+				}
+				log = "[GetDateText]: [Root.GetName] ces_guillermo_rossi entered"
+			}
+			custom_effect_tooltip = ces_guillermo_rossi_tt
+			if = {
+				limit = {
+					has_global_flag = debug_logs
+				}
+				log = "[GetDateText]: [Root.GetName] ces_guillermo_rossi exited"
+			}
+		}
+	}
+	focus = {
+		id = ces_two_sun_rail
+		icon = GFX_goal_generic_train
+		search_filters = {FOCUS_FILTER_INDUSTRY}
+		cost = 30
+		prerequisite = {
+			focus = ces_flagstaff_line
+		}
+		x = 2
+		y = 1
+		relative_position_id = ces_flagstaff_line
+		completion_reward = {
+			483 = {
+				add_building_construction = {
+					type = infrastructure
+					level = 2
+					instant_build = yes
+				}
+			}
+			93 = {
+				add_building_construction = {
+					type = infrastructure
+					level = 2
+					instant_build = yes
+				}
+			}
+			318 = {
+				add_building_construction = {
+					type = infrastructure
+					level = 2
+					instant_build = yes
+				}
+			}
+			207 = {
+				add_building_construction = {
+					type = infrastructure
+					level = 2
+					instant_build = yes
+				}
+			}
+			516 = {
+				add_building_construction = {
+					type = infrastructure
+					level = 2
+					instant_build = yes
+				}
+			}
+
+		}
+	}
+	focus = {
+		id = ces_two_sun_markets
+		icon = GFX_goal_cotton_2
+		search_filters = {FOCUS_FILTER_INDUSTRY}
+		cost = 30
+		prerequisite = {
+			focus = ces_two_sun_rail
+		}
+		available = {
+			OR = {
+				TWO = { is_in_faction_with = ROOT }
+				TWO = { all_core_land_owned_by_prev_sphere = yes }
+			}
+		}
+		x = 2
+		y = 1
+		relative_position_id = ces_two_sun_rail
+		completion_reward = {
+
+			483 = {
+				add_extra_state_shared_building_slots = 2
+			}
+			93 = {
+				add_extra_state_shared_building_slots = 1
+			}
+			318 = {
+				add_extra_state_shared_building_slots = 1
+			}
+			207 = {
+				add_extra_state_shared_building_slots = 1
+			}
+
+		}
+	}
+	focus = {
+		id = ces_two_sun_exemptions
+		icon = GFX_goal_generic_supplies_focus
+		search_filters = {FOCUS_FILTER_INDUSTRY}
+		cost = 30
+		prerequisite = {
+			focus = ces_two_sun_markets
+		}
+		available = {
+			OR = {
+				TWO = { exists = yes }
+			}
+		}
+		x = 0
+		y = 1
+		relative_position_id = ces_two_sun_markets
+		completion_reward = {
+			if = {
+				limit = {
+					has_global_flag = debug_logs
+				}
+				log = "[GetDateText]: [Root.GetName] ces_navajo_markets entered"
+			}
+			516 = {
+				if = {
+					limit = {
+						is_valid_state_for_2_civilian_factories = yes
+					}
+					add_extra_state_shared_building_slots = 3
+					add_building_construction = {
+						type = industrial_complex
+						level = 2
+						instant_build = yes
+					}
+				}
+			}
+			if = {
+				limit = {
+					has_global_flag = debug_logs
+				}
+				log = "[GetDateText]: [Root.GetName] ces_navajo_markets exited"
+			}
+		}
+	}
+	focus = {
+		id = ces_turn_the_other_cheek
+		icon = GFX_goal_generic_pip_3000
+		search_filters = {FOCUS_FILTER_INDUSTRY}
+		cost = 30
+		prerequisite = {
+			focus = ces_two_sun_markets
+		}
+		available = {
+			OR = {
+				TWO = { is_in_faction_with = ROOT }
+				TWO = { all_core_land_owned_by_prev_sphere = yes }
+			}
+		}
+		x = 2
+		y = 1
+		relative_position_id = ces_two_sun_markets
+		completion_reward = {
+			reduce_legionary_state = yes
+		}
+	}
+	focus = {
+		id = ces_two_sun_scheme
+		icon = GFX_goal_generic_vault_stash
+		search_filters = {FOCUS_FILTER_INDUSTRY}
+		cost = 30
+		prerequisite = {
+			focus = ces_turn_the_other_cheek
+		}
+		available = {
+			OR = {
+				TWO = { exists = yes }
+			}
+		}
+		x = 0
+		y = 1
+		relative_position_id = ces_turn_the_other_cheek
+		completion_reward = {
+			if = {
+				limit = {
+					has_global_flag = debug_logs
+				}
+				log = "[GetDateText]: [Root.GetName] ces_navajo_markets entered"
+			}
+			country_event = nf_legion.39
+			if = {
+				limit = {
+					has_global_flag = debug_logs
+				}
+				log = "[GetDateText]: [Root.GetName] ces_navajo_markets exited"
+			}
+		}
+	}
+	focus = {
+		id = ces_garage_caches
+		icon = GFX_goal_generic_wrench
+		search_filters = {FOCUS_FILTER_INDUSTRY FOCUS_FILTER_GLORY_VULPES FOCUS_FILTER_GLORY_MALPAIS}
+		cost = 30
+		prerequisite = {
+			focus = ces_two_sun_scheme
+		}
+		available = {
+			OR = {
+				TWO = { exists = yes }
+			}
+		}
+		x = 0
+		y = 1
+		relative_position_id = ces_two_sun_scheme
+		completion_reward = {
+			if = {
+				limit = {
+					has_global_flag = debug_logs
+				}
+				log = "[GetDateText]: [Root.GetName] ces_navajo_markets entered"
+			}
+			country_event = nf_legion.32
+			if = {
+				limit = {
+					has_global_flag = debug_logs
+				}
+				log = "[GetDateText]: [Root.GetName] ces_navajo_markets exited"
+			}
+		}
+	}
+	focus = {
+		id = ces_temple_sr
+		icon = GFX_goal_generic_transmitter_2
+		search_filters = {FOCUS_FILTER_INDUSTRY}
+		cost = 30
+		prerequisite = {
+			focus = ces_turn_the_other_cheek
+		}
+		available = {
+			OR = {
+				TWO = { is_in_faction_with = ROOT }
+				TWO = { all_core_land_owned_by_prev_sphere = yes }
+			}
+		}
+		x = 2
+		y = 1
+		relative_position_id = ces_turn_the_other_cheek
+		completion_reward = {
+			if = {
+				limit = {
+					has_global_flag = debug_logs
+				}
+				log = "[GetDateText]: [Root.GetName] ces_navajo_markets entered"
+			}
+			516 = {
+				if = {
+					limit = {
+						is_valid_state_for_2_civilian_factories = yes
+					}
+					add_extra_state_shared_building_slots = 3
+					add_building_construction = {
+						type = industrial_complex
+						level = 2
+						instant_build = yes
+					}
+				}
+			}
+			if = {
+				limit = {
+					has_global_flag = debug_logs
+				}
+				log = "[GetDateText]: [Root.GetName] ces_navajo_markets exited"
+			}
+		}
+	}
+	focus = {
+		id = ces_speedway
+		icon = GFX_goal_generic_fuel_focus
+		search_filters = {FOCUS_FILTER_INDUSTRY}
+		cost = 30
+		prerequisite = {
+			focus = ces_temple_sr
+		}
+		available = {
+			OR = {
+				TWO = { is_in_faction_with = ROOT }
+				TWO = { all_core_land_owned_by_prev_sphere = yes }
+			}
+		}
+		x = 0
+		y = 1
+		relative_position_id = ces_temple_sr
+		completion_reward = {
+			if = {
+				limit = {
+					has_global_flag = debug_logs
+				}
+				log = "[GetDateText]: [Root.GetName] ces_navajo_markets entered"
+			}
+			519 = {
+				set_building_level = {
+					type = infrastructure
+					level = 10
+					instant_build = yes
+				}
+			}
+			518 = {
+				set_building_level = {
+					type = infrastructure
+					level = 10
+					instant_build = yes
+				}
+			}
+			207 = {
+				set_building_level = {
+					type = infrastructure
+					level = 10
+					instant_build = yes
+				}
+			}
+			516 = {
+				set_building_level = {
+					type = infrastructure
+					level = 10
+					instant_build = yes
+				}
+			}
+			if = {
+				limit = {
+					has_global_flag = debug_logs
+				}
+				log = "[GetDateText]: [Root.GetName] ces_navajo_markets exited"
+			}
+		}
+	}
+	focus = {
+		id = ces_speedway_toll
+		icon = GFX_goal_generic_nice_car
+		search_filters = {FOCUS_FILTER_INDUSTRY}
+		cost = 30
+		prerequisite = {
+			focus = ces_speedway
+		}
+		available = {
+			OR = {
+				TWO = { exists = yes }
+			}
+		}
+		x = -1
+		y = 1
+		relative_position_id = ces_speedway
+		completion_reward = {
+			if = {
+				limit = {
+					has_global_flag = debug_logs
+				}
+				log = "[GetDateText]: [Root.GetName] ces_speedway_toll entered"
+			}
+			TWO = {
+				add_ideas = two_speedway_toll
+			}
+			if = {
+				limit = {
+					has_global_flag = debug_logs
+				}
+				log = "[GetDateText]: [Root.GetName] ces_navajo_markets exited"
+			}
+		}
+	}
+	focus = {
+		id = ces_temple_cannonball
+		icon = GFX_goal_generic_spotlight
+		search_filters = {FOCUS_FILTER_INDUSTRY}
+		cost = 30
+		prerequisite = {
+			focus = ces_turn_the_other_cheek
+		}
+		available = {
+			OR = {
+				TWO = { is_in_faction_with = ROOT }
+				TWO = { all_core_land_owned_by_prev_sphere = yes }
+			}
+		}
+		x = -2
+		y = 1
+		relative_position_id = ces_turn_the_other_cheek
+		completion_reward = {
+			if = {
+				limit = {
+					has_global_flag = debug_logs
+				}
+				log = "[GetDateText]: [Root.GetName] ces_navajo_markets entered"
+			}
+			516 = {
+				if = {
+					limit = {
+						is_valid_state_for_2_civilian_factories = yes
+					}
+					add_extra_state_shared_building_slots = 3
+					add_building_construction = {
+						type = industrial_complex
+						level = 2
+						instant_build = yes
+					}
+				}
+			}
+			if = {
+				limit = {
+					has_global_flag = debug_logs
+				}
+				log = "[GetDateText]: [Root.GetName] ces_navajo_markets exited"
+			}
+		}
+	}
+	focus = {
+		id = ces_gateway_south
+		icon = GFX_goal_petro_chico_bottle_cap
+		search_filters = {FOCUS_FILTER_INDUSTRY}
+		cost = 30
+		prerequisite = {
+			focus = ces_temple_cannonball
+		}
+		available = {
+			OR = {
+				TWO = { is_in_faction_with = ROOT }
+				TWO = { all_core_land_owned_by_prev_sphere = yes }
+			}
+		}
+		x = 0
+		y = 1
+		relative_position_id = ces_temple_cannonball
+		completion_reward = {
+			if = {
+				limit = {
+					has_global_flag = debug_logs
+				}
+				log = "[GetDateText]: [Root.GetName] ces_turn_the_other_cheek entered"
+			}
+			custom_effect_tooltip = ces_gateway_south_tt
+			if = {
+				limit = {
+					has_global_flag = debug_logs
+				}
+				log = "[GetDateText]: [Root.GetName] ces_turn_the_other_cheek exited"
+			}
+		}
+	}
+	focus = {
+		id = ces_oval_tithe
+		icon = GFX_goal_CES_denarius
+		search_filters = {FOCUS_FILTER_INDUSTRY}
+		cost = 30
+		prerequisite = {
+			focus = ces_gateway_south
+		}
+		available = {
+			OR = {
+				TWO = { exists = yes }
+			}
+		}
+		x = 1
+		y = 1
+		relative_position_id = ces_gateway_south
+		completion_reward = {
+			if = {
+				limit = {
+					has_global_flag = debug_logs
+				}
+				log = "[GetDateText]: [Root.GetName] ces_oval_tithe entered"
+			}
+			TWO = {
+				add_ideas = two_oval_tithe_idea
+			}
+			if = {
+				limit = {
+					has_global_flag = debug_logs
+				}
+				log = "[GetDateText]: [Root.GetName] ces_oval_tithe exited"
+			}
+		}
+	}
+	focus = {
+		id = ces_south_phoenix_development
+		icon = GFX_goal_generic_sledgehammers
+		search_filters = {FOCUS_FILTER_INDUSTRY}
+		cost = 30
+		prerequisite = {
+			focus = ces_two_sun_rail
+		}
+		x = 0
+		y = 1
+		relative_position_id = ces_two_sun_rail
+		completion_reward = {
+			if = {
+				limit = {
+					has_global_flag = debug_logs
+				}
+				log = "[GetDateText]: [Root.GetName] ces_south_phoenix_development entered"
+			}
+			519 = {
+				if = {
+					limit = {
+						is_valid_state_for_arms_factory = yes
+					}
+					add_extra_state_shared_building_slots = 4
+					add_building_construction = {
+						type = arms_factory
+						level = 1
+						instant_build = yes
+					}
+				}
+			}
+			if = {
+				limit = {
+					has_global_flag = debug_logs
+				}
+				log = "[GetDateText]: [Root.GetName] ces_south_phoenix_development exited"
+			}
+		}
+	}
+	focus = {
+		id = ces_legionary_naval_academy
+		icon = GFX_goal_generic_boat_boat
+		search_filters = {FOCUS_FILTER_INDUSTRY}
+		cost = 30
+		prerequisite = {
+			focus = ces_south_phoenix_development
+		}
+		x = 0
+		y = 1
+		relative_position_id = ces_south_phoenix_development
+		completion_reward = {
+			custom_effect_tooltip = ces_legionary_naval_academy_tt
+			519 = {
+				if = {
+					limit = {
+						is_valid_state_for_2_dockyards = yes
+					}
+					add_extra_state_shared_building_slots = 2
+					add_building_construction = {
+						type = dockyard
+						level = 2
+						instant_build = yes
+					}
+				}
+				add_building_construction = {
+					type = naval_base
+					level = 2
+					instant_build = yes
+					province = 6632
+				}
+			}
+		}
+	}
+	### military
+	focus = {
+		id = ces_state_legion
+		icon = GFX_goal_CES_roman_eagle
+		search_filters = { FOCUS_FILTER_RESEARCH }
+		cost = 30
+		x = 15
+		y = 1
+		prerequisite = {
+			focus = ces_caesar_son_of_mars
+		}
+		relative_position_id = ces_caesar_son_of_mars
+		completion_reward = {
+			if = {
+				limit = {
+					has_global_flag = debug_logs
+				}
+				log = "[GetDateText]: [Root.GetName] ces_state_legion entered"
+			}
+			army_experience = 35
+			set_technology = {
+				legion_vexillarius_tech = 1
+			}
+			if = {
+				limit = {
+					has_global_flag = debug_logs
+				}
+				log = "[GetDateText]: [Root.GetName] ces_state_legion exited"
+			}
+		}
+	}
+	focus = {
+		id = ces_rebirth_triplex
+		icon = GFX_goal_roman_helmet
+		search_filters = { FOCUS_FILTER_IDEAS FOCUS_FILTER_MANPOWER }
+		cost = 30
+		x = -1
+		y = 1
+		prerequisite = {
+			focus = ces_state_legion
+		}
+		mutually_exclusive = {
+			focus = ces_rebirth_principes_doctrine
+		}
+		relative_position_id = ces_state_legion
+		completion_reward = {
+			if = {
+				limit = {
+					has_global_flag = debug_logs
+				}
+				log = "[GetDateText]: [Root.GetName] ces_rebirth_triplex entered"
+			}
+			add_ideas = cultofmars_triplex
+			if = {
+				limit = {
+					has_global_flag = debug_logs
+				}
+				log = "[GetDateText]: [Root.GetName] ces_rebirth_triplex exited"
+			}
+		}
+	}
+	focus = {
+		id = ces_forge_flagstaff
+		icon = GFX_goal_CES_blacksmith
+		search_filters = { FOCUS_FILTER_INDUSTRY }
+		cost = 30
+		x = -1
+		y = 1
+		prerequisite = {
+			focus = ces_rebirth_triplex
+		}
+		available = {
+			owns_state = 520
+		}
+		relative_position_id = ces_rebirth_triplex
+		completion_reward = {
+			if = {
+				limit = {
+					has_global_flag = debug_logs
+				}
+				log = "[GetDateText]: [Root.GetName] ces_forge_flagstaff entered"
+			}
+			520 = {
+				if = {
+					limit = {
+						is_valid_state_for_3_arms_factories = yes
+					}
+					add_extra_state_shared_building_slots = 3
+					add_building_construction = {
+						type = arms_factory
+						level = 3
+						instant_build = yes
+					}
+				}
+			}
+			if = {
+				limit = {
+					has_global_flag = debug_logs
+				}
+				log = "[GetDateText]: [Root.GetName] ces_forge_flagstaff exited"
+			}
+		}
+	}
+	focus = {
+		id = ces_rebirth_principes_doctrine
+		icon = GFX_goal_generic_swords
+		search_filters = { FOCUS_FILTER_IDEAS FOCUS_FILTER_MANPOWER FOCUS_FILTER_RESEARCH }
+		cost = 30
+		x = 1
+		y = 1
+		prerequisite = {
+			focus = ces_state_legion
+		}
+		mutually_exclusive = {
+			focus = ces_rebirth_triplex
+		}
+		relative_position_id = ces_state_legion
+		completion_reward = {
+			if = {
+				limit = {
+					has_global_flag = debug_logs
+				}
+				log = "[GetDateText]: [Root.GetName] ces_rebirth_principes_doctrine entered"
+			}
+			add_tech_bonus = {
+				bonus = 1
+				uses = 2
+				category = cat_terror_tactics
+			}
+			add_ideas = cultofmars_principes
+			if = {
+				limit = {
+					has_global_flag = debug_logs
+				}
+				log = "[GetDateText]: [Root.GetName] ces_rebirth_principes_doctrine exited"
+			}
+		}
+	}
+	focus = {
+		id = ces_worthy_few
+		icon = GFX_goal_CES_centurion
+		search_filters = { FOCUS_FILTER_RESEARCH }
+		cost = 30
+		x = -1
+		y = 1
+		prerequisite = {
+			focus = ces_rebirth_principes_doctrine
+			focus = ces_rebirth_triplex
+		}
+		relative_position_id = ces_rebirth_principes_doctrine
+		completion_reward = {
+			if = {
+				limit = {
+					has_global_flag = debug_logs
+				}
+				log = "[GetDateText]: [Root.GetName] ces_worthy_few entered"
+			}
+			news_event = nf_legion.28
+			set_technology = {
+				legion_centurions_tech = 1
+			}
+			if = {
+				limit = {
+					has_global_flag = debug_logs
+				}
+				log = "[GetDateText]: [Root.GetName] ces_worthy_few exited"
+			}
+		}
+	}
+	focus = {
+		id = ces_unending_legions
+		icon = GFX_goal_CES_segmentata
+		search_filters = { FOCUS_FILTER_IDEAS }
+		cost = 30
+		x = 1
+		y = 1
+		prerequisite = {
+			focus = ces_forge_flagstaff
+		}
+		prerequisite = {
+			focus = ces_worthy_few
+		}
+		relative_position_id = ces_forge_flagstaff
+		completion_reward = {
+			add_ideas = ces_infinite_armies
+		}
+	}
+	focus = {
+		id = ces_plan_flagstaff
+		icon = GFX_goal_CES_workshop
+		search_filters = { FOCUS_FILTER_INDUSTRY }
+		cost = 30
+		x = 1
+		y = 1
+		prerequisite = {
+			focus = ces_rebirth_principes_doctrine
+		}
+		available = {
+			owns_state = 520
+		}
+		relative_position_id = ces_rebirth_principes_doctrine
+		completion_reward = {
+			if = {
+				limit = {
+					has_global_flag = debug_logs
+				}
+				log = "[GetDateText]: [Root.GetName] ces_forge_flagstaff entered"
+			}
+			520 = {
+				if = {
+					limit = {
+						is_valid_state_for_arms_factory = yes
+					}
+					add_extra_state_shared_building_slots = 5
+					add_building_construction = {
+						type = arms_factory
+						level = 1
+						instant_build = yes
+					}
+				}
+			}
+			if = {
+				limit = {
+					has_global_flag = debug_logs
+				}
+				log = "[GetDateText]: [Root.GetName] ces_plan_flagstaff exited"
+			}
+		}
+	}
+	focus = {
+		id = ces_ever_evolving
+		icon = GFX_goal_CES_generic_infantry
+		search_filters = { FOCUS_FILTER_IDEAS }
+		cost = 30
+		x = -1
+		y = 1
+		prerequisite = {
+			focus = ces_plan_flagstaff
+		}
+		prerequisite = {
+			focus = ces_worthy_few
+		}
+		relative_position_id = ces_plan_flagstaff
+		completion_reward = {
+			add_ideas = ces_ever_evolving_idea
+		}
+	}
+	focus = {
+		id = ces_navajo_pathfinders
+		icon = GFX_goal_TTM_NAV_Flag
+		search_filters = { FOCUS_FILTER_IDEAS FOCUS_FILTER_RESEARCH }
+		cost = 30
+		x = -5
+		y = 1
+		prerequisite = {
+			focus = ces_state_legion
+		}
+		relative_position_id = ces_state_legion
+		completion_reward = {
+			if = {
+				limit = {
+					has_global_flag = debug_logs
+				}
+				log = "[GetDateText]: [Root.GetName] ces_navajo_pathfinders entered"
+			}
+			add_ideas = nav_pathfinders
+			if = {
+				limit = {
+					has_global_flag = debug_logs
+				}
+				log = "[GetDateText]: [Root.GetName] ces_navajo_pathfinders exited"
+			}
+		}
+	}
+	focus = {
+		id = ces_warchief_guidance
+		icon = GFX_goal_generic_rifle_3
+		search_filters = { FOCUS_FILTER_RESEARCH }
+		cost = 30
+		x = -1
+		y = 1
+		relative_position_id = ces_navajo_pathfinders
+		prerequisite = {
+			focus = ces_navajo_pathfinders
+		}
+		completion_reward = {
+			if = {
+				limit = {
+					has_global_flag = debug_logs
+				}
+				log = "[GetDateText]: [Root.GetName] ces_warchief_guidance entered"
+			}
+			add_tech_bonus = {
+				bonus = 1
+				uses = 1
+				category = spec_force_equipment_tech_category
+			}
+			set_technology = { ces_navajo_scouts_tech = 1 }
+			if = {
+				limit = {
+					has_global_flag = debug_logs
+				}
+				log = "[GetDateText]: [Root.GetName] ces_warchief_guidance exited"
+			}
+		}
+	}
+	focus = {
+		id = ces_hashkeh
+		icon = GFX_goal_generic_grenade_launcher
+		cost = 30
+		x = 1
+		y = 1
+		relative_position_id = ces_navajo_pathfinders
+		prerequisite = {
+			focus = ces_navajo_pathfinders
+		}
+		completion_reward = {
+			if = {
+				limit = {
+					has_global_flag = debug_logs
+				}
+				log = "[GetDateText]: [Root.GetName] ces_hashkeh entered"
+			}
+			hidden_effect = {
+				load_oob = hashkeh_naabaah
+			}
+			create_corps_commander = {
+				name = "The Angry Warrior"
+				portrait_path = "gfx/leaders/CES/portrait_lanius.dds"
+				skill = 3
+				traits = {
+					perceptive_trait
+				}
+				attack_skill = 6
+				defense_skill = 4
+				planning_skill = 3
+				logistics_skill = 3
+			}
+			custom_effect_tooltip = ces_hashkeh_tt
+			if = {
+				limit = {
+					has_global_flag = debug_logs
+				}
+				log = "[GetDateText]: [Root.GetName] ces_hashkeh exited"
+			}
+		}
+	}
+	focus = {
+		id = ces_navajo_castra
+		icon = GFX_goal_generic_tools
+		search_filters = { FOCUS_FILTER_INDUSTRY }
+		cost = 30
+		x = 0
+		y = 1
+		relative_position_id = ces_hashkeh
+		prerequisite = {
+			focus = ces_hashkeh
+		}
+		completion_reward = {
+			if = {
+				limit = {
+					has_global_flag = debug_logs
+				}
+				log = "[GetDateText]: [Root.GetName] ces_navajo_castra entered"
+			}
+			203 = {
+				if = {
+					limit = {
+						is_valid_state_for_2_arms_factories = yes
+					}
+					add_extra_state_shared_building_slots = 2
+					add_building_construction = {
+						type = arms_factory
+						level = 2
+						instant_build = yes
+					}
+				}
+				add_building_construction = {
+					type = bunker
+					level = 2
+					instant_build = yes
+					province = {
+						all_provinces = yes
+					}
+				}
+			}
+			if = {
+				limit = {
+					has_global_flag = debug_logs
+				}
+				log = "[GetDateText]: [Root.GetName] ces_navajo_castra exited"
+			}
+		}
+	}
+	focus = {
+		id = ces_skinwalker_integration
+		icon = GFX_goal_generic_advanced_firearms_focus
+		search_filters = { FOCUS_FILTER_RESEARCH }
+		cost = 30
+		x = 0
+		y = 1
+		relative_position_id = ces_warchief_guidance
+		prerequisite = {
+			focus = ces_warchief_guidance
+		}
+		completion_reward = {
+			if = {
+				limit = {
+					has_global_flag = debug_logs
+				}
+				log = "[GetDateText]: [Root.GetName] ces_skinwalker_integration entered"
+			}
+			set_technology = { ces_navajo_skin_walkers_tech = 1 }
+			if = {
+				limit = {
+					has_global_flag = debug_logs
+				}
+				log = "[GetDateText]: [Root.GetName] ces_skinwalker_integration exited"
+			}
+		}
+	}
+	focus = {
+		id = ces_the_roman_skinwalkers
+		icon = GFX_goal_generic_tomahawk_2
+		search_filters = { FOCUS_FILTER_IDEAS }
+		cost = 30
+		x = 1
+		y = 1
+		relative_position_id = ces_skinwalker_integration
+		prerequisite = {
+			focus = ces_skinwalker_integration
+		}
+		prerequisite = {
+			focus = ces_navajo_castra
+		}
+		completion_reward = {
+			if = {
+				limit = {
+					has_global_flag = debug_logs
+				}
+				log = "[GetDateText]: [Root.GetName] ces_the_roman_skinwalkers entered"
+			}
+			swap_ideas = {
+				remove_idea = nav_pathfinders
+				add_idea = nav_pathfinders2
+			}
+			NAV = {
+				swap_ideas = {
+					remove_idea = nav_pathfinders
+					add_idea = nav_pathfinders2
+				}
+			}
+			if = {
+				limit = {
+					has_global_flag = debug_logs
+				}
+				log = "[GetDateText]: [Root.GetName] ces_the_roman_skinwalkers exited"
+			}
+		}
+	}
+	focus = {
+		id = ces_great_chamber
+		icon = GFX_goal_generic_TWO_shield
+		search_filters = { FOCUS_FILTER_IDEAS }
+		cost = 30
+		x = 5
+		y = 1
+		prerequisite = {
+			focus = ces_state_legion
+		}
+		relative_position_id = ces_state_legion
+		completion_reward = {
+			if = {
+				limit = {
+					has_global_flag = debug_logs
+				}
+				log = "[GetDateText]: [Root.GetName] ces_great_chamber entered"
+			}
+			add_ideas = two_sun_cliens
+			if = {
+				limit = {
+					has_global_flag = debug_logs
+				}
+				log = "[GetDateText]: [Root.GetName] ces_great_chamber exited"
+			}
+		}
+	}
+	focus = {
+		id = ces_return_chariots
+		icon = GFX_goal_original_highwayman
+		search_filters = { FOCUS_FILTER_RESEARCH }
+		cost = 30
+		x = -1
+		y = 1
+		prerequisite = {
+			focus = ces_great_chamber
+		}
+		relative_position_id = ces_great_chamber
+		completion_reward = {
+			if = {
+				limit = {
+					has_global_flag = debug_logs
+				}
+				log = "[GetDateText]: [Root.GetName] ces_return_chariots entered"
+			}
+			set_technology = { ces_two_tech = 1 }
+			if = {
+				limit = {
+					has_global_flag = debug_logs
+				}
+				log = "[GetDateText]: [Root.GetName] ces_return_chariots exited"
+			}
+		}
+	}
+	focus = {
+		id = ces_legionary_charioteers
+		icon = GFX_goal_generic_motorcycle
+		search_filters = { FOCUS_FILTER_RESEARCH }
+		cost = 30
+		x = 0
+		y = 1
+		prerequisite = {
+			focus = ces_return_chariots
+		}
+		relative_position_id = ces_return_chariots
+		completion_reward = {
+			if = {
+				limit = {
+					has_global_flag = debug_logs
+				}
+				log = "[GetDateText]: [Root.GetName] ces_return_chariots entered"
+			}
+			add_tech_bonus = {
+				bonus = 0.25
+				uses = 1
+				category = vehicle_tech_category
+			}
+			if = {
+				limit = {
+					has_global_flag = debug_logs
+				}
+				log = "[GetDateText]: [Root.GetName] ces_return_chariots exited"
+			}
+		}
+	}
+	focus = {
+		id = ces_ride_will_faster
+		icon = GFX_goal_EHT_apc
+		cost = 30
+		x = 1
+		y = 1
+		prerequisite = {
+			focus = ces_great_chamber
+		}
+		relative_position_id = ces_great_chamber
+		completion_reward = {
+			if = {
+				limit = {
+					has_global_flag = debug_logs
+				}
+				log = "[GetDateText]: [Root.GetName] ces_ride_will_faster entered"
+			}
+			custom_effect_tooltip = ces_ride_will_faster_tt
+			hidden_effect = {
+				load_oob = two_sun_auxiliaries
+			}
+			if = {
+				limit = {
+					has_global_flag = debug_logs
+				}
+				log = "[GetDateText]: [Root.GetName] ces_ride_will_faster exited"
+			}
+		}
+	}
+	focus = {
+		id = ces_two_sun_colosseum
+		icon = GFX_goal_RRG_radio_broadcast
+		search_filters = { FOCUS_FILTER_INDUSTRY }
+		cost = 30
+		x = 0
+		y = 1
+		prerequisite = {
+			focus = ces_ride_will_faster
+		}
+		relative_position_id = ces_ride_will_faster
+		completion_reward = {
+			if = {
+				limit = {
+					has_global_flag = debug_logs
+				}
+				log = "[GetDateText]: [Root.GetName] ces_two_sun_colosseum entered"
+			}
+			516 = {
+				if = {
+					limit = {
+						is_valid_state_for_2_arms_factories = yes
+					}
+					add_extra_state_shared_building_slots = 2
+					add_building_construction = {
+						type = arms_factory
+						level = 2
+						instant_build = yes
+					}
+				}
+				add_building_construction = {
+					type = bunker
+					level = 2
+					instant_build = yes
+					province = {
+						all_provinces = yes
+					}
+				}
+			}
+			if = {
+				limit = {
+					has_global_flag = debug_logs
+				}
+				log = "[GetDateText]: [Root.GetName] ces_two_sun_colosseum exited"
+			}
+		}
+	}
+	focus = {
+		id = ces_legend_cannonball
+		icon = GFX_goal_generic_nice_car
+		search_filters = { FOCUS_FILTER_IDEAS }
+		cost = 30
+		x = -1
+		y = 1
+		relative_position_id = ces_two_sun_colosseum
+		prerequisite = {
+			focus = ces_two_sun_colosseum
+		}
+		prerequisite = {
+			focus = ces_legionary_charioteers
+		}
+		completion_reward = {
+			if = {
+				limit = {
+					has_global_flag = debug_logs
+				}
+				log = "[GetDateText]: [Root.GetName] ces_legend_cannonball entered"
+			}
+			swap_ideas = {
+				remove_idea = two_sun_cliens
+				add_idea = two_sun_cliens2
+			}
+			TWO = {
+				swap_ideas = {
+					remove_idea = two_sun_cliens
+					add_idea = two_sun_cliens2
+				}
+			}
+			if = {
+				limit = {
+					has_global_flag = debug_logs
+				}
+				log = "[GetDateText]: [Root.GetName] ces_legend_cannonball exited"
+			}
+		}
+	}
+	focus = {
+		id = ces_vulpes_leads
+		icon = GFX_goal_CES_spqr
+		search_filters = { FOCUS_FILTER_GLORY_VULPES }
+		cost = 30
+		x = 1
+		y = 1
+		available = {
+			is_vulpes_leader = yes
+		}
+		relative_position_id = ces_hopi_tithe
+		completion_reward = {
+			set_technology = { tribal_resistance_tech = 1 }
+		}
+	}
+	focus = {
+		id = ces_vulpes_victorious
+		icon = GFX_goal_generic_freedom
+		search_filters = { FOCUS_FILTER_GLORY_VULPES }
+		cost = 30
+		relative_position_id = ces_vulpes_leads
+		x = 0
+		y = 1
+		prerequisite = {
+			focus = ces_vulpes_leads
+		}
+		completion_reward = {
+			add_ideas = manumissio
+		}
+	}
+	focus = {
+		id = ces_amnesty_elderly
+		icon = GFX_goal_generic_slums_focus
+		search_filters = { FOCUS_FILTER_GLORY_VULPES }
+		cost = 30
+		x = -1
+		y = 1
+		relative_position_id = ces_vulpes_victorious
+		prerequisite = {
+			focus = ces_vulpes_victorious
+		}
+		completion_reward = {
+			swap_ideas = {
+				remove_idea = manumissio
+				add_idea = manumissio1
+			}
+		}
+	}
+	focus = {
+		id = ces_fifteen_year_decree
+		icon = GFX_goal_generic_alarm_clock
+		search_filters = { FOCUS_FILTER_GLORY_VULPES }
+		cost = 30
+		x = 0
+		y = 1
+		relative_position_id = ces_amnesty_elderly
+		prerequisite = {
+			focus = ces_amnesty_elderly
+		}
+		completion_reward = {
+			swap_ideas = {
+				remove_idea = manumissio1
+				add_idea = manumissio2
+			}
+		}
+	}
+	focus = {
+		id = ces_amnesty_weak
+		icon = GFX_goal_generic_medal
+		search_filters = { FOCUS_FILTER_GLORY_VULPES }
+		cost = 30
+		x = 1
+		y = 1
+		relative_position_id = ces_vulpes_victorious
+		prerequisite = {
+			focus = ces_vulpes_victorious
+		}
+		available = {
+			has_completed_focus = ces_fifteen_year_decree
+		}
+		completion_reward = {
+			swap_ideas = {
+				remove_idea = manumissio2
+				add_idea = manumissio3
+			}
+		}
+	}
+	focus = {
+		id = ces_mercy_decree
+		icon = GFX_goal_chem_super_stim
+		search_filters = { FOCUS_FILTER_GLORY_VULPES }
+		cost = 30
+		x = 0
+		y = 1
+		relative_position_id = ces_amnesty_weak
+		prerequisite = {
+			focus = ces_amnesty_weak
+		}
+		completion_reward = {
+			remove_ideas = manumissio3
+		}
+	}
+	focus = {
+		id = ces_libertas
+		icon = GFX_goal_generic_slave_collars
+		search_filters = { FOCUS_FILTER_GLORY_VULPES }
+		cost = 30
+		x = -1
+		y = 1
+		relative_position_id = ces_mercy_decree
+		prerequisite = {
+			focus = ces_mercy_decree
+		}
+		prerequisite = {
+			focus = ces_fifteen_year_decree
+		}
+		completion_reward = {
+			add_ideas = manumissio4
+		}
+	}
+	focus = {
+		id = ces_aurelius_wins
+		icon = GFX_goal_CES_phoenix
+		search_filters = { FOCUS_FILTER_GLORY_AURELIUS }
+		cost = 30
+		x = 9
+		y = 1
+		available = {
+			has_country_leader = {
+				name = "Aurelius of Phoenix"
+				ruling_only = yes
+			}
+		}
+		relative_position_id = ces_hopi_tithe
+		completion_reward = {
+			add_ideas = via_militaris
+		}
+	}
+	focus = {
+		id = ces_imperial_road_network
+		icon = GFX_goal_CES_via_militaris
+		search_filters = { FOCUS_FILTER_GLORY_AURELIUS }
+		cost = 30
+		x = 0
+		y = 1
+		relative_position_id = ces_aurelius_wins
+		prerequisite = {
+			focus = ces_aurelius_wins
+		}
+		completion_reward = {
+			add_ideas = via_militaris
+		}
+	}
+	focus = {
+		id = ces_road_north
+		icon = GFX_goal_brahmin_cart
+		search_filters = { FOCUS_FILTER_GLORY_AURELIUS }
+		cost = 30
+		x = -1
+		y = 1
+		relative_position_id = ces_imperial_road_network
+		prerequisite = {
+			focus = ces_imperial_road_network
+		}
+		completion_reward = {
+			every_owned_state = {
+				limit = {
+					infrastructure < 5
+					OR = {
+						is_core_of = HUA
+						is_core_of = TWI
+						is_core_of = BLK
+						is_core_of = WAP
+					}
+				}
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant_build = yes
+				}
+			}
+			498 = {
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant_build = yes
+				}
+			}
+		}
+	}
+	focus = {
+		id = ces_grognak
+		icon = GFX_goal_generic_grognak
+		search_filters = { FOCUS_FILTER_GLORY_AURELIUS }
+		cost = 30
+		x = 1
+		y = 1
+		relative_position_id = ces_imperial_road_network
+		prerequisite = {
+			focus = ces_imperial_road_network
+		}
+		completion_reward = {
+			set_technology = { tribal_production_tech= 1 }
+		}
+	}
+	focus = {
+		id = ces_imperial_roads
+		icon = GFX_goal_original_highwayman
+		search_filters = { FOCUS_FILTER_GLORY_AURELIUS }
+		cost = 30
+		x = 0
+		y = 1
+		relative_position_id = ces_road_north
+		prerequisite = {
+			focus = ces_road_north
+		}
+		completion_reward = {
+			swap_ideas = {
+				remove_idea = via_militaris
+				add_idea = via_militaris_2
+			}
+		}
+	}
+	focus = {
+		id = CES_legalize_chems
+		icon = GFX_goal_generic_mentats
+		search_filters = { FOCUS_FILTER_GLORY_AURELIUS }
+		cost = 30
+		x = 0
+		y = 1
+		relative_position_id = ces_grognak
+		prerequisite = {
+			focus = ces_grognak
+		}
+		completion_reward = {
+			clr_country_flag = bans_drugs
+			swap_ideas = {
+				remove_idea = chems_banned
+				add_idea = chems_legalised
+			}
+
+			set_temp_variable = {
+				caps_to_add = 50
+			}
+			add_caps = yes
+		}
+	}
+	focus = {
+		id = CES_road_security
+		icon = GFX_goal_CES_legion_kart
+		search_filters = { FOCUS_FILTER_GLORY_AURELIUS }
+		cost = 30
+		x = -1
+		y = 1
+		relative_position_id = CES_legalize_chems
+		prerequisite = {
+			focus = ces_imperial_roads
+		}
+		prerequisite = {
+			focus = CES_legalize_chems
+		}
+		completion_reward = {
+			swap_ideas = {
+				remove_idea = via_militaris_2
+				add_idea = via_militaris_3
+			}
+		}
+	}
+	focus = {
+		id = CES_coloniae
+		icon = GFX_goal_generic_generator_wind
+		search_filters = { FOCUS_FILTER_GLORY_AURELIUS FOCUS_FILTER_GLORY_VULPES }
+		cost = 30
+		x = 3
+		y = 1
+		relative_position_id = ces_vulpes_leads
+		prerequisite = {
+			focus = ces_vulpes_leads
+			focus = ces_aurelius_wins
+		}
+		completion_reward = {
+			random_owned_state = {
+				limit = {
+					is_valid_state_for_civilian_factory = yes
+				}
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+			}
+			random_owned_state = {
+				limit = {
+					is_valid_state_for_civilian_factory = yes
+				}
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+			}
+			random_owned_state = {
+				limit = {
+					is_valid_state_for_civilian_factory = yes
+				}
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+			}
+		}
+	}
+	focus = {
+		id = CES_castellum
+		icon = GFX_goal_generic_rocket_launcher
+		search_filters = { FOCUS_FILTER_GLORY_AURELIUS FOCUS_FILTER_GLORY_VULPES }
+		cost = 30
+		x = 5
+		y = 1
+		prerequisite = {
+			focus = ces_vulpes_leads
+			focus = ces_aurelius_wins
+		}
+		relative_position_id = ces_vulpes_leads
+		completion_reward = {
+			random_owned_state = {
+				limit = {
+					is_valid_state_for_arms_factory = yes
+				}
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = arms_factory
+					level = 1
+					instant_build = yes
+				}
+			}
+			random_owned_state = {
+				limit = {
+					is_valid_state_for_arms_factory = yes
+				}
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = arms_factory
+					level = 1
+					instant_build = yes
+				}
+			}
+			random_owned_state = {
+				limit = {
+					is_valid_state_for_arms_factory = yes
+				}
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = arms_factory
+					level = 1
+					instant_build = yes
+				}
+			}
+		}
+	}
+	focus = {
+		id = CES_exploitation_tech
+		icon = GFX_goal_generic_transmitter_1
+		search_filters = { FOCUS_FILTER_GLORY_AURELIUS FOCUS_FILTER_GLORY_VULPES }
+		cost = 30
+		x = 0
+		y = 1
+		relative_position_id = CES_castellum
+		prerequisite = {
+			focus = CES_castellum
+		}
+		completion_reward = {
+			set_technology = {
+				exploitation_tech_level_settler = 1
+			}
+		}
+	}
+	focus = {
+		id = CES_guns_can_be_built
+		icon = GFX_goal_generic_outpost
+		search_filters = { FOCUS_FILTER_GLORY_AURELIUS FOCUS_FILTER_GLORY_VULPES }
+		cost = 30
+		x = 0
+		y = 1
+		relative_position_id = CES_exploitation_tech
+		prerequisite = {
+			focus = CES_exploitation_tech
+		}
+		completion_reward = {
+			random_owned_state = {
+				limit = {
+					is_valid_state_for_arms_factory = yes
+				}
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = arms_factory
+					level = 1
+					instant_build = yes
+				}
+			}
+			random_owned_state = {
+				limit = {
+					is_valid_state_for_arms_factory = yes
+				}
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = arms_factory
+					level = 1
+					instant_build = yes
+				}
+			}
+			random_owned_state = {
+				limit = {
+					is_valid_state_for_arms_factory = yes
+				}
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = arms_factory
+					level = 1
+					instant_build = yes
+				}
+			}
+		}
+	}
+	focus = {
+		id = CES_golden_empire
+		icon = GFX_goal_CES_rome_ascendant
+		search_filters = { FOCUS_FILTER_GLORY_AURELIUS FOCUS_FILTER_GLORY_VULPES }
+		cost = 30
+		x = -1
+		y = 1
+		relative_position_id = CES_guns_can_be_built
+		prerequisite = {
+			focus = CES_guns_can_be_built
+		}
+		prerequisite = {
+			focus = CES_civilian_development
+		}
+		completion_reward = {
+			reduce_legionary_state = yes
+		}
+	}
+	focus = {
+		id = CES_construction_tech
+		icon = GFX_goal_generic_solar_fixed
+		search_filters = { FOCUS_FILTER_GLORY_AURELIUS FOCUS_FILTER_GLORY_VULPES }
+		cost = 30
+		x = 0
+		y = 1
+		relative_position_id = CES_coloniae
+		prerequisite = {
+			focus = CES_coloniae
+		}
+		completion_reward = {
+			set_technology = {
+				habitation_tech_level_settler = 1
+			}
+		}
+	}
+	focus = {
+		id = CES_civilian_development
+		icon = GFX_goal_generic_brahmin_trade
+		search_filters = { FOCUS_FILTER_GLORY_AURELIUS FOCUS_FILTER_GLORY_VULPES }
+		cost = 30
+		x = 0
+		y = 1
+		relative_position_id = CES_construction_tech
+		prerequisite = {
+			focus = CES_construction_tech
+		}
+		completion_reward = {
+			random_owned_state = {
+				limit = {
+					is_valid_state_for_civilian_factory = yes
+				}
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+			}
+			random_owned_state = {
+				limit = {
+					is_valid_state_for_civilian_factory = yes
+				}
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+			}
+			random_owned_state = {
+				limit = {
+					is_valid_state_for_civilian_factory = yes
+				}
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+			}
+			reduce_legionary_state = yes
+		}
+	}
+	## Traditionalist
+	focus = {
+		id = ces_boring_lucius
+		icon = GFX_goal_CES_ces_lucius
+		search_filters = { FOCUS_FILTER_GLORY_LUCIUS }
+		cost = 30
+		x = -12
+		y = 0
+		relative_position_id = ces_vulpes_leads
+		available = {
+			has_country_flag = lucius_wholesome
+			is_lucius_leader = yes
+		}
+		completion_reward = {
+			custom_effect_tooltip = ces_boring_lucius_tt
+		}
+	}
+	focus = {
+		id = ces_malpais_legate_prevails
+		icon = GFX_goal_CES_malpais_legate
+		search_filters = { FOCUS_FILTER_GLORY_MALPAIS }
+		cost = 30
+		x = -6
+		y = 0
+		available = {
+			has_country_leader = {
+				name = "Malpais Legate"
+				ruling_only = yes
+			}
+		}
+		relative_position_id = ces_vulpes_leads
+		completion_reward = {
+			set_technology = { tribal_hard_attack_tech = 1 }
+		}
+	}
+	focus = {
+		id = ces_tax_arizona
+		icon = GFX_goal_NCN_The_Burned_Man
+		search_filters = { FOCUS_FILTER_GLORY_MALPAIS }
+		cost = 30
+		x = 2
+		y = 1
+		relative_position_id = ces_malpais_legate_prevails
+		prerequisite = {
+			focus = ces_malpais_legate_prevails
+		}
+		completion_reward = {
+			add_ideas = ces_tithes
+
+		}
+	}
+	focus = {
+		id = ces_servus_non_habet
+		icon = GFX_goal_generic_slave_collars
+		search_filters = { FOCUS_FILTER_GLORY_LUCIUS FOCUS_FILTER_GLORY_MALPAIS }
+		cost = 30
+		prerequisite = {
+			focus = ces_boring_lucius
+			focus = ces_malpais_legate_prevails
+		}
+		x = 1
+		y = 1
+		relative_position_id = ces_boring_lucius
+		completion_reward = {
+			set_temp_variable = { caps_to_add = 125 }
+			add_caps = yes
+		}
+	}
+	focus = {
+		id = ces_never_friends
+		icon = GFX_goal_CES_slaves
+		search_filters = { FOCUS_FILTER_GLORY_LUCIUS FOCUS_FILTER_GLORY_MALPAIS }
+		cost = 30
+		prerequisite = {
+			focus = ces_boring_lucius
+			focus = ces_malpais_legate_prevails
+		}
+		x = 5
+		y = 1
+		relative_position_id = ces_boring_lucius
+		completion_reward = {
+			set_temp_variable = { caps_to_add = 50 }
+			add_caps = yes
+			#increase_slave_law = yes
+		}
+	}
+	focus = {
+		id = ces_northern_push
+		icon = GFX_goal_CES_workshop
+		search_filters = { FOCUS_FILTER_GLORY_LUCIUS FOCUS_FILTER_GLORY_MALPAIS }
+		available = {
+			set_temp_variable = { caps_diff = -20 }
+			caps_cost_trigger = yes
+		}
+		cost = 30
+		prerequisite = {
+			focus = ces_boring_lucius
+			focus = ces_malpais_legate_prevails
+		}
+		x = 3
+		y = 1
+		relative_position_id = ces_boring_lucius
+		completion_reward = {
+			522 = {
+				if = {
+					limit = {
+						is_valid_state_for_2_civilian_factories = yes
+					}
+					add_extra_state_shared_building_slots = 2
+					add_building_construction = {
+						type = industrial_complex
+						level = 2
+						instant_build = yes
+					}
+				}
+			}
+			set_temp_variable = { caps_to_add = -20 }
+			add_caps = yes
+		}
+	}
+	focus = {
+		id = ces_northern_bastion
+		icon = GFX_goal_generic_bunkers_focus
+		search_filters = { FOCUS_FILTER_GLORY_LUCIUS FOCUS_FILTER_GLORY_MALPAIS }
+		available = {
+			set_temp_variable = { caps_diff = -20 }
+			caps_cost_trigger = yes
+		}
+		cost = 30
+		prerequisite = {
+			focus = ces_servus_non_habet
+		}
+		x = 0
+		y = 1
+		relative_position_id = ces_servus_non_habet
+		completion_reward = {
+			520 = {
+				if = {
+					limit = {
+						is_valid_state_for_2_arms_factories = yes
+					}
+					add_extra_state_shared_building_slots = 2
+					add_building_construction = {
+						type = arms_factory
+						level = 2
+						instant_build = yes
+					}
+				}
+			}
+			set_temp_variable = { caps_to_add = -20 }
+			add_caps = yes
+		}
+	}
+	focus = {
+		id = ces_eastern_bastion
+		icon = GFX_goal_generic_artillery
+		search_filters = { FOCUS_FILTER_GLORY_LUCIUS FOCUS_FILTER_GLORY_MALPAIS }
+		available = {
+			set_temp_variable = { caps_diff = -20 }
+			caps_cost_trigger = yes
+		}
+		cost = 30
+		prerequisite = {
+			focus = ces_northern_push
+		}
+		x = 0
+		y = 1
+		relative_position_id = ces_northern_push
+		completion_reward = {
+			522 = {
+				if = {
+					limit = {
+						is_valid_state_for_2_arms_factories = yes
+					}
+					add_extra_state_shared_building_slots = 2
+					add_building_construction = {
+						type = arms_factory
+						level = 2
+						instant_build = yes
+					}
+				}
+			}
+			set_temp_variable = { caps_to_add = -20 }
+			add_caps = yes
+		}
+	}
+	focus = {
+		id = ces_southern_bastion
+		icon = GFX_goal_power_fist
+		search_filters = { FOCUS_FILTER_GLORY_LUCIUS FOCUS_FILTER_GLORY_MALPAIS }
+		available = {
+			set_temp_variable = { caps_diff = -40 }
+			caps_cost_trigger = yes
+		}
+		cost = 30
+		prerequisite = {
+			focus = ces_never_friends
+		}
+		x = 0
+		y = 1
+		relative_position_id = ces_never_friends
+		completion_reward = {
+			518 = {
+				if = {
+					limit = {
+						is_valid_state_for_2_arms_factories = yes
+					}
+					add_extra_state_shared_building_slots = 2
+					add_building_construction = {
+						type = arms_factory
+						level = 2
+						instant_build = yes
+					}
+				}
+			}
+			set_temp_variable = { caps_to_add = -40 }
+			add_caps = yes
+		}
+	}
+	focus = {
+		id = ces_honestas_industria_prudentia
+		icon = GFX_goal_CES_crucifixion
+		search_filters = { FOCUS_FILTER_GLORY_LUCIUS FOCUS_FILTER_GLORY_MALPAIS }
+		available = {
+		}
+		cost = 30
+		prerequisite = {
+			focus = ces_southern_bastion
+		}
+		prerequisite = {
+			focus = ces_northern_bastion
+		}
+		prerequisite = {
+			focus = ces_eastern_bastion
+		}
+		x = -2
+		y = 1
+		relative_position_id = ces_southern_bastion
+		completion_reward = {
+			#increase_slave_law = yes
+			# custom_effect_tooltip = ces_honesta_industria_prudentia_tt
+			# set_temp_variable = {
+			# 	slaves_to_add = 5
+			# }
+			# add_slaves_to_nation = yes
+			set_temp_variable = { caps_to_add = 75 }
+			add_caps = yes
+		}
+	}
+	focus = {
+		id = ces_southern_tithe
+		icon = GFX_goal_bottlecap
+		search_filters = { FOCUS_FILTER_GLORY_MALPAIS }
+		cost = 30
+		x = 1
+		y = 1
+		relative_position_id = ces_tax_arizona
+		prerequisite = {
+			focus = ces_tax_arizona
+		}
+		completion_reward = {
+			add_offsite_building = {
+				type = arms_factory
+				level = 2
+			}
+			add_stability = -0.05
+		}
+	}
+	focus = {
+		id = ces_northern_tithe
+		icon = GFX_goal_ancient_wealth
+		search_filters = { FOCUS_FILTER_GLORY_MALPAIS }
+		cost = 30
+		x = -1
+		y = 1
+		relative_position_id = ces_tax_arizona
+		prerequisite = {
+			focus = ces_tax_arizona
+		}
+		completion_reward = {
+			add_offsite_building = {
+				type = arms_factory
+				level = 2
+			}
+			add_stability = -0.05
+		}
+	}
+	focus = {
+		id = ces_western_tithe
+		icon = GFX_goal_CES_denarius
+		search_filters = { FOCUS_FILTER_GLORY_MALPAIS }
+		cost = 30
+		x = 0
+		y = 1
+		relative_position_id = ces_northern_tithe
+		prerequisite = {
+			focus = ces_northern_tithe
+		}
+		completion_reward = {
+			add_offsite_building = {
+				type = arms_factory
+				level = 2
+			}
+			add_stability = -0.05
+		}
+	}
+	focus = {
+		id = ces_eastern_tithe
+		icon = GFX_goal_generic_sunset_sasparilla
+		search_filters = { FOCUS_FILTER_GLORY_MALPAIS }
+		cost = 30
+		x = 0
+		y = 1
+		relative_position_id = ces_southern_tithe
+		prerequisite = {
+			focus = ces_southern_tithe
+		}
+		completion_reward = {
+			add_offsite_building = {
+				type = arms_factory
+				level = 2
+			}
+			add_stability = -0.05
+		}
+	}
+	focus = {
+		id = ces_decimation
+		icon = GFX_goal_CES_crucifixion
+		search_filters = { FOCUS_FILTER_GLORY_MALPAIS }
+		cost = 30
+		x = -1
+		y = 1
+		relative_position_id = ces_eastern_tithe
+		prerequisite = {
+			focus = ces_eastern_tithe
+		}
+		prerequisite = {
+			focus = ces_western_tithe
+		}
+		completion_reward = {
+			swap_ideas = {
+				remove_idea = ces_tithes
+				add_idea = ces_tithes1
+			}
+			set_temp_variable = {
+				caps_to_add = 200
+			}
+			add_caps = yes
+		}
+	}
+	focus = {
+		id = ces_fortress_legion
+		icon = GFX_goal_generic_mountain_fortress
+		search_filters = { FOCUS_FILTER_GLORY_LUCIUS }
+		cost = 30
+		x = -2
+		y = 1
+		available = {
+			has_country_flag = lucius_wholesome
+		}
+		relative_position_id = ces_boring_lucius
+		prerequisite = {
+			focus = ces_boring_lucius
+		}
+		completion_reward = {
+			add_ideas = ces_fortress_arizona
+		}
+	}
+	focus = {
+		id = ces_fortify_the_fort
+		icon = GFX_goal_generic_sign_welcome
+		search_filters = { FOCUS_FILTER_GLORY_LUCIUS }
+		cost = 30
+		x = -1
+		y = 1
+		relative_position_id = ces_fortress_legion
+		prerequisite = {
+			focus = ces_fortress_legion
+		}
+		completion_reward = {
+			random_owned_state = {
+				limit = {
+					is_valid_state_for_4_civilian_factories = yes
+				}
+				add_extra_state_shared_building_slots = 4
+				add_building_construction = {
+					type = industrial_complex
+					level = 4
+					instant_build = yes
+				}
+			}
+		}
+	}
+	focus = {
+		id = ces_good_followers
+		icon = GFX_goal_VEG_Follower_Support
+		search_filters = { FOCUS_FILTER_GLORY_LUCIUS }
+		cost = 30
+		x = 0
+		y = 1
+		relative_position_id = ces_fortify_the_fort
+		prerequisite = {
+			focus = ces_fortify_the_fort
+		}
+		completion_reward = {
+			if = {
+				limit = {
+					has_global_flag = followers_system_toggle_enabled_global_flag
+					NOT = {
+						has_country_flag = followers_established
+					}
+				}
+				establish_followers = yes
+			}
+			add_tech_bonus = {
+				bonus = 0.5
+				uses = 2
+				category = support_medical_tech_category
+			}
+		}
+	}
+	focus = {
+		id = ces_tribal_customs
+		icon = GFX_goal_food_bitter_drink
+		search_filters = { FOCUS_FILTER_GLORY_LUCIUS }
+		cost = 30
+		x = 1
+		y = 1
+		relative_position_id = ces_fortress_legion
+		prerequisite = {
+			focus = ces_fortress_legion
+		}
+		completion_reward = {
+			520 = {
+				if = {
+					limit = {
+						is_valid_state_for_2_arms_factories = yes
+					}
+					add_extra_state_shared_building_slots = 2
+					add_building_construction = {
+						type = arms_factory
+						level = 2
+						instant_build = yes
+					}
+				}
+			}
+			add_political_power = 200
+		}
+	}
+	focus = {
+		id = ces_that_happy_day
+		icon = GFX_goal_CES_women_marriage
+		search_filters = { FOCUS_FILTER_GLORY_LUCIUS }
+		cost = 30
+		x = 0
+		y = 1
+		relative_position_id = ces_tribal_customs
+		prerequisite = {
+			focus = ces_tribal_customs
+		}
+		available = {
+			has_completed_focus = ces_good_followers
+		}
+		completion_reward = {
+			518 = {
+				if = {
+					limit = {
+						is_valid_state_for_2_civilian_factories = yes
+					}
+					add_extra_state_shared_building_slots = 2
+					add_building_construction = {
+						type = industrial_complex
+						level = 2
+						instant_build = yes
+					}
+				}
+			}
+			custom_effect_tooltip = ces_that_happy_day_tt
+		}
+	}
+	focus = {
+		id = ces_lucius_wall
+		icon = GFX_goal_CES_colosseum
+		search_filters = { FOCUS_FILTER_GLORY_LUCIUS }
+		cost = 30
+		x = -1
+		y = 1
+		relative_position_id = ces_that_happy_day
+		prerequisite = {
+			focus = ces_that_happy_day
+		}
+		prerequisite = {
+			focus = ces_good_followers
+		}
+		completion_reward = {
+			news_event = nf_legion.93
+			swap_ideas = {
+				remove_idea = ces_fortress_arizona
+				add_idea = ces_fortress_arizona1
+			}
+		}
+	}
+	focus = {
+		id = ces_cult_of_mars
+		icon = GFX_goal_CES_brotherhood
+		search_filters = { FOCUS_FILTER_GLORY_LUCIUS }
+		cost = 30
+		x = 4
+		y = 1
+		available = {
+			has_country_flag = lucius_good_boy
+			is_lucius_leader = yes
+		}
+		relative_position_id = ces_libertas
+		completion_reward = {
+			add_stability = -0.05
+		}
+	}
+	focus = {
+		id = ces_perpetual_war
+		icon = GFX_goal_roman_helmet
+		search_filters = { FOCUS_FILTER_GLORY_LUCIUS }
+		cost = 30
+		x = -1
+		y = 1
+		relative_position_id = ces_cult_of_mars
+		prerequisite = {
+			focus = ces_cult_of_mars
+		}
+		completion_reward = {
+			add_ideas = cultofmars
+		}
+	}
+	focus = {
+		id = ces_infantry_weapons
+		icon = GFX_goal_generic_minigun
+		search_filters = { FOCUS_FILTER_GLORY_LUCIUS }
+		cost = 30
+		x = -1
+		y = 1
+		relative_position_id = ces_perpetual_war
+		prerequisite = {
+			focus = ces_perpetual_war
+		}
+		completion_reward = {
+			swap_ideas = {
+				remove_idea = cultofmars
+				add_idea = cultofmars1
+			}
+		}
+	}
+	focus = {
+		id = ces_advanced_resources
+		icon = GFX_goal_generic_circuit_reg_2
+		search_filters = { FOCUS_FILTER_GLORY_LUCIUS }
+		cost = 30
+		x = 0
+		y = 1
+		relative_position_id = ces_infantry_weapons
+		prerequisite = {
+			focus = ces_infantry_weapons
+		}
+		completion_reward = {
+			520 = {
+				add_resource = {
+					type = energy
+					amount = 21
+				}
+				add_resource = {
+					type = composites
+					amount = 12
+				}
+			}
+		}
+	}
+	focus = {
+		id = ces_tank_weapons
+		icon = GFX_goal_CES_hammer_of_mars
+		search_filters = { FOCUS_FILTER_GLORY_LUCIUS }
+		cost = 30
+		x = 1
+		y = 1
+		relative_position_id = ces_perpetual_war
+		prerequisite = {
+			focus = ces_perpetual_war
+		}
+		available = {
+			has_completed_focus = ces_infantry_weapons
+		}
+		completion_reward = {
+			swap_ideas = {
+				remove_idea = cultofmars1
+				add_idea = cultofmars2
+			}
+		}
+	}
+	focus = {
+		id = ces_secrets_of_carthage
+		icon = GFX_goal_generic_handy_fuel
+		search_filters = { FOCUS_FILTER_GLORY_LUCIUS }
+		cost = 30
+		x = 0
+		y = 1
+		relative_position_id = ces_tank_weapons
+		prerequisite = {
+			focus = ces_tank_weapons
+		}
+		completion_reward = {
+			swap_ideas = {
+				remove_idea = cultofmars2
+				add_idea = cultofmars3
+			}
+		}
+	}
+	focus = {
+		id = ces_modern_army
+		icon = GFX_goal_generic_f76_player3
+		search_filters = { FOCUS_FILTER_GLORY_LUCIUS }
+		cost = 30
+		x = -1
+		y = 1
+		relative_position_id = ces_secrets_of_carthage
+		prerequisite = {
+			focus = ces_advanced_resources
+		}
+		prerequisite = {
+			focus = ces_secrets_of_carthage
+		}
+		completion_reward = {
+			swap_ideas = {
+				remove_idea = cultofmars3
+				add_idea = cultofmars4
+			}
+			set_technology = {
+				power_armour_tech_level_tribal = 1
+				power_armour_tech_level_settler = 1
+			}
+			set_technology = {
+				legion_warriors_of_mars_tech = 1
+			}
+		}
+	}
+	focus = {
+		id = ces_census
+		icon = GFX_generic_gold_bars
+		search_filters = { FOCUS_FILTER_GLORY_CAESAR FOCUS_FILTER_GLORY_LUCIUS }
+		cost = 30
+		x = 1
+		y = 1
+		relative_position_id = ces_cult_of_mars
+		prerequisite = {
+			focus = ces_cult_of_mars
+			focus = ces_caesar_lives
+		}
+		completion_reward = {
+			520 = {
+				if = {
+					limit = {
+						is_valid_state_for_civilian_factory = yes
+					}
+					add_extra_state_shared_building_slots = 1
+					add_building_construction = {
+						type = industrial_complex
+						level = 1
+						instant_build = yes
+					}
+				}
+			}
+			289 = {
+				if = {
+					limit = {
+						is_valid_state_for_civilian_factory = yes
+					}
+					add_extra_state_shared_building_slots = 1
+					add_building_construction = {
+						type = industrial_complex
+						level = 1
+						instant_build = yes
+					}
+				}
+			}
+			516 = {
+				if = {
+					limit = {
+						is_valid_state_for_civilian_factory = yes
+					}
+					add_extra_state_shared_building_slots = 1
+					add_building_construction = {
+						type = industrial_complex
+						level = 1
+						instant_build = yes
+					}
+				}
+			}
+			518 = {
+				if = {
+					limit = {
+						is_valid_state_for_civilian_factory = yes
+					}
+					add_extra_state_shared_building_slots = 1
+					add_building_construction = {
+						type = industrial_complex
+						level = 1
+						instant_build = yes
+					}
+				}
+			}
+		}
+	}
+	focus = {
+		id = ces_currency
+		icon = GFX_goal_CES_aureus
+		search_filters = { FOCUS_FILTER_GLORY_CAESAR FOCUS_FILTER_GLORY_LUCIUS }
+		cost = 30
+		x = 3
+		y = 1
+		relative_position_id = ces_cult_of_mars
+		prerequisite = {
+			focus = ces_cult_of_mars
+			focus = ces_caesar_lives
+		}
+		completion_reward = {
+			set_temp_variable = {
+				caps_to_add = 200
+			}
+			add_caps = yes
+		}
+	}
+	focus = {
+		id = ces_imperial_arms
+		icon = GFX_goal_generic_workshop
+		search_filters = { FOCUS_FILTER_GLORY_CAESAR FOCUS_FILTER_GLORY_LUCIUS }
+		cost = 30
+		x = 5
+		y = 1
+		relative_position_id = ces_cult_of_mars
+		prerequisite = {
+			focus = ces_cult_of_mars
+			focus = ces_caesar_lives
+		}
+		completion_reward = {
+			520 = {
+				if = {
+					limit = {
+						is_valid_state_for_arms_factory = yes
+					}
+					add_extra_state_shared_building_slots = 1
+					add_building_construction = {
+						type = arms_factory
+						level = 1
+						instant_build = yes
+					}
+				}
+			}
+			289 = {
+				if = {
+					limit = {
+						is_valid_state_for_arms_factory = yes
+					}
+					add_extra_state_shared_building_slots = 1
+					add_building_construction = {
+						type = arms_factory
+						level = 1
+						instant_build = yes
+					}
+				}
+			}
+			516 = {
+				if = {
+					limit = {
+						is_valid_state_for_arms_factory = yes
+					}
+					add_extra_state_shared_building_slots = 1
+					add_building_construction = {
+						type = arms_factory
+						level = 1
+						instant_build = yes
+					}
+				}
+			}
+			518 = {
+				if = {
+					limit = {
+						is_valid_state_for_arms_factory = yes
+					}
+					add_extra_state_shared_building_slots = 1
+					add_building_construction = {
+						type = arms_factory
+						level = 1
+						instant_build = yes
+					}
+				}
+			}
+		}
+	}
+	focus = {
+		id = ces_wastelander_economy
+		icon = GFX_goal_generic_terminal_1
+		search_filters = { FOCUS_FILTER_GLORY_CAESAR FOCUS_FILTER_GLORY_LUCIUS }
+		cost = 30
+		x = -2
+		y = 1
+		relative_position_id = ces_imperial_arms
+		prerequisite = {
+			focus = ces_imperial_arms
+		}
+		prerequisite = {
+			focus = ces_currency
+		}
+		prerequisite = {
+			focus = ces_census
+		}
+		completion_reward = {
+			reduce_rejection_automation = yes
+		}
+	}
+	focus = {
+		id = ces_empires_monuments
+		icon = GFX_goal_generic_books
+		search_filters = { FOCUS_FILTER_GLORY_CAESAR FOCUS_FILTER_GLORY_LUCIUS }
+		cost = 30
+		x = -1
+		y = 1
+		relative_position_id = ces_wastelander_economy
+		prerequisite = {
+			focus = ces_wastelander_economy
+		}
+		completion_reward = {
+			set_technology = {
+				habitation_tech_level_settler = 1
+			}
+		}
+	}
+	focus = {
+		id = ces_running_empire
+		icon = GFX_goal_generic_contraptions_girl
+		search_filters = { FOCUS_FILTER_GLORY_CAESAR FOCUS_FILTER_GLORY_LUCIUS }
+		cost = 30
+		x = 1
+		y = 1
+		relative_position_id = ces_wastelander_economy
+		prerequisite = {
+			focus = ces_wastelander_economy
+		}
+		completion_reward = {
+			set_technology = {
+				exploitation_tech_level_settler = 1
+			}
+		}
+	}
+	focus = {
+		id = ces_eternal_empire
+		icon = GFX_goal_generic_guardian_of_forever
+		search_filters = { FOCUS_FILTER_GLORY_CAESAR FOCUS_FILTER_GLORY_LUCIUS }
+		cost = 30
+		x = -1
+		y = 1
+		relative_position_id = ces_running_empire
+		prerequisite = {
+			focus = ces_running_empire
+		}
+		prerequisite = {
+			focus = ces_empires_monuments
+		}
+		completion_reward = {
+			add_ideas = state_of_legion
+		}
+	}
+	focus = {
+		id = ces_caesar_lives
+		icon = GFX_goal_CES_new_thesis
+		search_filters = { FOCUS_FILTER_GLORY_CAESAR }
+		cost = 30
+		x = 10
+		y = 1
+		available = {
+			has_country_flag = CES_healthy
+		}
+		relative_position_id = ces_libertas
+		completion_reward = {
+			#Nothing here
+		}
+	}
+	focus = {
+		id = ces_thesis1
+		icon = GFX_goal_generic_spartan_legacy
+		search_filters = { FOCUS_FILTER_GLORY_CAESAR }
+		cost = 30
+		x = 1
+		y = 1
+		relative_position_id = ces_caesar_lives
+		prerequisite = {
+			focus = ces_caesar_lives
+		}
+		completion_reward = {
+			add_ideas = roman_citizens
+		}
+	}
+	focus = {
+		id = ces_respect_women
+		icon = GFX_goal_generic_wasteland_girl
+		search_filters = { FOCUS_FILTER_GLORY_CAESAR }
+		cost = 30
+		x = 1
+		y = 1
+		relative_position_id = ces_thesis1
+		prerequisite = {
+			focus = ces_thesis1
+		}
+		completion_reward = {
+			add_tech_bonus = {
+				name = land_doc_bonus
+				bonus = 0.5
+				uses = 1
+				category = cat_land_doctrine
+			}
+		}
+	}
+	focus = {
+		id = ces_justice
+		icon = GFX_goal_generic_freedom
+		search_filters = { FOCUS_FILTER_GLORY_CAESAR }
+		cost = 30
+		x = 0
+		y = 1
+		relative_position_id = ces_respect_women
+		prerequisite = {
+			focus = ces_respect_women
+		}
+		completion_reward = {
+			add_ideas = ces_aequitas_idea
+		}
+	}
+	focus = {
+		id = ces_honeyed_words
+		icon = GFX_goal_generic_honey
+		search_filters = { FOCUS_FILTER_GLORY_CAESAR }
+		cost = 30
+		x = -1
+		y = 1
+		relative_position_id = ces_thesis1
+		available = {
+			controls_state = 253
+		}
+		prerequisite = {
+			focus = ces_thesis1
+		}
+		completion_reward = {
+			every_state = {
+				limit = {
+					OR = {
+						is_core_of = NCR
+						is_core_of = VEG
+					}
+				}
+				add_resistance_target = {
+					amount = -10
+				}
+			}
+		}
+	}
+	focus = {
+		id = ces_the_academy
+		icon = GFX_goal_generic_microscope
+		search_filters = { FOCUS_FILTER_GLORY_CAESAR }
+		cost = 30
+		x = 0
+		y = 1
+		relative_position_id = ces_honeyed_words
+		prerequisite = {
+			focus = ces_honeyed_words
+		}
+		completion_reward = {
+			set_technology = {
+				electronics_tech_level_settler = 1
+			}
+		}
+	}
+	focus = {
+		id = ces_respublica
+		icon = GFX_goal_CES_senate
+		search_filters = { FOCUS_FILTER_GLORY_CAESAR }
+		cost = 30
+		x = 1
+		y = 1
+		relative_position_id = ces_the_academy
+		prerequisite = {
+			focus = ces_the_academy
+		}
+		prerequisite = {
+			focus = ces_justice
+		}
+		completion_reward = {
+			swap_ideas = {
+				remove_idea = roman_citizens
+				add_idea = roman_citizens2
+			}
+		}
+	}
+	#### Expansion
+	focus = {
+		id = ces_dam_start
+		icon = GFX_goal_generic_dam
+		cost = 30
+		x = -11
+		y = 1
+		relative_position_id = ces_caesar_son_of_mars
+		prerequisite = {
+			focus = ces_caesar_son_of_mars
+		}
+		completion_reward = {
+			add_tech_bonus = {
+				bonus = 0.5
+				uses = 1
+				category = construction_category
+			}
+			unlock_decision_category_tooltip = ces_mojave_fun
+		}
+	}
+	focus = {
+		id = ces_map_dam
+		icon = GFX_goal_generic_blueprint
+		cost = 30
+		relative_position_id = ces_dam_start
+		prerequisite = {
+			focus = ces_dam_start
+		}
+		mutually_exclusive = {
+			focus = ces_broken_boulder
+		}
+		x = -1
+		y = 1
+		completion_reward = {
+			custom_effect_tooltip = ces_map_dam_tt
+			add_to_variable = {
+				fbhd_hoover_attack_add = 1
+			}
+		}
+	}
+	focus = {
+		id = ces_broken_boulder
+		icon = GFX_goal_generic_pet_rock
+		cost = 30
+		relative_position_id = ces_dam_start
+		prerequisite = {
+			focus = ces_dam_start
+		}
+		mutually_exclusive = {
+			focus = ces_map_dam
+		}
+		x = 1
+		y = 1
+		completion_reward = {
+			custom_effect_tooltip = ces_broken_boulder_tt
+			add_to_variable = {
+				fbhd_boulder_attack_add = 1
+			}
+		}
+	}
+	focus = {
+		id = ces_brotherhood_steal
+		icon = GFX_goal_generic_focus_magazine_gunsandbullets_plasma
+		cost = 30
+		bypass = {
+			MOJ = {
+				exists = no
+			}
+		}
+		available = {
+			MOJ = {
+				exists = yes
+			}
+		}
+		relative_position_id = ces_broken_boulder
+		prerequisite = {
+			focus = ces_map_dam
+			focus = ces_broken_boulder
+		}
+		mutually_exclusive = {
+			focus = ces_unfair_advantage
+		}
+		x = 0
+		y = 1
+		completion_reward = {
+			MOJ = { news_event = nf_legion.119 }
+		}
+	}
+	focus = {
+		id = ces_unfair_advantage
+		icon = GFX_KHA_focus_spy
+		cost = 30
+		relative_position_id = ces_map_dam
+		prerequisite = {
+			focus = ces_map_dam
+			focus = ces_broken_boulder
+		}
+		mutually_exclusive = {
+			focus = ces_brotherhood_steal
+		}
+		x = 0
+		y = 1
+		bypass = {
+			MOT = { exists= no }
+		}
+		completion_reward = {
+			MOT = {
+				news_event = nf_legion.118
+			}
+		}
+	}
+	focus = {
+		id = ces_colorado_blues
+		icon = GFX_goal_generic_esp_stealthboy
+		cost = 30
+		relative_position_id = ces_unfair_advantage
+		prerequisite = {
+			focus = ces_unfair_advantage
+		}
+		mutually_exclusive = {
+			focus = ces_raider_rumble
+		}
+		x = 0
+		y = 1
+
+		completion_reward = {
+			67 = {
+				add_building_construction = {
+					type = infrastructure
+					level = -1
+					instant_build = yes
+				}
+			}
+			137 = {
+				add_building_construction = {
+					type = infrastructure
+					level = -1
+					instant_build = yes
+				}
+			}
+			613 = {
+				add_building_construction = {
+					type = infrastructure
+					level = -1
+					instant_build = yes
+				}
+			}
+		}
+	}
+	focus = {
+		id = ces_raider_rumble
+		icon = GFX_goal_generic_power_armour_raider_overboss
+		cost = 30
+		relative_position_id = ces_brotherhood_steal
+		prerequisite = {
+			focus = ces_brotherhood_steal
+			focus = ces_unfair_advantage
+		}
+		mutually_exclusive = {
+			focus = ces_colorado_blues
+		}
+		x = 0
+		y = 1
+		completion_reward = {
+			MOT = { news_event = nf_legion.120 }
+		}
+	}
+	focus = {
+		id = ces_legate_glory
+		icon = GFX_goal_CES_burning_blade
+		cost = 30
+		relative_position_id = ces_colorado_blues
+		prerequisite = {
+			focus = ces_raider_rumble
+			focus = ces_colorado_blues
+		}
+		mutually_exclusive = {
+			focus = ces_vulpes_dam
+		}
+		available = {
+			check_variable = {
+				CES_malp_glory > 0
+			}
+			custom_trigger_tooltip = {
+				check_variable = {
+					CES_malp_glory > 0
+				}
+				tooltip = ces_legate_glory_tt
+			}
+		}
+		x = 0
+		y = 1
+		completion_reward = {
+			set_technology = { ces_at_tech = 1 }
+			custom_effect_tooltip = ces_map_dam_tt
+			add_to_variable = {
+				fbhd_hoover_attack_add = 1
+			}
+		}
+	}
+	focus = {
+		id = ces_vulpes_dam
+		icon = GFX_goal_CES_spqr
+		cost = 30
+		relative_position_id = ces_raider_rumble
+		prerequisite = {
+			focus = ces_raider_rumble
+			focus = ces_colorado_blues
+		}
+		mutually_exclusive = {
+			focus = ces_legate_glory
+		}
+		available = {
+			check_variable = {
+				CES_vulpes_glory > 0
+			}
+			custom_trigger_tooltip = {
+				check_variable = {
+					CES_vulpes_glory > 0
+				}
+				tooltip = ces_vulpes_glory_tt
+			}
+		}
+		x = 0
+		y = 1
+		completion_reward = {
+			custom_effect_tooltip = ces_broken_boulder_tt
+		}
+	}
+	focus = {
+		id = ces_hoover_dam_battle
+		icon = GFX_goal_NCR_Damassault
+		search_filters = { FOCUS_FILTER_ANNEXATION }
+		cost = 7
+		relative_position_id = ces_vulpes_dam
+		available = {
+			OR = {
+				has_global_flag = fbhd_boulder_city_miracle
+				has_global_flag = fbhd_mot_hold_dam
+				has_global_flag = fbhd_legion_overall_vic
+			}
+			NOT = {
+				has_completed_focus = ces_ncr_won_dam
+			}
+		}
+
+		x = -1
+		y = 1
+		prerequisite = {
+			focus = ces_legate_glory
+			focus = ces_vulpes_dam
+		}
+		completion_reward = {
+			army_experience = 25
+		}
+	}
+	focus = {
+		id = ces_south_ho
+		icon = GFX_goal_generic_ancient_mexican_artifact
+		cost = 30
+		x = -15
+		y = 1
+		relative_position_id = ces_caesar_son_of_mars
+		prerequisite = {
+			focus = ces_caesar_son_of_mars
+		}
+		completion_reward = {
+			if = {
+				limit = {
+					has_global_flag = debug_logs
+				}
+				log = "[GetDateText]: [Root.GetName] ces_new_judea entered"
+			}
+			add_political_power = 60
+			if = {
+				limit = {
+					has_global_flag = debug_logs
+				}
+				log = "[GetDateText]: [Root.GetName] ces_new_judea exited"
+			}
+		}
+	}
+	focus = {
+		id = ces_ranchers
+		icon = GFX_goal_generic_creature_brahmin
+		search_filters = { FOCUS_FILTER_ANNEXATION }
+		cost = 30
+		x = 0
+		y = 1
+		prerequisite = {
+			focus = ces_south_ho
+		}
+		will_lead_to_war_with = RBD
+		relative_position_id = ces_south_ho
+		available = {
+			ai_has_no_other_wars_or_wargoals = yes
+		}
+		bypass = {
+			RBD = {
+				all_core_land_owned_by_prev_sphere = yes
+			}
+		}
+		completion_reward = {
+			RBD = {
+				ROOT = {
+					grant_wargoals_on_core_states_of_prev_force_ai_war = yes
+				}
+			}
+		}
+	}
+	focus = {
+		id = ces_surplus
+		icon = GFX_goal_generic_brahmin_trade
+		search_filters = { FOCUS_FILTER_MANPOWER }
+		cost = 30
+		x = -1
+		y = 1
+		prerequisite = {
+			focus = ces_ranchers
+		}
+		relative_position_id = ces_ranchers
+		available = {
+			owns_state = 579
+		}
+		completion_reward = {
+			custom_effect_tooltip = ces_surplus_tt
+			every_state = {
+				limit = {
+					is_core_of = RBD
+				}
+				add_core_of = ROOT
+			}
+			if = {
+				limit = {
+					NOT = {
+						any_owned_state = {
+							is_baudelio_state = yes
+						}
+					}
+				}
+				custom_effect_tooltip = legion_must_own_baudelio_territory
+			}
+			random_owned_controlled_state = {
+				limit = {
+					is_baudelio_state = yes
+					is_valid_state_for_civilian_factory = yes
+				}
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+			}
+			random_owned_controlled_state = {
+				limit = {
+					is_baudelio_state = yes
+					is_valid_state_for_civilian_factory = yes
+				}
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+			}
+			random_owned_controlled_state = {
+				limit = {
+					is_baudelio_state = yes
+					is_valid_state_for_civilian_factory = yes
+				}
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+			}
+			random_owned_controlled_state = {
+				limit = {
+					is_baudelio_state = yes
+					is_valid_state_for_arms_factory = yes
+				}
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = arms_factory
+					level = 1
+					instant_build = yes
+				}
+			}
+		}
+	}
+	focus = {
+		id = ces_resources
+		icon = GFX_goal_NCR_Brahminbill
+		search_filters = { FOCUS_FILTER_INDUSTRY }
+		cost = 30
+		x = 1
+		y = 1
+		prerequisite = {
+			focus = ces_ranchers
+		}
+		relative_position_id = ces_ranchers
+		available = {
+			owns_state = 579
+		}
+		completion_reward = {
+			if = {
+				limit = {
+					NOT = {
+						any_owned_state = {
+							is_baudelio_state = yes
+						}
+					}
+				}
+				custom_effect_tooltip = legion_must_own_baudelio_territory
+			}
+			random_owned_state = {
+				limit = {
+					is_baudelio_state = yes
+				}
+				add_resource = {
+					type = water
+					amount = 6
+				}
+			}
+		}
+	}
+	focus = {
+		id = ces_grainmakers
+		icon = GFX_KHA_focus_farm_agriculture
+		search_filters = { FOCUS_FILTER_ANNEXATION }
+		cost = 30
+		x = -1
+		y = 1
+		prerequisite = {
+			focus = ces_resources
+		}
+		prerequisite = {
+			focus = ces_surplus
+		}
+		bypass = {
+			LGS = {
+				all_core_land_owned_by_prev_sphere = yes
+			}
+		}
+		relative_position_id = ces_resources
+		available = {
+			ai_has_no_other_wars_or_wargoals = yes
+			RRG = {
+				OR = {
+					exists = no
+					is_subject = yes
+					is_rosado_leader = yes
+					is_mora_leader = yes
+				}
+			}
+			LGS = {
+				is_in_faction = no
+			}
+		}
+		completion_reward = {
+			LGS = {
+				ROOT = {
+					grant_wargoals_on_core_states_of_prev = yes
+				}
+			}
+		}
+	}
+	focus = {
+		id = ces_cores_granjas
+		icon = GFX_goal_generic_water
+		search_filters = { FOCUS_FILTER_MANPOWER }
+		cost = 30
+		x = -1
+		y = 1
+		prerequisite = {
+			focus = ces_grainmakers
+		}
+		relative_position_id = ces_grainmakers
+		available = {
+			owns_state = 122
+		}
+		completion_reward = {
+			every_state = {
+				limit = {
+					is_core_of = LGS
+				}
+				add_core_of = ROOT
+			}
+		}
+	}
+	focus = {
+		id = ces_resources_granjas
+		icon = GFX_goal_generic_food_focus
+		search_filters = { FOCUS_FILTER_INDUSTRY }
+		cost = 30
+		x = 1
+		y = 1
+		available = {
+			owns_state = 122
+		}
+		prerequisite = {
+			focus = ces_grainmakers
+		}
+		relative_position_id = ces_grainmakers
+		completion_reward = {
+			122 = {
+				add_resource = {
+					type = metal
+					amount = 32
+				}
+			}
+			122 = {
+				add_resource = {
+					type = water
+					amount = 32
+				}
+			}
+			custom_effect_tooltip = ces_resources_granjas_tt
+		}
+	}
+	focus = {
+		id = ces_launchpad
+		icon = GFX_goal_ancient_wealth
+		search_filters = { FOCUS_FILTER_INDUSTRY }
+		cost = 30
+		x = -1
+		y = 1
+		available = {
+			owns_state = 122
+		}
+		prerequisite = {
+			focus = ces_resources_granjas
+		}
+		prerequisite = {
+			focus = ces_cores_granjas
+		}
+		relative_position_id = ces_resources_granjas
+		completion_reward = {
+			520 = {
+				set_temp_variable = {
+					development_to_add = 2
+				}
+				add_development_to_node = yes
+				add_state_modifier = {
+					modifier = {
+						caps_node_base_modifier = 0.35
+					}
+				}
+			}
+			set_temp_variable = {
+				node_register_target_1 = 520
+			}
+			set_temp_variable = {
+				node_register_target_2 = 780
+			}
+			register_new_trade_node_connection = yes
+			set_temp_variable = {
+				trade_route_selector_target = 520
+			}
+			set_temp_variable = {
+				node_map_selector = 780
+			}
+			create_trade_route_between = yes
+		}
+	}
+	focus = {
+		id = ces_loyal_tribe
+		icon = GFX_icon_WillFaster
+		cost = 30
+		x = 24
+		y = 1
+		relative_position_id = ces_caesar_son_of_mars
+		prerequisite = {
+			focus = ces_caesar_son_of_mars
+		}
+		completion_reward = {
+			country_event = {
+				id = nf_legion.47
+			}
+			add_to_variable = { CES.ultima_vulpes = 1 }
+			custom_effect_tooltip = ces_add_two_vulpes_opinion
+		}
+	}
+	focus = {
+		id = ces_two_nas
+		icon = GFX_goal_generic_wrench
+		cost = 30
+		x = -1
+		y = 1
+		relative_position_id = ces_loyal_tribe
+		prerequisite = {
+			focus = ces_loyal_tribe
+		}
+		completion_reward = {
+			add_stability = 0.05
+			520 = {
+				every_neighbor_state = {
+					add_building_construction = {
+						type = infrastructure
+						level = 2
+						instant_build = yes
+					}
+				}
+			}
+			add_to_variable = { CES.ultima_lucius = 1 }
+			custom_effect_tooltip = ces_add_two_lucius_opinion
+		}
+	}
+	focus = {
+		id = ces_two_motorized
+		icon = GFX_goal_CES_legion_kart
+		cost = 15
+		x = 1
+		y = 1
+		relative_position_id = ces_loyal_tribe
+		prerequisite = {
+			focus = ces_loyal_tribe
+		}
+		completion_reward = {
+			add_tech_bonus = {
+				bonus = 0.5
+				uses = 2
+				category = motorized_equipment_category
+			}
+			add_to_variable = { CES.ultima_aurelius = 1 }
+			custom_effect_tooltip = ces_add_two_aurelius_opinion
+		}
+	}
+
+	focus = {
+		id = ces_outsiders_gente
+		icon = GFX_icon_generalissimo
+		cost = 30
+		x = 4
+		y = 0
+		relative_position_id = ces_loyal_tribe
+		prerequisite = {
+			focus = ces_caesar_son_of_mars
+		}
+		completion_reward = {
+			country_event = {
+				id = nf_legion.42
+			}
+		}
+	}
+	focus = {
+		id = ces_legionaries_loan
+		icon = GFX_goal_CES_generic_infantry
+		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_GLORY_AURELIUS }
+		cost = 30
+		x = 1
+		y = 1
+		relative_position_id = ces_outsiders_gente
+		prerequisite = {
+			focus = ces_outsiders_gente
+		}
+		completion_reward = {
+			if = {
+				limit = {
+					NOT = {
+						has_rule = can_send_volunteers
+					}
+				}
+				set_rule = {
+					can_send_volunteers = yes
+				}
+			}
+			else = {
+				add_ideas = southern_friends
+			}
+			add_ai_strategy = {
+				type = send_volunteers_desire
+				id = "GDH"
+				value = 300
+			}
+			GDH = {
+				news_event = nf_legion.46
+			}
+			add_to_variable = {
+				CES_aurelius_glory = 1
+			}
+			custom_effect_tooltip = nf_legion.aurelius_glory
+			add_to_variable = { CES.ultima_aurelius = -1 }
+			custom_effect_tooltip = ces_add_gdh_aurelius_opinion
+		}
+	}
+	focus = {
+		id = ces_frumentarius_investigation
+		icon = GFX_goal_generic_whisky
+		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_GLORY_VULPES }
+		cost = 15
+		x = -1
+		y = 1
+		relative_position_id = ces_outsiders_gente
+		prerequisite = {
+			focus = ces_outsiders_gente
+		}
+		completion_reward = {
+			GDH = {
+				country_event = nf_legion.43
+			} # GDH can rig the investigation
+			add_tech_bonus = {
+				bonus = 0.3
+				uses = 2
+				category = encryption_tech
+			}
+		}
+	}
+
+	focus = {
+		id = ces_cowboy_country
+		icon = GFX_goal_generic_cowboys
+		cost = 15
+		x = 2
+		y = 2
+		relative_position_id = ces_loyal_tribe
+		prerequisite = {
+			focus = ces_legionaries_loan
+			focus = ces_two_motorized
+		}
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = ces_ultima_decided_trigger
+				OR = {
+					AND = {
+						OR = {
+							check_variable = { CES.ultima_aurelius > 1 }
+							check_variable = { CES.ultima_aurelius < -1 }
+						}
+						OR = {
+							check_variable = { CES.ultima_vulpes > 1 }
+							check_variable = { CES.ultima_vulpes < -1 }
+						}
+						OR = {
+							check_variable = { CES.ultima_lucius > 1 }
+							check_variable = { CES.ultima_lucius < -1 }
+						}
+					}
+					date > 2277.06.01
+				}
+			}
+		}
+		completion_reward = {
+			country_event = {
+				id = nf_legion.48
+			}
+		}
+	}
+	focus = {
+		id = ces_friendship
+		icon = GFX_icon_connected_gdh_two
+		cost = 7
+		x = 0
+		y = 1
+		relative_position_id = ces_cowboy_country
+		available = {
+			has_global_flag = ces_ultima_friendship
+		}
+		prerequisite = {
+			focus = ces_cowboy_country
+		}
+		mutually_exclusive = {
+			focus = ces_two_conquest_cow
+			focus = ces_gdh_take_shore
+		}
+		completion_reward = {
+			TWO = {
+				add_stability = 0.05
+				add_war_support = -0.05
+			}
+			GDH = {
+				add_stability = 0.05
+				add_war_support = -0.05
+			}
+		}
+	}
+
+	focus = {
+		id = ces_two_conquest_cow
+		icon = GFX_goal_generic_TWO_shield
+		cost = 30
+		x = 0
+		y = 3
+		relative_position_id = ces_loyal_tribe
+		available = {
+			has_global_flag = ces_ultima_to_two
+
+			TWO = {
+				owns_state = 444
+			}
+		}
+		prerequisite = {
+			focus = ces_two_motorized
+		}
+		prerequisite = {
+			focus = ces_two_nas
+		}
+		prerequisite = {
+			focus = ces_cowboy_country
+		}
+		mutually_exclusive = {
+			focus = ces_gdh_take_shore
+			focus = ces_friendship
+		}
+		completion_reward = {
+			TWO = {
+				add_stability = 0.05
+				add_war_support = 0.05
+				add_manpower = -500
+			}
+			add_manpower = 500
+		}
+	}
+	focus = {
+		id = ces_gdh_take_shore
+		icon = GFX_goal_generic_GDH_shield
+		cost = 30
+		x = 0
+		y = 3
+		relative_position_id = ces_outsiders_gente
+		available = {
+			has_global_flag = ces_ultima_to_gdh
+			OR = {
+				TWO = { owns_state = 444 }
+				GDH = { owns_state = 444 }
+			}
+		}
+		prerequisite = {
+			focus = ces_legionaries_loan
+		}
+		prerequisite = {
+			focus = ces_frumentarius_investigation
+		}
+		prerequisite = {
+			focus = ces_cowboy_country
+		}
+		mutually_exclusive = {
+			focus = ces_friendship
+			focus = ces_two_conquest_cow
+		}
+		completion_reward = {
+			if = {
+				limit = {
+					GDH = {
+						NOT = { owns_state = 444}
+					}
+				}
+				GDH = { transfer_state = 444 }
+			}
+			444 = {
+				set_compliance = 80
+				set_resistance = 5
+				set_variable = { coring_cost_targeted_state_factor@GDH = -0.5 }
+			}
+			add_equipment_to_stockpile = {
+				amount = 100
+				type = infantry_equipment
+			}
+			add_equipment_to_stockpile = {
+				amount = 50
+				type = demolitions_equipment
+			}
+			set_temp_variable = { caps_to_add = -100 }
+			add_caps = yes
+			GDH = {
+				set_temp_variable = { caps_to_add = 100 }
+				add_caps = yes
+			}
+		}
+	}
+	focus = {
+		id = ces_upgrade_port
+		icon = GFX_goal_generic_wooden_ship
+		search_filters = { FOCUS_FILTER_INDUSTRY }
+		cost = 30
+		x = 0
+		y = 1
+		relative_position_id = ces_friendship
+		prerequisite = {
+			focus = ces_friendship
+			focus = ces_two_conquest_cow
+			focus = ces_gdh_take_shore
+		}
+		available = {
+			OR = {
+				TWO = { owns_state = 444 }
+				GDH = { owns_state = 444 }
+			}
+		}
+		completion_reward = {
+			reduce_legionary_state = yes
+			444 = {
+				if = {
+					limit = {
+						is_valid_state_for_2_dockyards = yes
+					}
+					add_extra_state_shared_building_slots = 2
+					add_building_construction = {
+						type = dockyard
+						level = 2
+						instant_build = yes
+					}
+				}
+				add_building_construction = {
+					type = naval_base
+					level = 2
+					instant_build = yes
+					province = 5310
+				}
+			}
+		}
+	}
+	focus = {
+		id = ces_gloria_execeritus
+		icon = GFX_goal_CES_generic_focus
+		search_filters = { FOCUS_FILTER_GLORY_CAESAR }
+		cost = 30
+		x = -10
+		y = 2
+		relative_position_id = ces_upgrade_port
+		available = {
+			has_country_flag = CES_healthy
+		}
+		completion_reward = {
+			country_event = nf_legion.85
+		}
+	}
+	focus = {
+		id = ces_legionary_training
+		icon = GFX_goal_CES_bow_bull
+		search_filters = { FOCUS_FILTER_GLORY_CAESAR }
+		cost = 30
+		prerequisite = {
+			focus = ces_gloria_execeritus
+		}
+		relative_position_id = ces_gloria_execeritus
+		x = -2
+		y = 1
+		completion_reward = {
+			set_technology = {
+				ces_at_tech = 1
+			}
+		}
+	}
+	focus = {
+		id = ces_support_company_bonus
+		icon = GFX_goal_generic_artillery
+		search_filters = { FOCUS_FILTER_GLORY_CAESAR }
+		cost = 30
+		prerequisite = {
+			focus = ces_gloria_execeritus
+		}
+		relative_position_id = ces_gloria_execeritus
+		x = 0
+		y = 1
+		completion_reward = {
+			add_tech_bonus = {
+				bonus = 0.5
+				uses = 2
+				category = support_tech_category
+			}
+		}
+	}
+	focus = {
+		id = ces_legion_glory_focus
+		icon = GFX_goal_attack_legion
+		search_filters = { FOCUS_FILTER_GLORY_CAESAR }
+		cost = 30
+		prerequisite = {
+			focus = ces_legionary_training
+		}
+		relative_position_id = ces_legionary_training
+		x = -1
+		y = 1
+		mutually_exclusive = {
+			focus = ces_auxiliaries
+		}
+		completion_reward = {
+			add_ideas = ces_legionary_glory
+		}
+	}
+	focus = {
+		id = ces_primus_glory
+		icon = GFX_goal_generic_legion_speared
+		search_filters = { FOCUS_FILTER_GLORY_CAESAR }
+		cost = 30
+		prerequisite = {
+			focus = ces_legion_glory_focus
+		}
+		relative_position_id = ces_legion_glory_focus
+		x = -1
+		y = 1
+		completion_reward = {
+			swap_ideas = {
+				remove_idea = ces_legionary_glory
+				add_idea = ces_primus_glory_idea
+			}
+		}
+	}
+	focus = {
+		id = ces_decanus_glory
+		icon = GFX_goal_generic_swords
+		search_filters = { FOCUS_FILTER_GLORY_CAESAR }
+		cost = 30
+		prerequisite = {
+			focus = ces_legion_glory_focus
+		}
+		relative_position_id = ces_legion_glory_focus
+		x = 1
+		y = 1
+		available = {
+			has_completed_focus = ces_primus_glory
+		}
+		completion_reward = {
+			swap_ideas = {
+				remove_idea = ces_primus_glory_idea
+				add_idea = ces_decanius_glory_idea
+			}
+		}
+	}
+	focus = {
+		id = ces_centurion_glory
+		icon = GFX_goal_CES_generic_infantry
+		search_filters = { FOCUS_FILTER_GLORY_CAESAR }
+		cost = 30
+		prerequisite = {
+			focus = ces_decanus_glory
+		}
+		prerequisite = {
+			focus = ces_primus_glory
+		}
+		relative_position_id = ces_decanus_glory
+		x = -1
+		y = 1
+		available = {
+			has_completed_focus = ces_primus_glory
+		}
+		completion_reward = {
+			swap_ideas = {
+				remove_idea = ces_decanius_glory_idea
+				add_idea = ces_centurion_glory_idea
+			}
+		}
+	}
+	focus = {
+		id = ces_auxiliaries
+		icon = GFX_goal_generic_regular_firearms_focus
+		search_filters = { FOCUS_FILTER_GLORY_CAESAR }
+		cost = 30
+		prerequisite = {
+			focus = ces_gloria_execeritus
+		}
+		relative_position_id = ces_gloria_execeritus
+		x = 2
+		y = 1
+		mutually_exclusive = {
+			focus = ces_legion_glory_focus
+		}
+		completion_reward = {
+			add_ideas = ces_auxiliaries_idea
+		}
+	}
+	focus = {
+		id = ces_integrate_auxiliaires
+		icon = GFX_goal_uoa_stealth_boys
+		search_filters = { FOCUS_FILTER_GLORY_CAESAR }
+		cost = 30
+		prerequisite = {
+			focus = ces_auxiliaries
+		}
+		relative_position_id = ces_auxiliaries
+		x = 1
+		y = 1
+		completion_reward = {
+			swap_ideas = {
+				remove_idea = ces_auxiliaries_idea
+				add_idea = ces_auxiliaries_integration
+			}
+		}
+	}
+	focus = {
+		id = ces_lessons_of_haskhesh
+		icon = GFX_goal_NAV_CES
+		search_filters = { FOCUS_FILTER_GLORY_CAESAR }
+		cost = 30
+		prerequisite = {
+			focus = ces_integrate_auxiliaires
+		}
+		relative_position_id = ces_integrate_auxiliaires
+		x = -1
+		y = 1
+		completion_reward = {
+			swap_ideas = {
+				remove_idea = ces_auxiliaries_integration
+				add_idea = ces_lessons_haskhesh_idea
+			}
+		}
+	}
+	focus = {
+		id = ces_modern_cataphracts
+		icon = GFX_goal_EHT_apc
+		search_filters = { FOCUS_FILTER_GLORY_CAESAR }
+		cost = 30
+		prerequisite = {
+			focus = ces_integrate_auxiliaires
+		}
+		relative_position_id = ces_integrate_auxiliaires
+		x = 1
+		y = 1
+		available = {
+			has_completed_focus = ces_lessons_of_haskhesh
+		}
+		completion_reward = {
+			set_technology = {
+				armored_chariots_tech = 1
+			}			### Chariot
+		}
+	}
+	focus = {
+		id = ces_auxiliary_supremacy
+		icon = GFX_goal_CES_friends_legion
+		search_filters = { FOCUS_FILTER_GLORY_CAESAR }
+		cost = 30
+		prerequisite = {
+			focus = ces_modern_cataphracts
+		}
+		prerequisite = {
+			focus = ces_lessons_of_haskhesh
+		}
+		relative_position_id = ces_modern_cataphracts
+		x = -1
+		y = 1
+		completion_reward = {
+			swap_ideas = {
+				remove_idea = ces_lessons_haskhesh_idea
+				add_idea = ces_auxiliary_supremacy_idea
+			}
+		}
+	}
+	focus = {
+		id = ces_vulpes_legions
+		icon = GFX_goal_CES_spqr
+		search_filters = { FOCUS_FILTER_GLORY_VULPES }
+		cost = 30
+		available = {
+			is_vulpes_leader = yes
+		}
+		relative_position_id = ces_gloria_execeritus
+		x = 0
+		y = 5
+		completion_reward = {
+			country_event = nf_legion.86
+		}
+	}
+	focus = {
+		id = ces_frumentarii_guide
+		icon = GFX_goal_bobble_head_sneak
+		search_filters = { FOCUS_FILTER_GLORY_VULPES }
+		cost = 30
+		prerequisite = {
+			focus = ces_vulpes_legions
+		}
+		available = {
+			NOT = {
+				has_completed_focus = ces_frumentarii_officers
+			}
+		}
+		relative_position_id = ces_vulpes_legions
+		x = -4
+		y = 1
+		completion_reward = {
+			add_ideas = ces_frumentarii_guide_idea
+		}
+	}
+	focus = {
+		id = ces_frumentarii_infiltrators
+		icon = GFX_goal_uoa_stealth_boys
+		search_filters = { FOCUS_FILTER_GLORY_VULPES }
+		cost = 30
+		prerequisite = {
+			focus = ces_frumentarii_guide
+		}
+		relative_position_id = ces_frumentarii_guide
+		x = -1
+		y = 1
+		completion_reward = {
+			swap_ideas = {
+				remove_idea = ces_frumentarii_guide_idea
+				add_idea = ces_frumentarii_infiltrator_idea
+			}
+		}
+	}
+	focus = {
+		id = ces_frumentarii_drillmasters
+		icon = GFX_goal_CES_protect_the_bull
+		search_filters = { FOCUS_FILTER_GLORY_VULPES }
+		cost = 30
+		prerequisite = {
+			focus = ces_frumentarii_guide
+		}
+		relative_position_id = ces_frumentarii_guide
+		x = 1
+		y = 1
+		available = {
+			has_completed_focus = ces_frumentarii_infiltrators
+		}
+		completion_reward = {
+			swap_ideas = {
+				remove_idea = ces_frumentarii_infiltrator_idea
+				add_idea = ces_frumentarii_drilmasters_idea
+			}
+		}
+	}
+	focus = {
+		id = ces_frumentarii_generals
+		icon = GFX_goal_CES_roman_eagle
+		search_filters = { FOCUS_FILTER_GLORY_VULPES }
+		cost = 30
+		prerequisite = {
+			focus = ces_frumentarii_drillmasters
+		}
+		prerequisite = {
+			focus = ces_frumentarii_infiltrators
+		}
+		relative_position_id = ces_frumentarii_drillmasters
+		x = -1
+		y = 1
+		completion_reward = {
+			swap_ideas = {
+				remove_idea = ces_frumentarii_drilmasters_idea
+				add_idea = ces_frumentarii_generals_idea
+			}
+		}
+	}
+	focus = {
+		id = ces_vulpes_desert
+		icon = GFX_goal_generic_desert
+		search_filters = { FOCUS_FILTER_GLORY_VULPES }
+		cost = 30
+		prerequisite = {
+			focus = ces_vulpes_legions
+		}
+		relative_position_id = ces_vulpes_legions
+		x = -1
+		y = 1
+		completion_reward = {
+			add_ideas = ces_desert_idea
+		}
+	}
+	focus = {
+		id = ces_canis_latrans
+		icon = GFX_goal_CES_beast_handling
+		search_filters = { FOCUS_FILTER_GLORY_VULPES }
+		cost = 30
+		prerequisite = {
+			focus = ces_vulpes_legions
+		}
+		relative_position_id = ces_vulpes_legions
+		x = 1
+		y = 1
+		available = {
+			has_completed_focus = ces_vulpes_desert
+		}
+		completion_reward = {
+			swap_ideas = {
+				remove_idea = ces_desert_idea
+				add_idea = ces_canis_latrans_idea
+			}
+		}
+	}
+	focus = {
+		id = ces_frumentarii_supreme
+		icon = GFX_goal_generic_esp_plasma
+		search_filters = { FOCUS_FILTER_GLORY_VULPES }
+		cost = 30
+		prerequisite = {
+			focus = ces_canis_latrans
+		}
+		prerequisite = {
+			focus = ces_vulpes_desert
+		}
+		relative_position_id = ces_canis_latrans
+		x = -1
+		y = 1
+		completion_reward = {
+			set_technology = {
+				special_forces_tech_level_scientific = 1
+			}
+		}
+	}
+	focus = {
+		id = ces_frumentarii_officers
+		icon = GFX_goal_generic_western
+		search_filters = { FOCUS_FILTER_GLORY_VULPES }
+		cost = 30
+		prerequisite = {
+			focus = ces_vulpes_legions
+		}
+		relative_position_id = ces_vulpes_legions
+		available = {
+			NOT = {
+				has_completed_focus = ces_frumentarii_guide
+			}
+		}
+		x = 4
+		y = 1
+		completion_reward = {
+			add_ideas = ces_frumentarii_officers_idea
+			set_technology = {
+				legion_frumentarii_officers_tech = 1
+			}
+		}
+	}
+	focus = {
+		id = ces_frumentarii_comandos
+		icon = GFX_goal_generic_focus_magazine_gunsandbullets_gun_laws
+		search_filters = { FOCUS_FILTER_GLORY_VULPES }
+		cost = 30
+		prerequisite = {
+			focus = ces_frumentarii_officers
+		}
+		relative_position_id = ces_frumentarii_officers
+		x = -1
+		y = 1
+		completion_reward = {
+			set_technology = {
+				legion_frumentarii_commandoes_tech = 1
+			}
+		}
+	}
+	focus = {
+		id = ces_of_spear
+		icon = GFX_goal_generic_spear
+		search_filters = { FOCUS_FILTER_GLORY_VULPES }
+		cost = 30
+		prerequisite = {
+			focus = ces_frumentarii_officers
+		}
+		relative_position_id = ces_frumentarii_officers
+		x = 1
+		y = 1
+		completion_reward = {
+			swap_ideas = {
+				remove_idea = ces_frumentarii_officers_idea
+				add_idea = ces_tip_of_spear_idea
+			}
+		}
+	}
+	focus = {
+		id = ces_vulpes_guard
+		icon = GFX_goal_generic_esp_knife
+		search_filters = { FOCUS_FILTER_GLORY_VULPES }
+		cost = 30
+		prerequisite = {
+			focus = ces_of_spear
+		}
+		prerequisite = {
+			focus = ces_frumentarii_comandos
+		}
+		relative_position_id = ces_of_spear
+		x = -1
+		y = 1
+		completion_reward = {
+			swap_ideas = {
+				remove_idea = ces_tip_of_spear_idea
+				add_idea = ces_vulpes_guard_idea
+			}
+		}
+	}
+	focus = {
+		id = ces_aurelians_methods
+		icon = GFX_goal_CES_phoenix
+		search_filters = { FOCUS_FILTER_GLORY_AURELIUS }
+		cost = 30
+		relative_position_id = ces_oval_tithe
+		x = 2
+		y = 1
+		available = {
+			has_country_leader = {
+				name = "Aurelius of Phoenix"
+				ruling_only = yes
+			}
+		}
+		completion_reward = {
+			country_event = nf_legion.88
+		}
+	}
+	focus = {
+		id = ces_gente_armouries
+		icon = GFX_goal_CES_aureus
+		search_filters = { FOCUS_FILTER_GLORY_AURELIUS }
+		cost = 30
+		prerequisite = {
+			focus = ces_aurelians_methods
+		}
+		relative_position_id = ces_aurelians_methods
+		x = 0
+		y = 1
+		completion_reward = {
+			add_ideas = CES_armories_gente_idea
+		}
+	}
+	focus = {
+		id = CES_mercenary_tactics
+		icon = GFX_goal_generic_rifle_2
+		search_filters = { FOCUS_FILTER_GLORY_AURELIUS }
+		cost = 30
+		prerequisite = {
+			focus = ces_gente_armouries
+		}
+		relative_position_id = ces_gente_armouries
+		available = {
+			NOT = {
+				has_completed_focus = CES_mercenary_advisors
+			}
+		}
+		x = 2
+		y = 1
+		completion_reward = {
+			set_technology = {
+				CES_mercenary_training_tech = 1
+			}
+		}
+	}
+	focus = {
+		id = CES_mercenary_advisors
+		icon = GFX_goal_NEW_Mercenary_Military
+		search_filters = { FOCUS_FILTER_GLORY_AURELIUS }
+		cost = 30
+		prerequisite = {
+			focus = ces_gente_armouries
+		}
+		relative_position_id = ces_gente_armouries
+		available = {
+			NOT = {
+				has_completed_focus = CES_mercenary_tactics
+			}
+		}
+		x = -2
+		y = 1
+		completion_reward = {
+			set_technology = {
+				ces_aurelius_mercenaries_tech = 1
+			}
+		}
+	}
+	focus = {
+		id = CES_urban_legionaries
+		icon = GFX_goal_CES_heavy_gun
+		search_filters = { FOCUS_FILTER_GLORY_AURELIUS }
+		cost = 30
+		prerequisite = {
+			focus = ces_gente_armouries
+		}
+		relative_position_id = ces_gente_armouries
+		available = {
+			NOT = {
+				has_completed_focus = CES_mercenary_tactics
+			}
+		}
+		x = 0
+		y = 1
+		completion_reward = {
+			swap_ideas = {
+				remove_idea = CES_armories_gente_idea
+				add_idea = CES_urban_legionaries_idea
+			}
+		}
+	}
+	focus = {
+		id = ces_reign_of_fire
+		icon = GFX_goal_generic_laser_gat
+		search_filters = { FOCUS_FILTER_GLORY_AURELIUS }
+		cost = 30
+		prerequisite = {
+			focus = CES_urban_legionaries
+		}
+		relative_position_id = CES_urban_legionaries
+		available = {
+			NOT = {
+				has_completed_focus = CES_mercenary_tactics
+			}
+			has_tech = explosive_demolitions_weaponry_tech_3
+		}
+		x = 0
+		y = 1
+		completion_reward = {
+			set_technology = {
+				explosive_demolitions_weaponry_tech_4 = 1
+			}
+			add_equipment_to_stockpile = {
+				type = explosive_demolitions_equipment_4
+				amount = 400
+			}
+		}
+	}
+	focus = {
+		id = ces_phoenix_standard
+		icon = GFX_goal_CES_centurion
+		search_filters = { FOCUS_FILTER_GLORY_AURELIUS }
+		cost = 30
+		prerequisite = {
+			focus = CES_urban_legionaries
+		}
+		relative_position_id = CES_urban_legionaries
+		x = -2
+		y = 1
+		completion_reward = {
+			set_technology = {
+				phoenix_tech = 1
+			}
+		}
+	}
+	focus = {
+		id = ces_modern_triarii
+		icon = GFX_goal_CES_praetorian_guard
+		search_filters = { FOCUS_FILTER_GLORY_AURELIUS }
+		cost = 30
+		prerequisite = {
+			focus = CES_urban_legionaries
+		}
+		relative_position_id = CES_urban_legionaries
+		x = 2
+		y = 1
+		completion_reward = {
+			add_ideas = CES_modern_triarii_idea
+		}
+	}
+	focus = {
+		id = ces_hammer_of_mars
+		icon = GFX_KHA_focus_arty
+		search_filters = { FOCUS_FILTER_GLORY_AURELIUS }
+		cost = 30
+		prerequisite = {
+			focus = ces_reign_of_fire
+		}
+		relative_position_id = ces_reign_of_fire
+		x = 0
+		y = 1
+		completion_reward = {
+			custom_effect_tooltip = ces_hammer_of_mars_tt
+			add_to_variable = {
+				artillery_uses = 10
+			}
+		}
+	}
+	focus = {
+		id = ces_cult_vulcan
+		icon = GFX_goal_CES_blacksmith
+		search_filters = { FOCUS_FILTER_GLORY_LUCIUS }
+		cost = 30
+		available = {
+			has_country_flag = lucius_good_boy
+		}
+		relative_position_id = ces_lucius_wall
+		x = 8
+		y = 1
+		completion_reward = {
+			country_event = nf_legion.89
+		}
+	}
+	focus = {
+		id = CES_vulcan_chariots
+		icon = GFX_goal_CES_hammer_of_mars
+		search_filters = { FOCUS_FILTER_GLORY_LUCIUS }
+		cost = 30
+		prerequisite = {
+			focus = ces_cult_vulcan
+		}
+		relative_position_id = ces_cult_vulcan
+		x = 2
+		y = 1
+		completion_reward = {
+			add_ideas = CES_vulcan_chariots_idea
+		}
+	}
+	focus = {
+		id = CES_cataphracts
+		icon = GFX_goal_CES_hammer_of_mars
+		search_filters = { FOCUS_FILTER_GLORY_LUCIUS }
+		cost = 30
+		prerequisite = {
+			focus = CES_vulcan_chariots
+		}
+		relative_position_id = CES_vulcan_chariots
+		x = -1
+		y = 1
+		completion_reward = {
+			swap_ideas = {
+				remove_idea = CES_vulcan_chariots_idea
+				add_idea = CES_vulcan_chariots_idea_2
+			}
+		}
+	}
+	focus = {
+		id = CES_vulcan_foundry
+		icon = GFX_goal_generic_scrap_tank
+		search_filters = { FOCUS_FILTER_GLORY_LUCIUS }
+		cost = 30
+		prerequisite = {
+			focus = CES_cataphracts
+		}
+		relative_position_id = CES_cataphracts
+		x = 0
+		y = 1
+		completion_reward = {
+			swap_ideas = {
+				remove_idea = CES_vulcan_chariots_idea_2
+				add_idea = CES_vulcan_chariots_idea_3
+			}
+		}
+	}
+	focus = {
+		id = CES_secrets_dome
+		icon = GFX_goal_generic_boulder_dome
+		search_filters = { FOCUS_FILTER_GLORY_LUCIUS }
+		cost = 30
+		prerequisite = {
+			focus = CES_vulcan_foundry
+		}
+		relative_position_id = CES_vulcan_foundry
+		x = 0
+		y = 1
+		available = {
+			OR = {
+				owns_state = 525
+				owns_state = 568
+				owns_state = 38
+				owns_state = 412
+				owns_state = 677
+			}
+		}
+		completion_reward = {
+			add_research_slot = 1
+		}
+	}
+	focus = {
+		id = CES_vulcan_legion
+		icon = GFX_goal_generic_f76_player3
+		search_filters = { FOCUS_FILTER_GLORY_LUCIUS }
+		cost = 30
+		prerequisite = {
+			focus = ces_cult_vulcan
+		}
+		relative_position_id = ces_cult_vulcan
+		x = -2
+		y = 1
+		completion_reward = {
+			add_ideas = CES_vulcan_legion_idea
+		}
+	}
+	focus = {
+		id = CES_armoured_cohorts
+		icon = GFX_goal_CES_power_armour
+		search_filters = { FOCUS_FILTER_GLORY_LUCIUS }
+		cost = 30
+		prerequisite = {
+			focus = CES_vulcan_legion
+		}
+		relative_position_id = CES_vulcan_legion
+		x = 1
+		y = 1
+		completion_reward = {
+			swap_ideas = {
+				remove_idea = CES_vulcan_legion_idea
+				add_idea = CES_vulcan_legion_idea_2
+			}
+		}
+	}
+	focus = {
+		id = CES_vulcans_other_foundry
+		icon = GFX_goal_generic_power_armour_t45_alt
+		search_filters = { FOCUS_FILTER_GLORY_LUCIUS }
+		cost = 30
+		prerequisite = {
+			focus = CES_armoured_cohorts
+		}
+		relative_position_id = CES_armoured_cohorts
+		x = 0
+		y = 1
+		completion_reward = {
+			swap_ideas = {
+				remove_idea = CES_vulcan_legion_idea_2
+				add_idea = CES_vulcan_legion_idea_3
+			}
+		}
+	}
+	focus = {
+		id = CES_helios_one_vulcan
+		icon = GFX_goal_generic_mbh_helios_one
+		search_filters = { FOCUS_FILTER_GLORY_LUCIUS }
+		cost = 30
+		prerequisite = {
+			focus = CES_vulcans_other_foundry
+		}
+		relative_position_id = CES_vulcans_other_foundry
+		x = 0
+		y = 1
+		available = {
+			owns_state = 417
+		}
+		completion_reward = {
+			417 = {
+				add_resource = {
+					type = energy
+					amount = 35
+				}
+			}
+		}
+	}
+	focus = {
+		id = CES_lanius_rules
+		icon = GFX_goal_CES_lanius
+		cost = 30
+		relative_position_id = CES_helios_one_vulcan
+		x = -2
+		y = 2
+		available = {
+			has_country_leader = {
+				name = "Lanius"
+				ruling_only = yes
+			}
+		}
+		completion_reward = {
+			add_country_leader_trait = lanius_monster_east1
+			add_timed_idea = {
+				idea = ces_legionary_glory
+				days = 365
+			}
+		}
+	}
+
+	focus = {
+		id = CES_irn_friends
+		icon = GFX_goal_CES_power_armour
+
+		cost = 30
+		prerequisite = { focus = CES_lanius_rules }
+		relative_position_id = CES_lanius_rules
+		x = -2
+		y = 1
+		available = {
+			IRN = {
+				all_core_land_owned_by_prev_sphere = yes
+			}
+		}
+		bypass = {
+			IRN = {
+				exists = no
+			}
+		}
+		completion_reward = {
+			IRN = {
+				set_technology = { power_armour_tech_level_scientific = 1 }
+			}
+		}
+	}
+
+	focus = {
+		id = CES_weapons_of_east
+		icon = GFX_goal_generic_regular_firearms_focus
+
+		cost = 30
+		prerequisite = { focus = CES_irn_friends }
+		relative_position_id = CES_irn_friends
+		x = 0
+		y = 1
+		completion_reward = {
+			add_offsite_building = {
+				type = arms_factory
+				level = 3
+			}
+		}
+	}
+
+	focus = {
+		id = CES_speculatores
+		icon = GFX_goal_uoa_stealth_boys
+
+		cost = 30
+		prerequisite = { focus = CES_weapons_of_east }
+		relative_position_id = CES_weapons_of_east
+		x = 0
+		y = 1
+		completion_reward = {
+			add_ideas = lac_army_speculatores
+		}
+	}
+	focus = {
+		id = CES_loot_east
+		icon = GFX_goal_generic_vault_stash
+		search_filters = { FOCUS_FILTER_GLORY_LANIUS }
+		cost = 30
+		prerequisite = {focus = CES_lanius_rules }
+		relative_position_id = CES_lanius_rules
+		x = 0
+		y = 1
+		available = {
+			5 = {
+				is_controlled_by = CES
+			}
+		}
+		completion_reward = {
+			5 = {
+				set_temp_variable = {
+					development_to_add = 2
+				}
+				add_development_to_node = yes
+				add_state_modifier = {
+					modifier = {
+						caps_node_base_modifier = 0.35
+					}
+				}
+			}
+		}
+	}
+	focus = {
+		id = CES_second_capital
+		icon = GFX_goal_bottlecap
+		search_filters = { FOCUS_FILTER_GLORY_LANIUS }
+		cost = 30
+		prerequisite = {focus = CES_loot_east }
+		relative_position_id = CES_loot_east
+		x = 0
+		y = 1
+		available = {
+			525 = {
+				is_controlled_by = CES
+			}
+		}
+		completion_reward = {
+			add_resource = {
+				type = energy
+				amount = 10
+				state = 525
+			}
+			add_resource = {
+				type = metal
+				amount = 10
+				state = 525
+			}
+			525 = {
+				set_temp_variable = {
+					development_to_add = 2
+				}
+				add_development_to_node = yes
+				add_state_modifier = {
+					modifier = {
+						caps_node_base_modifier = 0.35
+					}
+				}
+			}
+		}
+	}
+	focus = {
+		id = ces_vegas_falls_lanius
+		icon = GFX_goal_lac_house
+		search_filters = { FOCUS_FILTER_GLORY_LANIUS }
+		cost = 30
+		prerequisite = {focus = CES_second_capital }
+		relative_position_id = CES_second_capital
+		mutually_exclusive = { focus = ces_lanius_texas }
+		x = -1
+		y = 2
+		available = {
+			ai_has_no_other_wars_or_wargoals = yes
+		}
+		bypass = {
+			VEG = {
+				all_core_land_owned_by_prev_sphere = yes
+			}
+		}
+		will_lead_to_war_with = VEG
+		completion_reward = {
+			VEG = {
+				ROOT = {
+					grant_wargoals_on_core_states_of_prev = yes
+				}
+			}
+		}
+	}
+	focus = {
+		id = ces_ncr_falls_lanius
+		icon = GFX_goal_lac_ncr
+		search_filters = { FOCUS_FILTER_GLORY_LANIUS }
+		cost = 30
+		prerequisite = {focus = ces_vegas_falls_lanius }
+		relative_position_id = ces_vegas_falls_lanius
+		x = 0
+		y = 1
+
+		available = {
+			ai_has_no_other_wars_or_wargoals = yes
+		}
+		bypass = {
+			owns_state = 252
+			owns_state = 350
+			owns_state = 63
+		}
+		completion_reward = {
+			every_state = {
+				limit = {
+					OR = {
+						state = 252
+						state = 350
+						state = 63
+					}
+				}
+				add_claim_by = LAC
+			}
+		}
+	}
+	focus = {
+		id = ces_lanius_texas
+		icon = GFX_goal_LNS_Victory_Hand
+		search_filters = { FOCUS_FILTER_GLORY_LANIUS }
+		cost = 30
+		prerequisite = {focus = CES_second_capital }
+		relative_position_id = CES_second_capital
+		x = 1
+		y = 2
+		mutually_exclusive = { focus = ces_vegas_falls_lanius }
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = doesnt_have_war_with_neighbor_tt
+				NOT = {
+					any_country = {
+						has_war_with = LAC
+						is_neighbor_of = LAC
+					}
+				}
+			}
+		}
+		bypass = {
+			OR = {
+				has_war_with = LNS
+				LNS = {
+					all_core_land_owned_by_prev_sphere = yes
+				}
+			}
+		}
+		will_lead_to_war_with = LNS
+		completion_reward = {
+			LNS = {
+				ROOT = {
+					grant_wargoals_on_core_states_of_prev_force_ai_war = yes
+				}
+			}
+		}
+	}
+	focus = {
+		id = ces_lanius_texas_master
+		icon = GFX_goal_LAC_setting_sun
+		search_filters = { FOCUS_FILTER_GLORY_LANIUS }
+		cost = 30
+		prerequisite = {focus = ces_lanius_texas }
+		relative_position_id = ces_lanius_texas
+		x = 0
+		y = 1
+		available = {
+			LNS = {
+				all_core_land_owned_by_prev_sphere = yes
+			}
+		}
+		completion_reward = {
+			every_state = {
+				tooltip = every_texan_state
+				limit = {
+					is_texan_state = yes
+				}
+				add_claim_by = LAC
+			}
+		}
+	}
+	focus = {
+		id = lanius_strong_scary
+		icon = GFX_goal_CES_lanius_2
+		search_filters = { FOCUS_FILTER_GLORY_LANIUS }
+		cost = 30
+		prerequisite = {
+			focus = ces_lanius_texas_master
+			focus = ces_ncr_falls_lanius
+		}
+		available = {
+			OR = {
+				owns_state = 253
+				owns_state = 892
+			}
+		}
+		relative_position_id = ces_lanius_texas_master
+
+		x = -1
+		y = 1
+		completion_reward = {
+			add_country_leader_trait = lanius_monster_world
+		}
+	}
+	focus = {
+		id = ces_hastatii
+		icon = GFX_goal_lac_army_hastatii
+		cost = 7
+		x = 2
+		y = 1
+		prerequisite = {
+			focus = CES_lanius_rules
+		}
+		relative_position_id = CES_lanius_rules
+		available = {
+			has_army_experience > 5
+		}
+		completion_reward = {
+			army_experience = -5
+			add_ideas = lac_army_hastati
+		}
+	}
+	focus = {
+		id = ces_testudo
+		icon = GFX_goal_lac_army_testudo
+		cost = 7
+		x = 0
+		y = 1
+		prerequisite = {
+			focus = ces_hastatii
+		}
+		relative_position_id = ces_hastatii
+		available = {
+			has_army_experience > 20
+		}
+		completion_reward = {
+			army_experience = -20
+			add_ideas = lac_army_testudo
+		}
+	}
+	focus = {
+		id = ces_hare
+		icon = GFX_goal_generic_killer_rabbit2
+		cost = 7
+		x = 0
+		y = 1
+		prerequisite = {
+			focus = ces_testudo
+		}
+		relative_position_id = ces_testudo
+		available = {
+			has_army_experience > 20
+		}
+		completion_reward = {
+			add_tech_bonus = {
+				bonus = 0.6
+				uses = 2
+				category = vehicle_tech_category
+			}
+		}
+	}
+	focus = {
+		id = CES_advanced_guns_baby
+		icon = GFX_goal_generic_laser_rifle_2
+		search_filters = { FOCUS_FILTER_GLORY_LUCIUS }
+		cost = 30
+		prerequisite = {
+			focus = ces_cult_vulcan
+		}
+		relative_position_id = ces_cult_vulcan
+		x = 0
+		y = 1
+		available = {
+			OR = {
+				has_tech = basic_infantry_equipment
+				has_tech = overcharged_ammunition
+			}
+		}
+		completion_reward = {
+			add_equipment_to_stockpile = {
+				type = energy_equipment_3
+				amount = 400
+				producer = USA
+			}
+		}
+	}
+	focus = {
+		id = CES_fire_or_mercy
+		icon = GFX_CES_helmet_skeleton
+		search_filters = { FOCUS_FILTER_GLORY_MALPAIS }
+		cost = 30
+		available = {
+			has_country_leader = {
+				name = "Malpais Legate"
+				ruling_only = yes
+			}
+		}
+		relative_position_id = ces_lucius_wall
+		x = 1
+		y = 1
+		completion_reward = {
+			country_event = nf_legion.108
+		}
+	}
+	focus = {
+		id = CES_legionary_inger
+		icon = GFX_goal_food_bitter_drink
+		search_filters = { FOCUS_FILTER_GLORY_MALPAIS }
+		cost = 30
+		relative_position_id = CES_fire_or_mercy
+		prerequisite = {
+			focus = CES_fire_or_mercy
+		}
+		x = 3
+		y = 1
+		completion_reward = {
+			add_ideas = ces_legionary_inger_idea
+		}
+	}
+	focus = {
+		id = CES_inger_funding
+		icon = GFX_goal_bottlecap
+		search_filters = { FOCUS_FILTER_GLORY_MALPAIS }
+		cost = 30
+		relative_position_id = CES_legionary_inger
+		prerequisite = {
+			focus = CES_legionary_inger
+		}
+		x = 0
+		y = 1
+		completion_reward = {
+			swap_ideas = {
+				remove_idea = ces_legionary_inger_idea
+				add_idea = ces_inger_funding_idea
+			}
+		}
+	}
+	focus = {
+		id = CES_legionary_accept_tribal_differences
+		icon = GFX_KHA_focus_befriend_legion
+		search_filters = { FOCUS_FILTER_GLORY_MALPAIS }
+		cost = 30
+		relative_position_id = CES_fire_or_mercy
+		prerequisite = {
+			focus = CES_fire_or_mercy
+		}
+		x = 1
+		y = 1
+		completion_reward = {
+			set_technology = { tribal_production_tech_4 = 1 }
+		}
+	}
+	focus = {
+		id = CES_women_of_rome
+		icon = GFX_goal_generic_contraptions_girl
+		search_filters = { FOCUS_FILTER_GLORY_MALPAIS }
+		cost = 30
+		relative_position_id = CES_legionary_accept_tribal_differences
+		prerequisite = {
+			focus = CES_legionary_accept_tribal_differences
+		}
+		x = 0
+		y = 1
+		completion_reward = {
+			add_tech_bonus = {
+				bonus = 0.5
+				uses = 3
+				category = industry
+			}
+		}
+	}
+	focus = {
+		id = CES_horns_moroni
+		icon = GFX_goal_NCN_moroni
+		search_filters = { FOCUS_FILTER_GLORY_MALPAIS }
+		cost = 30
+		relative_position_id = CES_women_of_rome
+		prerequisite = {
+			focus = CES_women_of_rome
+		}
+		prerequisite = {
+			focus = CES_inger_funding
+		}
+		x = 1
+		y = 1
+		completion_reward = {
+			set_technology = {
+				CES_horns_moroni_tech = 1
+			}
+		}
+	}
+	focus = {
+		id = CES_legionary_surge
+		icon = GFX_goal_generic_legion_speared
+		search_filters = { FOCUS_FILTER_GLORY_MALPAIS }
+		cost = 30
+		relative_position_id = CES_fire_or_mercy
+		prerequisite = {
+			focus = CES_fire_or_mercy
+		}
+		x = -1
+		y = 1
+		completion_reward = {
+			add_tech_bonus = {
+				bonus = 0.5
+				uses = 2
+				category = infantry_weapons_tech_category
+			}
+		}
+	}
+	focus = {
+		id = CES_angry_lord
+		icon = GFX_goal_generic_flamer_focus
+		search_filters = { FOCUS_FILTER_GLORY_MALPAIS }
+		cost = 30
+		relative_position_id = CES_legionary_surge
+		prerequisite = {
+			focus = CES_legionary_surge
+		}
+		x = 0
+		y = 1
+		completion_reward = {
+			add_tech_bonus = {
+				bonus = 0.3
+				uses = 1
+				category = cat_land_doctrine
+			}
+		}
+	}
+	focus = {
+		id = CES_legionary_support
+		icon = GFX_goal_generic_flamer_fuel
+		search_filters = { FOCUS_FILTER_GLORY_MALPAIS }
+		cost = 30
+		relative_position_id = CES_fire_or_mercy
+		prerequisite = {
+			focus = CES_fire_or_mercy
+		}
+		x = -3
+		y = 1
+		completion_reward = {
+			add_ideas = CES_legionary_support_idea
+		}
+	}
+	focus = {
+		id = CES_fire_fuel
+		icon = GFX_goal_generic_rifle_3
+		search_filters = { FOCUS_FILTER_GLORY_MALPAIS }
+		cost = 30
+		relative_position_id = CES_legionary_support
+		prerequisite = {
+			focus = CES_legionary_support
+		}
+		x = 0
+		y = 1
+		completion_reward = {
+			swap_ideas = {
+				remove_idea = CES_legionary_support_idea
+				add_idea = CES_fire_fuel_idea
+			}
+		}
+	}
+	focus = {
+		id = CES_purifiers
+		icon = GFX_goal_CES_burning_blade
+		search_filters = { FOCUS_FILTER_GLORY_MALPAIS }
+		cost = 30
+		relative_position_id = CES_fire_fuel
+		prerequisite = {
+			focus = CES_fire_fuel
+		}
+		prerequisite = {
+			focus = CES_angry_lord
+		}
+		x = 1
+		y = 1
+		completion_reward = {
+			swap_ideas = {
+				remove_idea = CES_fire_fuel_idea
+				add_idea = CES_malpais_power_support
+			}
+		}
+	}
+	focus = {
+		id = ces_this_was_a_triumph
+		icon = GFX_goal_NCR_Triumph
+		search_filters = { FOCUS_FILTER_GLORY_MALPAIS FOCUS_FILTER_POLITICAL }
+		cost = 30
+		mutually_exclusive = {
+			focus = ces_ncr_won_dam
+		}
+		available = {
+			OR = {
+				has_global_flag = fbhd_legion_overall_vic
+				AND = {
+					MOJ = {exists = no }
+					owns_state = 252
+					date < 2279.01.01
+				}
+				AND = {
+					VEG = {exists = no }
+					owns_state = 252
+					date < 2279.01.01
+				}
+			}
+		}
+		relative_position_id = ces_modern_army
+		x = 7
+		y = 1
+		completion_reward = {
+			country_event = nf_legion.90
+			MOJ = {
+				ROOT = {
+					grant_wargoals_on_core_states_of_prev_force_ai_war = yes
+				}
+			}
+		}
+	}
+	focus = {
+		id = ces_huff_and_puff
+		icon = GFX_goal_CES_crucifixion
+		cost = 30
+		x = -2
+		y = 1
+		relative_position_id = ces_this_was_a_triumph
+		prerequisite = {
+			focus = ces_this_was_a_triumph
+		}
+		available = {
+			controls_state = 613
+			controls_state = 137
+			controls_state = 417
+			controls_state = 46
+			controls_state = 573
+		}
+		completion_reward = {
+			every_owned_state = {
+				limit = {
+					is_core_of = MOT
+				}
+				add_state_modifier = {
+					modifier = {
+						resistance_target = -0.2
+					}
+				}
+			}
+		}
+	}
+	focus = {
+		id = ces_uneasy_peace
+		icon = GFX_goal_generic_NCR_diplomatic_focus
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		cost = 30
+		x = 2
+		y = 1
+		bypass = {
+			NCR = {
+				exists = no
+			}
+		}
+		relative_position_id = ces_this_was_a_triumph
+		prerequisite = {
+			focus = ces_this_was_a_triumph
+		}
+		available = {
+			controls_state = 613
+			controls_state = 137
+			controls_state = 417
+			controls_state = 46
+			controls_state = 573
+		}
+		completion_reward = {
+			NCR = {
+				news_event = nf_legion.96
+			}
+		}
+	}
+	focus = {
+		id = ces_great_exchange
+		icon = GFX_goal_generic_slave_collars
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		cost = 30
+		x = 0
+		y = 1
+		bypass = {
+			NCR = {
+				exists = no
+			}
+		}
+		relative_position_id = ces_uneasy_peace
+		prerequisite = {
+			focus = ces_uneasy_peace
+		}
+		completion_reward = {
+			NCR = {
+				news_event = nf_legion.97
+			}
+		}
+	}
+	focus = {
+		id = ces_fate_van_graff
+		icon = GFX_goal_MOJ_closedown_van_graffs
+		cost = 30
+		x = -1
+		y = 1
+		relative_position_id = ces_great_exchange
+		prerequisite = {
+			focus = ces_great_exchange
+		}
+		prerequisite = {
+			focus = ces_go_the_spoils
+		}
+		completion_reward = {
+			add_equipment_to_stockpile = {
+				type = energy_equipment_2
+				amount = 500
+				producer = USA
+			}
+			add_equipment_to_stockpile = {
+				type = energy_equipment_3
+				amount = 200
+				producer = USA
+			}
+		}
+	}
+	focus = {
+		id = ces_blow_house_down
+		icon = GFX_goal_VEG_The_Lucky_38
+		search_filters = {FOCUS_FILTER_ANNEXATION}
+		cost = 30
+		x = 0
+		y = 1
+		relative_position_id = ces_huff_and_puff
+		prerequisite = {
+			focus = ces_huff_and_puff
+		}
+		available = {
+			613 = {
+				is_fully_controlled_by = CES
+			}
+			ai_has_no_other_wars_or_wargoals = yes
+		}
+		bypass = {
+			VEG = {
+				all_core_land_owned_by_prev_sphere = yes
+			}
+		}
+		ai_will_do = {
+			modifier = {
+				CES = {
+					has_war_with = NCR
+				}
+				factor = 0
+			}
+			factor = 6
+		}
+		will_lead_to_war_with = VEG
+		completion_reward = {
+			if = {
+				limit = {
+					has_global_flag = debug_logs
+				}
+				log = "[GetDateText]: [Root.GetName] ces_the_lights_of_vegas entered"
+			}
+			VEG = {
+				ROOT = {
+					grant_wargoals_on_core_states_of_prev = yes
+				}
+			}
+			if = {
+				limit = {
+					has_global_flag = debug_logs
+				}
+				log = "[GetDateText]: [Root.GetName] ces_the_lights_of_vegas exited"
+			}
+		}
+	}
+	focus = {
+		id = ces_to_the_victors
+		icon = GFX_goal_generic_swords
+		cost = 30
+		x = 0
+		y = 1
+		relative_position_id = ces_this_was_a_triumph
+		prerequisite = {
+			focus = ces_this_was_a_triumph
+		}
+		available = {
+			controls_state = 613
+			controls_state = 137
+			controls_state = 417
+			controls_state = 46
+			controls_state = 573
+		}
+		completion_reward = {
+			add_equipment_to_stockpile = {
+				type = ballistic_equipment_3
+				producer = USA
+				amount = 1000
+			}
+			add_equipment_to_stockpile = {
+				type = support_equipment
+				amount = 200
+				producer = USA
+			}
+		}
+	}
+	focus = {
+		id = ces_go_the_spoils
+		icon = GFX_goal_generic_sunset_sasparilla
+		cost = 30
+		x = 0
+		y = 1
+		relative_position_id = ces_to_the_victors
+		prerequisite = {
+			focus = ces_to_the_victors
+		}
+		completion_reward = {
+			add_political_power = 75
+			custom_effect_tooltip = ces_go_the_spoils_tt
+		}
+	}
+	focus = {
+		id = ces_ave_boomers
+		icon = GFX_goal_generic_vehicle_plane
+		search_filters = {FOCUS_FILTER_RESEARCH}
+		cost = 30
+		prerequisite = {
+			focus = ces_blow_house_down
+		}
+		prerequisite = {
+			focus = ces_go_the_spoils
+		}
+		available = {
+			owns_state = 154
+		}
+		x = 1
+		y = 1
+		relative_position_id = ces_blow_house_down
+		completion_reward = {
+			if = {
+				limit = {
+					has_global_flag = debug_logs
+				}
+				log = "[GetDateText]: [Root.GetName] ces_railroads entered"
+			}
+			every_owned_state = {
+				limit = {
+					is_new_vegas = yes
+				}
+				add_building_construction = {
+					type = air_base
+					level = 2
+					instant_build = yes
+				}
+			}
+			country_event = nf_legion.91
+			if = {
+				limit = {
+					has_global_flag = debug_logs
+				}
+				log = "[GetDateText]: [Root.GetName] ces_railroads exited"
+			}
+		}
+	}
+	focus = {
+		id = ces_ncr_won_dam
+		icon = GFX_goal_generic_dam
+		search_filters = {FOCUS_FILTER_POLITICAL}
+		mutually_exclusive = {
+			focus = ces_this_was_a_triumph
+		}
+		cost = 30
+		available = {
+			OR = {
+				has_global_flag = fbhd_boulder_city_miracle
+				has_global_flag = fbhd_mot_hold_dam
+				AND = {
+					MOJ = {
+						exists = yes
+					}
+					NOT = { owns_state = 252 }
+					date > 2279.01.01
+				}
+				AND = {
+					VEG = { exists = yes }
+					NOT = { owns_state = 252 }
+					date > 2279.01.01
+				}
+				date > 2280.01.01
+			}
+		}
+		relative_position_id = ces_modern_army
+		x = 1
+		y = 1
+		completion_reward = {
+			country_event = nf_legion.104
+		}
+	}
+	focus = {
+		id = ces_long_war
+		icon = GFX_goal_CES_ncr_war
+		search_filters = {FOCUS_FILTER_POLITICAL}
+		cost = 30
+		prerequisite = {
+			focus = ces_ncr_won_dam
+		}
+		relative_position_id = ces_ncr_won_dam
+		x = 0
+		y = 1
+		completion_reward = {
+			add_ideas = ces_long_war_idea
+			NCR = {
+				news_event = nf_legion.105
+			}
+			MOT = {
+				news_event = nf_legion.105
+			}
+			custom_effect_tooltip = nf_legion.105.a_tt
+		}
+	}
+	focus = {
+		id = ces_infiltrate_ncr
+		icon = GFX_goal_focus_spy
+		search_filters = {FOCUS_FILTER_IDEAS}
+		cost = 30
+		prerequisite = {
+			focus = ces_long_war
+		}
+		relative_position_id = ces_long_war
+		x = 0
+		y = 1
+		completion_reward = {
+			if = {
+				limit = {
+					has_dlc = "La Resistance"
+				}
+				create_operative_leader = {
+					name = "Frumentarius Narses"
+					GFX = GFX_portrait__ces_generic_4.dds
+					traits = {
+						operative_ninja
+						operative_lockpick
+					}
+					bypass_recruitment = no
+					available_to_spy_master = yes
+					nationalities = {
+						NCR
+					}
+				}
+				add_ideas = infiltrate_ncr_resistance
+			}
+			else = {
+				add_ideas = infiltrate_ncr
+			}
+		}
+	}
+	focus = {
+		id = ces_searchlight_raid
+		icon = GFX_goal_generic_hazard_radiological_1
+		search_filters = {FOCUS_FILTER_POLITICAL}
+		cost = 30
+		prerequisite = {
+			focus = ces_infiltrate_ncr
+		}
+		relative_position_id = ces_infiltrate_ncr
+		x = 0
+		y = 1
+		bypass = {
+			NCR = {
+				exists = no
+			}
+			MOJ = {
+				exists = no
+			}
+		}
+		completion_reward = {
+			if = {
+				limit = {
+					67 = {
+						is_owned_by = NCR
+					}
+				}
+				NCR = {
+					news_event = nf_legion.106
+				}
+			}
+			if = {
+				limit = {
+					67 = {
+						is_owned_by = MOT
+					}
+				}
+				MOT = {
+					news_event = nf_legion.106
+				}
+			}
+			if = {
+				limit = {
+					67 = {
+						is_owned_by = MOJ
+					}
+				}
+				MOJ = {
+					news_event = nf_legion.106
+				}
+			}
+		}
+	}
+	focus = {
+		id = ces_decimation_stayed
+		icon = GFX_goal_NCN_Their_Father_Is_Dead
+		search_filters = {FOCUS_FILTER_POLITICAL FOCUS_FILTER_GLORY_MALPAIS}
+		cost = 30
+		prerequisite = {
+			focus = ces_ncr_won_dam
+		}
+		available = {
+			NOT = { has_country_flag = CES_burned_man }
+		}
+		bypass = {
+			has_country_leader = {
+				name = "Malpais Legate"
+				ruling_only = yes
+			}
+		}
+		relative_position_id = ces_ncr_won_dam
+		x = 2
+		y = 2
+		completion_reward = {
+			news_event = nf_legion.110
+		}
+	}
+	focus = {
+		id = ces_legate_honor
+		icon = GFX_goal_NCN_moroni
+		search_filters = { FOCUS_FILTER_GLORY_MALPAIS }
+		cost = 30
+		prerequisite = {
+			focus = ces_decimation_stayed
+		}
+		bypass = {
+			has_country_leader = {
+				name = "Malpais Legate"
+				ruling_only = yes
+			}
+		}
+		relative_position_id = ces_decimation_stayed
+		x = 0
+		y = 1
+		completion_reward = {
+			add_to_variable = {
+				CES_malp_glory = 1
+			}
+			custom_effect_tooltip = nf_legion.malpais_glory
+		}
+	}
+	focus = {
+		id = ces_second_legate
+		icon = GFX_goal_generic_spartan_legacy
+		search_filters = { FOCUS_FILTER_GLORY_AURELIUS FOCUS_FILTER_GLORY_VULPES FOCUS_FILTER_GLORY_AURELIUS }
+		cost = 30
+		prerequisite = {
+			focus = ces_ncr_won_dam
+		}
+		available = {
+			has_country_flag = CES_burned_man
+		}
+		bypass = {
+			has_country_leader = {
+				name = "Malpais Legate"
+				ruling_only = yes
+			}
+		}
+		relative_position_id = ces_ncr_won_dam
+		x = -2
+		y = 2
+		completion_reward = {
+			country_event = nf_legion.111
+		}
+	}
+	focus = {
+		id = ces_burned_man
+		icon = GFX_goal_NCN_The_Burned_Man
+		cost = 30
+		prerequisite = {
+			focus = ces_second_legate
+		}
+		bypass = {
+			OR = {
+				has_country_leader = {
+					name = "Malpais Legate"
+					ruling_only = yes
+				}
+				NCN = {
+					exists = no
+				}
+			}
+		}
+		relative_position_id = ces_second_legate
+		x = 0
+		y = 1
+		completion_reward = {
+			add_stability = -0.05
+			add_war_support = 0.05
+		}
+	}
+	focus = {
+		id = ces_river_wars
+		icon = GFX_goal_generic_artillery
+		cost = 30
+		prerequisite = {
+			focus = ces_burned_man
+		}
+		prerequisite = {
+			focus = ces_searchlight_raid
+		}
+		relative_position_id = ces_burned_man
+		x = 0
+		y = 1
+		bypass = {
+			NCN = {
+				exists = no
+			}
+		}
+		completion_reward = {
+			if = {
+				limit = {
+					owns_state = 438
+				}
+				438 = {
+					add_building_construction = {
+						type = bunker
+						level = 2
+						instant_build = yes
+						province = {
+							all_provinces = yes
+						}
+					}
+					add_building_construction = {
+						type = coastal_bunker
+						level = 4
+						instant_build = yes
+						province = {
+							all_provinces = yes
+							limit_to_coastal = yes
+						}
+					}
+				}
+			}
+			if = {
+				limit = {
+					owns_state = 553
+				}
+				553 = {
+					add_building_construction = {
+						type = coastal_bunker
+						level = 4
+						instant_build = yes
+						province = {
+							all_provinces = yes
+							limit_to_coastal = yes
+						}
+					}
+				}
+			}
+		}
+	}
+	focus = {
+		id = ces_new_generation
+		icon = GFX_goal_CES_child_soldiers
+		search_filters = { FOCUS_FILTER_IDEAS }
+		cost = 30
+		prerequisite = {
+			focus = ces_legate_honor
+		}
+		prerequisite = {
+			focus = ces_searchlight_raid
+		}
+		relative_position_id = ces_searchlight_raid
+		x = 1
+		y = 1
+		bypass = {
+			NCN = {
+				exists = no
+			}
+		}
+		completion_reward = {
+			add_timed_idea = {
+				idea = ces_new_generation_idea
+				days = 360
+			}
+		}
+	}
+
+	focus = {
+		id = ces_attack_ncr
+		icon = GFX_goal_CES_skinned_bear
+		search_filters = {FOCUS_FILTER_ANNEXATION}
+		cost = 30
+		prerequisite = {
+			focus = ces_searchlight_raid
+			focus = ces_fate_van_graff
+		}
+		available = {
+			date > 2279.06.01
+		}
+		prerequisite = {
+			focus = ces_burned_man
+			focus = ces_legate_honor
+			focus = ces_ave_boomers
+		}
+		relative_position_id = ces_searchlight_raid
+		x = 3
+		y = 3
+		bypass = {
+			253 = {
+				controller = {
+					is_in_faction_with = CES
+				}
+			}
+		}
+		will_lead_to_war_with = NCR
+		will_lead_to_war_with = MOT
+		will_lead_to_war_with = MOJ
+		completion_reward = {
+			start_second_battle_events = yes
+		}
+	}
+	focus = {
+		id = ces_hold_crossings
+		icon = GFX_goal_generic_walls_focus
+		cost = 30
+		prerequisite = {
+			focus = ces_attack_ncr
+		}
+		relative_position_id = ces_attack_ncr
+		x = 0
+		y = 1
+		available = {
+			controls_state = 67
+			controls_state = 613
+		}
+		completion_reward = {
+			67 = {
+				add_building_construction = {
+					type = bunker
+					level = 2
+					instant_build = yes
+					province = {
+						all_provinces = yes
+					}
+				}
+			}
+			613 = {
+				add_building_construction = {
+					type = bunker
+					level = 2
+					instant_build = yes
+					province = {
+						all_provinces = yes
+					}
+				}
+			}
+		}
+	}
+	focus = {
+		id = ces_crush_brotherhood
+		icon = GFX_goal_generic_swords
+		search_filters = {FOCUS_FILTER_ANNEXATION}
+		cost = 30
+		prerequisite = {
+			focus = ces_hold_crossings
+		}
+		relative_position_id = ces_hold_crossings
+		x = -1
+		y = 1
+		available = {
+			ai_has_no_other_wars_or_wargoals = yes
+			OR = {
+				is_neighbor_of = BOS
+				any_other_country = {
+					is_in_faction_with = CES
+					is_neighbor_of = BOS
+				}
+			}
+		}
+
+		bypass = {
+			BOS = {
+				all_core_land_owned_by_prev_sphere = yes
+			}
+			SHI = {
+				all_core_land_owned_by_prev_sphere = yes
+			}
+		}
+		completion_reward = {
+			BOS = {
+				ROOT = {
+					grant_wargoals_on_core_states_of_prev = yes
+				}
+			}
+			SHI = {
+				ROOT = {
+					grant_wargoals_on_core_states_of_prev = yes
+				}
+			}
+		}
+	}
+	focus = {
+		id = ces_vegas_sucks
+		icon = GFX_goal_VEG_The_House
+		search_filters = {FOCUS_FILTER_ANNEXATION}
+		cost = 30
+		prerequisite = {
+			focus = ces_hold_crossings
+		}
+		relative_position_id = ces_hold_crossings
+		x = 1
+		y = 1
+
+		will_lead_to_war_with = VEG
+		available = {
+			controls_state = 77
+		}
+		bypass = {
+			OR = {
+				has_war_with = VEG
+				owns_state = 211
+			}
+		}
+		completion_reward = {
+			VEG = {
+				ROOT = {
+					grant_wargoals_on_core_states_of_prev = yes
+				}
+			}
+		}
+	}
+	focus = {
+		id = ces_nova_roma
+		icon = GFX_goal_CES_rome_ascendant
+		cost = 30
+		prerequisite = {
+			focus = ces_vegas_sucks
+		}
+		prerequisite = {
+			focus = ces_crush_brotherhood
+		}
+		relative_position_id = ces_vegas_sucks
+		x = -1
+		y = 1
+		available = {
+			owns_state = 211
+		}
+		completion_reward = {
+			country_event = nf_legion.121
+		}
+	}
+
+	focus = {
+		id = ces_triumph
+		icon = GFX_goal_CES_roman_eagle
+		cost = 30
+		prerequisite = {
+			focus = ces_nova_roma
+		}
+		relative_position_id = ces_nova_roma
+		x = 0
+		y = 1
+		available = {
+			owns_state = 253
+		}
+		completion_reward = {
+			if = {
+				limit = {
+					is_vulpes_leader = yes
+				}
+				news_event = nf_legion.115
+			}
+			if = {
+				limit = {
+					has_country_leader = {
+						name = "Aurelius of Phoenix"
+						ruling_only = yes
+					}
+				}
+				news_event = nf_legion.113
+			}
+			if = {
+				limit = {
+					has_country_leader = {
+						name = "Caesar"
+						ruling_only = yes
+					}
+				}
+				news_event = nf_legion.114
+			}
+			if = {
+				limit = {
+					has_completed_focus = ces_boring_lucius
+				}
+				news_event = nf_legion.116
+			}
+			if = {
+				limit = {
+					has_completed_focus = ces_cult_of_mars
+				}
+				news_event = nf_legion.117
+			}
+		}
+	}
+	focus = {
+		id = ces_into_utah
+		icon = GFX_goal_CES_legionary
+		search_filters = {FOCUS_FILTER_ANNEXATION}
+		cost = 30
+
+		relative_position_id = ces_triumph
+		x = -2
+		y = 1
+		prerequisite = {
+			focus = ces_triumph
+
+		}
+		available = {
+			has_country_leader = {
+				name = "Malpais Legate"
+				ruling_only = yes
+			}
+		}
+		bypass = {
+			NCN = {
+				exists = no
+			}
+			ORO = {
+				exists = no
+			}
+		}
+		completion_reward = {
+			if = {
+				limit = {
+					ORO = {
+						has_country_leader = { ruling_only = yes name = "Hecate" }
+					}
+				}
+				custom_effect_tooltip = ces_into_utah_tt
+				hidden_effect = {
+					fallout_border_war_menu_populate_army_leader_array_with_all_possible = yes
+					fallout_border_war_menu_populate_owned_state_array_with_all_possible = yes
+					456 = {
+						fallout_border_war_menu_limit_neighbor_states_to_this = yes
+					}
+					if = {
+						limit = {
+							is_ai = yes
+						}
+						fallout_border_war_simulate_ai_choices = yes
+					}
+					else = {
+						ROOT = {
+							fallout_border_war_menu_open_or_close_window = yes
+						}
+					}
+				}
+			}
+			else = {
+				ORO = {
+					invite_to_caesars_legion = yes
+				}
+			}
+		}
+	}
+	focus = {
+		id = ces_the_frontier
+		icon = GFX_goal_CES_via_militaris
+		cost = 30
+		prerequisite = {
+			focus = ces_into_utah
+		}
+		relative_position_id = ces_into_utah
+		x = 0
+		y = 1
+		bypass = {
+			DEA = {
+				all_core_land_owned_by_prev_sphere = yes
+			}
+		}
+		completion_reward = {
+			DEA = {
+				ROOT = {
+					grant_wargoals_on_core_states_of_prev_force_ai_war = yes
+				}
+			}
+		}
+	}
+	focus = {
+		id = ces_burn_witch
+		icon = GFX_goal_generic_bomb_space_station
+		search_filters = {FOCUS_FILTER_ANNEXATION}
+		cost = 30
+		prerequisite = {
+			focus = ces_the_frontier
+		}
+		relative_position_id = ces_the_frontier
+		x = -1
+		y = 1
+		available = {
+			ai_has_no_other_wars_or_wargoals = yes
+		}
+		bypass = {
+			SLE = {
+				all_core_land_owned_by_prev_sphere = yes
+			}
+		}
+		completion_reward = {
+			SLE = {
+				ROOT = {
+					grant_wargoals_on_core_states_of_prev = yes
+				}
+			}
+		}
+	}
+	focus = {
+		id = ces_utah_conquer
+		icon = GFX_goal_NCN_Kingdom_of_God
+		search_filters = {FOCUS_FILTER_ANNEXATION}
+		cost = 30
+		prerequisite = {
+			focus = ces_the_frontier
+		}
+		relative_position_id = ces_the_frontier
+		x = 1
+		y = 1
+		available = {
+			ai_has_no_other_wars_or_wargoals = yes
+		}
+		bypass = {
+			UIN = {
+					all_core_land_owned_by_prev_sphere = yes
+			}
+			CRZ = {
+				all_core_land_owned_by_prev_sphere = yes
+			}
+		}
+		completion_reward = {
+			CRZ = {
+				ROOT = {
+					grant_wargoals_on_core_states_of_prev = yes
+				}
+			}
+			UIN = {
+				ROOT = {
+					grant_wargoals_on_core_states_of_prev = yes
+				}
+			}
+		}
+	}
+	focus = {
+		id = ces_assimilate_resistance
+		icon = GFX_goal_generic_slave_collars
+		cost = 30
+		prerequisite = {
+			focus = ces_utah_conquer
+		}
+		prerequisite = {
+			focus = ces_burn_witch
+		}
+		relative_position_id = ces_utah_conquer
+		x = -1
+		y = 1
+		completion_reward = {
+			hidden_effect = {
+				every_state = {
+					limit = {
+						is_utah_state = yes
+					}
+					set_variable = {
+						coring_cost_targeted_state_factor@CES = -0.25
+					}
+				}
+			}
+			custom_effect_tooltip = assimilate_resistance_tt
+		}
+	}
+	focus = {
+		id = ces_down_mexico_way
+		icon = GFX_goal_RRG_chico
+		search_filters = {FOCUS_FILTER_ANNEXATION}
+		cost = 30
+		prerequisite = {
+			focus = ces_triumph
+		}
+		relative_position_id = ces_triumph
+		x = 2
+		y = 1
+		bypass = {
+			746 = {
+				controller = {
+					is_in_faction_with = CES
+				}
+			}
+		}
+		available = {
+			ai_has_no_other_wars_or_wargoals = yes
+			has_country_leader = {
+				name = "Aurelius of Phoenix"
+				ruling_only = yes
+			}
+		}
+		completion_reward = {
+			RRG = {
+				ROOT = {
+					grant_wargoals_on_core_states_of_prev = yes
+				}
+			}
+		}
+	}
+	focus = {
+		id = ces_im_super_cool
+		icon = GFX_goal_lac_old_helm
+		search_filters = {FOCUS_FILTER_ANNEXATION}
+		cost = 30
+		prerequisite = {
+			focus = ces_triumph
+		}
+		relative_position_id = ces_triumph
+		x = 0
+		y = 1
+
+		available = {
+			ai_has_no_other_wars_or_wargoals = yes
+			has_country_leader = {
+				name = "Caesar"
+				ruling_only = yes
+			}
+		}
+		completion_reward = {
+			add_ideas = ces_caesar_is_cool_idea
+		}
+	}
+	focus = {
+		id = ces_tame_rio
+		icon = GFX_goal_CES_crucifixion_2
+		cost = 30
+		prerequisite = {
+			focus = ces_down_mexico_way
+		}
+		relative_position_id = ces_down_mexico_way
+		x = 0
+		y = 1
+		available = {
+			746 = {
+				controller = {
+					is_in_faction_with = CES
+				}
+			}
+		}
+		completion_reward = {
+			every_owned_state = {
+				limit = {
+					OR = {
+						is_core_of = RRG
+						is_core_of = PEC
+					}
+				}
+				add_resistance_target = {
+					amount = -20
+				}
+			}
+		}
+	}
+	focus = {
+		id = ces_ancient_veins
+		icon = GFX_generic_gold_bars
+		cost = 30
+		prerequisite = {
+			focus = ces_tame_rio
+		}
+		relative_position_id = ces_tame_rio
+		x = -1
+		y = 1
+		completion_reward = {
+			519 = {
+				add_resource = {
+					type = water
+					amount = 25
+				}
+			}
+			519 = {
+				add_resource = {
+					type = metal
+					amount = 20
+				}
+			}
+			519 = {
+				add_resource = {
+					type = energy
+					amount = 15
+				}
+			}
+			519 = {
+				add_resource = {
+					type = circuitry
+					amount = 5
+				}
+			}
+		}
+	}
+	focus = {
+		id = ces_core_gloria
+		icon = GFX_goal_generic_workshop
+		cost = 30
+		prerequisite = {
+			focus = ces_tame_rio
+		}
+		relative_position_id = ces_tame_rio
+		x = 1
+		y = 1
+		available = {
+			owns_state = 746
+		}
+		completion_reward = {
+			746 = {
+				add_core_of = CES
+			}
+			746 = {
+				set_state_name = "Caesarea Mexicanorum"
+				hidden_effect = {
+					set_province_name = {
+						id = 8599
+						name = "Caesarea Mexicanorum"
+					}
+				}
+			}
+		}
+	}
+	focus = {
+		id = ces_kill_titans
+		icon = GFX_goal_ARM_focus_master_of_mexico
+		search_filters = {FOCUS_FILTER_ANNEXATION}
+		cost = 30
+		prerequisite = {
+			focus = ces_core_gloria
+		}
+		prerequisite = {
+			focus = ces_ancient_veins
+		}
+		relative_position_id = ces_core_gloria
+		x = -1
+		y = 1
+		available = {
+			ai_has_no_other_wars_or_wargoals = yes
+			TLA = {
+				exists = no
+			}
+		}
+		completion_reward = {
+			MAX = {
+				ROOT = {
+					grant_wargoals_on_core_states_of_prev = yes
+				}
+			}
+			ZAP = {
+				ROOT = {
+					grant_wargoals_on_core_states_of_prev = yes
+				}
+			}
+			MOC = {
+				ROOT = {
+					grant_wargoals_on_core_states_of_prev = yes
+				}
+			}
+		}
+	}
+	focus = {
+		id = ces_drusus_leads
+		icon = GFX_goal_generic_ghouls_focus
+		search_filters = { FOCUS_FILTER_GLORY_EAST }
+		cost = 30
+		x = 4
+		y = 3
+		available = {
+			has_country_leader = {
+				name = "Caius Drusus"
+				ruling_only = yes
+			}
+		}
+		relative_position_id = ces_frumentarii_generals
+		completion_reward = {
+			set_technology = { ghoul_civilization = 1 }
+		}
+	}
+	focus = {
+		id = ces_reservation_annexation
+		icon = GFX_goal_generic_hazard_radiological_2
+		search_filters = { FOCUS_FILTER_GLORY_EAST }
+		cost = 30
+		x = 0
+		y = 1
+		prerequisite = {
+			focus = ces_drusus_leads
+		}
+		relative_position_id = ces_drusus_leads
+		completion_reward = {
+			if = {
+				limit = {
+					RES = {
+						is_ai = yes
+						exists = yes
+					}
+				}
+				annex_country = {
+					target = RES
+					transfer_troops = yes
+				}
+			}
+			else_if = {
+				limit = {
+					RES = {
+						is_ai = no
+						exists = yes
+					}
+				}
+				RES = { country_event = nf_legion.122 }
+			}
+		}
+	}
+	focus = {
+		id = ces_reservation_annexation2
+		icon = GFX_goal_ghoul_generic_body
+		search_filters = { FOCUS_FILTER_GLORY_EAST }
+		cost = 30
+		x = 0
+		y = 1
+		prerequisite = {
+			focus = ces_reservation_annexation
+		}
+		available = {
+			RES = {
+				all_core_land_owned_by_prev_sphere = yes
+			}
+		}
+		relative_position_id = ces_reservation_annexation
+		completion_reward = {
+			add_ideas = CES_healthy_ghouls
+		}
+	}
+	focus = {
+		id = ces_acceptable_failure
+		icon = GFX_goal_ORO_Gehenna
+		search_filters = { FOCUS_FILTER_GLORY_EAST }
+		cost = 30
+		x = 0
+		y = 1
+		prerequisite = {
+			focus = ces_reservation_annexation2
+		}
+		available = {
+			RES = {
+				all_core_land_owned_by_prev_sphere = yes
+			}
+		}
+		relative_position_id = ces_reservation_annexation2
+		completion_reward = {
+			set_technology = { gehenna_molech_tech = 1 }
+		}
+	}
+	focus = {
+		id = ces_reservation_frank
+		icon = GFX_goal_generic_tools
+		search_filters = { FOCUS_FILTER_GLORY_EAST }
+		cost = 30
+		x = -3
+		y = 1
+		prerequisite = {
+			focus = ces_drusus_leads
+		}
+		relative_position_id = ces_drusus_leads
+		completion_reward = {
+			custom_effect_tooltip = ces_reservation_frank_tt
+		}
+	}
+	focus = {
+		id = ces_reservation_slaves
+		icon = GFX_goal_generic_blueprint
+		search_filters = { FOCUS_FILTER_GLORY_EAST }
+		cost = 30
+		x = 0
+		y = 1
+		available = {
+			RES = {
+				all_core_land_owned_by_prev_sphere = yes
+			}
+		}
+		prerequisite = {
+			focus = ces_reservation_frank
+		}
+		relative_position_id = ces_reservation_frank
+		completion_reward = {
+			282 = {
+				if = {
+					limit = {
+						is_valid_state_for_3_arms_factories = yes
+					}
+					add_extra_state_shared_building_slots = 3
+					add_building_construction = {
+						type = arms_factory
+						level = 3
+						instant_build = yes
+					}
+				}
+			}
+			89 = {
+				if = {
+					limit = {
+						is_valid_state_for_3_arms_factories = yes
+					}
+					add_extra_state_shared_building_slots = 3
+					add_building_construction = {
+						type = arms_factory
+						level = 3
+						instant_build = yes
+					}
+				}
+			}
+			634 = {
+				if = {
+					limit = {
+						is_valid_state_for_3_arms_factories = yes
+					}
+					add_extra_state_shared_building_slots = 3
+					add_building_construction = {
+						type = arms_factory
+						level = 3
+						instant_build = yes
+					}
+				}
+			}
+		}
+	}
+	focus = {
+		id = ces_reservation_assembly
+		icon = GFX_goal_generic_slave_collars
+		search_filters = { FOCUS_FILTER_GLORY_EAST }
+		cost = 30
+		x = 3
+		y = 1
+		prerequisite = {
+			focus = ces_drusus_leads
+		}
+		relative_position_id = ces_drusus_leads
+		completion_reward = {
+			add_offsite_building = {
+				type = industrial_complex
+				level = 2
+			}
+			set_technology = {
+				robotics_tech_level_tribal = 1
+			}
+		}
+	}
+	focus = {
+		id = ces_reservation_planes
+		icon = GFX_goal_generic_airplane
+		search_filters = { FOCUS_FILTER_GLORY_EAST }
+		cost = 30
+		x = 0
+		y = 1
+		prerequisite = {
+			focus = ces_reservation_assembly
+		}
+		relative_position_id = ces_reservation_assembly
+		completion_reward = {
+			if = {
+				limit = {
+					NOT = {
+						has_tech = air_tech_level_settler
+					}
+				}
+				set_technology = { air_tech_level_settler = 1 }
+			}
+			else = {
+				add_tech_bonus = {
+					bonus = 0.4
+					uses = 2
+					category = air_tech_category
+				}
+				add_equipment_to_stockpile = {
+					type = fighter_equipment
+					amount = 150
+				}
+			}
+		}
+	}
+}
+
+
+
+# vim: set ft=pdx tw=79 :

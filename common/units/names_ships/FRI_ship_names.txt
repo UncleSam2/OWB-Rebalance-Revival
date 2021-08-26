@@ -1,0 +1,43 @@
+﻿FRI_LIGHT = {
+	name = NAME_THEME_SHIPS_FRI_LIGHT
+	for_countries = { FRI }
+	type = ship
+	ship_types = { light_ship_unit }
+	fallback_name = "Dingy %d"
+	unique = {
+		"A Hole in Deck" "A Year For This" "Better Than Nothing" "Durability Debated" "Eccles Passer" "Equal To Nothing" "Feeling Cocky" "Float Like A Brick" "Floating Scrap" "Ignore Us" "Junked Up" "Lily-Paddle" "Nuts N' Bolts" "Oldie But A Goodie" "Puddle Worthy" "Raider-Man's" "Restored Crap" "Rusted Through" "Sailing Smooth" "Spli-Lip" "The Leftover" "Three-Eyed Fish" "Unrivaled Might" "Up A Creek" "Will Have to Do"
+	}
+}
+
+FRI_MEDIUM = {
+	name = NAME_THEME_SHIPS_FRI_MEDIUM
+	for_countries = { FRI }
+	type = ship
+	ship_types = { medium_ship_screen_unit }
+	fallback_name = "Rust Bucket %d"
+	unique = {
+		"Ankle-Biter" "Carry On" "Chipped Skin" "Could've Built A House" "Dillon Patrol Craft" "Distraction" "Free To Choose" "If We Must" "Lackies Luck" "One For You" "Scrap King" "Seen Better Days" "Should've Built That House" "Sick of Water" "Skinwalker" "Smart Planning" "Smells Like Victory" "Sucker Punch" "The Walter Baron" "Unsinkable V"
+	}
+}
+
+FRI_HEAVY = {
+	name = NAME_THEME_SHIPS_FRI_HEAVY
+	for_countries = { FRI }
+	type = ship
+	ship_types = { heavy_ship_unit }
+	fallback_name = "Cutter %d"
+	unique = {
+		"Cap For Your Thoughts" "Cash In" "Chasing Radstorms" "Diplomacy" "Give it Away" "Gut-Punt" "King Molerat XVI" "Let Me Take it or Die" "No More" "Now Come" "Now We Fight" "On The Frisco Bay" "One of a Kind" "Overreaction" "Ready or What?" "Runs Like The Wind" "Sarsaparilla Sunrise" "Through Strong" "Up and Up" "We found This One"
+	}
+}
+
+FRI_SUPER_HEAVY = {
+	name = NAME_THEME_SHIPS_FRI_SUPER_HEAVY
+	for_countries = { FRI }
+	type = ship
+	ship_types = { super_heavy_ship_unit }
+	fallback_name = "Battle Boat %d"
+	unique = {
+		"All Fire Front" "Broadsider" "Completely Scrap" "Expensive As Hell" "Full Frontal" "Hammer Down!" "Nail to The Head" "Our Height" "Sapphire Point-Ship" "Sister of War" "Steel Brunt" "The Dillon Reservoir" "Wall of the People"
+	}
+}

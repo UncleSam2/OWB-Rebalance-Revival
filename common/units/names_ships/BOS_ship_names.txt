@@ -1,0 +1,43 @@
+﻿BOS_LIGHT = {
+	name = NAME_THEME_SHIPS_BOS_LIGHT
+	for_countries = { BOS }
+	type = ship
+	ship_types = { light_ship_unit }
+	fallback_name = "Destroyer %d"
+	unique = {
+		"Ad Victorium" "Battle Proven" "Break That Line" "By Any Cost" "Defiant" "Fury" "Galiant Victor" "In Remeberance" "Make Wake" "No Limit" "No Sacrifice To Great" "On And Up" "Press Forward" "Righteous Authority" "Search and Destroy" "Steady Through" "Strength in Steel" "Swiftly Onward" "The Nuclear Option" "The Stout Defender" "Tip of The Spear" "Unbreakable" "Unrestricted" "Unrivaled" "Volley Fire"
+	}
+}
+
+BOS_MEDIUM = {
+	name = NAME_THEME_SHIPS_BOS_MEDIUM
+	for_countries = { BOS }
+	type = ship
+	ship_types = { medium_ship_screen_unit }
+	fallback_name = "Light Cruiser %d"
+	unique = {
+		"Barnaky" "Casdin" "Cross" "Dekker" "Elijah" "Hardin" "Ingram" "Kells" "Lancelot" "Lyons" "McGraw" "Morgan" "Royce" "Solo" "Vargus"
+	}
+}
+
+BOS_HEAVY = {
+	name = NAME_THEME_SHIPS_BOS_HEAVY
+	for_countries = { BOS }
+	type = ship
+	ship_types = { heavy_ship_unit }
+	fallback_name = "Heavy Cruiser %d"
+	unique = {
+		"All Under Radstorm" "Dawn Under Radstorm" "Forward Unto West" "Francisco Capes" "Immediate Domain" "In Steel Clad" "Legacy of Navarro" "Pillar of Maxson" "Plasma Kiss" "Prepped or Not" "Remberance of Helios" "Songs of The West" "Spirit of Steel" "Wailing Yucca"
+	}
+}
+
+BOS_SUPER_HEAVY = {
+	name = NAME_THEME_SHIPS_BOS_SUPER_HEAVY
+	for_countries = { BOS }
+	type = ship
+	ship_types = { super_heavy_ship_unit }
+	fallback_name = "Battleship %d"
+	unique = {
+		"Arthur Maxson" "McNamara" "Patrocolus" "Rhombus" "Rothchild" "Sarah Lyons" "Taggart" "Vree"
+	}
+}

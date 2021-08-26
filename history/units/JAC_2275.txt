@@ -1,0 +1,163 @@
+﻿division_template = {
+	name = "Jakal Marauders"
+	regiments = {
+		militia = { x = 0 y = 0 }
+		militia = { x = 0 y = 1 }
+		militia = { x = 1 y = 0 }
+		militia = { x = 1 y = 1 }
+	}
+}
+
+division_template = {
+	name = "Jackal Raid Group"
+	regiments = {
+		infantry = { x = 0 y = 0 }
+		infantry = { x = 0 y = 1 }
+		infantry = { x = 1 y = 0 }
+		infantry = { x = 1 y = 1 }
+		infantry = { x = 2 y = 0 }
+		infantry = { x = 2 y = 1 }
+		infantry = { x = 3 y = 0 }
+	}
+}
+division_template = {
+	name = "Jackal Banshee Riders"
+	regiments = {
+		motorized = { x = 0 y = 0 }
+		motorized = { x = 0 y = 1 }
+		motorized = { x = 1 y = 0 }
+		motorized = { x = 1 y = 1 }
+		motorized = { x = 2 y = 0 }
+		motorized = { x = 2 y = 1 }
+		motorized = { x = 3 y = 0 }
+	}
+}
+
+units = {
+	division = {
+		name = "1st Jackal Raid Group"
+		location = 8760
+		division_template = "Jackal Raid Group"
+		start_experience_factor = 0.2
+		start_equipment_factor = 1.0
+	}
+	division = {
+		name = "Banshee's Moto Riders"
+		location = 8796
+		division_template = "Jackal Banshee Riders"
+		start_experience_factor = 1,0
+		start_equipment_factor = 1.0
+	}
+	division = {
+		name = "8th Jackal Raid Group"
+		location = 1081
+		division_template = "Jackal Raid Group"
+		start_experience_factor = 0.2
+		start_equipment_factor = 1.0
+	}
+	division = {
+		name = "9th Jackal Raid Group"
+		location = 8758`
+		division_template = "Jackal Raid Group"
+		start_experience_factor = 0.2
+		start_equipment_factor = 1.0
+	}
+	division = {
+		name = "10th Jackal Raid Group"
+		location = 1536
+		division_template = "Jackal Raid Group"
+		start_experience_factor = 0.2
+		start_equipment_factor = 1.0
+	}
+	division = {
+		name = "11th Jackal Raid Group"
+		location = 3392
+		division_template = "Jackal Raid Group"
+		start_experience_factor = 0.2
+		start_equipment_factor = 1.0
+	}
+	division = {
+		name = "2nd Jackal Raid Group"
+		location = 1086
+		division_template = "Jackal Raid Group"
+		start_experience_factor = 0.2
+		start_equipment_factor = 1.0
+	}
+	division = {
+		name = "3rd Jackal Raid Group"
+		location = 8794
+		division_template = "Jackal Raid Group"
+		start_experience_factor = 0.2
+		start_equipment_factor = 1.0
+	}
+	division = {
+		name = "4th Jackal Raid Group"
+		location = 8795
+		division_template = "Jackal Raid Group"
+		start_experience_factor = 0.2
+		start_equipment_factor = 1.0
+	}
+	division = {
+		name = "5th Jackal Raid Group"
+		location = 8797
+		division_template = "Jackal Raid Group"
+		start_experience_factor = 0.2
+		start_equipment_factor = 1.0
+	}
+	division = {
+		name = "6th Jackal Raid Group"
+		location = 8797
+		division_template = "Jackal Raid Group"
+		start_experience_factor = 0.2
+		start_equipment_factor = 1.0
+	}
+	division = {
+		name = "7th Jackal Raid Group"
+		location = 1533
+		division_template = "Jackal Raid Group"
+		start_experience_factor = 0.2
+		start_equipment_factor = 1.0
+	}
+	division = {
+		name = "Bridgeport Marauders"
+		location = 1533
+		division_template = "Jackal Marauders"
+		start_experience_factor = 0.05
+		start_equipment_factor = 1.0
+	}
+	division = {
+		name = "Hawthorne Marauders"
+		location = 8796
+		division_template = "Jackal Marauders"
+		start_experience_factor = 0.05
+		start_equipment_factor = 1.0
+	}
+	division = {
+		name = "Gabbs Marauders"
+		location = 3456
+		division_template = "Jackal Marauders"
+		start_experience_factor = 0.05
+		start_equipment_factor = 1.0
+	}
+}
+##### Starting Production #####
+instant_effect = {
+	add_equipment_production = {
+		equipment = {
+			type = infantry_equipment_1
+			creator = "JAC"
+		}
+		requested_factories = 3
+		progress = 0.75
+		efficiency = 100
+	}
+	add_equipment_production = {
+		equipment = {
+			type = motorbike_equipment_1
+			creator = "JAC"
+		}
+		requested_factories = 1
+		progress = 0.75
+		efficiency = 100
+	}
+}

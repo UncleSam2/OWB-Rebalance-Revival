@@ -1,0 +1,27 @@
+
+state={
+	id=891
+	name="STATE_GUYMON_JUNCTION"
+	resources = {
+		water = 4
+		energy = 2
+	}
+	history={
+		owner = PAR
+		add_core_of = PAR
+		victory_points = {
+			2987 10
+		}
+		buildings = {
+			infrastructure = 3
+			arms_factory = 3
+			industrial_complex = 1
+		}
+	}
+	provinces={
+		980 2823 2859 2987 5660 12235 12236 12241 12243 12244
+	}
+	manpower=10000
+	buildings_max_level_factor=1.000
+	state_category=shanty
+}

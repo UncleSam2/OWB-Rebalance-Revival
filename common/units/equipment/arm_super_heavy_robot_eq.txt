@@ -1,0 +1,88 @@
+equipments = {
+
+	super_heavy_robot_equipment = {
+		year = 1934
+
+		is_archetype = yes
+		is_convertable = yes
+		picture = archetype_heavy_robot_equipment
+		is_buildable = no
+		type = armor
+		group_by = archetype
+
+		interface_category = interface_category_armor
+
+		upgrades = {
+			#pa_redundancy_upgrade
+			#pa_production_upgrade
+			#pa_plating_upgrade
+			#pa_shock_upgrade
+			#pa_servo_motion_upgrade
+			#rob_brain_upgrade
+		}
+
+		#Misc Abilities
+		maximum_speed = 4
+		reliability = 0.1
+
+		#Defensive Abilities
+		defense = 1
+		breakthrough = 1
+		hardness = 0.1
+		armor_value = 1
+
+		fuel_consumption = 0.6
+
+		#Offensive Abilities
+		soft_attack = 1
+		hard_attack = 1
+		ap_attack = 1
+		air_attack = 0
+
+		#Space taken in convoy
+		lend_lease_cost = 10
+
+		build_cost_ic = 6
+		resources = {
+		}
+
+	}
+
+	combat_robot_behemoth_equipment = {
+		year = 1941
+
+		archetype = super_heavy_robot_equipment
+		priority = 30
+		visual_level = 8
+		is_convertable = yes
+
+		#Misc Abilities
+		maximum_speed = 5
+		reliability = 0.8
+
+		#Defensive Abilities
+		defense = 6
+		breakthrough = 18
+		hardness = 0.3
+		armor_value = 16
+		suppression = 2.5
+
+		fuel_consumption = 4
+
+		#Offensive Abilities
+		soft_attack = 18
+		hard_attack = 9
+		ap_attack = 10
+		air_attack = 0
+
+		#Space taken in convoy
+		lend_lease_cost = 10
+
+		build_cost_ic = 12
+		resources = {
+			composites = 6
+			advanced = 6
+			energy = 6
+		}
+	}
+}

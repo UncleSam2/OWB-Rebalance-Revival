@@ -1,0 +1,118 @@
+﻿division_template = {
+	name = "Vault City Conscripts"
+	regiments = {
+		militia = { x = 0 y = 0 }
+		militia = { x = 0 y = 1 }
+		militia = { x = 1 y = 0 }
+		militia = { x = 1 y = 1 }
+	}
+}
+
+division_template = {
+	name = "Security Team"
+
+	division_names_group = _VLT_INF_01
+
+	regiments = {
+		infantry = { x = 0 y = 0 }
+		infantry = { x = 0 y = 1 }
+		infantry = { x = 1 y = 0 }
+		infantry = { x = 1 y = 1 }
+		infantry = { x = 2 y = 0 }
+	}
+}
+
+division_template = {
+	name = "Robo-Security"
+	regiments = {
+		support_robot = { x = 0 y = 0 }
+		support_robot = { x = 1 y = 0 }
+		support_robot = { x = 2 y = 0 }
+	}
+}
+units = {
+	division = {
+		name = "Security Team Alpha"
+		location = 9197
+		division_template = "Security Team"
+		start_experience_factor = 1.0
+		start_equipment_factor = 1.0
+	}
+	division = {
+		name = "Security Team Bravo"
+		location = 2695
+		division_template = "Security Team"
+		start_experience_factor = 1.0
+		start_equipment_factor = 1.0
+	}
+	division = {
+		name = "Security Team Charlie"
+		location = 2713
+		division_template = "Security Team"
+		start_experience_factor = 1.0
+		start_equipment_factor = 1.0
+	}
+	division = {
+		name = "Security Team Delta"
+		location = 3481
+		division_template = "Security Team"
+		start_experience_factor = 1.0
+		start_equipment_factor = 1.0
+	}
+	division = {
+		name = "Courtyard Volunteers"
+		location = 2695
+		division_template = "Vault City Conscripts"
+		start_experience_factor = 0.25
+		start_equipment_factor = 1.0
+	}
+	division = {
+		name = "Gecko Volunteers"
+		location = 2713
+		division_template = "Vault City Conscripts"
+		start_experience_factor = 0.25
+		start_equipment_factor = 1.0
+	}
+	division = {
+		name = "Golconda Volunteers"
+		location = 3464
+		division_template = "Vault City Conscripts"
+		start_experience_factor = 0.25
+		start_equipment_factor = 1.0
+	}
+	division = {
+		name = "Vault City Volunteers"
+		location = 3465
+		division_template = "Vault City Conscripts"
+		start_experience_factor = 0.25
+		start_equipment_factor = 1.0
+	}
+	division = {
+		name = "Vault 8 Security Bots"
+		location = 9197
+		division_template = "Robo-Security"
+		start_experience_factor = 1.0
+		start_equipment_factor = 1.0
+	}
+}
+##### Starting Production #####
+instant_effect = {
+	add_equipment_production = {
+		equipment = {
+			type = ballistic_equipment_1
+			creator = "VLT"
+		}
+		requested_factories = 4
+		progress = 0.75
+		efficiency = 100
+	}
+	add_equipment_production = {
+		equipment = {
+			type = support_robot_protectron_equipment_1
+			creator = "VLT"
+		}
+		requested_factories = 1
+		progress = 0.75
+		efficiency = 100
+	}
+}

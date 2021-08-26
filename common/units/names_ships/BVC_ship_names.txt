@@ -1,0 +1,43 @@
+﻿BVC_LIGHT = {
+	name = NAME_THEME_SHIPS_BVC_LIGHT
+	for_countries = { BVC }
+	type = ship
+	ship_types = { light_ship_unit }
+	fallback_name = "Bote Patrulla %d"
+	unique = {
+		"Buen Hombre" "Exención de Impuestos" "Hijacker" "Honrado" "Justo" "La Moral" "Libertador" "Libre" "Para una Baja Libre" "The Pig Viper" "Valiente" "Virtuoso"
+	}
+}
+
+BVC_MEDIUM = {
+	name = NAME_THEME_SHIPS_BVC_MEDIUM
+	for_countries = { BVC }
+	type = ship
+	ship_types = { medium_ship_screen_unit }
+	fallback_name = "Crucero Ligero %d"
+	unique = {
+		"El Cazador" "Ellos Luchan por Subyugar" "In Dreamland" "Ir a Casa California" "Libertad" "Muerte a California!" "Muerte al Imperialismo" "Rapid Deathclaw" "Resistir al Imperialismo Californiano" "The Pony Ride" "Un Californiano Muerto es un Buen Californiano" "Una Causa Justa" "Ven y Tómalo" "¡Date la Vuelta Ahora!"
+	}
+}
+
+BVC_HEAVY = {
+	name = NAME_THEME_SHIPS_BVC_HEAVY
+	for_countries = { BVC }
+	type = ship
+	ship_types = { heavy_ship_unit }
+	fallback_name = "Crucero Pesado %d"
+	unique = {
+		"Empujarlos más Allá del Frontera" "Hogar para los Valientes" "Luchador por la Libertad" "Luchamos por ser Libres" "Might Make Right" "One Good Eye" "Termine la Agresión Californiana" "Tierra de los Libres" "Una Gente Valiente!" "Vale la Pena Morir por" "Witness Me!" "¡Nunca Anexión!" "¿Por qué Estás Luchando?"
+	}
+}
+
+BVC_SUPER_HEAVY = {
+	name = NAME_THEME_SHIPS_BVC_SUPER_HEAVY
+	for_countries = { BVC }
+	type = ship
+	ship_types = { super_heavy_ship_unit }
+	fallback_name = "Acorazado %d"
+	unique = {
+		"Black Out The Sun" "Liberator Bolivar" "Mobile Hell" "No Forgiveness" "No Sympathy" "Pancho Villa" "Santiago Mariño" "Uncle José's War Tug"
+	}
+}

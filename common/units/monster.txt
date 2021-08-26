@@ -1,0 +1,66 @@
+# options for map_icon_category:
+# For land units: infantry,armored,other
+# For sea units: ship,transport,uboat
+
+sub_units = {
+	monster_support = {
+		sprite = infantry
+		map_icon_category = infantry
+		special_forces = yes
+		priority = 1918
+		active = no
+		affects_speed = no
+
+		type = {
+			infantry
+			support
+		}
+
+		group = support
+
+		categories = {
+			category_army
+			category_support
+			category_combat_support
+		}
+
+		max_strength = 30
+		max_organisation = 0
+		default_morale = 0.15
+		manpower = 15 # 500
+		training_time = 60
+		weight = 1.5
+		supply_consumption = 0.15
+
+		essential = {
+			monster_equipment
+		}
+
+		need = {
+			monster_equipment = 30
+		}
+
+		can_be_parachuted = no
+
+		jungle = {
+			attack = 0.08
+			defence = -0.1
+		}
+		forest = {
+			attack = 0.08
+			defence = -0.1
+		}
+		marsh = {
+			attack = -0.1
+			defence = -0.1
+		}
+		amphibious = {
+			attack = -0.25
+			defence = -0.25
+		}
+		urban = {
+			attack = 0.1
+			defence = 0.1
+		}
+	}
+}

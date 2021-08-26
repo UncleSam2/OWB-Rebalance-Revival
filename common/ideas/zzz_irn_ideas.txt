@@ -1,0 +1,47 @@
+ideas = {
+	country = {
+		irn_ironknights = {
+			picture = steel_conquerors
+			allowed = {
+				original_tag = IRN
+			}
+			allowed_civil_war = {
+				always = yes
+			}
+			removal_cost = -1
+			modifier = {
+				special_forces_min = 48
+				caps_flat_income_modifier = 20 #No node
+				modifier_army_sub_unit_power_armour_attack_factor = 0.1
+				modifier_army_sub_unit_power_armour_speed_factor = 0.1
+				country_resource_energy = 20
+				country_resource_circuitry = 20
+				country_resource_water = 20
+				country_resource_composites = 20
+				country_resource_advanced = 20
+				country_resource_metal = 20
+			}
+			equipment_bonus = {
+				power_armor_equipment = {
+					build_cost_ic = -0.25
+					instant = yes
+				}
+			}
+		}
+		irn_mercenaries = {
+			picture = vaultboi5
+			allowed = {
+				original_tag = IRN
+			}
+			allowed_civil_war = {
+				always = yes
+			}
+			removal_cost = -1
+			modifier = {
+				conscription = 0.06
+				annex_cost_factor = 0.25
+				caps_expense_modifier = 0.12
+			}
+		}
+	}
+}

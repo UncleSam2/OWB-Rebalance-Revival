@@ -1,0 +1,43 @@
+﻿SCO_LIGHT = {
+	name = NAME_THEME_SHIPS_SCO_LIGHT
+	for_countries = { SCO }
+	type = ship
+	ship_types = { light_ship_unit }
+	fallback_name = "Skirmisher %d"
+	unique = {
+		"Captain Needles Yacht" "Exo-Bone" "Full Muzzle" "Get a Fix" "Grub Rig" "Hijacker" "Husk" "Imp" "Jet Junkie" "Leech" "Lil Gremlin" "Lil Prick" "Maggot Sac" "Patched Daydream" "Pincer" "Poison-Bite" "Skitters" "Soot Wakes" "Spiked Bolts" "Sting" "The Pig Viper" "The Tadpole" "Thorn" "Triclops" "Worm Food"
+	}
+}
+
+SCO_MEDIUM = {
+	name = NAME_THEME_SHIPS_SCO_MEDIUM
+	for_countries = { SCO }
+	type = ship
+	ship_types = { medium_ship_screen_unit }
+	fallback_name = "Striker %d"
+	unique = {
+		"Bat To The Skull" "Bleed!" "Busted Kneecaps" "El Cazador" "Fighting Cazadors" "Flesh Gnasher" "Flesh Picker" "Grated Ribcage" "Gutshot" "In Dreamland" "Lil Sneak" "Mutilated Slave" "Pillage And Rape" "Rapid Deathclaw" "Rusty Needles" "Say Goodbye!" "Scream!" "Sunburned Scav" "THIS IS AN AMBUSH" "The Pony Ride"
+	}
+}
+
+SCO_HEAVY = {
+	name = NAME_THEME_SHIPS_SCO_HEAVY
+	for_countries = { SCO }
+	type = ship
+	ship_types = { heavy_ship_unit }
+	fallback_name = "Bruiser %d"
+	unique = {
+		"Cocked Tail" "Crowd Pleaser" "Feel It Deep" "Gore S'More" "Leather-Strapped Goddess" "Might Make Right" "Nesting Ground" "No River Too Deep" "One Good Eye" "Poison in the Blood" "Ready to Pounce" "Rip And Tear" "Take It" "That Tenderizer" "The Meatgrinder" "To Wall Too High" "Two Pints Left" "Venom in the Brain" "Witness Me!" "You're Fucked!"
+	}
+}
+
+SCO_SUPER_HEAVY = {
+	name = NAME_THEME_SHIPS_SCO_SUPER_HEAVY
+	for_countries = { SCO }
+	type = ship
+	ship_types = { super_heavy_ship_unit }
+	fallback_name = "Warcraft %d"
+	unique = {
+		"6 Eyes Focus Right on You!" "Black Out The Sun" "Fell Into Our Clutch Have Yuh!?" "Get! Skull! Fucked!" "Lucifer's Bastard" "Mobile Hell" "No Forgiveness" "No Sympathy" "Raider Paradise" "Shoot, We Dare Yuh!" "Skullbasher's Fortress" "The King of This Food-chain" "Uncle Jim's War Tug" "Wasteland Scav to Top Predator" "We've Readied Defiance"
+	}
+}

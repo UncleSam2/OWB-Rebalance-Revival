@@ -1,0 +1,43 @@
+﻿ARR_LIGHT = {
+	name = NAME_THEME_SHIPS_ARR_LIGHT
+	for_countries = { ARR }
+	type = ship
+	ship_types = { light_ship_unit }
+	fallback_name = "Strike Boat %d"
+	unique = {
+		"Better Out Than In" "Breath It In" "Can't Build Down There" "Desert Lover" "Gladly Rejected" "Home Set Here" "Living Free" "Lucky 13" "No Friend of Mutants" "No Walls Here" "No Way But This" "One Moon Mourn" "Rad Happy" "Rebuilt For Better" "Seeing Sky" "Stand Tall" "Trials Welcome" "Tribal Proud" "We Craft Our Future" "Wide Open"
+	}
+}
+
+ARR_MEDIUM = {
+	name = NAME_THEME_SHIPS_ARR_MEDIUM
+	for_countries = { ARR }
+	type = ship
+	ship_types = { medium_ship_screen_unit }
+	fallback_name = "Flanker Craft %d"
+	unique = {
+		"All From 13" "Claustrophobe's Dream" "Could You Rival?" "Don't Fallow Me" "Forged In Dust" "Lead On, Chosen One" "Miserable And Happy" "Reunited At Arroyo" "Seeing Stars" "Spear to Plasma" "Take All Burdens" "Third Geners" "To Lengths To Great" "Tribulation Makes Us Strong" "We All Choose"
+	}
+}
+
+ARR_HEAVY = {
+	name = NAME_THEME_SHIPS_ARR_HEAVY
+	for_countries = { ARR }
+	type = ship
+	ship_types = { heavy_ship_unit }
+	fallback_name = "Interdictor Ship %d"
+	unique = {
+		"Always Were One" "Baked Through" "Oil Rig Victors" "People's Savior" "Petty Ancestry" "Suvivors All" "The Tribal Dweller" "Trained Well" "Two Halfs of One Whole" "Valdez II"
+	}
+}
+
+ARR_SUPER_HEAVY = {
+	name = NAME_THEME_SHIPS_ARR_SUPER_HEAVY
+	for_countries = { ARR }
+	type = ship
+	ship_types = { super_heavy_ship_unit }
+	fallback_name = "Enforcer Ship %d"
+	unique = {
+		"A Continued Greatness" "Alone We Thrived" "Child of Greatness" "Destined for Remembrance" "Jacoren's Best Mistake" "Paid In Water Chips"
+	}
+}

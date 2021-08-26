@@ -1,0 +1,40 @@
+owbcpcsn_switch_decisions = {
+	owbcpcsn_switch_names_off = {
+		cost = 0
+		fire_only_once = no
+		available = {
+			is_ai = no
+			not = { has_global_flag = owbcpcsn_switch_off_names_flag has_global_flag = owbcpcsn_switch_off_flag }
+		}
+		visible = { 
+			num_subjects > 0
+			has_global_flag = owbcpcsn_switch_on_names_flag
+		}
+		ai_will_do = {
+		  factor = -1
+		}
+		complete_effect = {
+			set_global_flag = owbcpcsn_switch_off_names_flag
+			clr_global_flag = owbcpcsn_switch_on_names_flag
+		}
+	}
+	owbcpcsn_switch_names_on = {
+		cost = 0
+		fire_only_once = no
+		available = {
+			is_ai = no
+			not = { has_global_flag = owbcpcsn_switch_on_names_flag has_global_flag = owbcpcsn_switch_off_flag }
+		}
+		visible = { 
+			num_subjects > 0
+			has_global_flag = owbcpcsn_switch_off_names_flag
+		}
+		ai_will_do = {
+		  factor = -1
+		}
+		complete_effect = {
+			set_global_flag = owbcpcsn_switch_on_names_flag
+			clr_global_flag = owbcpcsn_switch_off_names_flag
+		}
+	}
+}

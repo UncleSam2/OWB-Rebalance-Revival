@@ -1,0 +1,43 @@
+﻿TRL_LIGHT = {
+	name = NAME_THEME_SHIPS_TRL_LIGHT
+	for_countries = { TRL }
+	type = ship
+	ship_types = { light_ship_unit }
+	fallback_name = "Chaser %d"
+	unique = {
+		"Bash Them" "Bleak Water" "Blood Now!" "Boat" "Bone Cruntch" "Bonepick" "Break You!" "Bugger" "Don't Think" "Fear" "Fight!" "Fist" "Kill Human" "Marrow Drink" "More Flesh!" "Paddle" "Pain" "Seize All" "Skull Chunk" "Snout Punch"
+	}
+}
+
+TRL_MEDIUM = {
+	name = NAME_THEME_SHIPS_TRL_MEDIUM
+	for_countries = { TRL }
+	type = ship
+	ship_types = { medium_ship_screen_unit }
+	fallback_name = "Bomb Boat %d"
+	unique = {
+		"AGGGGHHHHH" "Brab Face" "Bring More" "Buck Gun" "Club" "Cruel" "Elsewhere" "Gut Bus" "Hot Spot" "Maggot Meal" "No Jams" "Skin Rack" "Smell You!" "Spiked Plank" "The Led" "The Skit" "Thorned Rock" "Thunder Hunter" "Winged" "Yes Demon"
+	}
+}
+
+TRL_HEAVY = {
+	name = NAME_THEME_SHIPS_TRL_HEAVY
+	for_countries = { TRL }
+	type = ship
+	ship_types = { heavy_ship_unit }
+	fallback_name = "Rocket Boat %d"
+	unique = {
+		"All Over" "BREAK" "Death Judge" "Dry Rain" "Ends Now" "Flaming Sky" "HAHAHAHA" "HIT" "Man's Bane" "More Blood!" "Night Kill" "SMASH" "The BOOM!" "Walk Faster" "You Last Steps"
+	}
+}
+
+TRL_SUPER_HEAVY = {
+	name = NAME_THEME_SHIPS_TRL_SUPER_HEAVY
+	for_countries = { TRL }
+	type = ship
+	ship_types = { super_heavy_ship_unit }
+	fallback_name = "Big Gun Ship %d"
+	unique = {
+		"Fair Kill" "Full Hoard Aboard" "Jaw Break" "Legacy of the First" "NOOOOOOOOOOO" "Ready For Death!" "Reaper" "Slayer of Man"
+	}
+}

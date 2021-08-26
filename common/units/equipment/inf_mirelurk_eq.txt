@@ -1,0 +1,51 @@
+equipments = {
+
+	mirelurk_equipment = {
+		is_archetype = yes
+		is_buildable = no
+		type = infantry
+		group_by = archetype
+		interface_category = interface_category_land
+
+		upgrades = {
+			#inf_production_upgrade
+			#inf_redundancy_upgrade
+			#inf_weight_upgrade
+			#inf_charge_upgrade
+			#inf_sidearms_upgrade
+			#inf_efficiency_upgrade
+		}
+
+		reliability = 1
+
+		#Space taken in convoy
+		lend_lease_cost = 1
+
+		build_cost_ic = 15
+
+		# Defensive Abilities
+		defense = 25
+		breakthrough = 15
+		hardness = 0.3
+		armor_value = 25
+		maximum_speed = 4.5
+
+		# Offensive Abilities
+		soft_attack = 20
+		hard_attack = 10
+		ap_attack = 10
+
+		resources = {
+		}
+	}
+
+	# mirelurks
+	mirelurk_equipment_1 = {
+		archetype = mirelurk_equipment
+		priority = 10
+
+		resources = {
+			water = 2
+		}
+	}
+}

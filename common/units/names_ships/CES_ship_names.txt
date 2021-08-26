@@ -1,0 +1,43 @@
+﻿CES_LIGHT = {
+	name = NAME_THEME_SHIPS_CES_LIGHT
+	for_countries = { CES }
+	type = ship
+	ship_types = { light_ship_unit }
+	fallback_name = "White Leg Canoe %d"
+	unique = {
+		"Bark Canoe" "Black Fish" "Confidence" "Down-Streamer" "Guaranteed Miss" "Janky-Float" "Know This" "Light Driftwood" "Quality" "River Prancer" "Snake" "Steady? Yes." "Swift Sailer" "Trouble? No." "Water Cat" "Well Made"
+	}
+}
+
+CES_MEDIUM = {
+	name = NAME_THEME_SHIPS_CES_MEDIUM
+	for_countries = { CES }
+	type = ship
+	ship_types = { medium_ship_screen_unit }
+	fallback_name = "White Leg Boat %d"
+	unique = {
+		"Catch Wind" "Cutter" "Ease of Stream" "First Step" "Forager" "Gatherings" "Going-Far" "Good-Haul" "Greatly Assured" "If Needed" "Know This River" "Ready On" "Sun-Chasing" "Wake Over" "Waters Calm"
+	}
+}
+
+CES_HEAVY = {
+	name = NAME_THEME_SHIPS_CES_HEAVY
+	for_countries = { CES }
+	type = ship
+	ship_types = { heavy_ship_unit }
+	fallback_name = "White Leg Vessel %d"
+	unique = {
+		"Arrow Ready" "Bighorner Gruff" "Blade Out" "Deep Tomahawk" "Great One" "Hard To Find" "Natural Wayfinder" "Shallow Water Crossing" "Sharp Tip!" "Trail-Walker" "Warrior Born"
+	}
+}
+
+CES_SUPER_HEAVY = {
+	name = NAME_THEME_SHIPS_CES_SUPER_HEAVY
+	for_countries = { CES }
+	type = ship
+	ship_types = { super_heavy_ship_unit }
+	fallback_name = "White Leg Warship %d"
+	unique = {
+		"Cazador Wing" "Feral Deathclaw" "Gecko-Eyed" "Proud Coyote" "Yao Guai"
+	}
+}

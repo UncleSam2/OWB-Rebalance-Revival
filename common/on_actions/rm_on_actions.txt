@@ -1,0 +1,29 @@
+on_actions = {
+	on_startup = {
+		effect = {
+			YKZ = {
+				remove_ideas = raider_nation
+			}
+			CCW = {
+				remove_ideas = raider_nation
+			}
+			RIP = {
+				remove_ideas = raider_nation
+			}
+			JAC = {
+			remove_ideas = raider_nation
+			}
+			SCO = {
+			remove_ideas = raider_nation
+			remove_ideas = roaring_machines
+			}
+			TPM = { 
+				remove_ideas = settler_nation
+			}
+			CAR = { 
+				remove_ideas = raider_nation
+			}
+#End
+		}
+	}
+}

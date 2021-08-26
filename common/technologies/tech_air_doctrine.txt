@@ -1,0 +1,4318 @@
+technologies = {
+	#-----------------------------------
+	# special forces
+	#-----------------------------------
+
+	special_forces_doctrine = {
+
+		enable_subunits = {
+			spec_ops
+		}
+
+		XOR = { outsider_warfare_doctrine }
+
+		on_research_complete_limit = {
+			NOT = {
+				has_template_containing_unit = spec_ops
+			}
+		}
+
+		on_research_complete = {
+			hidden_effect = {
+				load_oob = "unlock_special_forces"
+			}
+			custom_effect_tooltip = UNLOCK_DIVISION_TEMPLATE
+		}
+
+		path = {
+			leads_to_tech = spec_force_light_wet_training
+			research_cost_coeff = 1
+		}
+		path = {
+			leads_to_tech = spec_force_light_mountain_training
+			research_cost_coeff = 1
+		}
+		path = {
+			leads_to_tech = spec_force_light_plains_training
+			research_cost_coeff = 1
+		}
+		path = {
+			leads_to_tech = spec_force_heavy_mountain_training
+			research_cost_coeff = 1
+		}
+		path = {
+			leads_to_tech = spec_force_heavy_plains_training
+			research_cost_coeff = 1
+		}
+		path = {
+			leads_to_tech = spec_force_heavy_urban_training
+			research_cost_coeff = 1
+		}
+		path = {
+			leads_to_tech = spec_force_special_divisions
+			research_cost_coeff = 1
+		}
+
+		dependencies = {
+			spec_ops_equipment_tech_1 = 1
+		}
+
+		folder = {
+			name = fallout_air_doctrine_folder
+			position = { x = 0 y = 0 }
+		}
+
+		doctrine = yes
+		research_cost = 2
+		xp_research_type = army
+		xp_research_cost = 50
+		xp_research_bonus = 0.5
+
+		categories = {
+			spec_force_tech_category
+			spec_force_doctrine_category
+		}
+
+		ai_will_do = {
+			factor = 3
+			modifier = {
+				factor = 3
+				OR = {
+					has_country_flag = spec_ops_doctrine_ai
+					has_country_flag = power_armor_doctrine_ai
+				}
+			}
+			modifier = {
+				factor = 0
+				is_researching_technology = outsider_warfare_doctrine
+			}
+			modifier = {
+				factor = 0
+				has_tech = outsider_warfare_doctrine
+			}
+		}
+	}
+
+	spec_force_light_wet_training = {
+
+		spec_ops = {
+			max_organisation = 1
+			marsh = {
+				movement = 0.02
+				attack = 0.08
+				defence = 0.08
+			}
+			jungle = {
+				movement = 0.02
+				attack = 0.08
+				defence = 0.08
+			}
+		}
+		ghoul_paratrooper = {
+			max_organisation = 1
+			marsh = {
+				movement = 0.03
+				attack = 0.08
+				defence = 0.08
+			}
+			jungle = {
+				movement = 0.03
+				attack = 0.08
+				defence = 0.08
+			}
+		}
+
+		XOR = { spec_force_heavy_urban_training }
+
+		folder = {
+			name = fallout_air_doctrine_folder
+			position = { x = -2 y = 4 }
+		}
+
+		doctrine = yes
+		research_cost = 2
+		xp_research_type = army
+		xp_research_cost = 50
+		xp_research_bonus = 0.5
+
+		categories = {
+			spec_force_tech_category
+			spec_force_doctrine_category
+		}
+
+		ai_will_do = {
+			factor = 3
+			modifier = {
+				factor = 3
+				has_country_flag = spec_ops_doctrine_ai
+			}
+			modifier = {
+				factor = 0
+				has_country_flag = power_armor_doctrine_ai
+			}
+			modifier = {
+				factor = 0
+				is_researching_technology = spec_force_heavy_urban_training
+			}
+			modifier = {
+				factor = 0
+				has_tech = spec_force_heavy_urban_training
+			}
+		}
+	}
+
+	spec_force_light_mountain_training = {
+
+		spec_ops = {
+			max_organisation = 1
+			hills = {
+				movement = 0.02
+				attack = 0.08
+				defence = 0.08
+			}
+			mountain = {
+				movement = 0.02
+				attack = 0.08
+				defence = 0.08
+			}
+		}
+		ghoul_paratrooper = {
+			max_organisation = 1
+			hills = {
+				movement = 0.03
+				attack = 0.08
+				defence = 0.08
+			}
+			mountain = {
+				movement = 0.03
+				attack = 0.08
+				defence = 0.08
+			}
+		}
+
+		XOR = { spec_force_heavy_mountain_training }
+
+		folder = {
+			name = fallout_air_doctrine_folder
+			position = { x = -2 y = 2 }
+		}
+
+		doctrine = yes
+		research_cost = 2
+		xp_research_type = army
+		xp_research_cost = 50
+		xp_research_bonus = 0.5
+
+		categories = {
+			spec_force_tech_category
+			spec_force_doctrine_category
+		}
+
+		ai_will_do = {
+			factor = 3
+			modifier = {
+				factor = 3
+				has_country_flag = spec_ops_doctrine_ai
+			}
+			modifier = {
+				factor = 0
+				has_country_flag = power_armor_doctrine_ai
+			}
+			modifier = {
+				factor = 0
+				is_researching_technology = spec_force_heavy_mountain_training
+			}
+			modifier = {
+				factor = 0
+				has_tech = spec_force_heavy_mountain_training
+			}
+		}
+	}
+
+	spec_force_light_plains_training = {
+
+		spec_ops = {
+			max_organisation = 1
+			forest = {
+				movement = 0.02
+				attack = 0.08
+				defence = 0.08
+			}
+			plains = {
+				movement = 0.02
+				attack = 0.08
+				defence = 0.08
+			}
+			desert = {
+				movement = 0.02
+				attack = 0.08
+				defence = 0.08
+			}
+		}
+		ghoul_paratrooper = {
+			max_organisation = 1
+			forest = {
+				movement = 0.03
+				attack = 0.08
+				defence = 0.08
+			}
+			plains = {
+				movement = 0.03
+				attack = 0.08
+				defence = 0.08
+			}
+			desert = {
+				movement = 0.03
+				attack = 0.08
+				defence = 0.08
+			}
+		}
+
+		XOR = { spec_force_heavy_plains_training }
+
+		folder = {
+			name = fallout_air_doctrine_folder
+			position = { x = -2 y = 6 }
+		}
+
+		doctrine = yes
+		research_cost = 2
+		xp_research_type = army
+		xp_research_cost = 50
+		xp_research_bonus = 0.5
+
+		categories = {
+			spec_force_tech_category
+			spec_force_doctrine_category
+		}
+
+		ai_will_do = {
+			factor = 3
+			modifier = {
+				factor = 3
+				has_country_flag = spec_ops_doctrine_ai
+			}
+			modifier = {
+				factor = 0
+				has_country_flag = power_armor_doctrine_ai
+			}
+			modifier = {
+				factor = 0
+				is_researching_technology = spec_force_heavy_plains_training
+			}
+			modifier = {
+				factor = 0
+				has_tech = spec_force_heavy_plains_training
+			}
+		}
+	}
+
+	spec_force_heavy_mountain_training = {
+
+		power_armour = {
+			max_organisation = 1
+				hills = {
+					movement = 0.02
+					attack = 0.08
+					defence = 0.08
+				}
+				mountain = {
+					movement = 0.02
+					attack = 0.08
+					defence = 0.08
+				}
+			}
+		power_armour_fireteam_infantry = {
+			max_organisation = 1
+				hills = {
+					movement = 0.01
+					attack = 0.04
+					defence = 0.04
+				}
+				mountain = {
+					movement = 0.02
+					attack = 0.04
+					defence = 0.04
+				}
+			}
+		power_armour_demolitions_infantry = {
+			max_organisation = 1
+				hills = {
+					movement = 0.01
+					attack = 0.04
+					defence = 0.04
+				}
+				mountain = {
+					movement = 0.01
+					attack = 0.04
+					defence = 0.04
+				}
+			}
+
+		XOR = { spec_force_light_mountain_training }
+
+		folder = {
+			name = fallout_air_doctrine_folder
+			position = { x = 2 y = 2 }
+		}
+
+		doctrine = yes
+		research_cost = 2
+		xp_research_type = army
+		xp_research_cost = 50
+		xp_research_bonus = 0.5
+
+		categories = {
+			spec_force_tech_category
+			spec_force_doctrine_category
+		}
+
+		ai_will_do = {
+			factor = 3
+			modifier = {
+				factor = 0
+				has_country_flag = spec_ops_doctrine_ai
+			}
+			modifier = {
+				factor = 3
+				has_country_flag = power_armor_doctrine_ai
+			}
+			modifier = {
+				factor = 0
+				is_researching_technology = spec_force_light_mountain_training
+			}
+			modifier = {
+				factor = 0
+				has_tech = spec_force_light_mountain_training
+			}
+		}
+	}
+
+	spec_force_heavy_plains_training = {
+
+		power_armour = {
+			max_organisation = 1
+			forest = {
+				movement = 0.02
+				attack = 0.08
+				defence = 0.08
+			}
+			plains = {
+				movement = 0.02
+				attack = 0.08
+				defence = 0.08
+			}
+			desert = {
+				movement = 0.02
+				attack = 0.08
+				defence = 0.08
+			}
+		}
+		power_armour_fireteam_infantry = {
+			max_organisation = 1
+			forest = {
+				movement = 0.01
+				attack = 0.04
+				defence = 0.04
+			}
+			plains = {
+				movement = 0.01
+				attack = 0.04
+				defence = 0.04
+			}
+			desert = {
+				movement = 0.01
+				attack = 0.04
+				defence = 0.04
+			}
+		}
+		power_armour_demolitions_infantry = {
+			max_organisation = 1
+			forest = {
+				movement = 0.02
+				attack = 0.04
+				defence = 0.04
+			}
+			plains = {
+				movement = 0.02
+				attack = 0.04
+				defence = 0.04
+			}
+			desert = {
+				movement = 0.02
+				attack = 0.04
+				defence = 0.04
+			}
+		}
+
+		XOR = { spec_force_light_plains_training }
+
+		folder = {
+			name = fallout_air_doctrine_folder
+			position = { x = 2 y = 6 }
+		}
+
+		doctrine = yes
+		research_cost = 2
+		xp_research_type = army
+		xp_research_cost = 50
+		xp_research_bonus = 0.5
+
+		categories = {
+			spec_force_tech_category
+			spec_force_doctrine_category
+		}
+
+		ai_will_do = {
+			factor = 3
+			modifier = {
+				factor = 0
+				has_country_flag = spec_ops_doctrine_ai
+			}
+			modifier = {
+				factor = 3
+				has_country_flag = power_armor_doctrine_ai
+			}
+			modifier = {
+				factor = 0
+				is_researching_technology = spec_force_light_plains_training
+			}
+			modifier = {
+				factor = 0
+				has_tech = spec_force_light_plains_training
+			}
+		}
+	}
+
+	spec_force_heavy_urban_training = {
+
+		power_armour = {
+			max_organisation = 1
+			urban = {
+				movement = 0.05
+				attack = 0.08
+				defence = 0.08
+			}
+			fort = {
+				movement = 0.05
+				attack = 0.08
+				defence = 0.08
+			}
+		}
+		power_armour_fireteam_infantry = {
+			max_organisation = 1
+			urban = {
+				movement = 0.025
+				attack = 0.04
+				defence = 0.04
+			}
+			fort = {
+				movement = 0.025
+				attack = 0.04
+				defence = 0.04
+			}
+		}
+		power_armour_demolitions_infantry = {
+			max_organisation = 1
+				urban = {
+				movement = 0.025
+				attack = 0.04
+				defence = 0.04
+				}
+				fort = {
+				movement = 0.025
+				attack = 0.04
+				defence = 0.04
+				}
+			}
+
+		XOR = { spec_force_light_wet_training }
+
+		folder = {
+			name = fallout_air_doctrine_folder
+			position = { x = 2 y = 4 }
+		}
+
+		doctrine = yes
+		research_cost = 2
+		xp_research_type = army
+		xp_research_cost = 50
+		xp_research_bonus = 0.5
+
+		categories = {
+			spec_force_tech_category
+			spec_force_doctrine_category
+		}
+
+		ai_will_do = {
+			factor = 3
+			modifier = {
+				factor = 0
+				has_country_flag = spec_ops_doctrine_ai
+			}
+			modifier = {
+				factor = 3
+				has_country_flag = power_armor_doctrine_ai
+			}
+			modifier = {
+				factor = 0
+				is_researching_technology = spec_force_light_wet_training
+			}
+			modifier = {
+				factor = 0
+				has_tech = spec_force_light_wet_training
+			}
+		}
+	}
+
+	spec_force_special_divisions = {
+
+		#special_forces_cap = 0.02
+		special_forces_min = 15 # 10
+
+		path = {
+			leads_to_tech = spec_force_cap
+			research_cost_coeff = 1
+		}
+		path = {
+			leads_to_tech = spec_force_defense
+			research_cost_coeff = 1
+		}
+		path = {
+			leads_to_tech = spec_force_environment_training
+			research_cost_coeff = 1
+		}
+
+		folder = {
+			name = fallout_air_doctrine_folder
+			position = { x = 0 y = 8 }
+		}
+
+		doctrine = yes
+		research_cost = 2
+		xp_research_type = army
+		xp_research_cost = 50
+		xp_research_bonus = 0.5
+
+		categories = {
+			spec_force_tech_category
+			spec_force_doctrine_category
+		}
+
+		ai_will_do = {
+			factor = 3
+			modifier = {
+				factor = 3
+				OR = {
+					has_country_flag = spec_ops_doctrine_ai
+					has_country_flag = power_armor_doctrine_ai
+				}
+			}
+		}
+	}
+
+	spec_force_cap = {
+
+		#special_forces_cap = 0.03
+		special_forces_min = 25 # 5
+
+		XOR = { spec_force_defense }
+
+		folder = {
+			name = fallout_air_doctrine_folder
+			position = { x = -2 y = 10 }
+		}
+
+		doctrine = yes
+		research_cost = 2
+		xp_research_type = army
+		xp_research_cost = 50
+		xp_research_bonus = 0.5
+
+		categories = {
+			spec_force_tech_category
+			spec_force_doctrine_category
+		}
+
+		ai_will_do = {
+			factor = 3
+			modifier = {
+				factor = 3
+				OR = {
+					has_country_flag = spec_ops_doctrine_ai
+					has_country_flag = power_armor_doctrine_ai
+				}
+			}
+			modifier = {
+				factor = 0
+				is_researching_technology = spec_force_defense
+			}
+			modifier = {
+				factor = 0
+				has_tech = spec_force_defense
+			}
+		}
+	}
+
+	spec_force_cap_1 = {
+
+		#special_forces_cap = 0.05
+		special_forces_min = 45 # 7
+
+		XOR = { spec_force_offence }
+
+		folder = {
+			name = fallout_air_doctrine_folder
+			position = { x = -2 y = 12 }
+		}
+
+		doctrine = yes
+		research_cost = 2
+		xp_research_type = army
+		xp_research_cost = 50
+		xp_research_bonus = 0.5
+
+		categories = {
+			spec_force_tech_category
+			spec_force_doctrine_category
+		}
+
+		ai_will_do = {
+			factor = 3
+			modifier = {
+				factor = 3
+				OR = {
+					has_country_flag = spec_ops_doctrine_ai
+					has_country_flag = power_armor_doctrine_ai
+				}
+			}
+			modifier = {
+				factor = 0
+				is_researching_technology = spec_force_offence
+			}
+			modifier = {
+				factor = 0
+				has_tech = spec_force_offence
+			}
+		}
+	}
+
+	spec_force_cap_2 = {
+
+		special_forces_cap = 0.03
+		special_forces_min  = 5
+
+		XOR = { spec_force_recovery }
+
+		folder = {
+			name = fallout_air_doctrine_folder
+			position = { x = -2 y = 14 }
+		}
+
+		doctrine = yes
+		research_cost = 2
+		xp_research_type = army
+		xp_research_cost = 50
+		xp_research_bonus = 0.5
+
+		categories = {
+			spec_force_tech_category
+			spec_force_doctrine_category
+		}
+
+		ai_will_do = {
+			factor = 3
+			modifier = {
+				factor = 3
+				OR = {
+					has_country_flag = spec_ops_doctrine_ai
+					has_country_flag = power_armor_doctrine_ai
+				}
+			}
+			modifier = {
+				factor = 0
+				is_researching_technology = spec_force_recovery
+			}
+			modifier = {
+				factor = 0
+				has_tech = spec_force_recovery
+			}
+		}
+	}
+
+	spec_force_environment_training = {
+
+		category_light_special_forces = {
+				acclimatization_hot_climate_gain_factor = 0.1
+				acclimatization_cold_climate_gain_factor = 0.1
+		}
+		category_power_armour = {
+				acclimatization_hot_climate_gain_factor = 0.05
+				acclimatization_cold_climate_gain_factor = 0.05
+		}
+
+		path = {
+			leads_to_tech = spec_force_cap_1
+			research_cost_coeff = 1
+		}
+		path = {
+			leads_to_tech = spec_force_offence
+			research_cost_coeff = 1
+		}
+		path = {
+			leads_to_tech = spec_force_organisation
+			research_cost_coeff = 1
+		}
+
+		folder = {
+			name = fallout_air_doctrine_folder
+			position = { x = 0 y = 10 }
+		}
+
+		doctrine = yes
+		research_cost = 2
+		xp_research_type = army
+		xp_research_cost = 50
+		xp_research_bonus = 0.5
+
+		categories = {
+			spec_force_tech_category
+			spec_force_doctrine_category
+		}
+
+		ai_will_do = {
+			factor = 3
+			modifier = {
+				factor = 3
+				OR = {
+					has_country_flag = spec_ops_doctrine_ai
+					has_country_flag = power_armor_doctrine_ai
+				}
+			}
+		}
+	}
+
+	spec_force_defense = {
+
+		category_special_forces = {
+			defense = 0.05
+		}
+
+		XOR = { spec_force_cap }
+
+		folder = {
+			name = fallout_air_doctrine_folder
+			position = { x = 2 y = 10 }
+		}
+
+		doctrine = yes
+		research_cost = 2
+		xp_research_type = army
+		xp_research_cost = 50
+		xp_research_bonus = 0.5
+
+		categories = {
+			spec_force_tech_category
+			spec_force_doctrine_category
+		}
+
+		ai_will_do = {
+			factor = 3
+			modifier = {
+				factor = 3
+				OR = {
+					has_country_flag = spec_ops_doctrine_ai
+					has_country_flag = power_armor_doctrine_ai
+				}
+			}
+			modifier = {
+				factor = 0
+				is_researching_technology = spec_force_cap
+			}
+			modifier = {
+				factor = 0
+				has_tech = spec_force_cap
+			}
+		}
+	}
+
+	spec_force_offence = {
+
+		category_light_special_forces = {
+			hard_attack = 0.05
+			soft_attack = 0.05
+		}
+		category_power_armour = {
+			hard_attack = 0.03
+			soft_attack = 0.03
+		}
+
+		XOR = { spec_force_cap_1 }
+
+		folder = {
+			name = fallout_air_doctrine_folder
+			position = { x = 2 y = 12 }
+		}
+
+		doctrine = yes
+		research_cost = 2
+		xp_research_type = army
+		xp_research_cost = 50
+		xp_research_bonus = 0.5
+
+		categories = {
+			spec_force_tech_category
+			spec_force_doctrine_category
+		}
+
+		ai_will_do = {
+			factor = 3
+			modifier = {
+				factor = 3
+				OR = {
+					has_country_flag = spec_ops_doctrine_ai
+					has_country_flag = power_armor_doctrine_ai
+				}
+			}
+			modifier = {
+				factor = 0
+				is_researching_technology = spec_force_cap_1
+			}
+			modifier = {
+				factor = 0
+				has_tech = spec_force_cap_1
+			}
+		}
+	}
+
+	spec_force_recovery = {
+
+		category_special_forces = {
+			default_morale = 0.08
+		}
+
+		XOR = { spec_force_cap_2 }
+
+		folder = {
+			name = fallout_air_doctrine_folder
+			position = { x = 2 y = 14 }
+		}
+
+		doctrine = yes
+		research_cost = 2
+		xp_research_type = army
+		xp_research_cost = 50
+		xp_research_bonus = 0.5
+
+		categories = {
+			spec_force_tech_category
+			spec_force_doctrine_category
+		}
+
+		ai_will_do = {
+			factor = 3
+			modifier = {
+				factor = 3
+				OR = {
+					has_country_flag = spec_ops_doctrine_ai
+					has_country_flag = power_armor_doctrine_ai
+				}
+			}
+			modifier = {
+				factor = 0
+				is_researching_technology = spec_force_cap_2
+			}
+			modifier = {
+				factor = 0
+				has_tech = spec_force_cap_2
+			}
+		}
+	}
+
+	spec_force_organisation = {
+
+		category_special_forces = {
+			max_organisation = 5
+		}
+
+		path = {
+			leads_to_tech = spec_force_assault_training
+			research_cost_coeff = 1
+		}
+		path = {
+			leads_to_tech = spec_force_cap_2
+			research_cost_coeff = 1
+		}
+		path = {
+			leads_to_tech = spec_force_recovery
+			research_cost_coeff = 1
+		}
+
+		folder = {
+			name = fallout_air_doctrine_folder
+			position = { x = 0 y = 12 }
+		}
+
+		doctrine = yes
+		research_cost = 2
+		xp_research_type = army
+		xp_research_cost = 50
+		xp_research_bonus = 0.5
+
+		categories = {
+			spec_force_tech_category
+			spec_force_doctrine_category
+		}
+
+		ai_will_do = {
+			factor = 3
+			modifier = {
+				factor = 3
+				OR = {
+					has_country_flag = spec_ops_doctrine_ai
+					has_country_flag = power_armor_doctrine_ai
+				}
+			}
+		}
+	}
+
+	spec_force_marine_training = {
+
+		power_armour = {
+			max_organisation = 1
+			river = {
+				attack = 0.25
+				defence = 0.1
+			}
+			amphibious = {
+				attack = 0.25
+				defence = 0.1
+			}
+		}
+		power_armour_demolitions_infantry = {
+			max_organisation = 1
+			river = {
+				attack = 0.25
+				defence = 0.1
+			}
+			amphibious = {
+				attack = 0.25
+				defence = 0.1
+			}
+		}
+		power_armour_fireteam_infantry = {
+			max_organisation = 1
+			river = {
+				attack = 0.25
+				defence = 0.1
+			}
+			amphibious = {
+				attack = 0.25
+				defence = 0.1
+			}
+		}
+		spec_ops_cavalry = {
+			max_organisation = 1
+			river = {
+				attack = 0.25
+				defence = 0.1
+			}
+			amphibious = {
+				attack = 0.25
+				defence = 0.1
+			}
+		}
+		spec_ops = {
+			max_organisation = 1
+			river = {
+				attack = 0.25
+				defence = 0.1
+			}
+			amphibious = {
+				attack = 0.25
+				defence = 0.1
+			}
+		}
+		ghoul_paratrooper = {
+			max_organisation = 1
+			river = {
+				attack = 0.25
+				defence = 0.1
+			}
+			amphibious = {
+				attack = 0.25
+				defence = 0.1
+			}
+		}
+
+		folder = {
+			name = fallout_air_doctrine_folder
+			position = { x = -2 y = 16 }
+		}
+
+		doctrine = yes
+		research_cost = 2
+		xp_research_type = army
+		xp_research_cost = 50
+		xp_research_bonus = 0.5
+
+		categories = {
+			spec_force_tech_category
+			spec_force_doctrine_category
+		}
+
+		ai_will_do = {
+			factor = 3
+			modifier = {
+				factor = 3
+				OR = {
+					has_country_flag = spec_ops_doctrine_ai
+					has_country_flag = power_armor_doctrine_ai
+				}
+			}
+		}
+	}
+
+	spec_force_maintenance_training = {
+
+		category_special_forces = {
+			reliability_factor = 0.01
+		}
+
+		folder = {
+			name = fallout_air_doctrine_folder
+			position = { x = 2 y = 16 }
+		}
+
+		doctrine = yes
+		research_cost = 2
+		xp_research_type = army
+		xp_research_cost = 50
+		xp_research_bonus = 0.5
+
+		categories = {
+			spec_force_tech_category
+			spec_force_doctrine_category
+		}
+
+		ai_will_do = {
+			factor = 3
+			modifier = {
+				factor = 3
+				OR = {
+					has_country_flag = spec_ops_doctrine_ai
+					has_country_flag = power_armor_doctrine_ai
+				}
+			}
+		}
+	}
+
+	spec_force_assault_training = {
+
+		category_light_special_forces = {
+			maximum_speed = 0.06
+			breakthrough = 0.06
+		}
+		category_power_armour = {
+			maximum_speed = 0.04
+			breakthrough = 0.08
+		}
+
+		path = {
+			leads_to_tech = spec_force_heavy_infantry_focus
+			research_cost_coeff = 1
+		}
+		path = {
+			leads_to_tech = spec_force_light_infantry_focus
+			research_cost_coeff = 1
+		}
+		path = {
+			leads_to_tech = spec_force_maintenance_training
+			research_cost_coeff = 1
+		}
+		path = {
+			leads_to_tech = spec_force_marine_training
+			research_cost_coeff = 1
+		}
+
+		folder = {
+			name = fallout_air_doctrine_folder
+			position = { x = 0 y = 14 }
+		}
+
+		doctrine = yes
+		research_cost = 2
+		xp_research_type = army
+		xp_research_cost = 50
+		xp_research_bonus = 0.5
+
+		categories = {
+			spec_force_tech_category
+			spec_force_doctrine_category
+		}
+
+		ai_will_do = {
+			factor = 3
+			modifier = {
+				factor = 3
+				OR = {
+					has_country_flag = spec_ops_doctrine_ai
+					has_country_flag = power_armor_doctrine_ai
+				}
+			}
+		}
+	}
+
+	spec_force_heavy_infantry_focus = {
+
+		category_power_armour = {
+			max_organisation = 5
+		}
+
+		XOR = { spec_force_light_infantry_focus }
+
+		path = {
+			leads_to_tech = spec_force_elite_forces
+			research_cost_coeff = 1
+		}
+
+		folder = {
+			name = fallout_air_doctrine_folder
+			position = { x = 1 y = 18 }
+		}
+
+		doctrine = yes
+		research_cost = 2
+		xp_research_type = army
+		xp_research_cost = 50
+		xp_research_bonus = 0.5
+
+		categories = {
+			spec_force_tech_category
+			spec_force_doctrine_category
+		}
+
+		ai_will_do = {
+			factor = 3
+			modifier = {
+				factor = 3
+				has_country_flag = power_armor_doctrine_ai
+			}
+			modifier = {
+				factor = 0
+				has_country_flag = spec_ops_doctrine_ai
+			}
+			modifier = {
+				factor = 0
+				is_researching_technology = spec_force_light_infantry_focus
+			}
+			modifier = {
+				factor = 0
+				has_tech = spec_force_light_infantry_focus
+			}
+		}
+	}
+
+	spec_force_light_infantry_focus = {
+
+		category_light_special_forces = {
+			max_organisation = 5
+		}
+
+		XOR = { spec_force_heavy_infantry_focus }
+
+		path = {
+			leads_to_tech = spec_force_elite_forces
+			research_cost_coeff = 1
+		}
+
+		folder = {
+			name = fallout_air_doctrine_folder
+			position = { x = -1 y = 18 }
+		}
+
+		doctrine = yes
+		research_cost = 2
+		xp_research_type = army
+		xp_research_cost = 50
+		xp_research_bonus = 0.5
+
+		categories = {
+			spec_force_tech_category
+			spec_force_doctrine_category
+		}
+
+		ai_will_do = {
+			factor = 3
+			modifier = {
+				factor = 3
+				has_country_flag = spec_ops_doctrine_ai
+			}
+			modifier = {
+				factor = 0
+				has_country_flag = power_armor_doctrine_ai
+			}
+			modifier = {
+				factor = 0
+				is_researching_technology = spec_force_heavy_infantry_focus
+			}
+			modifier = {
+				factor = 0
+				has_tech = spec_force_heavy_infantry_focus
+			}
+		}
+	}
+
+	spec_force_elite_forces = {
+
+		category_special_forces = {
+			soft_attack = 0.04
+			hard_attack = 0.04
+			breakthrough = 0.04
+		}
+
+		folder = {
+			name = fallout_air_doctrine_folder
+			position = { x = 0 y = 20 }
+		}
+
+		doctrine = yes
+		research_cost = 2
+		xp_research_type = army
+		xp_research_cost = 50
+		xp_research_bonus = 0.5
+
+		categories = {
+			spec_force_tech_category
+			spec_force_doctrine_category
+		}
+
+		ai_will_do = {
+			factor = 3
+			modifier = {
+				factor = 3
+				OR = {
+					has_country_flag = spec_ops_doctrine_ai
+					has_country_flag = power_armor_doctrine_ai
+				}
+			}
+		}
+	}
+
+	#-----------------------------------
+	# Air Doctrine
+	#-----------------------------------
+
+	formation_flying_doctrine = {
+
+		air_superiority_detect_factor = 0.1
+
+		path = {
+			leads_to_tech = fighter_sweeps_doctrine
+			research_cost_coeff = 1
+		}
+
+		doctrine = yes
+		research_cost = 2
+		xp_research_type = air
+		xp_research_cost = 50
+		xp_research_bonus = 0.5
+
+		categories = {
+			cat_air_doctrine
+		}
+
+		dependencies = {
+			glider_tech = 1
+		}
+
+		folder = {
+			name = fallout_air_doctrine_folder
+			position = { x = 0 y = 0 }
+		}
+
+		ai_will_do = {
+			factor = 3
+			modifier = {
+				factor = 0
+				NOT = { has_tech = glider_tech }
+			}
+			modifier = {
+				factor = 2
+				is_major = yes
+			}
+			modifier = {
+				factor = 0
+				NOT = { has_tech = settled_civilization }
+			}
+		}
+
+		ai_research_weights = {
+			cat_air_doctrine = -0.5
+		}
+	}
+
+	fighter_sweeps_doctrine = {
+
+		air_intercept_efficiency = 0.1
+
+		path = {
+			leads_to_tech = dive_bombing_doctrine
+			research_cost_coeff = 1
+		}
+
+		path = {
+			leads_to_tech = infrastructure_destruction_doctrine
+			research_cost_coeff = 1
+		}
+
+		path = {
+			leads_to_tech = formation_fighting_doctrine
+			research_cost_coeff = 1
+		}
+
+		doctrine = yes
+		research_cost = 2
+		xp_research_type = air
+		xp_research_cost = 50
+		xp_research_bonus = 0.5
+
+		categories = {
+			cat_air_doctrine
+		}
+
+		folder = {
+			name = fallout_air_doctrine_folder
+			position = { x = 0 y = 2 }
+		}
+
+		ai_will_do = {
+			factor = 3
+			modifier = {
+				factor = 0
+				NOT = { has_tech = glider_tech }
+			}
+			modifier = {
+				factor = 2
+				is_major = yes
+			}
+		}
+
+		ai_research_weights = {
+			cat_air_doctrine = -0.5
+		}
+	}
+
+	formation_fighting_doctrine = {
+
+		air_superiority_efficiency = 0.1
+
+		path = {
+			leads_to_tech = forward_interception_doctrine
+			research_cost_coeff = 1
+		}
+
+		doctrine = yes
+		research_cost = 2
+		xp_research_type = air
+		xp_research_cost = 50
+		xp_research_bonus = 0.5
+
+		categories = {
+			cat_air_doctrine
+		}
+
+		folder = {
+			name = fallout_air_doctrine_folder
+			position = { x = 0 y = 6 }
+		}
+
+		ai_will_do = {
+			factor = 3
+			modifier = {
+				factor = 0
+				NOT = { has_tech = glider_tech }
+			}
+			modifier = {
+				factor = 2
+				is_major = yes
+			}
+		}
+
+		ai_research_weights = {
+			cat_air_doctrine = -0.5
+		}
+	}
+
+	forward_interception_doctrine = {
+
+		air_intercept_efficiency = 0.1
+
+		path = {
+			leads_to_tech = layered_airzones_doctrine
+			research_cost_coeff = 1
+		}
+
+		doctrine = yes
+		research_cost = 2
+		xp_research_type = air
+		xp_research_cost = 50
+		xp_research_bonus = 0.5
+
+		categories = {
+			cat_air_doctrine
+		}
+
+		folder = {
+			name = fallout_air_doctrine_folder
+			position = { x = 0 y = 8 }
+		}
+
+		ai_will_do = {
+			factor = 3
+			modifier = {
+				factor = 0
+				NOT = { has_tech = glider_tech }
+			}
+			modifier = {
+				factor = 2
+				is_major = yes
+			}
+		}
+
+		ai_research_weights = {
+			cat_air_doctrine = -0.5
+		}
+	}
+
+	layered_airzones_doctrine = {
+
+		air_superiority_detect_factor = 0.05
+		air_interception_detect_factor = 0.05
+		air_superiority_efficiency = 0.05
+		air_intercept_efficiency = 0.05
+
+		path = {
+			leads_to_tech = operational_destruction_doctrine
+			research_cost_coeff = 1
+		}
+
+		doctrine = yes
+		research_cost = 2
+		xp_research_type = air
+		xp_research_cost = 50
+		xp_research_bonus = 0.5
+
+		categories = {
+			cat_air_doctrine
+		}
+
+		folder = {
+			name = fallout_air_doctrine_folder
+			position = { x = 0 y = 10 }
+		}
+
+		ai_will_do = {
+			factor = 3
+			modifier = {
+				factor = 0
+				NOT = { has_tech = glider_tech }
+			}
+			modifier = {
+				factor = 2
+				is_major = yes
+			}
+		}
+
+		ai_research_weights = {
+			cat_air_doctrine = -0.5
+		}
+	}
+
+	multirole_bombers_doctrine = {
+
+		category_bomber = {
+			air_bombing = 0.1
+		}
+
+		path = {
+			leads_to_tech = priority_targeting_doctrine
+			research_cost_coeff = 1
+		}
+
+		doctrine = yes
+		research_cost = 2
+		xp_research_type = air
+		xp_research_cost = 50
+		xp_research_bonus = 0.5
+
+		categories = {
+			cat_air_doctrine
+		}
+
+		folder = {
+			name = fallout_air_doctrine_folder
+			position = { x = -2 y = 6 }
+		}
+
+		ai_will_do = {
+			factor = 3
+			modifier = {
+				factor = 0
+				NOT = { has_tech = glider_tech }
+			}
+			modifier = {
+				factor = 2
+				is_major = yes
+			}
+		}
+
+		ai_research_weights = {
+			cat_air_doctrine = -0.5
+		}
+	}
+
+	detection_avoidance_doctrine = {
+
+		category_air_unit = {
+			air_defence = 0.05
+		}
+
+		path = {
+			leads_to_tech = future_airforce_doctrine
+			research_cost_coeff = 1
+		}
+
+		path = {
+			leads_to_tech = night_bombing_doctrine
+			research_cost_coeff = 1
+		}
+
+		path = {
+			leads_to_tech = day_bombing_doctrine
+			research_cost_coeff = 1
+		}
+
+		doctrine = yes
+		research_cost = 2
+		xp_research_type = air
+		xp_research_cost = 50
+		xp_research_bonus = 0.5
+
+		categories = {
+			cat_air_doctrine
+		}
+
+		folder = {
+			name = fallout_air_doctrine_folder
+			position = { x = 0 y = 14 }
+		}
+
+		ai_will_do = {
+			factor = 3
+			modifier = {
+				factor = 0
+				NOT = { has_tech = glider_tech }
+			}
+			modifier = {
+				factor = 2
+				is_major = yes
+			}
+		}
+
+		ai_research_weights = {
+			cat_air_doctrine = -0.5
+		}
+	}
+
+	infrastructure_destruction_doctrine = {
+
+		category_bomber = {
+			air_bombing = 0.05
+		}
+
+		path = {
+			leads_to_tech = multirole_bombers_doctrine
+			research_cost_coeff = 1
+		}
+
+		doctrine = yes
+		research_cost = 2
+		xp_research_type = air
+		xp_research_cost = 50
+		xp_research_bonus = 0.5
+
+		categories = {
+			cat_air_doctrine
+		}
+
+		folder = {
+			name = fallout_air_doctrine_folder
+			position = { x = -2 y = 4 }
+		}
+
+		ai_will_do = {
+			factor = 3
+			modifier = {
+				factor = 0
+				NOT = { has_tech = glider_tech }
+			}
+			modifier = {
+				factor = 2
+				is_major = yes
+			}
+		}
+
+		ai_research_weights = {
+			cat_air_doctrine = -0.5
+		}
+	}
+
+	operational_destruction_doctrine = {
+
+		army_bonus_air_superiority_factor = 0.1
+
+		path = {
+			leads_to_tech = detection_avoidance_doctrine
+			research_cost_coeff = 1
+		}
+
+		doctrine = yes
+		research_cost = 2
+		xp_research_type = air
+		xp_research_cost = 50
+		xp_research_bonus = 0.5
+
+		categories = {
+			cat_air_doctrine
+		}
+
+		folder = {
+			name = fallout_air_doctrine_folder
+			position = { x = 0 y = 12 }
+		}
+
+		ai_will_do = {
+			factor = 3
+			modifier = {
+				factor = 0
+				NOT = { has_tech = glider_tech }
+			}
+			modifier = {
+				factor = 2
+				is_major = yes
+			}
+		}
+
+		ai_research_weights = {
+			cat_air_doctrine = -0.5
+		}
+	}
+
+	priority_targeting_doctrine = {
+
+		category_strat_bomber = {
+			air_defence = 0.1
+		}
+
+		path = {
+			leads_to_tech = strategic_destruction_doctrine
+			research_cost_coeff = 1
+		}
+
+		doctrine = yes
+		research_cost = 2
+		xp_research_type = air
+		xp_research_cost = 50
+		xp_research_bonus = 0.5
+
+		categories = {
+			cat_air_doctrine
+		}
+
+		folder = {
+			name = fallout_air_doctrine_folder
+			position = { x = -2 y = 8 }
+		}
+
+		ai_will_do = {
+			factor = 3
+			modifier = {
+				factor = 0
+				NOT = { has_tech = glider_tech }
+			}
+			modifier = {
+				factor = 2
+				is_major = yes
+			}
+		}
+
+		ai_research_weights = {
+			cat_air_doctrine = -0.5
+		}
+	}
+
+	strategic_destruction_doctrine = {
+
+		category_strat_bomber = {
+			air_bombing = 0.1
+		}
+
+		path = {
+			leads_to_tech = day_bombing_doctrine
+			research_cost_coeff = 1
+		}
+
+		doctrine = yes
+		research_cost = 2
+		xp_research_type = air
+		xp_research_cost = 50
+		xp_research_bonus = 0.5
+
+		categories = {
+			cat_air_doctrine
+		}
+
+		folder = {
+			name = fallout_air_doctrine_folder
+			position = { x = -2 y = 10 }
+		}
+
+		ai_will_do = {
+			factor = 3
+			modifier = {
+				factor = 0
+				NOT = { has_tech = glider_tech }
+			}
+			modifier = {
+				factor = 2
+				is_major = yes
+			}
+		}
+
+		ai_research_weights = {
+			cat_air_doctrine = -0.5
+		}
+	}
+
+	day_bombing_doctrine = {
+
+		XOR = { night_bombing_doctrine }
+
+		category_air_unit = {
+			air_bombing = 0.05
+		}
+
+		doctrine = yes
+		research_cost = 2
+		xp_research_type = air
+		xp_research_cost = 50
+		xp_research_bonus = 0.5
+
+		categories = {
+			cat_air_doctrine
+		}
+
+		folder = {
+			name = fallout_air_doctrine_folder
+			position = { x = -2 y = 16 }
+		}
+
+		ai_will_do = {
+			factor = 3
+			modifier = {
+				factor = 0
+				NOT = { has_tech = glider_tech }
+			}
+			modifier = {
+				factor = 2
+				is_major = yes
+			}
+			modifier = {
+				factor = 0
+				is_researching_technology = night_bombing_doctrine
+			}
+			modifier = {
+				factor = 0
+				has_tech = night_bombing_doctrine
+			}
+		}
+
+		ai_research_weights = {
+			cat_air_doctrine = -0.5
+		}
+	}
+
+	night_bombing_doctrine = {
+
+		XOR = { day_bombing_doctrine }
+
+		air_strategic_bomber_night_penalty = -0.3
+
+		doctrine = yes
+		research_cost = 2
+		xp_research_type = air
+		xp_research_cost = 50
+		xp_research_bonus = 0.5
+
+		categories = {
+			cat_air_doctrine
+		}
+
+		folder = {
+			name = fallout_air_doctrine_folder
+			position = { x = 2 y = 16 }
+		}
+
+		ai_will_do = {
+			factor = 0
+			modifier = {
+				factor = 0
+				is_researching_technology = day_bombing_doctrine
+			}
+			modifier = {
+				factor = 0
+				has_tech = day_bombing_doctrine
+			}
+		}
+	}
+
+	future_airforce_doctrine = {
+
+		category_air_unit = {
+			air_agility = 0.08
+			air_ground_attack = 0.08
+			air_attack = 0.08
+		}
+
+		path = {
+			leads_to_tech = fighter_sweeps_doctrine
+			research_cost_coeff = 1
+		}
+
+		dependencies = {
+			strategic_destruction_doctrine = 1
+			dynamic_target_assignment_doctrine = 1
+			detection_avoidance_doctrine = 1
+		}
+
+		doctrine = yes
+		research_cost = 2
+		xp_research_type = air
+		xp_research_cost = 50
+		xp_research_bonus = 0.5
+
+		categories = {
+			cat_air_doctrine
+		}
+
+		folder = {
+			name = fallout_air_doctrine_folder
+			position = { x = 0 y = 18 }
+		}
+
+		ai_will_do = {
+			factor = 3
+			modifier = {
+				factor = 0
+				NOT = { has_tech = glider_tech }
+			}
+			modifier = {
+				factor = 2
+				is_major = yes
+			}
+		}
+
+		ai_research_weights = {
+			cat_air_doctrine = -0.5
+		}
+	}
+
+	dive_bombing_doctrine = {
+
+		category_light_air = {
+			air_ground_attack = 0.1
+		}
+
+		path = {
+			leads_to_tech = hunt_and_destroy_doctrine
+			research_cost_coeff = 1
+		}
+
+		doctrine = yes
+		research_cost = 2
+		xp_research_type = air
+		xp_research_cost = 50
+		xp_research_bonus = 0.5
+
+		categories = {
+			cat_air_doctrine
+		}
+
+		folder = {
+			name = fallout_air_doctrine_folder
+			position = { x = 2 y = 4 }
+		}
+
+		ai_will_do = {
+			factor = 3
+			modifier = {
+				factor = 0
+				NOT = { has_tech = glider_tech }
+			}
+			modifier = {
+				factor = 2
+				is_major = yes
+			}
+		}
+
+		ai_research_weights = {
+			cat_air_doctrine = -0.5
+		}
+	}
+
+	hunt_and_destroy_doctrine = {
+
+		air_cas_present_factor = 0.10
+
+		path = {
+			leads_to_tech = direct_ground_support_doctrine
+			research_cost_coeff = 1
+		}
+
+		doctrine = yes
+		research_cost = 2
+		xp_research_type = air
+		xp_research_cost = 50
+		xp_research_bonus = 0.5
+
+		categories = {
+			cat_air_doctrine
+		}
+
+		folder = {
+			name = fallout_air_doctrine_folder
+			position = { x = 2 y = 6 }
+		}
+
+		ai_will_do = {
+			factor = 3
+			modifier = {
+				factor = 0
+				NOT = { has_tech = glider_tech }
+			}
+			modifier = {
+				factor = 2
+				is_major = yes
+			}
+		}
+
+		ai_research_weights = {
+			cat_air_doctrine = -0.5
+		}
+	}
+
+	direct_ground_support_doctrine = {
+
+		air_cas_present_factor = 0.10
+
+		path = {
+			leads_to_tech = dynamic_target_assignment_doctrine
+			research_cost_coeff = 1
+		}
+
+		doctrine = yes
+		research_cost = 2
+		xp_research_type = air
+		xp_research_cost = 50
+		xp_research_bonus = 0.5
+
+		categories = {
+			cat_air_doctrine
+		}
+
+		folder = {
+			name = fallout_air_doctrine_folder
+			position = { x = 2 y = 8 }
+		}
+
+		ai_will_do = {
+			factor = 3
+			modifier = {
+				factor = 0
+				NOT = { has_tech = glider_tech }
+			}
+			modifier = {
+				factor = 2
+				is_major = yes
+			}
+		}
+
+		ai_research_weights = {
+			cat_air_doctrine = -0.5
+		}
+	}
+
+	dynamic_target_assignment_doctrine = {
+
+		air_cas_efficiency = 0.1
+
+		path = {
+			leads_to_tech = night_bombing_doctrine
+			research_cost_coeff = 1
+		}
+
+		doctrine = yes
+		research_cost = 2
+		xp_research_type = air
+		xp_research_cost = 50
+		xp_research_bonus = 0.5
+
+		categories = {
+			cat_air_doctrine
+		}
+
+		folder = {
+			name = fallout_air_doctrine_folder
+			position = { x = 2 y = 10 }
+		}
+
+		ai_will_do = {
+			factor = 3
+			modifier = {
+				factor = 0
+				NOT = { has_tech = glider_tech }
+			}
+			modifier = {
+				factor = 2
+				is_major = yes
+			}
+		}
+
+		ai_research_weights = {
+			cat_air_doctrine = -0.5
+		}
+	}
+
+	#Navy
+
+	pacific_fleet_navy_doctrine = {
+
+		critical_receive_chance = -0.05
+		naval_critical_effect_factor = -0.05
+
+		path = {
+			leads_to_tech = river_fleet_navy_doctrine
+			research_cost_coeff = 1
+		}
+
+		path = {
+			leads_to_tech = force_concentration_navy_doctrine
+			research_cost_coeff = 1
+		}
+
+		path = {
+			leads_to_tech = dispersed_formations_navy_doctrine
+			research_cost_coeff = 1
+		}
+
+		doctrine = yes
+		research_cost = 2
+		xp_research_type = navy
+		xp_research_cost = 50
+		xp_research_bonus = 0.5
+
+		categories = {
+			cat_naval_doctrine
+		}
+
+		folder = {
+			name = fallout_air_doctrine_folder
+			position = { x = 0 y = 0 }
+		}
+
+		ai_will_do = {
+			factor = 2
+			modifier = {
+				num_of_naval_factories < 1
+				factor = 0
+			}
+			modifier = {
+				num_of_naval_factories > 3
+				factor = 2
+			}
+			modifier = {
+				num_of_naval_factories > 6
+				factor = 2
+			}
+		}
+
+		ai_research_weights = {
+			cat_naval_doctrine = -0.5
+			naval_carrier_hull_tech_category = 1.0
+			naval_light_hull_tech_category = 1.0
+			naval_medium_hull_tech_category = 1.0
+			naval_heavy_hull_tech_category = 1.0
+		}
+	}
+
+	river_fleet_navy_doctrine = {
+
+		category_screen_ship = {
+			max_organisation = 3
+		}
+
+		path = {
+			leads_to_tech = coastal_patrols_navy_doctrine
+			research_cost_coeff = 1
+		}
+
+		doctrine = yes
+		research_cost = 2
+		xp_research_type = navy
+		xp_research_cost = 50
+		xp_research_bonus = 0.5
+
+		categories = {
+			cat_naval_doctrine
+			cat_naval_river_fleet_doctrine
+		}
+
+		folder = {
+			name = fallout_air_doctrine_folder
+			position = { x = 0 y = 2 }
+		}
+
+		ai_will_do = {
+			factor = 2
+			modifier = {
+				num_of_naval_factories < 1
+				factor = 0
+			}
+			modifier = {
+				num_of_naval_factories > 3
+				factor = 2
+			}
+			modifier = {
+				num_of_naval_factories > 6
+				factor = 2
+			}
+		}
+
+		ai_research_weights = {
+			cat_naval_doctrine = -0.5
+			naval_light_hull_tech_category = 1.0
+			naval_medium_hull_tech_category = 1.0
+		}
+	}
+
+	coastal_patrols_navy_doctrine = {
+
+		convoy_escort_efficiency = 0.1
+		category_screen_ship = {
+			surface_detection = 0.05
+		}
+
+		path = {
+			leads_to_tech = raiding_flotillas_navy_doctrine
+			research_cost_coeff = 1
+		}
+
+		doctrine = yes
+		research_cost = 2
+		xp_research_type = navy
+		xp_research_cost = 50
+		xp_research_bonus = 0.5
+
+		categories = {
+			cat_naval_doctrine
+			cat_naval_river_fleet_doctrine
+		}
+
+		folder = {
+			name = fallout_air_doctrine_folder
+			position = { x = 0 y = 4 }
+		}
+
+		ai_will_do = {
+			factor = 2
+			modifier = {
+				num_of_naval_factories < 1
+				factor = 0
+			}
+			modifier = {
+				num_of_naval_factories > 3
+				factor = 2
+			}
+			modifier = {
+				num_of_naval_factories > 6
+				factor = 2
+			}
+		}
+
+		ai_research_weights = {
+			cat_naval_doctrine = -0.5
+			naval_light_hull_tech_category = 1.0
+			naval_medium_hull_tech_category = 1.0
+		}
+	}
+
+	raiding_flotillas_navy_doctrine = {
+
+		category_screen_ship = {
+			naval_speed = 0.05
+			convoy_raiding_coordination = 0.05
+		}
+
+		path = {
+			leads_to_tech = assault_parties_navy_doctrine
+			research_cost_coeff = 1
+		}
+
+		doctrine = yes
+		research_cost = 2
+		xp_research_type = navy
+		xp_research_cost = 50
+		xp_research_bonus = 0.5
+
+		categories = {
+			cat_naval_doctrine
+			cat_naval_river_fleet_doctrine
+		}
+
+		folder = {
+			name = fallout_air_doctrine_folder
+			position = { x = 0 y = 6 }
+		}
+
+		ai_will_do = {
+			factor = 2
+			modifier = {
+				num_of_naval_factories < 1
+				factor = 0
+			}
+			modifier = {
+				num_of_naval_factories > 3
+				factor = 2
+			}
+			modifier = {
+				num_of_naval_factories > 6
+				factor = 2
+			}
+		}
+
+		ai_research_weights = {
+			cat_naval_doctrine = -0.5
+			naval_light_hull_tech_category = 1.0
+			naval_medium_hull_tech_category = 1.0
+		}
+	}
+
+	assault_parties_navy_doctrine = {
+
+		category_screen_ship = {
+			surface_visibility = -0.02
+			lg_attack = 0.02
+			hg_attack = 0.02
+		}
+
+		path = {
+			leads_to_tech = suicide_runs_navy_doctrine
+			research_cost_coeff = 1
+		}
+
+		doctrine = yes
+		research_cost = 2
+		xp_research_type = navy
+		xp_research_cost = 50
+		xp_research_bonus = 0.5
+
+		categories = {
+			cat_naval_doctrine
+			cat_naval_river_fleet_doctrine
+		}
+
+		folder = {
+			name = fallout_air_doctrine_folder
+			position = { x = 0 y = 8 }
+		}
+
+		ai_will_do = {
+			factor = 2
+			modifier = {
+				num_of_naval_factories < 1
+				factor = 0
+			}
+			modifier = {
+				num_of_naval_factories > 3
+				factor = 2
+			}
+			modifier = {
+				num_of_naval_factories > 6
+				factor = 2
+			}
+		}
+
+		ai_research_weights = {
+			cat_naval_doctrine = -0.5
+			naval_light_hull_tech_category = 1.0
+			naval_medium_hull_tech_category = 1.0
+		}
+	}
+
+	suicide_runs_navy_doctrine = {
+
+		category_screen_ship = {
+			lg_attack = 0.03
+			hg_attack = 0.03
+		}
+
+		naval_retreat_speed = -0.1
+
+		path = {
+			leads_to_tech = terrain_exploitation_navy_doctrine
+			research_cost_coeff = 1
+		}
+
+		doctrine = yes
+		research_cost = 2
+		xp_research_type = navy
+		xp_research_cost = 50
+		xp_research_bonus = 0.5
+
+		categories = {
+			cat_naval_doctrine
+			cat_naval_river_fleet_doctrine
+		}
+
+		folder = {
+			name = fallout_air_doctrine_folder
+			position = { x = 0 y = 10 }
+		}
+
+		ai_will_do = {
+			factor = 2
+			modifier = {
+				num_of_naval_factories < 1
+				factor = 0
+			}
+			modifier = {
+				num_of_naval_factories > 3
+				factor = 2
+			}
+			modifier = {
+				num_of_naval_factories > 6
+				factor = 2
+			}
+		}
+
+		ai_research_weights = {
+			cat_naval_doctrine = -0.5
+			naval_light_hull_tech_category = 1.0
+			naval_medium_hull_tech_category = 1.0
+		}
+	}
+
+	terrain_exploitation_navy_doctrine = {
+
+		category_screen_ship = {
+			surface_visibility = -0.15
+		}
+
+		doctrine = yes
+		research_cost = 2
+		xp_research_type = navy
+		xp_research_cost = 50
+		xp_research_bonus = 0.5
+
+		categories = {
+			cat_naval_doctrine
+			cat_naval_river_fleet_doctrine
+		}
+
+		folder = {
+			name = fallout_air_doctrine_folder
+			position = { x = 0 y = 12 }
+		}
+
+		ai_will_do = {
+			factor = 2
+			modifier = {
+				num_of_naval_factories < 1
+				factor = 0
+			}
+			modifier = {
+				num_of_naval_factories > 3
+				factor = 2
+			}
+			modifier = {
+				num_of_naval_factories > 6
+				factor = 2
+			}
+		}
+
+		ai_research_weights = {
+			cat_naval_doctrine = -0.5
+			naval_light_hull_tech_category = 1.0
+			naval_medium_hull_tech_category = 1.0
+		}
+	}
+
+	force_concentration_navy_doctrine = {
+
+		category_capital_ship = {
+			max_organisation = 4
+			lg_attack = 0.04
+			hg_attack = 0.04
+		}
+
+		XOR = { dispersed_formations_navy_doctrine }
+
+		path = {
+			leads_to_tech = area_denial_navy_doctrine
+			research_cost_coeff = 1
+		}
+
+		doctrine = yes
+		research_cost = 2
+		xp_research_type = navy
+		xp_research_cost = 50
+		xp_research_bonus = 0.5
+
+		categories = {
+			cat_naval_doctrine
+			cat_naval_force_concentration_doctrine
+		}
+
+		folder = {
+			name = fallout_air_doctrine_folder
+			position = { x = -2 y = 2 }
+		}
+
+		ai_will_do = {
+			factor = 2
+			modifier = {
+				factor = 0
+				has_tech = dispersed_formations_navy_doctrine
+			}
+			modifier = {
+				factor = 0
+				is_researching_technology = dispersed_formations_navy_doctrine
+			}
+			modifier = {
+				num_of_naval_factories < 1
+				factor = 0
+			}
+			modifier = {
+				num_of_naval_factories > 3
+				factor = 2
+			}
+			modifier = {
+				num_of_naval_factories > 6
+				factor = 2
+			}
+			modifier = {
+				factor = 0
+				NOT = { has_country_flag = concentrated_navy_doctrine_ai }
+			}
+		}
+
+		ai_research_weights = {
+			cat_naval_doctrine = -0.5
+			naval_medium_hull_tech_category = 1.0
+			naval_heavy_hull_tech_category = 1.0
+		}
+	}
+
+	area_denial_navy_doctrine = {
+
+		strike_force_movement_org_loss = -0.25
+
+		path = {
+			leads_to_tech = focus_fire_navy_doctrine
+			research_cost_coeff = 1
+		}
+
+		doctrine = yes
+		research_cost = 2
+		xp_research_type = navy
+		xp_research_cost = 50
+		xp_research_bonus = 0.5
+
+		categories = {
+			cat_naval_doctrine
+			cat_naval_force_concentration_doctrine
+		}
+
+		folder = {
+			name = fallout_air_doctrine_folder
+			position = { x = -2 y = 4 }
+		}
+
+		ai_will_do = {
+			factor = 2
+			modifier = {
+				factor = 0
+				has_tech = dispersed_formations_navy_doctrine
+			}
+			modifier = {
+				factor = 0
+				is_researching_technology = dispersed_formations_navy_doctrine
+			}
+			modifier = {
+				num_of_naval_factories < 1
+				factor = 0
+			}
+			modifier = {
+				num_of_naval_factories > 3
+				factor = 2
+			}
+			modifier = {
+				num_of_naval_factories > 6
+				factor = 2
+			}
+			modifier = {
+				factor = 0
+				NOT = { has_country_flag = concentrated_navy_doctrine_ai }
+			}
+		}
+
+		ai_research_weights = {
+			cat_naval_doctrine = -0.5
+			naval_medium_hull_tech_category = 1.0
+			naval_heavy_hull_tech_category = 1.0
+		}
+	}
+
+	focus_fire_navy_doctrine = {
+
+		category_capital_ship = {
+			lg_armor_piercing = 0.1
+			hg_armor_piercing = 0.1
+			lg_attack = 0.06
+			hg_attack = 0.06
+			surface_visibility = 0.1
+		}
+
+		path = {
+			leads_to_tech = ship_of_the_line_navy_doctrine
+			research_cost_coeff = 1
+		}
+
+		doctrine = yes
+		research_cost = 2
+		xp_research_type = navy
+		xp_research_cost = 50
+		xp_research_bonus = 0.5
+
+		categories = {
+			cat_naval_doctrine
+			cat_naval_force_concentration_doctrine
+		}
+
+		folder = {
+			name = fallout_air_doctrine_folder
+			position = { x = -2 y = 6 }
+		}
+
+		ai_will_do = {
+			factor = 2
+			modifier = {
+				factor = 0
+				has_tech = dispersed_formations_navy_doctrine
+			}
+			modifier = {
+				factor = 0
+				is_researching_technology = dispersed_formations_navy_doctrine
+			}
+			modifier = {
+				num_of_naval_factories < 1
+				factor = 0
+			}
+			modifier = {
+				num_of_naval_factories > 3
+				factor = 2
+			}
+			modifier = {
+				num_of_naval_factories > 6
+				factor = 2
+			}
+			modifier = {
+				factor = 0
+				NOT = { has_country_flag = concentrated_navy_doctrine_ai }
+			}
+		}
+
+		ai_research_weights = {
+			cat_naval_doctrine = -0.5
+			naval_medium_hull_tech_category = 1.0
+			naval_heavy_hull_tech_category = 1.0
+		}
+	}
+
+	ship_of_the_line_navy_doctrine = {
+
+		category_capital_ship = {
+			armor_value = 0.25
+		}
+
+		naval_retreat_speed = -0.1
+
+		path = {
+			leads_to_tech = wave_supremacy_navy_doctrine
+			research_cost_coeff = 1
+		}
+
+		doctrine = yes
+		research_cost = 2
+		xp_research_type = navy
+		xp_research_cost = 50
+		xp_research_bonus = 0.5
+
+		categories = {
+			cat_naval_doctrine
+			cat_naval_force_concentration_doctrine
+		}
+
+		folder = {
+			name = fallout_air_doctrine_folder
+			position = { x = -2 y = 8 }
+		}
+
+		ai_will_do = {
+			factor = 2
+			modifier = {
+				factor = 0
+				has_tech = dispersed_formations_navy_doctrine
+			}
+			modifier = {
+				factor = 0
+				is_researching_technology = dispersed_formations_navy_doctrine
+			}
+			modifier = {
+				num_of_naval_factories < 1
+				factor = 0
+			}
+			modifier = {
+				num_of_naval_factories > 3
+				factor = 2
+			}
+			modifier = {
+				num_of_naval_factories > 6
+				factor = 2
+			}
+			modifier = {
+				factor = 0
+				NOT = { has_country_flag = concentrated_navy_doctrine_ai }
+			}
+		}
+
+		ai_research_weights = {
+			cat_naval_doctrine = -0.5
+			naval_medium_hull_tech_category = 1.0
+			naval_heavy_hull_tech_category = 1.0
+		}
+	}
+
+	wave_supremacy_navy_doctrine = {
+
+		category_capital_ship = {
+			lg_attack = 0.1
+			hg_attack = 0.1
+		}
+
+		sortie_efficiency = 0.05
+
+		path = {
+			leads_to_tech = barge_focus_navy_doctrine
+			research_cost_coeff = 1
+		}
+
+		doctrine = yes
+		research_cost = 2
+		xp_research_type = navy
+		xp_research_cost = 50
+		xp_research_bonus = 0.5
+
+		categories = {
+			cat_naval_doctrine
+			cat_naval_force_concentration_doctrine
+		}
+
+		folder = {
+			name = fallout_air_doctrine_folder
+			position = { x = -2 y = 10 }
+		}
+
+		ai_will_do = {
+			factor = 2
+			modifier = {
+				factor = 0
+				has_tech = dispersed_formations_navy_doctrine
+			}
+			modifier = {
+				factor = 0
+				is_researching_technology = dispersed_formations_navy_doctrine
+			}
+			modifier = {
+				num_of_naval_factories < 1
+				factor = 0
+			}
+			modifier = {
+				num_of_naval_factories > 3
+				factor = 2
+			}
+			modifier = {
+				num_of_naval_factories > 6
+				factor = 2
+			}
+			modifier = {
+				factor = 0
+				NOT = { has_country_flag = concentrated_navy_doctrine_ai }
+			}
+		}
+
+		ai_research_weights = {
+			cat_naval_doctrine = -0.5
+			naval_medium_hull_tech_category = 1.0
+			naval_heavy_hull_tech_category = 1.0
+		}
+	}
+
+	barge_focus_navy_doctrine = {
+
+		category_capital_ship = {
+			max_organisation = 7
+		}
+
+		path = {
+			leads_to_tech = destroyer_focus_navy_doctrine
+			research_cost_coeff = 1
+		}
+
+		doctrine = yes
+		research_cost = 2
+		xp_research_type = navy
+		xp_research_cost = 50
+		xp_research_bonus = 0.5
+
+		categories = {
+			cat_naval_doctrine
+			cat_naval_force_concentration_doctrine
+		}
+
+		folder = {
+			name = fallout_air_doctrine_folder
+			position = { x = -2 y = 12 }
+		}
+
+		ai_will_do = {
+			factor = 2
+			modifier = {
+				factor = 0
+				has_tech = dispersed_formations_navy_doctrine
+			}
+			modifier = {
+				factor = 0
+				is_researching_technology = dispersed_formations_navy_doctrine
+			}
+			modifier = {
+				num_of_naval_factories < 1
+				factor = 0
+			}
+			modifier = {
+				num_of_naval_factories > 3
+				factor = 2
+			}
+			modifier = {
+				num_of_naval_factories > 6
+				factor = 2
+			}
+			modifier = {
+				factor = 0
+				NOT = { has_country_flag = concentrated_navy_doctrine_ai }
+			}
+		}
+
+		ai_research_weights = {
+			cat_naval_doctrine = -0.5
+			naval_medium_hull_tech_category = 1.0
+			naval_heavy_hull_tech_category = 1.0
+		}
+	}
+
+	destroyer_focus_navy_doctrine = {
+
+		category_capital_ship = {
+			max_organisation = 8
+		}
+
+		path = {
+			leads_to_tech = carrier_focus_navy_doctrine
+			research_cost_coeff = 1
+		}
+
+		doctrine = yes
+		research_cost = 2
+		xp_research_type = navy
+		xp_research_cost = 50
+		xp_research_bonus = 0.5
+
+		categories = {
+			cat_naval_doctrine
+			cat_naval_force_concentration_doctrine
+		}
+
+		folder = {
+			name = fallout_air_doctrine_folder
+			position = { x = -2 y = 14 }
+		}
+
+		ai_will_do = {
+			factor = 2
+			modifier = {
+				factor = 0
+				has_tech = dispersed_formations_navy_doctrine
+			}
+			modifier = {
+				factor = 0
+				is_researching_technology = dispersed_formations_navy_doctrine
+			}
+			modifier = {
+				num_of_naval_factories < 1
+				factor = 0
+			}
+			modifier = {
+				num_of_naval_factories > 3
+				factor = 2
+			}
+			modifier = {
+				num_of_naval_factories > 6
+				factor = 2
+			}
+			modifier = {
+				factor = 0
+				NOT = { has_country_flag = concentrated_navy_doctrine_ai }
+			}
+		}
+
+		ai_research_weights = {
+			cat_naval_doctrine = -0.5
+			naval_medium_hull_tech_category = 1.0
+			naval_heavy_hull_tech_category = 1.0
+		}
+	}
+
+	carrier_focus_navy_doctrine = {
+
+		sortie_efficiency = 0.15
+
+		doctrine = yes
+		research_cost = 2
+		xp_research_type = navy
+		xp_research_cost = 50
+		xp_research_bonus = 0.5
+
+		categories = {
+			cat_naval_doctrine
+			cat_naval_force_concentration_doctrine
+		}
+
+		folder = {
+			name = fallout_air_doctrine_folder
+			position = { x = -2 y = 16 }
+		}
+
+		ai_will_do = {
+			factor = 2
+			modifier = {
+				factor = 0
+				has_tech = dispersed_formations_navy_doctrine
+			}
+			modifier = {
+				factor = 0
+				is_researching_technology = dispersed_formations_navy_doctrine
+			}
+			modifier = {
+				num_of_naval_factories < 1
+				factor = 0
+			}
+			modifier = {
+				num_of_naval_factories > 3
+				factor = 2
+			}
+			modifier = {
+				num_of_naval_factories > 6
+				factor = 2
+			}
+			modifier = {
+				factor = 0
+				NOT = { has_country_flag = concentrated_navy_doctrine_ai }
+			}
+		}
+
+		ai_research_weights = {
+			cat_naval_doctrine = -0.5
+			naval_medium_hull_tech_category = 1.0
+			naval_heavy_hull_tech_category = 1.0
+			naval_carrier_hull_tech_category = 1.0
+			naval_super_carrier_hull_tech_category = 1.0
+		}
+	}
+
+	dispersed_formations_navy_doctrine = {
+
+		category_screen_ship = {
+			surface_detection = 0.1
+			surface_visibility = -0.1
+			naval_speed = 0.1
+		}
+
+		XOR = { force_concentration_navy_doctrine }
+
+		path = {
+			leads_to_tech = wolfpacks_navy_doctrine
+			research_cost_coeff = 1
+		}
+
+		doctrine = yes
+		research_cost = 2
+		xp_research_type = navy
+		xp_research_cost = 50
+		xp_research_bonus = 0.5
+
+		categories = {
+			cat_naval_doctrine
+			cat_naval_dispersed_formation_doctrine
+		}
+
+		folder = {
+			name = fallout_air_doctrine_folder
+			position = { x = 2 y = 2 }
+		}
+
+		ai_will_do = {
+			factor = 2
+			modifier = {
+				factor = 0
+				has_tech = force_concentration_navy_doctrine
+			}
+			modifier = {
+				factor = 0
+				is_researching_technology = force_concentration_navy_doctrine
+			}
+			modifier = {
+				num_of_naval_factories < 1
+				factor = 0
+			}
+			modifier = {
+				num_of_naval_factories > 3
+				factor = 2
+			}
+			modifier = {
+				num_of_naval_factories > 6
+				factor = 2
+			}
+			modifier = {
+				factor = 0
+				NOT = { has_country_flag = dispersed_navy_doctrine_ai }
+			}
+		}
+
+		ai_research_weights = {
+			cat_naval_doctrine = -0.5
+			naval_light_hull_tech_category = 1.0
+			naval_medium_hull_tech_category = 1.0
+		}
+	}
+
+	wolfpacks_navy_doctrine = {
+
+		category_screen_ship = {
+			lg_attack = 0.03
+			hg_attack = 0.03
+			naval_speed = 0.05
+		}
+
+		path = {
+			leads_to_tech = convoy_interdiction_navy_doctrine
+			research_cost_coeff = 1
+		}
+
+		doctrine = yes
+		research_cost = 2
+		xp_research_type = navy
+		xp_research_cost = 50
+		xp_research_bonus = 0.5
+
+		categories = {
+			cat_naval_doctrine
+			cat_naval_dispersed_formation_doctrine
+		}
+
+		folder = {
+			name = fallout_air_doctrine_folder
+			position = { x = 2 y = 4 }
+		}
+
+		ai_will_do = {
+			factor = 2
+			modifier = {
+				factor = 0
+				has_tech = force_concentration_navy_doctrine
+			}
+			modifier = {
+				factor = 0
+				is_researching_technology = force_concentration_navy_doctrine
+			}
+			modifier = {
+				num_of_naval_factories < 1
+				factor = 0
+			}
+			modifier = {
+				num_of_naval_factories > 3
+				factor = 2
+			}
+			modifier = {
+				num_of_naval_factories > 6
+				factor = 2
+			}
+			modifier = {
+				factor = 0
+				NOT = { has_country_flag = dispersed_navy_doctrine_ai }
+			}
+		}
+
+		ai_research_weights = {
+			cat_naval_doctrine = -0.5
+			naval_light_hull_tech_category = 1.0
+			naval_medium_hull_tech_category = 1.0
+		}
+	}
+
+	convoy_interdiction_navy_doctrine = {
+
+		category_screen_ship = {
+			convoy_raiding_coordination = 0.15
+		}
+
+		path = {
+			leads_to_tech = decoy_tactics_navy_doctrine
+			research_cost_coeff = 1
+		}
+
+		doctrine = yes
+		research_cost = 2
+		xp_research_type = navy
+		xp_research_cost = 50
+		xp_research_bonus = 0.5
+
+		categories = {
+			cat_naval_doctrine
+			cat_naval_dispersed_formation_doctrine
+		}
+
+		folder = {
+			name = fallout_air_doctrine_folder
+			position = { x = 2 y = 6 }
+		}
+
+		ai_will_do = {
+			factor = 2
+			modifier = {
+				factor = 0
+				has_tech = force_concentration_navy_doctrine
+			}
+			modifier = {
+				factor = 0
+				is_researching_technology = force_concentration_navy_doctrine
+			}
+			modifier = {
+				num_of_naval_factories < 1
+				factor = 0
+			}
+			modifier = {
+				num_of_naval_factories > 3
+				factor = 2
+			}
+			modifier = {
+				num_of_naval_factories > 6
+				factor = 2
+			}
+			modifier = {
+				factor = 0
+				NOT = { has_country_flag = dispersed_navy_doctrine_ai }
+			}
+		}
+
+		ai_research_weights = {
+			cat_naval_doctrine = -0.5
+			naval_light_hull_tech_category = 1.0
+			naval_medium_hull_tech_category = 1.0
+		}
+	}
+
+	decoy_tactics_navy_doctrine = {
+
+		category_screen_ship = {
+			naval_speed = 0.05
+		}
+
+		naval_retreat_speed = 0.2
+
+		path = {
+			leads_to_tech = swimming_bait_navy_doctrine
+			research_cost_coeff = 1
+		}
+
+		doctrine = yes
+		research_cost = 2
+		xp_research_type = navy
+		xp_research_cost = 50
+		xp_research_bonus = 0.5
+
+		categories = {
+			cat_naval_doctrine
+			cat_naval_dispersed_formation_doctrine
+		}
+
+		folder = {
+			name = fallout_air_doctrine_folder
+			position = { x = 2 y = 8 }
+		}
+
+		ai_will_do = {
+			factor = 2
+			modifier = {
+				factor = 0
+				has_tech = force_concentration_navy_doctrine
+			}
+			modifier = {
+				factor = 0
+				is_researching_technology = force_concentration_navy_doctrine
+			}
+			modifier = {
+				num_of_naval_factories < 1
+				factor = 0
+			}
+			modifier = {
+				num_of_naval_factories > 3
+				factor = 2
+			}
+			modifier = {
+				num_of_naval_factories > 6
+				factor = 2
+			}
+			modifier = {
+				factor = 0
+				NOT = { has_country_flag = dispersed_navy_doctrine_ai }
+			}
+		}
+
+		ai_research_weights = {
+			cat_naval_doctrine = -0.5
+			naval_light_hull_tech_category = 1.0
+			naval_medium_hull_tech_category = 1.0
+		}
+	}
+
+	swimming_bait_navy_doctrine = {
+
+		category_capital_ship = {
+			armor_value = 0.15
+		}
+
+		path = {
+			leads_to_tech = force_projection_navy_doctrine
+			research_cost_coeff = 1
+		}
+
+		doctrine = yes
+		research_cost = 2
+		xp_research_type = navy
+		xp_research_cost = 50
+		xp_research_bonus = 0.5
+
+		categories = {
+			cat_naval_doctrine
+			cat_naval_dispersed_formation_doctrine
+		}
+
+		folder = {
+			name = fallout_air_doctrine_folder
+			position = { x = 2 y = 10 }
+		}
+
+		ai_will_do = {
+			factor = 2
+			modifier = {
+				factor = 0
+				has_tech = force_concentration_navy_doctrine
+			}
+			modifier = {
+				factor = 0
+				is_researching_technology = force_concentration_navy_doctrine
+			}
+			modifier = {
+				num_of_naval_factories < 1
+				factor = 0
+			}
+			modifier = {
+				num_of_naval_factories > 3
+				factor = 2
+			}
+			modifier = {
+				num_of_naval_factories > 6
+				factor = 2
+			}
+			modifier = {
+				factor = 0
+				NOT = { has_country_flag = dispersed_navy_doctrine_ai }
+			}
+		}
+
+		ai_research_weights = {
+			cat_naval_doctrine = -0.5
+			naval_light_hull_tech_category = 1.0
+			naval_medium_hull_tech_category = 1.0
+		}
+	}
+
+	force_projection_navy_doctrine = {
+
+		category_capital_ship = {
+			naval_speed = 0.1
+		}
+
+		naval_damage_factor = 0.03
+
+		path = {
+			leads_to_tech = rapid_redeployment_navy_doctrine
+			research_cost_coeff = 1
+		}
+
+		doctrine = yes
+		research_cost = 2
+		xp_research_type = navy
+		xp_research_cost = 50
+		xp_research_bonus = 0.5
+
+		categories = {
+			cat_naval_doctrine
+			cat_naval_dispersed_formation_doctrine
+		}
+
+		folder = {
+			name = fallout_air_doctrine_folder
+			position = { x = 2 y = 12 }
+		}
+
+		ai_will_do = {
+			factor = 2
+			modifier = {
+				factor = 0
+				has_tech = force_concentration_navy_doctrine
+			}
+			modifier = {
+				factor = 0
+				is_researching_technology = force_concentration_navy_doctrine
+			}
+			modifier = {
+				num_of_naval_factories < 1
+				factor = 0
+			}
+			modifier = {
+				num_of_naval_factories > 3
+				factor = 2
+			}
+			modifier = {
+				num_of_naval_factories > 6
+				factor = 2
+			}
+			modifier = {
+				factor = 0
+				NOT = { has_country_flag = dispersed_navy_doctrine_ai }
+			}
+		}
+
+		ai_research_weights = {
+			cat_naval_doctrine = -0.5
+			naval_light_hull_tech_category = 1.0
+			naval_medium_hull_tech_category = 1.0
+		}
+	}
+
+	rapid_redeployment_navy_doctrine = {
+
+		category_capital_ship = {
+			naval_speed = 0.05
+		}
+		category_screen_ship = {
+			naval_speed = 0.05
+		}
+
+		path = {
+			leads_to_tech = sail_focus_navy_doctrine
+			research_cost_coeff = 1
+		}
+
+		doctrine = yes
+		research_cost = 2
+		xp_research_type = navy
+		xp_research_cost = 50
+		xp_research_bonus = 0.5
+
+		categories = {
+			cat_naval_doctrine
+			cat_naval_dispersed_formation_doctrine
+		}
+
+		folder = {
+			name = fallout_air_doctrine_folder
+			position = { x = 2 y = 14 }
+		}
+
+		ai_will_do = {
+			factor = 2
+			modifier = {
+				factor = 0
+				has_tech = force_concentration_navy_doctrine
+			}
+			modifier = {
+				factor = 0
+				is_researching_technology = force_concentration_navy_doctrine
+			}
+			modifier = {
+				num_of_naval_factories < 1
+				factor = 0
+			}
+			modifier = {
+				num_of_naval_factories > 3
+				factor = 2
+			}
+			modifier = {
+				num_of_naval_factories > 6
+				factor = 2
+			}
+			modifier = {
+				factor = 0
+				NOT = { has_country_flag = dispersed_navy_doctrine_ai }
+			}
+		}
+
+		ai_research_weights = {
+			cat_naval_doctrine = -0.5
+			naval_light_hull_tech_category = 1.0
+			naval_medium_hull_tech_category = 1.0
+		}
+	}
+
+	sail_focus_navy_doctrine = {
+
+		category_screen_ship = {
+			max_organisation = 10
+			lg_attack = 0.05
+			hg_attack = 0.05
+		}
+
+		doctrine = yes
+		research_cost = 2
+		xp_research_type = navy
+		xp_research_cost = 50
+		xp_research_bonus = 0.5
+
+		categories = {
+			cat_naval_doctrine
+			cat_naval_dispersed_formation_doctrine
+		}
+
+		folder = {
+			name = fallout_air_doctrine_folder
+			position = { x = 2 y = 16 }
+		}
+
+		ai_will_do = {
+			factor = 2
+			modifier = {
+				factor = 0
+				has_tech = force_concentration_navy_doctrine
+			}
+			modifier = {
+				factor = 0
+				is_researching_technology = force_concentration_navy_doctrine
+			}
+			modifier = {
+				num_of_naval_factories < 1
+				factor = 0
+			}
+			modifier = {
+				num_of_naval_factories > 3
+				factor = 2
+			}
+			modifier = {
+				num_of_naval_factories > 6
+				factor = 2
+			}
+			modifier = {
+				factor = 0
+				NOT = { has_country_flag = dispersed_navy_doctrine_ai }
+			}
+		}
+
+		ai_research_weights = {
+			cat_naval_doctrine = -0.5
+			naval_light_hull_tech_category = 1.0
+			naval_medium_hull_tech_category = 1.0
+		}
+	}
+
+	# Outsider Warfare
+	outsider_warfare_doctrine = {
+
+		enable_tactic = tactic_basic_mutant_attack
+		enable_tactic = tactic_basic_mutant_defence
+
+		category_mutants = {
+			max_organisation = 2
+			soft_attack = 0.15
+			hard_attack = 0.15
+		}
+		category_behemoth = {
+			max_organisation = 1
+			soft_attack = 0.025
+			hard_attack = 0.025
+		}
+
+		XOR = { automated_warfare grand_army terror_tactics elite_army special_forces_doctrine }
+
+		allow = {
+			NOT = { has_tech = grunt_level_radio_unlock_tech }
+		}
+
+		path = {
+			leads_to_tech = we_are_different_doctrine
+			research_cost_coeff = 1
+		}
+
+		doctrine = yes
+		research_cost = 3
+		xp_research_type = army
+		xp_research_cost = 40
+		xp_research_bonus = 0.4
+
+		categories = {
+			cat_land_doctrine
+			cat_outsider_warfare
+		}
+
+		folder = {
+			name = fallout_air_doctrine_folder
+			position = { x = 0 y = 0 }
+		}
+
+		ai_will_do = {
+			factor = 255
+			modifier = {
+				factor = 0
+				NOT = { has_country_flag = super_mutant_doctrine_ai }
+			}
+			modifier = {
+				factor = 0
+				OR = {
+					is_researching_technology = automated_warfare
+					is_researching_technology = grand_army
+					is_researching_technology = terror_tactics
+					is_researching_technology = elite_army
+					is_researching_technology = special_forces_doctrine
+				}
+			}
+			modifier = {
+				factor = 0
+				OR = {
+					has_tech = automated_warfare
+					has_tech = grand_army
+					has_tech = terror_tactics
+					has_tech = elite_army
+					has_tech = special_forces_doctrine
+				}
+			}
+		}
+
+		ai_research_weights = {
+			industry = 3.0
+		}
+
+	}
+
+	we_are_different_doctrine = {
+
+		category_mutants = {
+			default_morale = 0.15
+		}
+		category_behemoth = {
+			default_morale = 0.1
+		}
+
+		path = {
+			leads_to_tech = we_are_special_doctrine
+			research_cost_coeff = 1
+		}
+
+		doctrine = yes
+		research_cost = 3
+		xp_research_type = army
+		xp_research_cost = 40
+		xp_research_bonus = 0.4
+
+		categories = {
+			cat_land_doctrine
+			cat_outsider_warfare
+		}
+
+
+		folder = {
+			name = fallout_air_doctrine_folder
+			position = { x = 0 y = 2 }
+		}
+
+		ai_will_do = {
+			factor = 255
+			modifier = {
+				factor = 0
+				NOT = { has_country_flag = super_mutant_doctrine_ai }
+			}
+		}
+
+		ai_research_weights = {
+			industry = 3.0
+		}
+
+	}
+
+	we_are_special_doctrine = {
+
+		category_mutants = {
+			soft_attack = 0.10
+			hard_attack = 0.10
+			breakthrough = 0.1
+		}
+
+		path = {
+			leads_to_tech = we_are_strong_doctrine
+			research_cost_coeff = 1
+		}
+
+		path = {
+			leads_to_tech = we_are_smart_doctrine
+			research_cost_coeff = 1
+		}
+
+		doctrine = yes
+		research_cost = 3
+		xp_research_type = army
+		xp_research_cost = 40
+		xp_research_bonus = 0.4
+
+		categories = {
+			cat_land_doctrine
+			cat_outsider_warfare
+		}
+
+
+		folder = {
+			name = fallout_air_doctrine_folder
+			position = { x = 0 y = 4 }
+		}
+
+		ai_will_do = {
+			factor = 255
+			modifier = {
+				factor = 0
+				NOT = { has_country_flag = super_mutant_doctrine_ai }
+			}
+		}
+
+		ai_research_weights = {
+			industry = 3.0
+		}
+
+	}
+
+	we_are_strong_doctrine = {
+
+		category_mutants = {
+			hardness = 0.1
+		}
+		category_behemoth = {
+			hardness = 0.05
+		}
+
+		XOR = { we_are_smart_doctrine }
+
+		path = {
+			leads_to_tech = we_are_enduring_doctrine
+			research_cost_coeff = 1
+		}
+
+		path = {
+			leads_to_tech = we_are_fast_doctrine
+			research_cost_coeff = 1
+		}
+
+		doctrine = yes
+		research_cost = 3
+		xp_research_type = army
+		xp_research_cost = 40
+		xp_research_bonus = 0.4
+
+		categories = {
+			cat_land_doctrine
+			cat_outsider_warfare
+		}
+
+
+		folder = {
+			name = fallout_air_doctrine_folder
+			position = { x = -2 y = 6 }
+		}
+
+		ai_will_do = {
+			factor = 255
+			modifier = {
+				factor = 0
+				has_tech = we_are_smart_doctrine
+			}
+			modifier = {
+				factor = 0
+				is_researching_technology = we_are_smart_doctrine
+			}
+			modifier = {
+				factor = 0
+				NOT = { has_country_flag = super_mutant_doctrine_ai }
+			}
+		}
+
+		ai_research_weights = {
+			industry = 3.0
+		}
+
+	}
+
+	we_are_smart_doctrine = {
+
+		category_mutants = {
+			max_organisation = 5
+		}
+		category_behemoth = {
+			max_organisation = 3
+		}
+
+		XOR = { we_are_strong_doctrine }
+
+		path = {
+			leads_to_tech = we_are_enduring_doctrine
+			research_cost_coeff = 1
+		}
+
+		path = {
+			leads_to_tech = we_are_fast_doctrine
+			research_cost_coeff = 1
+		}
+
+		doctrine = yes
+		research_cost = 3
+		xp_research_type = army
+		xp_research_cost = 40
+		xp_research_bonus = 0.4
+
+		categories = {
+			cat_land_doctrine
+			cat_outsider_warfare
+		}
+
+
+		folder = {
+			name = fallout_air_doctrine_folder
+			position = { x = 2 y = 6 }
+		}
+
+		ai_will_do = {
+			factor = 255
+			modifier = {
+				factor = 0
+				has_tech = we_are_strong_doctrine
+			}
+			modifier = {
+				factor = 0
+				is_researching_technology = we_are_strong_doctrine
+			}
+			modifier = {
+				factor = 0
+				NOT = { has_country_flag = super_mutant_doctrine_ai }
+			}
+		}
+
+		ai_research_weights = {
+			industry = 3.0
+		}
+
+	}
+
+	we_are_enduring_doctrine = {
+
+		category_mutants = {
+			hardness = 0.1
+		}
+		category_behemoth = {
+			hardness = 0.05
+		}
+
+		XOR = { we_are_fast_doctrine }
+
+		path = {
+			leads_to_tech = we_are_beautiful_doctrine
+			research_cost_coeff = 1
+		}
+
+		path = {
+			leads_to_tech = we_are_perceptive_doctrine
+			research_cost_coeff = 1
+		}
+
+		doctrine = yes
+		research_cost = 3
+		xp_research_type = army
+		xp_research_cost = 40
+		xp_research_bonus = 0.4
+
+		categories = {
+			cat_land_doctrine
+			cat_outsider_warfare
+		}
+
+
+		folder = {
+			name = fallout_air_doctrine_folder
+			position = { x = -2 y = 8 }
+		}
+
+		ai_will_do = {
+			factor = 255
+			modifier = {
+				factor = 0
+				has_tech = we_are_fast_doctrine
+			}
+			modifier = {
+				factor = 0
+				is_researching_technology = we_are_fast_doctrine
+			}
+			modifier = {
+				factor = 0
+				NOT = { has_country_flag = super_mutant_doctrine_ai }
+			}
+		}
+
+		ai_research_weights = {
+			industry = 3.0
+		}
+
+	}
+
+	we_are_fast_doctrine = {
+
+		category_mutants = {
+			maximum_speed = 0.1
+		}
+		category_behemoth = {
+			maximum_speed = 0.05
+		}
+
+		XOR = { we_are_enduring_doctrine }
+
+		path = {
+			leads_to_tech = we_are_beautiful_doctrine
+			research_cost_coeff = 1
+		}
+
+		path = {
+			leads_to_tech = we_are_perceptive_doctrine
+			research_cost_coeff = 1
+		}
+
+		doctrine = yes
+		research_cost = 3
+		xp_research_type = army
+		xp_research_cost = 40
+		xp_research_bonus = 0.4
+
+		categories = {
+			cat_land_doctrine
+			cat_outsider_warfare
+		}
+
+
+		folder = {
+			name = fallout_air_doctrine_folder
+			position = { x = 2 y = 8 }
+		}
+
+		ai_will_do = {
+			factor = 255
+			modifier = {
+				factor = 0
+				has_tech = we_are_enduring_doctrine
+			}
+			modifier = {
+				factor = 0
+				is_researching_technology = we_are_enduring_doctrine
+			}
+			modifier = {
+				factor = 0
+				NOT = { has_country_flag = super_mutant_doctrine_ai }
+			}
+		}
+
+		ai_research_weights = {
+			industry = 3.0
+		}
+
+	}
+
+	we_are_beautiful_doctrine = {
+
+		land_reinforce_rate = 0.2
+
+		XOR = { we_are_perceptive_doctrine }
+
+		path = {
+			leads_to_tech = we_are_fortunate_doctrine
+			research_cost_coeff = 1
+		}
+
+
+		doctrine = yes
+		research_cost = 3
+		xp_research_type = army
+		xp_research_cost = 40
+		xp_research_bonus = 0.4
+
+		categories = {
+			cat_land_doctrine
+			cat_outsider_warfare
+		}
+
+
+		folder = {
+			name = fallout_air_doctrine_folder
+			position = { x = -2 y = 10 }
+		}
+
+		ai_will_do = {
+			factor = 255
+			modifier = {
+				factor = 0
+				has_tech = we_are_perceptive_doctrine
+			}
+			modifier = {
+				factor = 0
+				is_researching_technology = we_are_perceptive_doctrine
+			}
+			modifier = {
+				factor = 0
+				NOT = { has_country_flag = super_mutant_doctrine_ai }
+			}
+		}
+
+		ai_research_weights = {
+			industry = 3.0
+		}
+
+	}
+
+	we_are_perceptive_doctrine = {
+
+		category_mutants = {
+			recon = 0.3
+		}
+
+		XOR = { we_are_beautiful_doctrine }
+
+		path = {
+			leads_to_tech = we_are_fortunate_doctrine
+			research_cost_coeff = 1
+		}
+
+		doctrine = yes
+		research_cost = 3
+		xp_research_type = army
+		xp_research_cost = 40
+		xp_research_bonus = 0.4
+
+		categories = {
+			cat_land_doctrine
+			cat_outsider_warfare
+		}
+
+
+		folder = {
+			name = fallout_air_doctrine_folder
+			position = { x = 2 y = 10 }
+		}
+
+		ai_will_do = {
+			factor = 255
+			modifier = {
+				factor = 0
+				has_tech = we_are_beautiful_doctrine
+			}
+			modifier = {
+				factor = 0
+				is_researching_technology = we_are_beautiful_doctrine
+			}
+			modifier = {
+				factor = 0
+				NOT = { has_country_flag = super_mutant_doctrine_ai }
+			}
+		}
+
+		ai_research_weights = {
+			industry = 3.0
+		}
+
+	}
+
+	we_are_fortunate_doctrine = {
+
+		category_mutants = {
+			supply_consumption = -0.03
+		}
+
+		path = {
+			leads_to_tech = the_chosen_ones_doctrine
+			research_cost_coeff = 1
+		}
+
+		doctrine = yes
+		research_cost = 3
+		xp_research_type = army
+		xp_research_cost = 40
+		xp_research_bonus = 0.4
+
+		categories = {
+			cat_land_doctrine
+			cat_outsider_warfare
+		}
+
+
+		folder = {
+			name = fallout_air_doctrine_folder
+			position = { x = 0 y = 11 }
+		}
+
+		ai_will_do = {
+			factor = 255
+			modifier = {
+				factor = 0
+				NOT = { has_country_flag = super_mutant_doctrine_ai }
+			}
+		}
+
+		ai_research_weights = {
+			industry = 3.0
+		}
+
+	}
+
+	the_chosen_ones_doctrine = {
+
+		category_mutants = {
+			soft_attack = 0.05
+			hard_attack = 0.05
+		}
+		category_behemoth = {
+			soft_attack = 0.03
+			hard_attack = 0.03
+		}
+
+		path = {
+			leads_to_tech = army_of_outsiders_doctrine
+			research_cost_coeff = 1
+		}
+
+		path = {
+			leads_to_tech = the_master_servant_doctrine
+			research_cost_coeff = 1
+		}
+
+		path = {
+			leads_to_tech = ageless_experience_doctrine
+			research_cost_coeff = 1
+		}
+
+		doctrine = yes
+		research_cost = 3
+		xp_research_type = army
+		xp_research_cost = 40
+		xp_research_bonus = 0.4
+
+		categories = {
+			cat_land_doctrine
+			cat_outsider_warfare
+		}
+
+
+		folder = {
+			name = fallout_air_doctrine_folder
+			position = { x = 0 y = 13 }
+		}
+
+		ai_will_do = {
+			factor = 255
+			modifier = {
+				factor = 0
+				NOT = { has_country_flag = super_mutant_doctrine_ai }
+			}
+		}
+
+		ai_research_weights = {
+			industry = 3.0
+		}
+
+	}
+
+	the_master_servant_doctrine = {
+
+		category_mutants = {
+			default_morale = 0.15
+		}
+
+		XOR = { ageless_experience_doctrine }
+
+		doctrine = yes
+		research_cost = 3
+		xp_research_type = army
+		xp_research_cost = 40
+		xp_research_bonus = 0.4
+
+		categories = {
+			cat_land_doctrine
+			cat_outsider_warfare
+		}
+
+
+		folder = {
+			name = fallout_air_doctrine_folder
+			position = { x = -2 y = 15 }
+		}
+
+		ai_will_do = {
+			factor = 255
+			modifier = {
+				factor = 0
+				has_tech = ageless_experience_doctrine
+			}
+			modifier = {
+				factor = 0
+				is_researching_technology = ageless_experience_doctrine
+			}
+			modifier = {
+				factor = 0
+				NOT = { has_country_flag = super_mutant_doctrine_ai }
+			}
+		}
+
+		ai_research_weights = {
+			industry = 3.0
+		}
+
+	}
+
+	ageless_experience_doctrine = {
+
+		experience_gain_navy_factor = 0.3
+		experience_gain_army_factor = 0.3
+		experience_gain_air_factor = 0.3
+		terrain_penalty_reduction = 0.5
+		XOR = { the_master_servant_doctrine }
+
+		doctrine = yes
+		research_cost = 3
+		xp_research_type = army
+		xp_research_cost = 40
+		xp_research_bonus = 0.4
+
+		categories = {
+			cat_land_doctrine
+			cat_outsider_warfare
+		}
+
+
+		folder = {
+			name = fallout_air_doctrine_folder
+			position = { x = 2 y = 15 }
+		}
+
+		ai_will_do = {
+			factor = 255
+			modifier = {
+				factor = 0
+				has_tech = the_master_servant_doctrine
+			}
+			modifier = {
+				factor = 0
+				is_researching_technology = the_master_servant_doctrine
+			}
+			modifier = {
+				factor = 0
+				NOT = { has_country_flag = super_mutant_doctrine_ai }
+			}
+		}
+
+		ai_research_weights = {
+			industry = 3.0
+		}
+
+	}
+
+	army_of_outsiders_doctrine = {
+
+		category_mutants = {
+			default_morale = 0.1
+		}
+		land_reinforce_rate = 0.2
+
+		path = {
+			leads_to_tech = master_race_doctrine
+			research_cost_coeff = 1
+		}
+
+		path = {
+			leads_to_tech = mixed_army_doctrine
+			research_cost_coeff = 1
+		}
+
+		doctrine = yes
+		research_cost = 3
+		xp_research_type = army
+		xp_research_cost = 40
+		xp_research_bonus = 0.4
+
+		categories = {
+			cat_land_doctrine
+			cat_outsider_warfare
+		}
+
+
+		folder = {
+			name = fallout_air_doctrine_folder
+			position = { x = 0 y = 16 }
+		}
+
+		ai_will_do = {
+			factor = 255
+			modifier = {
+				factor = 0
+				NOT = { has_country_flag = super_mutant_doctrine_ai }
+			}
+		}
+
+		ai_research_weights = {
+			industry = 3.0
+		}
+
+	}
+
+	mixed_army_doctrine = {
+
+		special_forces_min = 80
+
+		XOR = { master_race_doctrine }
+
+		doctrine = yes
+		research_cost = 3
+		xp_research_type = army
+		xp_research_cost = 40
+		xp_research_bonus = 0.4
+
+		categories = {
+			cat_land_doctrine
+			cat_outsider_warfare
+		}
+
+
+		folder = {
+			name = fallout_air_doctrine_folder
+			position = { x = 2 y = 18 }
+		}
+
+		ai_will_do = {
+			factor = 255
+			modifier = {
+				factor = 0
+				has_tech = master_race_doctrine
+			}
+			modifier = {
+				factor = 0
+				is_researching_technology = master_race_doctrine
+			}
+			modifier = {
+				factor = 0
+				NOT = { has_country_flag = super_mutant_doctrine_ai }
+			}
+		}
+
+		ai_research_weights = {
+			industry = 3.0
+		}
+	}
+
+	master_race_doctrine = {
+
+		category_mutants = {
+			max_organisation = 5
+			maximum_speed = 0.1
+			soft_attack = 0.05
+			hard_attack = 0.05
+		}
+
+		XOR = { mixed_army_doctrine }
+
+		doctrine = yes
+		research_cost = 3
+		xp_research_type = army
+		xp_research_cost = 40
+		xp_research_bonus = 0.4
+
+		categories = {
+			cat_land_doctrine
+			cat_outsider_warfare
+		}
+
+
+		folder = {
+			name = fallout_air_doctrine_folder
+			position = { x = -2 y = 18 }
+		}
+
+		ai_will_do = {
+			factor = 255
+			modifier = {
+				factor = 0
+				has_tech = mixed_army_doctrine
+			}
+			modifier = {
+				factor = 0
+				is_researching_technology = mixed_army_doctrine
+			}
+			modifier = {
+				factor = 0
+				NOT = { has_country_flag = super_mutant_doctrine_ai }
+			}
+		}
+
+		ai_research_weights = {
+			industry = 3.0
+		}
+
+	}
+}

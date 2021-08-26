@@ -1,0 +1,116 @@
+﻿capital = 233
+oob = "SUN_2275"
+
+set_technology = {
+		infantry_tech_level_tribal = 1
+		#infantry_tech_level_settler = 1
+		#infantry_tech_level_scientific = 1
+		support_tech_level_tribal = 1
+		#support_tech_level_settler = 1
+		#support_tech_level_scientific = 1
+		special_forces_tech_level_tribal = 1
+		#special_forces_tech_level_settler = 1
+		#special_forces_tech_level_scientific = 1
+		#power_armour_tech_level_settler = 1
+		#power_armour_tech_level_scientific = 1
+		#vehicles_tech_level_tribal = 1
+		#vehicles_tech_level_settler = 1
+		#vehicles_tech_level_scientific = 1
+		#robotics_tech_level_tribal = 1
+		#robotics_tech_level_settler = 1
+		#robotics_tech_level_scientific = 1
+		air_tech_level_tribal = 1
+		#air_tech_level_settler = 1
+		#air_tech_level_scientific = 1
+		naval_tech_level_tribal = 1
+		#naval_tech_level_settler = 1
+		#naval_tech_level_scientific = 1
+		tools_tech_level_tribal = 1
+		#tools_tech_level_settler = 1
+		#tools_tech_level_scientific = 1
+		habitation_tech_level_tribal = 1
+		#habitation_tech_level_settler = 1
+		#habitation_tech_level_scientific = 1
+		exploitation_tech_level_tribal = 1
+		#exploitation_tech_level_settler = 1
+		#exploitation_tech_level_scientific = 1
+		electronics_tech_level_tribal = 1
+		#electronics_tech_level_settler = 1
+		#electronics_tech_level_scientific = 1
+		tribal_tech_visibility_tech = 1
+		tribal_tech_access_tech = 1
+		tribal_civilization = 1
+		tool_engineering = 1
+		standard_weaponry_tech = 1
+		melee_weaponry_tech_1 = 1
+		pre_construction_industry_tech = 1
+		pre_agriculture_industry_tech = 1
+		pre_recycling_industry_tech = 1
+		basic_industry_tech = 1
+	
+		support_weaponry = 1
+		med_company_tech_1 = 1
+		logistics_company_tech_1 = 1
+		demolitions_weaponry_tech = 1
+		special_forces_doctrine = 1
+		spec_ops_equipment_tech_1 = 1
+		recon_company_tech_1 = 1
+		fireteam_weaponry_tech = 1
+	
+		#Woof
+		dog_infantry_tech = 1
+		dog_equipment_tech_1 = 1
+		dog_tech_1 = 1
+	
+		#Legion goes BRRRRRRRRR
+		grand_army = 1
+		chariot_vehicle_tech  = 1
+}
+
+set_stability = 0.5
+set_war_support = 0.3
+set_research_slots = 3
+
+set_politics = {
+	ruling_party = ruler
+	elections_allowed = no
+}
+
+set_popularities = {
+	people = 0
+	elites = 0
+	intellectuals = 0
+	ruler = 100
+}
+
+add_ideas = {
+	tribal_nation
+	slavers_idea_1
+	SUN_the_dogs_of_war
+	sun_victors_against_pallus
+}
+
+set_country_flag = slavery_allowed
+set_country_flag = is_tribal_nation
+
+create_country_leader = {
+	name = "Gold-Hound"
+	desc = "GOLDHOUND_DESC"
+	picture = "gfx/leaders/raider/portrait_raider_generic_13.dds"
+	expire = "3000.1.1"
+	ideology = gang
+	traits = {
+		dislikes_caesars_legion
+	}
+}
+
+create_corps_commander = {
+	name = "Gold-Hound"
+	picture = "gfx/leaders/raider/portrait_raider_generic_13.dds"
+	skill = 4
+	traits = { desert_fox agile_trait charismatic_trait }
+	attack_skill = 4
+	defense_skill = 3
+	planning_skill = 4
+	logistics_skill = 4
+}

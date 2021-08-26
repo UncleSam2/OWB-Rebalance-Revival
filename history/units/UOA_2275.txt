@@ -1,0 +1,179 @@
+﻿division_template = {
+	name = "Unity Priests"
+	regiments = {
+		militia = { x = 0 y = 0 }
+		militia = { x = 0 y = 1 }
+		militia = { x = 1 y = 0 }
+		militia = { x = 1 y = 1 }
+	}
+}
+
+division_template = {
+	name = "Attis Army Remnants"
+	regiments = {
+		super_mutant_infantry = { x = 0 y = 0 }
+		super_mutant_infantry = { x = 0 y = 1 }
+		super_mutant_infantry = { x = 0 y = 2 }
+		super_mutant_infantry = { x = 2 y = 0 }
+		super_mutant_infantry = { x = 1 y = 0 }
+	}
+}
+
+division_template = {
+	name = "Nightkins"
+	template_counter= 52
+	regiments = {
+		super_mutant_nightkin_infantry = { x = 0 y = 0 }
+		super_mutant_nightkin_infantry = { x = 0 y = 1 }
+		super_mutant_nightkin_infantry = { x = 1 y = 0 }
+		super_mutant_nightkin_infantry = { x = 1 y = 1 }
+	}
+}
+
+units = {
+	division = {
+		name = "Unity Squadron Red"
+		location = 11574
+		division_template = "Attis Army Remnants"
+		start_experience_factor = 1.0
+		start_equipment_factor = 1.0
+	}
+	
+	division = {
+		name = "Unity Squadron Grey"
+		location = 11574
+		division_template = "Attis Army Remnants"
+		start_experience_factor = 1.0
+		start_equipment_factor = 1.0
+	}
+	division = {
+		name = "San Saba Priests"
+		location = 11574
+		division_template = "Unity Priests"
+		start_experience_factor = 1.0
+		start_equipment_factor = 1.0
+	}
+	division = {
+		name = "Unity Squadron White"
+		location = 11574
+		division_template = "Attis Army Remnants"
+		start_experience_factor = 1.0
+		start_equipment_factor = 1.0
+	}
+	division = {
+		name = "Unity Squadron Blue"
+		location = 11502
+		division_template = "Attis Army Remnants"
+		start_experience_factor = 0.8
+		start_equipment_factor = 1.0
+	}
+	division = {
+		name = "Unity Squadron Orange"
+		location = 11502
+		division_template = "Attis Army Remnants"
+		start_experience_factor = 0.8
+		start_equipment_factor = 1.0
+	}
+	division = {
+		name = "Unity Squadron Yellow"
+		location = 11502
+		division_template = "Attis Army Remnants"
+		start_experience_factor = 0.8
+		start_equipment_factor = 1.0
+	}
+	division = {
+		name = "Johnson City Priests"
+		location = 11502
+		division_template = "Unity Priests"
+		start_experience_factor = 0.8
+		start_equipment_factor = 1.0
+	}
+	division = {
+		name = "Unity Squadron Green"
+		location = 11473
+		division_template = "Attis Army Remnants"
+		start_experience_factor = 0.8
+		start_equipment_factor = 1.0
+	}
+	division = {
+		name = "Unity Squadron Emerald"
+		location = 11473
+		division_template = "Attis Army Remnants"
+		start_experience_factor = 0.8
+		start_equipment_factor = 1.0
+	}
+	division = {
+		name = "Unity Squadron Platinum"
+		location = 11473
+		division_template = "Attis Army Remnants"
+		start_experience_factor = 0.8
+		start_equipment_factor = 1.0
+	}
+	division = {
+		name = "San Marcos Priests"
+		location = 11473
+		division_template = "Unity Priests"
+		start_experience_factor = 0.8
+		start_equipment_factor = 1.0
+	}
+	division = {
+		name = "Unity Squadron Black"
+		location = 11499
+		division_template = "Nightkins"
+		start_experience_factor = 0.8
+		start_equipment_factor = 1.0
+	}
+	division = {
+		name = "Unity Squadron Gold"
+		location = 11499
+		division_template = "Nightkins"
+		start_experience_factor = 0.8
+		start_equipment_factor = 1.0
+	}
+	division = {
+		name = "Unity Squadron Purple"
+		location = 11499
+		division_template = "Nightkins"
+		start_experience_factor = 0.8
+		start_equipment_factor = 1.0
+	}
+	division = {
+		name = "Austin Priests"
+		location = 11499
+		division_template = "Unity Priests"
+		start_experience_factor = 0.8
+		start_equipment_factor = 1.0
+	}
+}
+
+##### Starting Production #####
+instant_effect = {
+	add_equipment_production = {
+		equipment = {
+			type = infantry_equipment_1
+			creator = "UOA"
+		}
+		requested_factories = 2
+		progress = 0.75
+		efficiency = 100
+	}
+	add_equipment_production = {
+		equipment = {
+			type = spec_ops_equipment_1
+			creator = "UOA"
+		}
+		requested_factories = 1
+		progress = 0.75
+		efficiency = 100
+	}
+	
+	add_equipment_production = {
+		equipment = {
+			type = support_equipment_1
+			creator = "UOA"
+		}
+		requested_factories = 1
+		progress = 0.75
+		efficiency = 100
+	}
+}

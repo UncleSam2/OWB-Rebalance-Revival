@@ -1,0 +1,47 @@
+sub_units = {
+
+	forward_firebase_support = {
+		sprite = infantry
+		map_icon_category = infantry
+		priority = 1918
+		active = no
+		transport = forward_firebase_equipment
+
+		type = {
+			infantry
+			support
+		}
+
+		group = support
+
+		categories = {
+			category_army
+			category_support
+			category_combat_support
+		}
+
+		max_strength = 50
+		max_organisation = 5
+		default_morale = 0.3
+		manpower = 50 # 500
+		training_time = 120
+		breakthrough = -1
+		weight = 0.1
+		supply_consumption = 0.25
+
+		essential = {
+			fireteam_equipment
+			anti_tank_equipment
+			forward_firebase_equipment
+		}
+
+		need = {
+			fireteam_equipment = 15
+			anti_tank_equipment = 15
+			forward_firebase_equipment = 10
+		}
+
+		can_be_parachuted = no
+
+	}
+}

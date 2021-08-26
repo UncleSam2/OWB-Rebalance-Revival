@@ -1,0 +1,2748 @@
+technologies = {
+	@Col_1 = 4
+	@Col_2 = 6
+	@Col_3 = 8
+	@Col_4 = 10
+	@Col_5 = 12
+	@Col_6 = 14
+	@Col_7 = 16
+	@Col_8 = 18
+	@Col_9 = 20
+	@Col_10 = 22
+	@Col_11 = 24
+	@Col_12 = 26
+	@Col_13 = 28
+	@Col_14 = 30
+	@Col_15 = 32
+	@Col_16 = 34
+	@Col_17 = 36
+
+	@Row_tech = 0
+	@Row_unit = 2
+	@Row_unit2 = 4
+	@Row_doctrine = 6
+	@Row_unlock = 8
+	@Row_tribal = 12
+	@Row_tribal2 = 14
+	@Row_ncn = 16
+	@Row_des = 18
+	@Row_ncr = 20
+	@Row_vlt = 22
+	@Row_mex = 24
+	@Row_new = 26
+	@Row_set = 28
+	@Row_rai = 30
+	@Row_bos = 32
+	@Row_ces = 34
+	@Row_oregon = 36
+	@Row_tbh = 38
+	@Row_colorado = 40
+	@Row_drugs = 42
+
+	# Tech level Techs
+	tribal_civilization = {
+		research_cost = 1.0
+
+		allow = {
+			always = no
+		}
+
+		dependencies = {
+			blocked_tech = 1
+		}
+
+		folder = {
+			name = fallout_focus_tree_folder
+			position = { x = @Row_tech y = @Col_1 }
+		}
+
+		path = {
+			leads_to_tech = settled_civilization
+			research_cost_coeff = 1
+		}
+
+		categories = {
+			civilization_tech_category
+		}
+
+		ai_will_do = {
+			factor = 0
+		}
+	}
+
+	settled_civilization = {
+		research_cost = 1.0
+
+		dependencies = {
+			blocked_tech = 1
+		}
+
+		allow = {
+			always = no
+		}
+
+		folder = {
+			name = fallout_focus_tree_folder
+			position = { x = @Row_tech y = @Col_2 }
+		}
+
+		path = {
+			leads_to_tech = scientific_civilization
+			research_cost_coeff = 1
+		}
+
+		categories = {
+			civilization_tech_category
+		}
+
+		ai_will_do = {
+			factor = 0
+		}
+	}
+
+	scientific_civilization = {
+		research_cost = 1.0
+
+		dependencies = {
+			blocked_tech = 1
+		}
+
+		allow = {
+			always = no
+		}
+
+		folder = {
+			name = fallout_focus_tree_folder
+			position = { x = @Row_tech y = @Col_3 }
+		}
+
+		categories = {
+			civilization_tech_category
+		}
+
+		ai_will_do = {
+			factor = 0
+		}
+	}
+
+	forward_fire_base_unlock_tech = {
+		research_cost = 1.0
+
+		enable_subunits = {
+			forward_firebase_support
+		}
+		enable_equipments = {
+			forward_firebase_equipment_1
+		}
+
+		dependencies = {
+			blocked_tech = 1
+			fireteam_weaponry_tech = 1
+			anti_tank_equipment_tech_1 = 1
+		}
+
+		folder = {
+			name = fallout_focus_tree_folder
+			position = { x = @Row_doctrine y = @Col_3 }
+		}
+
+		categories = {
+			civilization_tech_category
+		}
+
+		ai_will_do = {
+			factor = 0
+		}
+	}
+
+	grunt_level_radio_unlock_tech = {
+		research_cost = 1.0
+
+		enable_equipments = {
+			radio_equipment_1
+		}
+
+		folder = {
+			name = fallout_focus_tree_folder
+			position = { x = @Row_doctrine y = @Col_1 }
+		}
+
+		heavy_infantry = {
+			need = {
+				radio_equipment = 5
+			}
+		}
+		militia = {
+			need = {
+				radio_equipment = 5
+			}
+		}
+		police_infantry = {
+			need = {
+				radio_equipment = 5
+			}
+		}
+		infantry = {
+			need = {
+				radio_equipment = 5
+			}
+		}
+		ghoul_infantry = {
+			need = {
+				radio_equipment = 5
+			}
+		}
+		dog_infantry = {
+			need = {
+				radio_equipment = 5
+			}
+		}
+		skate_infantry = {
+			need = {
+				radio_equipment = 5
+			}
+		}
+		fireteam_infantry = {
+			need = {
+				radio_equipment = 5
+			}
+		}
+		demolitions_infantry = {
+			need = {
+				radio_equipment = 5
+			}
+		}
+		spec_ops = {
+			need = {
+				radio_equipment = 5
+			}
+		}
+		spec_ops_cavalry = {
+			need = {
+				radio_equipment = 5
+			}
+		}
+		ghoul_paratrooper = {
+			need = {
+				radio_equipment = 5
+			}
+		}
+		power_armour = {
+			need = {
+				radio_equipment = 5
+			}
+		}
+		power_armour_fireteam_infantry = {
+			need = {
+				radio_equipment = 5
+			}
+		}
+		power_armour_demolitions_infantry = {
+			need = {
+				radio_equipment = 5
+			}
+		}
+		dependencies = {
+			blocked_tech = 1
+		}
+
+		categories = {
+			civilization_tech_category
+		}
+
+		ai_will_do = {
+			factor = 0
+		}
+	}
+
+	super_mutant_civilization = {
+		research_cost = 1.0
+		start_year = 2275
+
+		folder = {
+			name = fallout_focus_tree_folder
+			position = { x = @Row_unit y = @Col_4 }
+		}
+
+		dependencies = {
+			blocked_tech = 1
+		}
+
+		enable_subunits = {
+			super_mutant_infantry
+		}
+		# Applied via history only
+		allow = {
+			always = no
+		}
+		on_research_complete_limit = {
+			NOT = {
+				has_template_containing_unit = super_mutant_infantry
+			}
+		}
+		on_research_complete = {
+			hidden_effect = {
+				load_oob = "unlock_supermutant_infantry"
+			}
+			custom_effect_tooltip = UNLOCK_DIVISION_TEMPLATE
+		}
+		categories = {
+			civilization_tech_category
+		}
+
+		ai_will_do = {
+			factor = 0
+		}
+
+		infantry = {
+			soft_attack = -0.2
+			defense = -0.2
+		}
+	}
+
+	ghoul_civilization = {
+		research_cost = 1.0
+		start_year = 2275
+
+		folder = {
+			name = fallout_focus_tree_folder
+			position = { x = @Row_unit y = @Col_2 }
+		}
+
+		enable_subunits = {
+			ghoul_infantry
+		}
+
+		dependencies = {
+			blocked_tech = 1
+		}
+		# Applied via history only
+		allow = {
+			always = no
+		}
+		on_research_complete_limit = {
+			NOT = {
+				has_template_containing_unit = ghoul_infantry
+			}
+		}
+		on_research_complete = {
+			hidden_effect = {
+				load_oob = "unlock_ghoul_infantry"
+			}
+			custom_effect_tooltip = UNLOCK_DIVISION_TEMPLATE
+		}
+		categories = {
+			civilization_tech_category
+		}
+
+		ai_will_do = {
+			factor = 0
+		}
+	}
+
+	# Behemoth
+	super_mutant_behemoth = {
+		research_cost = 1.0
+
+		allow = {
+			always = no
+		}
+
+		dependencies = {
+			blocked_tech = 1
+		}
+
+		folder = {
+			name = fallout_focus_tree_folder
+			position = { x = @Row_unit2 y = @Col_1 }
+		}
+
+		enable_equipments = {
+			behemoth_equipment_1
+		}
+
+		enable_subunits = {
+			behemoth
+		}
+
+		categories = {
+			super_mutant_tech_category
+		}
+
+		ai_will_do = {
+			factor = 0
+		}
+	}
+
+	# Horses, Cavalry
+	spec_ops_horses_tech = {
+		research_cost = 1.0
+
+		allow = {
+			always = no
+		}
+
+		dependencies = {
+			blocked_tech = 1
+		}
+
+		folder = {
+			name = fallout_focus_tree_folder
+			position = { x = @Row_unit2 y = @Col_3 }
+		}
+		on_research_complete_limit = {
+			NOT = {
+				has_template_containing_unit = spec_ops_cavalry
+			}
+		}
+		on_research_complete = {
+			hidden_effect = {
+				load_oob = "unlock_spec_ops_cavalry"
+			}
+			custom_effect_tooltip = UNLOCK_DIVISION_TEMPLATE
+		}
+
+		enable_equipments = {
+			horse_equipment_1
+		}
+
+		enable_subunits = {
+			spec_ops_cavalry
+		}
+
+		ai_will_do = {
+			factor = 0
+		}
+	}
+
+	plant_support_tech = {
+		research_cost = 1.0
+
+		allow = {
+			always = no
+		}
+
+		dependencies = {
+			blocked_tech = 1
+		}
+
+		folder = {
+			name = fallout_focus_tree_folder
+			position = { x = @Row_unit y = @Col_7 }
+		}
+
+		enable_subunits = {
+			plant_support
+		}
+
+		ai_will_do = {
+			factor = 0
+		}
+	}
+
+	sentinel_unit_tech = {
+		research_cost = 1.0
+
+		allow = {
+			always = no
+		}
+		on_research_complete_limit = {
+			NOT = {
+				has_template_containing_unit = sentinel_unit
+			}
+		}
+		on_research_complete = {
+			hidden_effect = {
+				load_oob = "unlock_sentinels"
+			}
+			custom_effect_tooltip = UNLOCK_DIVISION_TEMPLATE
+		}
+
+		dependencies = {
+			blocked_tech = 1
+		}
+
+		folder = {
+			name = fallout_focus_tree_folder
+			position = { x = @Row_unit2 y = @Col_11 }
+		}
+
+		enable_subunits = {
+			sentinel_unit
+		}
+
+		enable_equipments = {
+			sentinel_command_slave_equipment_1
+		}
+
+		ai_will_do = {
+			factor = 0
+		}
+	}
+
+	dog_infantry_tech = {
+		research_cost = 1.0
+
+		allow = {
+			always = no
+		}
+
+		dependencies = {
+			blocked_tech = 1
+		}
+
+		folder = {
+			name = fallout_focus_tree_folder
+			position = { x = @Row_unit y = @Col_1 }
+		}
+
+		enable_subunits = {
+			dog_infantry
+		}
+
+		ai_will_do = {
+			factor = 0
+		}
+	}
+
+	super_mutant_aux_infantry_tech = {
+		research_cost = 1.0
+
+		allow = {
+			always = no
+		}
+
+		dependencies = {
+			blocked_tech = 1
+		}
+
+		folder = {
+			name = fallout_focus_tree_folder
+			position = { x = @Row_unit y = @Col_5 }
+		}
+
+		enable_subunits = {
+			super_mutant_aux_infantry
+		}
+
+		ai_will_do = {
+			factor = 0
+		}
+	}
+
+	super_mutant_nightkin_tech = {
+		research_cost = 1.0
+
+		allow = {
+			always = no
+		}
+
+		dependencies = {
+			blocked_tech = 1
+		}
+
+		folder = {
+			name = fallout_focus_tree_folder
+			position = { x = @Row_unit y = @Col_6 }
+		}
+
+		enable_subunits = {
+			super_mutant_nightkin_infantry
+		}
+
+		ai_will_do = {
+			factor = 0
+		}
+	}
+
+	ghoul_paratrooper_tech = {
+		research_cost = 1.0
+
+		allow = {
+			always = no
+		}
+
+		dependencies = {
+			blocked_tech = 1
+		}
+
+		folder = {
+			name = fallout_focus_tree_folder
+			position = { x = @Row_unit y = @Col_3 }
+		}
+
+		enable_subunits = {
+			ghoul_paratrooper
+		}
+
+		ai_will_do = {
+			factor = 0
+		}
+	}
+
+	police_infantry_tech = {
+		research_cost = 1.0
+
+		allow = {
+			always = no
+		}
+
+		dependencies = {
+			blocked_tech = 1
+		}
+
+		folder = {
+			name = fallout_focus_tree_folder
+			position = { x = @Row_unit y = @Col_8 }
+		}
+
+		enable_subunits = {
+			police_infantry
+		}
+
+		ai_will_do = {
+			factor = 0
+		}
+	}
+
+	gehenna_molech_tech = {
+		research_cost = 1.0
+
+		allow = {
+			always = no
+		}
+
+		dependencies = {
+			blocked_tech = 1
+		}
+
+		folder = {
+			name = fallout_focus_tree_folder
+			position = { x = @Row_unit2 y = @Col_9 }
+		}
+
+		enable_subunits = {
+			monster_support
+		}
+
+		enable_equipments = {
+			gehenna_molech_equipment
+		}
+
+		ai_will_do = {
+			factor = 0
+		}
+	}
+
+	################################################
+	#Tribals
+	################################################
+	pathfinders = {
+
+		research_cost = 1
+
+		dependencies = {
+			blocked_tech = 1
+		}
+
+		folder = {
+			name = fallout_focus_tree_folder
+			position = { x = @Row_tribal y = @Col_1 }
+		}
+
+		allow = {
+			always = no
+		}
+
+		army_speed_factor = 0.10
+	}
+
+	clanfightingstyles = {
+
+		research_cost = 1
+
+		dependencies = {
+			blocked_tech = 1
+		}
+
+		folder = {
+			name = fallout_focus_tree_folder
+			position = { x = @Row_tribal y = @Col_2 }
+		}
+
+		allow = {
+			always = no
+		}
+
+		category_infantry = {
+			soft_attack = 0.05
+			hard_attack = 0.05
+		}
+	}
+
+	warriorcult = {
+
+		research_cost = 1
+
+		dependencies = {
+			blocked_tech = 1
+		}
+
+		folder = {
+			name = fallout_focus_tree_folder
+			position = { x = @Row_tribal y = @Col_3 }
+		}
+
+		allow = {
+			always = no
+		}
+
+		category_infantry = {
+			max_organisation = 5
+		}
+	}
+
+	nomadsoul = {
+
+		research_cost = 1
+
+		dependencies = {
+			blocked_tech = 1
+		}
+
+		folder = {
+			name = fallout_focus_tree_folder
+			position = { x = @Row_tribal y = @Col_4 }
+		}
+
+		allow = {
+			always = no
+		}
+
+		org_loss_when_moving = -0.1
+	}
+
+	mansbestfriend = {
+
+		research_cost = 1
+
+		dependencies = {
+			blocked_tech = 1
+		}
+
+		folder = {
+			name = fallout_focus_tree_folder
+			position = { x = @Row_tribal y = @Col_5 }
+		}
+
+		allow = {
+			always = no
+		}
+
+		dog_company = {
+			breakthrough = 0.5
+		}
+
+	}
+
+	noctwarriors = {
+
+		research_cost = 1
+
+		dependencies = {
+			blocked_tech = 1
+		}
+
+		folder = {
+			name = fallout_focus_tree_folder
+			position = { x = @Row_tribal y = @Col_6 }
+		}
+
+		allow = {
+			always = no
+		}
+
+		land_night_attack = 0.15
+
+	}
+
+	tribalholyorg = {
+
+		research_cost = 1
+
+		dependencies = {
+			blocked_tech = 1
+		}
+
+		folder = {
+			name = fallout_focus_tree_folder
+			position = { x = @Row_tribal y = @Col_7 }
+		}
+
+		allow = {
+			always = no
+		}
+
+		category_infantry = {
+			max_organisation = 10
+		}
+	}
+
+	outsiderways = {
+
+		research_cost = 1
+
+		dependencies = {
+			blocked_tech = 1
+		}
+
+		folder = {
+			name = fallout_focus_tree_folder
+			position = { x = @Row_tribal y = @Col_8 }
+		}
+
+		allow = {
+			always = no
+		}
+
+		category_infantry = {
+			defense = 0.05
+		}
+	}
+
+	sacredgifts = {
+
+		research_cost = 1
+
+		dependencies = {
+			blocked_tech = 1
+		}
+
+		folder = {
+			name = fallout_focus_tree_folder
+			position = { x = @Row_tribal y = @Col_9 }
+		}
+
+		allow = {
+			always = no
+		}
+
+		local_resources_factor = 0.10
+	}
+
+	tribalwarpaint = {
+
+		research_cost = 1
+
+		dependencies = {
+			blocked_tech = 1
+		}
+
+		folder = {
+			name = fallout_focus_tree_folder
+			position = { x = @Row_tribal y = @Col_10 }
+		}
+
+		allow = {
+			always = no
+		}
+
+		infantry = {
+			breakthrough = 0.15
+		}
+
+	}
+
+	tribalnumbers = {
+
+		research_cost = 1
+
+		dependencies = {
+			blocked_tech = 1
+		}
+
+		folder = {
+			name = fallout_focus_tree_folder
+			position = { x = @Row_tribal2 y = @Col_1 }
+		}
+
+		allow = {
+			always = no
+		}
+
+		infantry = {
+			combat_width = -0.3
+		}
+	}
+
+	tribalimmortals = {
+
+		research_cost = 1
+
+		dependencies = {
+			blocked_tech = 1
+		}
+
+		folder = {
+			name = fallout_focus_tree_folder
+			position = { x = @Row_tribal2 y = @Col_2 }
+		}
+
+		allow = {
+			always = no
+		}
+
+		land_reinforce_rate = 0.02
+	}
+
+	mountaingods = {
+		research_cost = 1
+
+		dependencies = {
+			blocked_tech = 1
+		}
+
+		folder = {
+			name = fallout_focus_tree_folder
+			position = { x = @Row_tribal2 y = @Col_3 }
+		}
+
+		allow = {
+			always = no
+		}
+
+		infantry = {
+			mountain = {
+				attack = 0.1
+				defence = 0.1
+			}
+		}
+		militia = {
+			mountain = {
+				attack = 0.1
+				defence = 0.1
+			}
+		}
+		spec_ops = {
+			mountain = {
+				attack = 0.1
+				defence = 0.1
+			}
+		}
+		power_armour = {
+			mountain = {
+				attack = 0.1
+				defence = 0.1
+			}
+		}
+		motorized = {
+			mountain = {
+				attack = 0.1
+				defence = 0.1
+			}
+		}
+		apc = {
+			mountain = {
+				attack = 0.1
+				defence = 0.1
+			}
+		}
+	}
+
+	sungods = {
+		research_cost = 1
+
+		dependencies = {
+			blocked_tech = 1
+		}
+
+		folder = {
+			name = fallout_focus_tree_folder
+			position = { x = @Row_tribal2 y = @Col_4 }
+		}
+
+		allow = {
+			always = no
+		}
+
+		infantry = {
+			desert = {
+				attack = 0.1
+				defence = 0.1
+			}
+		}
+		militia = {
+			desert = {
+				attack = 0.1
+				defence = 0.1
+			}
+		}
+		spec_ops = {
+			desert = {
+				attack = 0.1
+				defence = 0.1
+			}
+		}
+		power_armour = {
+			desert = {
+				attack = 0.1
+				defence = 0.1
+			}
+		}
+		motorized = {
+			desert = {
+				attack = 0.1
+				defence = 0.1
+			}
+		}
+		apc = {
+			desert = {
+				attack = 0.1
+				defence = 0.1
+			}
+		}
+	}
+
+	################################################
+	#New Canaan
+	################################################
+	warriorsofgod = {
+
+		research_cost = 1
+
+		dependencies = {
+			blocked_tech = 1
+		}
+
+		folder = {
+			name = fallout_focus_tree_folder
+			position = { x = @Row_ncn y = @Col_1 }
+		}
+
+		allow = {
+			always = no
+		}
+
+		category_infantry = {
+			soft_attack = 0.1
+		}
+	}
+
+	knightsofgod = {
+
+		research_cost = 1
+
+		dependencies = {
+			blocked_tech = 1
+		}
+
+		folder = {
+			name = fallout_focus_tree_folder
+			position = { x = @Row_ncn y = @Col_2 }
+		}
+
+		allow = {
+			always = no
+		}
+
+		category_infantry = {
+			breakthrough = 0.5
+		}
+	}
+
+	################################################
+	#Rangers
+	################################################
+	bosfunding = {
+
+		research_cost = 1
+
+		dependencies = {
+			blocked_tech = 1
+		}
+
+		folder = {
+			name = fallout_focus_tree_folder
+			position = { x = @Row_des y = @Col_1 }
+		}
+
+		allow = {
+			always = no
+		}
+
+		production_factory_max_efficiency_factor = 0.05
+	}
+
+	rangerswidth = {
+
+		research_cost = 1
+
+		dependencies = {
+			blocked_tech = 1
+		}
+
+		folder = {
+			name = fallout_focus_tree_folder
+			position = { x = @Row_des y = @Col_2 }
+		}
+
+		allow = {
+			always = no
+		}
+
+		infantry = {
+			combat_width = -0.15
+		}
+	}
+
+	rangersmedic = {
+
+		research_cost = 1
+
+		dependencies = {
+			blocked_tech = 1
+		}
+
+		folder = {
+			name = fallout_focus_tree_folder
+			position = { x = @Row_des y = @Col_3 }
+		}
+
+		allow = {
+			always = no
+		}
+
+		medical_chem_company = {
+			casualty_trickleback = 0.1
+		}
+	}
+
+	rangersattrition = {
+
+		research_cost = 1
+
+		dependencies = {
+			blocked_tech = 1
+		}
+
+		folder = {
+			name = fallout_focus_tree_folder
+			position = { x = @Row_des y = @Col_4 }
+		}
+
+		allow = {
+			always = no
+		}
+
+		max_dig_in_factor = 0.12
+		dig_in_speed_factor = 0.12
+	}
+
+	legionprep = {
+
+		research_cost = 1
+
+		dependencies = {
+			blocked_tech = 1
+		}
+
+		folder = {
+			name = fallout_focus_tree_folder
+			position = { x = @Row_des y = @Col_5 }
+		}
+
+		allow = {
+			always = no
+		}
+
+		max_dig_in_factor = 0.15
+		dig_in_speed_factor = 0.15
+	}
+
+	###############################################
+	#NCR
+	################################################
+	oldworldarmour = {
+
+		research_cost = 1
+
+		dependencies = {
+			blocked_tech = 1
+		}
+
+		folder = {
+			name = fallout_focus_tree_folder
+			position = { x = @Row_ncr y = @Col_1 }
+		}
+
+		allow = {
+			always = no
+		}
+
+		infantry = {
+			urban = {
+				attack = 0.1
+				defence = 0.1
+			}
+		}
+		militia = {
+			urban = {
+				attack = 0.1
+				defence = 0.1
+			}
+		}
+		spec_ops = {
+			urban = {
+				attack = 0.1
+				defence = 0.1
+			}
+		}
+		power_armour = {
+			urban = {
+				attack = 0.1
+				defence = 0.1
+			}
+		}
+		motorized = {
+			urban = {
+				attack = 0.1
+				defence = 0.1
+			}
+		}
+	}
+
+	###############################################
+	#Vault City
+	###############################################
+	mutant_supremacy = {
+
+		research_cost = 1
+
+		folder = {
+			name = fallout_focus_tree_folder
+			position = { x = @Row_vlt y = @Col_1 }
+		}
+
+		dependencies = {
+			blocked_tech = 1
+		}
+
+		allow = {
+			always = no
+		}
+
+		molerat_infantry = {
+			soft_attack = 0.05
+			defense = 0.05
+		}
+	}
+
+	################################################
+	#ITZ Tech
+	################################################
+	itz_rough_terrian_training = {
+
+		research_cost = 1
+
+		folder = {
+			name = fallout_focus_tree_folder
+			position = { x = @Row_mex y = @Col_1 }
+		}
+
+		dependencies = {
+			blocked_tech = 1
+		}
+
+		allow = {
+			always = no
+		}
+
+		spec_ops = {
+			mountain = {
+				attack = 0.1
+				defence = 0.1
+				movement = 0.2
+			}
+			desert = {
+				attack = 0.1
+				defence = 0.1
+				movement = 0.2
+			}
+			marsh = {
+				attack = 0.1
+				defence = 0.1
+				movement = 0.2
+			}
+			hills = {
+				attack = 0.1
+				defence = 0.1
+				movement = 0.2
+			}
+			forest = {
+				attack = 0.1
+				defence = 0.1
+				movement = 0.2
+			}
+			jungle = {
+				attack = 0.1
+				defence = 0.1
+				movement = 0.2
+			}
+		}
+	}
+
+	################################################
+	#Army of Mexico
+	################################################
+	jungle_spirits = {
+		research_cost = 1
+		dependencies = {
+			blocked_tech = 1
+		}
+		folder = {
+			name = fallout_focus_tree_folder
+			position = { x = @Row_mex y = @Col_2 }
+		}
+		allow = {
+			always = no
+		}
+		support_robot = {
+			jungle = {
+				attack = 0.3
+				movement = 0.3
+			}
+			marsh = {
+				attack = 0.3
+				movement = 0.3
+			}
+			river = {
+				attack = 0.3
+				movement = 0.3
+			}
+			amphibious = {
+				attack = 0.3
+				movement = 0.3
+			}
+		}
+		combat_robot = {
+			jungle = {
+				attack = 0.3
+				movement = 0.3
+			}
+			marsh = {
+				attack = 0.3
+				movement = 0.3
+			}
+			river = {
+				attack = 0.3
+				movement = 0.3
+			}
+			amphibious = {
+				attack = 0.3
+				movement = 0.3
+			}
+		}
+	}
+
+	jungle_tribal_integration_tech = {
+		research_cost = 1
+		dependencies = {
+			blocked_tech = 1
+		}
+		folder = {
+			name = fallout_focus_tree_folder
+			position = { x = @Row_mex y = @Col_3 }
+		}
+		allow = {
+			always = no
+		}
+		infantry = {
+			reliability_factor = 0.01
+			jungle = {
+				attack = 0.1
+				defence = 0.1
+			}
+			marsh = {
+				attack = 0.1
+				defence = 0.1
+			}
+			river = {
+				attack = 0.1
+				defence = 0.1
+			}
+			amphibious = {
+				attack = 0.1
+				defence = 0.1
+			}
+		}
+		fireteam_infantry = {
+			reliability_factor = 0.01
+			jungle = {
+				attack = 0.1
+				defence = 0.1
+			}
+			marsh = {
+				attack = 0.1
+				defence = 0.1
+			}
+			river = {
+				attack = 0.1
+				defence = 0.1
+			}
+			amphibious = {
+				attack = 0.1
+				defence = 0.1
+			}
+		}
+		militia = {
+			reliability_factor = 0.01
+			jungle = {
+				attack = 0.1
+				defence = 0.1
+			}
+			marsh = {
+				attack = 0.1
+				defence = 0.1
+			}
+			river = {
+				attack = 0.1
+				defence = 0.1
+			}
+			amphibious = {
+				attack = 0.1
+				defence = 0.1
+			}
+		}
+		spec_ops = {
+			reliability_factor = 0.01
+			jungle = {
+				attack = 0.1
+				defence = 0.1
+			}
+			marsh = {
+				attack = 0.1
+				defence = 0.1
+			}
+			river = {
+				attack = 0.1
+				defence = 0.1
+			}
+			amphibious = {
+				attack = 0.1
+				defence = 0.1
+			}
+		}
+	}
+
+	################################################
+	#Brotherhood
+	################################################
+	bos_bosdigin = {
+		research_cost = 1
+
+		dependencies = {
+			blocked_tech = 1
+		}
+
+		folder = {
+			name = fallout_focus_tree_folder
+			position = { x = @Row_bos y = @Col_1 }
+		}
+
+		allow = { always = no }
+
+		category_infantry = {
+			soft_attack = 0.1
+			hard_attack = 0.1
+			defense = 0.1
+		}
+	}
+
+	################################################
+	#Legion
+	################################################
+
+
+	CES_mercenary_training_tech = {
+
+		research_cost = 1
+
+		dependencies = {
+			blocked_tech = 1
+		}
+
+		folder = {
+			name = fallout_focus_tree_folder
+			position = { x = @Row_ces y = @Col_1 }
+		}
+
+		allow = {
+			always = no
+		}
+		infantry = {
+			hills = {
+				movement = 0.02
+				defence = 0.02
+			}
+			mountain = {
+				movement = 0.02
+				defence = 0.02
+			}
+			desert = {
+				movement = 0.02
+				defence = 0.02
+			}
+
+		}
+	}
+
+	CES_horns_moroni_tech = {
+
+		research_cost = 1
+
+		dependencies = {
+			blocked_tech = 1
+		}
+
+		folder = {
+			name = fallout_focus_tree_folder
+			position = { x = @Row_ces y = @Col_2 }
+		}
+
+		allow = {
+			always = no
+		}
+
+		medical_chem_company = {
+			casualty_trickleback = 0.1
+		}
+	}
+
+	legion_centurions_tech = {
+		research_cost = 1
+
+		dependencies = {
+			blocked_tech = 1
+		}
+
+		folder = {
+			name = fallout_focus_tree_folder
+			position = { x = @Row_ces y = @Col_3 }
+		}
+
+		allow = { always = no }
+
+		category_infantry = {
+			max_organisation = 3
+		}
+	}
+
+	legion_warriors_of_mars_tech = {
+		research_cost = 1
+
+		dependencies = {
+			blocked_tech = 1
+		}
+
+		folder = {
+			name = fallout_focus_tree_folder
+			position = { x = @Row_ces y = @Col_4 }
+		}
+
+		allow = { always = no }
+
+		category_power_armour = {
+			soft_attack = 0.1
+			breakthrough = 0.25
+		}
+	}
+
+	armored_chariots_tech = {
+		research_cost = 1
+
+		dependencies = {
+			blocked_tech = 1
+		}
+
+		folder = {
+			name = fallout_focus_tree_folder
+			position = { x = @Row_ces y = @Col_5 }
+		}
+
+		allow = { always = no }
+
+		tank = {
+			breakthrough = 0.15
+			reliability_factor = 0.05
+		}
+	}
+
+	legion_frumentarii_officers_tech = {
+		research_cost = 1
+
+		dependencies = {
+			blocked_tech = 1
+		}
+
+		folder = {
+			name = fallout_focus_tree_folder
+			position = { x = @Row_ces y = @Col_6 }
+		}
+
+		allow = { always = no }
+
+		category_infantry = {
+			soft_attack = 0.03
+			breakthrough = 0.25
+		}
+	}
+
+	legion_frumentarii_commandoes_tech = {
+
+		research_cost = 1
+
+		dependencies = {
+			blocked_tech = 1
+		}
+
+		folder = {
+			name = fallout_focus_tree_folder
+			position = { x = @Row_ces y = @Col_7 }
+		}
+
+		allow = {
+			always = no
+		}
+
+		category_special_forces = {
+			max_organisation = 10
+		}
+	}
+
+	phoenix_tech = {
+		research_cost = 1
+
+		dependencies = {
+			blocked_tech = 1
+		}
+
+		folder = {
+			name = fallout_focus_tree_folder
+			position = { x = @Row_ces y = @Col_8 }
+		}
+
+		allow = { always = no }
+
+		category_infantry = {
+			max_organisation = 10
+		}
+	}
+
+	legion_vexillarius_tech = {
+		research_cost = 1
+
+		dependencies = {
+			blocked_tech = 1
+		}
+
+		folder = {
+			name = fallout_focus_tree_folder
+			position = { x = @Row_ces y = @Col_9 }
+		}
+
+		allow = { always = no }
+
+		category_infantry = {
+			initiative = 0.07
+		}
+	}
+
+	# here was legacy -combat width tech, I've replaced it
+
+	ces_aurelius_mercenaries_tech = {
+		research_cost = 1
+
+		dependencies = {
+			blocked_tech = 1
+		}
+
+		folder = {
+			name = fallout_focus_tree_folder
+			position = { x = @Row_ces y = @Col_11 }
+		}
+
+		allow = {
+			always = no
+		}
+
+		infantry = {
+			mountain = {
+				attack = 0.1
+				movement = -0.1
+			}
+			hills = {
+				attack = 0.1
+				movement = 0.1
+			}
+		}
+		militia = {
+			mountain = {
+				attack = 0.1
+				movement = -0.1
+			}
+			hills = {
+				attack = 0.1
+				movement = 0.1
+			}
+		}
+		spec_ops = {
+			mountain = {
+				attack = 0.1
+				movement = -0.1
+			}
+			hills = {
+				attack = 0.1
+				movement = 0.1
+			}
+		}
+		power_armour = {
+			mountain = {
+				attack = 0.1
+				movement = -0.1
+			}
+			hills = {
+				attack = 0.1
+				movement = 0.1
+			}
+		}
+		motorized = {
+			mountain = {
+				attack = 0.1
+				movement = -0.1
+			}
+			hills = {
+				attack = 0.1
+				movement = 0.1
+			}
+		}
+		apc = {
+			mountain = {
+				attack = 0.1
+				movement = -0.1
+			}
+			hills = {
+				attack = 0.1
+				movement = 0.1
+			}
+		}
+	}
+
+	################################################
+	#NCR
+	################################################
+	ncr_reorgranger_tech = {
+		research_cost = 1
+
+		dependencies = {
+			blocked_tech = 1
+		}
+
+		folder = {
+			name = fallout_focus_tree_folder
+			position = { x = @Row_ncr y = @Col_2 }
+		}
+
+		allow = { always = no }
+
+		spec_ops = {
+			soft_attack = 0.05
+			hard_attack = 0.05
+			defense = 0.05
+		}
+	}
+
+	ncr_rangercore_tech = {
+		research_cost = 1
+
+		dependencies = {
+			blocked_tech = 1
+		}
+
+		folder = {
+			name = fallout_focus_tree_folder
+			position = { x = @Row_ncr y = @Col_3 }
+		}
+
+		allow = { always = no }
+
+		spec_ops = {
+			soft_attack = 0.1
+			defense = 0.1
+		}
+	}
+
+	ncr_jim_drills = {
+		research_cost = 1
+
+		dependencies = {
+			blocked_tech = 1
+		}
+
+		folder = {
+			name = fallout_focus_tree_folder
+			position = { x = @Row_ncr y = @Col_4 }
+		}
+
+		allow = { always = no }
+
+		category_infantry = {
+			soft_attack = 0.05
+			hard_attack = 0.05
+			defense = 0.05
+		}
+	}
+
+	ncr_rangerlead_tech = {
+		research_cost = 1
+
+		dependencies = {
+			blocked_tech = 1
+		}
+
+		folder = {
+			name = fallout_focus_tree_folder
+			position = { x = @Row_ncr y = @Col_5 }
+		}
+
+		allow = { always = no }
+
+		spec_ops = {
+			recon = 1
+		}
+	}
+
+	ncr_rangercanopeners_tech = {
+		research_cost = 1
+
+		dependencies = {
+			blocked_tech = 1
+		}
+
+		folder = {
+			name = fallout_focus_tree_folder
+			position = { x = @Row_ncr y = @Col_6 }
+		}
+
+		allow = { always = no }
+
+		spec_ops = {
+			hard_attack = 0.5
+		}
+	}
+
+	ncr_seth = {
+		research_cost = 1
+
+		dependencies = {
+			blocked_tech = 1
+		}
+
+		folder = {
+			name = fallout_focus_tree_folder
+			position = { x = @Row_ncr y = @Col_7 }
+		}
+
+		allow = { always = no }
+
+		spec_ops = {
+			soft_attack = 0.05
+			hard_attack = 0.05
+			defense = 0.05
+		}
+	}
+
+	ncr_privatepolice = {
+		research_cost = 1
+
+		dependencies = {
+			blocked_tech = 1
+		}
+
+		folder = {
+			name = fallout_focus_tree_folder
+			position = { x = @Row_ncr y = @Col_8 }
+		}
+
+		allow = { always = no }
+
+		militia = {
+			soft_attack = 0.1
+			hard_attack = 0.1
+			defense = 0.1
+		}
+	}
+
+	################################################
+	#Desert Rangers
+	################################################
+	ranger_knighttactics = {
+		research_cost = 1
+
+		dependencies = {
+			blocked_tech = 1
+		}
+
+		folder = {
+			name = fallout_focus_tree_folder
+			position = { x = @Row_des y = @Col_6 }
+		}
+
+		allow = { always = no }
+		category_infantry = {
+			breakthrough = 0.05
+		}
+	}
+
+	ranger_slayinggiants = {
+		research_cost = 1
+
+		dependencies = {
+			blocked_tech = 1
+		}
+
+		folder = {
+			name = fallout_focus_tree_folder
+			position = { x = @Row_des y = @Col_7 }
+		}
+
+		allow = { always = no }
+
+		category_infantry = {
+			breakthrough = 0.1
+			soft_attack = 0.1
+		}
+	}
+
+	ranger_rangerslegionwar = {
+		research_cost = 1
+
+		dependencies = {
+			blocked_tech = 1
+		}
+
+		folder = {
+			name = fallout_focus_tree_folder
+			position = { x = @Row_des y = @Col_8 }
+		}
+
+		allow = { always = no }
+
+		category_infantry = {
+			default_morale = 0.1
+		}
+	}
+
+	ranger_rangersnewthreat = {
+		research_cost = 1
+
+		dependencies = {
+			blocked_tech = 1
+		}
+
+		folder = {
+			name = fallout_focus_tree_folder
+			position = { x = @Row_des y = @Col_9 }
+		}
+
+		allow = { always = no }
+
+		category_infantry = {
+			breakthrough = 0.1
+			soft_attack = 0.1
+		}
+	}
+
+	bos_navarroscoutcamp = {
+		research_cost = 1
+
+		dependencies = {
+			blocked_tech = 1
+		}
+
+		folder = {
+			name = fallout_focus_tree_folder
+			position = { x = @Row_des y = @Col_10 }
+		}
+
+		allow = { always = no }
+
+		category_infantry = {
+			breakthrough = 0.07
+		}
+	}
+
+	################################################
+	#Reno
+	################################################
+	reno_mastersnewarmy = {
+		research_cost = 1
+
+		dependencies = {
+			blocked_tech = 1
+		}
+
+		folder = {
+			name = fallout_focus_tree_folder
+			position = { x = @Row_new y = @Col_1 }
+		}
+
+		allow = { always = no }
+
+		super_mutant_infantry = {
+			soft_attack = 0.05
+			hard_attack = 0.05
+			defense = 0.05
+		}
+	}
+
+	################################################
+	#Oregon
+	################################################
+	oregon_geckosupport = {
+		research_cost = 1
+
+		dependencies = {
+			blocked_tech = 1
+		}
+
+		folder = {
+			name = fallout_focus_tree_folder
+			position = { x = @Row_oregon y = @Col_1 }
+		}
+
+		allow = { always = no }
+
+		training_time_factor = 0.08
+
+		category_leg_infantry = {
+			soft_attack = 0.08
+			breakthrough = 0.08
+		}
+	}
+
+	oregon_mesmetronfieldequipment = {
+		research_cost = 1
+
+		dependencies = {
+			blocked_tech = 1
+		}
+
+		folder = {
+			name = fallout_focus_tree_folder
+			position = { x = @Row_oregon y = @Col_2 }
+		}
+
+		allow = { always = no }
+
+
+		militia = {
+			suppression_factor = 0.2
+		}
+
+		decryption = 1
+	}
+
+	oregon_psyker_mental_stimulants = {
+		research_cost = 1
+
+		dependencies = {
+			blocked_tech = 1
+		}
+
+		folder = {
+			name = fallout_focus_tree_folder
+			position = { x = @Row_oregon y = @Col_3 }
+		}
+
+		allow = { always = no }
+
+
+		spec_ops = {
+			defense = 0.06
+			soft_attack = 0.06
+			hard_attack = 0.06
+		}
+	}
+
+	oregon_psyker_nullification_training = {
+		research_cost = 1
+
+		dependencies = {
+			blocked_tech = 1
+		}
+
+		folder = {
+			name = fallout_focus_tree_folder
+			position = { x = @Row_oregon y = @Col_4 }
+		}
+
+		allow = { always = no }
+
+
+		spec_ops = {
+			defense = 0.06
+			soft_attack = 0.06
+			hard_attack = 0.06
+		}
+	}
+
+	oregon_psyker_ancient_traditions = {
+		research_cost = 1
+
+		dependencies = {
+			blocked_tech = 1
+		}
+
+		folder = {
+			name = fallout_focus_tree_folder
+			position = { x = @Row_oregon y = @Col_5 }
+		}
+
+		allow = { always = no }
+
+
+		spec_ops = {
+			defense = 0.08
+			soft_attack = 0.08
+			hard_attack = 0.08
+		}
+	}
+
+	################################################
+	#Colorado Buffs
+	################################################
+
+	ttm_healthy_warriors = {
+
+		research_cost = 1
+
+		dependencies = {
+			blocked_tech = 1
+		}
+
+		folder = {
+			name = fallout_focus_tree_folder
+			position = { x = @Row_colorado y = @Col_1 }
+		}
+
+		allow = {
+			always = no
+		}
+
+		infantry = {
+			max_organisation = 8
+		}
+
+	}
+
+	ttm_call_of_the_wild = {
+
+		research_cost = 1
+
+		dependencies = {
+			blocked_tech = 1
+		}
+
+		folder = {
+			name = fallout_focus_tree_folder
+			position = { x = @Row_colorado y = @Col_2 }
+		}
+
+		allow = {
+			always = no
+		}
+
+		dog_company = {
+			breakthrough = 0.08
+			soft_attack = 0.1
+		}
+
+	}
+
+	ttm_jurassic_strength = {
+
+		research_cost = 1
+
+		dependencies = {
+			blocked_tech = 1
+		}
+
+		folder = {
+			name = fallout_focus_tree_folder
+			position = { x = @Row_colorado y = @Col_3 }
+		}
+
+		allow = {
+			always = no
+		}
+
+		infantry = {
+			max_strength = 0.1
+		}
+
+	}
+
+	################################################
+	#Settler
+	################################################
+	settler_caravanmilitia = {
+		research_cost = 1
+
+		dependencies = {
+			blocked_tech = 1
+		}
+
+		folder = {
+			name = fallout_focus_tree_folder
+			position = { x = @Row_set y = @Col_1 }
+		}
+
+		allow = { always = no }
+
+		militia = {
+			soft_attack = 0.05
+			defense = 0.05
+		}
+	}
+
+	################################################
+	#Raiders
+	################################################
+	raider_reckless_aggression = {
+		research_cost = 1
+
+		dependencies = {
+			blocked_tech = 1
+		}
+
+		folder = {
+			name = fallout_focus_tree_folder
+			position = { x = @Row_rai y = @Col_1 }
+		}
+
+		allow = { always = no }
+
+		category_infantry = {
+			soft_attack = 0.1
+			defense = -0.1
+			breakthrough = 0.05
+		}
+	}
+
+	################################################
+	#Texas Brotherhood
+	################################################
+
+	tbh_lawkeepers_tech_1 = {
+		research_cost = 1
+
+		dependencies = {
+			blocked_tech = 1
+		}
+
+		path = {
+			leads_to_tech = tbh_lawkeepers_tech_2
+			research_cost_coeff = 1
+		}
+
+		folder = {
+			name = fallout_focus_tree_folder
+			position = { x = @Row_tbh y = @Col_1 }
+		}
+
+		allow = { always = no }
+
+		police_infantry = {
+			initiative = 0.02
+			recon = 0.2
+			max_organisation = 4
+			soft_attack = 0.05
+			hard_attack = 0.05
+		}
+	}
+
+	tbh_lawkeepers_tech_2 = {
+		research_cost = 1
+
+		dependencies = {
+			blocked_tech = 1
+		}
+
+		path = {
+			leads_to_tech = tbh_lawkeepers_tech_3
+			research_cost_coeff = 1
+		}
+
+		folder = {
+			name = fallout_focus_tree_folder
+			position = { x = @Row_tbh y = @Col_2 }
+		}
+
+		allow = { always = no }
+
+		police_infantry = {
+			initiative = 0.02
+			recon = 0.2
+			max_organisation = 4
+			soft_attack = 0.05
+			hard_attack = 0.05
+		}
+	}
+
+	tbh_lawkeepers_tech_3 = {
+		research_cost = 1
+
+		dependencies = {
+			blocked_tech = 1
+		}
+
+		folder = {
+			name = fallout_focus_tree_folder
+			position = { x = @Row_tbh y = @Col_3 }
+		}
+
+		allow = { always = no }
+
+		police_infantry = {
+			initiative = 0.02
+			recon = 0.2
+			max_organisation = 4
+			soft_attack = 0.05
+			hard_attack = 0.05
+		}
+	}
+
+	################################################
+	# research unlocks
+	################################################
+
+	gauss_unlock_tech = {
+		research_cost = 1.0
+
+		dependencies = {
+			blocked_tech = 1
+		}
+
+		allow = {
+			always = no
+		}
+
+		folder = {
+			name = fallout_focus_tree_folder
+			position = { x = @Row_unlock y = @Col_1 }
+		}
+
+		ai_will_do = {
+			factor = 0
+		}
+		custom_modifier_tooltip = scav_unlock_weapon_tt
+	}
+
+	plasma_unlock_tech = {
+		research_cost = 1.0
+
+		dependencies = {
+			blocked_tech = 1
+		}
+
+		allow = {
+			always = no
+		}
+
+		folder = {
+			name = fallout_focus_tree_folder
+			position = { x = @Row_unlock y = @Col_2 }
+		}
+
+		ai_will_do = {
+			factor = 0
+		}
+		custom_modifier_tooltip = scav_unlock_weapon_tt
+	}
+
+	enclave_pa_unlock_tech = {
+		research_cost = 1.0
+
+		dependencies = {
+			blocked_tech = 1
+		}
+
+		allow = {
+			always = no
+		}
+
+		folder = {
+			name = fallout_focus_tree_folder
+			position = { x = @Row_unlock y = @Col_3 }
+		}
+
+		ai_will_do = {
+			factor = 0
+		}
+		custom_modifier_tooltip = scav_unlock_weapon_tt
+	}
+
+	high_fighter_unlock_tech = {
+		research_cost = 1.0
+
+		dependencies = {
+			blocked_tech = 1
+		}
+
+		allow = {
+			always = no
+		}
+
+		folder = {
+			name = fallout_focus_tree_folder
+			position = { x = @Row_unlock y = @Col_4 }
+		}
+
+		ai_will_do = {
+			factor = 0
+		}
+		custom_modifier_tooltip = scav_unlock_weapon_tt
+	}
+
+	vertibird_unlock_tech = {
+		research_cost = 1.0
+
+		dependencies = {
+			blocked_tech = 1
+		}
+
+		allow = {
+			always = no
+		}
+
+		folder = {
+			name = fallout_focus_tree_folder
+			position = { x = @Row_unlock y = @Col_5 }
+		}
+
+		ai_will_do = {
+			factor = 0
+		}
+		custom_modifier_tooltip = scav_unlock_weapon_tt
+	}
+
+	general_atomics_unlock_tech = {
+		research_cost = 1.0
+
+		dependencies = {
+			blocked_tech = 1
+		}
+
+		allow = {
+			always = no
+		}
+
+		folder = {
+			name = fallout_focus_tree_folder
+			position = { x = @Row_unlock y = @Col_6 }
+		}
+
+		ai_will_do = {
+			factor = 0
+		}
+		custom_modifier_tooltip = scav_unlock_business_tt
+	}
+
+	stent_security_solutions_unlock_tech = {
+		research_cost = 1.0
+
+		dependencies = {
+			blocked_tech = 1
+		}
+
+		allow = {
+			always = no
+		}
+
+		folder = {
+			name = fallout_focus_tree_folder
+			position = { x = @Row_unlock y = @Col_7 }
+		}
+
+		ai_will_do = {
+			factor = 0
+		}
+		custom_modifier_tooltip = scav_unlock_business_tt
+	}
+
+	wattz_company_unlock_tech = {
+		research_cost = 1.0
+
+		dependencies = {
+			blocked_tech = 1
+		}
+
+		allow = {
+			always = no
+		}
+
+		folder = {
+			name = fallout_focus_tree_folder
+			position = { x = @Row_unlock y = @Col_8 }
+		}
+
+		ai_will_do = {
+			factor = 0
+		}
+		custom_modifier_tooltip = scav_unlock_business_tt
+	}
+
+	handhtools_unlock_tech = {
+		research_cost = 1.0
+
+		dependencies = {
+			blocked_tech = 1
+		}
+
+		allow = {
+			always = no
+		}
+
+		folder = {
+			name = fallout_focus_tree_folder
+			position = { x = @Row_unlock y = @Col_9 }
+		}
+
+		ai_will_do = {
+			factor = 0
+		}
+		custom_modifier_tooltip = scav_unlock_business_tt
+	}
+
+	poseidon_unlock_tech = {
+		research_cost = 1.0
+
+		dependencies = {
+			blocked_tech = 1
+		}
+
+		allow = {
+			always = no
+		}
+
+		folder = {
+			name = fallout_focus_tree_folder
+			position = { x = @Row_unlock y = @Col_10 }
+		}
+
+		ai_will_do = {
+			factor = 0
+		}
+		custom_modifier_tooltip = scav_unlock_business_tt
+	}
+
+	lockreed_unlock_tech = {
+		research_cost = 1.0
+
+		dependencies = {
+			blocked_tech = 1
+		}
+
+		allow = {
+			always = no
+		}
+
+		folder = {
+			name = fallout_focus_tree_folder
+			position = { x = @Row_unlock y = @Col_11 }
+		}
+
+		ai_will_do = {
+			factor = 0
+		}
+		custom_modifier_tooltip = scav_unlock_business_tt
+	}
+
+	arcjetsystems_unlock_tech = {
+		research_cost = 1.0
+
+		dependencies = {
+			blocked_tech = 1
+		}
+
+		allow = {
+			always = no
+		}
+
+		folder = {
+			name = fallout_focus_tree_folder
+			position = { x = @Row_unlock y = @Col_12 }
+		}
+
+		ai_will_do = {
+			factor = 0
+		}
+		custom_modifier_tooltip = scav_unlock_business_tt
+	}
+
+	westtek_unlock_tech = {
+		research_cost = 1.0
+
+		dependencies = {
+			blocked_tech = 1
+		}
+
+		allow = {
+			always = no
+		}
+
+		folder = {
+			name = fallout_focus_tree_folder
+			position = { x = @Row_unlock y = @Col_13 }
+		}
+
+		ai_will_do = {
+			factor = 0
+		}
+		custom_modifier_tooltip = scav_unlock_business_tt
+	}
+
+	robco_unlock_tech = {
+		research_cost = 1.0
+
+		dependencies = {
+			blocked_tech = 1
+		}
+
+		allow = {
+			always = no
+		}
+
+		folder = {
+			name = fallout_focus_tree_folder
+			position = { x = @Row_unlock y = @Col_14 }
+		}
+
+		ai_will_do = {
+			factor = 0
+		}
+		custom_modifier_tooltip = scav_unlock_business_tt
+	}
+
+	mininuke_unlock_tech = {
+		research_cost = 1.0
+
+		enable_equipments = {
+			mininuke_equipment_1
+		}
+
+		allow_branch = {
+			has_dlc = "Waking the Tiger"
+		}
+
+		dependencies = {
+			blocked_tech = 1
+		}
+
+		allow = {
+			always = no
+		}
+
+		folder = {
+			name = fallout_focus_tree_folder
+			position = { x = @Row_unit2 y = @Col_5 }
+		}
+
+		ai_will_do = {
+			factor = 0
+		}
+	}
+
+	artillery_ammo_unlock_tech = {
+		research_cost = 1.0
+
+		enable_equipments = {
+			artillery_ammo_equipment_1
+		}
+
+		allow_branch = {
+			has_dlc = "Waking the Tiger"
+		}
+
+		dependencies = {
+			blocked_tech = 1
+		}
+
+		allow = {
+			always = no
+		}
+
+		folder = {
+			name = fallout_focus_tree_folder
+			position = { x = @Row_unit2 y = @Col_7 }
+		}
+
+		ai_will_do = {
+			factor = 0
+		}
+	}
+
+	platinum_os_tech = {
+		research_cost = 1.0
+
+		dependencies = {
+			blocked_tech = 1
+		}
+
+		allow = {
+			always = no
+		}
+
+		ai_will_do = {
+			factor = 0
+		}
+	}
+
+	nuke_unlock_tech = {
+		research_cost = 1.0
+
+		nuclear_production = 1
+
+		allow = {
+			always = no
+		}
+
+		dependencies = {
+			blocked_tech = 1
+		}
+
+		ai_will_do = {
+			factor = 0
+		}
+	}
+
+	alamo_defenders_unlock_tech = {
+		research_cost = 1.0
+
+		allow = {
+			always = no
+		}
+
+		dependencies = {
+			blocked_tech = 1
+		}
+
+		enable_subunits = {
+			alamo_defenders
+		}
+
+		ai_will_do = {
+			factor = 0
+		}
+	}
+}

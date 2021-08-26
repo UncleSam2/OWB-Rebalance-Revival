@@ -1,0 +1,43 @@
+﻿CHE_LIGHT = {
+	name = NAME_THEME_SHIPS_CHE_LIGHT
+	for_countries = { CHE }
+	type = ship
+	ship_types = { light_ship_unit }
+	fallback_name = "Daydreamer %d"
+	unique = {
+		"Buffed-out" "Call Me Daddy-O" "Calmex-ed" "Coyote Tobacco" "Day Tripping" "Feeling Steady" "Hydra High" "Jet-Junky" "Med-x Overdose" "On A Nuka-Break" "On That Rebound" "On Turbo" "Party Time Mentats" "Psycho" "Purple Cloud" "Riding Rocket" "Smooch" "Sweet Ant Nector" "The After Burner" "Time To X-Cell"
+	}
+}
+
+CHE_MEDIUM = {
+	name = NAME_THEME_SHIPS_CHE_MEDIUM
+	for_countries = { CHE }
+	type = ship
+	ship_types = { medium_ship_screen_unit }
+	fallback_name = "Smooth Rider %d"
+	unique = {
+		"A Classy Consumer" "Atomic Cocktail Party" "Chill it out, Man" "Dixon's Jet" "Five-'X'er" "Jet-Feuled Sanity" "On The Dragon" "Pass the Sugar-Bombs" "Psychotic Trip" "Reality Sucks" "Smooth Daddy-O" "Suffer That Afterburn" "Tobacco Tugger"
+	}
+}
+
+CHE_HEAVY = {
+	name = NAME_THEME_SHIPS_CHE_HEAVY
+	for_countries = { CHE }
+	type = ship
+	ship_types = { heavy_ship_unit }
+	fallback_name = "Slow Float %d"
+	unique = {
+		"A Friend of New Reno" "Breath It In" "Can You Like, Not?" "Cut to Pure" "Definately Not A Stash" "First Timer" "Huffing Brahmin Crap" "Living That Daydream" "NCR's A Bunch of Stuck-ups" "Need Caps 4 Jet" "Not A Stash" "Now This Is Freedom" "Our Choice" "Woooooooooo" "Ya'll Seeing This?"
+	}
+}
+
+CHE_SUPER_HEAVY = {
+	name = NAME_THEME_SHIPS_CHE_SUPER_HEAVY
+	for_countries = { CHE }
+	type = ship
+	ship_types = { super_heavy_ship_unit }
+	fallback_name = "Bad Trip %d"
+	unique = {
+		"20 Caps a Ton" "Fixer's For Those Without Jet" "I Don't Know What it is, But it's Going in my Arm" "Take Me To Dreamland" "This Was Cooked in a Rusty Pot"
+	}
+}

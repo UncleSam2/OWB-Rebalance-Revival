@@ -1,0 +1,43 @@
+﻿LON_LIGHT = {
+	name = NAME_THEME_SHIPS_LON_LIGHT
+	for_countries = { LON }
+	type = ship
+	ship_types = { light_ship_unit }
+	fallback_name = "Tribal Canoe %d"
+	unique = {
+		"Confidence Sure" "Core-Cut Log" "Guaranteed Catch" "Hard Driftwood" "Hawk Even" "Hunts From High" "Knowing" "No Trouble" "Pineman" "Quality Unrivaled" "River Dancer" "Serpet" "Silver Fish" "Stand Tall" "Steady Undouted" "Sturdy-Float" "Swift Rower" "Tree-Jumper" "Upstreamer" "Water Dog" "Well Crafted"
+	}
+}
+
+LON_MEDIUM = {
+	name = NAME_THEME_SHIPS_LON_MEDIUM
+	for_countries = { LON }
+	type = ship
+	ship_types = { medium_ship_screen_unit }
+	fallback_name = "Tribal Boat %d"
+	unique = {
+		"Conehead" "Cutter" "Ease With The Breeze" "Ease of Ride" "First Pioneer" "Forager" "Gatherings" "Good-Haul" "Greatly Assured" "Hightop" "If Needed" "Know This River" "Ready On" "Seeing-Far" "Star-Chasing" "Sways With Wind" "Thick Trunked" "Wake Splitter" "Waters Calm" "Wind Catch"
+	}
+}
+
+LON_HEAVY = {
+	name = NAME_THEME_SHIPS_LON_HEAVY
+	for_countries = { LON }
+	type = ship
+	ship_types = { heavy_ship_unit }
+	fallback_name = "Tribal Cruising Vessel %d"
+	unique = {
+		"Bighorner Strong" "Blade Revealed" "Deep Water Crossing" "Dominate Position" "Fear No Height" "Hard To Track" "High Ground Advantage" "Natural Leader" "Notched Arrow" "Sharpened Tip" "Stands Tall" "Superior" "Tomahawk" "Trailblazer" "Umongst the Bark" "Warrior Bred"
+	}
+}
+
+LON_SUPER_HEAVY = {
+	name = NAME_THEME_SHIPS_LON_SUPER_HEAVY
+	for_countries = { LON }
+	type = ship
+	ship_types = { super_heavy_ship_unit }
+	fallback_name = "Tribal Battleship %d"
+	unique = {
+		"A Lonetree Stands Long" "Cazador Sting" "Cornered Coyote" "Death Claw" "Deep Rooted War-Man" "Feral Yao Guai" "Geacko Fang" "Highland Rancher" "Littleton Bighorner" "Of The Greatest Pine"
+	}
+}

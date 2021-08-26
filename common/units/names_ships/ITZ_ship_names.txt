@@ -1,0 +1,43 @@
+﻿ITZ_LIGHT = {
+	name = NAME_THEME_LIGHT
+	for_countries = { ITZ }
+	type = ship
+	ship_types = { light_ship_unit }
+	fallback_name = "Destroyer %d"
+	unique = {
+		"Lady Eveningstar" "Lady of Itzan" "Lady Xoc" "Kʼinich Yoʼnal Ahk I" "Bʼalaj Chan Kʼawiil" "Itzam Kʼan Ahk II" "Felipe Carrillo Puerto" "Francisco Luna Kan"
+		}
+}
+
+ITZ_MEDIUM = {
+	name = NAME_THEME_MEDIUM
+	for_countries = { ITZ }
+	type = ship
+	ship_types = { medium_ship_screen_unit }
+	fallback_name = "Light Cruiser %d"
+	unique = {
+	"Hunab Ku" "Jacawitz" "Kin" "Kulukan" "Maximon" "Nacon" "Votan" "Sip" "Qaholom" "Xaman Ek" "Yum Kaax" "Zipacna" "Chilam Balam"
+	}
+}
+
+ITZ_HEAVY = {
+	name = NAME_THEME_HEAVY
+	for_countries = { ITZ }
+	type = ship
+	ship_types = { heavy_ship_unit }
+	fallback_name = "Heavy Cruiser %d"
+	unique = {
+		"Merida" "Cancun" "Cassiopeia" "Chan Santa Cruz" "Francisco May" "Cruzoob" "Saki" "Marcus Canul" "Crescencio Poot" "Izamal" "Progreso" "Telchac Pueblo" "Ticul"
+	}
+}
+
+ITZ_SUPER_HEAVY = {
+	name = NAME_THEME_SUPER_HEAVY
+	for_countries = { ITZ }
+	type = ship
+	ship_types = { super_heavy_ship_unit }
+	fallback_name = "Battleship %d"
+	unique = {
+		"Hun Hunahpu" "Vucub Hunahpu" "Xibalba" "Bahlam" "Cabrakan"
+	}
+}

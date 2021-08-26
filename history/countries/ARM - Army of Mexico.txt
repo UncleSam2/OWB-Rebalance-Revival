@@ -1,0 +1,242 @@
+﻿capital = 755
+oob = "ARM_2275"
+set_naval_oob = "ARM_2275_naval"
+
+set_technology = {
+	infantry_tech_level_tribal = 1
+	infantry_tech_level_settler = 1
+	#infantry_tech_level_scientific = 1
+	support_tech_level_tribal = 1
+	support_tech_level_settler = 1
+	#support_tech_level_scientific = 1
+	special_forces_tech_level_tribal = 1
+	#special_forces_tech_level_settler = 1
+	#special_forces_tech_level_scientific = 1
+	#power_armour_tech_level_settler = 1
+	#power_armour_tech_level_scientific = 1
+	vehicles_tech_level_tribal = 1
+	vehicles_tech_level_settler = 1
+	#vehicles_tech_level_scientific = 1
+	robotics_tech_level_tribal = 1
+	robotics_tech_level_settler = 1
+	#robotics_tech_level_scientific = 1
+	air_tech_level_tribal = 1
+	air_tech_level_settler = 1
+	#air_tech_level_scientific = 1
+	naval_tech_level_tribal = 1
+	naval_tech_level_settler = 1
+	naval_tech_level_scientific = 1
+	tools_tech_level_tribal = 1
+	tools_tech_level_settler = 1
+	#tools_tech_level_scientific = 1
+	habitation_tech_level_tribal = 1
+	habitation_tech_level_settler = 1
+	#habitation_tech_level_scientific = 1
+	exploitation_tech_level_tribal = 1
+	exploitation_tech_level_settler = 1
+	#exploitation_tech_level_scientific = 1
+	electronics_tech_level_tribal = 1
+	electronics_tech_level_settler = 1
+	#electronics_tech_level_scientific = 1
+	automated_warfare = 1
+	standard_weaponry_tech = 1
+	melee_weaponry_tech_1 = 1
+	tribal_civilization = 1
+	settled_civilization = 1
+	robot_automation_tech = 1
+	robot_makeshift_automatons_tech = 1
+	robot_protectron_tech_1 = 1
+	robot_alloy_tech = 1
+	robot_heavy_lifter_tech = 1
+	support_weaponry = 1
+	anti_tank_equipment_tech_1 = 1
+}
+
+if = {
+	limit = {
+		has_dlc = "Man the Guns"
+	}
+	set_technology = {
+		nautics_tech_1 = 1
+		light_navy_hull_tech_1 = 1
+		waterproof_sealing_tech = 1
+		medium_navy_hull_tech_1 = 1
+		heavy_navy_hull_tech_1 = 1
+		naval_invasion_tech_1 = 1
+		naval_module_tech = 1
+		naval_armour_tech_1 = 1
+		naval_pd_module_tech_1 = 1
+		naval_communications_module_tech_1 = 1
+		naval_weapons_module_tech = 1
+	}
+}
+if = {
+	limit = {
+		NOT = { has_dlc = "Man the Guns" }
+	}
+	set_technology = {
+		nautics_tech_non_mtg_1 = 1
+		light_navy_hull_tech_non_mtg_1 = 1
+		waterproof_sealing_tech_non_mtg = 1
+		medium_navy_hull_tech_non_mtg_1 = 1
+		naval_invasion_tech_non_mtg_1 = 1
+		heavy_navy_hull_tech_non_mtg_1 = 1
+	}
+}
+
+set_stability = 0.35
+set_war_support = 0.45
+set_research_slots = 5
+set_country_flag = is_north_mexican
+set_country_flag = is_robotic_nation
+
+set_convoys = 150
+
+create_import = {
+	resource = metal
+	amount = 8
+	exporter = TLA
+}
+
+set_politics = {
+	ruling_party = ruler
+	elections_allowed = no
+}
+
+set_popularities = {
+	people = 0
+	elites = 0
+	intellectuals = 0
+	ruler = 100
+}
+
+add_ideas = {
+	tla_efficiency_code
+	outsider_law_volunteers
+}
+set_country_flag = slavery_allowed
+set_country_flag = has_robot_generals
+
+create_country_leader = {
+	name = "Santa Anna"
+	desc = "SANTA_ANNA_DESC"
+	picture = "GFX_Portrait_ARM_Santa_Anna_animated"
+	expire = "3000.1.1"
+	ideology = indifferent_despotism
+	traits = {
+		arm_man_of_destiny
+		dislikes_caesars_legion
+	}
+}
+
+create_field_marshal = {
+	name = "Santa Anna"
+	portrait_path = "gfx/leaders/ARM/portrait_arm_santa_anna.dds"
+	skill = 5
+	id = 555
+	traits = {
+		enduring_trait
+		aqua_boy_trait
+		intelligent_trait
+	}
+	attack_skill = 4
+	defense_skill = 2
+	planning_skill = 4
+	logistics_skill = 2
+}
+
+create_corps_commander = {
+	name = "José de Urrea"
+	picture = "portrait_jose_de_urrea.dds"
+	traits = { enduring_trait  }
+	skill = 4
+	id = 556
+	attack_skill = 3
+	defense_skill = 3
+	planning_skill = 1
+	logistics_skill = 3
+}
+
+create_corps_commander = {
+	name = "Manuel Fernández Castrillón"
+	picture = "portrait_manuel.dds"
+	traits = {  perceptive_trait enduring_trait }
+	skill = 4
+	id = 557
+	attack_skill = 3
+	defense_skill = 2
+	planning_skill = 3
+	logistics_skill = 2
+}
+
+create_corps_commander = {
+	name = "Martín Perfecto de Cos"
+	picture = "portrait_martin_perfecto.dds"
+	traits = { enduring_trait }
+	skill = 2
+	id = 7
+	attack_skill = 2
+	defense_skill = 1
+	planning_skill = 1
+	logistics_skill = 2
+}
+
+create_equipment_variant = {
+	name = "River Boat"
+	type = ship_hull_light_1
+	name_group = NCR_LIGHT
+	parent_version = 0
+	modules = {
+		fixed_ship_command_slot = ship_command_module_1
+		fixed_ship_engine_slot = light_ship_oars_module
+		fixed_ship_engine_slot_1 = light_ship_oars_module
+		fixed_ship_battery_slot = ship_light_mounted_gun_module
+		fixed_ship_battery_slot_1 = ship_light_mounted_gun_module
+		fixed_ship_detection_slot = ship_detection_module_1
+		fixed_ship_detection_slot_1 = empty
+	}
+}
+
+create_equipment_variant = {
+	name = "Destroyer"
+	type = ship_hull_medium_1
+	name_group = NCR_MEDIUM
+	parent_version = 0
+	modules = {
+		fixed_ship_command_slot = ship_command_module_1
+		fixed_ship_engine_slot = medium_ship_oars_module
+		fixed_ship_engine_slot_1 = medium_ship_oars_module
+		fixed_ship_battery_slot = ship_medium_mounted_gun_module
+		fixed_ship_battery_slot_1 = ship_medium_mounted_gun_module
+		fixed_ship_detection_slot = ship_detection_module_1
+		fixed_ship_detection_slot_1 = empty
+		fixed_ship_armour_slot = empty
+		fixed_ship_point_defense_slot = ship_light_mounted_gun_module
+		fixed_ship_point_defense_slot_1 = ship_light_mounted_gun_module
+		front_1_custom_slot = ship_medium_mounted_gun_module
+	}
+}
+
+create_equipment_variant = {
+	name = "Heavy Ship"
+	type = ship_hull_heavy_1
+	name_group = NCR_HEAVY
+	parent_version = 0
+	modules = {
+		fixed_ship_command_slot = ship_command_module_1
+		fixed_ship_engine_slot = heavy_ship_oars_module
+		fixed_ship_engine_slot_1 = heavy_ship_oars_module
+		fixed_ship_battery_slot = ship_heavy_mounted_gun_module
+		fixed_ship_battery_slot_1 = ship_heavy_mounted_gun_module
+		fixed_ship_detection_slot = ship_detection_module_1
+		fixed_ship_detection_slot_1 = ship_detection_module_1
+		fixed_ship_armour_slot = heavy_ship_armour_module_1
+		fixed_ship_point_defense_slot = ship_pd_module_1
+		fixed_ship_point_defense_slot_1 = ship_pd_module_1
+		fixed_ship_subsurface_slot = empty
+		fixed_ship_communication_slot = ship_communications_module_1
+		fixed_ship_storage_slot = empty
+		fixed_ship_special_slot = empty
+		front_1_custom_slot = ship_heavy_mounted_gun_module
+	}
+}

@@ -1,0 +1,43 @@
+﻿YKZ_LIGHT = {
+	name = NAME_THEME_SHIPS_YKZ_LIGHT
+	for_countries = { YKZ }
+	type = ship
+	ship_types = { light_ship_unit }
+	fallback_name = "Kuchikukan %d"
+	unique = {
+		"Akigumo" "Akishimo" "Akizuki" "Amatsukaze" "Arare" "Arashi" "Arashio" "Asagumo" "Asashimo" "Asashio" "Enoki" "Fujinami" "Fuyutsuki" "Hagi" "Hagikaze" "Hamakaze" "Hamanami" "Hanazuki" "Harusame" "Harutsuki" "Hatsukaze" "Hatsuume" "Hatsuzakura" "Hatsuzuki" "Hayanami" "Hayashimo" "Hayashio" "Hinoki" "Isokaze" "Kaba" "Kaede" "Kagero" "Kaki" "Kashi" "Kasumi" "Kawakaze" "Kaya" "Kazagumo" "Keyaki" "Kiri" "Kishinami" "Kiyonami" "Kiyoshimo" "Kuroshio" "Kusunoki" "Kuwa" "Maikaze" "Maki" "Makigumo" "Makinami" "Matsu" "Michishio" "Minegumo" "Momi" "Momo" "Murasame" "Naganami" "Nara" "Nashi" "Natsugumo" "Natsushio" "Natsuzuki" "Niizuki" "Nire" "Nowaki" "Odake" "Okinami" "Onami" "Oshio" "Oyashio" "Sakura" "Samidare" "Shigure" "Shii" "Shimakaze" "Shimotsuki" "Shiranui" "Shiratsuyu" "Sugi" "Sumire" "Suzukaze" "Suzunami" "Suzutsuki" "Tachibana" "Takanami" "Take" "Tamanami" "Tanikaze" "Teruzuki" "Tokitsukaze" "Tsubaki" "Tsuta" "Ume" "Umikaze" "Urakaze" "Wakatsuki" "Yamagumo" "Yamakaze" "Yanagi" "Yoizuki" "Yudachi" "Yugumo" "Yukikaze"
+	}
+}
+
+YKZ_MEDIUM = {
+	name = NAME_THEME_SHIPS_YKZ_MEDIUM
+	for_countries = { YKZ }
+	type = ship
+	ship_types = { medium_ship_screen_unit }
+	fallback_name = "Keijun'yokan %d"
+	unique = {
+		"Ashida" "Banjo" "Chikugo" "Gokase" "Hino" "Honmyo" "Iwaki" "Kano" "Kase" "Kikuchi" "Kimotsuki" "Koyoshi" "Kuji" "Kumozu" "Kushida" "Mabechi" "Maruyama" "Matsuura" "Naruse" "Omaru" "Omono" "Onga" "Ono" "Ooita" "Ota" "Oyabe" "Rokkaku" "Shonai" "Suzuka" "Takahashi" "Takase" "Takatsu" "Tedori" "Tsurumi" "Yabe" "Yamakuni" "Yoneshiro" "Yoshii" "Yoshino"
+	}
+}
+
+YKZ_HEAVY = {
+	name = NAME_THEME_SHIPS_YKZ_HEAVY
+	for_countries = { YKZ }
+	type = ship
+	ship_types = { heavy_ship_unit }
+	fallback_name = "Jun'yokan %d"
+	unique = {
+		"Akaishi" "Ariake" "Asahi" "Asama" "Ashitaka" "Aso" "Azuma" "Bandai" "Buko" "Ena" "Hakkai" "Hakuseki" "Hotaka" "Hotaka" "Ichifusa" "Iide" "Iizuma" "Ishizuchi" "Iwaki" "Iwasuge" "Iwate" "Jonen" "Kaimon" "Kurikoma" "Makihata" "Mizugaki" "Moriyoshi" "Myogi" "Nasu" "Norikura" "Omine" "Osuzu" "Shiomi" "Sumon" "Takatsuma" "Tanigawa" "Tanzawa" "Tateshina" "Tsugaru" "Tsukuba" "Unzen" "Waga" "Yufu" "Zao"
+	}
+}
+
+YKZ_SUPER_HEAVY = {
+	name = NAME_THEME_SHIPS_YKZ_SUPER_HEAVY
+	for_countries = { YKZ }
+	type = ship
+	ship_types = { super_heavy_ship_unit }
+	fallback_name = "Senkan %d"
+	unique = {
+		"Aki" "Awa" "Dewa" "Hida" "Hitachi" "Iga" "Iyo" "Izumi" "Kaga" "Kai" "Kawachi" "Mikawa" "Mino" "Nagato" "Noto" "Omi" "Osumi" "Sanuki" "Satsuma" "Settsu" "Suruga" "Tajima" "Tanba" "Yamato"
+	}
+}

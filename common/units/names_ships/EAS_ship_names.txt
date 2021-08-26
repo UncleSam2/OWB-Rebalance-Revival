@@ -1,0 +1,43 @@
+﻿EAS_LIGHT = {
+	name = NAME_THEME_SHIPS_EAS_LIGHT
+	for_countries = { EAS }
+	type = ship
+	ship_types = { light_ship_unit }
+	fallback_name = "Dingy %d"
+	unique = {
+		"A Hole in Deck" "A Year For This" "Better Than Nothing" "Durability Debated" "Equal To Nothing" "Feeling Cocky" "Float Like A Brick" "Floating Scrap" "Ignore Us" "Nuts N' Bolts" "Oldie But A Goodie" "Puddle Worthy" "Restored Crap" "Rusted Through" "Sailing Smooth" "The Leftover" "Three-Eyed Fish" "Unrivaled Might" "Up A Creek" "Will Have to Do"
+	}
+}
+
+EAS_MEDIUM = {
+	name = NAME_THEME_SHIPS_EAS_MEDIUM
+	for_countries = { EAS }
+	type = ship
+	ship_types = { medium_ship_screen_unit }
+	fallback_name = "Rust Bucket %d"
+	unique = {
+		"Carry On" "Could've Built A House" "Distraction" "Free To Choose" "If We Must" "Lackies Luck" "One For You" "Scrap King" "Seen Better Days" "Should've Built That House" "Sick of Water" "Smart Planning" "Smells Like Victory" "Sucker Punch" "Unsinkable V"
+	}
+}
+
+EAS_HEAVY = {
+	name = NAME_THEME_SHIPS_EAS_HEAVY
+	for_countries = { EAS }
+	type = ship
+	ship_types = { heavy_ship_unit }
+	fallback_name = "Cutter %d"
+	unique = {
+		"Cap For Your Thoughts" "Cash In" "Chasing Radstorms" "Diplomacy" "King Molerat XVI" "No More" "Now Come" "Now We Fight" "One of a Kind" "Ready or What?" "Runs Like The Wind" "Sarsaparilla Sunrise" "Through Strong" "Up and Up" "We found This One"
+	}
+}
+
+EAS_SUPER_HEAVY = {
+	name = NAME_THEME_SHIPS_EAS_SUPER_HEAVY
+	for_countries = { EAS }
+	type = ship
+	ship_types = { super_heavy_ship_unit }
+	fallback_name = "Battle Boat %d"
+	unique = {
+		"All Fire Front" "Broadsider" "Completely Scrap" "Expensive As Hell" "Full Frontal" "Hammer Down!" "Our Height" "Sister of War" "Steel Brunt" "Wall of the People"
+	}
+}

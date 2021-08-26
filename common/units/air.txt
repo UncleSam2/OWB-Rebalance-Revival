@@ -1,0 +1,182 @@
+sub_units = {
+
+	spotter_plane = {
+		sprite = fighter_plane
+		priority = 1
+		active = yes
+		type = { scout_plane }
+		need = { spotter_plane_equipment = 1 }
+		categories = { category_spotter_plane }
+	}
+
+	fighter = {
+		sprite = fighter_plane
+		priority = 1
+		active = yes
+		type = { fighter }
+		need = { fighter_equipment = 1 }
+		categories = { category_fighter }
+	}
+
+	car_fighter = {
+		sprite = fighter_plane
+		priority = 1
+		active = yes
+		type = { fighter }
+		need = { car_fighter_equipment = 1 }
+		categories = { category_fighter }
+	}
+
+	hev_fighter = {
+		sprite = fighter_plane
+		priority = 1
+		active = yes
+		type = { fighter }
+		need = { hev_fighter_equipment = 1 }
+		categories = { category_fighter }
+	}
+
+	long_fighter = {
+		sprite = fighter_plane
+		priority = 1
+		active = yes
+		type = { fighter }
+		need = { long_fighter_equipment = 1 }
+		categories = { category_fighter }
+	}
+
+	cas = {
+		sprite = cas_plane
+		priority = 1
+		active = yes
+		type = { tactical_bomber }
+		need = { cas_equipment = 1 }
+		categories = { category_cas }
+	}
+
+	car_cas = {
+		sprite = cas_plane
+		priority = 1
+		active = yes
+		type = { tactical_bomber }
+		need = { car_cas_equipment = 1 }
+		categories = { category_cas }
+	}
+
+	hev_cas = {
+		sprite = cas_plane
+		priority = 1
+		active = yes
+		type = { tactical_bomber }
+		need = { hev_cas_equipment = 1 }
+		categories = { category_cas }
+	}
+
+	long_cas = {
+		sprite = cas_plane
+		priority = 1
+		active = yes
+		type = { tactical_bomber }
+		need = { long_cas_equipment = 1 }
+		categories = { category_cas }
+	}
+
+	transport_plane = {
+		sprite = transport_plane
+		priority = 1
+		active = yes
+		type = { air_transport }
+		need = { cargo_plane_equipment = 1 }
+		categories = { category_transport }
+	}
+
+	strat_bomber = {
+		sprite = strat_plane
+		priority = 1
+		active = yes
+		type = { tactical_bomber strategic_bomber }
+		need = { strategic_bomber_equipment = 1 }
+		categories = { category_strat_bomber }
+	}
+
+	long_strat_bomber = {
+		sprite = strat_plane
+		priority = 1
+		active = yes
+		type = { strategic_bomber }
+		need = { long_strategic_bomber_equipment = 1 }
+		categories = { category_strat_bomber }
+	}
+
+	hev_strat_bomber = {
+		sprite = strat_plane
+		priority = 1
+		active = yes
+		type = { strategic_bomber }
+		need = { hev_strategic_bomber_equipment = 1 }
+		categories = { category_strat_bomber }
+	}
+
+	nav_strat_bomber = {
+		sprite = strat_plane
+		priority = 1
+		active = yes
+		type = { naval_bomber }
+		need = { nav_strategic_bomber_equipment = 1 }
+		categories = { category_strat_bomber }
+	}
+
+	blimp_bomber = {
+		sprite = strat_plane
+		priority = 1
+		active = yes
+		type = { fighter tactical_bomber }
+		need = { blimp_equipment = 1 }
+		categories = { category_blimp }
+	}
+
+	ground_blimp_bomber = {
+		sprite = blimp
+		priority = 1
+		active = yes
+		type = { tactical_bomber }
+		need = { ground_blimp_equipment = 1 }
+		categories = { category_blimp }
+	}
+
+	air_blimp_bomber = {
+		sprite = blimp
+		priority = 1
+		active = yes
+		type = { fighter }
+		need = { air_blimp_equipment = 1 }
+		categories = { category_blimp }
+	}
+
+	cheap_blimp_bomber = {
+		sprite = blimp
+		priority = 1
+		active = yes
+		type = { fighter tactical_bomber }
+		need = { cheap_blimp_equipment = 1 }
+		categories = { category_blimp }
+	}
+
+	payload_glider = {
+		sprite = fighter_plane
+		priority = 1
+		active = yes
+		type = { tactical_bomber }
+		need = { air_payload_equipment = 1 }
+		categories = { category_cas }
+	}
+
+	chaff_glider = {
+		sprite = fighter_plane
+		priority = 1
+		active = yes
+		type = { interceptor }
+		need = { air_chaff_equipment = 1 }
+		categories = { category_fighter }
+	}
+}

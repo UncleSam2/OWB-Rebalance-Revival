@@ -1,0 +1,110 @@
+spriteTypes = {
+
+	
+	# BEL (Bellingham)
+	
+spriteType = {
+name = "GFX_BEL_ballistic_weaponry_tech_1_medium"
+		texturefile = "gfx/interface/equipment/cosmetic/ballistic/ballistic_weaponry_tech_icon_1_10mm_nv.dds"
+		alwaystransparent = yes
+}
+spriteType = {
+name = "GFX_BEL_ballistic_weaponry_tech_2_medium"
+		texturefile = "gfx/interface/equipment/cosmetic/ballistic/ballistic_weaponry_tech_icon_2_m16a1.dds"
+		alwaystransparent = yes
+}
+spriteType = {
+		name = "GFX_BEL_energy_weaponry_tech_1_medium"
+		texturefile = "gfx/interface/equipment/cosmetic/energy/energy_weaponry_tech_icon_1_pistol.dds"
+		alwaystransparent = yes
+}
+spriteType = {
+		name = "GFX_BEL_energy_weaponry_tech_3_medium"
+		texturefile = "gfx/interface/equipment/cosmetic/energy/energy_weaponry_tech_icon_3_plaslock_pistol.dds"
+		alwaystransparent = yes
+	}
+
+#EDA (Blue Rose)
+
+	spriteType = {
+		name = "GFX_EDA_ballistic_weaponry_tech_1_medium"
+			texturefile = "gfx/interface/equipment/cosmetic/ballistic/ballistic_weaponry_tech_icon_1_10mm_nv.dds"
+			alwaystransparent = yes
+	}
+
+	spriteType = {
+		name = "GFX_EDA_ballistic_weaponry_tech_2_medium"
+				texturefile = "gfx/interface/equipment/cosmetic/ballistic/ballistic_weaponry_tech_icon_2_hunting_shotgun.dds"
+				alwaystransparent = yes
+	}
+
+	spriteType = {
+		name = "GFX_EDA_ballistic_weaponry_tech_3_medium"
+				texturefile = "gfx/interface/equipment/cosmetic/ballistic/ballistic_weaponry_tech_icon_3_mp5k.dds"
+				alwaystransparent = yes
+		}
+	spriteType = {
+		name = "GFX_EDA_energy_weaponry_tech_1_medium"
+		texturefile = "gfx/interface/equipment/cosmetic/energy/energy_weaponry_tech_icon_1_pistol.dds"
+		alwaystransparent = yes
+	}
+
+	spriteType = {
+		name = "GFX_EDA_energy_weaponry_tech_2_medium"
+		texturefile = "gfx/interface/equipment/cosmetic/energy/energy_weaponry_tech_icon_2_zetan_atomizer.dds"
+		alwaystransparent = yes
+	}
+
+	spriteType = {
+			name = "GFX_EDA_energy_weaponry_tech_3_medium"
+			texturefile = "gfx/interface/equipment/cosmetic/energy/energy_weaponry_tech_icon_3_zetan_disintegrator.dds"
+			alwaystransparent = yes
+		}
+
+	spriteType = {
+			name = "GFX_EDA_energy_weaponry_tech_4_medium"
+			texturefile = "gfx/interface/equipment/cosmetic/energy/energy_weaponry_tech_icon_4_murderizer.dds"
+			alwaystransparent = yes
+		}
+
+	#VIC (New Victoria)
+		spriteType = {
+			name = "GFX_VIC_standard_weaponry_tech_medium"
+			texturefile = "gfx/interface/equipment/cosmetic/ballistic/basic_ballistic_weaponry_icon_blackpowder.dds"
+			alwaystransparent = yes
+		}
+		
+		spriteType = {
+			name = "GFX_VIC_ballistic_weaponry_tech_1_medium"
+			texturefile = "gfx/interface/equipment/cosmetic/ballistic/ballistic_weaponry_tech_icon_1_blackpowder.dds"
+			alwaystransparent = yes
+		}
+
+		spriteType = {
+			name = "GFX_VIC_ballistic_weaponry_tech_2_medium"
+				texturefile = "gfx/interface/equipment/cosmetic/ballistic/ballistic_weaponry_tech_icon_2_brush_gun.dds"
+				alwaystransparent = yes
+		}
+
+		spriteType = {
+			name = "GFX_VIC_ballistic_weaponry_tech_3_medium"
+				texturefile = "gfx/interface/equipment/cosmetic/ballistic/ballistic_weaponry_tech_icon_3_cr-74l.dds"
+				alwaystransparent = yes
+		}
+		
+		spriteType = {
+			name = "GFX_VIC_ballistic_fireteam_weaponry_tech_2_medium"
+			texturefile = "gfx/interface/equipment/cosmetic/support/ballistic_fireteam_weaponry_tech_icon_2_gatling.dds"
+			alwaystransparent = yes
+	}
+
+	#BRK
+	spriteType = {
+		name = "GFX_BRK_standard_weaponry_tech_medium"
+		texturefile = "gfx/interface/equipment/cosmetic/ballistic/basic_ballistic_weaponry_icon_blackpowder.dds"
+		alwaystransparent = yes
+	}
+	
+#End
+}
+# vim: set ft=pdx tw=79 :

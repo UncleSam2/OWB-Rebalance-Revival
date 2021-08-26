@@ -1,0 +1,105 @@
+﻿division_template = {
+	name = "Colorado Troopers"
+
+	regiments = {
+		infantry = { x = 0 y = 0 }
+		infantry = { x = 0 y = 1 }
+		infantry = { x = 0 y = 2 }
+		infantry = { x = 1 y = 0 }
+		infantry = { x = 1 y = 1 }
+		infantry = { x = 1 y = 2 }
+	}
+}
+
+division_template = {
+	name = "Garrison"
+	regiments = {
+		militia = { x = 0 y = 0 }
+		militia = { x = 0 y = 1 }
+		militia = { x = 1 y = 0 }
+		militia = { x = 1 y = 1 }
+	}
+}
+
+division_template = {
+	name = "Ranger Expedition"
+
+	regiments = {
+		spec_ops = { x = 0 y = 0 }
+		spec_ops = { x = 0 y = 1 }
+		spec_ops = { x = 0 y = 2 }
+		spec_ops = { x = 1 y = 0 }
+		spec_ops = { x = 1 y = 1 }
+		spec_ops = { x = 1 y = 2 }
+	}
+}
+
+units = {
+	division = {
+		name = "The Boulder Guard"
+		location = 6921
+		division_template = "Colorado Troopers"
+		start_experience_factor = 0.3
+		start_equipment_factor = 0.5
+	}
+
+	division = {
+		name = "Goddard's Guards"
+		location = 6876
+		division_template = "Garrison"
+		start_experience_factor = 0.3
+		start_equipment_factor = 1.0
+	}
+
+	division = {
+		name = "1st. Colorado Expeditionary Force"
+		location = 8153
+		division_template = "Colorado Troopers"
+		start_experience_factor = 0.5
+		start_equipment_factor = 0.1
+	}
+
+	division = {
+		name = "The Patriots"
+		location = 1222
+		division_template = "Colorado Troopers"
+		start_experience_factor = 0.5
+		start_equipment_factor = 1.0
+	}
+
+	division = {
+		name = "2nd. Colorado Expeditionary Force"
+		location = 8154
+		division_template = "Colorado Troopers"
+		start_experience_factor = 0.5
+		start_equipment_factor = 1.0
+	}
+	division = {
+		name = "Ranger Team November"
+		location = 8162
+		division_template = "Ranger Expedition"
+		start_experience_factor = 1.0
+		start_equipment_factor = 1.0
+	}
+}
+
+instant_effect = {
+	add_equipment_production = {
+		equipment = {
+			type = infantry_equipment_1
+			creator = "BAG"
+		}
+		requested_factories = 1
+		progress = 0.75
+		efficiency = 100
+	}
+	add_equipment_production = {
+		equipment = {
+			type = 	spec_ops_equipment_1
+			creator = "BAG"
+		}
+		requested_factories = 1
+		progress = 0.75
+		efficiency = 100
+	}
+}

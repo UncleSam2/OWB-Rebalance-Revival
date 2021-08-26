@@ -1,0 +1,209 @@
+﻿capital = 84
+oob = "WBH_2275"
+
+### Caps wage laws
+set_country_flag = army_wages_disabled
+
+set_technology = {
+	infantry_tech_level_tribal = 1
+	infantry_tech_level_settler = 1
+	infantry_tech_level_scientific = 1
+	support_tech_level_tribal = 1
+	support_tech_level_settler = 1
+	support_tech_level_scientific = 1
+	special_forces_tech_level_tribal = 1
+	special_forces_tech_level_settler = 1
+	#special_forces_tech_level_scientific = 1
+	power_armour_tech_level_tribal = 1
+	power_armour_tech_level_settler = 1
+	power_armour_tech_level_scientific = 1
+	vehicles_tech_level_tribal = 1
+	vehicles_tech_level_settler = 1
+	#vehicles_tech_level_scientific = 1
+	robotics_tech_level_tribal = 1
+	robotics_tech_level_settler = 1
+	#robotics_tech_level_scientific = 1
+	air_tech_level_tribal = 1
+	air_tech_level_settler = 1
+	#air_tech_level_scientific = 1
+	naval_tech_level_tribal = 1
+	naval_tech_level_settler = 1
+	#naval_tech_level_scientific = 1
+	tools_tech_level_tribal = 1
+	tools_tech_level_settler = 1
+	#tools_tech_level_scientific = 1
+	habitation_tech_level_tribal = 1
+	habitation_tech_level_settler = 1
+	#habitation_tech_level_scientific = 1
+	exploitation_tech_level_tribal = 1
+	exploitation_tech_level_settler = 1
+	#exploitation_tech_level_scientific = 1
+	electronics_tech_level_tribal = 1
+	electronics_tech_level_settler = 1
+	#electronics_tech_level_scientific = 1
+	tribal_civilization = 1
+	elite_army = 1
+	standard_weaponry_tech = 1
+	melee_weaponry_tech_1 = 1
+	ballistic_weaponry_tech_1 = 1
+	settled_civilization = 1
+	scientific_civilization = 1
+	energy_weaponry_tech_1 = 1
+	energy_weapon_emitter_tech = 1
+	energy_weaponry_tech_2 = 1
+	spec_ops_equipment_tech_1 = 1
+	spec_ops_equipment_tech_2 = 1
+	hardening_armour_tech = 1
+	stripped_pa_tech = 1
+	weight_support_frame_pa_tech_1 = 1
+	weight_support_frame_pa_tech_2 = 1
+	simple_servo_tech = 1
+	wasteland_pa_tech = 1
+	scav_pa_tech = 1
+}
+
+if = {
+	limit = {
+		has_dlc = "Man the Guns"
+	}
+	set_technology = {
+		nautics_tech_1 = 1
+		light_navy_hull_tech_1 = 1
+		waterproof_sealing_tech = 1
+		medium_navy_hull_tech_1 = 1
+		multi_deck_construction_tech = 1
+		heavy_navy_hull_tech_1 = 1
+		naval_module_tech = 1
+		naval_weapons_module_tech = 1
+		naval_support_module_tech = 1
+		naval_armour_tech_1 = 1
+		naval_communications_module_tech_1 = 1
+	}
+}
+if = {
+	limit = {
+		NOT = { has_dlc = "Man the Guns" }
+	}
+	set_technology = {
+		nautics_tech_non_mtg_1 = 1
+		light_navy_hull_tech_non_mtg_1 = 1
+		waterproof_sealing_tech_non_mtg = 1
+		medium_navy_hull_tech_non_mtg_1 = 1
+		multi_deck_construction_tech_non_mtg = 1
+		heavy_navy_hull_tech_non_mtg_1 = 1
+	}
+}
+
+set_stability = 0.55
+set_war_support = 0.55
+set_research_slots = 5
+set_country_flag = is_followers_black_listed_nation
+set_country_flag = is_brotherhood_nation
+
+set_variable = { dont_return_stolen_territory@TRL = 1 }
+
+add_opinion_modifier = { target = TRL modifier = boshatesmutants }
+add_opinion_modifier = { target = MLT modifier = boshatesmutants }
+add_opinion_modifier = { target = DIS modifier = boshatesmutants }
+add_opinion_modifier = { target = JCT modifier = boshatesmutants }
+
+set_politics = {
+	ruling_party = elites
+	elections_allowed = no
+}
+
+set_truce = {
+    target = MLT
+    days = 1825
+}
+set_truce = {
+    target = DIS
+    days = 1825
+}
+set_truce = {
+    target = RBT
+    days = 1825
+}
+set_truce = {
+    target = MDT
+    days = 1825
+}
+set_truce = {
+    target = CCW
+    days = 1825
+}
+set_truce = {
+    target = BDT
+    days = 1825
+}
+set_truce = {
+    target = TRL
+    days = 1095
+}
+set_truce = {
+    target = TIM
+    days = 1095
+}
+
+set_popularities = {
+	people = 0
+	elites = 65
+	intellectuals = 10
+	ruler = 25
+}
+
+declare_war_on = {
+	target = OLY
+	type = annex_everything
+}
+
+declare_war_on = {
+	target = YAK
+	type = annex_everything
+}
+
+add_ideas = {
+	doom_of_wasteland
+	bunkerblues
+	slavers_idea_2
+	undesirables_law_raider
+	WBH_the_stalkers_of_seattle
+	BEL_trans_alsaskan_pipeline
+}
+
+create_country_leader = {
+	name = "The Immortal"
+	desc = "IMMORTAL_DESC"
+	picture = "portrait_immortal.dds"
+	expire = "3000.1.1"
+	ideology = militarist_technocracy
+
+	traits = {
+		warmonger
+	}
+}
+
+create_field_marshal = {
+	name = "Elder Immortal"
+	traits = { strong_trait enduring_trait }
+	picture = "portrait_immortal.dds"
+	traits = { intelligent_trait nerd_rage_trait }
+	skill = 4
+	attack_skill = 3
+	defense_skill = 2
+	planning_skill = 2
+	logistics_skill = 3
+}
+
+create_corps_commander = {
+	name = "Star Paladin Rodriguez"
+	picture = "portrait_rodriguez.dds"
+	traits = { winter_specialist charismatic_trait intelligent_trait lucky_trait }
+	skill = 3
+	attack_skill = 3
+	defense_skill = 3
+	planning_skill = 1
+	logistics_skill = 1
+}
+
+create_or_join_northern_league = yes

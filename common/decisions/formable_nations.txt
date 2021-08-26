@@ -1,0 +1,679 @@
+formable_nations = {
+	form_deseret = {
+		allowed = {
+			original_tag = NCN
+		}
+		visible = {
+			has_completed_focus = NCN_kingdom_of_god
+		}
+		# YARD1: CONSIDER USING AN ARRAY FOR is_utah_state
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = form_deseret_req_tt
+				all_state = {
+					OR = {
+						NOT = {
+							is_utah_state = yes
+						}
+						AND = {
+							is_utah_state = yes
+							owner = {
+								OR = {
+									is_subject_of = NCN
+									tag = NCN
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+
+		highlight_states = { # Due to the game being fucking stupid this doesn't do what it should do - it will only highlight 1 state but it should highlight them all :(
+			is_utah_state = yes
+			NOT = {
+				owner = {
+					OR = {
+						tag = NCN
+						is_subject_of = NCN
+					}
+				}
+			}
+		}
+
+		fire_only_once = yes
+
+		ai_will_do = {
+			base = 20
+		}
+
+		complete_effect = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] form_deseret (decision) complete entered"
+			}
+			set_cosmetic_tag = NCN_deseret
+			custom_effect_tooltip = ncn_throne_tt
+			set_capital = 266
+			266 = {
+				set_state_name = "The Throne of the Lord"
+				add_manpower = 20000
+				add_extra_state_shared_building_slots = 4
+			}
+			hidden_effect = {
+				set_province_name = {
+					id = 6306
+					name = "The Throne of the Lord"
+				}
+			}
+			news_event = nf_ncn.43
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] form_deseret (decision) complete exited"
+			}
+		}
+	}
+	form_cascadia = {
+		allowed = {
+			OR = {
+				original_tag = VIC
+				original_tag = HAI
+				original_tag = WHI
+				original_tag = KAM
+				original_tag = BEL
+			}
+		}
+		visible = {
+			OR = {
+				NOT = { has_variable = global.cascadia }
+				var:global.cascadia = { exists = no }
+			}
+		}
+		available = {
+			has_war = no
+			BRK = {
+				all_core_land_owned_by_prev_sphere = yes
+			}
+		}
+		highlight_states = { # Due to the game being fucking stupid this doesn't do what it should do - it will only highlight 1 state but it should highlight them all :(
+			is_core_of = BRK
+		}
+
+		fire_only_once = yes
+
+		ai_will_do = {
+			base = 200
+		}
+
+		complete_effect = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] form_cascadia (decision) complete entered"
+			}
+			set_country_flag = cascadia_formed
+			set_variable = { global.cascadia = THIS }
+			set_cosmetic_tag = cascadia
+			add_stability = 0.25
+			every_owned_state = {
+				add_manpower = 250
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant_build = yes
+				}
+			}
+			custom_effect_tooltip = cascadia_cores_tt
+			hidden_effect ={
+				every_state = {
+					limit = {
+						OR = {
+							region = 14
+							region = 60
+							region = 61
+							region = 62
+							region = 63
+						}
+					}
+					add_claim_by = ROOT
+					add_core_of = ROOT
+				}
+			}
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] form_cascadia (decision) complete exited"
+			}
+		}
+	}
+	form_colorado = {
+		allowed = {
+			OR = {
+				original_tag = FOR
+				original_tag = MXC
+				original_tag = HAN
+			}
+		}
+		visible = {
+			has_country_leader_with_trait = colorado_patriot
+			OR = {
+				NOT = { has_variable = global.colorado }
+				var:global.colorado = { exists = no }
+			}
+		}
+		available = {
+			num_of_controlled_states > 40
+		}
+
+		fire_only_once = yes
+
+		ai_will_do = {
+			base = 200
+		}
+
+		complete_effect = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] form_colorado (decision) complete entered"
+			}
+			set_country_flag = colorado_formed
+			set_variable = { global.colorado = THIS }
+			set_cosmetic_tag = COL
+			add_stability = 0.25
+			custom_effect_tooltip = colorado_claims_tt
+			hidden_effect ={
+				every_state = {
+					limit = {
+						OR = {
+							region = 42
+							region = 43
+							region = 44
+						}
+						NOT = { is_owned_by = ROOT }
+					}
+					add_claim_by = ROOT
+				}
+			}
+			every_owned_state = {
+				add_manpower = 250
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant_build = yes
+				}
+			}
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] form_colorado (decision) complete exited"
+			}
+		}
+	}
+	form_oklahoma = {
+		allowed = {
+			original_tag = TLP
+		}
+		visible = {
+			has_country_leader_with_trait = oklahoma_patriot
+			OR = {
+				NOT = { has_variable = global.oklahoma }
+				var:global.oklahoma = { exists = no }
+			}
+		}
+		available = {
+			owns_state = 868
+			num_of_controlled_states > 10
+		}
+
+		fire_only_once = yes
+
+		ai_will_do = {
+			base = 200
+		}
+
+		complete_effect = {
+			set_variable = { global.oklahoma = THIS }
+			set_cosmetic_tag = state_oklahoma
+			add_stability = 0.25
+			every_owned_state = {
+				add_manpower = 250
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant_build = yes
+				}
+			}
+			if = {
+				limit = {
+					has_idea = army_with_a_state
+				}
+				swap_ideas = {
+					remove_idea = army_with_a_state
+					add_idea = tlp_state_with_an_army
+				}
+			}
+		}
+	}
+	form_new_mariposa = {
+		allowed = {
+			OR = {
+				original_tag = TRL
+				original_tag = NEW
+				original_tag = UTO
+				original_tag = JCT
+			}
+		}
+		visible = {
+			OR = {
+				original_tag = TRL
+				has_cosmetic_tag = THR_cosmetic_tag
+				original_tag = UTO
+				AND = {
+					original_tag = JCT
+					NOT = { has_government = people }
+				}
+			}
+			NOT = { has_global_flag = new_mariposa_formed }
+		}
+		available = { #Two different kinds of New Mariposa, either one which reconquers the territory The Master gets in a bad end in Fallout 1, or the player conquers Vault 6 and the rest of Washington and forms a proper 'New' Mariposa
+			OR = {
+				form_new_mariposa_southern = yes
+				form_new_mariposa_northern = yes
+			}
+		}
+
+		highlight_states = { # Due to the game being fucking stupid this doesn't do what it should do - it will only highlight 1 state but it should highlight them all :(
+			is_southern_new_mariposa_state = yes
+			is_washington_state = yes
+			NOT = {
+				owner = {
+					OR = {
+						tag = ROOT
+						is_subject_of = ROOT
+					}
+				}
+			}
+		}
+
+		fire_only_once = yes
+
+		ai_will_do = {
+			base = 20
+		}
+
+		complete_effect = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] form_new_mariposa (decision) complete entered"
+			}
+			set_global_flag = new_mariposa_formed
+			set_cosmetic_tag = NEW_mariposa
+			#Prefers going with the Southern Mariposa effect rather then the first, since the focus would be too strong if you got cores on all of Washington + Southern Cali
+			if = {
+				limit = { form_new_mariposa_southern = yes }
+					every_state = {
+					limit = {
+						is_southern_new_mariposa_state = yes
+					}
+					add_core_of = ROOT
+				}
+				#Moves our capital to where Mariposa should be
+				set_capital = 312
+				#Move stuff over from Shady Sands to New Mariposa, so that you don't just have a capital with nothing in it
+				312 = {
+					set_state_name = "New Mariposa"
+					hidden_effect = {
+						set_province_name = { id = 7107 name = "New Mariposa"}
+					}
+				}
+			}
+			else_if = {
+				limit = { form_new_mariposa_northern = yes }
+					every_state = {
+					limit = {
+						is_washington_state = yes
+					}
+					add_core_of = ROOT
+				}
+				#Moves our capital to Vault 6
+				set_capital = 351
+				351 = {
+					set_state_name = "New Mariposa"
+					hidden_effect = {
+						set_province_name = { id = 7107 name = "New Mariposa"}
+					}
+				}
+				custom_effect_tooltip = new_mariposa_move_resources_north_not_own_south_tt
+			}
+			custom_effect_tooltip = new_mariposa_area_tt
+			custom_effect_tooltip = form_new_mariposa_annex_puppet_tt
+			custom_effect_tooltip = form_new_mariposa_take_puppet_tt
+			hidden_effect = {
+				every_country = { # If every state a puppet owns is in the respective regions, we annex them and take the troops
+					limit = {
+						is_subject_of = ROOT
+						all_owned_state = {
+							OR = {
+								is_southern_new_mariposa_state = yes
+								is_washington_state = yes
+							}
+						}
+					}
+					ROOT = { annex_country = { target = PREV transfer_troops = yes } }
+				}
+				every_country = { # If a puppet has some but not all of their states in the respective regions, we snag the Utah states
+					limit = {
+						is_subject_of = ROOT
+						any_owned_state = {
+							OR = {
+								is_southern_new_mariposa_state = yes
+								is_washington_state = yes
+							}
+						}
+						NOT = {
+							all_owned_state = {
+								OR = {
+									is_southern_new_mariposa_state = yes
+									is_washington_state = yes
+								}
+							}
+						}
+					}
+					every_owned_state = {
+						limit = {
+							OR = {
+								is_southern_new_mariposa_state = yes
+								is_washington_state = yes
+							}
+						}
+						ROOT = { transfer_state = PREV }
+					}
+				}
+			}
+			if = {
+				limit = { NOT = { original_tag = TRL } }
+				add_country_leader_trait = new_mariposa_new_master #Troll Warren get this from their capstone focus, other countries get it here
+			}
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] form_new_mariposa (decision) complete exited"
+			}
+		}
+	}
+	form_northwestern_brotherhood = {
+		allowed = {
+			original_tag = TCA
+		}
+		visible = {
+			has_idea = tca_brotherhood_exiles
+		}
+		available = {
+			OR = {
+				WBH = { exists = no }
+				WBH = { is_subject_of = TCA }
+			}
+			controls_state = 84
+			has_idea = tca_brotherhood_exiles
+		}
+
+		highlight_states = {
+			state = 84
+		}
+
+		fire_only_once = yes
+
+		ai_will_do = {
+			base = 200
+		}
+
+		complete_effect = {
+			set_cosmetic_tag = TCA_northwestern_brotherhood
+			if = {
+				limit = { 84 = { NOT = { is_owned_by = TCA } } }
+				set_state_owner = 84
+			}
+			add_state_core = 84
+			set_capital = 84
+			every_state = {
+				limit = { is_washington_state = yes }
+				add_claim_by = TCA
+			}
+			custom_effect_tooltip = form_northwestern_brotherhood_tt
+			set_politics = {
+				ruling_party = intellectuals
+			}
+			delete_unit_template_and_units = { division_template = "Wardens of the White" }
+			remove_ideas = tca_wardens_of_the_white
+			swap_ideas = {
+				remove_idea = tca_a_temporary_mandate
+				add_idea = tca_brotherhood_reforged
+			}
+			set_technology = {
+				power_armour_tech_level_settler = 1
+				power_armour_tech_level_scientific = 1
+			}
+		}
+	}
+	form_wardens_of_the_white = {
+		allowed = {
+			original_tag = TCA
+		}
+		visible = {
+			has_idea = tca_wardens_of_the_white
+		}
+		available = {
+			OR = {
+				WBH = { exists = no }
+				WBH = { is_subject_of = TCA }
+			}
+			controls_state = 84
+			has_idea = tca_wardens_of_the_white
+		}
+
+		highlight_states = {
+			state = 84
+		}
+
+		fire_only_once = yes
+
+		ai_will_do = {
+			base = 200
+		}
+
+		complete_effect = {
+			set_cosmetic_tag = TCA_wardens
+			if = {
+				limit = { 84 = { NOT = { is_owned_by = TCA } } }
+				set_state_owner = 84
+			}
+			add_state_core = 84
+			set_capital = 84
+			every_state = {
+				limit = { is_washington_state = yes }
+				add_claim_by = TCA
+			}
+			custom_effect_tooltip = form_wardens_of_the_white_tt
+			set_politics = {
+				ruling_party = people
+			}
+			delete_unit_template_and_units = { division_template = "Brotherhood Exiles" }
+			remove_ideas = tca_brotherhood_exiles
+			swap_ideas = {
+				remove_idea = tca_a_temporary_mandate
+				add_idea = tca_protectors_of_the_north
+			}
+			set_technology = {
+				special_forces_tech_level_settler = 1
+				special_forces_tech_level_scientific = 1
+			}
+		}
+	}
+	form_grand_inquisition = {
+		allowed = {
+			original_tag = ROT
+		}
+		available = {
+			OR = {
+				TOC = { exists = no }
+				TOC = { is_subject_of = ROT }
+			}
+			controls_state = 332
+		}
+
+		highlight_states = {
+			state = 332
+		}
+
+		fire_only_once = yes
+
+		ai_will_do = {
+			base = 200
+		}
+
+		complete_effect = {
+			set_cosmetic_tag = ROT_inquisition
+			if = {
+				limit = { 332 = { NOT = { is_owned_by = ROT } } }
+				set_state_owner = 332
+			}
+			set_capital = 332
+			every_state = {
+				limit = { is_core_of = TOC }
+				add_core_of = ROT
+			}
+			set_technology = {
+				support_tech_level_scientific = 1
+				special_forces_tech_level_settler = 1
+			}
+		}
+	}
+	form_old_spokane_state = {
+		allowed = {
+			original_tag = TOC
+		}
+		available = {
+			OR = {
+				ROT = { exists = no }
+				ROT = { is_subject_of = TOC }
+			}
+			controls_state = 418
+		}
+
+		highlight_states = {
+			state = 418
+		}
+
+		fire_only_once = yes
+
+		ai_will_do = {
+			base = 200
+		}
+
+		complete_effect = {
+			set_cosmetic_tag = TOC_old_spokane
+			if = {
+				limit = { 418 = { NOT = { is_owned_by = ROT } } }
+				set_state_owner = 418
+			}
+			every_state = {
+				limit = { is_core_of = ROT }
+				add_core_of = TOC
+			}
+			set_technology = {
+				tools_tech_level_scientific = 1
+				habitation_tech_level_scientific = 1
+				electronics_tech_level_scientific = 1
+			}
+		}
+	}
+	form_motor_city = {
+		allowed = {
+			original_tag = FIE
+		}
+		available = {
+			OR = {
+				VEG = { exists = no }
+				VEG = { is_subject_of = FIE }
+			}
+			OR = {
+				MOT = { exists = no }
+				MOT = { is_subject_of = FIE }
+			}
+			controls_state = 211
+		}
+
+		highlight_states = {
+			state = 211
+		}
+
+		fire_only_once = yes
+
+		ai_will_do = {
+			base = 200
+		}
+
+		complete_effect = {
+			set_cosmetic_tag = FIE_motor_city
+			if = {
+				limit = { 211 = { NOT = { is_owned_by = FIE } } }
+				set_state_owner = 211
+			}
+			211 = {
+				add_core_of = FIE
+				set_state_name = "Motor City"
+			}
+			set_capital = 211
+			hidden_effect = {
+				set_province_name = {
+					id = 8514
+					name = "Motor City"
+				}
+			}
+			VEG = { ROOT = { claim_core_states_of_prev = yes } }
+			MOT = { ROOT = { claim_core_states_of_prev = yes } }
+			set_technology = {
+				vehicles_tech_level_scientific = 1
+			}
+		}
+	}
+	form_arizona_rangers = {
+		allowed = {
+			tag = COW
+		}
+		available = {
+			controls_state = 519
+			controls_state = 516
+		}
+
+		highlight_states = {
+			OR = {
+				state = 519
+				state = 516
+			}
+		}
+
+		fire_only_once = yes
+
+		ai_will_do = {
+			base = 200
+		}
+
+		complete_effect = {
+			set_cosmetic_tag = ARZ_rangers
+			hidden_effect = {
+				every_state = {
+					limit = { is_arizona_state = yes }
+					add_claim_by = ROOT
+				}
+			}
+			add_state_core = 519
+			add_state_core = 516
+			set_capital = 519
+			custom_effect_tooltip = form_arizona_rangers_tt
+			swap_ideas = {
+				remove_idea = cow_remnants_of_rangers
+				add_idea = cow_reformed_corps
+			}
+		}
+	}
+}

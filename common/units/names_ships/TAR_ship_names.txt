@@ -1,0 +1,43 @@
+﻿TAR_LIGHT = {
+	name = NAME_THEME_SHIPS_TAR_LIGHT
+	for_countries = { TAR }
+	type = ship
+	ship_types = { light_ship_unit }
+	fallback_name = "Tribal Canoe %d"
+	unique = {
+		"Blackened Soles" "Confidence Sure" "Core-Cut Log" "Guaranteed Catch" "Hard Driftwood" "Knowing" "Long Travel Ahead..." "Mighty Tribe Thunders" "No Trouble" "Quality Unrivaled" "River Dancer" "Serpet" "Silver Fish" "Steady Undouted" "Strengthen the Tribe" "Sturdy-Float" "Swift Rower" "Upstreamer" "Utah Breed" "Water Dog" "Well Crafted"
+	}
+}
+
+TAR_MEDIUM = {
+	name = NAME_THEME_SHIPS_TAR_MEDIUM
+	for_countries = { TAR }
+	type = ship
+	ship_types = { medium_ship_screen_unit }
+	fallback_name = "Tribal Boat %d"
+	unique = {
+		"Along we Ramble" "Cutter" "Ease of Ride" "First Pioneer" "Forager" "Gatherings" "Good-Haul" "Greatly Assured" "Hunt and Prosper" "If Needed" "Know This River" "Ready On" "Seeing-Far" "Sole Burned" "Star-Chasing" "Thunder and Roar!" "Utah Native" "Wake Splitter" "Waters Calm" "Wind Catch"
+	}
+}
+
+TAR_HEAVY = {
+	name = NAME_THEME_SHIPS_TAR_HEAVY
+	for_countries = { TAR }
+	type = ship
+	ship_types = { heavy_ship_unit }
+	fallback_name = "Tribal Cruising Vessel %d"
+	unique = {
+		"A Nephi Tradition" "Bighorner Strong" "Blade Revealed" "Deep Water Crossing" "Hard To Track" "Natural Leader" "Notched Arrow" "Sail the Shifting Sands" "Sharpened Tip" "Superior" "The Tribe is Strong" "Tomahawk" "Trailblazer" "Trample and Roll" "Tread Lightly" "Warrior Bred"
+	}
+}
+
+TAR_SUPER_HEAVY = {
+	name = NAME_THEME_SHIPS_TAR_SUPER_HEAVY
+	for_countries = { TAR }
+	type = ship
+	ship_types = { super_heavy_ship_unit }
+	fallback_name = "Tribal Battleship %d"
+	unique = {
+		"Cazador Sting" "Cornered Coyote" "Death Claw" "Earth was Killed for Land Like Ours" "Feral Yao Guai" "Geacko Fang" "Look to Canaan, Nephi will Grow" "Tar Sticks to Kids, Tar Sticks to Kids!" "The Tar Coats These Lands" "You Never Know What You'll Find"
+	}
+}

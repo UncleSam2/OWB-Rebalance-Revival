@@ -1,0 +1,51 @@
+equipments = {
+	#------------------------
+	# Horses
+	#------------------------
+	horse_equipment = {
+		is_archetype = yes
+		is_buildable = no
+		type = infantry
+		group_by = archetype
+
+		interface_category = interface_category_land
+
+		upgrades = {
+
+		}
+
+		maximum_speed = 8
+
+		# Misc Abilities
+		reliability = 0.9
+
+		# Defensive Abilities
+		breakthrough = 4
+		ap_attack = 15
+
+		build_cost_ic = 6
+
+		resources = {
+		}
+	}
+
+	# Horses
+	horse_equipment_1 = {
+		archetype = horse_equipment
+		priority = 10
+		visual_level = 0
+
+		maximum_speed = 8
+
+		breakthrough = 4
+		ap_attack = 15
+
+		reliability = 1
+
+		build_cost_ic = 6
+
+		resources = {
+			water = 2
+		}
+	}
+}

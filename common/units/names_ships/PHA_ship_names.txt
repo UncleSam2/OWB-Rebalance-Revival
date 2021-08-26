@@ -1,0 +1,43 @@
+﻿PHA_LIGHT = {
+	name = NAME_THEME_SHIPS_PHA_LIGHT
+	for_countries = { PHA }
+	type = ship
+	ship_types = { light_ship_unit }
+	fallback_name = "Dingy %d"
+	unique = {
+		"A Hole in Deck" "A Year For This" "Better Than Nothing" "Build Might" "Drawn Chariot" "Durability Debated" "Equal To Nothing" "Feeling Cocky" "Float Like A Brick" "Floating Scrap" "Ignore Us" "Lay the Groundwork" "Nuts N' Bolts" "Oldie But A Goodie" "Puddle Worthy" "Restored Crap" "Rusted Through" "Sailing Smooth" "Start Right Here" "The Leftover" "Three-Eyed Fish" "Unrivaled Might" "Up A Creek" "Will Have to Do" "Wonder"
+	}
+}
+
+PHA_MEDIUM = {
+	name = NAME_THEME_SHIPS_PHA_MEDIUM
+	for_countries = { PHA }
+	type = ship
+	ship_types = { medium_ship_screen_unit }
+	fallback_name = "Rust Bucket %d"
+	unique = {
+		"Carry On" "Could've Built A House" "Distraction" "Free To Choose" "If We Must" "Lackies Luck" "Marvels Abundant" "Modern Ancient" "One For You" "Pharoh's Age" "Rebirth of Civilization" "Repeat the Past" "Scrap King" "Seen Better Days" "Should've Built That House" "Sick of Water" "Smart Planning" "Smells Like Victory" "Sucker Punch" "Unsinkable V"
+	}
+}
+
+PHA_HEAVY = {
+	name = NAME_THEME_SHIPS_PHA_HEAVY
+	for_countries = { PHA }
+	type = ship
+	ship_types = { heavy_ship_unit }
+	fallback_name = "Cutter %d"
+	unique = {
+		"A New Nile" "Bronze Clad" "Brought Together" "Cap For Your Thoughts" "Cash In" "Chasing Radstorms" "Diplomacy" "King Molerat XVI" "No More" "Now Come" "Now We Fight" "One of a Kind" "Phalanx" "Ready or What?" "Runs Like The Wind" "Sarsaparilla Sunrise" "Sphinx" "Through Strong" "Up and Up" "We found This One"
+	}
+}
+
+PHA_SUPER_HEAVY = {
+	name = NAME_THEME_SHIPS_PHA_SUPER_HEAVY
+	for_countries = { PHA }
+	type = ship
+	ship_types = { super_heavy_ship_unit }
+	fallback_name = "Battle Boat %d"
+	unique = {
+		"Babi" "Bast" "Nephthys" "Osiris" "Shu"
+	}
+}

@@ -1,0 +1,92 @@
+equipments = {
+	mininuke_equipment = {
+		is_archetype = yes
+		is_buildable = no
+		type = {
+			missile
+		}
+		group_by = archetype
+
+		active = no
+
+		interface_category = interface_category_land
+
+		#Space taken in convoy
+		lend_lease_cost = 50
+
+		build_cost_ic = 150
+
+		resources = {
+			composites = 5
+			advanced = 5
+			energy = 5
+		}
+	}
+
+	mininuke_equipment_1 = {
+		archetype = mininuke_equipment
+		priority = 10
+		visual_level = 1
+	}
+
+	artillery_ammo_equipment = {
+		is_archetype = yes
+		is_buildable = no
+		type = {
+			missile
+		}
+		group_by = archetype
+
+		active = no
+
+		interface_category = interface_category_land
+
+		#Space taken in convoy
+		lend_lease_cost = 50
+
+		build_cost_ic = 75
+
+		resources = {
+			metal = 3
+			water = 3
+			energy = 3
+			circuitry = 3
+		}
+	}
+
+	artillery_ammo_equipment_1 = {
+		archetype = artillery_ammo_equipment
+		priority = 10
+		visual_level = 1
+	}
+
+	sentinel_command_slave_equipment = {
+		is_archetype = yes
+		is_buildable = no
+		type = {
+			infantry
+		}
+		group_by = archetype
+
+		active = no
+
+		interface_category = interface_category_land
+
+		#Space taken in convoy
+		lend_lease_cost = 50000
+
+		reliability = 1
+		build_cost_ic = 8
+
+		resources = {
+			advanced = 1
+			circuitry = 1
+		}
+	}
+
+	sentinel_command_slave_equipment_1 = {
+		archetype = sentinel_command_slave_equipment
+		priority = 10
+		visual_level = 1
+	}
+}

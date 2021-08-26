@@ -1,0 +1,43 @@
+﻿VLT_LIGHT = {
+	name = NAME_THEME_SHIPS_VLT_LIGHT
+	for_countries = { VLT }
+	type = ship
+	ship_types = { light_ship_unit }
+	fallback_name = "Vault City Destroyer %d"
+	unique = {
+		"A Beacon for Tomorrow" "A Hole in Deck" "A Year For This" "Better Than Nothing" "Civilized" "Durability Debated" "Equal To Nothing" "Feeling Cocky" "Float Like A Brick" "Floating Scrap" "Hail The Vault" "Ignore Us" "Law and Order" "Nuts N' Bolts" "Oldie But A Goodie" "Puddle Worthy" "Restored Crap" "Rusted Through" "Sailing Smooth" "The Leftover" "Three-Eyed Fish" "Undebatably Unrivaled" "Unrivaled Might" "Up A Creek" "Will Have to Do"
+	}
+}
+
+VLT_MEDIUM = {
+	name = NAME_THEME_SHIPS_VLT_MEDIUM
+	for_countries = { VLT }
+	type = ship
+	ship_types = { medium_ship_screen_unit }
+	fallback_name = "Vault City Light Cruiser %d"
+	unique = {
+		"Admit to The Inevitable" "Carry On" "Could've Built A House" "Distraction" "Free To Choose" "If We Must" "Lackies Luck" "Nothing Can Match Us" "One For You" "Scrap King" "Seen Better Days" "Should've Built That House" "Sick of Water" "Smart Planning" "Smells Like Victory" "Sucker Punch" "Superior By Design" "Unsinkable V" "Vault-Blooded" "We Rival The Old Cities"
+	}
+}
+
+VLT_HEAVY = {
+	name = NAME_THEME_SHIPS_VLT_HEAVY
+	for_countries = { VLT }
+	type = ship
+	ship_types = { heavy_ship_unit }
+	fallback_name = "Vault City Heavy Cruiser %d"
+	unique = {
+		"Cap For Your Thoughts" "Cash In" "Chasing Radstorms" "Diplomacy" "Gifted? Perhaps" "King Molerat XVI" "Leading in All Fields" "Mock Those Backwards Wastelanders" "No More" "Now Come" "Now We Fight" "One of a Kind" "Ready or What?" "Regardless, We Are Great" "Runs Like The Wind" "Sarsaparilla Sunrise" "Through Strong" "Up and Up" "We found This One" "What Have You Mustered"
+	}
+}
+
+VLT_SUPER_HEAVY = {
+	name = NAME_THEME_SHIPS_VLT_SUPER_HEAVY
+	for_countries = { VLT }
+	type = ship
+	ship_types = { super_heavy_ship_unit }
+	fallback_name = "Vault City Battleship %d"
+	unique = {
+		"All Fire Front" "Broadsider" "Completely Scrap" "Expensive As Hell" "Full Frontal" "Hammer Down!" "Our Height" "Sister of War" "Steel Brunt" "Superior From Conception" "Try As You Might..." "Wall of the People" "We Carry The Torch On"
+	}
+}

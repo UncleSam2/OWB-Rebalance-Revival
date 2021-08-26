@@ -1,0 +1,43 @@
+﻿CAF_LIGHT = {
+	name = NAME_THEME_LIGHT
+	for_countries = { CAF }
+	type = ship
+	ship_types = { light_ship_unit }
+	fallback_name = "Destroyer %d"
+	unique = {
+		"Acquisition" "Abundance" "Actuary" "Affluence" "Amortize" "Annuity" "Arbitrage" "Forceful Arbitration" "Arrears" "Auditor" "Avarice" "Acquisitions Incorporated" "Commerce" "Commission" "Compound Interest" "Reverse Mortages"
+	}
+}
+
+CAF_MEDIUM = {
+	name = NAME_THEME_MEDIUM
+	for_countries = { CAF }
+	type = ship
+	ship_types = { medium_ship_screen_unit }
+	fallback_name = "Light Cruiser %d"
+	unique = {
+	"Cappucino" "Americano" "Espresso" "Macchiato" "Mocha" "Latte" "Affogato" "Cafe Cubano" "Somehow We Know What Irish Coffee Is" "Cortado" "Doppio" "Manilo" "Cafe Crema" "Cafe Rapido y Sucio" "Chocolate Caliente" "Cafe Nuka" "Cafe Frio"
+	}
+}
+
+CAF_HEAVY = {
+	name = NAME_THEME_HEAVY
+	for_countries = { CAF }
+	type = ship
+	ship_types = { heavy_ship_unit }
+	fallback_name = "Heavy Cruiser %d"
+	unique = {
+		"Dollars" "Pounds" "Pesos" "Gold" "Caps" "Tlaloc Commissary Notes" "Gecko Hides" "Guns" "Love of Family" "Chips"
+	}
+}
+
+CAF_SUPER_HEAVY = {
+	name = NAME_THEME_SUPER_HEAVY
+	for_countries = { CAF }
+	type = ship
+	ship_types = { super_heavy_ship_unit }
+	fallback_name = "Battleship %d"
+	unique = {
+		"A Cuppa Joe" "BeatCo" "Abraxodyne Chemical" "AmCo" "Petro Chico" "Chryslus" "Colt" "Corncucopia Fresh Groceries" "General Atomics" "H&H Tool" "Isla Negra Holdings" "Jetstream" "Poseidon Energy"
+	}
+}

@@ -8,4 +8,7 @@ tags={
 	"Technologies"
 }
 name="OWB Rebalance Revival"
-supported_version="1.10.8"
+dependencies={
+	"Old World Blues"
+}
+supported_version="1.10.*"

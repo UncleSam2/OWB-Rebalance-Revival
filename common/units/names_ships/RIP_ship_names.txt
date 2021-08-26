@@ -1,0 +1,43 @@
+﻿RIP_LIGHT = {
+	name = NAME_THEME_SHIPS_RIP_LIGHT
+	for_countries = { RIP }
+	type = ship
+	ship_types = { light_ship_unit }
+	fallback_name = "Skirmisher %d"
+	unique = {
+		"Captain Needle's Yacht" "Full Muzzle" "Get a Fix" "Grub Rig" "Hijacker" "Husk" "Imp" "Jet Junkie" "Leech" "Lil' Gremlin" "Lil' Smasher" "Maggot Sac" "Mine!" "Patched Daydream" "Ripe to Take" "Skitters" "Soot Wakes" "Spiked Bolts" "Struggle" "Survivor" "The Pig Viper" "The Tadpole" "Thorn" "Triclops" "Worm Food"
+	}
+}
+
+RIP_MEDIUM = {
+	name = NAME_THEME_SHIPS_RIP_MEDIUM
+	for_countries = { RIP }
+	type = ship
+	ship_types = { medium_ship_screen_unit }
+	fallback_name = "Striker %d"
+	unique = {
+		"Adapt or Die" "Another Sack" "Bat To The Skull" "Bleed!" "Busted Kneecaps" "El Cazador" "Flesh Gnasher" "Grated Ribcage" "Grip the Heart" "Gutshot" "In Dreamland" "Mutilated Slave" "Pillage And Rape" "Rapid Deathclaw" "Rip 'er Up" "Rusty Needles" "Say Goodbye!" "Scream!" "Spiked Booze" "The Pony Ride"
+	}
+}
+
+RIP_HEAVY = {
+	name = NAME_THEME_SHIPS_RIP_HEAVY
+	for_countries = { RIP }
+	type = ship
+	ship_types = { heavy_ship_unit }
+	fallback_name = "Bruiser %d"
+	unique = {
+		"Big Smasher" "Crowd Pleaser" "Feel It Deep" "Fight for Life" "Gore S'More" "Laughin About it" "Leather-Strapped Goddess" "Might Make Right" "No River Too Deep" "One Good Eye" "Rip And Tear" "Rip and Fear!" "Ripper Saw" "Take It" "That Tenderizer" "The Meatgrinder" "To Wall Too High" "Two Pints Left" "Witness Me!" "You're Fucked!"
+	}
+}
+
+RIP_SUPER_HEAVY = {
+	name = NAME_THEME_SHIPS_RIP_SUPER_HEAVY
+	for_countries = { RIP }
+	type = ship
+	ship_types = { super_heavy_ship_unit }
+	fallback_name = "Warcraft %d"
+	unique = {
+		"Black Out The Sun" "Get! Skull! Fucked!" "Imma Smash Ya Face In!" "Lucifer's Bastard" "Mobile Hell" "No Forgiveness" "No Sympathy" "Raider Paradise" "Reject the False Ideas, Fight!" "Shoot, We Dare Yuh!" "Skullbasher's Fortress" "Success Through Strength" "Survival of the Fittest" "To Dominate is to Live" "Uncle Jim's War Tug"
+	}
+}

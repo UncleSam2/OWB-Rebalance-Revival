@@ -1,0 +1,75 @@
+# options for map_icon_category:
+# For land units: infantry,armored,other
+# For sea units: ship,transport,uboat
+
+sub_units = {
+	apc = {
+		sprite = apc
+		map_icon_category = infantry
+
+		priority = 610
+		active = no
+
+		type = {
+			mechanized
+		}
+
+		group = mobile
+
+		categories = {
+			category_army
+			category_front_line
+			category_vehicles
+			category_infantry
+		}
+
+		combat_width = 2
+
+		#Size Definitions
+		max_strength = 50
+		max_organisation = 60
+		default_morale = 0.3
+		manpower = 40 # 1200
+
+		#Misc Abilities
+		training_time = 150
+		suppression = 1
+		weight = 1
+
+		supply_consumption = 0.2
+
+		essential = {
+			apc_equipment
+			infantry_equipment
+		}
+
+		# this is what moves us and sets speed
+		transport = apc_equipment
+
+		need = {
+			apc_equipment = 20
+			infantry_equipment = 40
+		}
+
+		jungle = {
+			attack = -0.3
+		}
+		forest = {
+			attack = -0.2
+		}
+		marsh = {
+			attack = -0.1
+		}
+		mountain = {
+			attack = -0.1
+		}
+		amphibious = {
+			attack = -0.4
+			movement = -0.2
+		}
+		urban = {
+			attack = -0.2
+			defence = -0.05
+		}
+	}
+}

@@ -1,0 +1,176 @@
+﻿# If you change the division templates here, please also update the hack in
+# common/on_actions/game_rule_on_actions.txt to prevent countries releasable by
+# Vegas in game rules from inheriting the Vegas templates.
+division_template = {
+	name = "Local Militia"
+	regiments = {
+		militia = { x = 0 y = 0 }
+		militia = { x = 0 y = 1 }
+		militia = { x = 1 y = 0 }
+		militia = { x = 1 y = 1 }
+	}
+}
+
+division_template = {
+	name = "Securitrons"
+
+	regiments = {
+		security_robot = { x = 0 y = 0 }
+		security_robot = { x = 0 y = 1 }
+		security_robot = { x = 1 y = 0 }
+		security_robot = { x = 1 y = 1 }
+
+	}
+	support = {
+		logistics_company = { x = 0 y = 0 }
+	}
+	priority = 2
+}
+
+division_template = {
+	name = "Old Security"
+
+	regiments = {
+		support_robot = { x = 0 y = 0 }
+		support_robot = { x = 0 y = 1 }
+		support_robot = { x = 0 y = 2 }
+		support_robot = { x = 1 y = 0 }
+		support_robot = { x = 1 y = 1 }
+	}
+
+}
+
+division_template = {
+	name = "Casino Thugs"
+
+	regiments = {
+		infantry = { x = 0 y = 0 }
+		infantry = { x = 0 y = 1 }
+		infantry = { x = 1 y = 0 }
+		infantry = { x = 1 y = 1 }
+		infantry = { x = 2 y = 0 }
+		infantry = { x = 2 y = 1 }
+		infantry = { x = 0 y = 2 }
+		infantry = { x = 1 y = 2 }
+	}
+}
+
+units = {
+
+	division = {
+		name = "Strip Security I"
+		location = 3179
+		division_template = "Securitrons"
+		start_experience_factor = 0.15
+		start_equipment_factor = 1.0
+	}
+
+	division = {
+		name = "Strip Security II"
+		location = 3180
+		division_template = "Securitrons"
+		start_experience_factor = 0.15
+		start_equipment_factor = 1.0
+	}
+	division = {
+		name = "Strip Security III"
+		location = 3182
+		division_template = "Securitrons"
+		start_experience_factor = 0.15
+		start_equipment_factor = 1.0
+	}
+	division = {
+		name = "Gamorrah Thugs"
+		location = 3182
+		division_template = "Casino Thugs"
+		start_experience_factor = 0.5
+		start_equipment_factor = 1.0
+	}
+	division = {
+		name = "Lucky 38 Thugs"
+		location = 3182
+		division_template = "Casino Thugs"
+		start_experience_factor = 1.0
+		start_equipment_factor = 1.0
+	}
+	division = {
+		name = "Tops Thugs"
+		location = 3188
+		division_template = "Casino Thugs"
+		start_experience_factor = 0.5
+		start_equipment_factor = 1.0
+	}
+	division = {
+		name = "Ultra-Luxe Thugs"
+		location = 3188
+		division_template = "Casino Thugs"
+		start_experience_factor = 0.5
+		start_equipment_factor = 1.0
+	}
+	division = {
+		name = "Outdated Security"
+		location = 9069
+		division_template = "Old Security"
+		start_experience_factor = 0.4
+		start_equipment_factor = 1
+	}
+	division = {
+		name = "Old Vegas Militia"
+		location = 6605
+		division_template = "Local Militia"
+		start_experience_factor = 0.05
+		start_equipment_factor = 1
+	}
+	
+	division = {
+		name = "Jacobstown Militia"
+		location = 3224
+		division_template = "Local Militia"
+		start_experience_factor = 0.05
+		start_equipment_factor = 1
+	}
+	division = {
+		name = "Nellis AFB Militia"
+		location = 8856
+		division_template = "Local Militia"
+		start_experience_factor = 0.05
+		start_equipment_factor = 1
+	}
+	division = {
+		name = "Ruby Hill Militia"
+		location = 8849
+		division_template = "Local Militia"
+		start_experience_factor = 0.05
+		start_equipment_factor = 1
+	}
+}
+
+instant_effect = {
+	add_equipment_production = {
+		equipment = {
+			type = security_robot_securitron_equipment_1
+			creator = "VEG"
+		}
+		requested_factories = 4
+		progress = 0.75
+		efficiency = 100
+	}
+	add_equipment_production = {
+		equipment = {
+			type = ballistic_equipment_1
+			creator = "VEG"
+		}
+		requested_factories = 2
+		progress = 0.75
+		efficiency = 100
+	}
+	add_equipment_production = {
+		equipment = {
+			type = support_equipment_1
+			creator = "VEG"
+		}
+		requested_factories = 1
+		progress = 0.75
+		efficiency = 100
+	}
+}

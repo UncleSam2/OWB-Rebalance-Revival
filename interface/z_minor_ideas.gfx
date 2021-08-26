@@ -1,0 +1,70 @@
+spriteTypes = {
+	spriteType = {
+		name = "GFX_idea_legionboi"
+		texturefile = "gfx/interface/ideas/legionboi.dds"
+	}
+	spriteType = {
+		name = "GFX_idea_vaultboi2"
+		texturefile = "gfx/interface/ideas/vaultboi2.dds"
+	}
+	spriteType = {
+		name = "GFX_idea_vaultboi3"
+		texturefile = "gfx/interface/ideas/vaultboi3.dds"
+	}
+	spriteType = {
+		name = "GFX_idea_vaultboi4"
+		texturefile = "gfx/interface/ideas/vaultboi4.dds"
+	}
+	spriteType = {
+		name = "GFX_idea_vaultboi5"
+		texturefile = "gfx/interface/ideas/vaultboi5.dds"
+	}
+	spriteType = {
+		name = "GFX_idea_vaultboi6"
+		texturefile = "gfx/interface/ideas/vaultboi6.dds"
+	}
+	spriteType = {
+		name = "GFX_idea_vaultboi8"
+		texturefile = "gfx/interface/ideas/vaultboi8.dds"
+	}
+	spriteType = {
+		name = "GFX_idea_vaultboi_3"
+		texturefile = "gfx/interface/ideas/vaultboi_3.dds"
+	}
+	spriteType = {
+		name = "GFX_idea_vault_boy"
+		texturefile = "gfx/interface/ideas/vault_boy.dds"
+	}
+	spriteType = {
+		name = "GFX_idea_vaultboi5"
+		texturefile = "gfx/interface/ideas/vaultboi5.dds"
+	}
+	spriteType = {
+		name = "GFX_idea_vaultboi7"
+		texturefile = "gfx/interface/ideas/vaultboi7.dds"
+	}
+	spriteType = {
+		name = "GFX_idea_cult_of_reagan"
+		texturefile = "gfx/interface/ideas/cult_of_reagan.dds"
+	}
+	spriteType = {
+		name = "GFX_idea_servitor_bot"
+		texturefile = "gfx/interface/ideas/servitor_bot.dds"
+	}
+	spriteType = {
+		name = "GFX_idea_ranger_badge"
+		texturefile = "gfx/interface/ideas/ranger_badge.dds"
+	}
+	spriteType = {
+		name = "GFX_idea_crappy_gas_mask"
+		texturefile = "gfx/interface/ideas/crappy_gas_mask.dds"
+	}
+	spriteType = {
+		name = "GFX_idea_valentine_milita"
+		texturefile = "gfx/interface/ideas/valentine_milita.dds"
+	}
+	spriteType = {
+		name = "GFX_idea_libertys_lingering"
+		texturefile = "gfx/interface/ideas/libertys_lingering.dds"
+	}
+}

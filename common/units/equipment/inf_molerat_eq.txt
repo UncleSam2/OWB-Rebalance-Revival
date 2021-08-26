@@ -1,0 +1,48 @@
+equipments = {
+
+	molerat_equipment = {
+		is_archetype = yes
+		is_buildable = no
+		type = infantry
+		group_by = archetype
+		interface_category = interface_category_land
+
+		upgrades = {
+			#inf_production_upgrade
+			#inf_redundancy_upgrade
+			#inf_weight_upgrade
+			#inf_charge_upgrade
+			#inf_sidearms_upgrade
+			#inf_efficiency_upgrade
+		}
+
+		reliability = 1
+
+		#Space taken in convoy
+		lend_lease_cost = 1
+
+		build_cost_ic = 0.3
+
+		# Defensive Abilities
+		defense = 10
+		breakthrough = 1
+
+		# Offensive Abilities
+		soft_attack = 3
+		hard_attack = 1
+		suppression = 1.5
+
+		resources = {
+		}
+	}
+
+	# molerats
+	molerat_equipment_1 = {
+		archetype = molerat_equipment
+		priority = 10
+
+		resources = {
+			water = 1
+		}
+	}
+}

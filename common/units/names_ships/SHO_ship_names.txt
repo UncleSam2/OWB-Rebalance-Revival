@@ -1,0 +1,43 @@
+﻿SHO_LIGHT = {
+	name = NAME_THEME_SHIPS_SHO_LIGHT
+	for_countries = { SHO }
+	type = ship
+	ship_types = { light_ship_unit }
+	fallback_name = "Tribal Canoe %d"
+	unique = {
+		"Confidence Sure" "Core-Cut Log" "Guai Hunter" "Guaranteed Catch" "Hard Driftwood" "Here We Sit" "Knowing" "No Trouble" "Old Toby" "Quality Unrivaled" "Rabbit-Tail" "River Dancer" "Serpet" "Silver Fish" "Steady Undouted" "Sturdy-Float" "Swift Rower" "Upstreamer" "Water Dog" "Well Crafted" "Yahandeka"
+	}
+}
+
+SHO_MEDIUM = {
+	name = NAME_THEME_SHIPS_SHO_MEDIUM
+	for_countries = { SHO }
+	type = ship
+	ship_types = { medium_ship_screen_unit }
+	fallback_name = "Tribal Boat %d"
+	unique = {
+		"Agaideka" "Cutter" "Doyahinee" "Ease of Ride" "First Pioneer" "Forager" "Gatherings" "Good-Haul" "Greatly Assured" "Hukundüka" "If Needed" "Kammedeka" "Know This River" "Ready On" "Seeing-Far" "Star-Chasing" "Tukudeka" "Wake Splitter" "Waters Calm" "Wind Catch"
+	}
+}
+
+SHO_HEAVY = {
+	name = NAME_THEME_SHIPS_SHO_HEAVY
+	for_countries = { SHO }
+	type = ship
+	ship_types = { heavy_ship_unit }
+	fallback_name = "Tribal Cruising Vessel %d"
+	unique = {
+		"A Good People" "Bighorn Eaters" "Bighorner Strong" "Blade Revealed" "Deep Water Crossing" "Hard To Track" "High Grass Eaters" "High-Growing Grass" "Natural Leader" "Notched Arrow" "Sharpened Tip" "Still Chased" "Superior" "Tomahawk" "Trailblazer" "Warrior Bred"
+	}
+}
+
+SHO_SUPER_HEAVY = {
+	name = NAME_THEME_SHIPS_SHO_SUPER_HEAVY
+	for_countries = { SHO }
+	type = ship
+	ship_types = { super_heavy_ship_unit }
+	fallback_name = "Tribal Battleship %d"
+	unique = {
+		"Cazador Sting" "Cornered Coyote" "Death Claw" "Feral Yao Guai" "Geacko Fang" "Guai River Massacre" "Holding a Long History" "Newe" "Persistence of the People" "Wayfinders, Still"
+	}
+}

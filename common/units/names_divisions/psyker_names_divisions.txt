@@ -1,0 +1,104 @@
+﻿# Division template historical names system. Is a new method of naming the divisions based on the names-group assigned to it's template.
+# If we run out of all historical names, the names will be assigned in the old way.
+#
+# Each group has a made up tag. Use it if you want to append more, or replace existing names with the extra txt files (modding).
+#
+# for_countries - lists all countries that can use it. If empty, or entire tag is missing, all countries in the world can use it.
+#
+# can_use - is a trigger that locks/unlocks the group under specific circumstances. The trigger is in a country scope.
+#
+# division_types - is a list of tokens to corresponding unit types. A player can in fact use any group of names for a div.template
+#                  however this tag is a helper for an automated choice (for AI, or if the group must switch on it's own, because
+#                  for example the current one is no longer available due to the can_use trigger saying so).
+#                  In automated choice, the division template must have at least 1 of the following types for it to be chosen.
+#
+# fallback_name - Is going to be used if we run out of the scripted historical names. If you want to use the old division naming
+#                 mechanics to be used for fallbacks, then just skip this option.
+#
+# unordered - It's a list of historical division names that did not have a number. Regardless if such names happened in history or not
+#             this option is available here mainly for a mods.
+#
+# ordered - Is a list of all historical names.
+#           Numbers must start from 1 and up.
+#           Numbers can't repeat in one scope.
+#           If you script the name for this group, at the same number (for example in a mod in another file), the name will be override.
+#           All arguments between the brackets must be separated by spaces. Each argument is wrapped in "quotas".
+#           1st argument = The name. It must contain either:
+#                          %d (for decimal number placement)
+#                          %s (for string number placement - ROMAN numbers like XIV).
+#           2nd argument is optional = A localizable text describing this historical division. The text will be visible in the tooltip
+#                                      where you choose the historical division name.
+#           3rd argument is optional = An URL preferably pointing to the WIKI. It's a future feature that is not currently working in
+#                                      the current game version.
+
+Psyker_Spec_Ops_01 = {
+	name = "Psyker Infantry"
+
+	for_countries = { }
+
+	can_use = { is_psyker_nation = yes }
+
+	division_types = { "spec_ops" }
+
+	# Number reservation system will tie to another group.
+	#link_numbering_with = { EGY_GAR_01 }
+
+	fallback_name = "%d. Psyker Division"
+
+	# Names with numbers (only one number per entry).
+	# It's okay to have gaps in numbering.
+	ordered = {
+		1 = { "%d. The Mind Sculptors" }
+		2 = { "%d. Thought Seizers" }
+		3 = { "%d. Dark Influencers" }
+		4 = { "%d. Reality Tether" }
+		5 = { "%d. Will Benders" }
+		6 = { "%d. Harness of Thought" }
+		7 = { "%d. Rake of the Mind" }
+		8 = { "%d. Temporal Beings" }
+		9 = { "%d. Beguiler of Wills" }
+		10 = { "%d. Masters of Thought" }
+		11 = { "%d. Thought Flayers" }
+		12 = { "%d. Ceramic Gods" }
+		13 = { "%d. Willbreakers" }
+		14 = { "%d. Mental Collapse" }
+		15 = { "%d. Stream of Thought" }
+		16 = { "%d. Brain Lash" }
+		17 = { "%d. Thought Scour" }
+		18 = { "%d. Dampen Will" }
+		19 = { "%d. The Train of Thought" }
+		20 = { "%d. The Cult of the Will" }
+		21 = { "%d. Fithists" }
+		22 = { "%d. Brain Suckers" }
+		23 = { "%d. The Black Temple" }
+		24 = { "%d. Travelers of the Planes" }
+		25 = { "%d. Dopplegangers" }
+		26 = { "%d. Rippers of Reality" }
+		27 = { "%d. Thought Harvesters" }
+		28 = { "%d. Courier of Will" }
+		29 = { "%d. Architects of Thought" }
+		30 = { "%d. Cult of the Dark Strand" }
+		31 = { "%d. The Zero Sum'd" }
+		32 = { "%d. Boogeymen of Dreams" }
+		33 = { "%d. Dreamwalkers" }
+		34 = { "%d. Extractors of Memories" }
+		35 = { "%d. Daughters of the Cosmos" }
+		36 = { "%d. Mountains Of Madness" }
+		37 = { "%d. Children of the Dream Planes" }
+		38 = { "%d. Tempestus Scions" }
+		39 = { "%d. The Astropaths" }
+		40 = { "%d. Scions of the Future" }
+		41 = { "%d. Gamma-Beta-Delta" }
+		42 = { "%d. Knights of Chaos" }
+		43 = { "%d. Epsilon Order" }
+		44 = { "%d. Soul Fusion" }
+		45 = { "%d. Witches of the Veil" }
+		46 = { "%d. Tigarius's Will" }
+		47 = { "%d. Soul of Magnus" }
+		48 = { "%d. Weavers of Fate" }
+		49 = { "%d. Binders of the Soul" }
+		50 = { "%d. The Insane" }
+		51 = { "%d. Will Crushers" }
+		52 = { "%d. The Timekeepers" }
+	}
+}

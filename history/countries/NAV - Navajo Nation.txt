@@ -1,0 +1,127 @@
+﻿capital = 203
+oob = "NAV_2275"
+set_technology = {
+	infantry_tech_level_tribal = 1
+	infantry_tech_level_settler = 1
+	special_forces_tech_level_tribal = 1
+	special_forces_tech_level_settler = 1
+	special_forces_tech_level_scientific = 1
+	support_tech_level_tribal = 1
+	support_tech_level_settler = 1
+	vehicles_tech_level_tribal = 1
+	vehicles_tech_level_settler = 1
+	robotics_tech_level_tribal = 1
+	robotics_tech_level_settler = 1
+	air_tech_level_tribal = 1
+	air_tech_level_settler = 1
+	naval_tech_level_tribal = 1
+	naval_tech_level_settler = 1
+	tools_tech_level_tribal = 1
+	tools_tech_level_settler = 1
+	habitation_tech_level_tribal = 1
+	habitation_tech_level_settler = 1
+	exploitation_tech_level_tribal = 1
+	exploitation_tech_level_settler = 1
+	electronics_tech_level_tribal = 1
+	electronics_tech_level_settler = 1
+	tribal_civilization = 1
+	settled_civilization = 1
+	tool_engineering = 1
+	standard_weaponry_tech = 1
+	melee_weaponry_tech_1 = 1
+	support_weaponry = 1
+	demolitions_weaponry_tech = 1
+	fireteam_weaponry_tech = 1
+	spec_ops_equipment_tech_1 = 1
+}
+
+set_variable = {
+	NAV_resistance = 2
+}
+
+if = {
+	limit = {
+		has_dlc = "Man the Guns"
+	}
+	set_technology = {
+		nautics_tech_1 = 1
+		light_navy_hull_tech_1 = 1
+		waterproof_sealing_tech = 1
+	}
+}
+
+if = {
+	limit = {
+		NOT = {
+			has_dlc = "Man the Guns"
+		}
+	}
+	set_technology = {
+		nautics_tech_non_mtg_1 = 1
+		light_navy_hull_tech_non_mtg_1 = 1
+		waterproof_sealing_tech_non_mtg = 1
+	}
+}
+
+set_stability = 0.4
+set_war_support = 0.4
+set_convoys = 70
+set_research_slots = 4
+set_country_flag = is_settler_nation
+set_country_flag = has_unique_manpower_law
+
+set_politics = {
+	ruling_party = ruler
+	elections_allowed = no
+}
+
+set_popularities = {
+	people = 0
+	elites = 0
+	intellectuals = 0
+	ruler = 100
+}
+
+add_ideas = {
+	nav_pathfinders
+	NAV_legionem_foederati
+}
+
+create_country_leader = {
+	name = "Chief Hashkeh Naabaah"
+	desc = "HASHKEH_DESC"
+	picture = "portrat_nav_hashkesh.dds"
+	expire = "3000.1.1"
+	ideology = chieftain
+	traits = {
+		expert_negotiator
+	}
+}
+
+if = {
+	limit = {
+		can_use_autonomy_system = yes
+	}
+	CES = {
+		NAV = {
+			become_puppet = yes
+		}
+		set_autonomy = {
+			target = NAV
+			autonomy_state = autonomy_client_tribe
+		}
+	}
+}
+
+if = {
+	limit = {
+		can_use_autonomy_system = no
+	}
+	CES = {
+		NAV = {
+			become_puppet = yes
+		}
+	}
+}
+
+add_to_tech_sharing_group = legion_research_pact

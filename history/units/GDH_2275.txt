@@ -1,0 +1,267 @@
+﻿division_template = {
+	name = "Gente Milicia"
+	regiments = {
+		militia = { x = 0 y = 0 }
+		militia = { x = 0 y = 1 }
+		militia = { x = 1 y = 0 }
+		militia = { x = 1 y = 1 }
+	}
+}
+
+division_template = {
+	name = "Fuerza Milicia"
+	regiments = {
+		infantry = { x = 0 y = 0 }
+		infantry = { x = 0 y = 1 }
+		infantry = { x = 1 y = 0 }
+		infantry = { x = 1 y = 1 }
+	}
+	priority = 0
+}
+
+division_template = {
+	name = "Gente Revivalists"
+	regiments = {
+		infantry = { x = 0 y = 0 }
+		infantry = { x = 0 y = 1 }
+		infantry = { x = 1 y = 0 }
+		infantry = { x = 1 y = 1 }
+		infantry = { x = 1 y = 1 }
+		infantry = { x = 1 y = 2 }
+	}
+	support = {
+		recon_company = { x = 0 y = 0 }
+	}
+}
+	division_template = {
+	name = "Gente Motorizado"
+	regiments = {
+		motorized = { x = 0 y = 0 }
+		motorized = { x = 0 y = 1 }
+		motorized = { x = 1 y = 0 }
+		motorized = { x = 1 y = 1 }
+		motorized = { x = 1 y = 1 }
+		motorized = { x = 1 y = 2 }
+	}
+	support = {
+		recon_company = { x = 0 y = 0 }
+	}
+}
+
+##### Starting Units #####
+# 0.1: Trained
+# 0.3: Regular
+# 0.75: Seasoned
+# 0.9: Vetrans
+units = {
+
+	# Revivalists
+
+	division = {
+		name = "Gente-Ciudad Revivalists"
+		location = 7775
+		division_template = "Gente Revivalists"
+		start_experience_factor = 0.4
+		start_equipment_factor = 1.0
+	}
+
+	division = {
+		name = "Gente-Ciudad Motorizado"
+		location = 7775
+		division_template = "Gente Motorizado"
+		start_experience_factor = 1.0
+		start_equipment_factor = 1.0
+	}
+
+	division = {
+		name = "Huachinera Revivalists"
+		location = 7553
+		division_template = "Gente Revivalists"
+		start_experience_factor = 0.4
+		start_equipment_factor = 1.0
+	}
+	
+	division = {
+		name = "Hermosillo Revivalists"
+		location = 7545
+		division_template = "Gente Revivalists"
+		start_experience_factor = 0.4
+		start_equipment_factor = 1.0
+	}
+
+	division = {
+		name = "Oputo Revivalists"
+		location = 7525
+		division_template = "Gente Revivalists"
+		start_experience_factor = 0.4
+		start_equipment_factor = 1.0
+	}
+
+	division = {
+		name = "Puerto Libertad-Ciudad Revivalists"
+		location = 786
+		division_template = "Gente Revivalists"
+		start_experience_factor = 0.4
+		start_equipment_factor = 1.0
+	}
+
+	division = {
+		name = "Puerto Libertad-Ciudad Motorizado"
+		location = 786
+		division_template = "Gente Motorizado"
+		start_experience_factor = 1.0
+		start_equipment_factor = 1.0
+	}
+
+	division = {
+		name = "Tierra-Ciudad Revivalists"
+		location = 2196
+		division_template = "Gente Revivalists"
+		start_experience_factor = 0.4
+		start_equipment_factor = 1.0
+	}
+
+	division = {
+		name = "Tierra-Ciudad Motorizado"
+		location = 2196
+		division_template = "Gente Motorizado"
+		start_experience_factor = 1.0
+		start_equipment_factor = 1.0
+	}
+
+	division = {
+		name = "Revivalistas Occidentales"
+		location = 7763
+		division_template = "Gente Revivalists"
+		start_experience_factor = 0.4
+		start_equipment_factor = 1.0
+	}
+
+	# Milicia
+
+	division = {
+		name = "Gente Guardia Portuaria"
+		location = 7553
+		division_template = "Fuerza Milicia"
+		start_experience_factor = 0.2
+		start_equipment_factor = 0.8
+	}
+
+	division = {
+		name = "1st Gente-Ciudad Milicia"
+		location = 7554
+		division_template = "Gente Milicia"
+		start_experience_factor = 0.2
+		start_equipment_factor = 0.8
+	}
+
+	division = {
+		name = "2nd Gente-Ciudad Milicia"
+		location = 7594
+		division_template = "Gente Milicia"
+		start_experience_factor = 0.2
+		start_equipment_factor = 0.8
+	}
+
+	division = {
+		name = "Oputo Milicia"
+		location = 7525
+		division_template = "Gente Milicia"
+		start_experience_factor = 0.2
+		start_equipment_factor = 0.8
+	}
+
+	division = {
+		name = "Hermosillo Milicia"
+		location = 7545
+		division_template = "Gente Milicia"
+		start_experience_factor = 0.2
+		start_equipment_factor = 0.8
+	}
+
+	division = {
+		name = "1st Puerto Libertad-Ciudad Milicia"
+		location = 7758
+		division_template = "Gente Milicia"
+		start_experience_factor = 0.2
+		start_equipment_factor = 0.8
+	}
+	division = {
+		name = "2nd Puerto Libertad-Ciudad Milicia"
+		location = 7549
+		division_template = "Gente Milicia"
+		start_experience_factor = 0.2
+		start_equipment_factor = 0.8
+	}
+
+	division = {
+		name = "Huachinera Milicia"
+		location = 6972
+		division_template = "Gente Milicia"
+		start_experience_factor = 0.2
+		start_equipment_factor = 0.8
+	}
+	
+	division = {
+		name = "Suaquai Grande Milicia"
+		location = 7527
+		division_template = "Gente Milicia"
+		start_experience_factor = 0.2
+		start_equipment_factor = 0.8
+	}
+	
+	division = {
+		name = "Tierra-Ciudad Milicia"
+		location = 2197
+		division_template = "Gente Milicia"
+		start_experience_factor = 0.2
+		start_equipment_factor = 0.8
+	}
+
+	division = {
+		name = "Tierra Guardia Portuaria"
+		location = 7535
+		division_template = "Fuerza Milicia"
+		start_experience_factor = 0.2
+		start_equipment_factor = 0.8
+	}
+
+	division = {
+		name = "Puerto Libertad Guardia Portuaria"
+		location = 7547
+		division_template = "Fuerza Milicia"
+		start_experience_factor = 0.2
+		start_equipment_factor = 0.8
+	}
+}
+
+##### Starting Production #####
+instant_effect = {
+	add_equipment_production = {
+		equipment = {
+			type = ballistic_equipment_1
+			creator = "GDH"
+		}
+		requested_factories = 4
+		progress = 0.75
+		efficiency = 100
+	}
+	add_equipment_production = {
+		equipment = {
+			type = support_equipment_1
+			creator = "GDH"
+		}
+		requested_factories = 2
+		progress = 0.6
+		efficiency = 100
+	}
+	add_equipment_production = {
+		equipment = {
+			type = motorbike_equipment_1
+			creator = "GDH"
+		}
+		requested_factories = 1
+		progress = 0.6
+		efficiency = 100
+	}
+}

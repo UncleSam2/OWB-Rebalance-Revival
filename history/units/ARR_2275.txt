@@ -1,0 +1,169 @@
+﻿division_template = {
+	name = "Arroyo Police Force"
+	regiments = {
+		militia = { x = 0 y = 0 }
+		militia = { x = 0 y = 1 }
+		militia = { x = 1 y = 0 }
+		militia = { x = 1 y = 1 }
+	}
+}
+
+division_template = {
+	name = "Settlement-Guard"
+	regiments = {
+		infantry = { x = 0 y = 0 }
+		infantry = { x = 0 y = 1 }
+		infantry = { x = 1 y = 0 }
+		infantry = { x = 1 y = 1 }
+	}
+}
+division_template = {
+	name = "Arroyo Armed Forces"
+	regiments = {
+		spec_ops = { x = 0 y = 0 }
+		spec_ops = { x = 0 y = 1 }
+		spec_ops = { x = 1 y = 0 }
+		spec_ops = { x = 1 y = 1 }
+		spec_ops = { x = 2 y = 0 }
+		spec_ops = { x = 2 y = 1 }
+		spec_ops = { x = 2 y = 2 }
+		spec_ops = { x = 3 y = 0 }
+	}
+
+}
+units = {
+	division = {
+		name = "Arroyo-Guard 1"
+		location = 2722
+		division_template = "Settlement-Guard"
+		start_experience_factor = 0.5
+		start_equipment_factor = 1.0
+	}
+	division = {
+		name = "Arroyo-Guard 2"
+		location = 2728
+		division_template = "Settlement-Guard"
+		start_experience_factor = 0.5
+		start_equipment_factor = 1.0
+	}
+	division = {
+		name = "Arroyo-Guard 3"
+		location = 1744
+		division_template = "Settlement-Guard"
+		start_experience_factor = 0.5
+		start_equipment_factor = 1.0
+	}
+	division = {
+		name = "Arroyo-Guard 4"
+		location = 5006
+		division_template = "Settlement-Guard"
+		start_experience_factor = 0.5
+		start_equipment_factor = 1.0
+	}
+	division = {
+		name = "Arroyo-Guard 5"
+		location = 1750
+		division_template = "Settlement-Guard"
+		start_experience_factor = 0.5
+		start_equipment_factor = 1.0
+	}
+	division = {
+		name = "Arroyo-Guard 6"
+		location = 2723
+		division_template = "Settlement-Guard"
+		start_experience_factor = 0.5
+		start_equipment_factor = 1.0
+	}
+	division = {
+		name = "Arroyo-Guard 7"
+		location = 5034
+		division_template = "Settlement-Guard"
+		start_experience_factor = 0.5
+		start_equipment_factor = 1.0
+	}
+	division = {
+		name = "Arroyo-Guard 8"
+		location = 2726
+		division_template = "Settlement-Guard"
+		start_experience_factor = 0.5
+		start_equipment_factor = 1.0
+	}
+	division = {
+		name = "Arroyo-Guard 9"
+		location = 1751
+		division_template = "Settlement-Guard"
+		start_experience_factor = 0.5
+		start_equipment_factor = 1.0
+	}
+	division = {
+		name = "Arroyo-Guard 10"
+		location = 1277
+		division_template = "Settlement-Guard"
+		start_experience_factor = 0.5
+		start_equipment_factor = 1.0
+	}
+	division = {
+		name = "Arroyo-Guard 11"
+		location = 5003
+		division_template = "Settlement-Guard"
+		start_experience_factor = 0.5
+		start_equipment_factor = 1.0
+	}
+	division = {
+		name = "Arroyo-Guard 12"
+		location = 5005
+		division_template = "Settlement-Guard"
+		start_experience_factor = 0.5
+		start_equipment_factor = 1.0
+	}
+	division = {
+		name = "Sixes Police Force"
+		location = 2728
+		division_template = "Arroyo Police Force"
+		start_experience_factor = 0.25
+		start_equipment_factor = 1.0
+	}
+	division = {
+		name = "Arroyo Police Force"
+		location = 2722
+		division_template = "Arroyo Police Force"
+		start_experience_factor = 0.25
+		start_equipment_factor = 1.0
+	}
+	division = {
+		name = "Temple of Trials Police Force"
+		location = 5003
+		division_template = "Arroyo Police Force"
+		start_experience_factor = 0.25
+		start_equipment_factor = 1.0
+	}
+	division = {
+		name = "The Chosen's Army"
+		location = 2722
+		division_template = "Arroyo Armed Forces"
+		start_experience_factor = 1.0
+		start_equipment_factor = 1.0
+	}
+}
+
+##### Starting Production #####
+instant_effect = {
+	add_equipment_production = {
+		equipment = {
+			type = ballistic_equipment_1
+			creator = "ARR"
+		}
+		requested_factories = 5
+		progress = 0.75
+		efficiency = 100
+	}
+	add_equipment_production = {
+		equipment = {
+			type = spec_ops_equipment_1
+			creator = "ARR"
+		}
+		requested_factories = 2
+		progress = 0.75
+		efficiency = 100
+	}
+}

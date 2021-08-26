@@ -1,0 +1,209 @@
+﻿division_template = {
+	name = "Two Sun Engineers"
+	regiments = {
+		militia = { x = 0 y = 0 }
+		militia = { x = 0 y = 1 }
+		militia = { x = 1 y = 0 }
+		militia = { x = 1 y = 1 }
+	}
+}
+
+division_template = {
+	name = "Sun Warriors"
+	regiments = {
+		infantry = { x = 0 y = 0 }
+		infantry = { x = 0 y = 1 }
+		infantry = { x = 1 y = 0 }
+		infantry = { x = 1 y = 1 }
+		infantry = { x = 2 y = 0 }
+	}
+	support = {
+		fireteam_support = { x = 0 y = 0 }
+	}
+}
+division_template = {
+	name = "Sun Riders"
+	regiments = {
+		motorized = { x = 0 y = 0 }
+		motorized = { x = 0 y = 1 }
+		motorized = { x = 1 y = 0 }
+		motorized = { x = 1 y = 1 }
+		motorized = { x = 2 y = 0 }
+	}
+	support = {
+		fireteam_support = { x = 0 y = 0 }
+	}
+}
+units = {
+division = {
+		name = "1st Sun Riders"
+		location = 8922
+		division_template = "Sun Riders"
+		start_experience_factor = 1.0
+		start_equipment_factor = 1.0
+	}
+	division = {
+		name = "2nd Sun Riders"
+		location = 8922
+		division_template = "Sun Riders"
+		start_experience_factor = 1.0
+		start_equipment_factor = 1.0
+	}
+division = {
+		name = "3rd Sun Riders"
+		location = 8922
+		division_template = "Sun Riders"
+		start_experience_factor = 1.0
+		start_equipment_factor = 1.0
+	}
+division = {
+		name = "4th Sun Riders"
+		location = 5320
+		division_template = "Sun Riders"
+		start_experience_factor = 1.0
+		start_equipment_factor = 1.0
+	}
+division = {
+		name = "5th Sun Riders"
+		location = 2325
+		division_template = "Sun Riders"
+		start_experience_factor = 1.0
+		start_equipment_factor = 1.0
+	}
+	division = {
+		name = "6th Sun Riders"
+		location = 2042
+		division_template = "Sun Riders"
+		start_experience_factor = 1.0
+		start_equipment_factor = 1.0
+	}
+division = {
+		name = "1st Regulars"
+		location = 1672
+		division_template = "Sun Warriors"
+		start_experience_factor = 0.1
+		start_equipment_factor = 1.0
+	}
+division = {
+		name = "2nd Regulars"
+		location = 8924
+		division_template = "Sun Warriors"
+		start_experience_factor = 0.1
+		start_equipment_factor = 1.0
+	}
+division = {
+		name = "3rd Regulars"
+		location = 8925
+		division_template = "Sun Warriors"
+		start_experience_factor = 0.1
+		start_equipment_factor = 1.0
+	}
+division = {
+		name = "4th Regulars"
+		location = 5377
+		division_template = "Sun Warriors"
+		start_experience_factor = 0.1
+		start_equipment_factor = 1.0
+	}
+division = {
+		name = "5th Regulars"
+		location = 5352
+		division_template = "Sun Warriors"
+		start_experience_factor = 0.1
+		start_equipment_factor = 1.0
+	}
+division = {
+		name = "6th Regulars"
+		location = 7751
+		division_template = "Sun Warriors"
+		start_experience_factor = 0.1
+		start_equipment_factor = 1.0
+	}
+division = {
+		name = "7th Regulars"
+		location = 828
+		division_template = "Sun Warriors"
+		start_experience_factor = 0.1
+		start_equipment_factor = 1.0
+	}
+division = {
+		name = "Nogales Engineers"
+		location = 2044
+		division_template = "Two Sun Engineers"
+		start_experience_factor = 0.1
+		start_equipment_factor = 1.0
+	}
+division = {
+		name = "Aqua Prieta Engineers"
+		location = 2043
+		division_template = "Two Sun Engineers"
+		start_experience_factor = 0.1
+		start_equipment_factor = 1.0
+	}
+division = {
+		name = "Gente City Engineers"
+		location = 5214
+		division_template = "Two Sun Engineers"
+		start_experience_factor = 0.1
+		start_equipment_factor = 1.0
+	}
+division = {
+		name = "Planta Grupo Engineers"
+		location = 5347
+		division_template = "Two Sun Engineers"
+		start_experience_factor = 0.1
+		start_equipment_factor = 1.0
+	}
+division = {
+		name = "Hilltop Engineers"
+		location = 5289
+		division_template = "Two Sun Engineers"
+		start_experience_factor = 0.1
+		start_equipment_factor = 1.0
+	}
+division = {
+		name = "Tombstone Engineers"
+		location = 4398
+		division_template = "Two Sun Engineers"
+		start_experience_factor = 0.1
+		start_equipment_factor = 1.0
+	}
+division = {
+		name = "Two Sun Engineers"
+		location = 5384
+		division_template = "Two Sun Engineers"
+		start_experience_factor = 0.1
+		start_equipment_factor = 1.0
+	}
+
+}
+##### Starting Production #####
+instant_effect = {
+	add_equipment_production = {
+		equipment = {
+			type = infantry_equipment_1
+			creator = "TWO"
+		}
+		requested_factories = 2
+		progress = 0.75
+		efficiency = 100
+	}
+	add_equipment_production = {
+		equipment = {
+			type = motorbike_equipment_2
+			creator = "TWO"
+		}
+		requested_factories = 1
+		progress = 0.75
+		efficiency = 100
+	}
+	add_equipment_production = {
+		equipment = {
+			type = fireteam_equipment_1
+			creator = "TWO"
+		}
+		requested_factories = 1
+		progress = 0.75
+		efficiency = 100
+	}
+}

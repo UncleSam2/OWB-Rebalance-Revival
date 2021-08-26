@@ -1,0 +1,43 @@
+﻿ANT_LIGHT = {
+	name = NAME_THEME_SHIPS_ANT_LIGHT
+	for_countries = { ANT }
+	type = ship
+	ship_types = { light_ship_unit }
+	fallback_name = "Tribal Canoe %d"
+	unique = {
+		"Confidence Sure" "Core-Cut Log" "Guaranteed Catch" "Hard Driftwood" "Knowing" "No Trouble" "Quality Unrivaled" "River Dancer" "Serpet" "Silver Fish" "Steady Undouted" "Sturdy-Float" "Swift Rower" "Upstreamer" "Water Dog" "Well Crafted"
+	}
+}
+
+ANT_MEDIUM = {
+	name = NAME_THEME_SHIPS_ANT_MEDIUM
+	for_countries = { ANT }
+	type = ship
+	ship_types = { medium_ship_screen_unit }
+	fallback_name = "Tribal Boat %d"
+	unique = {
+		"Cutter" "Ease of Ride" "First Pioneer" "Forager" "Gatherings" "Good-Haul" "Greatly Assured" "If Needed" "Know This River" "Ready On" "Seeing-Far" "Star-Chasing" "Wake Splitter" "Waters Calm" "Wind Catch"
+	}
+}
+
+ANT_HEAVY = {
+	name = NAME_THEME_SHIPS_ANT_HEAVY
+	for_countries = { ANT }
+	type = ship
+	ship_types = { heavy_ship_unit }
+	fallback_name = "Tribal Cruising Vessel %d"
+	unique = {
+		"Bighorner Strong" "Blade Revealed" "Deep Water Crossing" "Hard To Track" "Natural Leader" "Notched Arrow" "Sharpened Tip" "Superior" "Tomahawk" "Trailblazer" "Warrior Bred"
+	}
+}
+
+ANT_SUPER_HEAVY = {
+	name = NAME_THEME_SHIPS_ANT_SUPER_HEAVY
+	for_countries = { ANT }
+	type = ship
+	ship_types = { super_heavy_ship_unit }
+	fallback_name = "Tribal Battleship %d"
+	unique = {
+		"Cazador Sting" "Cornered Coyote" "Death Claw" "Feral Yao Guai" "Geacko Fang"
+	}
+}

@@ -1,0 +1,303 @@
+on_actions = {
+	on_startup = {
+		effect = {
+			ROB = {
+				add_ideas = ROB_so_many_dumb_friends
+			}
+			PSH = {
+				add_ideas = PSH_defense_directive
+			}
+			SUN = {
+				add_ideas = SUN_the_dogs_of_war
+			}
+			TAA = {
+				add_ideas = TAA_the_master_gunsmiths
+			}
+			TOB = {
+				add_ideas = TOB_bone_wielders
+			}
+			YKZ = {
+				add_ideas = YKZ_extortion_and_protection
+			}
+			SCO = {
+				add_ideas = SCO_western_experience
+			}
+			BOS = {
+				add_ideas = BOS_technologies_of_the_old_world
+			}
+			WBH = {
+				add_ideas = WBH_the_stalkers_of_seattle
+				add_ideas = BEL_trans_alsaskan_pipeline
+			}
+			MOJ = {
+				add_ideas = MOJ_elijah_determination
+			}
+			DES = {
+				add_ideas = DES_rangers_lead_the_way
+				add_ideas = des_colorado_support
+			}
+			SUF = {
+				add_ideas = SUF_love_of_the_bomb
+			}
+			BAG = {
+				remove_ideas = BAG_the_colorado_rangers 
+				add_ideas = BAG_the_colorado_rangers
+
+				remove_ideas = BAG_an_ncr_detatchment
+				add_ideas = BAG_an_ncr_detatchment
+			}
+		
+			BRK = {
+				add_ideas = BEL_trans_alsaskan_pipeline
+			}
+			ANT = {
+				add_ideas = ANT_reliance_on_hunting
+			}
+			ARM = {
+				add_ideas = ARM_combined_army
+			}
+			ANO = {
+				add_ideas = ANO_gods_chosen
+			}
+			ARR = {
+				add_ideas = ARR_legacy_of_the_dweller
+			}
+			ASS = {
+				add_ideas = ASS_hit_and_runner_blades
+			}
+			BAM = {
+				add_ideas = BAM_canning_our_food
+			}
+			BEL = {
+				add_ideas = bel_spirit_of_liberty
+				add_ideas = BEL_trans_alsaskan_pipeline
+			}
+			BAR = {
+				add_ideas = BAR_the_barons_of_california
+			}
+			BLK = {
+				add_ideas = BLK_the_remnants_of_the_legion
+			}
+			BON = {
+				add_ideas = BON_home_of_the_gunrunners
+				add_ideas = BON_a_hub_of_trade
+			}
+			BOO = {
+				add_ideas = BOO_the_guns_of_nellis
+			}
+			CAR = {
+				add_ideas = CAR_just_let_me_grill
+			}
+			CCW = {
+				add_ideas = CCW_dont_walk_the_bone_road
+			}
+			CBN = {
+				add_ideas = CBN_love_is_rough
+			}
+			CHE = {
+				add_ideas = CHE_addiction_fueled_fights
+			}
+			CHR = {
+				add_ideas = CHR_investigating_the_unknown
+			}
+			CHO = {
+				add_ideas = CHO_keepers_of_knowlege
+			}
+			CMC = {
+				add_ideas = CMC_oklahomas_strip
+			}
+			CLK = {
+				add_ideas = CLK_the_clock_must_always_tick
+			}
+			CLJ = {
+				add_ideas = CLJ_explosive_lust
+			}
+			CYC = {
+				add_ideas = CYC_near_real_myths
+			}
+			DEA = {
+				add_ideas = DEA_mormon_tactics
+			}
+			DAY = {
+				add_ideas = DAY_a_equitable_nation
+				add_ideas = DAY_operation_clipboard
+			}
+			DRE = {
+				add_ideas = DRE_valentine_milita
+			}
+			DRY = {
+				add_ideas = DRY_deep_underground
+			}
+			DSL = {
+				add_ideas = DSL_fighting_the_pretenders
+			}
+			EAS = {
+				add_ideas = EAS_control_of_the_i80
+				add_ideas = EAS_the_quarries_of_eastport
+			}
+			EDN = {
+				add_ideas = EDN_brotherhood_knowlege
+			}
+			EXE = {
+				add_ideas = EXE_vault_tec_remnants
+			}
+			FLA = {
+				add_ideas = FLA_an_economic_powerhouse
+				add_ideas = FLA_pretorian_remnants
+			}
+			FOR = {
+				add_ideas = FOR_salvaging_experience
+			}
+			FRI = {
+				add_ideas = FRI_the_rails_of_frisco
+			}
+			GDH = {
+				add_ideas = GDH_the_generalismos_arsenal
+			}
+			GLW = {
+				add_ideas = GLW_entertaining_passing_traders
+			}
+			GRA = {
+				add_ideas = GRA_grabbing_in_raids
+			}
+			HAN = {
+				add_ideas = HAN_the_presidential_cult
+			}
+			HGH = {
+				add_ideas = HGH_the_temples_of_nicea
+			}
+			INR = {
+				add_ideas = INR_forgotten_exiles
+			}
+			HXL = {
+				add_ideas = HXL_the_guilt_over_denver
+				add_ideas = HXL_the_real_communists
+			}
+			HUA = {
+				add_ideas = HUA_hold_against_outsiders
+			}
+			KAM = {
+				add_ideas = KAM_kitted_raiders
+			}
+			JAC = {
+				add_ideas = JAC_tactics_of_the_banshee
+			}
+			IRN = {
+				add_ideas = IRN_libertys_rage
+			}
+			JCT = {
+				add_ideas = JCT_our_slice_of_paradise
+			}
+			LGS = {
+				add_ideas = LGS_the_last_mexican_democracy
+			}
+			LON = {
+				add_ideas = LON_effects_of_paranoia
+			}
+			WHD = {
+				add_ideas = WHD_the_hangdogs_will_be_put_down
+			}
+			NEW = {
+				add_ideas = NEW_a_city_of_sin
+			}
+			MUR = {
+				add_ideas = MUR_reformist_principles
+			}
+			MRA = {
+				add_ideas = MRA_disunited_efforts
+			}
+			MOT = {
+				add_ideas = MOT_NCRF_Labor
+			}
+			MXC = {
+				add_ideas = MXC_the_battered_chapter
+				add_ideas = MXC_aid_of_the_patriarch
+			}
+			NCR = {
+				add_ideas = ncr_colorado_resources
+			}
+			RBD = {
+				add_ideas = RBD_ranching_lifestyle
+			}
+			PNT = {
+				add_ideas = PNT_wilson_research_facility
+			}
+			PHR = {
+				add_ideas = PHR_the_phoenix_rises
+			}
+			ORO = {
+				add_ideas = ORO_undying_hatred
+			}
+			RBT = {
+				add_ideas = RBT_femur_breakers
+			}
+			NOE = {
+				add_ideas = NOE_a_nomadic_pact
+			}
+			SHI = {
+				add_ideas = SHI_the_emperor
+			}
+			RES = {
+				add_ideas = RES_nuclear_nellie
+			}
+			RIP = {
+				add_ideas = RIP_rip_and_tear
+			}
+			RSR = {
+				add_ideas = RSR_the_rio_grande_pitstop
+			}
+			RRG = {
+				add_ideas = RRG_american_origins
+			}
+			RUB = {
+				add_ideas = RUB_the_red_jewels
+			}
+			TUB = {
+				add_ideas = TUB_live_on_air
+			}
+			SKY = {
+				add_ideas = SKY_a_home_like_no_other
+			}
+			SOR = {
+				add_ideas = SOR_zion_trails
+			}
+			SLE = {
+				add_ideas = SLE_followers_of_presper
+			}
+			WHI = {
+				add_ideas = WHI_nomads_of_nowhere
+			}
+			TIM = {
+				add_ideas = TIM_living_off_the_land
+			}
+			YMP = {
+				add_ideas = YMP_trying_to_start_anew
+			}
+			UTO = {
+				add_ideas = UTO_a_nightkins_ravings
+			}
+			VIC = {
+				add_ideas = VIC_victorian_warfare
+			}
+			WEN = {
+				add_ideas = WEN_oasis_hotsprings
+			}
+			VIP = {
+				add_ideas = VIP_posioned_weaponry
+			}
+			WAP = {
+				add_ideas = WAP_baan_baaha
+				add_ideas = WAP_dzilghaaa
+			}
+			
+			
+		
+		
+		
+		
+		
+		
+		#End
+		}
+	}
+}

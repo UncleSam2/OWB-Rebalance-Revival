@@ -1,0 +1,162 @@
+# options for map_icon_category:
+# For land units: infantry,armored,other
+# For sea units: ship,transport,uboat
+
+sub_units = {
+
+	fireteam_infantry = {
+		sprite = infantry
+		map_icon_category = infantry
+
+		priority = 600
+		active = no
+
+		type = {
+			infantry
+			artillery
+		}
+
+		group = infantry
+
+		categories = {
+			category_army
+			category_front_line
+			category_weapon_infantry
+			category_fireteams
+		}
+
+		combat_width = 3
+
+		#Size Definitions
+		max_strength = 5
+		max_organisation = -15
+		default_morale = 0.2
+		manpower = 30 # 1000
+
+		# Misc Abilities
+		training_time = 200
+		weight = 1
+
+		supply_consumption = 0.1
+
+		fort = {
+			attack = 0.3
+			defence = 0.3
+		}
+		urban = {
+			attack = 0.3
+			defence = 0.3
+		}
+
+		need = {
+			fireteam_equipment = 30
+		}
+
+		transport = fireteam_equipment
+
+		essential = {
+			fireteam_equipment
+		}
+	}
+
+	demolitions_infantry = {
+		sprite = infantry
+		map_icon_category = infantry
+
+		priority = 600
+		active = no
+
+		type = {
+			infantry
+			artillery
+		}
+
+		group = infantry
+
+		categories = {
+			category_army
+			category_front_line
+			category_weapon_infantry
+			category_demolitions
+		}
+
+		combat_width = 3
+
+		#Size Definitions
+		max_strength = 5
+		max_organisation = -15
+		default_morale = 0.2
+		manpower = 30 # 1000
+
+		# Misc Abilities
+		training_time = 200
+		weight = 1
+
+		supply_consumption = 0.1
+
+		urban = {
+			attack = 0.3
+			defence = 0.3
+		}
+		fort = {
+			attack = 0.3
+			defence = 0.3
+		}
+
+		essential = {
+			demolitions_equipment
+		}
+
+		transport = demolitions_equipment
+
+		need = {
+			demolitions_equipment = 30
+		}
+	}
+
+	gary_unit = {
+		sprite = infantry
+		map_icon_category = infantry
+
+		priority = 600
+		active = no
+
+		type = {
+			infantry
+		}
+
+		group = infantry
+		soft_attack = 4
+		hard_attack = 4
+		breakthrough = 4
+		defense = 3
+
+		categories = {
+			category_army
+			category_front_line
+			category_infantry
+			category_leg_infantry
+		}
+
+		combat_width = 1
+
+		#Size Definitions
+		max_strength = 5
+		max_organisation = 45
+		default_morale = 0.3
+		manpower = 250 # 1000
+
+		# Misc Abilities
+		training_time = 120
+		suppression = 1
+		weight = 0.5
+
+		supply_consumption = 0.05
+
+		transport = infantry_equipment
+
+		need = {
+			infantry_equipment = 250
+		}
+	}
+}

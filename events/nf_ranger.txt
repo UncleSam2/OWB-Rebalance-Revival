@@ -1,0 +1,521 @@
+﻿add_namespace = nf_ranger
+
+country_event = {
+	id = nf_ranger.1 #Ranger Election
+	title = nf_ranger.1.t
+	desc = nf_ranger.1.d
+	picture = GFX_event_DES_rangers_symbol
+
+	is_triggered_only = yes
+
+	option = {
+		name = nf_ranger.1.a
+		ai_chance = {
+			base = 1
+
+			modifier = {
+				factor = 0
+				OR = {
+					DES_has_ai_behavior_bos = yes
+					DES_has_ai_behavior_ncr = yes
+				}
+			}
+		}
+		set_country_flag = DES_leader_chosen
+	}
+
+	option = {
+		name = nf_ranger.1.b
+
+		ai_chance = {
+			base = 1
+
+			modifier = {
+				factor = 0
+				OR = {
+					DES_has_ai_behavior_bos = yes
+					DES_has_ai_behavior_nevada_pact = yes
+				}
+			}
+		}
+		retire_country_leader = yes
+
+		create_country_leader = {
+			name = "Hell Razor"
+			desc = "hell_razor_desc"
+			picture = "portrait_razer.dds"
+			expire = "3000.1.1"
+			ideology = peoples_militia
+			traits = {
+			}
+			id = 10082
+		}
+		set_country_flag = DES_leader_chosen
+		set_politics = { ruling_party = people elections_allowed = no }
+	}
+
+	option = {
+		name = nf_ranger.1.c
+
+		retire_country_leader = yes
+		ai_chance = {
+			base = 1
+
+			modifier = {
+				factor = 0
+				OR = {
+					DES_has_ai_behavior_ncr = yes
+					DES_has_ai_behavior_nevada_pact = yes
+				}
+			}
+		}
+
+		create_country_leader = {
+			name = "Thrasher Sagarra"
+			desc = "thrasher_sagarra_desc"
+			picture = "portrait_thrasher.dds"
+			expire = "3000.1.1"
+			ideology = ideocracy
+			traits = {
+			}
+			id = 10083
+		}
+		set_country_flag = DES_leader_chosen
+		set_politics = { ruling_party = intellectuals elections_allowed = no }
+	}
+}
+country_event = {
+	id = nf_ranger.2
+	title = nf_ranger.2.t
+	desc = nf_ranger.2.d
+	picture = GFX_event_DES_rangers_symbol
+
+	is_triggered_only = yes
+
+	option = {
+		name = nf_ranger.2.a
+		set_technology = {
+			car_tech_1 = 1
+		}
+		add_ideas = DES_army_corps_of_engineers
+		hidden_effect = {
+			load_oob = ranger_engineers
+		}
+		custom_effect_tooltip = ranger_engineers_tt
+
+	}
+	option = {
+		name = nf_ranger.2.b
+		hidden_effect = {
+			load_oob = ranger_national
+		}
+		add_ideas = nationalguard
+		custom_effect_tooltip = ranger_nationalguard_tt
+	}
+	option = {
+		name = nf_ranger.2.c
+		hidden_effect = {
+			load_oob = ranger_armyrangers
+		}
+		add_ideas = armyrangers
+		custom_effect_tooltip = ranger_armyrangers_tt
+	}
+}
+country_event = {
+	id = nf_ranger.3
+	title = nf_ranger.3.t
+	desc = nf_ranger.3.d
+	picture = GFX_event_generic_raider_1
+
+	is_triggered_only = yes
+
+	option = {
+		name = nf_ranger.3.a
+		210 = {
+			if = {
+				limit = {
+					is_valid_state_for_2_arms_factories = yes
+				}
+				add_extra_state_shared_building_slots = 3
+				add_building_construction = {
+					type = arms_factory
+					level = 2
+					instant_build = yes
+				}
+			}
+		}
+		add_ideas = acceptcrim
+		add_manpower = 1200
+	}
+	option = {
+		name = nf_ranger.3.b
+		210 = {
+			if = {
+				limit = {
+					is_valid_state_for_civilian_factory = yes
+				}
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+			}
+			if = {
+				limit = {
+					is_valid_state_for_arms_factory = yes
+				}
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = arms_factory
+					level = 1
+					instant_build = yes
+				}
+			}
+		}
+		add_ideas = acceptpetty
+		add_manpower = 900
+	}
+	option = {
+		name = nf_ranger.3.c
+		add_ideas = kickcrim
+		210 = {
+			if = {
+				limit = {
+					is_valid_state_for_2_civilian_factories = yes
+				}
+				add_extra_state_shared_building_slots = 3
+				add_building_construction = {
+					type = industrial_complex
+					level = 2
+					instant_build = yes
+				}
+			}
+		}
+	}
+}
+country_event = {
+	id = nf_ranger.4
+	title = nf_ranger.4.t
+	desc = nf_ranger.4.d
+	picture = GFX_event_DES_rangers_symbol
+
+	is_triggered_only = yes
+
+	option = {
+		name = nf_ranger.4.a
+		add_manpower = 600
+		210 = {
+			add_resource = {
+				type = water
+				amount = 3
+			}
+			add_resource = {
+				type = metal
+				amount = 3
+			}
+			add_resource = {
+				type = energy
+				amount = 3
+			}
+			add_resource = {
+				type = composites
+				amount = 3
+			}
+		}
+	}
+	option = {
+		name = nf_ranger.4.b
+		add_manpower = 300
+		210 = {
+			add_resource = {
+				type = water
+				amount = 6
+			}
+			add_resource = {
+				type = metal
+				amount = 6
+			}
+			add_resource = {
+				type = energy
+				amount = 6
+			}
+			add_resource = {
+				type = composites
+				amount = 6
+			}
+		}
+	}
+	option = {
+		name = nf_ranger.4.c
+		210 = {
+			add_resource = {
+				type = water
+				amount = 9
+			}
+			add_resource = {
+				type = metal
+				amount = 9
+			}
+			add_resource = {
+				type = energy
+				amount = 9
+			}
+			add_resource = {
+				type = composites
+				amount = 9
+			}
+		}
+
+	}
+}
+
+#Rangers consider leaving NCR after they refuse to free tribes after legion defeat
+country_event = {
+	id = nf_ranger.5
+	title = nf_ranger.5.t
+	desc = nf_ranger.5.d
+	picture = GFX_event_DES_rangers_symbol
+
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	option = {#Leave the Betrayer
+		name = nf_ranger.5.a
+		ai_chance = {
+			factor = 100
+		}
+		leave_faction = yes
+		if = {
+			limit = {
+				DES = { has_cosmetic_tag = DES_NCR }
+			}
+			drop_cosmetic_tag = yes
+		}
+		NCR = { country_event = nf_ranger.6 }
+	}
+
+	option = {#Stay with them
+		name = nf_ranger.5.b
+		ai_chance = {
+			factor = 0
+		}
+	}
+}
+
+#event to tell NCR that Rangers left faction
+country_event = {
+	id = nf_ranger.6
+	title = nf_ranger.6.t
+	desc = nf_ranger.6.d
+	picture = GFX_event_DES_rangers_symbol
+
+	is_triggered_only = yes
+
+	option = {#Rangers leave
+		name = nf_ranger.6.a
+	}
+}
+
+#event for rangers to join the BOS
+country_event = {
+	id = nf_ranger.7
+	title = nf_ranger.7.t
+	desc = nf_ranger.7.d
+	picture = GFX_event_DES_rangers_symbol
+
+	is_triggered_only = yes
+
+	#Bring them into the fold
+	option = {
+		name = nf_ranger.7.a
+		DES = { join_western_brotherhood_of_steel = yes }
+		hidden_effect = {
+			DES = { country_event = nf_ranger.8 }
+		}
+		ai_chance = {
+			factor = 50
+			modifier = {
+				is_historical_focus_on = yes
+				factor = 1000
+			}
+		}
+	}
+	#No they aren't worthy
+	option = {
+		name = nf_ranger.7.b
+		hidden_effect = {
+			DES = { country_event = nf_ranger.8 }
+		}
+		ai_chance = {
+			factor = 50
+			modifier = {
+				is_historical_focus_on = yes
+				factor = 0
+			}
+		}
+	}
+}
+
+#event telling the rangers what the BOS said
+country_event = {
+	id = nf_ranger.8
+	title = nf_ranger.8.t
+	desc = {
+		text = nf_ranger.8.d_yes
+		trigger = {
+			is_in_faction_with = BOS
+		}
+	}
+	desc = {
+		text = nf_ranger.8.d_no
+		trigger = {
+			NOT = { is_in_faction_with = BOS }
+		}
+	}
+	picture = GFX_event_DES_rangers_symbol
+
+	is_triggered_only = yes
+
+	option = {
+		name = nf_ranger.8.a
+		trigger = {
+			is_in_faction_with = BOS
+		}
+	}
+	option = {
+		name = nf_ranger.8.b
+		trigger = {
+			NOT = { is_in_faction_with = BOS }
+		}
+	}
+}
+country_event = {
+	id = nf_ranger.9 #The 80s Threat
+	title = nf_ranger.9.t
+	desc = nf_ranger.9.d
+	picture = GFX_event_DES_rangers_symbol
+
+	is_triggered_only = yes
+
+	option = {
+		trigger = { tag = DES }
+		name = nf_ranger.9.a
+		ai_chance = {
+			base = 1
+		}
+		add_ideas = DES_the_guarantees
+		VLT = { add_ideas = DES_protectors_guarantee }
+		NEW = { add_ideas = DES_protectors_guarantee }
+		country_event = nf_ranger.11
+	}
+	option = {
+		name = nf_ranger.9.b
+		trigger = { tag = DES }
+		ai_chance = {
+			base = 0
+		}
+	}
+	option = {
+		name = nf_ranger.9.c
+		trigger = { NOT = { tag = DES } }
+		ai_chance = {
+			base = 0
+		}
+	}
+}
+country_event = {
+	id = nf_ranger.10 #The 80s Threat
+	title = nf_ranger.10.t
+	desc = nf_ranger.10.d
+	picture = GFX_event_desert_rangers_marching
+
+	is_triggered_only = yes
+
+	option = {
+		name = nf_ranger.10.a
+			if = {
+				limit = {
+					is_ncr_member = yes
+				}
+				every_country = {
+					limit = {
+						is_ncr_member = yes
+					}
+					add_ideas = DES_can_handle_this_war_themselves
+				}
+			}
+			if = {
+				limit = {
+					is_western_brotherhood_of_steel_member = yes
+				}
+				every_country = {
+					limit = {
+						is_western_brotherhood_of_steel_member = yes
+					}
+					add_ideas = DES_can_handle_this_war_themselves
+				}
+			}
+		#Nevada Pact excluded, they are more close-knit
+		add_to_war = {
+			targeted_alliance = FROM.FROM
+			enemy = EHT
+			hostility_reason = protect_nevada
+		}
+	}
+}
+country_event = {
+	id = nf_ranger.11 #Purchase of Scrapheap
+	title = nf_ranger.11.t
+	desc = nf_ranger.11.d
+	picture = GFX_event_desert_rangers_marching
+	is_triggered_only = yes
+	option = {
+		name = nf_ranger.11.a
+			set_temp_variable = { caps_to_add = 200 }
+			add_caps = yes
+			NCR = {
+				set_temp_variable = { caps_to_add = -200 }
+				add_caps = yes
+			}
+			NCR =  {
+				add_state_core = 526
+				transfer_state = 526
+			}
+		ai_chance = {
+			base = 100
+		}
+	}
+	option = {
+		name = nf_ranger.11.b
+	}
+}
+country_event = {
+	id = nf_ranger.12
+	title = nf_ranger.12.t
+	desc = nf_ranger.12.d
+	picture = GFX_event_desert_rangers_marching
+
+	is_triggered_only = yes
+
+	option = {
+		name = nf_ranger.12.a
+				set_temp_variable = { caps_to_add = 200 }
+				add_caps = yes
+				NCR = {
+					set_temp_variable = { caps_to_add = -200 }
+					add_caps = yes
+				}
+				NCR =  {
+					add_state_core = 68
+					transfer_state = 68
+				}
+		ai_chance = {
+			base = 100
+		}
+	}
+	option = {
+		name = nf_ranger.12.b
+	}
+}
+# vim: set ft=pdx tw=79 :

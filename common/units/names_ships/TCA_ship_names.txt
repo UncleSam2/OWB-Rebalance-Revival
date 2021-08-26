@@ -1,0 +1,43 @@
+﻿TCA_LIGHT = {
+	name = NAME_THEME_SHIPS_TCA_LIGHT
+	for_countries = { TCA }
+	type = ship
+	ship_types = { light_ship_unit }
+	fallback_name = "Dingy %d"
+	unique = {
+		"A Hole in Deck" "A Year For This" "Avenger" "Better Than Nothing" "Dauntless" "Defiant" "Durability Debated" "Equal To Nothing" "Feeling Cocky" "Float Like A Brick" "Floating Scrap" "Ignore Us" "Nuts N' Bolts" "Oldie But A Goodie" "Puddle Worthy" "Ready and Willing" "Restored Crap" "Rusted Through" "Sailing Smooth" "The Leftover" "Three-Eyed Fish" "Unrivaled Might" "Up A Creek" "Wildcat" "Will Have to Do"
+	}
+}
+
+TCA_MEDIUM = {
+	name = NAME_THEME_SHIPS_TCA_MEDIUM
+	for_countries = { TCA }
+	type = ship
+	ship_types = { medium_ship_screen_unit }
+	fallback_name = "Rust Bucket %d"
+	unique = {
+		"Carry On" "Could've Built A House" "Devastator" "Distraction" "Free To Choose" "Hellcat" "If We Must" "Lackies Luck" "Nightingale" "One For You" "Scrap King" "Seen Better Days" "Should've Built That House" "Sick of Water" "Smart Planning" "Smells Like Victory" "Sucker Punch" "The Fire Rises" "Unsinkable V" "Vindicator"
+	}
+}
+
+TCA_HEAVY = {
+	name = NAME_THEME_SHIPS_TCA_HEAVY
+	for_countries = { TCA }
+	type = ship
+	ship_types = { heavy_ship_unit }
+	fallback_name = "Cutter %d"
+	unique = {
+		"Cap For Your Thoughts" "Cash In" "Chasing Radstorms" "Diplomacy" "Don't Insult Me" "Give No Inch" "King Molerat XVI" "Lifted Spirits" "No More" "Now Come" "Now We Fight" "One of a Kind" "Our Constant Struggle" "Ready or What?" "Runs Like The Wind" "Sarsaparilla Sunrise" "Take Every Mile" "Through Strong" "Up and Up" "We found This One"
+	}
+}
+
+TCA_SUPER_HEAVY = {
+	name = NAME_THEME_SHIPS_TCA_SUPER_HEAVY
+	for_countries = { TCA }
+	type = ship
+	ship_types = { super_heavy_ship_unit }
+	fallback_name = "Battle Boat %d"
+	unique = {
+		"All Fire Front" "Broadsider" "Completely Scrap" "Expensive As Hell" "Full Frontal" "Hammer Down!" "No Other Will Suppress Us" "Our Height" "Rise All in a Prominent Defiance" "Sister of War" "Steel Brunt" "The Conclusion of That Campaign" "Victory Over the Brotherhood" "Wall of the People" "Who Next Stares us Down?"
+	}
+}

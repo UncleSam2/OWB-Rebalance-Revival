@@ -1,0 +1,43 @@
+﻿HAI_LIGHT = {
+	name = NAME_THEME_SHIPS_HAI_LIGHT
+	for_countries = { HAI }
+	type = ship
+	ship_types = { light_ship_unit }
+	fallback_name = "Skirmisher %d"
+	unique = {
+		"Captain Needle's Yacht" "Full Muzzle" "Get a Fix" "Grub Rig" "Hijacker" "Husk" "Imp" "Jet Junkie" "Leech" "Lil' Gremlin" "Maggot Sac" "Patched Daydream" "Skitters" "Soot Wakes" "Spiked Bolts" "The Pig Viper" "The Tadpole" "Thorn" "Triclops" "Worm Food"
+	}
+}
+
+HAI_MEDIUM = {
+	name = NAME_THEME_SHIPS_HAI_MEDIUM
+	for_countries = { HAI }
+	type = ship
+	ship_types = { medium_ship_screen_unit }
+	fallback_name = "Striker %d"
+	unique = {
+		"Bat To The Skull" "Bleed!" "Busted Kneecaps" "El Cazador" "Flesh Gnasher" "Grated Ribcage" "Gutshot" "In Dreamland" "Mutilated Slave" "Pillage And Rape" "Rapid Deathclaw" "Rusty Needles" "Say Goodbye!" "Scream!" "The Pony Ride"
+	}
+}
+
+HAI_HEAVY = {
+	name = NAME_THEME_SHIPS_HAI_HEAVY
+	for_countries = { HAI }
+	type = ship
+	ship_types = { heavy_ship_unit }
+	fallback_name = "Bruiser %d"
+	unique = {
+		"Crowd Pleaser" "Feel It Deep" "Gore S'More" "Leather-Strapped Goddess" "Might Make Right" "No River Too Deep" "One Good Eye" "Rip And Tear" "Take It" "That Tenderizer" "The Meatgrinder" "To Wall Too High" "Two Pints Left" "Witness Me!" "You're Fucked!"
+	}
+}
+
+HAI_SUPER_HEAVY = {
+	name = NAME_THEME_SHIPS_HAI_SUPER_HEAVY
+	for_countries = { HAI }
+	type = ship
+	ship_types = { super_heavy_ship_unit }
+	fallback_name = "Warcraft %d"
+	unique = {
+		"Black Out The Sun" "Get! Skull! Fucked!" "Lucifer's Bastard" "Mobile Hell" "No Forgiveness" "No Sympathy" "Raider Paradise" "Shoot, We Dare Yuh!" "Skullbasher's Fortress" "Uncle Jim's War Tug"
+	}
+}
