@@ -1,0 +1,155 @@
+ideas = {
+	outsider_recruitment_laws = {
+		law = yes
+		outsider_law_none = {
+			picture = no_outsiders
+			available = {
+				NOT = { has_country_flag = has_unique_outsider_laws }
+			}
+			visible = {
+				NOT = { has_country_flag = has_unique_outsider_laws }
+			}
+			allowed_to_remove = {
+				if = {
+					limit = { original_tag = TNK }
+					always = no
+				}
+			}
+			cost = 100
+			removal_cost = -1
+			level = 4
+			modifier = {
+				non_core_manpower = -1
+				stability_factor = 0.01
+				war_support_factor = 0.01
+				resistance_target = -0.02
+			}
+			ai_will_do = {
+				factor = 0
+			}
+			cancel_if_invalid = no
+			#default = yes
+		}
+		outsider_law_volunteers = {
+			available = {
+				use_generic_outsider_laws = yes
+			}
+			visible = {
+				use_generic_outsider_laws = yes
+			}
+			default = yes
+			picture = volunteer_outsiders
+			cost = 100
+			removal_cost = -1
+			level = 3
+			modifier = {
+				non_core_manpower = 0.05
+				planning_speed = -0.02
+				compliance_gain = 0.02
+				resistance_target = 0.025
+			}
+			ai_will_do = {
+				factor = 0
+			}
+			cancel_if_invalid = no
+		}
+		outsider_law_auxiliaries = {
+			available = {
+				use_generic_outsider_laws = yes
+			}
+			visible = {
+				use_generic_outsider_laws = yes
+			}
+			picture = auxiliary_outsiders
+			cost = 100
+			removal_cost = -1
+			level = 2
+			modifier = {
+				non_core_manpower = 0.1
+				stability_factor = -0.01
+				planning_speed = -0.04
+				compliance_gain = 0.04
+				resistance_target = 0.05
+			}
+			ai_will_do = {
+				factor = 0
+			}
+			cancel_if_invalid = no
+		}
+		outsider_law_batallions = {
+			available = {
+				use_generic_outsider_laws = yes
+			}
+			visible = {
+				use_generic_outsider_laws = yes
+			}
+			picture = outsider_battalions
+			cost = 100
+			removal_cost = -1
+			level = 1
+			modifier = {
+				non_core_manpower = 0.2
+				stability_factor = -0.02
+				planning_speed = -0.06
+				compliance_gain = 0.08
+				resistance_target = 0.075
+			}
+			ai_will_do = {
+				factor = 0
+			}
+			cancel_if_invalid = no
+		}
+		outsider_law_brotherhood_initiates = {
+			visible = {
+				is_brotherhood_nation_proper = yes
+			}
+			available = {
+				is_brotherhood_nation_proper = yes
+				OR = {
+					has_completed_focus = bos_outsiders
+					original_tag = MOJ
+					original_tag = MXC
+				}
+			}
+			picture = outsider_recruitment
+			cost = 100
+			removal_cost = -1
+			level = 2
+			modifier = {
+				non_core_manpower = -0.5
+				stability_factor = -0.04
+				war_support_factor = -0.04
+				resistance_target = 0.01
+			}
+			ai_will_do = {
+				factor = 0
+			}
+			cancel_if_invalid = no
+		}
+		outsider_law_brotherhood_knights = {
+			picture = wasteland_conscripts
+			cost = 150
+			removal_cost = -1
+			level = 1
+			visible = {
+				is_brotherhood_nation_proper = yes
+			}
+			available = {
+				is_brotherhood_nation_proper = yes
+				OR = {
+					has_completed_focus = bos_wastelandconscripts
+					original_tag = MOJ
+					original_tag = MXC
+				}
+			}
+			modifier = {
+				conscription_factor = 0.01
+				stability_factor = -0.08
+				war_support_factor = -0.08
+				resistance_target = 0.02
+			}
+			default = no
+			cancel_if_invalid = no
+		}
+	}
+}

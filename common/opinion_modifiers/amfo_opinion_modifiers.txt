@@ -1,0 +1,114 @@
+opinion_modifiers = {
+	swordandcross = { value = -30 }
+	missionaries = { value = 30 }
+	onlythefaithful = { value = -10 }
+	renderuntocaesar = { value = 50 }
+	deployedrangers = { value = -25 }
+	sympathies = { value = 25 }
+	allisgood = { value = 25 }
+	politicobanditos = { value = 50 }
+	ncrrepublicmember = { value = 150 }
+	nevadaagreements = { value = 40 }
+	brotherhoodassault = { value = -50 }
+	equalassault = { value = 25 }
+	ncrassault = { value = 50 }
+	ncrembassy = { value = 20 }
+	ncrtradedeal = { trade = yes value = 50 }
+	caravan_protection = { trade = yes value = 35 }
+	klamethdeal = { trade = yes value = 30 }
+	loyal_tribe = { value = 100 }
+	disloyal_tribe = { value = -50 }
+	i80_given = { value = 40 }
+	shislightlydislikesbos = { value = -30 }
+	shihatesbos = { value = -50 }
+	arroyolikebos = { value = 100 }
+	mojavepactjoined = { value = 50 }
+	mojavepactrefused = { value = -50 }
+	dambustersjoined = { value = 50 }
+	dambustersrefused = { value = -50 }
+	nevadapact = { value = 75 }
+	nevadapactrefused = { value = -75 }
+	steelrangers = { value = 100 }
+	boshatesmutants = { value = -200 }
+	boshateswashingtonstatebos = { value = -150 }
+	mutantshatebos = { value = -200 }
+	far_away = { value = -10 }
+	very_far_away = { value = -20 }
+	intellectualallies = { value = 75 }
+	repairedhelios = { value = 25 }
+	stolehelios = { value = -50 }
+	northern_league_refused = { value = -150 }
+	northern_league_accepted = { value = 200 }
+	mojave_bos_faction = { value = 75 }
+	mojave_bos_faction_refused = { value = -75 }
+	mojave_ncr_trade = { trade = yes value = 75 }
+	mojave_ncr_raids = { value = -75 }
+	stole_territory = { value = -75 }
+	returned_territory = { value = 50 }
+	supermutants = { value = -200 }
+	supermutants_trade = {
+		trade = yes
+		value = -100
+	}
+	non_supermutants = { value = -100 }
+	non_supermutants_trade = {
+		trade = yes
+		value = -100
+	}
+	texas_crisis_resolved = { value = 75 }
+	general_of_mexico = { value = 100 }
+	settlers_vs_raiders = { value = -30 }
+	world_view_brk = { value = -100 }
+	brk_view_world = { value = -80 }
+	kicked_out_of_new_vegas = { value = -35 }
+	the_bitter_springs_massacre = { value = -75 }
+	khan_envoys = { value = 25 }
+	enemy_faction_member = { value = -50 }
+	enemy_faction_member_trade = { trade = yes value = -300 }
+	mexico_reborn = { value = 25 }
+	itz_view_grh = { value = 40 }
+	grh_reciprocated_view_itz = { value = 40 }
+	itz_crush_tech = { value = -50 }
+	itz_crush_us = { value = -40 }
+	itz_tdt_cultural_ties = { value = 60 }
+	itz_ate_diplomacy = { value = 40 }
+	flower_wars_opinion = { value = -40 }
+	illegitimate_mexico = { value = -75 }
+	crazy_mora = { value = -75 }
+	embargo = {
+		value = -100
+		trade = yes
+	}
+	mexican_isolation = {
+		value = -50
+		trade = yes
+	}
+	mexicans_vs_others = {
+		value = -15
+	}
+	others_vs_mexicans = {
+		value = -10
+	}
+	honor_the_past = { value = 25 }
+	legalized_drug_trade = { value = 25 }
+	treaty_oaxaca = {
+		value = 25
+		trade = yes
+	}
+	ncn_trade = {
+		value = 50
+		trade = yes
+	}
+	noble_supremacy_opinion_modifier = {
+		value = 25
+		trade = yes
+	}
+	heretics = { value = -70 }
+	tdt_master_and_servant = { value = 40 }
+	supports_abolitionism = { value = -50 }
+	gdh_ffi_opinion = { value = -50 }
+	gdh_baja_opinion = { value = 50 }
+	gdh_cartel_opinion = {value = 50 }
+	gdh_cartel_trade_opinion = { value = 50 }
+	first_peoples = { value = 25 }
+}

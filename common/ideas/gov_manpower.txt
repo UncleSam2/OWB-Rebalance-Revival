@@ -1,0 +1,2520 @@
+ideas = {
+	mobilization_laws = {
+		law = yes
+		disarmed_nation = {
+			cost = 150
+			removal_cost = -1
+			level = 7
+			available = {
+				uses_generic_manpower_laws = yes
+			}
+			visible = {
+				uses_generic_manpower_laws = yes
+			}
+			ai_will_do = {
+				factor = 0 #Let Paradox implement demilitarization, not us.
+			}
+			modifier = {
+				conscription = 0.04
+				mobilization_speed = 0.04
+				production_speed_buildings_factor = 0.06
+				#stability_factor = 0.20
+			}
+			default = yes
+		}
+		volunteer_militia_conscription = {
+			cost = 150
+			removal_cost = -1
+			level = 6
+			picture = volunteer_militia
+			available = {
+				uses_generic_manpower_laws = yes
+				NOT = { has_idea = isolation }
+			}
+			visible = {
+				uses_generic_manpower_laws = yes
+			}
+			ai_will_do = {
+				factor = 1
+				modifier = {
+					#We need to get rid of disarmed nation
+					factor = 1000
+					has_idea = disarmed_nation
+				}
+			}
+			modifier = {
+				conscription = 0.06
+				mobilization_speed = 0.06
+				production_speed_buildings_factor = 0.03
+				#stability_factor = 0.15
+			}
+			cancel_if_invalid = no
+		}
+		funded_militia_conscription = {
+			cost = 150
+			removal_cost = -1
+			level = 5
+			picture = funded_militia
+			available = {
+				uses_generic_manpower_laws = yes
+				NOT = { has_idea = isolation }
+			}
+			visible = {
+				uses_generic_manpower_laws = yes
+			}
+			ai_will_do = {
+				factor = 10
+				modifier = {
+					#Prio if low on manpower
+					factor = 20
+					manpower_per_military_factory < 250
+				}
+			}
+			modifier = {
+				conscription = 0.08
+				mobilization_speed = 0.08
+				#stability_factor = 0.12
+			}
+			cancel_if_invalid = no
+		}
+		two_year_conscription = {
+			cost = 150
+			removal_cost = -1
+			level = 4
+			picture = 2_year_draft
+			available = {
+				uses_generic_manpower_laws = yes
+				OR = {
+					AND = {
+						threat > 0.6
+						has_war_support > 0.5
+					}
+					AND = {
+						is_major = no
+						has_war = yes
+					}
+					AND = {
+						has_war = yes
+						enemies_strength_ratio > 0.2
+					}
+				}
+				NOT = { has_idea = isolation }
+			}
+			visible = {
+				uses_generic_manpower_laws = yes
+			}
+			ai_will_do = {
+				factor = 20
+				modifier = {
+					#Prio if low on manpower
+					factor = 20
+					manpower_per_military_factory < 150
+				}
+			}
+			modifier = {
+				conscription = 0.10
+				mobilization_speed = 0.1
+				#stability_factor = 0.09
+			}
+			cancel_if_invalid = no
+		}
+		four_year_conscription = {
+			cost = 150
+			removal_cost = -1
+			level = 3
+			picture = 4_year_draft
+			available = {
+				uses_generic_manpower_laws = yes
+				OR = {
+					AND = {
+						threat > 0.8
+						has_war_support > 0.6
+					}
+					AND = {
+						has_war = yes
+						enemies_strength_ratio > 0.3
+					}
+					AND = {
+						is_major = no
+						has_war = yes
+					}
+				}
+				NOT = { has_idea = isolation }
+			}
+			visible = {
+				uses_generic_manpower_laws = yes
+			}
+			ai_will_do = {
+				factor = 40
+				modifier = {
+					#Prio if low on manpower
+					factor = 20
+					manpower_per_military_factory < 100
+				}
+			}
+			modifier = {
+				conscription = 0.12
+				mobilization_speed = 0.12
+				#stability_factor = 0.06
+			}
+			cancel_if_invalid = no
+		}
+		until_dismissal_conscription = {
+			cost = 150
+			removal_cost = -1
+			level = 2
+			picture = indefinite_draft
+			available = {
+				uses_generic_manpower_laws = yes
+				OR = {
+					AND = {
+                        has_war = yes
+						enemies_strength_ratio > 0.6
+					}
+                    AND = {
+						is_major = no
+						has_war = yes
+						enemies_strength_ratio > 0.4
+					}
+				}
+				NOT = { has_idea = isolation }
+			}
+			visible = {
+				uses_generic_manpower_laws = yes
+			}
+			ai_will_do = {
+				factor = 80
+				modifier = {
+					#Prio if low on manpower
+					factor = 20
+					manpower_per_military_factory < 75
+				}
+			}
+			modifier = {
+				conscription = 0.15
+				mobilization_speed = 0.15
+				industrial_capacity_factory = -0.03
+				#stability_factor = 0.04
+			}
+			cancel_if_invalid = no
+		}
+		child_conscription = {
+			cost = 150
+			removal_cost = -1
+			level = 1
+			picture = child_conscription
+			available = {
+				uses_generic_manpower_laws = yes
+				has_war = yes
+				OR = {
+					AND = {
+						is_major = no
+						enemies_strength_ratio > 0.5
+					}
+					enemies_strength_ratio > 0.8
+				}
+				NOT = { has_idea = isolation }
+			}
+			visible = {
+				uses_generic_manpower_laws = yes
+			}
+			ai_will_do = {
+				factor = 120
+				modifier = {
+					#Prio if low on manpower
+					factor = 20
+					manpower_per_military_factory < 50
+				}
+			}
+			modifier = {
+				conscription = 0.20
+				mobilization_speed = 0.2
+				industrial_capacity_factory = -0.06
+				#stability_factor = 0.02
+			}
+			cancel_if_invalid = no
+		}
+	#RAIDER CONSCRIPTION
+		petty_gang_conscription = {
+			cost = 150
+			removal_cost = -1
+			level = 5
+			available = {
+				is_raider_nation = yes
+				has_unique_manpower_law = no
+				has_regional_or_cultural_manpower_law = no
+			}
+			visible = {
+				is_raider_nation = yes
+				has_unique_manpower_law = no
+				has_regional_or_cultural_manpower_law = no
+			}
+			ai_will_do = {
+				factor = 0 #Always want to move off this one
+			}
+			modifier = {
+				conscription = 0.05
+				army_org_factor = 0.05
+				supply_consumption_factor = -0.05
+				stability_factor = 0.05
+				research_speed_factor = 0.1
+			}
+			default = yes
+
+		}
+		raider_bands = {
+			cost = 150
+			removal_cost = -1
+			level = 4
+			available = {
+				is_raider_nation = yes
+				has_unique_manpower_law = no
+				has_regional_or_cultural_manpower_law = no
+				OR = {
+					AND = {
+						has_war = yes
+						enemies_strength_ratio > 0.2
+					}
+					AND = {
+						is_major = no
+					}
+					OR = {
+						num_of_controlled_states > 6
+						AND = {
+							is_major = no
+							num_of_controlled_states > 3
+						}
+					}
+				}
+			}
+			visible = {
+				is_raider_nation = yes
+				has_unique_manpower_law = no
+				has_regional_or_cultural_manpower_law = no
+			}
+			ai_will_do = {
+				factor = 1
+				modifier = {
+					#We need to get rid of this
+					factor = 1000
+					has_idea = petty_gang_conscription
+				}
+			}
+			modifier = {
+				conscription = 0.07
+				land_reinforce_rate = 0.03
+				army_speed_factor = 0.03
+				justify_war_goal_time = -0.03
+				army_org_factor = -0.03
+				supply_consumption_factor = 0.03
+				stability_factor = -0.03
+				research_speed_factor = 0.05
+			}
+			cancel_if_invalid = no
+		}
+		scum_and_villainy = {
+			cost = 150
+			removal_cost = -1
+			level = 3
+			available = {
+				is_raider_nation = yes
+				has_unique_manpower_law = no
+				has_regional_or_cultural_manpower_law = no
+			}
+			visible = {
+				is_raider_nation = yes
+				has_unique_manpower_law = no
+				has_regional_or_cultural_manpower_law = no
+			}
+			ai_will_do = {
+				factor = 40
+				modifier = {
+					#Prio if low on manpower
+					factor = 20
+					manpower_per_military_factory < 250
+				}
+			}
+			modifier = {
+				conscription = 0.09
+				land_reinforce_rate = 0.05
+				army_speed_factor = 0.05
+				justify_war_goal_time = -0.05
+				army_org_factor = -0.05
+				supply_consumption_factor = 0.05
+				stability_factor = -0.05
+			}
+			cancel_if_invalid = no
+		}
+		threat_to_all_people = {
+			cost = 150
+			removal_cost = -1
+			level = 2
+			available = {
+				is_raider_nation = yes
+				has_unique_manpower_law = no
+				has_regional_or_cultural_manpower_law = no
+				OR = {
+					AND = {
+						has_war = yes
+						enemies_strength_ratio > 0.4
+					}
+					is_major = no
+				}
+				OR = {
+					num_of_controlled_states > 15
+					AND = {
+						is_major = no
+						num_of_controlled_states > 7
+					}
+				}
+			}
+			visible = {
+				is_raider_nation = yes
+				has_unique_manpower_law = no
+				has_regional_or_cultural_manpower_law = no
+			}
+			ai_will_do = {
+				factor = 80
+				modifier = {
+					#Prio if low on manpower
+					factor = 20
+					manpower_per_military_factory < 150
+				}
+			}
+			modifier = {
+				conscription = 0.11
+				land_reinforce_rate = 0.07
+				army_speed_factor = 0.07
+				justify_war_goal_time = -0.07
+				army_org_factor = -0.07
+				supply_consumption_factor = 0.07
+				stability_factor = -0.07
+			}
+			cancel_if_invalid = no
+		}
+		doom_of_wasteland = {
+			cost = 150
+			removal_cost = -1
+			level = 1
+			available = {
+				is_raider_nation = yes
+				has_unique_manpower_law = no
+				has_regional_or_cultural_manpower_law = no
+				OR = {
+					AND = {
+						has_war = yes
+						enemies_strength_ratio > 0.5
+					}
+					is_major = no
+				}
+				OR = {
+					num_of_controlled_states > 20
+					AND = {
+						is_major = no
+						num_of_controlled_states > 10
+					}
+				}
+			}
+			visible = {
+				is_raider_nation = yes
+				has_unique_manpower_law = no
+				has_regional_or_cultural_manpower_law = no
+			}
+			ai_will_do = {
+				factor = 120
+				modifier = {
+					#Prio if low on manpower
+					factor = 20
+					manpower_per_military_factory < 50
+				}
+			}
+			modifier = {
+				conscription = 0.15
+				land_reinforce_rate = 0.1
+				army_speed_factor = 0.1
+				justify_war_goal_time = -0.1
+				army_org_factor = -0.1
+				supply_consumption_factor = 0.1
+				stability_factor = -0.10
+			}
+			cancel_if_invalid = no
+		}
+	#MEXICAN CONSCRIPTION
+		tlaloc_stagnation = {
+			cost = 150
+			removal_cost = -1
+			level = 5
+			picture = tlaloc_stagnation
+			available = {
+				is_mexican = yes
+				has_unique_manpower_law = no
+			}
+			visible = {
+				is_mexican = yes
+				has_unique_manpower_law = no
+			}
+			ai_will_do = {
+				factor = 0 #NEVER DO THIS
+			}
+			modifier = {
+				conscription = 0.025
+				stability_factor = 0.1
+				production_speed_infrastructure_factor = 0.1
+				local_resources_factor = 0.1
+			}
+			default = yes
+
+		}
+		frontier_militias = {
+			cost = 150
+			removal_cost = -1
+			level = 4
+			picture = frontier_militias
+			available = {
+				is_mexican = yes
+				has_unique_manpower_law = no
+			}
+			visible = {
+				is_mexican = yes
+				has_unique_manpower_law = no
+			}
+			ai_will_do = {
+				factor = 1
+				modifier = {
+					#We need to get rid of this
+					factor = 1000
+					has_idea = tlaloc_stagnation
+				}
+			}
+			modifier = {
+				conscription = 0.05
+				production_speed_bunker_factor = 0.01
+				war_support_factor = 0.01
+			}
+			cancel_if_invalid = no
+		}
+		adelitas_militias = {
+			cost = 150
+			removal_cost = 100
+			level = 3
+			picture = adelitas_militias
+			available = {
+				is_mexican = yes
+				has_unique_manpower_law = no
+				OR = {
+					AND = {
+						has_war = yes
+						enemies_strength_ratio > 0.2
+					}
+					is_major = no
+					date > 2278.1.1
+				}
+			}
+			visible = {
+				is_mexican = yes
+				has_unique_manpower_law = no
+			}
+			ai_will_do = {
+				factor = 40
+				modifier = {
+					#Prio if low on manpower
+					factor = 20
+					manpower_per_military_factory < 2000 #Larger range since Mexico has a lot more MP
+				}
+			}
+			modifier = {
+				conscription = 0.07
+				army_attack_factor = 0.025
+				army_defence_factor = 0.025
+				production_speed_bunker_factor = 0.025
+				war_support_factor = 0.025
+			}
+			cancel_if_invalid = no
+		}
+		standing_garrisons = {
+			cost = 150
+			removal_cost = -1
+			level = 2
+			picture = standing_garrisons
+			available = {
+				is_mexican = yes
+				has_unique_manpower_law = no
+				OR = {
+					AND = {
+						has_war = yes
+						enemies_strength_ratio > 0.3
+					}
+					is_major = no
+					date > 2280.1.1
+				}
+			}
+			visible = {
+				is_mexican = yes
+				has_unique_manpower_law = no
+			}
+			ai_will_do = {
+				factor = 80
+				modifier = {
+					#Prio if low on manpower
+					factor = 20
+					manpower_per_military_factory < 1500 #Larger range since Mexico has a lot more MP
+				}
+			}
+			modifier = {
+				conscription = 0.1
+				army_attack_factor = 0.05
+				army_defence_factor = 0.05
+				production_speed_bunker_factor = 0.05
+				war_support_factor = 0.05
+			}
+			cancel_if_invalid = no
+		}
+		mexican_conscription = {
+			cost = 150
+			removal_cost = -1
+			level = 1
+			picture = mexican_conscription
+			visible = {
+				is_mexican = yes
+				has_unique_manpower_law = no
+			}
+			available = {
+				is_mexican = yes
+				has_unique_manpower_law = no
+				has_war = yes
+				OR = {
+					AND = {
+						is_major = no
+						enemies_strength_ratio > 0.4
+					}
+					AND = {
+						is_major = yes
+						enemies_strength_ratio > 0.8
+					}
+					date > 2280.1.1
+				}
+			}
+			ai_will_do = {
+				factor = 140
+				modifier = {
+					#Prio if low on manpower
+					factor = 20
+					manpower_per_military_factory < 1000 #Larger range since Mexico has a lot more MP
+				}
+			}
+			modifier = {
+				conscription = 0.12
+				army_attack_factor = 0.1
+				army_defence_factor = 0.1
+				production_speed_bunker_factor = 0.1
+				war_support_factor = 0.1
+				surrender_limit = 0.05
+			}
+			cancel_if_invalid = no
+		}
+	#TRIBAL MANPOWER#
+		born_warriors = {
+			cost = 150
+			removal_cost = -1
+			level = 5
+			picture = itz_manpower_law_1
+			available = {
+				is_tribal_nation = yes
+				has_unique_manpower_law = no
+				has_regional_or_cultural_manpower_law = no
+			}
+			visible = {
+				is_tribal_nation = yes
+				has_unique_manpower_law = no
+				has_regional_or_cultural_manpower_law = no
+			}
+			ai_will_do = {
+				factor = 0 #Never do this
+			}
+			modifier = {
+				conscription = 0.04
+				MONTHLY_POPULATION = 0.5
+				research_speed_factor = 0.20
+				production_speed_buildings_factor = 0.25
+				army_org_factor = 0.05
+			}
+			default = yes
+
+		}
+		veteran_pathfinders = {
+			cost = 150
+			removal_cost = -1
+			level = 4
+			picture = itz_manpower_law_2
+			available = {
+				is_tribal_nation = yes
+				has_unique_manpower_law = no
+				has_regional_or_cultural_manpower_law = no
+			}
+			visible = {
+				is_tribal_nation = yes
+				has_unique_manpower_law = no
+				has_regional_or_cultural_manpower_law = no
+			}
+			ai_will_do = {
+				factor = 1
+				modifier = {
+					#We need to get rid of this
+					factor = 1000
+					has_idea = born_warriors
+				}
+			}
+			modifier = {
+				conscription = 0.07
+				MONTHLY_POPULATION = 0.25
+				research_speed_factor = 0.1
+				production_speed_buildings_factor = 0.10
+			}
+			cancel_if_invalid = no
+		}
+		able_bodied_tribesmen = {
+			cost = 150
+			removal_cost = -1
+			level = 3
+			picture = itz_manpower_law_3
+			visible = {
+				is_tribal_nation = yes
+				has_unique_manpower_law = no
+				has_regional_or_cultural_manpower_law = no
+			}
+			available = {
+				is_tribal_nation = yes
+				has_unique_manpower_law = no
+				has_regional_or_cultural_manpower_law = no
+			}
+			ai_will_do = {
+				factor = 40
+				modifier = {
+					#Prio if low on manpower
+					factor = 20
+					manpower_per_military_factory < 250
+				}
+			}
+			modifier = {
+				conscription = 0.10
+				conscription_factor = 0.03
+				MONTHLY_POPULATION = -0.025
+				research_speed_factor = 0.01
+				production_speed_buildings_factor = -0.02
+			}
+			cancel_if_invalid = no
+		}
+		first_sons_and_daughters = {
+			cost = 150
+			removal_cost = -1
+			level = 2
+			picture = itz_manpower_law_4
+			visible = {
+				is_tribal_nation = yes
+				has_unique_manpower_law = no
+				has_regional_or_cultural_manpower_law = no
+			}
+			ai_will_do = {
+				factor = 80
+				modifier = {
+					#Prio if low on manpower
+					factor = 20
+					manpower_per_military_factory < 200
+				}
+			}
+			available = {
+				is_tribal_nation = yes
+				has_unique_manpower_law = no
+				has_regional_or_cultural_manpower_law = no
+				AND = {
+					has_war = yes
+					enemies_strength_ratio > 0.3
+				}
+			}
+			modifier = {
+				conscription = 0.15
+				conscription_factor = 0.06
+				MONTHLY_POPULATION = -0.04
+				production_speed_buildings_factor = -0.03
+			}
+			cancel_if_invalid = no
+		}
+		children_and_mothers = {
+			cost = 150
+			removal_cost = -1
+			level = 1
+			picture = itz_manpower_law_5
+			visible = {
+				is_tribal_nation = yes
+				has_unique_manpower_law = no
+				has_regional_or_cultural_manpower_law = no
+			}
+			available = {
+				is_tribal_nation = yes
+				has_unique_manpower_law = no
+				has_regional_or_cultural_manpower_law = no
+				AND = {
+					has_war = yes
+					enemies_strength_ratio > 0.6
+				}
+			}
+			ai_will_do = {
+				factor = 140
+				modifier = {
+					#Prio if low on manpower
+					factor = 20
+					manpower_per_military_factory < 100
+				}
+			}
+			modifier = {
+				conscription = 0.2
+				conscription_factor = 0.1
+				MONTHLY_POPULATION = -0.05
+				research_speed_factor = -0.025
+				production_speed_buildings_factor = -0.04
+				army_org_factor = -0.05
+			}
+			cancel_if_invalid = no
+		}
+	#LEGION MANPOWER#
+		tribal_recruitment = {
+			picture = generic_legion
+			cost = 150
+			removal_cost = -1
+			level = 5
+			allowed = {
+				OR = {
+					original_tag = CES
+					original_tag = LAC
+				}
+			}
+			visible = {
+				OR = {
+					original_tag = CES
+					original_tag = LAC
+				}
+			}
+			ai_will_do = {
+				factor = 0
+			}
+			modifier = {
+				conscription = 0.05
+				offensive_war_stability_factor = 0.1
+				mobilization_speed = 0.1
+				war_support_factor = 0.02
+				army_defence_factor = 0.06
+				army_attack_factor = 0.06
+			}
+			default = yes
+
+		}
+		incorporate_mercenaries = {
+			picture = shottol
+			cost = 150
+			removal_cost = -1
+			level = 4
+			allowed = {
+				OR = {
+					original_tag = CES
+					original_tag = LAC
+				}
+			}
+			visible = {
+				OR = {
+					original_tag = CES
+					original_tag = LAC
+				}
+			}
+			ai_will_do = {
+				factor = 1
+				modifier = {
+					#We need to get rid of this
+					factor = 1000
+					has_idea = tribal_recruitment
+				}
+			}
+			modifier = {
+				conscription = 0.1
+				offensive_war_stability_factor = 0.15
+				mobilization_speed = 0.15
+				war_support_factor = 0.04
+				army_defence_factor = 0.04
+				army_attack_factor = 0.04
+			}
+			cancel_if_invalid = no
+		}
+		settler_volunteers = {
+			picture = legionary_unit_tactics
+			cost = 150
+			removal_cost = -1
+			level = 3
+			allowed = {
+				OR = {
+					original_tag = CES
+					original_tag = LAC
+				}
+			}
+			visible = {
+				OR = {
+					original_tag = CES
+					original_tag = LAC
+				}
+			}
+			ai_will_do = {
+				factor = 40
+				modifier = {
+					#Prio if low on manpower
+					factor = 20
+					manpower_per_military_factory < 800
+				}
+			}
+			modifier = {
+				conscription = 0.15
+				offensive_war_stability_factor = 0.2
+				mobilization_speed = 0.2
+				war_support_factor = 0.06
+				army_defence_factor = 0.02
+				army_attack_factor = 0.02
+				supply_consumption_factor = -0.02
+				army_morale_factor = 0.02
+			}
+			cancel_if_invalid = no
+		}
+		conscript_settlers = {
+			picture = praetorians
+			cost = 150
+			removal_cost = -1
+			level = 2
+			allowed = {
+				OR = {
+					original_tag = CES
+					original_tag = LAC
+				}
+			}
+			visible = {
+				OR = {
+					original_tag = CES
+					original_tag = LAC
+				}
+			}
+			available = {
+				has_war = yes
+				enemies_strength_ratio > 0.60
+			}
+			ai_will_do = {
+				factor = 80
+				modifier = {
+					#Prio if low on manpower
+					factor = 20
+					manpower_per_military_factory < 400
+				}
+			}
+			modifier = {
+				conscription = 0.2
+				offensive_war_stability_factor = 0.25
+				mobilization_speed = 0.25
+				war_support_factor = 0.08
+				supply_consumption_factor = -0.04
+				army_morale_factor = 0.04
+			}
+			cancel_if_invalid = no
+		}
+		conscript_children_of_caesar = {
+			picture = caesar's_legacy
+			cost = 150
+			removal_cost = -1
+			level = 1
+			allowed = {
+				OR = {
+					original_tag = CES
+					original_tag = LAC
+				}
+			}
+			visible = {
+				OR = {
+					original_tag = CES
+					original_tag = LAC
+				}
+			}
+			available = {
+				has_war = yes
+				enemies_strength_ratio > 0.90
+			}
+			ai_will_do = {
+				factor = 120
+				modifier = {
+					#Prio if low on manpower
+					factor = 20
+					manpower_per_military_factory < 200
+				}
+			}
+			modifier = {
+				conscription = 0.25
+				offensive_war_stability_factor = 0.3
+				mobilization_speed = 0.3
+				war_support_factor = 0.1
+				supply_consumption_factor = -0.06
+				army_morale_factor = 0.06
+			}
+			cancel_if_invalid = no
+		}
+	#BOS IDEAS#
+		paladins = {
+			picture = paladin_recruitment
+			cost = 150
+			removal_cost = -1
+			level = 5
+			available = {
+				is_brotherhood_nation_proper = yes
+			}
+			visible = {
+				is_brotherhood_nation_proper = yes
+			}
+			ai_will_do = {
+				factor = 0
+			}
+			modifier = {
+				conscription = 0.02
+				training_time_army_factor = 0.15
+				stability_factor = 0.1
+				army_attack_factor = 0.1
+				army_defence_factor = 0.1
+				research_speed_factor = 0.1
+				army_org_factor = 0.1
+				special_forces_cap = 0.4
+			}
+			default = yes
+
+		}
+		senior_knights = {
+			picture = senior_knight_recruitment
+			cost = 150
+			removal_cost = -1
+			level = 4
+			available = {
+				is_brotherhood_nation_proper = yes
+			}
+			visible = {
+				is_brotherhood_nation_proper = yes
+			}
+			ai_will_do = {
+				factor = 1
+				modifier = {
+					#We need to get rid of this
+					factor = 1000
+					has_idea = paladins
+				}
+			}
+			modifier = {
+				conscription = 0.04
+				training_time_army_factor = 0.1
+				stability_factor = 0.075
+				war_support_factor = 0.01
+				army_attack_factor = 0.075
+				army_defence_factor = 0.075
+				research_speed_factor = 0.075
+				army_org_factor = 0.075
+				special_forces_cap = 0.3
+			}
+			cancel_if_invalid = no
+		}
+		knights = {
+			picture = junior_knight_recruitment
+			cost = 150
+			removal_cost = -1
+			level = 3
+			available = {
+				is_brotherhood_nation_proper = yes
+			}
+			visible = {
+				is_brotherhood_nation_proper = yes
+			}
+			ai_will_do = {
+				factor = 40
+				modifier = {
+					#Prio if low on manpower
+					factor = 20
+					manpower_per_military_factory < 100
+				}
+			}
+			modifier = {
+				conscription = 0.06
+				training_time_army_factor = 0.05
+				stability_factor = 0.05
+				war_support_factor = 0.05
+				army_attack_factor = 0.05
+				army_defence_factor = 0.05
+				research_speed_factor = 0.025
+				army_org_factor = 0.05
+				special_forces_cap = 0.2
+			}
+			cancel_if_invalid = no
+		}
+		scribes = {
+			picture = scribe_recruitment
+			cost = 150
+			removal_cost = -1
+			level = 2
+			available = {
+				is_brotherhood_nation_proper = yes
+				AND = {
+					has_war = yes
+					enemies_strength_ratio > 0.6
+				}
+			}
+			visible = {
+				is_brotherhood_nation_proper = yes
+			}
+			ai_will_do = {
+				factor = 80
+				modifier = {
+					#Prio if low on manpower
+					factor = 20
+					manpower_per_military_factory < 50
+				}
+			}
+			modifier = {
+				conscription = 0.09
+				training_time_army_factor = -0.05
+				stability_factor = -0.05
+				war_support_factor = 0.075
+				army_attack_factor = 0.025
+				army_defence_factor = 0.025
+				army_org_factor = 0.025
+				special_forces_cap = 0.15
+			}
+			cancel_if_invalid = no
+		}
+		initiates = {
+			picture = initiate_recruitment
+			cost = 150
+			removal_cost = -1
+			level = 1
+			available = {
+				is_brotherhood_nation_proper = yes
+				AND = {
+				    has_war = yes
+					enemies_strength_ratio > 0.9
+				}
+			}
+			visible = {
+				is_brotherhood_nation_proper = yes
+			}
+			ai_will_do = {
+				factor = 140
+				modifier = {
+					#Prio if low on manpower
+					factor = 20
+					manpower_per_military_factory < 25
+				}
+			}
+			modifier = {
+				conscription = 0.12
+				training_time_army_factor = -0.1
+				stability_factor = -0.1
+				war_support_factor = 0.1
+				special_forces_cap = 0.1
+			}
+			cancel_if_invalid = no
+		}
+	#KHA MANPOWER#
+		khan_culture_mobilisation = {
+			picture = KHA_culture_mobilisation
+			cost = 150
+			removal_cost = 2100
+			level = 6
+			allowed = {
+				original_tag = KHA
+			}
+			available = {
+				original_tag = KHA
+			}
+			modifier = {
+				conscription = 0.25
+			}
+			cancel_if_invalid = no
+		}
+		khan_culture_mobilisation_2 = {
+			picture = KHA_culture_mobilisation
+			cost = 150
+			removal_cost = 2100
+			level = 6
+			allowed = {
+				original_tag = KHA
+			}
+			available = {
+				original_tag = KHA
+			}
+			modifier = {
+				conscription = 0.25
+			}
+			cancel_if_invalid = no
+		}
+	#ITZ MANPOWER#
+		itz_idea_extensive_agri_expemtions = {
+			cost = 150
+			removal_cost = -1
+			level = 6
+			picture = itz_manpower_law_1
+			allowed = {
+				OR = {
+					original_tag = ITZ
+					original_tag = ATE
+					original_tag = TDT
+				}
+			}
+			available = {
+				#always = yes
+			}
+			ai_will_do = {
+				factor = 0
+			}
+			cancel_if_invalid = no
+			modifier = {
+				conscription = 0.01
+				stability_factor = 0.05
+			}
+			default = yes
+		}
+		itz_idea_moderate_agri_expemtions = {
+			cost = 150
+			removal_cost = -1
+			level = 5
+			picture = itz_manpower_law_2
+			allowed = {
+				OR = {
+					original_tag = ITZ
+					original_tag = ATE
+					original_tag = TDT
+				}
+			}
+			available = {
+				#always = yes
+			}
+			ai_will_do = {
+				factor = 1
+			}
+			cancel_if_invalid = no
+			modifier = {
+				conscription = 0.03
+			}
+		}
+		itz_idea_light_agri_expemtions = {
+			cost = 150
+			removal_cost = -1
+			level = 4
+			picture = itz_manpower_law_3
+			allowed = {
+				OR = {
+					original_tag = ITZ
+					original_tag = ATE
+					original_tag = TDT
+				}
+			}
+			available = {
+				OR = {
+					hidden_trigger = {
+						AND = {
+							original_tag = ITZ
+							is_halach_leader = yes
+						}
+					}
+					has_war = yes
+				}
+			}
+			ai_will_do = {
+				factor = 1
+				modifier = {
+					#Prio if low on manpower
+					factor = 20
+					manpower_per_military_factory < 50
+				}
+			}
+			cancel_if_invalid = no
+			modifier = {
+				conscription = 0.05
+				stability_factor = -0.05
+				industrial_capacity_factory = -0.1
+				production_speed_buildings_factor = -0.1
+				training_time_factor = 0.1
+			}
+		}
+		itz_idea_minimal_agri_expemtions = {
+			cost = 150
+			removal_cost = -1
+			level = 3
+			picture = itz_manpower_law_4
+			allowed = {
+				OR = {
+					original_tag = ITZ
+					original_tag = ATE
+					original_tag = TDT
+				}
+			}
+			available = {
+				has_war = yes
+				enemies_strength_ratio > 0.8
+				OR = {
+					hidden_trigger = {
+						AND = {
+							original_tag = ITZ
+							is_halach_leader = yes
+						}
+					}
+					surrender_progress > 0.4
+				}
+			}
+			ai_will_do = {
+				factor = 1
+				modifier = {
+					#Prio if low on manpower
+					factor = 20
+					manpower_per_military_factory < 25
+				}
+				modifier = {
+					#Lower chance if has decent amount
+					factor = 0.5
+					manpower_per_military_factory > 100
+				}
+			}
+			cancel_if_invalid = no
+			modifier = {
+				conscription = 0.08
+				stability_factor = -0.1
+				industrial_capacity_factory = -0.1
+				industrial_capacity_dockyard = -0.1
+				production_speed_buildings_factor = -0.1
+				training_time_factor = 0.2
+			}
+		}
+		itz_idea_bare_minimal_agri_expemtions = {
+			cost = 150
+			removal_cost = -1
+			level = 2
+			picture = itz_manpower_law_5
+			allowed = {
+				OR = {
+					original_tag = ITZ
+					original_tag = ATE
+					original_tag = TDT
+				}
+			}
+			available = {
+				has_completed_focus = itz_extend_conscription
+				has_war = yes
+				enemies_strength_ratio > 1
+				OR = {
+					AND = {
+						surrender_progress > 0.4
+						hidden_trigger = {
+							AND = {
+								original_tag = ITZ
+								is_halach_leader = yes
+							}
+						}
+					}
+				}
+				surrender_progress > 0.6
+			}
+			cancel_if_invalid = no
+			ai_will_do = {
+				factor = 1
+				modifier = {
+					#Prio if low on manpower
+					factor = 20
+					manpower_per_military_factory < 30
+				}
+				modifier = {
+					#Lower chance if has decent amount
+					factor = 0.5
+					manpower_per_military_factory > 100
+				}
+				modifier = {
+					#Block has plenty manpower
+					factor = 0
+					manpower_per_military_factory > 1000
+				}
+			}
+			modifier = {
+				conscription = 0.1
+				stability_factor = -0.15
+				industrial_capacity_factory = -0.3
+				industrial_capacity_dockyard = -0.3
+				production_speed_buildings_factor = -0.3
+				#XP from reinforcement penalty (small)
+				training_time_factor = 0.3
+			}
+		}
+	#ORO CONSCRIPTION
+		oro_gene_warriors = {
+			picture = oro_gene_warriors
+			cost = 150
+			level = 4
+			removal_cost = -1
+			allowed = {
+				original_tag = ORO
+			}
+			modifier = {
+				conscription = 0.1
+				production_speed_buildings_factor = 0.1
+			}
+			equipment_bonus = {
+				infantry_equipment = {
+					soft_attack = 0.1
+					defense = 0.1
+					instant = yes
+				}
+			}
+			default = yes
+			cancel_if_invalid = no
+		}
+		#TLP
+		always_ready_always_there = {
+			picture = tlp_national_guard
+			removal_cost = -1
+			allowed = {
+				always = no
+			}
+			allowed_civil_war = {
+				always = yes
+			}
+			modifier = {
+				conscription = 0.12
+				caps_flat_income_modifier = 15
+				modifier_army_sub_unit_ghoul_infantry_attack_factor = 0.15
+				modifier_army_sub_unit_ghoul_infantry_speed_factor = 0.08
+			}
+		}
+		shi_shi_huang_ti = {
+			picture = generic_communist_army
+			cost = 150
+			level = 4
+			removal_cost = -1
+			allowed = {
+				original_tag = SHI
+			}
+			research_bonus = {
+				agriculture_tech = 0.15
+				spec_force_equipment_tech_category = 0.1
+			}
+
+			modifier = {
+				conscription = 0.1
+				stability_factor = 0.05
+			}
+			cancel_if_invalid = no
+		}
+	#TNK CONSCRIPTION
+		tnk_lobotomite_conscription = {
+			picture = lobotomite_conscription
+			cost = 150
+			level = 4
+			removal_cost = -1
+			allowed = {
+				original_tag = TNK
+			}
+			available = {
+				hidden_trigger = {
+					always = no
+				}
+			}
+			allowed_to_remove = {
+				hidden_trigger = {
+					always = no
+				}
+			}
+			modifier = {
+				weekly_manpower = 100 #Purposefully strong, don't change randomly
+			}
+			default = yes
+			cancel_if_invalid = no
+		}
+		tnk_roboscorpion_conscription = {
+			picture = roboscorpion_conscription
+			cost = 150
+			level = 4
+			removal_cost = -1
+			allowed = {
+				original_tag = TNK
+			}
+			visible = {
+				original_tag = TNK
+			}
+			available = {
+				hidden_trigger = {
+					always = no
+				}
+			}
+			allowed_to_remove = {
+				hidden_trigger = {
+					always = no
+				}
+			}
+			modifier = {
+				weekly_manpower = 100 #Purposefully strong, don't change randomly
+			}
+			equipment_bonus = {
+				support_robot_equipment = {
+					build_cost_ic = -0.05
+					soft_attack = 0.05
+					defense = 0.05
+					instant = yes
+				}
+			}
+			cancel_if_invalid = no
+		}
+	#SHA CONSCRIPTION
+		sha_forceful_mutation = {
+			picture = trl_a_roaming_army
+			cost = 150
+			level = 4
+			removal_cost = -1
+			allowed = {
+				original_tag = SHA
+			}
+			available = {
+				always = no
+			}
+			modifier = {
+				conscription = 0.12
+				stability_factor = -0.1
+				compliance_gain = 0.04
+				resistance_target = -0.04
+			}
+			default = yes
+			cancel_if_invalid = no
+		}
+	#IMO CONSCRIPTION
+		imo_mastersmiths = {
+			picture = imo_mastersmiths
+			cost = 150
+			level = 4
+			removal_cost = -1
+			allowed = {
+				original_tag = IMO
+			}
+			available = {
+				always = no
+			}
+			modifier = {
+				conscription = 0.16
+				country_resource_metal = 15
+			}
+			default = yes
+			research_bonus = {
+				tank_tech_category = 0.1
+			}
+			cancel_if_invalid = no
+		}
+		#UOA Conscription
+		uoa_fev_volunteers = {
+			picture = uoa_fev_volunteers
+			cost = 150
+			level = 4
+			removal_cost = -1
+			allowed = {
+				original_tag = UOA
+			}
+			available = {
+				always = no
+			}
+			modifier = {
+				conscription = 0.14
+				special_forces_cap = 0.05
+				industrial_capacity_factory = 0.1
+			}
+			default = yes
+			cancel_if_invalid = no
+		}
+	#TRL CONSCRIPTION
+		trl_cave_trolls = {
+			picture = trl_cave_trolls
+			cost = 150
+			level = 4
+			removal_cost = -1
+			allowed = {
+				original_tag = TRL
+			}
+			available = {
+				always = no
+			}
+			modifier = {
+				stability_factor = 0.2
+				research_speed_factor = -0.5
+				army_speed_factor = -0.3
+				conscription = 0.04
+				weekly_manpower = 25
+				max_dig_in = 1
+				army_attack_factor = -0.1
+			}
+			default = yes
+			cancel_if_invalid = no
+		}
+		trl_leaving_the_caves = {
+			picture = trl_leaving_the_caves
+			cost = 150
+			level = 3
+			removal_cost = -1
+			allowed = {
+				original_tag = TRL
+			}
+			available = {
+				fulfilled_the_wizards_task = yes
+				num_of_controlled_states > 1
+				NOT = {
+					has_idea = trl_the_roaming_army
+				}
+				NOT = {
+					has_idea = trl_power_of_the_trolls
+				}
+			}
+			ai_will_do = {
+				factor = 10
+			}
+			modifier = {
+				stability_factor = 0.1
+				research_speed_factor = -0.25
+				army_speed_factor = -0.15
+				conscription = 0.08
+			}
+			cancel_if_invalid = no
+		}
+		trl_the_roaming_army = {
+			picture = trl_a_roaming_army
+			cost = 150
+			level = 2
+			removal_cost = -1
+			allowed = {
+				original_tag = TRL
+			}
+			available = {
+				has_completed_focus = trl_warrenstirs
+				num_of_controlled_states > 15
+				NOT = {
+					has_idea = trl_power_of_the_trolls
+				}
+			}
+			ai_will_do = {
+				factor = 20
+			}
+			modifier = {
+				stability_factor = -0.1
+				research_speed_factor = 0.05
+				army_speed_factor = 0.05
+				conscription = 0.12
+			}
+			cancel_if_invalid = no
+		}
+		trl_power_of_the_trolls = {
+			picture = trl_power_of_the_trolls
+			cost = 150
+			level = 1
+			removal_cost = -1
+			allowed = {
+				original_tag = TRL
+			}
+			available = {
+				owns_state = 351
+				num_of_controlled_states > 30
+			}
+			ai_will_do = {
+				factor = 30
+			}
+			modifier = {
+				stability_factor = -0.2
+				research_speed_factor = 0.1
+				army_speed_factor = 0.1
+				conscription = 0.2
+			}
+			cancel_if_invalid = no
+		}
+	# LNS MANPOWER #
+		lns_mercenary_approach = {
+			picture = lns_mercenary_approach
+			cost = 150
+			level = 6
+			removal_cost = -1
+			allowed = {
+				OR = {
+					original_tag = LNS
+					tag = TEX
+				}
+			}
+			visible = {
+				OR = {
+					original_tag = LNS
+					tag = TEX
+				}
+				if = {
+					limit = { tag = TEX }
+					has_completed_focus = tex_the_mercenary_model
+				}
+			}
+			modifier = {
+				conscription = 0.03
+				stability_factor = 0.15
+				defensive_war_stability_factor = 0.2
+				offensive_war_stability_factor = 0.2
+				war_support_factor = -0.15
+				consumer_goods_factor = -0.06
+				army_attack_factor = -0.1
+				army_defence_factor = -0.1
+				army_org_factor = -0.08
+			}
+			default = yes
+			cancel_if_invalid = no
+		}
+		lns_mercenary_primacy = {
+			picture = lns_mercenary_primacy
+			cost = 150
+			level = 5
+			removal_cost = -1
+			allowed = {
+				OR = {
+					original_tag = LNS
+					tag = TEX
+				}
+			}
+			visible = {
+				OR = {
+					original_tag = LNS
+					tag = TEX
+				}
+				if = {
+					limit = { tag = TEX }
+					has_completed_focus = tex_the_mercenary_model
+				}
+			}
+			ai_will_do = {
+				factor = 10
+				modifier = {
+					#Prio if low on manpower
+					factor = 20
+					manpower_per_military_factory < 250
+				}
+			}
+			modifier = {
+				conscription = 0.05
+				stability_factor = 0.12
+				defensive_war_stability_factor = 0.15
+				offensive_war_stability_factor = 0.15
+				war_support_factor = -0.12
+				consumer_goods_factor = -0.04
+				army_attack_factor = -0.06
+				army_defence_factor = -0.06
+				army_org_factor = -0.04
+			}
+			cancel_if_invalid = no
+		}
+		lns_mercenary_frontlines = {
+			picture = lns_mercenary_frontlines
+			cost = 150
+			level = 4
+			removal_cost = -1
+			allowed = {
+				OR = {
+					original_tag = LNS
+					tag = TEX
+				}
+			}
+			visible = {
+				OR = {
+					original_tag = LNS
+					tag = TEX
+				}
+				if = {
+					limit = { tag = TEX }
+					has_completed_focus = tex_the_mercenary_model
+				}
+			}
+			available = {
+				if = {
+					limit = { tag = LNS }
+					OR = {
+						has_completed_focus = lns_start_army_reform
+						has_completed_focus = lns_reduce_mer_reliance
+						has_completed_focus = lns_reaffirm_right_to_bear_arms
+					}
+				}
+			}
+			ai_will_do = {
+				factor = 20
+				modifier = {
+					#Prio if low on manpower
+					factor = 20
+					manpower_per_military_factory < 150
+				}
+			}
+			modifier = {
+				conscription = 0.08
+				stability_factor = 0.06
+				defensive_war_stability_factor = 0.05
+				offensive_war_stability_factor = 0.05
+				war_support_factor = -0.06
+				consumer_goods_factor = -0.02
+				army_attack_factor = -0.02
+				army_defence_factor = -0.02
+			}
+			cancel_if_invalid = no
+		}
+		lns_regular_frontlines = {
+			picture = lns_regular_frontlines
+			cost = 150
+			level = 3
+			removal_cost = -1
+			allowed = {
+				OR = {
+					original_tag = LNS
+					tag = TEX
+				}
+			}
+			visible = {
+				OR = {
+					original_tag = LNS
+					tag = TEX
+				}
+				if = {
+					limit = { tag = TEX }
+					has_completed_focus = tex_the_mercenary_model
+				}
+			}
+			available = {
+				if = {
+					limit = { tag = LNS }
+					OR = {
+						has_completed_focus = lns_start_army_reform
+						has_completed_focus = lns_reduce_mer_reliance
+					}
+				}
+			}
+			ai_will_do = {
+				factor = 40
+				modifier = {
+					#Prio if low on manpower
+					factor = 20
+					manpower_per_military_factory < 100
+				}
+			}
+			modifier = {
+				conscription = 0.10
+				stability_factor = 0.04
+				war_support_factor = -0.02
+			}
+			cancel_if_invalid = no
+		}
+		lns_regular_only = {
+			picture = lns_regular_only
+			cost = 150
+			level = 2
+			removal_cost = -1
+			allowed = {
+				OR = {
+					original_tag = LNS
+					tag = TEX
+				}
+			}
+			visible = {
+				OR = {
+					original_tag = LNS
+					tag = TEX
+				}
+				if = {
+					limit = { tag = TEX }
+					has_completed_focus = tex_the_mercenary_model
+				}
+			}
+			available = {
+				if = {
+					limit = { tag = LNS }
+					OR = {
+						has_completed_focus = lns_one_army_for_texas
+						has_completed_focus = lns_adopt_modern_military_structures
+					}
+				}
+			}
+			ai_will_do = {
+				factor = 80
+				modifier = {
+					#Prio if low on manpower
+					factor = 20
+					manpower_per_military_factory < 75
+				}
+			}
+			modifier = {
+				conscription = 0.12
+				war_support_factor = 0.02
+				consumer_goods_factor = 0.02
+				army_org_factor = 0.02
+			}
+			cancel_if_invalid = no
+		}
+		lns_tbh_deputies = {
+			picture = lns_tbh_deputies
+			cost = 150
+			level = 1
+			removal_cost = -1
+			allowed = {
+				OR = {
+					original_tag = LNS
+					tag = TEX
+				}
+			}
+			visible = {
+				OR = {
+					original_tag = LNS
+					tag = TEX
+				}
+				if = {
+					limit = { tag = TEX }
+					has_completed_focus = tex_the_mercenary_model
+				}
+			}
+			available = {
+				if = {
+					limit = { tag = LNS }
+					OR = {
+						has_completed_focus = lns_one_army_for_texas
+						has_completed_focus = lns_adopt_modern_military_structures
+					}
+				}
+			}
+			ai_will_do = {
+				factor = 120
+				modifier = {
+					#Prio if low on manpower
+					factor = 20
+					manpower_per_military_factory < 50
+				}
+			}
+			modifier = {
+				conscription = 0.15
+				stability_factor = -0.02
+				war_support_factor = 0.04
+				consumer_goods_factor = 0.05
+				army_attack_factor = 0.02
+				army_defence_factor = 0.02
+				army_org_factor = 0.04
+			}
+			cancel_if_invalid = no
+		}
+
+	# TTM MANPOWER #
+		ttm_born_warriors = {
+			cost = 150
+			removal_cost = -1
+			level = 5
+			picture = itz_manpower_law_1
+			allowed = {
+				original_tag = TTM
+			}
+			ai_will_do = {
+				factor = 0 #Never do this
+			}
+			modifier = {
+				conscription = 0.04
+				MONTHLY_POPULATION = 0.5
+				research_speed_factor = 0.1
+				production_speed_buildings_factor = 0.25
+				army_org_factor = 0.05
+			}
+			default = yes
+
+		}
+		ttm_veteran_pathfinders = {
+			cost = 150
+			removal_cost = -1
+			level = 4
+			picture = itz_manpower_law_2
+			allowed = {
+				original_tag = TTM
+			}
+			available = {
+				NOT = { has_idea = undisturbed_isolation }
+			}
+			ai_will_do = {
+				factor = 1
+				modifier = {
+					#We need to get rid of this
+					factor = 1000
+					has_idea = born_warriors
+				}
+			}
+			modifier = {
+				conscription = 0.07
+				MONTHLY_POPULATION = 0.25
+				research_speed_factor = 0.05
+				production_speed_buildings_factor = 0.10
+			}
+			cancel_if_invalid = no
+		}
+		ttm_able_bodied_tribesmen = {
+			cost = 150
+			removal_cost = -1
+			level = 3
+			picture = itz_manpower_law_3
+			allowed = {
+				original_tag = TTM
+			}
+			available = {
+				NOT = { has_idea = undisturbed_isolation }
+			}
+			ai_will_do = {
+				factor = 40
+				modifier = {
+					#Prio if low on manpower
+					factor = 20
+					manpower_per_military_factory < 250
+				}
+			}
+			modifier = {
+				conscription = 0.10
+				conscription_factor = 0.03
+				MONTHLY_POPULATION = -0.025
+				production_speed_buildings_factor = -0.02
+			}
+			cancel_if_invalid = no
+		}
+		ttm_first_sons_and_daughters = {
+			cost = 150
+			removal_cost = -1
+			level = 2
+			picture = itz_manpower_law_4
+			allowed = {
+				original_tag = TTM
+			}
+			ai_will_do = {
+				factor = 80
+				modifier = {
+					#Prio if low on manpower
+					factor = 20
+					manpower_per_military_factory < 200
+				}
+			}
+			available = {
+				NOT = { has_idea = undisturbed_isolation }
+				AND = {
+					has_war = yes
+					enemies_strength_ratio > 0.3
+				}
+			}
+			modifier = {
+				conscription = 0.15
+				conscription_factor = 0.06
+				MONTHLY_POPULATION = -0.04
+				production_speed_buildings_factor = -0.03
+			}
+			cancel_if_invalid = no
+		}
+		ttm_children_and_mothers = {
+			cost = 150
+			removal_cost = -1
+			level = 1
+			picture = child_conscription
+			allowed = {
+				original_tag = TTM
+			}
+			available = {
+				NOT = { has_idea = undisturbed_isolation }
+				AND = {
+					has_war = yes
+					enemies_strength_ratio > 0.6
+				}
+			}
+			ai_will_do = {
+				factor = 140
+				modifier = {
+					#Prio if low on manpower
+					factor = 20
+					manpower_per_military_factory < 100
+				}
+			}
+			modifier = {
+				conscription = 0.2
+				conscription_factor = 0.1
+				MONTHLY_POPULATION = -0.05
+				research_speed_factor = -0.025
+				production_speed_buildings_factor = -0.04
+				army_org_factor = -0.05
+			}
+			cancel_if_invalid = no
+		}
+# NCR MANPOWER
+ncr_disarmed_nation = {
+	cost = 150
+	removal_cost = -1
+	level = 7
+	picture = disarmed_nation
+	allowed = {
+		original_tag = NCR
+	}
+	ai_will_do = {
+		factor = 0 #Let Paradox implement demilitarization, not us.
+	}
+	modifier = {
+		conscription = 0.04
+		mobilization_speed = 0.04
+		production_speed_buildings_factor = 0.06
+		#stability_factor = 0.20
+	}
+	default = yes
+}
+ncr_volunteer_militia_conscription = {
+	cost = 150
+	removal_cost = -1
+	level = 6
+	picture = volunteer_militia
+	allowed = {
+		original_tag = NCR
+	}
+	available = {
+		NOT = { has_idea = ncr_brahmin_economy }
+	}
+	ai_will_do = {
+		factor = 1
+		modifier = {
+			#We need to get rid of disarmed nation
+			factor = 1000
+			has_idea = disarmed_nation
+		}
+	}
+	modifier = {
+		conscription = 0.06
+		mobilization_speed = 0.06
+		production_speed_buildings_factor = 0.03
+		#stability_factor = 0.15
+	}
+	cancel_if_invalid = no
+}
+ncr_funded_militia_conscription = {
+	cost = 150
+	removal_cost = -1
+	level = 5
+	picture = funded_militia
+	allowed = {
+		original_tag = NCR
+	}
+	available = {
+		NOT = { has_idea = ncr_brahmin_economy }
+	}
+	ai_will_do = {
+		factor = 10
+		modifier = {
+			#Prio if low on manpower
+			factor = 20
+			manpower_per_military_factory < 250
+		}
+	}
+	modifier = {
+		conscription = 0.08
+		mobilization_speed = 0.08
+		#stability_factor = 0.12
+	}
+	cancel_if_invalid = no
+}
+ncr_two_year_conscription = {
+	cost = 150
+	removal_cost = -1
+	level = 4
+	picture = 2_year_draft
+	allowed = {
+		original_tag = NCR
+	}
+	available = {
+		OR = {
+			AND = {
+				threat > 0.6
+				has_war_support > 0.5
+			}
+			AND = {
+				has_war = yes
+				enemies_strength_ratio > 0.2
+			}
+		}
+		NOT = { has_idea = ncr_brahmin_economy }
+	}
+	ai_will_do = {
+		factor = 20
+		modifier = {
+			#Prio if low on manpower
+			factor = 20
+			manpower_per_military_factory < 150
+		}
+	}
+	modifier = {
+		conscription = 0.10
+		mobilization_speed = 0.1
+		#stability_factor = 0.09
+	}
+	cancel_if_invalid = no
+}
+ncr_four_year_conscription = {
+	cost = 150
+	removal_cost = -1
+	level = 3
+	picture = 4_year_draft
+	allowed = {
+		original_tag = NCR
+	}
+	available = {
+		OR = {
+			AND = {
+				threat > 0.8
+				has_war_support > 0.6
+			}
+			AND = {
+				has_war = yes
+				enemies_strength_ratio > 0.4
+			}
+		}
+		NOT = { has_idea = ncr_brahmin_economy }
+	}
+	ai_will_do = {
+		factor = 40
+		modifier = {
+			#Prio if low on manpower
+			factor = 20
+			manpower_per_military_factory < 100
+		}
+	}
+	modifier = {
+		conscription = 0.12
+		mobilization_speed = 0.12
+		#stability_factor = 0.06
+	}
+	cancel_if_invalid = no
+}
+ncr_until_dismissal_conscription = {
+	cost = 150
+	removal_cost = -1
+	level = 2
+	picture = indefinite_draft
+	allowed = {
+		original_tag = NCR
+	}
+	available = {
+		uses_generic_manpower_laws = yes
+        AND = {
+			has_war = yes
+			enemies_strength_ratio > 0.6
+		}
+		NOT = { has_idea = ncr_brahmin_economy }
+	}
+	ai_will_do = {
+		factor = 80
+		modifier = {
+			#Prio if low on manpower
+			factor = 20
+			manpower_per_military_factory < 75
+		}
+	}
+	modifier = {
+		conscription = 0.15
+		mobilization_speed = 0.15
+		industrial_capacity_factory = -0.03
+		#stability_factor = 0.04
+	}
+	cancel_if_invalid = no
+}
+ncr_child_conscription = {
+	cost = 150
+	removal_cost = -1
+	level = 1
+	picture = child_conscription
+	allowed = {
+		original_tag = NCR
+	}
+	available = {
+		AND = {
+			has_war = yes
+            enemies_strength_ratio > 0.9
+		}
+		NOT = { has_idea = ncr_brahmin_economy }
+	}
+	ai_will_do = {
+		factor = 120
+		modifier = {
+			#Prio if low on manpower
+			factor = 20
+			manpower_per_military_factory < 50
+		}
+	}
+	modifier = {
+		conscription = 0.20
+		mobilization_speed = 0.2
+		industrial_capacity_factory = -0.06
+		#stability_factor = 0.02
+	}
+	cancel_if_invalid = no
+}
+# NCN MANPOWER
+ncn_disarmed_nation = {
+	cost = 150
+	removal_cost = -1
+	level = 7
+	picture = disarmed_nation
+	allowed = {
+		original_tag = NCN
+	}
+	ai_will_do = {
+		factor = 0 #Let Paradox implement demilitarization, not us.
+	}
+	modifier = {
+		conscription = 0.04
+		mobilization_speed = 0.04
+		production_speed_buildings_factor = 0.06
+		#stability_factor = 0.20
+	}
+	default = yes
+}
+ncn_volunteer_militia_conscription = {
+	cost = 150
+	removal_cost = -1
+	level = 6
+	picture = volunteer_militia
+	allowed = {
+		original_tag = NCN
+	}
+	available = {
+		NOT = { has_idea = isolation }
+		OR = {
+			has_completed_focus = NCN_army_of_our_own
+			has_completed_focus = NCN_never_fallen_again
+			has_completed_focus = NCN_safeguard_routes
+		}
+	}
+	ai_will_do = {
+		factor = 1
+		modifier = {
+			#We need to get rid of disarmed nation
+			factor = 1000
+			has_idea = disarmed_nation
+		}
+	}
+	modifier = {
+		conscription = 0.06
+		mobilization_speed = 0.06
+		production_speed_buildings_factor = 0.03
+		#stability_factor = 0.15
+	}
+	cancel_if_invalid = no
+}
+ncn_funded_militia_conscription = {
+	cost = 150
+	removal_cost = -1
+	level = 5
+	picture = funded_militia
+	allowed = {
+		original_tag = NCN
+	}
+	available = {
+		NOT = { has_idea = isolation }
+		OR = {
+			has_completed_focus = NCN_never_fallen_again
+			has_completed_focus = NCN_safeguard_routes
+		}
+	}
+	ai_will_do = {
+		factor = 10
+		modifier = {
+			#Prio if low on manpower
+			factor = 20
+			manpower_per_military_factory < 250
+		}
+	}
+	modifier = {
+		conscription = 0.08
+		mobilization_speed = 0.08
+		#stability_factor = 0.12
+	}
+	cancel_if_invalid = no
+}
+ncn_two_year_conscription = {
+	cost = 150
+	removal_cost = -1
+	level = 4
+	picture = 2_year_draft
+	allowed = {
+		original_tag = NCN
+	}
+	available = {
+		OR = {
+			AND = {
+				threat > 0.6
+				has_war_support > 0.5
+			}
+			AND = {
+				has_war = yes
+				enemies_strength_ratio > 0.2
+			}
+		}
+		NOT = { has_idea = isolation }
+		OR = {
+			has_completed_focus = NCN_never_fallen_again
+			has_completed_focus = NCN_safeguard_routes
+		}
+	}
+	ai_will_do = {
+		factor = 20
+		modifier = {
+			#Prio if low on manpower
+			factor = 20
+			manpower_per_military_factory < 150
+		}
+	}
+	modifier = {
+		conscription = 0.10
+		mobilization_speed = 0.1
+		#stability_factor = 0.09
+	}
+	cancel_if_invalid = no
+}
+ncn_four_year_conscription = {
+	cost = 150
+	removal_cost = -1
+	level = 3
+	picture = 4_year_draft
+	allowed = {
+		original_tag = NCN
+	}
+	available = {
+		OR = {
+			AND = {
+				threat > 0.8
+				has_war_support > 0.6
+			}
+			AND = {
+				is_major = no
+				has_war = yes
+			}
+			AND = {
+				has_war = yes
+				enemies_strength_ratio > 0.4
+			}
+		}
+		NOT = { has_idea = isolation }
+		OR = {
+			has_completed_focus = NCN_never_fallen_again
+			has_completed_focus = NCN_safeguard_routes
+		}
+	}
+	ai_will_do = {
+		factor = 40
+		modifier = {
+			#Prio if low on manpower
+			factor = 20
+			manpower_per_military_factory < 100
+		}
+	}
+	modifier = {
+		conscription = 0.12
+		mobilization_speed = 0.12
+		#stability_factor = 0.06
+	}
+	cancel_if_invalid = no
+}
+ncn_until_dismissal_conscription = {
+	cost = 150
+	removal_cost = -1
+	level = 2
+	picture = indefinite_draft
+	allowed = {
+		original_tag = NCN
+	}
+	available = {
+		uses_generic_manpower_laws = yes
+		OR = {
+			AND = {
+			    has_war = yes
+				enemies_strength_ratio > 0.6
+			}
+			AND = {
+				is_major = no
+				enemies_strength_ratio > 0.4
+			}
+		}
+		NOT = { has_idea = isolation }
+		OR = {
+			has_completed_focus = NCN_never_fallen_again
+			has_completed_focus = NCN_safeguard_routes
+		}
+	}
+	ai_will_do = {
+		factor = 80
+		modifier = {
+			#Prio if low on manpower
+			factor = 20
+			manpower_per_military_factory < 75
+		}
+	}
+	modifier = {
+		conscription = 0.15
+		mobilization_speed = 0.15
+		industrial_capacity_factory = -0.03
+		#stability_factor = 0.04
+	}
+	cancel_if_invalid = no
+}
+ncn_child_conscription = {
+	cost = 150
+	removal_cost = -1
+	level = 1
+	picture = child_conscription
+	allowed = {
+		original_tag = NCN
+	}
+	available = {
+		has_war = yes
+		OR = {
+			AND = {
+				is_major = no
+				enemies_strength_ratio > 0.6
+			}
+			enemies_strength_ratio > 0.9
+		}
+		NOT = { has_idea = isolation }
+		OR = {
+			has_completed_focus = NCN_never_fallen_again
+			has_completed_focus = NCN_safeguard_routes
+		}
+	}
+	ai_will_do = {
+		factor = 120
+		modifier = {
+			#Prio if low on manpower
+			factor = 20
+			manpower_per_military_factory < 50
+		}
+	}
+	modifier = {
+		conscription = 0.20
+		mobilization_speed = 0.2
+		industrial_capacity_factory = -0.06
+		#stability_factor = 0.02
+	}
+	cancel_if_invalid = no
+}
+
+		#ALWAYS KEEP THIS IDEA AT THE BOTTOM
+		#Its important for allowing multiple manpower law sets.
+		#If that approach changes feel free to remove this.
+		owb_base_manpower_law = {
+			cost = 150
+			level = 1
+			default = yes
+			allowed = {
+				always = no
+			}
+			available = {
+				always = no
+			}
+			ai_will_do = {
+				factor = 30
+			}
+			modifier = {
+				conscription = 0.02
+			}
+		}
+	}
+}
+
+# vim: set ft=pdx ts=2 sw=2 tw=79 :
