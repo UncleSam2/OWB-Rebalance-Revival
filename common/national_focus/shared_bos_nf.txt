@@ -1585,13 +1585,23 @@ focus_tree = {
 				log = "[GetDateText]: [Root.GetName] WBH_without_a_cause exited"
 			}
 		}
-		completion_reward = {
-			every_state = {
-				limit = {
-					is_core_of = TCA
-				}
-				add_core_of = ROOT
+	}
+	focus = {
+		id = WBH_punish_traitors 
+		icon = GFX_goal_WBH_cause_war
+		cost = 8.6
+		prerequisite = {
+			focus = WBH_without_a_cause
+		}
+		available = {
+			TCA = {
+				all_core_land_owned_by_prev_sphere = yes
 			}
+		}
+		x = 26
+		y = 5
+		completion_reward = {
+			TCA = { ROOT = { core_owned_states_of_prev = yes } }
 		}
 	}
 	focus = {
@@ -1632,7 +1642,7 @@ focus_tree = {
 			}
 		}
 		x = 25
-		y = 5
+		y = 6
 		completion_reward = {
 			if = {
 				limit = { has_global_flag = debug_logs }
@@ -1697,7 +1707,7 @@ focus_tree = {
 			}
 		}
 		x = 27
-		y = 5
+		y = 6
 		completion_reward = {
 			if = {
 				limit = { has_global_flag = debug_logs }
@@ -1733,7 +1743,7 @@ focus_tree = {
 			focus = WBH_fellow_savages
 		}
 		x = 22
-		y = 6
+		y = 7
 		completion_reward = {
 			if = {
 				limit = { has_global_flag = debug_logs }
@@ -1755,7 +1765,7 @@ focus_tree = {
 			focus = WBH_fellow_savages
 		}
 		x = 24
-		y = 6
+		y = 7
 
 		completion_reward = {
 			if = {
@@ -1782,7 +1792,7 @@ focus_tree = {
 			focus = WBH_decimate_and_despoil
 		}
 		x = 28
-		y = 7
+		y = 8
 
 		completion_reward = {
 			if = {
@@ -1805,7 +1815,7 @@ focus_tree = {
 			focus = WBH_fellow_savages
 		}
 		x = 26
-		y = 6
+		y = 7
 		available = {
 			is_puppet = no
 			TRL_borders_and_not_allied_to_us = yes
@@ -1846,7 +1856,7 @@ focus_tree = {
 			}
 		}
 		x = 26
-		y = 7
+		y = 8
 		will_lead_to_war_with = TRL
 		completion_reward = {
 			if = {
@@ -1873,7 +1883,7 @@ focus_tree = {
 			focus = WBH_sinister_patriots
 		}
 		x = 28
-		y = 6
+		y = 7
 
 		completion_reward = {
 			if = {
@@ -1899,7 +1909,7 @@ focus_tree = {
 			focus = WBH_fellow_savages
 		}
 		x = 30
-		y = 6
+		y = 7
 
 		completion_reward = {
 			if = {
@@ -1924,7 +1934,7 @@ focus_tree = {
 			focus = WBH_enslave_the_weak
 		}
 		x = 24
-		y = 7
+		y = 8
 
 		completion_reward = {
 			if = {
@@ -1973,7 +1983,7 @@ focus_tree = {
 			focus = WBH_dark_foundries
 		}
 		x = 26
-		y = 8
+		y = 9
 
 		completion_reward = {
 			if = {
@@ -1996,7 +2006,7 @@ focus_tree = {
 			focus = WBH_death_or_glory
 		}
 		x = 26
-		y = 9
+		y = 10
 		available = {
 			is_puppet = no
 			date > 2278.1.1
