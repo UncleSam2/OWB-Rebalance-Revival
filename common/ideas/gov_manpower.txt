@@ -10,7 +10,7 @@ ideas = {
 				OR = {
 					is_settler_nation_allowed_block = yes
 					is_super_mutant_nation_allowed_block = yes
-				}			
+				}
 			}
 			visible = {
 				uses_generic_manpower_laws = yes
@@ -70,6 +70,7 @@ ideas = {
 					is_super_mutant_nation_allowed_block = yes
 				}
 			}
+			available = {
 				NOT = { has_idea = isolation }
 			}
 			visible = {
