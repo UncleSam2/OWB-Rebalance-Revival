@@ -7,7 +7,7 @@ tags={
 	"Events"
 	"Technologies"
 }
-name="OWB Rebalance Revival"
+name="OWB Rebalance Revival Dev"
 dependencies={
 	"Old World Blues"
 }
