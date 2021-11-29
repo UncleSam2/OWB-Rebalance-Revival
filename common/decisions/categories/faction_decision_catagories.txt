@@ -1,0 +1,19 @@
+create_faction_player_option = {
+	allowed = {
+	}
+	available = {
+		is_ai = no
+		NOT = {
+		has_rule = can_join_factions 
+		}
+	}
+	visible = {
+		NOT = {
+			has_rule = can_join_factions 
+			}
+		has_global_flag = base_game_faction_system_enabled_global_flag
+		
+	}
+	picture = GFX_decision_chip_yellow
+}
+ 

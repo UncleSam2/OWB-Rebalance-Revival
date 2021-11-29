@@ -1,0 +1,513 @@
+﻿add_namespace = nf_event_hea
+
+country_event = {
+	id = nf_event_hea.1
+	title = nf_event_hea.1.t
+	desc = nf_event_hea.1.d
+	picture = GFX_event_HEA_crucifixion
+
+	is_triggered_only = yes
+
+	option = {
+		name = nf_event_hea.1.a
+		add_ideas = hea_startup_militant
+
+		ai_chance = {
+			base = 50
+		}
+	}
+	option = {
+		name = nf_event_hea.1.b
+		add_ideas = hea_startup_agriculture
+
+		ai_chance = {
+			base = 50
+		}
+	}
+}
+
+country_event = {
+	id = nf_event_hea.2
+	title = nf_event_hea.2.t
+	desc = nf_event_hea.2.d
+	picture = GFX_event_NCN_new_canaan
+
+	is_triggered_only = yes
+
+	option = {
+		name = nf_event_hea.2.a
+		add_ideas = hea_startup_stationary_pilgrims
+
+		ai_chance = {
+			base = 50
+		}
+	}
+	option = {
+		name = nf_event_hea.2.b
+		add_ideas = hea_startup_traveling_pilgrims
+
+		ai_chance = {
+			base = 50
+		}
+	}
+}
+
+country_event = {
+	id = nf_event_hea.3
+	title = nf_event_hea.3.t
+	desc = nf_event_hea.3.d
+	picture = GFX_event_HEA_church
+
+	is_triggered_only = yes
+
+	option = {
+		name = nf_event_hea.3.a
+		custom_effect_tooltip = heavens_gate_innocence_lost
+		add_ideas = hea_startup_let_them_in
+
+		ai_chance = {
+			base = 100
+		}
+	}
+	option = {
+		name = nf_event_hea.3.b
+		add_ideas = hea_startup_better_be_careful
+
+		ai_chance = {
+			base = 0
+		}
+	}
+}
+
+country_event = {
+	id = nf_event_hea.4
+	title = nf_event_hea.4.t
+	desc = nf_event_hea.4.d
+	picture = GFX_event_HEA_shadowy_cabal
+
+	is_triggered_only = yes
+
+	option = {
+		name = nf_event_hea.4.a
+
+		if = {
+			limit = { has_idea = hea_startup_let_them_in }
+			add_ideas = hea_innocence_lost_idea
+		}
+
+		if = {
+			limit = { has_idea = hea_startup_better_be_careful }
+			add_ideas = hea_innocence_lost_idea_lessend
+		}
+
+		ai_chance = {
+			base = 100
+		}
+	}
+}
+
+country_event = {
+	id = nf_event_hea.5
+	title = nf_event_hea.5.t
+	desc = nf_event_hea.5.d
+	picture = GFX_event_HEA_crusade
+
+	is_triggered_only = yes
+
+	option = {
+		name = nf_event_hea.5.a
+		LON = { country_event = { id = nf_event_hea.50 } }
+		ai_chance = {
+			base = 100
+		}
+	}
+
+}
+
+country_event = {
+	id = nf_event_hea.50
+	title = nf_event_hea.50.t
+	desc = nf_event_hea.50.d
+	picture = GFX_event_HEA_crusade
+
+	is_triggered_only = yes
+
+	option = {
+		name = nf_event_hea.50.a
+
+		HEA = {
+			annex_country = { target = LON }
+		}
+		ai_chance = {
+			base = 50
+		}
+	}
+	option = {
+		name = nf_event_hea.50.b
+
+		HEA = {
+			create_wargoal = {
+				type = annex_everything
+				target = LON
+			}
+		}
+
+		ai_chance = {
+			base = 50
+		}
+	}
+}
+
+country_event = { # HEA offers a pact
+	id = nf_event_hea.6
+	title = nf_event_hea.6.t
+	desc = nf_event_hea.6.d
+	picture = GFX_event_HEA_bishop1
+
+	is_triggered_only = yes
+
+	option = { # Seems fair
+		name = nf_event_hea.6.a
+		trigger = {
+			NOT = { is_puppet = yes }
+		}
+		ai_chance = {
+			base = 9
+		}
+		HEA = {
+			if = {
+				limit = { is_in_faction = no }
+				create_or_join_children_of_the_gate = yes
+			}
+			MUR = { join_from_faction = yes }
+			MUR = { remove_opinion_modifier = { target = HEA modifier = world_view_hea } }
+			remove_opinion_modifier = { target = MUR modifier = hea_view_world }
+		}
+	}
+
+	option = { # We're safer elsewhere
+		name = nf_event_hea.6.b
+		trigger = {
+			OR = {
+				is_puppet = yes
+				is_ai = no
+			}
+		}
+		ai_chance = {
+			base = 1
+		}
+		HEA = {
+			country_event = nf_event_hea.60 # MUR refuses
+		}
+	}
+}
+
+country_event = { # Mur refuses
+	id = nf_event_hea.60
+	title = nf_event_hea.60.t
+	desc = nf_event_hea.60.d
+	picture = GFX_event_HEA_bishop1
+
+	is_triggered_only = yes
+
+	option = { # We can protect them by puppeting them
+		name = nf_event_hea.60.a
+		ai_chance = {
+			base = 1
+		}
+		create_wargoal = {
+			target = MUR
+			type = puppet_wargoal_focus
+		}
+	}
+	option = { # OK then
+		ai_chance = {
+			base = 0
+		}
+		name = nf_event_hea.60.b
+	}
+}
+
+country_event = {
+	id = nf_event_hea.7
+	title = nf_event_hea.6.t # Purposefully uses the same loc as event 6
+	desc = nf_event_hea.6.d
+	picture = GFX_event_HEA_bishop2
+
+	is_triggered_only = yes
+
+	option = { # Seems fair
+		name = nf_event_hea.6.a
+		trigger = {
+			NOT = { is_puppet = yes }
+		}
+		ai_chance = {
+			base = 9
+		}
+		HEA = {
+			if = {
+				limit = { is_in_faction = no }
+				create_or_join_children_of_the_gate = yes
+			}
+			IRE = { join_from_faction = yes }
+			IRE = { remove_opinion_modifier = { target = HEA modifier = world_view_hea } }
+			remove_opinion_modifier = { target = IRE modifier = hea_view_world }
+		}
+	}
+
+	option = { # We're safer elsewhere
+		name = nf_event_hea.6.b
+		trigger = {
+			OR = {
+				is_puppet = yes
+				is_ai = no
+			}
+		}
+		ai_chance = {
+			base = 1
+		}
+		HEA = {
+			country_event = nf_event_hea.70 # IRE refuses
+		}
+	}
+}
+
+country_event = {
+	id = nf_event_hea.70
+	title = nf_event_hea.70.t
+	desc = nf_event_hea.70.d
+	picture = GFX_event_HEA_bishop2
+
+	is_triggered_only = yes
+
+	option = { # We can protect them by puppeting them
+		name = nf_event_hea.60.a # Purposefully uses event 60 loc
+		ai_chance = {
+			base = 1
+		}
+		create_wargoal = {
+			target = IRE
+			type = puppet_wargoal_focus
+		}
+	}
+	option = { # OK then
+		ai_chance = {
+			base = 0
+		}
+		name = nf_event_hea.60.b
+	}
+}
+
+country_event = { # Religious fanatics attempt seizure power
+	id = nf_event_hea.8
+	title = nf_event_hea.8.t
+	desc = nf_event_hea.8.d
+	picture = GFX_event_HEA_bishop1
+
+	is_triggered_only = yes
+
+	option = { # We find ourselves under the Gate's thumb
+		if = {
+			limit = { has_global_flag = debug_logs }
+			log = "[GetDateText]: [Root.GetName] option nf_event_hea.8.a entered"
+		}
+		name = nf_event_hea.8.a
+		if = {
+			limit = {
+				NOT = { is_puppet = yes }
+			}
+			every_country = {
+				limit = {
+					is_in_faction_with = ROOT
+					NOT = { is_in_faction_with = HEA } # So Gate's faction-mates don't call Gate a religious nutjob
+				}
+				country_event = nf_event_hea.82
+			}
+			HEA = {
+				ROOT = { become_puppet = yes }
+				country_event = nf_event_hea.81
+			}
+			hidden_effect = {
+				success_coup_convert_rest_of_states = yes
+			}
+		}
+		else = {
+			overlord = {
+				country_event = { id = nf_event_hea.9 } # Coup in our puppet!
+			}
+		}
+		if = {
+			limit = { has_global_flag = debug_logs }
+			log = "[GetDateText]: [Root.GetName] option nf_event_hea.8.a exited"
+		}
+	}
+	option = { # The coup is put down
+		trigger = { is_ai = no }
+		name = nf_event_hea.8.b
+		HEA = {
+			country_event = { id = nf_event_hea.80 } # Seizure of power unsuccessful
+		}
+	}
+}
+
+country_event = { # Our coup is unsuccessful
+	id = nf_event_hea.80
+	title = nf_event_hea.80.t
+	desc = nf_event_hea.80.d
+	picture = GFX_event_HEA_bishop1
+
+	is_triggered_only = yes
+
+	option = { # Force is just as effective as faith
+		name = nf_event_hea.80.a
+		create_wargoal = {
+			type = puppet_wargoal_focus
+			target = FROM
+		}
+	}
+}
+
+country_event = { # Coup is successful
+	id = nf_event_hea.81
+	title = nf_event_hea.81.t
+	desc = nf_event_hea.81.d
+	picture = GFX_event_HEA_bishop1
+
+	is_triggered_only = yes
+
+	option = { # The faithful follow our lead
+		name = nf_event_hea.81.a
+	}
+}
+
+country_event = { # Gate coup is successful in faction-mate
+	id = nf_event_hea.82
+	title = nf_event_hea.82.t
+	desc = nf_event_hea.82.d
+	picture = GFX_event_HEA_bishop1
+
+	is_triggered_only = yes
+
+	option = { # The faithful follow our lead
+		name = nf_event_hea.82.a
+	}
+}
+
+country_event = { # Gate coup is unsuccesful - lose some state conversions
+	id = nf_event_hea.83
+	title = nf_event_hea.83.t
+	desc = nf_event_hea.83.d
+	picture = GFX_event_HEA_bishop1
+
+	is_triggered_only = yes
+
+	immediate = {
+		hidden_effect = {
+			set_temp_variable = { hea_num_converted_owned_states = 0 }
+			FROM.FROM = {
+				every_owned_state = {
+					limit = {
+						is_owned_by = FROM.FROM
+						has_state_flag = hea_converted
+						is_impassable = no
+					}
+					add_to_temp_variable = { hea_num_converted_owned_states = 1 }
+				}
+			}
+			set_variable = { hea_states_to_remove = hea_num_converted_owned_states }
+			divide_variable = { hea_states_to_remove = 2 }
+			round_variable = hea_states_to_remove
+		}
+	}
+
+	option = { # This is horrible
+		name = nf_event_hea.83.a
+		hidden_effect = {
+			FROM.FROM = {
+				remove_hea_conversions = yes
+			}
+			clear_variable = hea_states_to_remove
+		}
+	}
+}
+
+country_event = { # Religious fanatics launch a coup in our puppet
+	id = nf_event_hea.9
+	title = nf_event_hea.9.t
+	desc = nf_event_hea.9.d
+	picture = GFX_event_HEA_bishop1
+
+	is_triggered_only = yes
+
+	option = { # Let them go
+		name = nf_event_hea.9.a
+		ai_chance = {
+			base = 1
+		}
+		end_puppet = FROM
+		HEA = { FROM = { become_puppet = yes } }
+		hidden_effect = {
+			FROM = { success_coup_convert_rest_of_states = yes }
+		}
+	}
+	option = { # Launch a counter-coup
+		name = nf_event_hea.9.b
+		ai_chance = {
+			base = 7
+		}
+		custom_effect_tooltip = HEA_convertion_cw
+		hidden_effect = {
+			FROM = {
+				if = {
+					limit = {
+						has_government = elites
+					}
+					start_civil_war = {
+						ruling_party = ruler
+						ideology = ruler
+						size = 0.6
+					}
+				}
+				else = {
+					start_civil_war = {
+						ruling_party = elites
+						ideology = elites
+						size = 0.6
+					}
+				}
+			}
+			every_country = { # HEA puppets the revolter - original will still be
+				limit = {
+					original_tag = FROM
+					NOT = { is_subject_of = ROOT }
+				}
+				HEA = { PREV = { become_puppet = yes } }
+				if = {
+					limit = { NOT = { has_war_with = FROM } }
+					FROM = { declare_war_on = { target = PREV type = civil_war } }
+				}
+				PREV = {
+					remove_opinion_modifier = { target = HEA modifier = world_view_hea }
+				}
+				HEA = {
+					remove_opinion_modifier = { target = PREV modifier = hea_view_world }
+				}
+				create_new_owb_country = yes
+			}
+		}
+		HEA = { country_event = { id = nf_event_hea.90 } }
+	}
+}
+
+country_event = { # Overlord launches a counter-coup
+	id = nf_event_hea.90
+	title = nf_event_hea.90.t
+	desc = nf_event_hea.90.d
+	picture = GFX_event_HEA_bishop1
+
+	is_triggered_only = yes
+
+	option = { # We will help our followers out
+		name = nf_event_hea.90.a
+	}
+}

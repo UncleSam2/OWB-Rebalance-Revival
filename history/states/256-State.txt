@@ -1,0 +1,31 @@
+state = {
+	id = 256
+	name = "STATE_RAYMER"
+	manpower = 4000
+	state_category = shanty
+
+	resources = {
+		water = 2
+		metal = 6
+	}
+	history = {
+		owner = DSL
+		add_core_of = DSL
+		victory_points = {
+			8155 5
+		}
+		buildings = {
+			infrastructure = 2
+			arms_factory = 1
+			industrial_complex = 2
+			air_base = 2
+			8155 = {
+				bunker2 = 1
+			}
+		}
+	}
+
+	provinces = {
+		6672 6906 6907 8155 6901 6903 6905 7824 7823 8007
+	}
+}

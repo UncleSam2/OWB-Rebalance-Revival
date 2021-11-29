@@ -11,4 +11,4 @@ name="OWB Rebalance Revival Dev"
 dependencies={
 	"Old World Blues"
 }
-supported_version="1.10.*"
+supported_version="1.11.*"

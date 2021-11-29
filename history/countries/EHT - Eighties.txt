@@ -1,0 +1,118 @@
+﻿capital = 478
+set_research_slots = 3
+
+set_technology = {
+	infantry_tech_level_tribal = 1
+	infantry_tech_level_settler = 1
+	support_tech_level_tribal = 1
+	support_tech_level_settler = 1
+	special_forces_tech_level_tribal = 1
+	vehicles_tech_level_tribal = 1
+	vehicles_tech_level_settler = 1
+	#vehicles_tech_level_scientific = 1
+	air_tech_level_tribal = 1
+	naval_tech_level_tribal = 1
+	tools_tech_level_tribal = 1
+	tools_tech_level_settler = 1
+	habitation_tech_level_tribal = 1
+	habitation_tech_level_settler = 1
+	exploitation_tech_level_tribal = 1
+	#exploitation_tech_level_settler = 1
+	electronics_tech_level_tribal = 1
+	tribal_tech_visibility_tech = 1
+	tribal_tech_access_tech = 1
+	tool_engineering = 1
+	standard_weaponry_tech = 1
+	melee_weaponry_tech_1 = 1
+	support_weaponry = 1
+	demolitions_weaponry_tech = 1
+	fireteam_weaponry_tech = 1
+	bike_tech_1 = 1
+	settled_civilization = 1
+	raider_reckless_aggression = 1
+	grand_army = 1
+}
+
+if = {
+	limit = {
+		has_dlc = "Man the Guns"
+	}
+	set_technology = {
+		nautics_tech_1 = 1
+		light_navy_hull_tech_1 = 1
+		waterproof_sealing_tech = 1
+		naval_invasion_tech_1 = 1
+	}
+}
+if = {
+	limit = {
+		NOT = { has_dlc = "Man the Guns" }
+	}
+	set_technology = {
+		nautics_tech_non_mtg_1 = 1
+		light_navy_hull_tech_non_mtg_1 = 1
+		waterproof_sealing_tech_non_mtg = 1
+		naval_invasion_tech_non_mtg_1 = 1
+	}
+}
+
+set_stability = 0.4
+set_war_support = 0.4
+set_convoys = 10
+set_research_slots = 4
+set_country_flag = is_raider_nation
+
+set_politics = {
+	ruling_party = ruler
+	elections_allowed = no
+}
+
+set_popularities = {
+	people = 0
+	elites = 0
+	intellectuals = 0
+	ruler = 100
+}
+
+set_country_flag = slavery_allowed
+set_country_flag = grand_doctrine_ai
+set_country_flag = mechanized_offensive_doctrine_ai
+
+set_variable = { never_return_stolen_territory = 1 }
+
+add_ideas = {
+	roaring_machines
+	EHT_idea_terror_of_long_80
+	EHT_idea_road_warriors
+	slavers_idea_2
+	raider_bands
+	undesirables_law_raider
+	EHT_the_devils_of_utah
+	EHT_the_sacred_garage
+}
+
+create_country_leader = {
+	name = "Thunderbird"
+	desc = "Thunderbird_DESC"
+	picture = "portrait_thunderbird.dds"
+	expire = "3000.1.1"
+	ideology = warlordship
+	traits = {
+		road_warrior
+		dislikes_ncr
+	}
+}
+name = "Thunderbird
+    picture = "portrait_thunderbird.dds"
+    skill = 5
+    attack_skill = 3
+    defense_skill = 1
+    planning_skill = 3
+    logistics_skill = 5
+    traits = {
+        agile_trait
+        lucky_trait
+        desert_fox
+    }
+}
+# vim: set ft=pdx ts=2 sw=2 tw=79 :

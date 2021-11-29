@@ -112,6 +112,7 @@ technologies = {
 			fireteam_infantry
 			fireteam_support
 			power_armour_fireteam_infantry
+			motorized_fireteam
 		}
 		enable_equipments = {
 			fireteam_equipment_1
@@ -1319,6 +1320,7 @@ technologies = {
 			demolitions_infantry
 			demolitions_support
 			power_armour_demolitions_infantry
+			motorized_demolitions
 		}
 		enable_equipments = {
 			demolitions_equipment_1

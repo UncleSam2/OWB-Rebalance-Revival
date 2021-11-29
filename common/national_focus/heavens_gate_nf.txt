@@ -105,7 +105,7 @@ focus_tree = {
 	focus = {
 		id = hea_nf_pol_action
 		icon = GFX_goal_HEA_focus_the_great_debate
-		cost = 60
+		cost = 45
 		x = 19
 		y = 4
 
@@ -129,7 +129,7 @@ focus_tree = {
 	focus = {
 		id = hea_nf_embrace_elite
 		icon = GFX_goal_HEA_focus_victory_to_the_clergy
-		cost = 60
+		cost = 45
 		x = 18
 		y = 5
 
@@ -168,7 +168,7 @@ focus_tree = {
 	focus = {
 		id = hea_nf_embrace_elite_1
 		icon = GFX_goal_HEA_focus_council_of_christ
-		cost = 60
+		cost = 45
 		x = 18
 		y = 6
 
@@ -195,7 +195,7 @@ focus_tree = {
 	focus = {
 		id = hea_nf_reject_elite
 		icon = GFX_goal_HEA_focus_the_prophet_prevails
-		cost = 60
+		cost = 45
 		x = 20
 		y = 5
 
@@ -234,7 +234,7 @@ focus_tree = {
 	focus = {
 		id = hea_nf_reject_elite_1
 		icon = GFX_goal_HEA_focus_archangel_rises
-		cost = 60
+		cost = 45
 		x = 20
 		y = 6
 
@@ -262,7 +262,7 @@ focus_tree = {
 	focus = {
 		id = hea_nf_consolidate_pol
 		icon = GFX_goal_HEA_focus_political_action
-		cost = 60
+		cost = 45
 		x = 19
 		y = 7
 
@@ -288,7 +288,7 @@ focus_tree = {
 	focus = {
 		id = hea_nf_grand_cathedral
 		icon = GFX_goal_HEA_focus_billowing_cathedral
-		cost = 60
+		cost = 45
 		x = 19
 		y = 8
 
@@ -312,7 +312,7 @@ focus_tree = {
 	focus = {
 		id = hea_nf_innocence_lost_deal
 		icon = GFX_goal_HEA_focus_memories_of_innocence
-		cost = 60
+		cost = 45
 		x = 19
 		y = 10
 
@@ -336,7 +336,7 @@ focus_tree = {
 	focus = {
 		id = hea_nf_forgive_sins
 		icon = GFX_goal_HEA_focus_learning_to_forgive
-		cost = 60
+		cost = 45
 		x = 18
 		y = 11
 
@@ -365,7 +365,7 @@ focus_tree = {
 	focus = {
 		id = hea_nf_fog_of_mercy
 		icon = GFX_goal_HEA_focus_mercy_for_the_wicked
-		cost = 60
+		cost = 45
 		x = 18
 		y = 12
 
@@ -392,7 +392,7 @@ focus_tree = {
 	focus = {
 		id = hea_nf_vengance
 		icon = GFX_goal_HEA_focus_an_eye_for_an_eye
-		cost = 60
+		cost = 45
 		x = 20
 		y = 11
 
@@ -424,7 +424,7 @@ focus_tree = {
 	focus = {
 		id = hea_nf_boilers_of_justice
 		icon = GFX_goal_HEA_focus_boilers_of_justice
-		cost = 60
+		cost = 45
 		x = 20
 		y = 12
 
@@ -449,7 +449,7 @@ focus_tree = {
 	focus = {
 		id = hea_nf_addres_militarism
 		icon = GFX_goal_HEA_focus_addres_militarism
-		cost = 60
+		cost = 45
 		x = 24
 		y = 10
 
@@ -474,7 +474,7 @@ focus_tree = {
 	focus = {
 		id = hea_nf_embrace_militarism
 		icon = GFX_goal_HEA_focus_embracing_violence
-		cost = 60
+		cost = 45
 		x = 23
 		y = 11
 
@@ -505,7 +505,7 @@ focus_tree = {
 	focus = {
 		id = hea_nf_embrace_militarism_1
 		icon = GFX_goal_HEA_focus_declaration_of_crusade
-		cost = 60
+		cost = 45
 		x = 23
 		y = 12
 
@@ -532,7 +532,7 @@ focus_tree = {
 	focus = {
 		id = hea_nf_fight_militarism
 		icon = GFX_goal_HEA_focus_the_rise_of_mercy
-		cost = 60
+		cost = 45
 		x = 25
 		y = 11
 
@@ -563,7 +563,7 @@ focus_tree = {
 	focus = {
 		id = hea_nf_fight_militarism_1
 		icon = GFX_goal_HEA_focus_declaration_of_sanctuary
-		cost = 60
+		cost = 45
 		x = 25
 		y = 12
 
@@ -809,10 +809,6 @@ focus_tree = {
 			focus = hea_nf_air
 		}
 
-		available = {
-			has_tech = glider_tech
-		}
-
 		mutually_exclusive = {
 			focus = hea_nf_air_knight
 		}
@@ -822,8 +818,9 @@ focus_tree = {
 				limit = { has_global_flag = debug_logs }
 				log = "[GetDateText]: [Root.GetName] hea_nf_air_peasant entered"
 			}
-			custom_effect_tooltip = hea_add_30_fighters_tt
-			hidden_effect = { add_equipment_to_stockpile = { type = fighter_equipment_1 amount = 30 producer = HEA } }
+			add_ideas = {
+				hea_holy_planes
+			}
 			if = {
 				limit = { has_global_flag = debug_logs }
 				log = "[GetDateText]: [Root.GetName] hea_nf_air_peasant exited"

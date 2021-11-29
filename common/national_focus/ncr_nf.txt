@@ -1,0 +1,3982 @@
+####################################################
+#               NCR Focus Tree                     #
+#                                                  #
+# 1.0                                              #
+# Coded by Antonius                                #
+# 3.0                                              #
+# Coded by Zusk & Shudderfly                       #
+####################################################
+
+focus_tree = {
+	id = ncr_nf
+	country = {
+		factor = 0
+		modifier = {
+			add = 10
+			tag = NCR
+		}
+	}
+	default = no
+	focus = {
+		id = ncr_founders
+		icon = GFX_goal_generic_ideological_fury_focus
+		cost = 7
+		x = 16
+		y = 0
+		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] ncr_founders entered"
+			}
+			country_event = { id = nf_ncr.1 }
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] ncr_founders exited"
+			}
+		}
+	}
+	focus = {
+		id = ncr_baja
+		icon = GFX_goal_NCR_Baja
+		cost = 45
+		available = {
+			has_completed_focus = ncr_councilhill
+			date > 2276.1.1
+		}
+		ai_will_do = {
+			factor = 10
+		}
+		x = 2
+		y = 4
+		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] ncr_baja entered"
+			}
+			country_event = { id = nf_ncr.2 }
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] ncr_baja exited"
+			}
+		}
+	}
+	focus = {
+		id = ncr_emergency
+		icon = GFX_goal_generic_ideological_fury_focus
+		cost = 15
+		available = {
+			date > 2278.3.30
+			has_idea = baronswar
+		}
+		ai_will_do = {
+			factor = 10
+		}
+		x = 2
+		y = 9
+		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] ncr_emergency entered"
+			}
+			country_event = { id = nf_ncr.4 }
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] ncr_emergency exited"
+			}
+		}
+	}
+	focus = {
+		id = ncr_mayorvictory
+		icon = GFX_goal_NCR_Mayoral_Victory_Speech
+		cost = 45
+		x = 16
+		y = 10
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 0
+				NOT = {
+					has_completed_focus = ncr_beacon
+				}
+			}
+		}
+		available = {
+			has_completed_focus = ncr_councilhill
+			has_idea = ncr_militarized_economy
+		}
+		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] ncr_mayorvictory entered"
+			}
+			add_political_power = 50
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] ncr_mayorvictory exited"
+			}
+		}
+	}
+	focus = {
+		id = ncr_boneyard
+		icon = GFX_goal_NCR_The_Boneyard
+		cost = 45
+		x = 24
+		y = 4
+		available = {
+			has_completed_focus = ncr_councilhill
+			350 = { is_owned_and_controlled_by = ROOT }
+		}
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 0
+				NOT = {
+					has_completed_focus = ncr_beacon
+				}
+			}
+		}
+		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] ncr_boneyard entered"
+			}
+			add_tech_bonus = {
+				name = industrial_bonus
+				bonus = 0.5
+				uses = 1
+				category = industry
+			}
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] ncr_boneyard exited"
+			}
+			set_temp_variable = { temp_nf_reduction = 0.10 }
+			350 = {
+				add_to_variable = { ncr_nf_caps_state_modifier = temp_nf_reduction }
+			}
+			custom_effect_tooltip = ncr_gain_boneyard_income
+		}
+	}
+	focus = {
+		id = ncr_barons
+		icon = GFX_goal_tripartite_pact
+		cost = 45
+		x = 24
+		y = 10
+		available = {
+			has_completed_focus = ncr_councilhill
+			has_idea = ncr_militarized_economy
+		}
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 0
+				NOT = {
+					has_completed_focus = ncr_beacon
+				}
+			}
+		}
+		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] ncr_barons entered"
+			}
+			add_timed_idea = {
+				idea = ncrbarons
+				days = 180
+			}
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] ncr_barons exited"
+			}
+		}
+	}
+	focus = {
+		id = ncr_bearsroar
+		icon = GFX_goal_NCR_Bears_Roar
+		cost = 45
+		available = {
+			has_completed_focus = ncr_militacademy
+			has_idea = ncr_militarized_economy
+		}
+		x = 33
+		y = 4
+		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] ncr_bearsroar entered"
+			}
+			army_experience = 10
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] ncr_bearsroar exited"
+			}
+		}
+	}
+	focus = {
+		id = ncr_rangerdeploy
+		icon = GFX_goal_NCR_Rangerdeploy
+		cost = 45
+		prerequisite = {
+			focus = ncr_baja
+		}
+		mutually_exclusive = {
+			focus = ncr_sympathies
+			focus = ncr_politicobandito
+		}
+		available = {
+			has_country_flag = bajaharlon
+		}
+		x = 0
+		y = 5
+		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] ncr_rangerdeploy entered"
+			}
+			add_political_power = 25
+			add_opinion_modifier = { target = BVC modifier = deployedrangers }
+			add_opinion_modifier = { target = BLP modifier = deployedrangers }
+			add_popularity = {
+				ideology = people
+				popularity = 0.05
+			}
+			custom_effect_tooltip = rangerdeploy_tt
+			hidden_effect = {
+				load_oob = bajarangers
+			}
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] ncr_rangerdeploy exited"
+			}
+		}
+	}
+	focus = {
+		id = ncr_ultimatum
+		icon = GFX_goal_generic_ideological_fury_focus
+		cost = 45
+		prerequisite = {
+			focus = ncr_rangerdeploy
+		}
+		x = 0
+		y = 6
+		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] ncr_ultimatum entered"
+			}
+			add_political_power = 25
+			BVC = {
+				country_event = { id = nf_ncr.7 }
+			}
+			BLP = {
+				country_event = { id = nf_ncr.7 }
+			}
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] ncr_ultimatum exited"
+			}
+		}
+	}
+	focus = {
+		id = ncr_retake
+		icon = GFX_goal_NCR_Retake
+		search_filters = {FOCUS_FILTER_ANNEXATION}
+		cost = 45
+		prerequisite = {
+			focus = ncr_ultimatum
+		}
+		available = {
+			ai_has_no_other_wars_or_wargoals = yes
+		}
+		bypass = {
+			BVC = {
+				all_core_land_owned_by_prev_sphere = yes
+			}
+			BLP = {
+				all_core_land_owned_by_prev_sphere = yes
+			}
+		}
+		will_lead_to_war_with = BVC
+		x = 0
+		y = 7
+		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] ncr_retake entered"
+			}
+			BVC = {
+				ROOT = {
+					grant_wargoals_on_core_states_of_prev_force_ai_war = yes
+				}
+			}
+			BLP = {
+				create_or_join_fantasma_cartel = yes
+				BVC = { join_prev_faction = yes }
+				add_to_war = {
+					targeted_alliance = BVC
+					enemy = NCR
+					hostility_reason = ally
+				}
+			}
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] ncr_retake exited"
+			}
+		}
+	}
+	focus = {
+		id = ncr_buyout
+		icon = GFX_goal_NCR_Buyout
+		cost = 30
+		prerequisite = {
+			focus = ncr_emergency
+		}
+		available = {
+			has_country_flag = buyout
+		}
+		mutually_exclusive = {
+			focus = ncr_diplomatic
+			focus = ncr_exodus
+		}
+		x = 0
+		y = 10
+		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] ncr_buyout entered"
+			}
+			add_political_power = -25
+			add_ideas = baronswarbuyout
+			custom_effect_tooltip = buyout_tt
+			hidden_effect = {
+				remove_ideas = baronswar
+				load_oob = thebuyout
+			}
+			add_popularity = {
+				ideology = elites
+				popularity = 0.05
+			}
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] ncr_buyout exited"
+			}
+		}
+	}
+	focus = {
+		id = ncr_baronofbarons
+		icon = GFX_goal_NCR_Baronofbarons
+		cost = 30
+		prerequisite = {
+			focus = ncr_buyout
+		}
+		x = 0
+		y = 11
+		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] ncr_baronofbarons entered"
+			}
+			add_ideas = baronofbarons
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] ncr_baronofbarons exited"
+			}
+		}
+	}
+	focus = {
+		id = ncr_pokersiege
+		icon = GFX_goal_NCR_Pokersiege
+		cost = 30
+		prerequisite = {
+			focus = ncr_baronofbarons
+		}
+		x = 0
+		y = 12
+		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] ncr_pokersiege entered"
+			}
+			add_manpower = -500
+			remove_ideas = baronswarbuyout
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] ncr_pokersiege exited"
+			}
+		}
+	}
+	focus = {
+		id = ncr_newnorth
+		icon = GFX_goal_NCR_Newnorth
+		cost = 30
+		prerequisite = {
+			focus = ncr_pokersiege
+		}
+		x = 0
+		y = 13
+		available = {
+			135 = { is_owned_and_controlled_by = ROOT }
+		}
+		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] ncr_newnorth entered"
+			}
+			135 = {
+				if = {
+					limit = {
+						is_valid_state_for_2_civilian_factories = yes
+					}
+					add_extra_state_shared_building_slots = 4
+					add_building_construction = {
+						type = industrial_complex
+						level = 2
+						instant_build = yes
+					}
+				}
+			}
+			every_state = {
+				limit = {
+					is_baron_state = yes
+				}
+				add_core_of = NCR
+			}
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] ncr_newnorth exited"
+			}
+		}
+	}
+	focus = {
+		id = ncr_sympathies
+		icon = GFX_goal_NCR_Sympathies
+		cost = 45
+		prerequisite = {
+			focus = ncr_baja
+		}
+		mutually_exclusive = {
+			focus = ncr_rangerdeploy
+			focus = ncr_politicobandito
+		}
+		available = {
+			has_country_flag = bajahector
+		}
+		x = 2
+		y = 5
+		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] ncr_sympathies entered"
+			}
+			add_political_power = -25
+			add_opinion_modifier = { target = BVC modifier = sympathies }
+			add_opinion_modifier = { target = BLP modifier = sympathies }
+			hidden_effect = {
+				reverse_add_opinion_modifier = { target = BVC modifier = sympathies }
+				reverse_add_opinion_modifier = { target = BLP modifier = sympathies }
+			}
+			add_popularity = {
+				ideology = ruler
+				popularity = 0.05
+			}
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] ncr_sympathies exited"
+			}
+		}
+	}
+	focus = {
+		id = ncr_repaid
+		icon = GFX_goal_generic_slums_focus
+		cost = 45
+		prerequisite = {
+			focus = ncr_sympathies
+		}
+		x = 2
+		y = 6
+		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] ncr_repaid entered"
+			}
+			every_state = {
+				limit = {
+					is_baja_california_state = yes
+				}
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant_build = yes
+				}
+				if = {
+					limit = {
+						is_valid_state_for_purification_station = yes
+					}
+					add_extra_state_shared_building_slots = 1
+					add_building_construction = {
+						type = water_generator
+						level = 1
+						instant_build = yes
+					}
+				}
+			}
+			add_timed_idea = {
+				days = 180
+				idea = rattletailrepaid
+			}
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] ncr_repaid exited"
+			}
+		}
+	}
+	focus = {
+		id = ncr_bajastate
+		icon = GFX_goal_NCR_Bajastate
+		search_filters = {FOCUS_FILTER_ANNEXATION}
+		cost = 45
+		prerequisite = {
+			focus = ncr_repaid
+		}
+		x = 2
+		y = 7
+		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] ncr_bajastate entered"
+			}
+			every_state = {
+				limit = {
+					is_baja_california_state = yes
+				}
+				set_state_flag = do_not_exodus
+				BJS = {
+					transfer_state = PREV
+				}
+				add_core_of = BJS
+			}
+			NCR = {
+				BJS = { become_puppet = yes }
+			}
+			BJS = {
+				every_owned_state = {
+					clr_state_flag = do_not_exodus
+				}
+				load_focus_tree = ncr_puppet_nf
+			}
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] ncr_bajastate exited"
+			}
+		}
+	}
+	focus = {
+		id = ncr_diplomatic
+		icon = GFX_goal_NCR_Diplomacy
+		cost = 30
+		prerequisite = {
+			focus = ncr_emergency
+		}
+		mutually_exclusive = {
+			focus = ncr_buyout
+			focus = ncr_exodus
+		}
+		available = {
+			has_country_flag = diplomission
+		}
+		x = 2
+		y = 10
+		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] ncr_diplomatic entered"
+			}
+			add_political_power = 50
+			add_popularity = {
+				ideology = ruler
+				popularity = 0.05
+			}
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] ncr_diplomatic exited"
+			}
+		}
+	}
+	focus = {
+		id = ncr_steeldeal
+		icon = GFX_goal_NCR_Steeldeal
+		cost = 30
+		prerequisite = {
+			focus = ncr_diplomatic
+		}
+		x = 2
+		y = 11
+		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] ncr_steeldeal entered"
+			}
+			BOS = {
+				random_owned_controlled_state = {
+					add_resource = {
+						type = advanced
+						amount = 5
+					}
+					add_resource = {
+						type = energy
+						amount = 5
+					}
+					add_resource = {
+						type = circuitry
+						amount = 5
+					}
+				}
+			}
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] ncr_steeldeal exited"
+			}
+		}
+	}
+	focus = {
+		id = ncr_patrol
+		icon = GFX_goal_NCR_Patrol
+		cost = 30
+		prerequisite = {
+			focus = ncr_steeldeal
+		}
+		x = 2
+		y = 12
+		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] ncr_patrol entered"
+			}
+			BOS = { give_military_access = NCR }
+			remove_ideas = baronswar
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] ncr_patrol exited"
+			}
+		}
+	}
+	focus = {
+		id = ncr_allisgood
+		icon = GFX_goal_NCR_Allisgood
+		cost = 30
+		prerequisite = {
+			focus = ncr_patrol
+		}
+		x = 2
+		y = 13
+		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] ncr_allisgood entered"
+			}
+			add_opinion_modifier = { target = BOS modifier = allisgood }
+			hidden_effect = {
+				reverse_add_opinion_modifier = { target = BOS modifier = allisgood }
+				reverse_add_opinion_modifier = { target = MOJ modifier = allisgood }
+			}
+			add_opinion_modifier = { target = MOJ modifier = allisgood }
+			every_state = {
+				limit = {
+					is_baron_state = yes
+				}
+				add_core_of = NCR
+			}
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] ncr_allisgood exited"
+			}
+		}
+	}
+	focus = {
+		id = ncr_politicobandito
+		icon = GFX_goal_NCR_Politicalbandito
+		cost = 45
+		prerequisite = {
+			focus = ncr_baja
+		}
+		mutually_exclusive = {
+			focus = ncr_sympathies
+			focus = ncr_rangerdeploy
+		}
+		available = {
+			has_country_flag = bajahayes
+		}
+		x = 4
+		y = 5
+		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] ncr_politicobandito entered"
+			}
+			add_political_power = -50
+			add_opinion_modifier = { target = BVC modifier = politicobanditos }
+			hidden_effect = {
+				reverse_add_opinion_modifier = { target = BLP modifier = politicobanditos }
+				reverse_add_opinion_modifier = { target = BVC modifier = politicobanditos }
+			}
+			add_opinion_modifier = { target = BLP modifier = politicobanditos }
+			add_popularity = {
+				ideology = intellectuals
+				popularity = 0.05
+			}
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] ncr_politicobandito exited"
+			}
+		}
+	}
+	focus = {
+		id = ncr_payments
+		icon = GFX_goal_generic_intelligence_exchange
+		cost = 45
+		prerequisite = {
+			focus = ncr_politicobandito
+		}
+		x = 4
+		y = 6
+		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] ncr_payments entered"
+			}
+			every_state = {
+				limit = {
+					is_baja_california_state = yes
+				}
+				if = {
+					limit = {
+						is_valid_state_for_civilian_factory = yes
+					}
+					add_extra_state_shared_building_slots = 1
+					add_building_construction = {
+						type = industrial_complex
+						level = 1
+						instant_build = yes
+					}
+				}
+				if = {
+					limit = {
+						is_valid_state_for_arms_factory = yes
+					}
+					add_extra_state_shared_building_slots = 1
+					add_building_construction = {
+						type = arms_factory
+						level = 1
+						instant_build = yes
+					}
+				}
+			}
+			add_timed_idea = {
+				days = 180
+				idea = banditopayments
+			}
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] ncr_payments exited"
+			}
+		}
+	}
+	focus = {
+		id = ncr_integration
+		icon = GFX_goal_NCR_Integration
+		search_filters = {FOCUS_FILTER_ANNEXATION}
+		cost = 45
+		prerequisite = {
+			focus = ncr_payments
+		}
+		x = 4
+		y = 7
+		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] ncr_integration entered"
+			}
+			country_event = { id = nf_ncr.8 }
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] ncr_integration exited"
+			}
+		}
+	}
+	focus = {
+		id = ncr_baja_victory
+		icon = GFX_goal_generic_focus_happy_cactus
+		cost = 45
+		search_filters = {FOCUS_FILTER_INDUSTRY}
+		prerequisite = {
+			focus = ncr_retake
+			focus = ncr_bajastate
+			focus = ncr_integration
+		}
+		available = {
+			BVC = {
+				all_core_land_owned_by_prev_sphere = yes
+			}
+			BLP = {
+				all_core_land_owned_by_prev_sphere = yes
+			}
+		}
+		x = 2
+		y = 8
+		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] ncr_integration entered"
+			}
+			custom_effect_tooltip = ncr_upgrade_economy_law
+			if = {
+				limit = {
+					has_idea = ncr_militarized_economy
+				}
+				add_political_power = 300
+			}
+			else_if = {
+				limit = {
+					has_idea = ncr_caravan_protection
+				}
+				swap_ideas = {
+					remove_idea = ncr_caravan_protection
+					add_idea = ncr_militarized_economy
+				}
+			}
+			else_if = {
+				limit = {
+					has_idea = ncr_brahmin_economy
+				}
+				swap_ideas = {
+					remove_idea = ncr_brahmin_economy
+					add_idea = ncr_caravan_protection
+				}
+			}
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] ncr_integration exited"
+			}
+		}
+	}
+	focus = {
+		id = ncr_exodus
+		icon = GFX_goal_NCR_Exodus
+		cost = 30
+		prerequisite = {
+			focus = ncr_emergency
+		}
+		mutually_exclusive = {
+			focus = ncr_diplomatic
+			focus = ncr_buyout
+		}
+		available = {
+			has_country_flag = exodus
+			135 = {
+				industrial_complex > 2
+			}
+		}
+		x = 4
+		y = 10
+		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] ncr_exodus entered"
+			}
+			remove_ideas = brahminbarons
+			135 = {
+				add_building_construction = {
+					type = industrial_complex
+					level = -3
+				}
+			}
+			add_popularity = {
+				ideology = people
+				popularity = 0.05
+			}
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] ncr_exodus exited"
+			}
+		}
+	}
+	focus = {
+		id = ncr_milcentres
+		icon = GFX_goal_NCR_Milcenters
+		cost = 30
+		prerequisite = {
+			focus = ncr_exodus
+		}
+		available = {
+			any_owned_state = {
+				is_baron_state = yes
+			}
+		}
+		x = 4
+		y = 11
+		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] ncr_milcentres entered"
+			}
+			every_state = {
+				limit = {
+					is_baron_state = yes
+				}
+				add_building_construction = {
+					type = bunker
+					province = {
+						all_provinces = yes
+					}
+					level = 1
+					instant_build = yes
+				}
+			}
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] ncr_milcentres exited"
+			}
+		}
+	}
+	focus = {
+		id = ncr_brahminbill
+		icon = GFX_goal_NCR_Brahminbill
+		cost = 30
+		prerequisite = {
+			focus = ncr_milcentres
+		}
+		x = 4
+		y = 12
+		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] ncr_brahminbill entered"
+			}
+			remove_ideas = baronswar
+			add_ideas = brahminbill
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] ncr_brahminbill exited"
+			}
+		}
+	}
+	focus = {
+		id = ncr_rationing
+		icon = GFX_goal_NCR_Rationing
+		cost = 30
+		prerequisite = {
+			focus = ncr_brahminbill
+		}
+		x = 4
+		y = 13
+		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] ncr_rationing entered"
+			}
+			add_ideas = rationing
+			every_state = {
+				limit = {
+					is_baron_state = yes
+				}
+				add_core_of = NCR
+			}
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] ncr_rationing exited"
+			}
+		}
+	}
+	focus = {
+		id = ncr_tandi
+		icon = GFX_goal_generic_ideological_fury_focus
+		cost = 7
+		prerequisite = {
+			focus = ncr_founders
+		}
+		x = 16
+		y = 1
+		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] ncr_tandi entered"
+			}
+			country_event = { id = nf_ncr.10 }
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] ncr_tandi exited"
+			}
+		}
+	}
+	focus = {
+		id = ncr_development
+		icon = GFX_goal_generic_ideological_fury_focus
+		cost = 7
+		prerequisite = {
+			focus = ncr_tandi
+		}
+		x = 16
+		y = 2
+		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] ncr_development entered"
+			}
+			country_event = { id = nf_ncr.11 }
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] ncr_development exited"
+			}
+		}
+	}
+	focus = {
+		id = ncr_navarro
+		icon = GFX_goal_generic_ideological_fury_focus
+		cost = 7
+		prerequisite = {
+			focus = ncr_development
+		}
+		x = 16
+		y = 3
+		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] ncr_navarro entered"
+			}
+			country_event = { id = nf_ncr.12 }
+			#Equestria game rule handling
+			hidden_effect = {
+				if = {
+					limit = {
+						has_global_flag = MLP_harmony_and_unity_enabled_global_flag
+					}
+					country_event = { id = nf_mlp.1 days = 12 }
+				}
+			}
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] ncr_navarro exited"
+			}
+		}
+	}
+	focus = {
+		id = ncr_councilhill
+		icon = GFX_goal_NCR_Council_Hill
+		cost = 45
+		prerequisite = {
+			focus = ncr_navarro
+		}
+		x = 16
+		y = 4
+		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] ncr_councilhill entered"
+			}
+			add_political_power = 50
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] ncr_councilhill exited"
+			}
+		}
+	}
+	focus = {
+		id = ncr_capitalfund
+		icon = GFX_goal_NCR_The_Capital_Fund
+		cost = 45
+		prerequisite = {
+			focus = ncr_councilhill
+		}
+		x = 14
+		y = 5
+		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] ncr_capitalfund entered"
+			}
+			253 = {
+				if = {
+					limit = {
+						is_valid_state_for_2_civilian_factories = yes
+					}
+					add_extra_state_shared_building_slots = 2
+					add_building_construction = {
+						type = industrial_complex
+						level = 2
+						instant_build = yes
+					}
+				}
+			}
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] ncr_capitalfund exited"
+			}
+		}
+	}
+	focus = {
+		id = ncr_militacademy
+		icon = GFX_goal_NCR_Military_Academy
+		cost = 45
+		prerequisite = {
+			focus = ncr_councilhill
+		}
+		x = 16
+		y = 5
+		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] ncr_militacademy entered"
+			}
+			army_experience = 25
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] ncr_militacademy exited"
+			}
+		}
+	}
+	focus = {
+		id = ncr_oldworld
+		icon = GFX_goal_generic_land_doctrines_focus
+		cost = 45
+		prerequisite = {
+			focus = ncr_militacademy
+		}
+		x = 16
+		y = 6
+		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] ncr_oldworld entered"
+			}
+			add_tech_bonus = {
+				name = land_doc_bonus
+				bonus = 0.5
+				uses = 2
+				category = cat_land_doctrine
+			}
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] ncr_oldworld exited"
+			}
+		}
+	}
+	focus = {
+		id = ncr_armourexperiment
+		icon = GFX_goal_NCR_Heavy_Troops
+		cost = 45
+		prerequisite = {
+			focus = ncr_oldworld
+		}
+		x = 16
+		y = 7
+		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] ncr_armourexperiment entered"
+			}
+			capital_scope = {
+				add_resource = {
+					type = metal
+					amount = 5
+				}
+				add_resource = {
+					type = energy
+					amount = 5
+				}
+			}
+			add_tech_bonus = {
+				name = power_armor_tech
+				bonus = 0.3
+				uses = 2
+				category = spec_force_equipment_tech_category
+			}
+			unlock_decision_tooltip = NCR_armourexperiment_focus
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] ncr_armourexperiment exited"
+			}
+		}
+	}
+	focus = {
+		id = ncr_capitalfort
+		icon = GFX_goal_generic_bunkers_focus
+		cost = 45
+		prerequisite = {
+			focus = ncr_armourexperiment
+		}
+		x = 16
+		y = 8
+		available = {
+			253 = { is_owned_and_controlled_by = ROOT }
+		}
+		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] ncr_capitalfort entered"
+			}
+			253 = {
+				add_building_construction = {
+					type = bunker
+					level = 2
+					province = {
+						all_provinces = yes
+					}
+					instant_build = yes
+				}
+				add_building_construction = {
+					type = anti_air_building
+					level = 2
+					instant_build = yes
+				}
+			}
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] ncr_capitalfort exited"
+			}
+		}
+	}
+	focus = {
+		id = ncr_rangerhq
+		icon = GFX_goal_NCR_Expand_Ranger_HQ
+		cost = 45
+		prerequisite = {
+			focus = ncr_councilhill
+		}
+		x = 18
+		y = 5
+		available = {
+			253 = { is_owned_and_controlled_by = ROOT }
+		}
+		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] ncr_rangerhq entered"
+			}
+			253 = {
+				if = {
+					limit = {
+						is_valid_state_for_2_arms_factories = yes
+					}
+					add_extra_state_shared_building_slots = 2
+					add_building_construction = {
+						type = arms_factory
+						level = 2
+						instant_build = yes
+					}
+				}
+			}
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] ncr_rangerhq exited"
+			}
+		}
+	}
+	focus = {
+		id = ncr_gammacore
+		icon = GFX_goal_NCR_The_Gamma_Core
+		cost = 45
+		prerequisite = {
+			focus = ncr_rangerhq
+		}
+		available = {
+			253 = { is_owned_and_controlled_by = ROOT }
+		}
+		x = 18
+		y = 6
+		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] ncr_gammacore entered"
+			}
+			custom_effect_tooltip = load_gammacore
+			hidden_effect = {
+				set_technology = { super_mutant_aux_infantry_tech = 1 }
+				load_oob = gammacore
+			}
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] ncr_gammacore exited"
+			}
+		}
+	}
+	focus = {
+		id = ncr_reorgranger
+		icon = GFX_goal_generic_small_arms
+		cost = 45
+		prerequisite = {
+			focus = ncr_gammacore
+		}
+		x = 18
+		y = 7
+		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] ncr_reorgranger entered"
+			}
+			set_technology = { ncr_reorgranger_tech = 1 }
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] ncr_reorgranger exited"
+			}
+		}
+	}
+	focus = {
+		id = ncr_rangerprop
+		icon = GFX_goal_generic_propaganda
+		cost = 45
+		prerequisite = {
+			focus = ncr_reorgranger
+		}
+		x = 18
+		y = 8
+		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] ncr_rangerprop entered"
+			}
+			add_ideas = ncrrangerprop
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] ncr_rangerprop exited"
+			}
+		}
+	}
+	focus = {
+		id = ncr_pitch
+		icon = GFX_goal_NCR_The_New_Pitch
+		cost = 45
+		prerequisite = {
+			focus = ncr_mayorvictory
+		}
+		x = 18
+		y = 11
+		available = {
+			63 = { OWNER = { is_ncr_member = yes } }
+		}
+		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] ncr_pitch entered"
+			}
+			63 = {
+				if = {
+					limit = {
+						is_valid_state_for_2_civilian_factories = yes
+					}
+					add_extra_state_shared_building_slots = 2
+					add_building_construction = {
+						type = industrial_complex
+						level = 2
+						instant_build = yes
+					}
+				}
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant_build = yes
+				}
+			}
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] ncr_pitch exited"
+			}
+		}
+	}
+	focus = {
+		id = ncr_newleague
+		icon = GFX_goal_NCR_The_League
+		cost = 45
+		prerequisite = {
+			focus = ncr_pitch
+		}
+		x = 18
+		y = 12
+		available = {
+			63 = { OWNER = { is_ncr_member = yes } }
+		}
+		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] ncr_newleague entered"
+			}
+			add_stability = 0.025
+			63 = {
+				if = {
+					limit = {
+						is_valid_state_for_2_civilian_factories = yes
+					}
+					add_extra_state_shared_building_slots = 2
+					add_building_construction = {
+						type = industrial_complex
+						level = 2
+						instant_build = yes
+					}
+				}
+			}
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] ncr_newleague exited"
+			}
+		}
+	}
+	focus = {
+		id = ncr_leagueradio
+		icon = GFX_goal_generic_communcation_focus
+		cost = 45
+		prerequisite = {
+			focus = ncr_newleague
+		}
+		x = 18
+		y = 13
+		available = {
+			63 = { OWNER = { is_ncr_member = yes } }
+		}
+		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] ncr_leagueradio entered"
+			}
+			add_ideas = leagueradio
+			63 = {
+				add_building_construction = {
+					type = radar_station
+					level = 2
+					instant_build = yes
+				}
+			}
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] ncr_leagueradio exited"
+			}
+		}
+	}
+	focus = {
+		id = ncr_firstseason
+		icon = GFX_goal_NCR_Season_One
+		cost = 45
+		prerequisite = {
+			focus = ncr_newleague
+		}
+		x = 20
+		y = 13
+		available = {
+			63 = { OWNER = { is_ncr_member = yes } }
+		}
+		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] ncr_firstseason entered"
+			}
+			country_event = { id = nf_ncr.16 }
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] ncr_firstseason exited"
+			}
+		}
+	}
+	focus = {
+		id = ncr_calileague
+		icon = GFX_goal_NCR_The_California_League
+		cost = 45
+		prerequisite = {
+			focus = ncr_firstseason
+		}
+		x = 20
+		y = 14
+		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] ncr_calileague entered"
+			}
+			add_stability = 0.03
+			add_war_support = 0.02
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] ncr_calileague exited"
+			}
+		}
+	}
+	focus = {
+		id = ncr_sac
+		icon = GFX_goal_generic_cities_focus
+		cost = 45
+		prerequisite = {
+			focus = ncr_barons
+		}
+		x = 22
+		y = 11
+		available = {
+			135 = { OWNER = { is_ncr_member = yes } }
+		}
+		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] ncr_sac entered"
+			}
+			135 = {
+				if = {
+					limit = {
+						is_valid_state_for_2_civilian_factories = yes
+					}
+					add_extra_state_shared_building_slots = 3
+					add_building_construction = {
+						type = industrial_complex
+						level = 2
+						instant_build = yes
+					}
+				}
+			}
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] ncr_sac exited"
+			}
+		}
+	}
+	focus = {
+		id = ncr_80sgarage
+		icon = GFX_goal_generic_army_motorized
+		cost = 45
+		prerequisite = {
+			focus = ncr_sac
+		}
+		x = 22
+		y = 12
+		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] ncr_80sgarage entered"
+			}
+			add_tech_bonus = {
+				name = motorized_bonus
+				bonus = 0.5
+				uses = 1
+				category = vehicle_tech_category
+			}
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] ncr_80sgarage exited"
+			}
+		}
+	}
+	focus = {
+		id = ncr_baroninvest
+		icon = GFX_goal_generic_positive_trade_relations
+		cost = 45
+		prerequisite = {
+			focus = ncr_80sgarage
+		}
+		x = 22
+		y = 13
+		available = {
+			135 = { OWNER = { is_ncr_member = yes } }
+		}
+		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] ncr_baroninvest entered"
+			}
+			country_event = { id = nf_ncr.17 }
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] ncr_baroninvest exited"
+			}
+		}
+	}
+	focus = {
+		id = ncr_longroadhome
+		icon = GFX_goal_generic_construct_infrastructure
+		cost = 45
+		prerequisite = {
+			focus = ncr_baroninvest
+		}
+		x = 22
+		y = 14
+		available = {
+			# YARD1: CONSIDER USING AN ARRAY FOR is_ncr_member AND is_boneyard_state
+			any_state = {
+				OWNER = { is_ncr_member = yes }
+				is_boneyard_state = yes
+			}
+		}
+		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] ncr_longroadhome entered"
+			}
+			every_state = {
+				limit = {
+					is_sac_to_hub_state = yes
+					OWNER = { is_ncr_member = yes }
+				}
+				add_building_construction = {
+					type = infrastructure
+					level = 2
+					instant_build = yes
+				}
+			}
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] ncr_longroadhome exited"
+			}
+		}
+	}
+	focus = {
+		id = ncr_oldcity
+		icon = GFX_goal_generic_large_scale_normal_industry_focus
+		cost = 45
+		available = {
+			350 = { OWNER = { is_ncr_member = yes } }
+		}
+		prerequisite = {
+			focus = ncr_boneyard
+		}
+		x = 23
+		y = 5
+		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] ncr_oldcity entered"
+			}
+			country_event = { id = nf_ncr.18 }
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] ncr_oldcity exited"
+			}
+		}
+	}
+	focus = {
+		id = ncr_bearport
+		icon = GFX_goal_generic_airbases_focus
+		cost = 45
+		prerequisite = {
+			focus = ncr_oldcity
+		}
+		x = 23
+		y = 6
+		available = {
+			350 = { OWNER = { is_ncr_member = yes } }
+		}
+		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] ncr_bearport entered"
+			}
+			350 = {
+				add_building_construction = {
+					type = air_base
+					level = 2
+					instant_build = yes
+				}
+				if = {
+					limit = {
+						is_valid_state_for_arms_factory = yes
+					}
+					add_extra_state_shared_building_slots = 2
+					add_building_construction = {
+						type = arms_factory
+						level = 1
+						instant_build = yes
+					}
+				}
+			}
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] ncr_bearport exited"
+			}
+		}
+	}
+	focus = {
+		id = ncr_bearforceexpansion
+		icon = GFX_goal_generic_air_doctrines_focus
+		cost = 45
+		prerequisite = {
+			focus = ncr_bearport
+		}
+		available = {
+			any_allied_country = {
+				has_tech = air_tech_level_scientific
+			}
+		}
+		x = 21
+		y = 7
+		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] ncr_bearforceexpansion entered"
+			}
+			add_tech_bonus = {
+				name = air_bonus
+				bonus = 0.5
+				uses = 1
+				category = air_tech_category
+			}
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] ncr_bearforceexpansion exited"
+			}
+		}
+	}
+	focus = {
+		id = ncr_followers
+		icon = GFX_goal_generic_data_focus
+		cost = 45
+		prerequisite = {
+			focus = ncr_bearport
+		}
+		x = 23
+		y = 7
+		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] ncr_followers entered"
+			}
+			add_ideas = followerfunding
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] ncr_followers exited"
+			}
+		}
+	}
+	focus = {
+		id = ncr_boneyardsprawl
+		icon = GFX_goal_generic_large_scale_normal_industry_focus
+		cost = 45
+		prerequisite = {
+			focus = ncr_followers
+		}
+		x = 23
+		y = 8
+		available = {
+			350 = { OWNER = { is_ncr_member = yes } }
+		}
+		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] ncr_boneyardsprawl entered"
+			}
+			350 = {
+				if = {
+					limit = {
+						is_valid_state_for_2_civilian_factories = yes
+					}
+					add_extra_state_shared_building_slots = 4
+					add_building_construction = {
+						type = industrial_complex
+						level = 2
+						instant_build = yes
+					}
+				}
+			}
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] ncr_boneyardsprawl exited"
+			}
+			set_temp_variable = { temp_nf_reduction = 0.10 }
+			350 = {
+				add_to_variable = { ncr_nf_caps_state_modifier = temp_nf_reduction }
+			}
+			custom_effect_tooltip = ncr_gain_boneyard_income
+		}
+	}
+	focus = {
+		id = ncr_newcity
+		icon = GFX_goal_generic_large_scale_normal_industry_focus
+		cost = 45
+		prerequisite = {
+			focus = ncr_boneyard
+		}
+		x = 25
+		y = 5
+		available = {
+			350 = { OWNER = { is_ncr_member = yes } }
+		}
+		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] ncr_newcity entered"
+			}
+			350 = {
+				if = {
+					limit = {
+						is_valid_state_for_2_civilian_factories = yes
+					}
+					add_extra_state_shared_building_slots = 4
+					add_building_construction = {
+						type = industrial_complex
+						level = 2
+						instant_build = yes
+					}
+				}
+			}
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] ncr_newcity exited"
+			}
+		}
+	}
+	focus = {
+		id = ncr_dayglowroads
+		icon = GFX_goal_generic_construct_infrastructure
+		cost = 45
+		prerequisite = {
+			focus = ncr_newcity
+		}
+		x = 25
+		y = 6
+		available = {
+			350 = { OWNER = { is_ncr_member = yes } }
+			591 = { OWNER = { is_ncr_member = yes } }
+			63 = { OWNER = { is_ncr_member = yes } }
+		}
+		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] ncr_dayglowroads entered"
+			}
+			every_state = {
+				limit = {
+					is_boneyard_state = yes
+					OWNER = { is_ncr_member = yes }
+				}
+				add_building_construction = {
+					type = infrastructure
+					level = 2
+					instant_build = yes
+				}
+			}
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] ncr_dayglowroads exited"
+			}
+			set_temp_variable = { temp_nf_reduction = 0.20 }
+			63 = {
+				add_to_variable = { ncr_nf_caps_state_modifier = temp_nf_reduction }
+			}
+			custom_effect_tooltip = ncr_gain_dayglow_income
+		}
+	}
+	focus = {
+		id = ncr_mint
+		icon = GFX_focus_generic_the_giant_wakes
+		cost = 45
+		prerequisite = {
+			focus = ncr_dayglowroads
+		}
+		x = 25
+		y = 7
+		available = {
+			350 = { OWNER = { is_ncr_member = yes } }
+		}
+		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] ncr_mint entered"
+			}
+			350 = {
+				if = {
+					limit = {
+						is_valid_state_for_2_civilian_factories = yes
+					}
+					add_extra_state_shared_building_slots = 2
+					add_building_construction = {
+						type = industrial_complex
+						level = 2
+						instant_build = yes
+					}
+				}
+			}
+			add_ideas = ncrmint
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] ncr_mint exited"
+			}
+		}
+	}
+	focus = {
+		id = ncr_scavfund
+		icon = GFX_goal_generic_building_focus
+		cost = 45
+		prerequisite = {
+			focus = ncr_mint
+		}
+		x = 25
+		y = 8
+		available = {
+			350 = { OWNER = { is_ncr_member = yes } }
+		}
+		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] ncr_scavfund entered"
+			}
+			350 = {
+				add_resource = {
+					type = metal
+					amount = 8
+				}
+				add_resource = {
+					type = composites
+					amount = 4
+				}
+			}
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] ncr_scavfund exited"
+			}
+		}
+	}
+	focus = {
+		id = ncr_allisgoodboneyard
+		icon = GFX_goal_NCR_Allisgood
+		search_filters = {FOCUS_FILTER_INDUSTRY}
+		cost = 45
+		prerequisite = {
+			focus = ncr_boneyardsprawl
+		}
+		prerequisite = {
+			focus = ncr_scavfund
+		}
+		x = 24
+		y = 9
+		available = {
+			350 = { OWNER = { is_ncr_member = yes } }
+		}
+		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] ncr_allisgoodboneyard entered"
+			}
+			add_ideas = theboneyard
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] ncr_allisgoodboneyard exited"
+			}
+			set_temp_variable = { temp_nf_reduction = 0.10 }
+			350 = {
+				add_to_variable = { ncr_nf_caps_state_modifier = temp_nf_reduction }
+			}
+			custom_effect_tooltip = ncr_gain_boneyard_income
+			custom_effect_tooltip = ncr_upgrade_economy_law
+			if = {
+				limit = {
+					has_idea = ncr_militarized_economy
+				}
+				add_political_power = 300
+			}
+			else_if = {
+				limit = {
+					has_idea = ncr_caravan_protection
+				}
+				swap_ideas = {
+					remove_idea = ncr_caravan_protection
+					add_idea = ncr_militarized_economy
+				}
+			}
+			else_if = {
+				limit = {
+					has_idea = ncr_brahmin_economy
+				}
+				swap_ideas = {
+					remove_idea = ncr_brahmin_economy
+					add_idea = ncr_caravan_protection
+				}
+			}
+		}
+	}
+	focus = {
+		id = ncr_junktown
+		icon = GFX_goal_generic_cities_focus
+		cost = 45
+		prerequisite = {
+			focus = ncr_barons
+		}
+		x = 26
+		y = 11
+		available = {
+			489 = { OWNER = { is_ncr_member = yes } }
+		}
+		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] ncr_junktown entered"
+			}
+			489 = {
+				if = {
+					limit = {
+						is_valid_state_for_civilian_factory = yes
+					}
+					add_extra_state_shared_building_slots = 2
+					add_building_construction = {
+						type = industrial_complex
+						level = 1
+						instant_build = yes
+					}
+				}
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant_build = yes
+				}
+			}
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] ncr_junktown exited"
+			}
+		}
+	}
+	focus = {
+		id = ncr_gizmo
+		icon = GFX_goal_generic_large_scale_normal_industry_focus
+		cost = 45
+		prerequisite = {
+			focus = ncr_junktown
+		}
+		x = 26
+		y = 12
+		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] ncr_gizmo entered"
+			}
+			add_ideas = gizmoslegacy
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] ncr_gizmo exited"
+			}
+		}
+	}
+	focus = {
+		id = ncr_doctormorbid
+		icon = GFX_goal_generic_data_focus
+		cost = 45
+		prerequisite = {
+			focus = ncr_gizmo
+		}
+		x = 26
+		y = 13
+		available = {
+			489 = { OWNER = { is_ncr_member = yes } }
+		}
+		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] ncr_doctormorbid entered"
+			}
+			489 = {
+				if = {
+					limit = {
+						is_valid_state_for_civilian_factory = yes
+					}
+					add_extra_state_shared_building_slots = 1
+					add_building_construction = {
+						type = industrial_complex
+						level = 1
+						instant_build = yes
+					}
+				}
+			}
+			add_tech_bonus = {
+				name = medical_bonus
+				bonus = 0.5
+				uses = 1
+				category = support_medical_tech_category
+			}
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] ncr_doctormorbid exited"
+			}
+		}
+	}
+	focus = {
+		id = ncr_newwall
+		icon = GFX_goal_generic_walls_focus
+		cost = 45
+		prerequisite = {
+			focus = ncr_doctormorbid
+		}
+		x = 26
+		y = 14
+		available = {
+			489 = { OWNER = { is_ncr_member = yes } }
+		}
+		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] ncr_newwall entered"
+			}
+			489 = {
+				add_building_construction = {
+					type = bunker
+					province = {
+						all_provinces = yes
+					}
+					level = 1
+					instant_build = yes
+				}
+			}
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] ncr_newwall exited"
+			}
+		}
+	}
+	focus = {
+		id = ncr_grinvestments
+		icon = GFX_goal_generic_military_industry_focus
+		cost = 45
+		prerequisite = {
+			focus = ncr_dayglowroads
+		}
+		x = 27
+		y = 7
+		available = {
+			350 = { OWNER = { is_ncr_member = yes } }
+		}
+		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] ncr_grinvestments entered"
+			}
+			350 = {
+				if = {
+					limit = {
+						is_valid_state_for_2_arms_factories = yes
+					}
+					add_extra_state_shared_building_slots = 3
+					add_building_construction = {
+						type = arms_factory
+						level = 2
+						instant_build = yes
+					}
+				}
+			}
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] ncr_grinvestments exited"
+			}
+		}
+	}
+	focus = {
+		id = ncr_grexpansion
+		icon = GFX_goal_generic_cities_focus
+		cost = 45
+		prerequisite = {
+			focus = ncr_grinvestments
+		}
+		x = 27
+		y = 8
+		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] ncr_grexpansion entered"
+			}
+			add_ideas = gunrunnerexpanded
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] ncr_grexpansion exited"
+			}
+		}
+	}
+	focus = {
+		id = ncr_standardarms
+		icon = GFX_goal_NCR_Weapon_Standardization
+		cost = 45
+		prerequisite = {
+			focus = ncr_bearsroar
+		}
+		x = 29
+		y = 5
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 0
+				NOT = { has_completed_focus = ncr_grinvestments }
+			}
+		}
+		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] ncr_standardarms entered"
+			}
+			swap_ideas = {
+				remove_idea = ncrguns
+				add_idea = ncrguns2
+			}
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] ncr_standardarms exited"
+			}
+		}
+	}
+	focus = {
+		id = ncr_grdeals
+		icon = GFX_goal_NCR_Gun_Runner_Deals
+		cost = 45
+		available = {
+			has_completed_focus = ncr_grinvestments
+		}
+		prerequisite = {
+			focus = ncr_standardarms
+		}
+		x = 29
+		y = 6
+		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] ncr_grdeals entered"
+			}
+			remove_ideas = ncrguns2
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] ncr_grdeals exited"
+			}
+		}
+	}
+	focus = {
+		id = ncr_grliscense
+		icon = GFX_goal_NCR_Gun_Runner_Licensing
+		cost = 45
+		prerequisite = {
+			focus = ncr_grdeals
+		}
+		available = {
+			has_completed_focus = ncr_grexpansion
+		}
+		x = 29
+		y = 7
+		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] ncr_grliscense entered"
+			}
+			add_ideas = gunrunnerliscense
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] ncr_grliscense exited"
+			}
+		}
+	}
+	focus = {
+		id = ncr_drummond1
+		icon = GFX_goal_NCR_Drummonds_Army
+		cost = 45
+		prerequisite = {
+			focus = ncr_bearsroar
+		}
+		available = {
+			has_country_flag = drummond
+		}
+		mutually_exclusive = {
+			focus = ncr_rangergenmossman
+			focus = ncr_jim
+		}
+		x = 31
+		y = 5
+		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] ncr_drummond1 entered"
+			}
+			add_ideas = drummondsarmy
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] ncr_drummond1 exited"
+			}
+		}
+	}
+	focus = {
+		id = ncr_blast
+		icon = GFX_goal_NCR_Blast_from_the_Past
+		cost = 45
+		prerequisite = {
+			focus = ncr_drummond1
+		}
+		x = 31
+		y = 6
+		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] ncr_blast entered"
+			}
+			add_tech_bonus = {
+				name = explosive_bonus
+				bonus = 0.5
+				uses = 1
+				category = support_demolitions_tech_category
+			}
+			add_ideas = blastfromthepast
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] ncr_blast exited"
+			}
+		}
+	}
+	focus = {
+		id = ncr_mobile
+		icon = GFX_goal_NCR_Army_of_Mobility
+		cost = 45
+		prerequisite = {
+			focus = ncr_blast
+		}
+		x = 31
+		y = 7
+		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] ncr_mobile entered"
+			}
+			add_tech_bonus = {
+				name = motorized_bonus
+				bonus = 0.5
+				uses = 1
+				category = vehicle_tech_category
+			}
+			add_ideas = mobilearmy
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] ncr_mobile exited"
+			}
+		}
+	}
+	focus = {
+		id = ncr_spear
+		icon = GFX_goal_NCR_The_Tip_of_the_Spear
+		cost = 45
+		prerequisite = {
+			focus = ncr_mobile
+		}
+		x = 31
+		y = 8
+		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] ncr_spear entered"
+			}
+			add_ideas = speartip
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] ncr_spear exited"
+			}
+		}
+	}
+	focus = {
+		id = ncr_jim
+		icon = GFX_goal_NCR_Big_Jims_Army
+		cost = 45
+		prerequisite = {
+			focus = ncr_bearsroar
+		}
+		available = {
+			has_country_flag = baronschoice
+		}
+		mutually_exclusive = {
+			focus = ncr_drummond1
+			focus = ncr_rangergenmossman
+		}
+		x = 33
+		y = 5
+		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] ncr_jim entered"
+			}
+			add_ideas = bigjim
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] ncr_jim exited"
+			}
+		}
+	}
+	focus = {
+		id = ncr_drills
+		icon = GFX_goal_NCR_Infantry_Drills
+		cost = 45
+		prerequisite = {
+			focus = ncr_jim
+		}
+		x = 33
+		y = 6
+		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] ncr_drills entered"
+			}
+			set_technology = { ncr_jim_drills = 1 }
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] ncr_drills exited"
+			}
+		}
+	}
+	focus = {
+		id = ncr_march
+		icon = GFX_goal_NCR_Military_March
+		cost = 45
+		prerequisite = {
+			focus = ncr_drills
+		}
+		x = 33
+		y = 7
+		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] ncr_march entered"
+			}
+			add_ideas = ncrmarch
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] ncr_march exited"
+			}
+		}
+	}
+	focus = {
+		id = ncr_draft
+		icon = GFX_goal_NCR_Big_Jim_Draft
+		cost = 45
+		prerequisite = {
+			focus = ncr_march
+		}
+		x = 33
+		y = 8
+		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] ncr_draft entered"
+			}
+			add_ideas = jimdraft
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] ncr_draft exited"
+			}
+		}
+	}
+	focus = {
+		id = ncr_olivers_pet_project
+		icon = GFX_goal_NCR_Heavy_Troops
+		cost = 45
+		available = {
+			#has_completed_focus = ncr_mojavehero
+			OR = {
+				owns_state = 157
+				owns_state = 46
+			}
+		}
+		prerequisite = {
+			focus = ncr_spear
+			focus = ncr_draft
+			focus = ncr_rangercanopeners
+		}
+		x = 33
+		y = 9
+		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] ncr_olivers_pet_project entered"
+			}
+			swap_ideas = {
+				add_idea = ranger_unification_treaty_2
+				remove_idea = ranger_unification_treaty
+			}
+			add_tech_bonus = {
+				name = power_armor_tech
+				bonus = 1.75
+				uses = 3
+				category = power_armor_tech_category
+			}
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] ncr_olivers_pet_project exited"
+			}
+		}
+	}
+	focus = {
+		id = ncr_rangergenmossman
+		icon = GFX_goal_NCR_Mossmans_Army
+		cost = 45
+		prerequisite = {
+			focus = ncr_bearsroar
+		}
+		available = {
+			has_country_flag = rangergeneral
+		}
+		mutually_exclusive = {
+			focus = ncr_jim
+			focus = ncr_drummond1
+		}
+		x = 35
+		y = 5
+		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] ncr_rangergenmossman entered"
+			}
+			add_ideas = rangergenmossman
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] ncr_rangergenmossman exited"
+			}
+		}
+	}
+	focus = {
+		id = ncr_rangercore
+		icon = GFX_goal_NCR_Ranger_Core
+		cost = 45
+		prerequisite = {
+			focus = ncr_rangergenmossman
+		}
+		x = 35
+		y = 6
+		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] ncr_rangercore entered"
+			}
+			set_technology = { ncr_rangercore_tech = 1 }
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] ncr_rangercore exited"
+			}
+		}
+	}
+	focus = {
+		id = ncr_rangerlead
+		icon = GFX_goal_NCR_Rangers_Lead_the_War
+		cost = 45
+		prerequisite = {
+			focus = ncr_rangercore
+		}
+		x = 35
+		y = 7
+		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] ncr_rangerlead entered"
+			}
+			set_technology = { ncr_rangerlead_tech = 1 }
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] ncr_rangerlead exited"
+			}
+		}
+	}
+	focus = {
+		id = ncr_rangercanopeners
+		icon = GFX_goal_NCR_Ranger_Can_Openers
+		cost = 45
+		prerequisite = {
+			focus = ncr_rangerlead
+		}
+		x = 35
+		y = 8
+		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] ncr_rangercanopeners entered"
+			}
+			set_technology = { ncr_rangercanopeners_tech = 1 }
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] ncr_rangercanopeners exited"
+			}
+		}
+	}
+	focus = {
+		id = ncr_armament
+		icon = GFX_goal_generic_military_industry_focus
+		cost = 45
+		prerequisite = {
+			focus = ncr_capitalfund
+		}
+		x = 14
+		y = 6
+		available = {
+			253 = { OWNER = { is_ncr_member = yes } }
+		}
+		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] ncr_armament entered"
+			}
+			253 = {
+				if = {
+					limit = {
+						is_valid_state_for_2_arms_factories = yes
+					}
+					add_extra_state_shared_building_slots = 2
+					add_building_construction = {
+						type = arms_factory
+						level = 2
+						instant_build = yes
+					}
+				}
+			}
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] ncr_armament exited"
+			}
+		}
+	}
+	focus = {
+		id = ncr_bazaar
+		icon = GFX_goal_generic_large_scale_normal_industry_focus
+		cost = 45
+		prerequisite = {
+			focus = ncr_armament
+		}
+		x = 14
+		y = 7
+		available = {
+			253 = { OWNER = { is_ncr_member = yes } }
+		}
+		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] ncr_bazaar entered"
+			}
+			253 = {
+				if = {
+					limit = {
+						is_valid_state_for_civilian_factory = yes
+					}
+					add_extra_state_shared_building_slots = 1
+					add_building_construction = {
+						type = industrial_complex
+						level = 1
+						instant_build = yes
+					}
+				}
+				if = {
+					limit = {
+						is_valid_state_for_arms_factory = yes
+					}
+					add_extra_state_shared_building_slots = 1
+					add_building_construction = {
+						type = arms_factory
+						level = 1
+						instant_build = yes
+					}
+				}
+			}
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] ncr_bazaar exited"
+			}
+		}
+	}
+	focus = {
+		id = ncr_powerplant
+		icon = GFX_goal_generic_electricity_focus
+		cost = 45
+		prerequisite = {
+			focus = ncr_bazaar
+		}
+		x = 14
+		y = 8
+		available = {
+			253 = { OWNER = { is_ncr_member = yes } }
+		}
+		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] ncr_powerplant entered"
+			}
+			253 = {
+				add_resource = {
+					type = energy
+					amount = 24
+				}
+			}
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] ncr_powerplant exited"
+			}
+		}
+	}
+	focus = {
+		id = ncr_beacon
+		icon = GFX_goal_support_democracy
+		cost = 5
+		search_filters = {FOCUS_FILTER_INDUSTRY}
+		prerequisite = {
+			focus = ncr_powerplant
+		}
+		prerequisite = {
+			focus = ncr_capitalfort
+		}
+		prerequisite = {
+			focus = ncr_rangerprop
+		}
+		x = 16
+		y = 9
+		completion_reward = {
+			custom_effect_tooltip = ncr_upgrade_economy_law
+			if = {
+				limit = {
+					has_idea = ncr_militarized_economy
+				}
+				add_political_power = 300
+			}
+			else_if = {
+				limit = {
+					has_idea = ncr_caravan_protection
+				}
+				swap_ideas = {
+					remove_idea = ncr_caravan_protection
+					add_idea = ncr_militarized_economy
+				}
+			}
+			else_if = {
+				limit = {
+					has_idea = ncr_brahmin_economy
+				}
+				swap_ideas = {
+					remove_idea = ncr_brahmin_economy
+					add_idea = ncr_caravan_protection
+				}
+			}
+			remove_ideas = starting_caps_idea
+		}
+	}
+	focus = {
+		id = ncr_thepeople
+		icon = GFX_goal_support_democracy
+		cost = 45
+		prerequisite = {
+			focus = ncr_mayorvictory
+		}
+		x = 14
+		y = 11
+		available = {
+			63 = { OWNER = { is_ncr_member = yes } }
+		}
+		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] ncr_thepeople entered"
+			}
+			add_political_power = 50
+			country_event = { id = nf_ncr.21 }
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] ncr_thepeople exited"
+			}
+		}
+	}
+	focus = {
+		id = ncr_thirteen
+		icon = GFX_goal_NCR_Rebuild_the_13
+		cost = 45
+		prerequisite = {
+			focus = ncr_mayorvictory
+		}
+		x = 16
+		y = 11
+		available = {
+			63 = { OWNER = { is_ncr_member = yes } }
+		}
+		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] ncr_thirteen entered"
+			}
+			63 = {
+				if = {
+					limit = {
+						is_valid_state_for_3_dockyards = yes
+					}
+					add_extra_state_shared_building_slots = 3
+					add_building_construction = {
+						type = dockyard
+						level = 3
+						instant_build = yes
+					}
+				}
+				add_building_construction = {
+					type = naval_base
+					level = 3
+					province = {
+						id = 4977
+					}
+					instant_build = yes
+				}
+			}
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] ncr_thirteen exited"
+			}
+		}
+	}
+	focus = {
+		id = ncr_militport
+		icon = GFX_goal_NCR_Bastion_By_the_Sea
+		cost = 45
+		prerequisite = {
+			focus = ncr_thirteen
+		}
+		x = 16
+		y = 12
+		available = {
+			63 = { OWNER = { is_ncr_member = yes } }
+		}
+		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] ncr_militport entered"
+			}
+			63 = {
+				if = {
+					limit = {
+						is_valid_state_for_2_arms_factories = yes
+					}
+					add_extra_state_shared_building_slots = 2
+					add_building_construction = {
+						type = arms_factory
+						level = 2
+						instant_build = yes
+					}
+				}
+			}
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] ncr_militport exited"
+			}
+		}
+	}
+	focus = {
+		id = ncr_seabear
+		icon = GFX_goal_NCR_Seabear
+		cost = 45
+		prerequisite = {
+			focus = ncr_militport
+		}
+		x = 16
+		y = 13
+		available = {
+			63 = { OWNER = { is_ncr_member = yes } }
+		}
+		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] ncr_seabear entered"
+			}
+			set_technology = { super_heavy_navy_hull_tech_1 = 1 }
+			custom_effect_tooltip = load_seabear
+			hidden_effect = { load_oob = seabear }
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] ncr_seabear exited"
+			}
+		}
+	}
+	focus = {
+		id = ncr_dayglowprospers
+		icon = GFX_goal_generic_cities_focus
+		cost = 45
+		prerequisite = {
+			focus = ncr_thepeople
+		}
+		x = 14
+		y = 12
+		available = {
+			63 = { OWNER = { is_ncr_member = yes } }
+		}
+		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] ncr_dayglowprospers entered"
+			}
+			add_tech_bonus = {
+				name = industrial_bonus
+				bonus = 0.5
+				uses = 2
+				category = industry
+			}
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] ncr_dayglowprospers exited"
+			}
+		}
+	}
+	focus = {
+		id = ncr_scavunion
+		icon = GFX_goal_generic_building_focus
+		cost = 45
+		prerequisite = {
+			focus = ncr_dayglowprospers
+		}
+		x = 14
+		y = 13
+		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] ncr_scavunion entered"
+			}
+			add_ideas = scavunion
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] ncr_scavunion exited"
+			}
+		}
+	}
+	focus = {
+		id = ncr_migration
+		icon = GFX_goal_generic_positive_trade_relations
+		cost = 45
+		prerequisite = {
+			focus = ncr_dayglowprospers
+		}
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = ncr_owns_baja_states_tt
+				OR = {
+					NCR = {
+						controls_state = 651
+						controls_state = 650
+						controls_state = 41
+						controls_state = 174
+						controls_state = 158
+						controls_state = 136
+						controls_state = 481
+						controls_state = 176
+						controls_state = 325
+						controls_state = 97
+					}
+					any_other_country = {
+						is_subject_of = NCR
+						controls_state = 651
+						controls_state = 650
+						controls_state = 41
+						controls_state = 174
+						controls_state = 158
+						controls_state = 136
+						controls_state = 481
+						controls_state = 176
+						controls_state = 325
+						controls_state = 97
+					}
+				}
+			}
+		}
+		x = 12
+		y = 13
+		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] ncr_migration entered"
+			}
+			country_event = { id = nf_ncr.22 }
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] ncr_migration exited"
+			}
+		}
+	}
+	focus = {
+		id = ncr_supermutants
+		icon = GFX_goal_generic_secret_weapon
+		cost = 45
+		prerequisite = {
+			focus = ncr_migration
+		}
+		x = 12
+		y = 14
+		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] ncr_supermutants entered"
+			}
+			country_event = { id = nf_ncr.23 }
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] ncr_supermutants exited"
+			}
+		}
+	}
+	focus = {
+		id = ncr_flyingbears
+		icon = GFX_goal_generic_airbases_focus
+		cost = 45
+		prerequisite = {
+			focus = ncr_bearforceexpansion
+		}
+		available = {
+			any_allied_country = {
+				has_tech = air_tech_level_scientific
+			}
+		}
+		x = 21
+		y = 8
+		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] ncr_flyingbears entered"
+			}
+			add_ideas = flyingbears
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] ncr_flyingbears exited"
+			}
+		}
+	}
+	focus = {
+		id = ncr_hub
+		icon = GFX_goal_generic_cities_focus
+		cost = 45
+		prerequisite = {
+			focus = ncr_barons
+		}
+		x = 24
+		y = 11
+		available = {
+			controls_state = 1
+		}
+		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] ncr_hub entered"
+			}
+			1 = {
+				if = {
+					limit = {
+						is_valid_state_for_civilian_factory = yes
+					}
+					add_extra_state_shared_building_slots = 2
+					add_building_construction = {
+						type = industrial_complex
+						level = 1
+						instant_build = yes
+					}
+				}
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant_build = yes
+				}
+			}
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] ncr_hub exited"
+			}
+		}
+	}
+	focus = {
+		id = ncr_crimsoncaravan
+		icon = GFX_goal_generic_intelligence_exchange
+		cost = 45
+		prerequisite = {
+			focus = ncr_hub
+		}
+		x = 24
+		y = 12
+		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] ncr_crimsoncaravan entered"
+			}
+			#Briar literally never said what this does why would you do this to me dude
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] ncr_crimsoncaravan exited"
+			}
+		}
+	}
+	focus = {
+		id = ncr_hubcrime
+		icon = GFX_goal_generic_military_sphere
+		cost = 45
+		prerequisite = {
+			focus = ncr_crimsoncaravan
+		}
+		available = {
+			controls_state = 1
+		}
+		x = 24
+		y = 13
+		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] ncr_hubcrime entered"
+			}
+			country_event = { id = nf_ncr.24 }
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] ncr_hubcrime exited"
+			}
+		}
+	}
+	focus = {
+		id = ncr_richroad
+		icon = GFX_goal_generic_construct_infrastructure
+		cost = 45
+		prerequisite = {
+			focus = ncr_hubcrime
+		}
+		x = 24
+		y = 14
+		available = {
+			OR = {
+				controls_state = 1
+				controls_state = 489
+				controls_state = 252
+			}
+		}
+		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] ncr_richroad entered"
+			}
+			if = {
+				limit = {
+					controls_state = 1
+				}
+				1 = {
+					add_building_construction = {
+						type = infrastructure
+						level = 2
+						instant_build = yes
+					}
+				}
+			}
+			if = {
+				limit = {
+					controls_state = 489
+				}
+				489 = {
+					add_building_construction = {
+						type = infrastructure
+						level = 2
+						instant_build = yes
+					}
+				}
+			}
+			if = {
+				limit = {
+					controls_state = 252
+				}
+				252 = {
+					add_building_construction = {
+						type = infrastructure
+						level = 2
+						instant_build = yes
+					}
+				}
+			}
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] ncr_richroad exited"
+			}
+		}
+	}
+	focus = {
+		id = ncr_mechcore
+		icon = GFX_goal_NCR_Mechanized_Core
+		cost = 45
+		prerequisite = {
+			focus = ncr_bearsroar
+		}
+		x = 37
+		y = 5
+		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] ncr_mechcore entered"
+			}
+			add_equipment_to_stockpile = { type = motorbike_equipment_1 amount = 35 producer = NCR }
+			add_ideas = mechcore
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] ncr_mechcore exited"
+			}
+		}
+	}
+	focus = {
+		id = ncr_shock
+		icon = GFX_goal_NCR_Shock_Companies
+		cost = 45
+		prerequisite = {
+			focus = ncr_mechcore
+		}
+		available = {
+			has_tech = truck_tech_1
+		}
+		x = 37
+		y = 6
+		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] ncr_shock entered"
+			}
+			add_equipment_to_stockpile = { type = apc_equipment_1 amount = 50 producer = NCR }
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] ncr_shock exited"
+			}
+			add_ideas = ncr_shock
+		}
+	}
+	focus = {
+		id = ncr_rapid2
+		icon = GFX_goal_NCR_rapid_advance
+		cost = 45
+		prerequisite = {
+			focus = ncr_shock
+		}
+		x = 37
+		y = 7
+		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] ncr_rapid entered"
+			}
+			add_ideas = rapidadvance
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] ncr_rapid exited"
+			}
+		}
+	}
+	### Temp for 3.0
+	focus = {
+		id = ncr_reorganizetheexpeditionaries
+		icon = GFX_goal_NCR_Oldworldmilitary
+		cost = 45
+		prerequisite = {
+		}
+		available = {
+			has_completed_focus = ncr_councilhill
+		}
+		x = 9
+		y = 4
+		completion_reward = {
+			add_ideas = ncr_reorganizedexpeditionary
+			country_event = { id = nf_ncr.6 }
+		}
+	}
+	focus = {
+		id = ncr_drummond
+		icon = GFX_goal_NCR_Drummond
+		cost = 7
+		prerequisite = {
+			focus = ncr_reorganizetheexpeditionaries
+		}
+		available = {
+			has_country_flag = drummond
+		}
+		mutually_exclusive = {
+			focus = ncr_baron
+			focus = ncr_rangergeneral
+		}
+		x = 7
+		y = 5
+		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] ncr_drummond entered"
+			}
+			army_experience = 10
+			air_experience = 10
+			add_popularity = {
+				ideology = people
+				popularity = 0.05
+			}
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] ncr_drummond exited"
+			}
+		}
+	}
+	focus = {
+		id = ncr_oldworldmilitary
+		icon = GFX_goal_NCR_Oldworldmilitary
+		cost = 7
+		prerequisite = {
+			focus = ncr_drummond
+		}
+		x = 7
+		y = 6
+		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] ncr_oldworldmilitary entered"
+			}
+			add_ideas = oldworldmilitary
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] ncr_oldworldmilitary exited"
+			}
+		}
+	}
+	focus = {
+		id = ncr_drummondreturn
+		icon = GFX_goal_NCR_Newgeneral
+		cost = 7
+		prerequisite = {
+			focus = ncr_oldworldmilitary
+		}
+		x = 7
+		y = 7
+		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] ncr_drummondreturn entered"
+			}
+			create_field_marshal = {
+				name = "General Drummond"
+				portrait_path = "gfx/leaders/NCR/portrait_drummond.dds"
+				skill = 5
+				id = 10123
+				attack_skill = 4
+				defense_skill = 3
+				planning_skill = 2
+				logistics_skill = 3
+				traits = {
+					intelligent_trait
+					perceptive_trait
+					dont_add_specials_loser
+				}
+			}
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] ncr_drummondreturn exited"
+			}
+		}
+	}
+	focus = {
+		id = ncr_baron
+		icon = GFX_goal_NCR_Baron
+		cost = 7
+		prerequisite = {
+			focus = ncr_reorganizetheexpeditionaries
+		}
+		mutually_exclusive = {
+			focus = ncr_drummond
+			focus = ncr_rangergeneral
+		}
+		available = {
+			has_country_flag = baronschoice
+			if = {
+				limit = {
+					has_global_flag = MLP_harmony_and_unity_enabled_global_flag
+				}
+				if = {
+					limit = { MLP = { exists = yes } }
+					MLP = { NOT = { has_completed_focus = mlp_recruit_human_generals } }
+				}
+			}
+		}
+		x = 9
+		y = 5
+		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] ncr_baron entered"
+			}
+			add_political_power = 50
+			army_experience = 10
+			add_popularity = {
+				ideology = elites
+				popularity = 0.05
+			}
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] ncr_baron exited"
+			}
+		}
+	}
+	focus = {
+		id = ncr_industrialcomplex
+		icon = GFX_goal_NCR_Industrialcomplex
+		cost = 7
+		prerequisite = {
+			focus = ncr_baron
+		}
+		available = {
+			if = {
+				limit = {
+					has_global_flag = MLP_harmony_and_unity_enabled_global_flag
+				}
+				if = {
+					limit = { MLP = { exists = yes } }
+					NOT = { MLP = { has_completed_focus = mlp_recruit_human_generals } }
+				}
+			}
+		}
+		bypass = {
+			if = {
+				limit = {
+					has_global_flag = MLP_harmony_and_unity_enabled_global_flag
+				}
+				has_completed_focus = ncr_baron
+				MLP = { has_completed_focus = mlp_recruit_human_generals }
+			}
+			else = {
+				hidden_trigger = { always = no }
+			}
+		}
+		x = 9
+		y = 6
+		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] ncr_industrialcomplex entered"
+			}
+			add_ideas = militindustrial
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] ncr_industrialcomplex exited"
+			}
+		}
+	}
+	focus = {
+		id = ncr_bigjim
+		icon = GFX_goal_NCR_Newgeneral
+		cost = 7
+		prerequisite = {
+			focus = ncr_industrialcomplex
+		}
+		available = {
+			if = {
+				limit = {
+					has_global_flag = MLP_harmony_and_unity_enabled_global_flag
+				}
+				if = {
+					limit = { MLP = { exists = yes } }
+					NOT = { MLP = { has_completed_focus = mlp_recruit_human_generals } }
+				}
+			}
+		}
+		bypass = {
+			if = {
+				limit = {
+					has_global_flag = MLP_harmony_and_unity_enabled_global_flag
+				}
+				has_completed_focus = ncr_baron
+				MLP = { has_completed_focus = mlp_recruit_human_generals }
+			}
+			else = {
+				hidden_trigger = { always = no }
+			}
+		}
+		x = 9
+		y = 7
+		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] ncr_bigjim entered"
+			}
+			create_field_marshal = {
+				name = "Big Jim Marshal"
+				portrait_path = "gfx/leaders/NCR/portrait_bigjim.dds"
+				skill = 5
+				id = 10124
+				attack_skill = 7
+				defense_skill = 1
+				planning_skill = 2
+				logistics_skill = 2
+				traits = {
+					dont_add_specials_loser
+					strong_trait
+					charismatic_trait
+				}
+			}
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] ncr_bigjim exited"
+			}
+		}
+	}
+	focus = {
+		id = ncr_rangergeneral
+		icon = GFX_goal_NCR_Rangergeneral
+		cost = 7
+		prerequisite = {
+			focus = ncr_reorganizetheexpeditionaries
+		}
+		mutually_exclusive = {
+			focus = ncr_baron
+			focus = ncr_drummond
+		}
+		available = {
+			has_country_flag = rangergeneral
+		}
+		x = 11
+		y = 5
+		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] ncr_rangergeneral entered"
+			}
+			army_experience = 20
+			navy_experience = 10
+			add_popularity = {
+				ideology = intellectuals
+				popularity = 0.05
+			}
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] ncr_rangergeneral exited"
+			}
+		}
+	}
+	focus = {
+		id = ncr_standards
+		icon = GFX_goal_NCR_Standards
+		cost = 7
+		prerequisite = {
+			focus = ncr_rangergeneral
+		}
+		x = 11
+		y = 6
+		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] ncr_standards entered"
+			}
+			add_ideas = draftstandards
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] ncr_standards exited"
+			}
+		}
+	}
+	focus = {
+		id = ncr_mossman
+		icon = GFX_goal_NCR_Newgeneral
+		cost = 7
+		prerequisite = {
+			focus = ncr_standards
+		}
+		x = 11
+		y = 7
+		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] ncr_mossman entered"
+			}
+			create_field_marshal = {
+				name = "Ranger General Mossman"
+				portrait_path = "gfx/leaders/NCR/portrait_mossman.dds"
+				id = 10121
+				skill = 5
+				attack_skill = 3
+				defense_skill = 3
+				planning_skill = 3
+				logistics_skill = 3
+				traits = {
+					dont_add_specials_loser
+					perceptive_trait
+					agile_trait
+				}
+			}
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] ncr_mossman exited"
+			}
+		}
+	}
+	focus = {
+		id = ncr_rapidannexation
+		icon = GFX_goal_NCR_Rapids_Conquest
+		search_filters = {FOCUS_FILTER_ANNEXATION}
+		cost = 40
+		prerequisite = {
+		focus = ncr_mossman
+		focus = ncr_bigjim
+		focus = ncr_drummondreturn
+		}
+		x = 9
+		y = 8
+		will_lead_to_war_with = RAP
+		available = {
+			ai_has_no_other_wars_or_wargoals = yes
+		}
+		bypass = {
+			RAP = {
+				all_core_land_owned_by_prev_sphere = yes
+			}
+		}
+		completion_reward = {
+			RAP = {
+				ROOT = {
+					grant_wargoals_on_core_states_of_prev_force_ai_war = yes
+				}
+			}
+		}
+	}
+	focus = {
+		id = ncr_rapidsettlement
+		icon = GFX_goal_NCR_Rapids_Vacation
+		cost = 60
+		prerequisite = {
+		focus = ncr_rapidannexation
+		}
+		x = 9
+		y = 9
+		available = {
+			owns_state = 99
+			owns_state = 500
+			owns_state = 469
+			owns_state = 147
+			owns_state = 107
+		}
+		completion_reward = {
+			add_timed_idea = {
+				idea = ncr_rapidsettlement_idea
+				days = 180
+			}
+			add_state_core = 99
+			add_state_core = 500
+			add_state_core = 469
+			add_state_core = 147
+			add_state_core = 107
+			set_province_name = {
+				id = 5809
+				name = "Pharmville"
+			}
+			set_province_name = {
+				id = 2317
+				name = "Tanditown"
+			}
+		}
+	}
+	focus = {
+		id = ncr_opentheeasternroute
+		icon = GFX_goal_generic_focus_magazine_gunsandbullets_gun_laws
+		search_filters = {FOCUS_FILTER_ANNEXATION}
+		cost = 45
+		prerequisite = {
+		focus = ncr_rapidannexation
+		}
+		x = 11
+		y = 9
+		will_lead_to_war_with = MOS
+		available = {
+			ai_has_no_other_wars_or_wargoals = yes
+		}
+		bypass = {
+			MOS = {
+				all_core_land_owned_by_prev_sphere = yes
+			}
+		}
+		completion_reward = {
+			MOS = {
+				ROOT = {
+					grant_wargoals_on_core_states_of_prev_force_ai_war = yes
+				}
+			}
+		}
+	}
+	focus = {
+		id = ncr_developtheeasternroute
+		icon = GFX_goal_brahmin_cart
+		cost = 45
+		prerequisite = {
+		focus = ncr_opentheeasternroute
+		}
+		available = {
+			NCR = {
+				owns_state = 13
+				owns_state = 592
+			}
+		}
+		x = 10
+		y = 10
+		completion_reward = {
+			every_state = {
+				limit = {
+					state = 552
+					state = 47
+					state = 67
+					state = 137
+					state = 613
+					state = 252
+				}
+				add_state_modifier = { modifier = { local_supplies = 0.15 } }
+			}
+			13 = {
+				add_building_construction = {
+					type = infrastructure
+					level = 3
+					instant_build = yes
+				}
+				add_resource = {
+					type = water
+					amount = 2
+				}
+			}
+			592 = {
+				add_building_construction = {
+					type = infrastructure
+					level = 3
+					instant_build = yes
+				}
+				add_resource = {
+					type = water
+					amount = 2
+				}
+			}
+		}
+	}
+	focus = {
+		id = ncr_fortifytheeasternroute
+		icon = GFX_goal_generic_bunkers_focus
+		cost = 45
+		prerequisite = {
+		focus = ncr_opentheeasternroute
+		}
+		available = {
+			NCR = {
+				owns_state = 13
+				owns_state = 592
+			}
+		}
+		x = 12
+		y = 10
+		completion_reward = {
+			13 = {
+				add_building_construction = {
+					type = bunker
+					level = 3
+					instant_build = yes
+					province = 12319
+				}
+				add_building_construction = {
+					type = bunker
+					level = 3
+					instant_build = yes
+					province = 6590
+				}
+				add_building_construction = {
+					type = bunker
+					level = 3
+					instant_build = yes
+					province = 3253
+				}
+				add_building_construction = {
+					type = bunker
+					level = 3
+					instant_build = yes
+					province = 6591
+				}
+			}
+		}
+	}
+	focus = {
+		id = ncr_fundcrimsoncaravan
+		icon = GFX_goal_generic_nice_car
+		cost = 45
+		prerequisite = {
+		focus = ncr_fortifytheeasternroute
+		focus = ncr_developtheeasternroute
+		}
+		x = 11
+		y = 11
+		completion_reward = {
+		add_ideas = { ncr_crimson_caps }
+		MOT = {
+			add_ideas = { ncr_crimson_caps }
+		}
+		}
+	}
+	focus = {
+		id = ncr_expandthefrontier
+		icon = GFX_goal_TTM_Tribal_Vault_Girl
+		search_filters = {FOCUS_FILTER_ANNEXATION}
+		cost = 45
+		prerequisite = {
+		focus = ncr_settlethewest
+		}
+		x = 8
+		y = 10
+		will_lead_to_war_with = UMB
+		available = {
+			ai_has_no_other_wars_or_wargoals = yes
+		}
+		bypass = {
+			UMB = {
+				all_core_land_owned_by_prev_sphere = yes
+			}
+		}
+		completion_reward = {
+			UMB = {
+				ROOT = {
+					grant_wargoals_on_core_states_of_prev_force_ai_war = yes
+				}
+			}
+		}
+	}
+	focus = {
+		id = ncr_settlethenorth
+		icon = GFX_goal_generic_slums_focus
+		search_filters = {FOCUS_FILTER_ANNEXATION}
+		cost = 45
+		prerequisite = {
+		focus = ncr_settlethewest
+		}
+		x = 6
+		y = 10
+		completion_reward = {
+			every_state = {
+				limit = {
+					OR = {
+						state = 118
+						state = 57
+						state = 467
+					}
+				}
+				custom_effect_tooltip = attis_unlock_border_war
+			}
+		}
+	}
+	focus = {
+		id = ncr_settlethewest
+		icon = GFX_goal_shi_focus_golden_dragon
+		search_filters = {FOCUS_FILTER_ANNEXATION}
+		cost = 45
+		prerequisite = {
+		focus = ncr_rapidannexation
+		}
+		bypass = {
+			SHI = {
+				OR = {
+					exists = no
+					has_war_with = NCR
+					is_in_faction = yes
+					is_subject = yes
+				}
+			}
+		}
+		x = 7
+		y = 9
+		completion_reward = {
+			SHI = {
+				invite_to_ncr = yes
+			}
+		}
+	}
+	focus = {
+		id = ncr_purchasescrapheapandkettle
+		icon = GFX_goal_bottlecap
+		search_filters = {FOCUS_FILTER_ANNEXATION}
+		cost = 45
+		prerequisite = {
+		focus = ncr_expandthefrontier
+		focus = ncr_settlethenorth
+		}
+		x = 7
+		y = 11
+		completion_reward = {
+			unlock_decision_tooltip = ncr_rangerfrontier
+			unlock_decision_tooltip = ncr_rangerfrontier2
+		}
+	}
+	focus = {
+		id = ncr_manifestdestiny
+		icon = GFX_goal_NEW_new_capital
+		cost = 45
+		search_filters = {FOCUS_FILTER_INDUSTRY}
+		prerequisite = {
+		focus = ncr_purchasescrapheapandkettle
+		}
+		prerequisite = {
+		focus = ncr_fundcrimsoncaravan
+		}
+		x = 9
+		y = 12
+		completion_reward = {
+			add_ideas = ncr_manifestdestiny_idea
+			custom_effect_tooltip = ncr_upgrade_economy_law
+			if = {
+				limit = {
+					has_idea = ncr_militarized_economy
+				}
+				add_political_power = 300
+			}
+			else_if = {
+				limit = {
+					has_idea = ncr_caravan_protection
+				}
+				swap_ideas = {
+					remove_idea = ncr_caravan_protection
+					add_idea = ncr_militarized_economy
+				}
+			}
+			else_if = {
+				limit = {
+					has_idea = ncr_brahmin_economy
+				}
+				swap_ideas = {
+					remove_idea = ncr_brahmin_economy
+					add_idea = ncr_caravan_protection
+				}
+			}
+		}
+	}
+	focus = {
+		id = ncr_return_to_mojave
+		icon = GFX_goal_generic_dam
+		search_filters = {FOCUS_FILTER_ANNEXATION}
+		cost = 45
+		prerequisite = {
+			focus = ncr_manifestdestiny
+		}
+		available = {
+			ai_has_no_other_wars_or_wargoals = yes
+			MOT = { exists = no }
+			date > 2281.1.1
+		}
+		bypass = {
+			MOT = {
+				all_core_land_owned_by_prev_sphere = yes
+			}
+			MOJ = {
+				all_core_land_owned_by_prev_sphere = yes
+			}
+		}
+		relative_position_id = ncr_manifestdestiny
+		x = -1
+		y = 1
+		completion_reward = {
+			MOT = {
+				ROOT = {
+					grant_wargoals_on_core_states_of_prev_force_ai_war = yes
+				}
+			}
+			MOJ = {
+				ROOT = {
+					grant_wargoals_on_core_states_of_prev_force_ai_war = yes
+				}
+			}
+		}
+	}
+	focus = {
+		id = ncr_fight_caesar
+		icon = GFX_goal_NCR_Military_March
+		search_filters = {FOCUS_FILTER_ANNEXATION}
+		cost = 45
+		prerequisite = {
+			focus = ncr_manifestdestiny
+		}
+		available = {
+			ai_has_no_other_wars_or_wargoals = yes
+			date > 2281.1.1
+		}
+		bypass = {
+			CES = {
+				all_core_land_owned_by_prev_sphere = yes
+			}
+		}
+		relative_position_id = ncr_manifestdestiny
+		x = 1
+		y = 1
+		completion_reward = {
+			CES = {
+				ROOT = {
+					grant_wargoals_on_core_states_of_prev_force_ai_war = yes
+				}
+			}
+		}
+	}
+}
+# vim: set ft=pdx tw=79 :

@@ -17,7 +17,7 @@ equipments = {
 		#Space taken in convoy
 		lend_lease_cost = 5
 		reliability = 0.8
-		build_cost_ic = 4
+		build_cost_ic = 3
 		fuel_consumption = 0.1
 		resources = {
 
@@ -37,7 +37,7 @@ equipments = {
 		#Space taken in convoy
 		lend_lease_cost = 5
 
-		build_cost_ic = 5.7
+		build_cost_ic = 3
 		resources = {
 			metal = 1
 			water = 1
@@ -57,7 +57,7 @@ equipments = {
 		hardness = 0.1
 		fuel_consumption = 0.2
 
-		build_cost_ic = 7
+		build_cost_ic = 4
 		resources = {
 			metal = 1
 			water = 1
@@ -80,7 +80,7 @@ equipments = {
 		#Space taken in convoy
 		lend_lease_cost = 5
 
-		build_cost_ic = 8
+		build_cost_ic = 5
 		resources = {
 			metal = 1
 			circuitry = 1
@@ -100,7 +100,7 @@ equipments = {
 		hardness = 0.20
 		fuel_consumption = 0.4
 
-		build_cost_ic = 10
+		build_cost_ic = 6
 		resources = {
 			metal = 2
 			circuitry = 1
@@ -121,7 +121,7 @@ equipments = {
 		hardness = 0.25
 		fuel_consumption = 0.5
 
-		build_cost_ic = 11
+		build_cost_ic = 7
 		resources = {
 			composites = 2
 			circuitry = 1

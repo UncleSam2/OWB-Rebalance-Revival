@@ -158,11 +158,6 @@ technologies = {
 			research_cost_coeff = 0.8
 		}
 
-		path = {
-			leads_to_tech = cargo_plane_tech_1
-			research_cost_coeff = 0.8
-		}
-
 		dependencies = {
 			air_tech_level_settler = 1
 		}
@@ -2581,8 +2576,7 @@ technologies = {
 		}
 
 		dependencies = {
-			air_tech_level_settler = 1
-			aerodynamics_tech_1 = 1
+			air_tech_level_tribal = 1
 			glider_tech = 1
 		}
 		on_research_complete = {
@@ -2602,7 +2596,7 @@ technologies = {
 		start_year = 2276
 		folder = {
 			name = fallout_air_folder
-			position = { x = @Row_13 y = @Col_3 }
+			position = { x = @Row_13 y = @Col_2 }
 		}
 
 		categories = {
@@ -2610,7 +2604,7 @@ technologies = {
 			cargo_air_tech_category
 			air_equipment_tech_category
 			air_tech_category
-			civilized_tech_category
+			tribal_tech_category
 		}
 
 		ai_will_do = {

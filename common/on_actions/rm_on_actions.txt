@@ -11,11 +11,11 @@ on_actions = {
 				remove_ideas = raider_nation
 			}
 			JAC = {
-			remove_ideas = raider_nation
+				remove_ideas = raider_nation
 			}
 			SCO = {
-			remove_ideas = raider_nation
-			remove_ideas = roaring_machines
+				remove_ideas = raider_nation
+				remove_ideas = roaring_machines
 			}
 			TPM = { 
 				remove_ideas = settler_nation

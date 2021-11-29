@@ -1,0 +1,23 @@
+state={
+	id=116
+	name="STATE_HEAVEN'S_GATE"
+
+	history={
+		owner = HEA
+		add_core_of = HEA
+		victory_points = {
+			4065 20
+		}
+		buildings = {
+			infrastructure = 5
+			arms_factory = 4
+		}
+    }
+
+	provinces={
+		1453 1945 1946 2168 4065 4067 4068 4069 4070 4071 4072 4073 4074 4075 4252 4361 4362 4363 4364 4460 4463 4554
+	}
+	manpower=22560
+	buildings_max_level_factor=1.000
+	state_category=city
+}

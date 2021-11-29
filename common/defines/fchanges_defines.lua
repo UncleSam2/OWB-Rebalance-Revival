@@ -16,8 +16,8 @@ NDefines.NBuildings.RADAR_RANGE_MIN = 30
 NDefines.NBuildings.RADAR_RANGE_MAX = 300
 NDefines.NBuildings.ANTI_AIR_SUPERIORITY_MULT = 10
 
-NDefines.NMilitary.LAND_AIR_COMBAT_STR_DAMAGE_MODIFIER = 0.25   -- air global damage modifier
-NDefines.NMilitary.LAND_AIR_COMBAT_ORG_DAMAGE_MODIFIER = 0.25   -- global damage modifier
+NDefines.NMilitary.LAND_AIR_COMBAT_STR_DAMAGE_MODIFIER = 0.125   -- air global damage modifier
+NDefines.NMilitary.LAND_AIR_COMBAT_ORG_DAMAGE_MODIFIER = 0.125   -- global damage modifier
 NDefines.NMilitary.ENEMY_AIR_SUPERIORITY_IMPACT = -0.30         -- effect on defense due to enemy air superiorty
 NDefines.NMilitary.ANTI_AIR_TARGETTING_TO_CHANCE = 0.05		-- Balancing value to determine the chance of ground AA hitting an attacking airplane, affecting both the effective average damage done by AA to airplanes, and the reduction of damage done by airplanes due to AA support
 NDefines.NMilitary.ANTI_AIR_ATTACK_TO_AMOUNT = 0.0015			-- Balancing value to convert equipment stat anti_air_attack to the random % value of airplanes being hit.

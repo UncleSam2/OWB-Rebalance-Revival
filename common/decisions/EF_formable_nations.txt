@@ -1259,6 +1259,7 @@ form_mojave = {
 			original_tag = BOO
 			original_tag = JCT
 			original_tag = MOT
+			original_tag = MOJ
 		}
 	}
 	visible = {
@@ -1268,6 +1269,7 @@ form_mojave = {
 			original_tag = BOO
 			original_tag = JCT
 			original_tag = MOT
+			original_tag = MOJ
 		}
 	}
 	available = {
@@ -1694,7 +1696,5 @@ form_commierado = {
 			}
 		}
 	}
-
-
     #End
 }

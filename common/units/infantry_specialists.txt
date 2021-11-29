@@ -114,6 +114,150 @@ sub_units = {
 		}
 	}
 
+	motorized_demolitions = {
+		sprite = motorized
+		map_icon_category = infantry
+
+		priority = 610
+		active = no
+
+		type = {
+			motorized
+			artillery
+		}
+
+		group = mobile
+
+		categories = {
+			category_army
+			category_front_line
+			category_weapon_infantry
+			category_demolitions
+		}
+
+		combat_width = 3
+
+		#Size Definitions
+		max_strength = 5
+		max_organisation = -20
+		default_morale = 0.2
+		manpower = 30 # 1000
+
+		# Misc Abilities
+		training_time = 200
+		weight = 1
+
+		supply_consumption = 0.15
+
+		urban = {
+			attack = 0.3
+			defence = 0.3
+		}
+		fort = {
+			attack = 0.3
+			defence = 0.3
+		}
+		forest = {
+			movement = -0.2
+		}
+		mountain = {
+			movement = -0.2
+		}
+		jungle = {
+			movement = -0.3
+		}
+		marsh = {
+			movement = -0.2
+		}
+		amphibious = {
+			movement = -0.2
+		}
+
+		essential = {
+			demolitions_equipment
+			motorized_equipment
+		}
+
+		transport = motorized_equipment
+
+		need = {
+			demolitions_equipment = 30
+			motorized_equipment = 15
+		}
+	}
+	
+	motorized_fireteam = {
+		sprite = motorized
+		map_icon_category = infantry
+
+		priority = 610
+		active = no
+
+		type = {
+			motorized
+			artillery
+		}
+
+		group = mobile
+
+		categories = {
+			category_army
+			category_front_line
+			category_weapon_infantry
+			category_demolitions
+		}
+
+		combat_width = 3
+
+		#Size Definitions
+		max_strength = 5
+		max_organisation = -20
+		default_morale = 0.2
+		manpower = 30 # 1000
+
+		# Misc Abilities
+		training_time = 200
+		weight = 1
+
+		supply_consumption = 0.15
+
+		urban = {
+			attack = 0.3
+			defence = 0.3
+		}
+		fort = {
+			attack = 0.3
+			defence = 0.3
+		}
+		forest = {
+			movement = -0.2
+		}
+		mountain = {
+			movement = -0.2
+		}
+		jungle = {
+			movement = -0.3
+		}
+		marsh = {
+			movement = -0.2
+		}
+		amphibious = {
+			movement = -0.2
+		}
+
+		essential = {
+			fireteam_equipment
+			motorized_equipment
+		}
+
+		transport = motorized_equipment
+
+		need = {
+			fireteam_equipment = 30
+			motorized_equipment = 15
+		}
+	}
+
 	gary_unit = {
 		sprite = infantry
 		map_icon_category = infantry

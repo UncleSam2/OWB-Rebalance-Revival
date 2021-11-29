@@ -1,0 +1,26 @@
+on_actions = {
+	on_startup = {
+		effect = {
+	if = {
+		limit = {
+			has_global_flag = base_game_faction_system_enabled_global_flag
+		}
+		every_country = {
+			limit = {
+				is_ai = no
+			}
+			set_rule = { can_create_factions = yes }
+			set_rule = { can_join_factions = yes }
+			}
+		every_country = {
+			limit = {
+				is_ai = yes
+			}
+			set_rule = { can_create_factions = no }
+			set_rule = { can_join_factions = no }
+			}
+		}
+	}
+}
+
+}

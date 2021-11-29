@@ -471,7 +471,7 @@ ideas = {
 			level = 5
 			picture = tlaloc_stagnation
 			allowed = {
-				is_mexican_allowed_block = yes
+				is_mexican_nation_allowed_block = yes
 			}
 			visible = {
 				has_unique_manpower_law = no
@@ -494,7 +494,7 @@ ideas = {
 			level = 4
 			picture = frontier_militias
 			allowed = {
-				is_mexican_allowed_block = yes
+				is_mexican_nation_allowed_block = yes
 			}
 			visible = {
 				has_unique_manpower_law = no
@@ -530,7 +530,7 @@ ideas = {
 				}
 			}
 			allowed = {
-				is_mexican_allowed_block = yes
+				is_mexican_nation_allowed_block = yes
 			}
 			visible = {
 				has_unique_manpower_law = no
@@ -572,7 +572,7 @@ ideas = {
 				}
 			}
 			allowed = {
-				is_mexican_allowed_block = yes
+				is_mexican_nation_allowed_block = yes
 			}
 			visible = {
 				has_unique_manpower_law = no
@@ -600,7 +600,7 @@ ideas = {
 			level = 1
 			picture = mexican_conscription
 			allowed = {
-				is_mexican_allowed_block = yes
+				is_mexican_nation_allowed_block = yes
 			}
 			visible = {
 				has_unique_manpower_law = no

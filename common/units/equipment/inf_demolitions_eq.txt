@@ -27,7 +27,7 @@ equipments = {
 		breakthrough = 6
 		soft_attack = 25
 		hard_attack = 6
-		ap_attack = 5
+		ap_attack = 15
 		maximum_speed = 4
 
 		#Space taken in convoy
@@ -61,7 +61,7 @@ equipments = {
 		breakthrough = 8
 		soft_attack = 30
 		hard_attack = 7
-		ap_attack = 8
+		ap_attack = 15
 
 		build_cost_ic = 9
 
@@ -84,7 +84,7 @@ equipments = {
 		breakthrough = 12
 		soft_attack = 35
 		hard_attack = 8
-		ap_attack = 10
+		ap_attack = 20
 
 		build_cost_ic = 11
 
@@ -108,7 +108,7 @@ equipments = {
 		breakthrough = 16
 		soft_attack = 40
 		hard_attack = 10
-		ap_attack = 20
+		ap_attack = 25
 
 		build_cost_ic = 13
 
@@ -131,7 +131,7 @@ equipments = {
 		breakthrough = 9
 		soft_attack = 27.5
 		hard_attack = 10
-		ap_attack = 15
+		ap_attack = 22.5
 
 		build_cost_ic = 9
 
@@ -154,7 +154,7 @@ equipments = {
 		breakthrough = 13
 		soft_attack = 30
 		hard_attack = 15
-		ap_attack = 20
+		ap_attack = 30
 
 		build_cost_ic = 11
 
@@ -178,7 +178,7 @@ equipments = {
 		breakthrough = 21
 		soft_attack = 32.5
 		hard_attack = 20
-		ap_attack = 25
+		ap_attack = 37.5
 
 		build_cost_ic = 13
 

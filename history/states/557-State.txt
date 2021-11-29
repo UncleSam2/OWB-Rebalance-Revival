@@ -1,0 +1,30 @@
+state={
+	id = 557
+	name = "STATE_WHISTLER"
+	manpower = 2000	
+	state_category = shanty
+	
+	resources = {
+		metal = 8
+		composites = 2 
+	}
+
+	history = {
+		owner = WHI
+		add_core_of = WHI
+		victory_points = {
+			2100 5
+		}
+		buildings = {
+			infrastructure = 2
+			arms_factory = 1
+            industrial_complex = 2
+		}
+
+	}
+
+	provinces={
+		679 2097 2098 2099 2100 2101 2118 2128 3769 3770 3771 3796 3799 3810 3979 7213 7214 7395
+	}
+	buildings_max_level_factor=1.000
+}

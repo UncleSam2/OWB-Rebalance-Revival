@@ -107,3 +107,43 @@ create_country_leader = {
 	ideology = benevolent_dictatorship
 	id = 10081
 }
+create_corps_commander = {
+	name = "Snake Vargas"
+	picture = "portrait_des_leader.dds"
+	skill = 5
+	traits = { charismatic_trait enduring_trait desert_fox }
+	attack_skill = 3
+	defense_skill = 3
+	planning_skill = 3
+	logistics_skill = 5
+}
+create_corps_commander = {
+	name = "Thrasher Sagarra"
+	picture = "portrait_thrasher.dds"
+	skill = 4
+	traits = { intelligent_trait strong_trait urban_assault_specialist }
+	attack_skill = 2
+	defense_skill = 2
+	planning_skill = 5
+	logistics_skill = 2
+}
+create_corps_commander = {
+	name = "Hell Razor"
+	picture = "portrait_razer.dds"
+	skill = 4
+	traits = { perceptive_trait lucky_trait hill_fighter }
+	attack_skill = 2
+	defense_skill = 4
+	planning_skill = 2
+	logistics_skill = 2
+}
+create_corps_commander = {
+	name = "Angela Deth"
+	picture = "portrait_angela.dds"
+	skill = 3
+	traits = { strong_trait agile_trait fortress_buster }
+	attack_skill = 5
+	defense_skill = 1
+	planning_skill = 1
+	logistics_skill = 1
+}

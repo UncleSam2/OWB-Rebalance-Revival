@@ -26,7 +26,7 @@ equipments = {
 		reliability = 0.8
 
 		#Defensive Abilities
-		defense = 15
+		defense = 13
 		breakthrough = 15
 		hardness = 0.15
 		armor_value = 10
@@ -61,7 +61,7 @@ equipments = {
 		reliability = 0.7
 
 		#Defensive Abilities
-		defense = 5
+		defense = 3
 		breakthrough = 4
 		hardness = 0.25
 		armor_value = 5
@@ -99,7 +99,7 @@ equipments = {
 		reliability = 0.75
 
 		#Defensive Abilities
-		defense = 10
+		defense = 8
 		breakthrough = 6
 		hardness = 0.35
 		armor_value = 8
@@ -138,7 +138,7 @@ equipments = {
 		reliability = 0.8
 
 		#Defensive Abilities
-		defense = 15
+		defense = 13
 		breakthrough = 8
 		hardness = 0.35
 		armor_value = 16
@@ -177,7 +177,7 @@ equipments = {
 		reliability = 0.8
 
 		#Defensive Abilities
-		defense = 20
+		defense = 18
 		breakthrough = 10
 		hardness = 0.35
 		armor_value = 16
@@ -216,7 +216,7 @@ equipments = {
 		reliability = 0.75
 
 		#Defensive Abilities
-		defense = 10
+		defense = 8
 		breakthrough = 6
 		hardness = 0.35
 		armor_value = 8
@@ -255,7 +255,7 @@ equipments = {
 		reliability = 0.8
 
 		#Defensive Abilities
-		defense = 15
+		defense = 13
 		breakthrough = 8
 		hardness = 0.35
 		armor_value = 16
@@ -294,7 +294,7 @@ equipments = {
 		reliability = 0.85
 
 		#Defensive Abilities
-		defense = 25
+		defense = 23
 		breakthrough = 12
 		hardness = 0.35
 		armor_value = 25
@@ -332,7 +332,7 @@ equipments = {
 		reliability = 0.9
 
 		#Defensive Abilities
-		defense = 25
+		defense = 23
 		breakthrough = 15
 		hardness = 0.5
 		armor_value = 25

@@ -1,0 +1,26 @@
+state={
+	id=52
+	name="STATE_COER_HILLS"
+
+	history={
+		owner = HEA
+		add_core_of = HEA
+		victory_points = {
+			4059 5
+		}
+		buildings = {
+			infrastructure = 5
+			7166 = {
+				naval_base = 3
+			}
+		}
+
+	}
+
+	provinces={
+		1479 1994 2514 4057 4058 4059 4060 4061 4062 4063 4064 4066 4557 7166 7167 7168 7176 8536
+	}
+	manpower=4000
+	buildings_max_level_factor=1.000
+	state_category=rural
+}

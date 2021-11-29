@@ -73,7 +73,7 @@ equipments = {
 
 		fuel_consumption = 0.4
 
-		build_cost_ic = 12
+		build_cost_ic = 10
 		resources = {
 			metal = 2
 			circuitry = 2
@@ -101,7 +101,7 @@ equipments = {
 
 		fuel_consumption = 0.5
 
-		build_cost_ic = 14
+		build_cost_ic = 12
 		resources = {
 			metal = 2
 			circuitry = 2
@@ -128,7 +128,7 @@ equipments = {
 
 		fuel_consumption = 0.6
 
-		build_cost_ic = 16
+		build_cost_ic = 14
 		resources = {
 			composites = 2
 			circuitry = 2
@@ -155,7 +155,7 @@ equipments = {
 
 		fuel_consumption = 0.7
 
-		build_cost_ic = 18
+		build_cost_ic = 16
 		resources = {
 			composites = 3
 			circuitry = 2
