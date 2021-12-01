@@ -1,0 +1,26 @@
+technologies = {
+
+	@Col_1 = 4
+
+	@Row_infantry = 0
+
+	sucky_tech_naval_doctrine = {
+
+		xp_research_type = army
+		xp_unlock_cost = 100
+
+
+		folder = {
+			name = naval_doctrine_folder
+			position = { x = @Row_infantry y = @Col_1 }
+		}
+
+		categories = {
+			cat_land_doctrine
+		}
+
+		ai_will_do = {
+			factor = 0
+		}
+	}
+}

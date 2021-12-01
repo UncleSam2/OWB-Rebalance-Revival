@@ -8,14 +8,15 @@ buildings = {
 	# If placed in technology with enable_building, they will become locked until said technology is taken
 
 	infrastructure = {
-		base_cost = 3000
+		base_cost = 6000
 		icon_frame = 3
 		infrastructure = yes
-		max_level = 10
+		max_level = 5
 		value = 1
 
 		show_modifier = yes
-		max_fuel_building = 0.2 #k
+		max_fuel_building = 1.0 #k
+		allied_build = yes		
 	}
 
 	arms_factory = {
@@ -28,9 +29,6 @@ buildings = {
 		shares_slots = yes
 		value = 8
 		infrastructure_construction_effect = yes
-
-		show_modifier = yes
-		max_fuel_building = 0.2 #k
 	}
 
 	industrial_complex = {
@@ -43,9 +41,6 @@ buildings = {
 		shares_slots = yes
 		value = 5
 		infrastructure_construction_effect = yes
-
-		show_modifier = yes
-		max_fuel_building = 0.2 #k
 	}
 
 	air_base = {
@@ -56,6 +51,30 @@ buildings = {
 		max_level = 20
 		value = 1
 		damage_factor = 0.5
+		allied_build = yes		
+	}
+
+	supply_node = {
+		show_on_map = 1
+		base_cost = 14400
+		provincial = yes
+		disabled_in_dmz = yes
+		icon_frame = 13
+		max_level = 1
+		centered = yes
+		supply_node = yes
+		damage_factor = 0.1
+		allied_build = yes
+		always_shown = yes
+	}
+
+	rail_way = {
+		base_cost = 170
+		per_level_extra_cost = 130
+		provincial = yes
+		disabled_in_dmz = yes
+		icon_frame = 3
+		max_level = 1
 	}
 
 	naval_base = {
@@ -69,7 +88,8 @@ buildings = {
 		icon_frame = 6
 		max_level = 20
 		value = 1
-	}
+		allied_build = yes		
+	}	
 
 	bunker = {
 		show_on_map = 1
@@ -123,9 +143,6 @@ buildings = {
 		shares_slots = yes
 		value = 5
 		infrastructure_construction_effect = yes
-
-		show_modifier = yes
-		max_fuel_building = 0.2 #k
 	}
 
 	anti_air_building = {
@@ -149,6 +166,7 @@ buildings = {
 		max_level = 6 # This is the max unlock level
 		damage_factor = 0.5
 		value = 4
+		allied_build = yes		
 	}
 
 	#rocket_site = {
@@ -206,7 +224,7 @@ buildings = {
 		infrastructure_construction_effect = yes
 
 		show_modifier = yes
-		max_fuel_building = 1.0 #k
+		max_fuel_building = 50.0 #k
 	}
 
 	circuitry_generator = {
@@ -219,8 +237,5 @@ buildings = {
 		shares_slots = yes
 		value = 5
 		infrastructure_construction_effect = yes
-
-		show_modifier = yes
-		max_fuel_building = 0.05 #k
 	}
 }

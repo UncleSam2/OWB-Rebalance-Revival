@@ -1,0 +1,213 @@
+# Do not change tags in here without changing every other reference to them.
+# If adding new technology, make sure they are uniquely named.
+
+technology_categories = {
+	# weapon tech categories
+	infantry_weapons_tech_category
+	infantry_tech_category
+	energy_weaponry_tech_category
+	ballistic_weaponry_tech_category
+	melee_weaponry_tech_category
+	plasma_weaponry_tech_category
+	tesla_weaponry_tech_category
+	gauss_weaponry_tech_category
+
+	#support tech categories
+	support_tech_category
+	support_demolitions_tech_category
+	support_demolitions_explosive_tech_category
+	support_demolitions_flamer_tech_category
+	support_fireteam_tech_category
+	support_fireteam_energy_tech_category
+	support_fireteam_ballistic_tech_category
+	support_anti_tank_tech_category
+	support_anti_air_tech_category
+	support_non_combat_tech_category
+	support_medical_tech_category
+	support_maintenance_tech_category
+	support_logistics_tech_category
+	support_recon_tech_category
+	support_dog_tech_category
+	support_aa_tech_category
+
+	# Special forces categories
+	spec_force_tech_category
+	spec_force_doctrine_category
+	spec_force_equipment_tech_category
+	power_armor_tech_category
+
+	# Vehicle tech categories
+	armor_tech_category
+	motorized_equipment_category
+	vehicle_tech_category
+	bike_tech_category
+	truck_tech_category
+	apc_tech_category
+	tank_tech_category
+	car_tech_category
+
+	# Air tech Categories
+	naval_air_tech_category
+	air_tech_category
+	light_air_tech_category
+	heavy_air_tech_category
+	fighter_tech_category
+	cas_bomber_tech_category
+	bomber_tech_category
+	cargo_air_tech_category
+	blimp_tech_category
+	air_equipment_tech_category
+	high_fighter_tech_category
+	vertibird_tech_category
+
+	# Naval tech categories
+	naval_tech_category
+
+	naval_hull_tech_category
+	naval_light_hull_tech_category
+	naval_medium_hull_tech_category
+	naval_heavy_hull_tech_category
+	naval_super_heavy_hull_tech_category
+	naval_carrier_hull_tech_category
+	naval_invasion_tech_category
+
+	# naval module categories
+	naval_armour_module_tech_category
+	naval_module_tech_category
+	naval_engine_module_tech_category
+	naval_command_module_tech_category
+	naval_weapon_module_tech_category
+
+	naval_equipment
+
+	# Doctrine Categories
+	cat_land_doctrine
+	cat_air_doctrine
+	cat_automated_warfare
+	cat_elite_army
+	cat_grand_army
+	cat_terror_tactics
+	cat_outsider_warfare
+
+	# Naval doctrines
+	cat_naval_doctrine
+	cat_naval_force_concentration_doctrine
+	cat_naval_river_fleet_doctrine
+	cat_naval_dispersed_formation_doctrine
+
+	# Robot Tech categories
+	robotics_tech_category
+	support_robot_tech_category
+	combat_robot_tech_category
+
+	# Other tech categories
+	industry
+	electronics
+	encryption_tech
+	decryption_tech
+	computing_tech
+	radar_tech
+	support_tech
+	implant_tech
+	med_tech
+	education_tech
+	agriculture_tech
+	scavenging_tech
+	data_storage_tech
+	tool_tech
+	industry_specialisation_category
+	extraction_category
+	construction_category
+	habitation_category
+	artillery
+	super_mutant_tech_category
+	civilization_tech_category
+	tribal_tech_category
+	civilized_tech_category
+	scientific_tech_category
+	building_tech
+	vault_tech_category
+	underground_tech_category
+	magic_tech_category
+}
+
+technology_folders = {
+	fallout_infantry_folder = {
+		ledger = army
+	}
+	fallout_support_folder = {
+		ledger = army
+	}
+	fallout_vehicle_folder = {
+		ledger = army
+	}
+	fallout_robotics_folder = {
+		ledger = army
+	}
+	fallout_air_folder = {
+		ledger = air
+	}
+	fallout_industry_folder = {
+		ledger = civilian
+	}
+	fallout_land_doctrine_folder = {
+		#available = {
+		#	NOT = {
+		#		has_tech = super_mutant_civilization
+		#	}
+		#}
+		ledger = army
+		#doctrine = yes
+	}
+	fallout_air_doctrine_folder = {
+		ledger = army
+		#doctrine = yes
+	}
+	fallout_engineering_folder = {
+		ledger = civilian
+	}
+	fallout_naval_folder = {
+		available = { has_dlc = "Man the Guns" }
+		ledger = navy
+	}
+	fallout_naval_non_mtg_folder = {
+		available = {
+			NOT = { has_dlc = "Man the Guns" }
+		}
+		ledger = navy
+	}
+	fallout_naval_modules_folder = {
+		available = { has_dlc = "Man the Guns" }
+		ledger = navy
+	}
+	fallout_focus_tree_folder = {
+		ledger = civilian
+	}
+	fallout_tech_level_folder = {
+		ledger = civilian
+	}
+	fallout_tech_tribal_folder = {
+		available = { has_tech = tribal_tech_visibility_tech }
+		ledger = army
+	}
+	fallout_tech_implant_folder = {
+		available = { has_tech = implant_tech_visibility_tech }
+		ledger = army
+	}
+	fallout_horse_tech_folder = {
+		available = { tag = MLP }
+		ledger = army
+	}
+	land_doctrine_folder = {
+		ledger = army
+		doctrine = yes
+	}
+	naval_doctrine_folder = {
+		ledger = navy
+		doctrine = yes
+	}
+	air_doctrine_folder = {
+		ledger = air
+		doctrine = yes
+	}
+}
